@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+
+  <!-- collective.cover settings -->
+  <record field="layouts"
+          interface="collective.cover.controlpanel.ICoverSettings"
+          name="collective.cover.controlpanel.ICoverSettings.layouts">
+    <field type="plone.registry.field.Dict">
+      <key_type type="plone.registry.field.TextLine">
+        <title>Name</title>
+      </key_type>
+      <title>Layouts</title>
+      <value_type type="plone.registry.field.TextLine">
+        <title>Layout</title>
+      </value_type>
+    </field>
+    <value purge="true">
+      <element key="Empty layout">[{"type": "row", "class": "row", "children": [{"type": "group", "data":{"column-size":16, "layout-type":"column"}, "roles": ["Manager"]}]}]</element>
+    </value>
+  </record>
+  <record field="searchable_content_types"
+          interface="collective.cover.controlpanel.ICoverSettings"
+          name="collective.cover.controlpanel.ICoverSettings.searchable_content_types">
+    <value>
+      <element>collective.nitf.content</element>
+      <element>collective.polls.poll</element>
+      <element>Collection</element>
+    </value>
+  </record>
+
+  <!-- collective.nitf settings -->
+  <record name="collective.nitf.controlpanel.INITFSettings.available_sections">
+    <value>
+      <element>General</element>
+    </value>
+  </record>
+  <record name="collective.nitf.controlpanel.INITFSettings.default_section">
+    <value>General</value>
+  </record>
+  <record name="collective.nitf.controlpanel.INITFSettings.available_genres">
+    <value>
+      <element>Analysis</element>
+      <element>Archive material</element>
+      <element>Current</element>
+      <element>Exclusive</element>
+      <element>From the Scene</element>
+      <element>Interview</element>
+      <element>Obituary</element>
+      <element>Opinion</element>
+      <element>Polls and Surveys</element>
+      <element>Press Release</element>
+      <element>Profile</element>
+      <element>Retrospective</element>
+      <element>Review</element>
+      <element>Special Report</element>
+      <element>Summary</element>
+      <element>Wrap</element>
+    </value>
+  </record>
+
+  <!-- collective.upload settings -->
+  <record name="collective.upload.interfaces.IUploadSettings.resize_max_width">
+    <value>1024</value>
+  </record>
+  <record name="collective.upload.interfaces.IUploadSettings.resize_max_height">
+    <value>1024</value>
+  </record>
+  <record name="collective.upload.interfaces.IUploadSettings.upload_extensions">
+    <value>gif, jpeg, jpg, png, pdf, doc, txt, docx</value>
+  </record>
+
+</registry>

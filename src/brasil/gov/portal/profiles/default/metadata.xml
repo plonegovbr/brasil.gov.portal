@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<metadata>
+  <version>0001</version>
+  <dependencies>
+    <!-- dependency>profile-brasil.gov.temas:default</dependency -->
+    <dependency>profile-collective.cover:default</dependency>
+    <dependency>profile-collective.googleanalytics:default</dependency>
+    <dependency>profile-collective.nitf:default</dependency>
+    <dependency>profile-collective.polls:default</dependency>
+    <dependency>profile-collective.upload:default</dependency>
+    <!-- dependency>profile-plone.app.contenttypes:default</dependency -->
+    <dependency>profile-sc.embedder:default</dependency>
+    <dependency>profile-sc.social.like:default</dependency>
+  </dependencies>
+</metadata>
