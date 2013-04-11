@@ -3,13 +3,7 @@
   <object name="navtree_properties" meta_type="Plone Property Sheet">
     <property name="metaTypesNotToList" type="lines">
       <element value="Discussion Item"/>
-      <element value="Event"/>
-      <element value="File"/>
-      <element value="Image"/>
       <element value="News Item"/>
-      <element value="Page"/>
-      <element value="collective.nitf.content"/>
-      <element value="collective.polls.poll"/>
     </property>
   </object>
   <object name="site_properties" meta_type="Plone Property Sheet">
@@ -20,28 +14,23 @@
     <property name="default_language" type="boolean">pt-br</property>
     <property name="default_charset" type="boolean">utf-8</property>
     <property name="types_not_searched" type="lines" purge="False">
-      <element value="Collection"/>
-      <element value="Document"/>
-      <element value="Event"/>
-      <element value="File"/>
-      <element value="Folder"/>
-      <element value="Image"/>
-      <element value="Link"/>
-      <element value="News Item"/>
-      <element value="Page"/>
-      <element value="Person"/>
-      <element value="Periodical"/>
-      <element value="Topic"/>
       <element value="collective.cover.content"/>
       <element value="collective.polls.poll"/>
-      <element value="collective.upload"/>
+      <element value="News Item"/>
       <element value="sc.embedder"/>
+      <element value="Topic"/>
     </property>
   </object>
   <object name="sc_social_likes_properties" meta_type="Plone Property Sheet">
     <property name="enabled_portal_types" type="lines" purge="True">
+      <element value="Collection"/>
+      <element value="collective.cover.content"/>
       <element value="collective.nitf.content"/>
       <element value="collective.polls.poll"/>
+      <element value="Document"/>
+      <element value="Event"/>
+      <element value="FormFolder"/>
+      <element value="Image"/>
     </property>
   </object>
 </object>

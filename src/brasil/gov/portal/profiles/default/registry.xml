@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           i18n:domain="plone">
-
   <!-- collective.cover settings -->
   <record field="layouts"
           interface="collective.cover.controlpanel.ICoverSettings"
@@ -58,7 +57,6 @@
       <element>Wrap</element>
     </value>
   </record>
-
   <!-- collective.upload settings -->
   <record name="collective.upload.interfaces.IUploadSettings.resize_max_width">
     <value>1024</value>
@@ -69,5 +67,4 @@
   <record name="collective.upload.interfaces.IUploadSettings.upload_extensions">
     <value>gif, jpeg, jpg, png, pdf, doc, txt, docx</value>
   </record>
-
 </registry>
