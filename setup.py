@@ -44,7 +44,8 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        #'brasil.gov.temas',
+        'brasil.gov.barra',
+        'brasil.gov.temas',
         'collective.cover',
         'collective.googleanalytics',
         'collective.nitf',
@@ -52,15 +53,17 @@ setup(
         'collective.upload',
         'five.pt',
         'Pillow',
-        #'plone.app.contenttypes',  # FIXME: rising AttributeError: 'module' object has no attribute 'HAVE_BLOBS'
+        'plone.app.contenttypes',
         'plone.app.upgrade',
         'Products.CMFPlone',
+        'Products.PloneFormGen',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',
         'sc.contentrules.metadata',
         'sc.embedder',
         'sc.social.like',
         'setuptools',
+        'z3c.unconfigure',
     ],
     extras_require={
         'test': [
