@@ -8,7 +8,7 @@
   <include file="configure.zcml" />
 
   <genericsetup:registerProfile
-      name="test fixture"
+      name="testfixture"
       title="brasil.gov.portal tests"
       directory="profiles/testing"
       description="Steps to ease tests of brasil.gov.portal"

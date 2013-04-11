@@ -41,6 +41,14 @@ class PortalPropertiesTestCase(unittest.TestCase):
         types_searched = list(all_types - types_not_searched)
         types_searched.sort()
         types_expected = [
+            'Collection',
+            'Document',
+            'Event',
+            'File',
+            'Folder',
+            'FormFolder',
+            'Image',
+            'Link',
             'collective.nitf.content',
         ]
         self.assertListEqual(types_searched, types_expected)
@@ -50,12 +58,6 @@ class PortalPropertiesTestCase(unittest.TestCase):
         metaTypesNotToList.sort()
         types_expected = [
             'Discussion Item',
-            'Event',
-            'File',
-            'Image',
             'News Item',
-            'Page',
-            'collective.nitf.content',
-            'collective.polls.poll',
         ]
         self.assertListEqual(metaTypesNotToList, types_expected)

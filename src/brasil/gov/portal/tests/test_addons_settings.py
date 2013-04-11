@@ -84,7 +84,13 @@ class AddonsSettingsTestCase(unittest.TestCase):
         enabled_portal_types = list(likes.enabled_portal_types)
         enabled_portal_types.sort()
         types_expected = [
-            u'collective.nitf.content',
-            u'collective.polls.poll',
+            'Collection',
+            'Document',
+            'Event',
+            'FormFolder',
+            'Image',
+            'collective.cover.content',
+            'collective.nitf.content',
+            'collective.polls.poll',
         ]
         self.assertListEqual(enabled_portal_types, types_expected)
