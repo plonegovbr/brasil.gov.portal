@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="brasil.gov.portal">
+
+  <includeOverrides file="overrides.zcml" />
+
+  <browser:resource
+      file="plonegovbr.png"
+      name="plonegovbr.png"
+      />
+
+  <browser:page
+      for="OFS.interfaces.IApplication"
+      name="plone-addsite"
+      class=".admin.AddPloneSite"
+      permission="zope2.ViewManagementScreens"
+      template="templates/plone-addsite.pt"
+      />
+
+  <browser:page
+      for="OFS.Folder.Folder"
+      name="plone-addsite"
+      class=".admin.AddPloneSite"
+      permission="zope2.ViewManagementScreens"
+      template="templates/plone-addsite.pt"
+      />
+
+  <browser:page
+      for="OFS.interfaces.IApplication"
+      name="plone-overview"
+      class=".admin.Overview"
+      permission="zope.Public"
+      template="templates/plone-overview.pt"
+      />
+
+</configure>
