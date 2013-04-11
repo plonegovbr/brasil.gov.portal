@@ -1,0 +1,35 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Profiles -->
+  <gs:registerProfile
+      name="default"
+      title="Brasil.gov.br: Portal Modelo"
+      directory="profiles/default"
+      description="Portal Modelo de sites para o Governo Federal"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <gs:registerProfile
+      name="initcontent"
+      title="Brasil.gov.br: Portal Modelo - Conteúdo base"
+      directory="profiles/initcontent"
+      description="Conteúdo de exemplo para sites do Governo Federal"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <gs:importStep
+      name="base-content"
+      handler="brasil.gov.portal.setuphandlers.importContent"
+      title="Plone Content Import"
+      description="Plone content import.">
+   <depends name="plone-content" />
+  </gs:importStep>
+
+  <!-- Upgrades -->
+  <include package=".upgrades" />
+  
+</configure>
