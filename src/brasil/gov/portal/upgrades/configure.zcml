@@ -1,0 +1,8 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Upgrades -->
+  <include package=".v1000" />
+  
+</configure>
