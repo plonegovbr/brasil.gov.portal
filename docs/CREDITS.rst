@@ -1,7 +1,9 @@
-Credits
--------
+Contribuidores
+-----------------
 
-``brasil.gov.portal`` would not have been possible without the contribution of
-the following people:
+O ``brasil.gov.portal`` não seria possível sem a contribuição das
+seguintes pessoas:
 
 - Héctor Velarde
+- Érico Andrei
+- André Nogueira

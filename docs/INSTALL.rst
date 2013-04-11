@@ -1,21 +1,20 @@
-Installation
+Instalação
 ------------
 
-To enable this package in a buildout-based installation:
+Para habilitar a instalação deste produto em um ambiente que utilize o
+buildout:
 
-1. Edit your buildout.cfg and add add the following to it::
+1. Editar o arquivo buildout.cfg (ou outro arquivo de configuração) e
+   adicionar o pacote ``brasil.gov.portal`` à lista de eggs da instalação::
 
-    [buildout]
-    ...
-    eggs =
-        brasil.gov.portal
+	    [buildout]
+	    ...
+	    eggs =
+	        brasil.gov.portal
 
-After updating the configuration you need to run ''bin/buildout'', which will
-take care of updating your system.
+2. Após alterar o arquivo de configuração é necessário executar
+   ''bin/buildout'', que atualizará sua instalação.
 
-Go to the 'Site Setup' page in a Plone site and click on the 'Add-ons' link.
+3. Reinicie o Plone
 
-Check the box next to ``brasil.gov.portal`` and click the 'Activate' button.
-
-Note: You may have to empty your browser cache and save your resource
-registries in order to see the effects of the package installation.
+4. Adicione um novo site Plone.
