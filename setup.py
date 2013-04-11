@@ -14,7 +14,7 @@ long_description = open("README.rst").read() + "\n" + \
 setup(
     name='brasil.gov.portal',
     version=version,
-    description="Policy package for the Portal Modelo.",
+    description="Portal Modelo para o Governo Federal do Brasil",
     long_description=long_description,
     classifiers=[
         "Development Status :: 1 - Alpha",
@@ -33,10 +33,10 @@ setup(
         "Topic :: Multimedia",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    keywords='',
-    author='',
-    author_email='',
-    url='',
+    keywords='plone .gov.br portal modelo',
+    author='Simples Consultoria',
+    author_email='products@simplesconsultoria.com.br',
+    url='https://github.com/plonegovbr/brasil.gov.portal',
     license='GPLv2',
     packages=find_packages('src'),
     package_dir={'': 'src'},
