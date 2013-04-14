@@ -57,12 +57,23 @@
         <label for="title" i18n:translate="label_title">Title</label>
 
         <div class="formHelp" i18n:translate="">
-          A short title for the site. This will be shown in the title of the
-          browser window on each page.
+          O título deste site.
         </div>
 
         <input type="text" name="title" size="30" value="Site"
                i18n:attributes="value text_default_site_title;" />
+      </div>
+
+      <div class="field">
+        <label for="description" i18n:translate="label_description">Description</label>
+
+        <div class="formHelp" i18n:translate="">
+          Nome do Ministério ou da Secretaria ao qual este site está ligado.
+        </div>
+
+        <input type="text" name="description"
+               size="60"
+               value="Nome do Ministério ou da Secretaria" />
       </div>
 
       <tal:baseprofile condition="python: len(base_profiles) > 1">

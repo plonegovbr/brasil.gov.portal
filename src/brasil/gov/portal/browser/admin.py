@@ -57,6 +57,7 @@ class AddPloneSite(AddPloneSiteView):
             site = addPloneSite(
                 context, site_id,
                 title=form.get('title', ''),
+                description=form.get('description', ''),
                 profile_id=form.get('profile_id', _DEFAULT_PROFILE),
                 extension_ids=form.get('extension_ids', ()),
                 setup_content=False,
