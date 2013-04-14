@@ -46,6 +46,7 @@ setup(
     install_requires=[
         'brasil.gov.barra',
         'brasil.gov.temas',
+        'brasil.gov.vcge',
         'collective.cover',
         'collective.googleanalytics',
         'collective.nitf',

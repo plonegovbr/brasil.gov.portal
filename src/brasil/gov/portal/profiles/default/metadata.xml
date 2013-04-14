@@ -4,6 +4,8 @@
   <dependencies>
     <!-- dependency>profile-brasil.gov.temas:default</dependency -->
     <dependency>profile-brasil.gov.barra:default</dependency>
+    <dependency>profile-brasil.gov.vcge.at:default</dependency>
+    <dependency>profile-brasil.gov.vcge.dx:default</dependency>
     <dependency>profile-collective.cover:default</dependency>
     <dependency>profile-collective.googleanalytics:default</dependency>
     <dependency>profile-collective.nitf:default</dependency>
