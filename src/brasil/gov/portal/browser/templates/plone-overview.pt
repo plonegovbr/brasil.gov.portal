@@ -13,14 +13,14 @@
   <title>Portal Modelo: Brasil.gov.br</title>
 
   <link rel="stylesheet" type="text/css"
-        href="/++resource++plone-admin-ui.css" />
+        href="++resource++plone-admin-ui.css" />
 
 </head>
 
 
 <body tal:define="sites view/sites">
 <div id="box">
-    <img src="/++resource++plonegovbr.png" width="164" height="70"
+    <img src="++resource++plonegovbr.png" width="164" height="70"
          alt="Iniciativa PloneGov-Br"/>
     <div id="text">
         <h1 i18n:translate="">
