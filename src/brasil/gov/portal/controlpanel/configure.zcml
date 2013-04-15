@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+
+  <adapter factory=".socialnetworks.SocialNetworksPanelAdapter" />
+
+  <browser:page
+    name="brasil.gov.portal-social"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".socialnetworks.SocialNetworksControlPanel"
+    layer="brasil.gov.portal.interfaces.IBrasilGov"
+    permission="cmf.ManagePortal"
+    />
+
+</configure>

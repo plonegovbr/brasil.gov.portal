@@ -33,4 +33,7 @@
       <element value="Image"/>
     </property>
   </object>
+  <object name="brasil_gov" meta_type="Plone Property Sheet">
+      <property name="social_networks" type="lines" />
+  </object>
 </object>
