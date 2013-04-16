@@ -1,0 +1,17 @@
+<tal:servicos tal:define="available view/available"
+     tal:condition="available"
+     i18n:domain="brasil.gov.portal">
+    <p class="hiddenStructure">Serviços</p>
+
+    <ul id="portal-servicos"
+        ><tal:tabs tal:repeat="tab view/servicos"
+        ><li tal:define="tid tab/getId"
+             tal:attributes="id string:portalservicos-${tid};
+                             class string:portalservicos-item;"
+            ><a href=""
+               tal:content="tab/Title"
+               tal:attributes="href tab/getURL;
+                               title tab/Title|nothing;">
+            Tab Name
+            </a></li></tal:tabs></ul>
+</tal:servicos>
