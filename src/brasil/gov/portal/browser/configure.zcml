@@ -36,6 +36,13 @@
 
   <!-- Viewlets -->
   <browser:viewlet
+      name="brasil.gov.portal.servicos"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.ServicosViewlet"
+      permission="zope2.View"
+      />
+
+  <browser:viewlet
       name="brasil.gov.portal.redessociais"
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
       class=".viewlets.RedesSociaisViewlet"
