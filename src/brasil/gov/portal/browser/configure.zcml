@@ -34,4 +34,12 @@
       template="templates/plone-overview.pt"
       />
 
+  <!-- Viewlets -->
+  <browser:viewlet
+      name="brasil.gov.portal.redessociais"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.RedesSociaisViewlet"
+      permission="zope2.View"
+      />
+
 </configure>

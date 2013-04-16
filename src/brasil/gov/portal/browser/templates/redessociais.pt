@@ -1,0 +1,18 @@
+<tal:redes tal:define="available view/available"
+     tal:condition="available"
+     i18n:domain="brasil.gov.portal">
+    <p class="hiddenStructure">Redes Sociais</p>
+
+    <ul id="portal-redes"
+        ><tal:rede tal:repeat="tab view/redes"
+        ><li tal:define="tid tab/site"
+             tal:attributes="id string:portalredes-${tid};
+                             class string:portalredes-item;"
+            ><a href=""
+               tal:attributes="href tab/url;
+                               title tab/site|nothing;">
+            <img tal:attributes="src tab/icon;
+                                 alt tab/site" 
+                src="img/icone-facebook.gif" alt="Facebook" />
+            </a></li></tal:rede></ul>
+</tal:redes>
