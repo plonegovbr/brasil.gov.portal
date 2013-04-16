@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <object>
-  <hidden manager="plone.portalheader" skinname="Plone Default">
+  <hidden manager="plone.portalheader" skinname="*">
     <viewlet name="plone.global_sections" />
   </hidden>
+  <order manager="plone.portalheader" skinname="*">
+    <viewlet name="brasil.gov.portal.redessociais" after="brasil.gov.portal.servicos"/>    
+  </order>  
 </object>
