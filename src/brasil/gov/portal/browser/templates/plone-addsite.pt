@@ -111,7 +111,7 @@
       </tal:baseprofile>
 
       <tal:extensionprofiles condition="extension_profiles">
-        <fieldset id="add-on-list">
+        <fieldset id="add-on-list" style="display:none;">
           <legend>
              Extensões ao site
           </legend>
