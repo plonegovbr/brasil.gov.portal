@@ -25,6 +25,10 @@
       <element>collective.nitf.content</element>
       <element>collective.polls.poll</element>
       <element>Collection</element>
+      <element>FormFolder</element>
+      <element>Image</element>
+      <element>Document</element>
+      <element>Link</element>
     </value>
   </record>
 
