@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+from brasil.gov.portal.config import REDES
 from plone.app.controlpanel.form import ControlPanelForm
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
@@ -16,10 +17,9 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 
 networks = SimpleVocabulary(
-    [SimpleTerm(value=u'facebook', title=_(u'Facebook')),
-     SimpleTerm(value=u'twitter', title=_(u'Twitter')),
-     SimpleTerm(value=u'youtube', title=_(u'YouTube')),
-     SimpleTerm(value=u'flickr', title=_(u'Flickr'))])
+    [SimpleTerm(value=rede['id'], title=_(rede['title']))
+     for rede in REDES]
+)
 
 
 class ISocialNetworksPair(Interface):

@@ -5,6 +5,25 @@ from Products.CMFPlone import interfaces as st_interfaces
 
 PROJECTNAME = 'brasil.gov.portal'
 
+REDES = [
+    {'id': 'facebook',
+     'title': 'Facebook',
+     'icon': '++theme++verde/img/icone-facebook.gif',
+     'url': 'http://facebook.com/%s'},
+    {'id': 'twitter',
+     'title': 'Twitter',
+     'icon': '++theme++verde/img/icone-twitter.gif',
+     'url': 'https://twitter.com/%s'},
+    {'id': 'youtube',
+     'title': 'YouTube',
+     'icon': '++theme++verde/img/icone-youtube.gif',
+     'url': 'http://youtube.com/%s'},
+    {'id': 'flickr',
+     'title': 'Flickr',
+     'icon': '++theme++verde/img/icone-flickr.gif',
+     'url': 'http://flickr.com/%s'},
+]
+
 
 DEPS = [
     'archetypes.querywidget',
