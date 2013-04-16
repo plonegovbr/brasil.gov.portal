@@ -52,7 +52,9 @@ class AddPloneSite(AddPloneSiteView):
         submitted = form.get('form.submitted', False)
         if submitted:
             extension_ids = form.get('extension_ids', ())
+            # Criamos com conteúdo inicial
             extension_ids.insert(0, 'brasil.gov.portal:default')
+            extension_ids.insert(1, 'brasil.gov.portal:initcontent')
             site_id = form.get('site_id', 'Plone')
             site = addPloneSite(
                 context, site_id,
