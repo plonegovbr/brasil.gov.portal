@@ -3,11 +3,14 @@
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from plone.browserlayer.utils import registered_layers
 
 import unittest
 
+PROFILE_ID = 'brasil.gov.portal:default'
+
 DEPENDENCIES = [
-    #'brasil.gov.temas',
+    'brasil.gov.temas',
     'collective.cover',
     'collective.googleanalytics',
     'collective.nitf',
@@ -25,6 +28,18 @@ class InstallTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.qi = self.portal['portal_quickinstaller']
+        self.st = self.portal['portal_setup']
+
+    def test_browser_layer(self):
+        layers = [l.getName() for l in registered_layers()]
+        self.assertTrue('IBrasilGov' in layers,
+                        'add-on layer was not installed')
+
+    def test_gs_version(self):
+        setup = self.st
+        self.assertEquals(setup.getLastVersionForProfile(PROFILE_ID),
+                          (u'1000',),
+                          '%s version mismatch' % PROJECTNAME)
 
     @unittest.expectedFailure
     def test_hidden_dependencies(self):

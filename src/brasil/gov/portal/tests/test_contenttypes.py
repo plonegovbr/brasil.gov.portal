@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from collective.cover.controlpanel import ICoverSettings
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 import unittest
 
@@ -38,6 +41,20 @@ class ContentTypesTestCase(unittest.TestCase):
 
     def test_cover_installed(self):
         self.assertTrue('collective.cover.content' in self.pt.objectIds())
+
+    def test_cover_searchable_types(self):
+        self.registry = getUtility(IRegistry)
+        configs = self.registry.forInterface(ICoverSettings)
+        searchable_content_types = configs.searchable_content_types
+        types = [u'collective.nitf.content',
+                 u'collective.polls.poll',
+                 u'Collection',
+                 u'FormFolder',
+                 u'Image',
+                 u'Document',
+                 u'Link']
+        for t in types:
+            self.assertTrue(t in searchable_content_types)
 
     def test_poll_installed(self):
         self.assertTrue('collective.polls.poll' in self.pt.objectIds())

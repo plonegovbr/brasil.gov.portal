@@ -29,6 +29,10 @@ class AddonsSettingsTestCase(unittest.TestCase):
             u'collective.nitf.content',
             u'collective.polls.poll',
             u'Collection',
+            u'FormFolder',
+            u'Image',
+            u'Document',
+            u'Link'
         ]
         self.assertListEqual(settings.searchable_content_types, allowed_types)
 
