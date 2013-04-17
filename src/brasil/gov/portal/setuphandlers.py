@@ -1,10 +1,12 @@
 # -*- coding:utf-8 -*-
+from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from Products.CMFPlone.utils import _createObjectByType
 
 
 def setupPortalContent(p):
-    '''
+    ''' Cria conteudo de exemplo para este portal
     '''
     existing = p.keys()
     language = 'pt_BR'
@@ -16,45 +18,105 @@ def setupPortalContent(p):
 
     # Pasta Assuntos
     if 'assuntos' not in existing:
-        title = 'Assuntos'
-        description = u'Assuntos deste Órgão'
-
-        _createObjectByType('Folder', p, id='assuntos',
-                            title=title, description=description)
-
-        folder = p.assuntos
-        folder.setOrdering('unordered')
-        #folder.setConstrainTypesMode(1)
-        # Permitimos preferencialmente outras pastas
-        #folder.setImmediatelyAddableTypes(['Folder'])
-        #folder.setLayout('folder_summary_view')
-        #folder.unmarkCreationFlag()
-        #folder.setLanguage(language)
+        cria_assuntos(p)
 
     # Pasta Sobre
     if 'sobre' not in existing:
-        title = 'Sobre'
-        description = u'Conheça este órgão'
+        cria_sobre(p)
 
-        _createObjectByType('Folder', p, id='sobre',
-                            title=title, description=description)
+    # Pasta Servicos
+    if 'servicos' not in existing:
+        cria_servicos(p)
 
-        folder = p.sobre
-        folder.setOrdering('unordered')
-        #folder.setConstrainTypesMode(1)
-        # Permitimos preferencialmente outras pastas
-        #folder.setImmediatelyAddableTypes(['Folder'])
-        #folder.setLayout('folder_summary_view')
-        #folder.unmarkCreationFlag()
-        #folder.setLanguage(language)
-        # Criar algumas paginas
+    # Pasta Imagens
+    if 'imagens' not in existing:
+        cria_imagens(p)
 
     wftool = getToolByName(p, "portal_workflow")
-    obj_ids = ['sobre', 'assuntos']
+    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens']
     publish_content(wftool, p, obj_ids)
 
 
+def cria_assuntos(portal):
+    title = 'Assuntos'
+    description = u'Assuntos deste Órgão'
+
+    _createObjectByType('Folder', portal, id='assuntos',
+                        title=title, description=description)
+
+    folder = portal.assuntos
+    folder.setOrdering('unordered')
+    #folder.setConstrainTypesMode(1)
+    # Permitimos preferencialmente outras pastas
+    #folder.setImmediatelyAddableTypes(['Folder'])
+    #folder.setLayout('folder_summary_view')
+    #folder.unmarkCreationFlag()
+    #folder.setLanguage(language)
+
+
+def cria_imagens(portal):
+    title = 'Imagens'
+    description = u'Banco de Imagens'
+
+    _createObjectByType('Folder', portal, id='imagens',
+                        title=title, description=description)
+
+    folder = portal.imagens
+    folder.setOrdering('unordered')
+    behavior = ISelectableConstrainTypes(folder)
+    behavior.setConstrainTypesMode(constrains.ENABLED)
+    # Permitimos apenas imagens
+    behavior.setImmediatelyAddableTypes(['Image'])
+    folder.setLayout('folder_summary_view')
+
+
+def cria_sobre(portal):
+    title = 'Sobre'
+    description = u'Conheça este órgão'
+
+    _createObjectByType('Folder', portal, id='sobre',
+                        title=title, description=description)
+
+    folder = portal.sobre
+    folder.setOrdering('unordered')
+    #folder.setConstrainTypesMode(1)
+    # Permitimos preferencialmente outras pastas
+    #folder.setImmediatelyAddableTypes(['Folder'])
+    #folder.setLayout('folder_summary_view')
+    #folder.unmarkCreationFlag()
+    #folder.setLanguage(language)
+    # Criar algumas paginas
+
+
+def cria_servicos(portal):
+    title = 'Serviços'
+    description = u'Serviços deste órgão'
+
+    _createObjectByType('Folder', portal, id='servicos',
+                        title=title, description=description)
+
+    folder = portal.servicos
+    behavior = ISelectableConstrainTypes(folder)
+    behavior.setConstrainTypesMode(constrains.ENABLED)
+    # Permitimos apenas links
+    behavior.setImmediatelyAddableTypes(['Link'])
+    folder.setLayout('folder_summary_view')
+    # Criar links
+    links = [
+        ('ouvidoria', 'Ouvidoria', '${portal_url}/ouvidoria'),
+        ('central-servicos', 'Central de Serviços', '${portal_url}/servicos'),
+    ]
+    for link in links:
+        id, title, url = link
+        _createObjectByType('Link', folder, id=id,
+                            title=title, url=url)
+    publish_content(None, folder, [i[0] for i in links])
+    return folder.getId()
+
+
 def publish_content(wftool, folder, obj_ids):
+    if not wftool:
+        wftool = getToolByName(folder, "portal_workflow")
     for oId in obj_ids:
         o = folder[oId]
         if wftool.getInfoFor(o, 'review_state') != 'published':
