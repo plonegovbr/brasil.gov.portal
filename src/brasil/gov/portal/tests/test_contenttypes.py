@@ -58,3 +58,34 @@ class ContentTypesTestCase(unittest.TestCase):
 
     def test_poll_installed(self):
         self.assertTrue('collective.polls.poll' in self.pt.objectIds())
+
+    def test_content_behavior_related_items(self):
+        types = ['Collection',
+                 'Document',
+                 'Event',
+                 'File',
+                 'Folder',
+                 'Image',
+                 'collective.nitf.content',
+                 'collective.polls.poll']
+        for t in types:
+            fti = self.pt[t]
+            self.assertTrue('plone.app.relationfield.behavior.IRelatedItems' in
+                            fti.behaviors,
+                            'Tipo %s nao permite conteudo relacionado' % t)
+
+    def test_content_behavior_vcge(self):
+        types = ['Collection',
+                 'Document',
+                 'Event',
+                 'File',
+                 'Folder',
+                 'Image',
+                 'Link',
+                 'collective.nitf.content',
+                 'collective.polls.poll']
+        for t in types:
+            fti = self.pt[t]
+            self.assertTrue('brasil.gov.vcge.dx.behaviors.IVCGE' in
+                            fti.behaviors,
+                            'Tipo %s nao suporta o VCGE' % t)
