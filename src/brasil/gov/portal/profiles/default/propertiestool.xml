@@ -20,6 +20,7 @@
       <element value="sc.embedder"/>
       <element value="Topic"/>
     </property>
+    <property name="icon_visibility" type="string">disabled</property>
   </object>
   <object name="sc_social_likes_properties" meta_type="Plone Property Sheet">
     <property name="enabled_portal_types" type="lines" purge="True">
