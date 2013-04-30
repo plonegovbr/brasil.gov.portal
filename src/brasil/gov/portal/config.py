@@ -8,19 +8,19 @@ PROJECTNAME = 'brasil.gov.portal'
 REDES = [
     {'id': 'facebook',
      'title': 'Facebook',
-     'icon': '++theme++verde/img/icone-facebook.gif',
+     'icon': '++theme++verde/img/icone-facebook.png',
      'url': 'http://facebook.com/%s'},
     {'id': 'twitter',
      'title': 'Twitter',
-     'icon': '++theme++verde/img/icone-twitter.gif',
+     'icon': '++theme++verde/img/icone-twitter.png',
      'url': 'https://twitter.com/%s'},
     {'id': 'youtube',
      'title': 'YouTube',
-     'icon': '++theme++verde/img/icone-youtube.gif',
+     'icon': '++theme++verde/img/icone-youtube.png',
      'url': 'http://youtube.com/%s'},
     {'id': 'flickr',
      'title': 'Flickr',
-     'icon': '++theme++verde/img/icone-flickr.gif',
+     'icon': '++theme++verde/img/icone-flickr.png',
      'url': 'http://flickr.com/%s'},
 ]
 

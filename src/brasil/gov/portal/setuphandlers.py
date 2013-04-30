@@ -14,7 +14,7 @@ def setupPortalContent(p):
     # Pagina Inicial
     # TODO -- Cover
     if 'front-page' not in existing:
-        pass
+        cria_capa(p)
 
     # Pasta Assuntos
     if 'assuntos' not in existing:
@@ -35,6 +35,10 @@ def setupPortalContent(p):
     wftool = getToolByName(p, "portal_workflow")
     obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens']
     publish_content(wftool, p, obj_ids)
+
+
+def cria_capa(portal):
+    pass
 
 
 def cria_assuntos(portal):
