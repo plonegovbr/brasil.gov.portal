@@ -3,6 +3,7 @@ from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from Products.CMFPlone.utils import _createObjectByType
+#from plone.uuid.interfaces import IUUID
 
 
 def setupPortalContent(p):
@@ -32,8 +33,12 @@ def setupPortalContent(p):
     if 'imagens' not in existing:
         cria_imagens(p)
 
+    # Colecao de Ultimas noticias
+    if 'noticias' not in existing:
+        cria_ultimas_noticias(p)
+
     wftool = getToolByName(p, "portal_workflow")
-    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens']
+    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens', 'noticias']
     publish_content(wftool, p, obj_ids)
 
 
@@ -116,6 +121,38 @@ def cria_servicos(portal):
                             title=title, url=url)
     publish_content(None, folder, [i[0] for i in links])
     return folder.getId()
+
+
+def cria_ultimas_noticias(portal):
+    oId = 'noticias'
+    title = u'Últimas Notícias'
+    description = u'Últimas notícias publicadas neste site'
+    _createObjectByType('Collection', portal,
+                        id=oId, title=title,
+                        description=description)
+    colecao = portal[oId]
+    colecao.sort_on = u'effective'
+    colecao.reverse_sort = True
+    #: Query by Type and Review State
+    colecao.query = [
+        {'i': u'portal_type',
+         'o': u'plone.app.querystring.operation.selection.is',
+         'v': [u'collective.nitf.content'],
+         },
+        {'i': u'review_state',
+         'o': u'plone.app.querystring.operation.selection.is',
+         'v': [u'published'],
+         },
+    ]
+    colecao.setLayout('summary_view')
+#    uid = IUUID(colecao)
+#    id_coluna = '++contextportlets++plone.leftcolumn'
+#    mapping = portal.restrictedTraverse(id_coluna)
+#    # Nosso portlet e o primeiro
+#    assignment = mapping[0]
+#    assignment.text = u'''
+#    <a class="internal-link" href="resolveuid/%s"
+#       target="_self" title="">Últimas Notícias</a>''' % uid
 
 
 def publish_content(wftool, folder, obj_ids):
