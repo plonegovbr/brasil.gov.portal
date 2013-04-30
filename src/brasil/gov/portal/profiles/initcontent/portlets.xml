@@ -1,6 +1,17 @@
 <?xml version="1.0"?>
 <portlets>
-  <assignment name="assuntos" category="context" key="/"
+<!--
+ <assignment name="portlet_static" category="context" key="/"
+    manager="plone.leftcolumn" type="plone.portlet.static.Static"
+    visible="True">
+  <property name="text">foo</property>
+  <property name="more_url"/>
+  <property name="omit_border">False</property>
+  <property name="header"/>
+  <property name="footer"/>
+ </assignment>
+-->
+ <assignment name="assuntos" category="context" key="/"
     manager="plone.leftcolumn" type="portlets.Navigation" visible="True">
   <property name="topLevel">0</property>
   <property name="currentFolderOnly">False</property>
