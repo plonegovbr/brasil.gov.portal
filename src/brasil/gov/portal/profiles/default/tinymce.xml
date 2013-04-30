@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<object>
+ <resourcetypes>
+  <link_using_uids value="True"/>
+  <allow_captioned_images value="False"/>
+  <rooted value="False"/>
+  <linkable>
+   <element value="Collection"/>
+   <element value="collective.nitf.content"/>
+   <element value="collective.polls.poll"/>
+   <element value="Document"/>
+   <element value="Event"/>
+   <element value="File"/>
+   <element value="Folder"/>
+   <element value="Form Folder"/>
+   <element value="Image"/>
+  </linkable>
+  <containsobjects>
+   <element value="collective.nitf.content"/>
+   <element value="Folder"/>
+   <element value="Plone Site"/>
+  </containsobjects>
+  <containsanchors>
+   <element value="collective.nitf.content"/>
+   <element value="Document"/>
+   <element value="Event"/>
+  </containsanchors>
+ </resourcetypes>
+</object>
