@@ -14,7 +14,7 @@ long_description = open("README.rst").read() + "\n" + \
 setup(
     name='brasil.gov.portal',
     version=version,
-    description="Portal Modelo para o Governo Federal do Brasil",
+    description="Implementação Modelo da Identidade Digital de Governo",
     long_description=long_description,
     classifiers=[
         "Development Status :: 1 - Alpha",
@@ -33,7 +33,7 @@ setup(
         "Topic :: Multimedia",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    keywords='plone .gov.br portal modelo',
+    keywords='plone .gov.br identidade_digital egov',
     author='Simples Consultoria',
     author_email='products@simplesconsultoria.com.br',
     url='https://github.com/plonegovbr/brasil.gov.portal',

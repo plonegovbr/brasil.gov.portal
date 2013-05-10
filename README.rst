@@ -1,6 +1,6 @@
-**************************************
-Brasil.gov.br: Portal Modelo
-**************************************
+****************************************************************************
+Brasil.gov.br: Identidade Digital do Governo (Implementação Modelo)
+****************************************************************************
 
 .. contents:: Conteúdo
    :depth: 2
@@ -8,8 +8,9 @@ Brasil.gov.br: Portal Modelo
 Introdução
 -----------
 
-Este pacote provê configurações base para o Portal Modelo do Governo Federal
-para uso em sites Plone do Governo da República Federativa do Brasil.
+Este pacote provê configurações base para o Implementação Modelo da
+Identidade Digital de Governo, para uso em sites Plone do Governo da República 
+Federativa do Brasil.
 
 Requisitos
 ------------
