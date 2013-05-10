@@ -4,6 +4,7 @@ from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import FunctionalTesting
+from plone.testing import z2
 
 
 class Fixture(PloneSandboxLayer):
@@ -27,4 +28,8 @@ INTEGRATION_TESTING = IntegrationTesting(
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='brasil.gov.portal:Functional',
+)
+ACCEPTANCE_TESTING = FunctionalTesting(
+    bases=(FIXTURE, z2.ZSERVER_FIXTURE),
+    name='brasil.gov.portal:Acceptance',
 )

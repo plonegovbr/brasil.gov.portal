@@ -43,6 +43,13 @@ def setupPortalContent(p):
 
 
 def cria_capa(portal):
+    #title = u'Página Inicial'
+    #description = u''
+
+    #_createObjectByType('collective.cover.content',
+    #                    portal, id='front-page',
+    #                    title=title, description=description)
+    #capa = portal['front-page']
     pass
 
 
