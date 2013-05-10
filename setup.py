@@ -58,6 +58,7 @@ setup(
         'plone.app.contenttypes',
         'plone.app.upgrade',
         'Products.CMFPlone',
+        'Products.Doormat',
         'Products.PloneFormGen',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',
