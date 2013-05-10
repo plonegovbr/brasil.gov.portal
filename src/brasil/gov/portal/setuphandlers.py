@@ -17,6 +17,11 @@ def setupPortalContent(p):
     if 'front-page' not in existing:
         cria_capa(p)
 
+    # Destaques
+    # TODO -- Cover
+    if 'destaques' not in existing:
+        cria_capa(p)
+
     # Pasta Assuntos
     if 'assuntos' not in existing:
         cria_assuntos(p)
@@ -50,6 +55,17 @@ def cria_capa(portal):
     #                    portal, id='front-page',
     #                    title=title, description=description)
     #capa = portal['front-page']
+    pass
+
+
+def cria_destaques(portal):
+    #title = u'Destaques do Portal'
+    #description = u'Listagem de destaques do portal'
+
+    #_createObjectByType('collective.cover.content',
+    #                    portal, id='destaques',
+    #                    title=title, description=description)
+    #destaques = portal['destaques']
     pass
 
 
