@@ -16,8 +16,31 @@
     </field>
     <value purge="true">
       <element key="Empty layout">[{"type": "row", "class": "row", "children": [{"type": "group", "data":{"column-size":16, "layout-type":"column"}, "roles": ["Manager"]}]}]</element>
+      <element key="Destaques">[{"type": "row", "children": [{"data": {"layout-type": "column", "column-size": 16}, "type": "group", "children": [{"tile-type": "em_destaque", "type": "tile", "id": "em_destaque_tile_destaque"}], "roles": ["Manager"]}]}]</element>
     </value>
   </record>
+
+  <record field="available_tiles"
+          interface="collective.cover.controlpanel.ICoverSettings"
+          name="collective.cover.controlpanel.ICoverSettings.available_tiles">
+    <value purge="false">
+        <element>collective.cover.basic</element>
+        <element>collective.cover.carousel</element>
+        <element>collective.cover.collection</element>
+        <element>collective.cover.contentbody</element>
+        <element>collective.cover.embed</element>
+        <element>collective.cover.file</element>
+        <element>collective.cover.image</element>
+        <element>collective.cover.link</element>
+        <element>collective.cover.list</element>
+        <element>collective.cover.pfg</element>
+        <element>collective.cover.richtext</element>
+        <element>em_destaque</element>
+        <element>poll</element>
+        <element>standaloneheader</element>
+    </value>
+  </record>
+
   <record field="searchable_content_types"
           interface="collective.cover.controlpanel.ICoverSettings"
           name="collective.cover.controlpanel.ICoverSettings.searchable_content_types">
