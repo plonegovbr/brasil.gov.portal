@@ -36,8 +36,8 @@
   </object>
   <object name="brasil_gov" meta_type="Plone Property Sheet">
       <property name="social_networks" type="lines">
-          <element value="facebook|brasil.gov.br"/>
           <element value="twitter|portalbrasil"/>
+          <element value="youtube|canalportalbrasil"/>
       </property>
   </object>
 </object>
