@@ -3,10 +3,7 @@ from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from Products.CMFPlone.utils import _createObjectByType
-from zope.event import notify
-from zope.lifecycleevent import ObjectAddedEvent
 #from plone.uuid.interfaces import IUUID
-import json
 
 
 def setupPortalContent(p):
@@ -18,6 +15,11 @@ def setupPortalContent(p):
     # Pagina Inicial
     # TODO -- Cover
     if 'front-page' not in existing:
+        cria_capa(p)
+
+    # Destaques
+    # TODO -- Cover
+    if 'destaques' not in existing:
         cria_capa(p)
 
     # Pasta Assuntos
@@ -44,14 +46,8 @@ def setupPortalContent(p):
     if 'noticias' not in existing:
         cria_ultimas_noticias(p)
 
-    # Destaques
-    # TODO -- Cover
-    if 'destaques' not in existing:
-        cria_destaques(p)
-
     wftool = getToolByName(p, "portal_workflow")
-    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens', 'noticias',
-               'destaques', 'rodape']
+    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens', 'noticias']
     publish_content(wftool, p, obj_ids)
 
 
@@ -67,21 +63,14 @@ def cria_capa(portal):
 
 
 def cria_destaques(portal):
-    title = u'Destaques do Portal'
-    description = u'Listagem de destaques do portal'
+    #title = u'Destaques do Portal'
+    #description = u'Listagem de destaques do portal'
 
-    _createObjectByType('collective.cover.content',
-                        portal, id='destaques',
-                        title=title, description=description)
-    destaques = portal['destaques']
-    destaques.template_layout = 'Destaques'
-    notify(ObjectAddedEvent(destaques))
-    tile_id = json.loads(destaques.cover_layout)[0]['children'][0]['children'][0]['id']
-    tile = destaques.restrictedTraverse(str('@@em_destaque/%s' % tile_id))
-    for b in portal.portal_catalog.searchResults(portal_type='Link'):
-        obj = b.getObject()
-        tile.populate_with_object(obj)
-    import pdb; pdb.set_trace( )
+    #_createObjectByType('collective.cover.content',
+    #                    portal, id='destaques',
+    #                    title=title, description=description)
+    #destaques = portal['destaques']
+    pass
 
 
 def cria_rodape(portal):
