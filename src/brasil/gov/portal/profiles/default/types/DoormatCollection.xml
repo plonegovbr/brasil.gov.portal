@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<object name="DoormatCollection">
+ <property name="global_allow">False</property>
+</object>

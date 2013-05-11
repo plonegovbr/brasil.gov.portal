@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="DoormatSection">
+ <property name="global_allow">False</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types">
+   <element value="Link"/>
+   <element value="DoormatCollection"/>
+ </property>
+</object>

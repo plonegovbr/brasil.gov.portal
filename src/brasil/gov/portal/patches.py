@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 from brasil.gov.portal.config import PROJECTNAME
+from plone.app.contenttypes.content import Link
 from plone.outputfilters.filters import resolveuid_and_caption as base
 
 import logging
@@ -23,5 +24,16 @@ def outputfilters():
     logger.info('Patched ResolveUIDAndCaptionFilter')
 
 
+def link():
+    def getRemoteUrl(self):
+        return self.remoteUrl
+
+    setattr(Link,
+            'getRemoteUrl',
+            getRemoteUrl)
+    logger.info('Patched Link content type')
+
+
 def run():
     outputfilters()
+    link()

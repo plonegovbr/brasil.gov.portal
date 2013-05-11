@@ -30,6 +30,10 @@ def setupPortalContent(p):
     if 'sobre' not in existing:
         cria_sobre(p)
 
+    # Rodape do site
+    if 'rodape' not in existing:
+        cria_rodape(p)
+
     # Pasta Servicos
     if 'servicos' not in existing:
         cria_servicos(p)
@@ -67,6 +71,93 @@ def cria_destaques(portal):
     #                    title=title, description=description)
     #destaques = portal['destaques']
     pass
+
+
+def cria_rodape(portal):
+    title = u'Rodapé'
+    description = u'Rodapé do Portal'
+
+    portal.portal_types['Doormat'].global_allow = True
+
+    _createObjectByType('Doormat',
+                        portal, id='rodape',
+                        title=title, description=description)
+
+    portal.portal_types['Doormat'].global_allow = False
+    rodape = portal['rodape']
+    rodape.setExcludeFromNav(True)
+    rodape.setShowTitle(False)
+    colunas = [
+        ('coluna-1', u'Primeira coluna'),
+        ('coluna-2', u'Segunda coluna'),
+        ('coluna-3', u'Terceira coluna'),
+        ('coluna-4', u'Quarta coluna'),
+    ]
+    for col_id, col_title in colunas:
+        _createObjectByType('DoormatColumn',
+                            rodape, id=col_id,
+                            title=col_title,
+                            description=col_title)
+        coluna = rodape[col_id]
+        coluna.setExcludeFromNav(True)
+        coluna.setShowTitle(False)
+
+    secoes = [
+        ('coluna-1', 'assuntos', u'Assuntos'),
+        ('coluna-2', 'sobre', u'Sobre'),
+        ('coluna-3', 'falem', u'Falem Conosco'),
+        ('coluna-4', 'redes-sociais', u'Redes Sociais'),
+        ('coluna-4', 'mapa', u'Mapa do Site'),
+        ('coluna-4', 'rss', u'RSS'),
+    ]
+    for col_id, secao_id, secao_title in secoes:
+        _createObjectByType('DoormatSection',
+                            rodape[col_id],
+                            id=secao_id,
+                            title=secao_title,
+                            description=secao_title)
+        secao = rodape[col_id][secao_id]
+        secao.setExcludeFromNav(True)
+        secao.setShowTitle(True)
+
+    assuntos = portal['assuntos']
+    assuntos_doormat = rodape['coluna-1']['assuntos']
+    for assunto in assuntos.objectIds():
+        obj = assuntos[assunto]
+        _createObjectByType('Link',
+                            assuntos_doormat,
+                            id=obj.getId(),
+                            title=obj.Title(),
+                            description=obj.Description(),
+                            url='${portal_url}/assuntos/%s' % obj.getId())
+
+    sobre = portal['sobre']
+    sobre_doormat = rodape['coluna-2']['sobre']
+    for item in sobre.objectIds():
+        obj = sobre[item]
+        _createObjectByType('Link',
+                            sobre_doormat,
+                            id=obj.getId(),
+                            title=obj.Title(),
+                            description=obj.Description(),
+                            url='${portal_url}/sobre/%s' % obj.getId())
+
+    items = [
+        ('coluna-3/falem', 'contact-info',
+         u'Formulário de Contato', '${portal_url}/contact-info'),
+        ('coluna-4/redes-sociais', 'twitter',
+         u'Twitter', 'http://twitter.com/portalbrasil'),
+        ('coluna-4/redes-sociais', 'youtube',
+         u'YouTube', 'http://www.youtube.com/canalportalbrasil'),
+    ]
+    for path, item_id, item_title, item_url in items:
+        secao = rodape.unrestrictedTraverse(path)
+        _createObjectByType('Link',
+                            secao,
+                            id=item_id,
+                            title=item_title,
+                            description=item_title,
+                            url=item_url)
 
 
 def cria_assuntos(portal):
