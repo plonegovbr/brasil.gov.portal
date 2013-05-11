@@ -3,7 +3,9 @@ from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from Products.CMFPlone.utils import _createObjectByType
-#from plone.uuid.interfaces import IUUID
+from zope.event import notify
+from zope.lifecycleevent import ObjectAddedEvent
+import json
 
 
 def setupPortalContent(p):
@@ -63,14 +65,20 @@ def cria_capa(portal):
 
 
 def cria_destaques(portal):
-    #title = u'Destaques do Portal'
-    #description = u'Listagem de destaques do portal'
-
-    #_createObjectByType('collective.cover.content',
-    #                    portal, id='destaques',
-    #                    title=title, description=description)
-    #destaques = portal['destaques']
-    pass
+    title = u'Destaques do Portal'
+    description = u'Listagem de destaques do portal'
+    _createObjectByType('collective.cover.content',
+                        portal, id='destaques',
+                        title=title, description=description)
+    destaques = portal['destaques']
+    destaques.template_layout = 'Destaques'
+    notify(ObjectAddedEvent(destaques))
+    cover_data = json.loads(destaques.cover_layout)
+    tile_id = cover_data[0]['children'][0]['children'][0]['id']
+    tile = destaques.restrictedTraverse(str('@@em_destaque/%s' % tile_id))
+    for b in portal.portal_catalog.searchResults(portal_type='Link'):
+        obj = b.getObject()
+        tile.populate_with_object(obj)
 
 
 def cria_rodape(portal):
