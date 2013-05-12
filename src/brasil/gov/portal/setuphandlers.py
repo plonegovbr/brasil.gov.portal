@@ -19,11 +19,6 @@ def setupPortalContent(p):
     if 'front-page' not in existing:
         cria_capa(p)
 
-    # Destaques
-    # TODO -- Cover
-    if 'destaques' not in existing:
-        cria_capa(p)
-
     # Pasta Assuntos
     if 'assuntos' not in existing:
         cria_assuntos(p)
@@ -48,8 +43,14 @@ def setupPortalContent(p):
     if 'noticias' not in existing:
         cria_ultimas_noticias(p)
 
+    # Destaques
+    # TODO -- Cover
+    if 'destaques' not in existing:
+        cria_destaques(p)
+
     wftool = getToolByName(p, "portal_workflow")
-    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens', 'noticias']
+    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
+               'noticias', 'rodape', 'destaques']
     publish_content(wftool, p, obj_ids)
 
 
@@ -76,7 +77,8 @@ def cria_destaques(portal):
     cover_data = json.loads(destaques.cover_layout)
     tile_id = cover_data[0]['children'][0]['children'][0]['id']
     tile = destaques.restrictedTraverse(str('@@em_destaque/%s' % tile_id))
-    for b in portal.portal_catalog.searchResults(portal_type='Link'):
+    for b in portal.portal_catalog.searchResults(portal_type='Link',
+                                                 sort_limit=5):
         obj = b.getObject()
         tile.populate_with_object(obj)
 
