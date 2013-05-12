@@ -6,7 +6,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.portal">
 
-  <includeDependencies package="." />
+  <include file="dependencies.zcml" />
 
   <include 
       zcml:condition="have plone-4"

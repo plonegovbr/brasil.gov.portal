@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="brasil.gov.portal">
+
+  <include package="brasil.gov.barra" />
+  <include package="brasil.gov.temas" />
+  <include package="brasil.gov.tiles" />
+  <include package="brasil.gov.vcge" />
+  <include package="collective.cover" />
+  <include package="collective.googleanalytics" />
+  <include package="collective.nitf" />
+  <include package="collective.polls" />
+  <include package="collective.upload" />
+  <include package="plone.app.contenttypes" />
+  <include package="Products.CMFPlone" />
+  <include package="Products.Doormat" />
+  <include package="Products.PloneFormGen" />
+  <include package="sc.contentrules.groupbydate" />
+  <include package="sc.contentrules.layout" />
+  <include package="sc.contentrules.metadata" />
+  <include package="sc.embedder" />
+  <include package="sc.social.like" />
+
+</configure>
