@@ -3,50 +3,20 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="brasil.gov.portal">
 
-  <includeOverrides file="overrides.zcml" />
-
+  <!-- Logo -->
   <browser:resource
       file="plonegovbr.png"
       name="plonegovbr.png"
       />
 
-  <browser:page
-      for="OFS.interfaces.IApplication"
-      name="plone-addsite"
-      class=".admin.AddPloneSite"
-      permission="zope2.ViewManagementScreens"
-      template="templates/plone-addsite.pt"
-      />
+  <!-- Criacao de site -->
+  <include package='.plone' />
 
-  <browser:page
-      for="OFS.Folder.Folder"
-      name="plone-addsite"
-      class=".admin.AddPloneSite"
-      permission="zope2.ViewManagementScreens"
-      template="templates/plone-addsite.pt"
-      />
-
-  <browser:page
-      for="OFS.interfaces.IApplication"
-      name="plone-overview"
-      class=".admin.Overview"
-      permission="zope.Public"
-      template="templates/plone-overview.pt"
-      />
+  <!-- Contraste -->
+  <include package='.contraste' />
 
   <!-- Viewlets -->
-  <browser:viewlet
-      name="brasil.gov.portal.servicos"
-      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-      class=".viewlets.ServicosViewlet"
-      permission="zope2.View"
-      />
+  <include package='.viewlets' />
 
-  <browser:viewlet
-      name="brasil.gov.portal.redessociais"
-      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-      class=".viewlets.RedesSociaisViewlet"
-      permission="zope2.View"
-      />
 
 </configure>
