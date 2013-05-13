@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Scripts para contraste -->
+  <browser:resource
+      file="jquery.cookie.js"
+      name="jquery.cookie.js"
+      />
+
+  <browser:resource
+      file="contraste.js"
+      name="contraste.js"
+      />
+
+</configure>
