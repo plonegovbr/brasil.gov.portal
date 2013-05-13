@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Viewlets -->
+  <browser:viewlet
+      name="brasil.gov.portal.servicos"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".servicos.ServicosViewlet"
+      permission="zope2.View"
+      />
+
+  <browser:viewlet
+      name="brasil.gov.portal.redessociais"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".redes.RedesSociaisViewlet"
+      permission="zope2.View"
+      />
+
+</configure>
