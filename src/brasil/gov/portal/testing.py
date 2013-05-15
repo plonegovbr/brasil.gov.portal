@@ -12,6 +12,9 @@ class Fixture(PloneSandboxLayer):
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
+        # Instala produtos
+        z2.installProduct(app, 'Products.Doormat')
+        z2.installProduct(app, 'Products.PloneFormGen')
         # Load ZCML
         import brasil.gov.portal
         self.loadZCML(package=brasil.gov.portal)
@@ -34,12 +37,6 @@ FUNCTIONAL_TESTING = FunctionalTesting(
 
 
 class AcceptanceFixture(Fixture):
-
-    def setUpZope(self, app, configurationContext):
-        super(AcceptanceFixture, self).setUpZope(app,
-                                                 configurationContext)
-        z2.installProduct(app, 'Products.Doormat')
-        z2.installProduct(app, 'Products.PloneFormGen')
 
     def setUpPloneSite(self, portal):
         super(AcceptanceFixture, self).setUpPloneSite(portal)
