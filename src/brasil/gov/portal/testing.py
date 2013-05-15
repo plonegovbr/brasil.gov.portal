@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import IntegrationTesting
@@ -29,7 +29,28 @@ FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='brasil.gov.portal:Functional',
 )
+
+
+class AcceptanceFixture(Fixture):
+
+    def setUpZope(self, app, configurationContext):
+        super(AcceptanceFixture, self).setUpZope(app,
+                                                 configurationContext)
+        z2.installProduct(app, 'Products.Doormat')
+        z2.installProduct(app, 'Products.PloneFormGen')
+
+    def setUpPloneSite(self, portal):
+        super(AcceptanceFixture, self).setUpPloneSite(portal)
+        self.applyProfile(portal, 'brasil.gov.portal:initcontent')
+        portal.title = 'Portal Brasil'
+        portal.description = u'Secretaria de Comunicação Social'
+
+
+ACCEPTANCE_FIXTURE = AcceptanceFixture()
+
 ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(FIXTURE, z2.ZSERVER_FIXTURE),
+    bases=(AUTOLOGIN_LIBRARY_FIXTURE,
+           ACCEPTANCE_FIXTURE,
+           z2.ZSERVER_FIXTURE),
     name='brasil.gov.portal:Acceptance',
 )
