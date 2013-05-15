@@ -28,19 +28,19 @@ class InitContentTestCase(unittest.TestCase):
         self.assertTrue('assuntos' in self.portal.objectIds(),
                         u'Pasta Assuntos não disponível')
         pasta = self.portal['assuntos']
-        self.assertEquals(u'Assuntos', pasta.title,
-                          u'Título não aplicado')
-        self.assertEquals(self.wt.getInfoFor(pasta, 'review_state'),
-                          'published')
+        self.assertEqual(u'Assuntos', pasta.title,
+                         u'Título não aplicado')
+        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
+                         'published')
 
     def test_imagens_available(self):
         self.assertTrue('imagens' in self.portal.objectIds(),
                         u'Pasta Imagens não disponível')
         pasta = self.portal['imagens']
-        self.assertEquals(u'Imagens', pasta.title,
-                          u'Título não aplicado')
-        self.assertEquals(self.wt.getInfoFor(pasta, 'review_state'),
-                          'published')
+        self.assertEqual(u'Imagens', pasta.title,
+                         u'Título não aplicado')
+        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
+                         'published')
 
     def test_imagens_constrains(self):
         pasta = self.portal['imagens']
@@ -52,10 +52,10 @@ class InitContentTestCase(unittest.TestCase):
         self.assertTrue('servicos' in self.portal.objectIds(),
                         u'Pasta Servicos não disponível')
         pasta = self.portal['servicos']
-        self.assertEquals(u'Serviços', pasta.title,
-                          u'Título não aplicado')
-        self.assertEquals(self.wt.getInfoFor(pasta, 'review_state'),
-                          'published')
+        self.assertEqual(u'Serviços', pasta.title,
+                         u'Título não aplicado')
+        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
+                         'published')
 
     def test_servicos_constrains(self):
         pasta = self.portal['servicos']
@@ -67,10 +67,10 @@ class InitContentTestCase(unittest.TestCase):
         self.assertTrue('sobre' in self.portal.objectIds(),
                         u'Pasta Sobre não disponível')
         pasta = self.portal['sobre']
-        self.assertEquals(u'Sobre', pasta.title,
-                          u'Título não aplicado')
-        self.assertEquals(self.wt.getInfoFor(pasta, 'review_state'),
-                          'published')
+        self.assertEqual(u'Sobre', pasta.title,
+                         u'Título não aplicado')
+        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
+                         'published')
 
     def test_default_portlets(self):
         # Os portlets estao configurados corretamente?
@@ -78,7 +78,7 @@ class InitContentTestCase(unittest.TestCase):
         # Coluna da esquerda
         coluna = '++contextportlets++plone.leftcolumn'
         mapping = portal.restrictedTraverse(coluna)
-        self.assertEquals(len(mapping.keys()), 2)
+        self.assertEqual(len(mapping.keys()), 2)
         self.assertTrue('assuntos' in mapping.keys())
         self.assertTrue('sobre' in mapping.keys())
 
@@ -88,9 +88,9 @@ class InitContentTestCase(unittest.TestCase):
         coluna = '++contextportlets++plone.leftcolumn'
         mapping = portal.restrictedTraverse(coluna)
         # Assuntos
-        self.assertEquals(mapping['assuntos'].root, u'/assuntos')
-        self.assertEquals(mapping['assuntos'].name, u'Assuntos')
-        self.assertEquals(mapping['assuntos'].currentFolderOnly, False)
+        self.assertEqual(mapping['assuntos'].root, u'/assuntos')
+        self.assertEqual(mapping['assuntos'].name, u'Assuntos')
+        self.assertEqual(mapping['assuntos'].currentFolderOnly, False)
 
     def test_portlet_sobre(self):
         portal = self.portal
@@ -98,9 +98,9 @@ class InitContentTestCase(unittest.TestCase):
         coluna = '++contextportlets++plone.leftcolumn'
         mapping = portal.restrictedTraverse(coluna)
         # Sobre
-        self.assertEquals(mapping['sobre'].root, u'/sobre')
-        self.assertEquals(mapping['sobre'].name, u'Sobre')
-        self.assertEquals(mapping['sobre'].currentFolderOnly, False)
+        self.assertEqual(mapping['sobre'].root, u'/sobre')
+        self.assertEqual(mapping['sobre'].name, u'Sobre')
+        self.assertEqual(mapping['sobre'].currentFolderOnly, False)
 
     def test_tiles_disponiveis(self):
         from brasil.gov.portal.config import TILES

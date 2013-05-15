@@ -37,9 +37,9 @@ class InstallTestCase(unittest.TestCase):
 
     def test_gs_version(self):
         setup = self.st
-        self.assertEquals(setup.getLastVersionForProfile(PROFILE_ID),
-                          (u'1000',),
-                          '%s version mismatch' % PROJECTNAME)
+        self.assertEqual(setup.getLastVersionForProfile(PROFILE_ID),
+                         (u'1000',),
+                         '%s version mismatch' % PROJECTNAME)
 
     @unittest.expectedFailure
     def test_hidden_dependencies(self):
