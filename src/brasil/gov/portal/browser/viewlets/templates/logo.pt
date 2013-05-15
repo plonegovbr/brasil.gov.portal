@@ -1,0 +1,20 @@
+<div id="logo"
+    tal:define="ps nocall:view/portal_state;
+                portal ps/portal;
+                portal_description portal/description">
+
+    <a metal:define-macro="portal_logo"
+       id="portal-logo"
+       title="Home"
+       accesskey="1"
+       tal:attributes="href view/navigation_root_url;
+                       title view/navigation_root_title"
+       i18n:domain="plone"
+       i18n:attributes="title">
+            <span id="portal-title"
+                  tal:content="view/navigation_root_title">Portal Title</span><br />
+            <span 
+                id="portal-description"
+                tal:content="portal_description">Portal Description</span>
+    </a>
+</div>
