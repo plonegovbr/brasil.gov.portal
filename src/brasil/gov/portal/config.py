@@ -24,6 +24,20 @@ REDES = [
      'url': 'http://flickr.com/%s'},
 ]
 
+TILES = ['collective.cover.basic',
+         'collective.cover.carousel',
+         'collective.cover.collection',
+         'collective.cover.contentbody',
+         'collective.cover.embed',
+         'collective.cover.file',
+         'collective.cover.image',
+         'collective.cover.link',
+         'collective.cover.list',
+         'collective.cover.pfg',
+         'collective.cover.richtext',
+         'em_destaque',
+         'poll',
+         'standaloneheader']
 
 DEPS = [
     'archetypes.querywidget',

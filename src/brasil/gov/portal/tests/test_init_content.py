@@ -101,3 +101,12 @@ class InitContentTestCase(unittest.TestCase):
         self.assertEquals(mapping['sobre'].root, u'/sobre')
         self.assertEquals(mapping['sobre'].name, u'Sobre')
         self.assertEquals(mapping['sobre'].currentFolderOnly, False)
+
+    def test_tiles_disponiveis(self):
+        from brasil.gov.portal.config import TILES
+        portal = self.portal
+        registry = portal.portal_registry
+        record = 'collective.cover.controlpanel.ICoverSettings.available_tiles'
+        available_tiles = registry[record]
+        for tile in TILES:
+            self.assertTrue(tile in available_tiles)
