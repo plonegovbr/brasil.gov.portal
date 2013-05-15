@@ -19,6 +19,8 @@ class Fixture(PloneSandboxLayer):
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
         self.applyProfile(portal, 'brasil.gov.portal:default')
+        portal.portal_workflow.setDefaultChain('simple_publication_workflow')
+
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
