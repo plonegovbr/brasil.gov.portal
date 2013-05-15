@@ -50,6 +50,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
             'Image',
             'Link',
             'collective.nitf.content',
+            'collective.polls.poll',
         ]
         self.assertListEqual(types_searched, types_expected)
 

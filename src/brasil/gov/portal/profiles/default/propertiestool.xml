@@ -15,7 +15,12 @@
     <property name="default_charset" type="boolean">utf-8</property>
     <property name="types_not_searched" type="lines" purge="False">
       <element value="collective.cover.content"/>
-      <element value="collective.polls.poll"/>
+      <element value="Doormat"/>
+      <element value="DoormatCollection"/>
+      <element value="DoormatColumn"/>
+      <element value="DoormatMixin"/>
+      <element value="DoormatReference"/>
+      <element value="DoormatSection"/>      
       <element value="News Item"/>
       <element value="sc.embedder"/>
       <element value="Topic"/>
