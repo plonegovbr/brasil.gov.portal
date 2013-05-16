@@ -65,15 +65,27 @@
       </div>
 
       <div class="field">
-        <label for="description" i18n:translate="label_description">Description</label>
+        <label for="orgao" i18n:translate="label_orgao">Órgão</label>
 
         <div class="formHelp" i18n:translate="">
           Nome do Ministério ou da Secretaria ao qual este site está ligado.
         </div>
 
-        <input type="text" name="description"
+        <input type="text" name="orgao"
                size="60"
                value="Nome do Ministério ou da Secretaria" />
+      </div>
+
+      <div class="field">
+        <label for="description" i18n:translate="label_description">Description</label>
+
+        <div class="formHelp" i18n:translate="">
+          Uma breve descrição deste site.
+        </div>
+
+        <input type="text" name="description"
+               size="60"
+               value="Portal do Governo Brasileiro" />
       </div>
 
       <tal:baseprofile condition="python: len(base_profiles) > 1">

@@ -65,6 +65,7 @@ class AddPloneSite(AddPloneSiteView):
                 setup_content=False,
                 default_language='pt-br',
             )
+            site.manage_changeProperties(orgao=form.get('orgao', ''))
             self.request.response.redirect(site.absolute_url())
 
         return self.index()
