@@ -21,13 +21,13 @@ Contraste
 
 Accesskeys
 	Go to  ${PLONE_URL}
-	Capturar tela  accesskeys-base.png
+	Capturar tela visivel  accesskeys-base.png
 	Clicar link  Ir para o conteúdo
-	Capturar tela  accesskeys-02-conteudo.png
+	Capturar tela visivel  accesskeys-02-conteudo.png
 	Clicar link  Ir para a navegação
-	Capturar tela  accesskeys-06-navegacao.png
+	Capturar tela visivel  accesskeys-06-navegacao.png
 	Clicar link  Ir para o rodapé 
-	Capturar tela  accesskeys-09-rodape.png
+	Capturar tela visivel  accesskeys-09-rodape.png
 	Clicar link  Ir para a Busca
 	Pagina deve conter  Resultado da busca
 	Capturar tela  accesskeys-06-busca.png
