@@ -19,11 +19,12 @@ Criar novo site
     Capturar tela  criarsite-01-base.png
     Pagina deve conter  Criar um novo site
     Campo de texto  title  Portal Brasil
-    Campo de texto  description  Presidência da República
+    Campo de texto  orgao  Presidencia da Republica
+    Campo de texto  description  Portal do Governo Brasileiro
     Capturar tela  criarsite-02-preenchido.png
     Clicar botao  Criar site Plone
     Pagina deve conter  Portal Brasil
-    Pagina deve conter  Presid
+    Pagina deve conter  Presidencia da Republica
     Pagina deve conter elemento  portal-logo
     Capturar tela  criarsite-03-sitecriado.png
     Listar rede social  youtube
