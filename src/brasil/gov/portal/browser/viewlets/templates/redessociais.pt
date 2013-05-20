@@ -10,9 +10,9 @@
                              class string:portalredes-item;"
             ><a href=""
                tal:attributes="href tab/url;
-                               title tab/site|nothing;">
+                               title tab/title|nothing;">
             <img tal:attributes="src tab/icon;
-                                 alt tab/site" 
+                                 alt tab/title" 
                 src="img/icone-facebook.gif" alt="Facebook" />
             </a></li></tal:rede></ul>
 </tal:redes>

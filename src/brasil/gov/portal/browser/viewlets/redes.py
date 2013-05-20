@@ -32,6 +32,7 @@ class RedesSociaisViewlet(ViewletBase):
                 k, v = item.split('|')
                 rede_info = redes[k]
                 selected.append({'site': k,
+                                 'title': rede_info['title'],
                                  'info': v,
                                  'icon': '%s/%s' % (portal_url,
                                                     rede_info['icon']),
