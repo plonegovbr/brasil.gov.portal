@@ -60,6 +60,21 @@ class AddonsSettingsTestCase(unittest.TestCase):
         ]
         self.assertListEqual(settings.searchable_content_types, allowed_types)
 
+    def test_collective_cover_styles_settings(self):
+        """ Estilos disponiveis para o collective.cover
+        """
+        settings = self.registry.forInterface(ICoverSettings)
+        expected = [
+            'Azul Claro|azul-claro',
+            'Bege|bege',
+            'Laranja|laranja',
+            'Roxo|roxo',
+            'Verde|verde',
+        ]
+        styles = list(settings.styles)
+        styles.sort()
+        self.assertListEqual(styles, expected)
+
     def test_collective_nitf_available_genres(self):
         """ Genres used portal wide.
         """

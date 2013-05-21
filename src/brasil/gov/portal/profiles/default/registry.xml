@@ -54,6 +54,17 @@
       <element>Link</element>
     </value>
   </record>
+  
+  <!-- estilos do collective.cover -->
+  <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
+    <value>
+      <element>Azul Claro|azul-claro</element>
+      <element>Bege|bege</element>
+      <element>Laranja|laranja</element>
+      <element>Roxo|roxo</element>
+      <element>Verde|verde</element>
+    </value>
+  </record>
 
   <!-- collective.nitf settings -->
   <record name="collective.nitf.controlpanel.INITFSettings.available_sections">
