@@ -4,6 +4,5 @@
    i18n:domain="collective.polls.poll">
   <property name="behaviors" purge="False">
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
-    <element value="plone.app.relationfield.behavior.IRelatedItems" />
   </property>
 </object>
