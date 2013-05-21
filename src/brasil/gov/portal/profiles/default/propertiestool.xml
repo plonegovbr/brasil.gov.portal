@@ -3,12 +3,14 @@
   <object name="navtree_properties" meta_type="Plone Property Sheet">
     <property name="metaTypesNotToList" type="lines">
       <element value="Discussion Item"/>
+      <element value="MPEG Audio File"/>
       <element value="News Item"/>
+      <element value="OGG Audio File"/>
     </property>
   </object>
   <object name="site_properties" meta_type="Plone Property Sheet">
     <property name="localTimeFormat" type="string">%d/%m/%Y</property>
-    <property name="localLongTimeFormat" type="string">%d/%m/%Y %H:%M</property>
+    <property name="localLongTimeFormat" type="string">%d/%m/%Y %Hh%M</property>
     <property name="enable_link_integrity_checks" type="boolean">True</property>
     <property name="enable_livesearch" type="boolean">False</property>
     <property name="default_language" type="boolean">pt-br</property>
