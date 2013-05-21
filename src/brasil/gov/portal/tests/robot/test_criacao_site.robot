@@ -31,3 +31,20 @@ Criar novo site
     Listar rede social  twitter
     Pagina deve exibir Em Destaque
 
+Pasta de Imagens
+    Habilitar autologin como  Manager
+    Definir autologin como  Machado de Assis
+    Ir para  ${PLONE_URL}/imagens
+    Abrir o menu de Adicionar item
+    Apenas o tipo Imagem deve ser listado
+
+
+*** Keywords ***
+
+Apenas o tipo Imagem deve ser listado
+    Element should contain  plone-contentmenu-factories  Image
+    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.event
+    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.folder
+    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.collection
+    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.link
+    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.document

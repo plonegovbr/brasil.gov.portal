@@ -13,7 +13,7 @@ Test Teardown  Fechar todos os navegadores
 *** Test Cases ***
 
 Navegacao no site
-    Go to  ${PLONE_URL}
+    Ir para  ${PLONE_URL}
 	Capturar tela  navegacao-capa.png
 	Pagina deve conter  Portal Brasil
 	Pagina deve conter  Secretaria de Comunica

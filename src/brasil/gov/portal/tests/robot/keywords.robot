@@ -81,3 +81,14 @@ Clicar botao
 Clicar link 
     [Arguments]  ${value}
     Click Link  ${value}
+
+Abrir o menu 
+    [Arguments]  ${elementId}
+
+    Element Should Be Visible  css=dl#${elementId} span
+    Element Should Not Be Visible  css=dl#${elementId} dd.actionMenuContent
+    Click link  css=dl#${elementId} dt.actionMenuHeader a
+    Wait until keyword succeeds  1  5  Element Should Be Visible  css=dl#${elementId} dd.actionMenuContent
+
+Abrir o menu de Adicionar item
+    Abrir o menu  plone-contentmenu-factories
