@@ -88,6 +88,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
         enabled_portal_types = list(likes.enabled_portal_types)
         enabled_portal_types.sort()
         types_expected = [
+            'Audio',
             'Collection',
             'Document',
             'Event',

@@ -20,7 +20,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
         self.assertEqual(self.properties.localTimeFormat, '%d/%m/%Y')
 
     def test_localLongTimeFormat(self):
-        self.assertEqual(self.properties.localLongTimeFormat, '%d/%m/%Y %H:%M')
+        self.assertEqual(self.properties.localLongTimeFormat, '%d/%m/%Y %Hh%M')
 
     def test_enable_link_integrity_checks_enabled(self):
         self.assertTrue(self.properties.enable_link_integrity_checks)
@@ -41,6 +41,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
         types_searched = list(all_types - types_not_searched)
         types_searched.sort()
         types_expected = [
+            'Audio',
             'Collection',
             'Document',
             'Event',
@@ -59,6 +60,8 @@ class PortalPropertiesTestCase(unittest.TestCase):
         metaTypesNotToList.sort()
         types_expected = [
             'Discussion Item',
+            'MPEG Audio File',
             'News Item',
+            'OGG Audio File',
         ]
         self.assertListEqual(metaTypesNotToList, types_expected)
