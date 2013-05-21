@@ -21,6 +21,11 @@ Fechar todos os navegadores
 # Traducoes
 # ----------------------------------------------------------------------------
 
+Como o usuario administrador
+    [Arguments]  ${username}
+    Enable autologin as  Manager
+    Definir autologin como   ${username}
+
 Habilitar autologin como 
     [Arguments]  ${role}
     Enable autologin as  ${role}

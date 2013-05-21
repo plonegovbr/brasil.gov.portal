@@ -13,30 +13,42 @@ Test Teardown  Fechar todos os navegadores
 *** Test Cases ***
 
 Criar novo site
-    Habilitar autologin como  Manager
-    Definir autologin como  Machado de Assis
-    Ir para  ${ZOPE_LOGGED_URL}/@@plone-addsite?site_id=Plone
-    Capturar tela  criarsite-01-base.png
+    Como o usuario administrador  Machado de Assis
+    Ir para  ${NOVO_SITE_URL}
+    Capturar tela  criarsite-passo-01.png
+
     Pagina deve conter  Criar um novo site
     Campo de texto  title  Portal Brasil
     Campo de texto  orgao  Presidencia da Republica
     Campo de texto  description  Portal do Governo Brasileiro
-    Capturar tela  criarsite-02-preenchido.png
+    Capturar tela  criarsite-passo-02.png
     Clicar botao  Criar site Plone
+
     Pagina deve conter  Portal Brasil
     Pagina deve conter  Presidencia da Republica
     Pagina deve conter elemento  portal-logo
-    Capturar tela  criarsite-03-sitecriado.png
     Listar rede social  youtube
     Listar rede social  twitter
     Pagina deve exibir Em Destaque
+    Capturar tela  criarsite-passo-03.png
 
-Pasta de Imagens
-    Habilitar autologin como  Manager
-    Definir autologin como  Machado de Assis
+Conteudo base - Pasta de Imagens
+    Como o usuario administrador  Machado de Assis
     Ir para  ${PLONE_URL}/imagens
+
     Abrir o menu de Adicionar item
     Apenas o tipo Imagem deve ser listado
+    Capturar tela  criarsite-passo-04-pasta-imagens.png
+
+Conteudo base - Pasta Assuntos
+    Como o usuario administrador  Machado de Assis
+    Ir para  ${PLONE_URL}/assuntos
+    Capturar tela  criarsite-passo-04-pasta-assuntos.png
+
+Conteudo base - Pasta Sobre
+    Como o usuario administrador  Machado de Assis
+    Ir para  ${PLONE_URL}/sobre
+    Capturar tela  criarsite-passo-04-pasta-assuntos.png
 
 
 *** Keywords ***

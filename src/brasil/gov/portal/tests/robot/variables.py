@@ -15,6 +15,7 @@ ZOPE_HOST = os.environ.get('ZOPE_HOST', "localhost")
 ZOPE_URL = os.environ.get('ZOPE_URL', "http://%s:%s" % (ZOPE_HOST, PORT))
 ZOPE_LOGGED_URL = os.environ.get('ZOPE_URL', "http://admin:secret@%s:%s" %
                                  (ZOPE_HOST, PORT))
+NOVO_SITE_URL = '%s/@@plone-addsite?site_id=Plone' % ZOPE_LOGGED_URL
 PLONE_SITE_ID = os.environ.get('PLONE_SITE_ID', PLONE_SITE_ID)
 PLONE_URL = os.environ.get('PLONE_URL', "%s/%s" % (ZOPE_URL, PLONE_SITE_ID))
 BROWSER = os.environ.get('BROWSER', "Firefox")
