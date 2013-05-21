@@ -42,6 +42,7 @@
       <element value="Event"/>
       <element value="FormFolder"/>
       <element value="Image"/>
+      <element value="sc.embedder"/>
     </property>
   </object>
   <object name="brasil_gov" meta_type="Plone Property Sheet">
