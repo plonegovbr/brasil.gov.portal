@@ -23,7 +23,9 @@
       <element value="DoormatMixin"/>
       <element value="DoormatReference"/>
       <element value="DoormatSection"/>      
+      <element value="MPEG Audio File"/>
       <element value="News Item"/>
+      <element value="OGG Audio File"/>
       <element value="sc.embedder"/>
       <element value="Topic"/>
     </property>
@@ -31,6 +33,7 @@
   </object>
   <object name="sc_social_likes_properties" meta_type="Plone Property Sheet">
     <property name="enabled_portal_types" type="lines" purge="True">
+      <element value="Audio"/>
       <element value="Collection"/>
       <element value="collective.cover.content"/>
       <element value="collective.nitf.content"/>
