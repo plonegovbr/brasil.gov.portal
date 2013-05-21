@@ -65,9 +65,14 @@ class AddonsSettingsTestCase(unittest.TestCase):
         """
         settings = self.registry.forInterface(ICoverSettings)
         expected = [
+            'Azul Claro - borda|azul-claro-borda',
             'Azul Claro|azul-claro',
+            'Bege - borda|bege-borda',
             'Bege|bege',
+            'Laranja - borda|laranja-borda',
             'Laranja|laranja',
+            'Lista Horizontal|lista-horizontal',
+            'Roxo - borda|roxo-borda',
             'Roxo|roxo',
             'Verde|verde',
         ]

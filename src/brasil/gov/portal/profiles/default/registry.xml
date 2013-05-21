@@ -58,9 +58,14 @@
   <!-- estilos do collective.cover -->
   <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
     <value>
+      <element>Azul Claro - borda|azul-claro-borda</element>
       <element>Azul Claro|azul-claro</element>
+      <element>Bege - borda|bege-borda</element>
       <element>Bege|bege</element>
+      <element>Laranja - borda|laranja-borda</element>
       <element>Laranja|laranja</element>
+      <element>Lista Horizontal|lista-horizontal</element>
+      <element>Roxo - borda|roxo-borda</element>
       <element>Roxo|roxo</element>
       <element>Verde|verde</element>
     </value>
