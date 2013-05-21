@@ -21,8 +21,32 @@ class AddonsSettingsTestCase(unittest.TestCase):
         self.wt = self.portal['portal_workflow']
         self.pm = self.portal['portal_membership']
 
-    def test_collective_cover_settings(self):
-        """ Searchable content types on cover.
+    def test_collective_cover_available_tyles_settings(self):
+        """ Tiles disponiveis no collective.cover
+        """
+        settings = self.registry.forInterface(ICoverSettings)
+        expected = [
+            'collective.cover.basic',
+            'collective.cover.carousel',
+            'collective.cover.collection',
+            'collective.cover.contentbody',
+            'collective.cover.embed',
+            'collective.cover.file',
+            'collective.cover.image',
+            'collective.cover.link',
+            'collective.cover.list',
+            'collective.cover.pfg',
+            'collective.cover.richtext',
+            'em_destaque',
+            'poll',
+            'standaloneheader',
+        ]
+        available_tiles = settings.available_tiles
+        available_tiles.sort()
+        self.assertListEqual(available_tiles, expected)
+
+    def test_collective_cover_content_type_settings(self):
+        """ Tipos de conteudo buscaveis no cover
         """
         settings = self.registry.forInterface(ICoverSettings)
         allowed_types = [

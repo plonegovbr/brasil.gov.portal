@@ -20,7 +20,6 @@
     </value>
   </record>
 
-<!--
   <record field="available_tiles"
           interface="collective.cover.controlpanel.ICoverSettings"
           name="collective.cover.controlpanel.ICoverSettings.available_tiles">
@@ -41,7 +40,7 @@
         <element>standaloneheader</element>
     </value>
   </record>
--->
+
   <record field="searchable_content_types"
           interface="collective.cover.controlpanel.ICoverSettings"
           name="collective.cover.controlpanel.ICoverSettings.searchable_content_types">

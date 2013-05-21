@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-from brasil.gov.portal.config import TILES
 from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
@@ -16,7 +15,6 @@ def setupPortalContent(p):
     language = 'pt_BR'
 
     # Registra os tiles disponiveis
-    available_tiles(p)
 
     # Pagina Inicial
     # TODO -- Cover
@@ -293,16 +291,6 @@ def publish_content(wftool, folder, obj_ids):
             oIds = o.objectIds()
             if oIds:
                 publish_content(wftool, o, oIds)
-
-
-def available_tiles(portal):
-    ''' Define os tiles que estarao no portal
-        por padrao. (Correcao de bug no collective.cover)
-    '''
-    registry = portal.portal_registry
-    record = 'collective.cover.controlpanel.ICoverSettings.available_tiles'
-
-    registry[record] = TILES
 
 
 def importContent(context):
