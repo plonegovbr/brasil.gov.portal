@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+    <permission
+        id="brasil.gov.portal.AddMPEGFile"
+        title="brasil.gov.portal: Add MPEG File" />
+
+    <permission
+        id="brasil.gov.portal.AddOGGFile"
+        title="brasil.gov.portal: Add OGG File" />
+
+</configure>
