@@ -12,3 +12,6 @@
 user_pref("intl.accept_languages", "pt-BR, pt, en-US, en");
 user_pref("intl.charsetmenu.browser.cache", "UTF-8");
 user_pref("network.http.phishy-userpass-length", 255);
+user_pref("app.update.enabled", false);
+user_pref("browser.search.update", false);
+user_pref("extensions.update.enabled", false);
