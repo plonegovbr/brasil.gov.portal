@@ -140,8 +140,10 @@ def cria_rodape(portal):
                             assuntos_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
-                            description=obj.Description(),
-                            url='${portal_url}/assuntos/%s' % obj.getId())
+                            description=obj.Description())
+        link = assuntos_doormat[obj.getId()]
+        link.remoteUrl = '${portal_url}/assuntos/%s' % obj.getId()
+        link.reindexObject()
 
     sobre = portal['sobre']
     sobre_doormat = rodape['coluna-2']['sobre']
@@ -151,8 +153,10 @@ def cria_rodape(portal):
                             sobre_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
-                            description=obj.Description(),
-                            url='${portal_url}/sobre/%s' % obj.getId())
+                            description=obj.Description())
+        link = sobre_doormat[obj.getId()]
+        link.remoteUrl = '${portal_url}/sobre/%s' % obj.getId()
+        link.reindexObject()
 
     items = [
         ('coluna-3/falem', 'contact-info',
@@ -168,8 +172,10 @@ def cria_rodape(portal):
                             secao,
                             id=item_id,
                             title=item_title,
-                            description=item_title,
-                            url=item_url)
+                            description=item_title)
+        link = secao[item_id]
+        link.remoteUrl = item_url
+        link.reindexObject()
 
 
 def cria_assuntos(portal):
