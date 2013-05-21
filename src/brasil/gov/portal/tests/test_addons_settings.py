@@ -141,5 +141,6 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'collective.cover.content',
             'collective.nitf.content',
             'collective.polls.poll',
+            'sc.embedder',
         ]
         self.assertListEqual(enabled_portal_types, types_expected)
