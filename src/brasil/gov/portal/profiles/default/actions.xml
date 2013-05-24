@@ -15,7 +15,7 @@
    <property name="visible">True</property>
   </object>  
   <object name="contraste" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">Contraste</property>
+   <property name="title" i18n:translate="">Alto Contraste</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:#</property>
    <property name="icon_expr"></property>
