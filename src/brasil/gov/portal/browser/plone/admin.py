@@ -56,15 +56,21 @@ class AddPloneSite(AddPloneSiteView):
             extension_ids.insert(0, 'brasil.gov.portal:default')
             extension_ids.insert(1, 'brasil.gov.portal:initcontent')
             site_id = form.get('site_id', 'Plone')
+            title_1 = form.get('title_1', '')
+            title_2 = form.get('title_2', '')
+            title = '%s %s' % (title_1, title_2)
             site = addPloneSite(
                 context, site_id,
-                title=form.get('title', ''),
+                title=title,
                 description=form.get('description', ''),
                 profile_id=form.get('profile_id', _DEFAULT_PROFILE),
                 extension_ids=form.get('extension_ids', ()),
                 setup_content=False,
                 default_language='pt-br',
             )
+            site.manage_changeProperties(title=title)
+            site.manage_changeProperties(title_1=title_1)
+            site.manage_changeProperties(title_2=title_2)
             site.manage_changeProperties(orgao=form.get('orgao', ''))
             self.request.response.redirect(site.absolute_url())
 

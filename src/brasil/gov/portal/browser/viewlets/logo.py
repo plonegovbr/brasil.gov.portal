@@ -21,6 +21,19 @@ class LogoViewlet(ViewletBase):
         portal = self.portal()
         return getattr(portal, 'title', 'Portal Brasil')
 
+    def title_1(self):
+        ''' Retorna a primeira linha do titulo do portal
+        '''
+        portal = self.portal()
+        return getattr(portal, 'title_1', 'Secretaria de')
+
+    def title_2(self):
+        ''' Retorna a primeira linha do titulo do portal
+        '''
+        portal = self.portal()
+        return getattr(portal, 'title_2',
+                       u'Comunicação Social')
+
     def orgao(self):
         ''' Retorna o nome do orgao ao qual este portal
             esta vinculado

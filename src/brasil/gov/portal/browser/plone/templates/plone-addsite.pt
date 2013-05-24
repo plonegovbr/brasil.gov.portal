@@ -54,26 +54,36 @@
       </div>
 
       <div class="field">
-        <label for="title" i18n:translate="label_title">Title</label>
+        <label for="title_1" i18n:translate="label_title_1">Título (linha 1)</label>
 
         <div class="formHelp" i18n:translate="">
-          O título deste site.
+          Primeira linha do título
         </div>
 
-        <input type="text" name="title" size="30" value="Site"
-               i18n:attributes="value text_default_site_title;" />
+        <input type="text" name="title_1" size="30" value="Secretaria de" />
+      </div>
+
+      <div class="field">
+        <label for="title_2" i18n:translate="label_title_2">Título (linha 2)</label>
+
+        <div class="formHelp" i18n:translate="">
+          Segunda linha do título
+        </div>
+
+        <input type="text" name="title_2" size="30"
+               value="Comunicação Social" />
       </div>
 
       <div class="field">
         <label for="orgao" i18n:translate="label_orgao">Órgão</label>
 
         <div class="formHelp" i18n:translate="">
-          Nome do Ministério ou da Secretaria ao qual este site está ligado.
+          Nome do Ministério ou da Secretaria ao qual este site está subordinado.
         </div>
 
         <input type="text" name="orgao"
                size="60"
-               value="Nome do Ministério ou da Secretaria" />
+               value="Presidência da República" />
       </div>
 
       <div class="field">
