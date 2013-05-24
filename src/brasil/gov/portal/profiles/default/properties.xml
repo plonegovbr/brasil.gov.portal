@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <site>
  <property name="title">Secretaria de Comunicação Social</property>
- <property name="title_1">Secretaria de</property>
- <property name="title_2">Comunicação Social</property>
+ <property name="title_1" type="string">Secretaria de</property>
+ <property name="title_2" type="string">Comunicação Social</property>
  <property name="orgao" type="string">Presidência da República</property>
  <property name="description">O portal do Brasil</property>
  <property name="selectable_views" type="lines">

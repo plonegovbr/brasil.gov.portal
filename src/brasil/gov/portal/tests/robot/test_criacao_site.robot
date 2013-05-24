@@ -18,14 +18,16 @@ Criar novo site
     Capturar tela  criarsite-passo-01.png
 
     Pagina deve conter  Criar um novo site
-    Campo de texto  title  Portal Brasil
-    Campo de texto  orgao  Presidencia da Republica
+    Campo de texto  title_1  Portal do
+    Campo de texto  title_2  Governo Eletronico
+    Campo de texto  orgao  Ministerio do Planejamento
     Campo de texto  description  Portal do Governo Brasileiro
     Capturar tela  criarsite-passo-02.png
     Clicar botao  Criar site Plone
 
-    Pagina deve conter  Portal Brasil
-    Pagina deve conter  Presidencia da Republica
+    Pagina deve conter  Portal do
+    Pagina deve conter  Governo Eletronico
+    Pagina deve conter  Ministerio do Planejamento
     Pagina deve conter elemento  portal-logo
     Listar rede social  youtube
     Listar rede social  twitter
