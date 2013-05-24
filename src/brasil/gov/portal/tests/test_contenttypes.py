@@ -66,8 +66,8 @@ class ContentTypesTestCase(unittest.TestCase):
                  'File',
                  'Folder',
                  'Image',
-                 'collective.nitf.content',
                  'collective.polls.poll']
+        # NITF possui um campo proprio, por isto nao precisamos testar
         for t in types:
             fti = self.pt[t]
             self.assertTrue('plone.app.relationfield.behavior.IRelatedItems' in
