@@ -33,6 +33,9 @@ def setupPortalContent(p):
     if 'rodape' not in existing:
         cria_rodape(p)
 
+    # Pasta de Menu de Apoio
+    cria_menu_apoio(p)
+
     # Pasta Servicos
     if 'servicos' not in existing:
         cria_servicos(p)
@@ -52,7 +55,7 @@ def setupPortalContent(p):
 
     wftool = getToolByName(p, "portal_workflow")
     obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
-               'noticias', 'rodape', 'destaques']
+               'noticias', 'rodape', 'destaques', 'menu-de-apoio']
     publish_content(wftool, p, obj_ids)
 
 
@@ -227,6 +230,30 @@ def cria_sobre(portal):
     #folder.unmarkCreationFlag()
     #folder.setLanguage(language)
     # Criar algumas paginas
+
+
+def cria_menu_apoio(portal):
+    title = 'Menu de Apoio'
+    description = u'Menu de apoio à navegação'
+    if not 'menu-de-apoio' in portal.objectIds():
+        _createObjectByType('Folder', portal, id='menu-de-apoio',
+                            title=title, description=description)
+    folder = portal['menu-de-apoio']
+    behavior = ISelectableConstrainTypes(folder)
+    behavior.setConstrainTypesMode(constrains.ENABLED)
+    # Permitimos apenas links
+    behavior.setImmediatelyAddableTypes(['Link'])
+    folder.setLayout('folder_summary_view')
+    # Criar links
+    links = [
+        ('ultimas-noticias', u'Últimas Notícias', '${portal_url}/noticias'),
+    ]
+    for link in links:
+        id, title, url = link
+        _createObjectByType('Link', folder, id=id,
+                            title=title, remoteUrl=url)
+    publish_content(None, folder, [i[0] for i in links])
+    return folder.getId()
 
 
 def cria_servicos(portal):

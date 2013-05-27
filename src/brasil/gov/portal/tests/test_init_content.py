@@ -78,9 +78,19 @@ class InitContentTestCase(unittest.TestCase):
         # Coluna da esquerda
         coluna = '++contextportlets++plone.leftcolumn'
         mapping = portal.restrictedTraverse(coluna)
-        self.assertEqual(len(mapping.keys()), 2)
+        self.assertEqual(len(mapping.keys()), 3)
         self.assertTrue('assuntos' in mapping.keys())
         self.assertTrue('sobre' in mapping.keys())
+
+    def test_portlet_menu_apoio(self):
+        portal = self.portal
+        # Coluna da esquerda
+        coluna = '++contextportlets++plone.leftcolumn'
+        mapping = portal.restrictedTraverse(coluna)
+        # Menu de Apoio
+        self.assertEqual(mapping['apoio'].root, u'/menu-de-apoio')
+        self.assertEqual(mapping['apoio'].name, u'')
+        self.assertEqual(mapping['apoio'].currentFolderOnly, False)
 
     def test_portlet_assuntos(self):
         portal = self.portal
