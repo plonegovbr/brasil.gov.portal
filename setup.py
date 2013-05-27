@@ -72,6 +72,7 @@ setup(
         'test': [
             'plone.app.robotframework',
             'plone.app.testing [robot]',
+            'robotframework-wavelibrary',
         ]
     },
     entry_points="""
