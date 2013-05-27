@@ -143,10 +143,9 @@ def cria_rodape(portal):
                             assuntos_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
-                            description=obj.Description())
-        link = assuntos_doormat[obj.getId()]
-        link.remoteUrl = '${portal_url}/assuntos/%s' % obj.getId()
-        link.reindexObject()
+                            description=obj.Description(),
+                            remoteUrl='${portal_url}/assuntos/%s' %
+                                      obj.getId())
 
     sobre = portal['sobre']
     sobre_doormat = rodape['coluna-2']['sobre']
@@ -156,10 +155,8 @@ def cria_rodape(portal):
                             sobre_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
-                            description=obj.Description())
-        link = sobre_doormat[obj.getId()]
-        link.remoteUrl = '${portal_url}/sobre/%s' % obj.getId()
-        link.reindexObject()
+                            description=obj.Description(),
+                            remoteUrl='${portal_url}/sobre/%s' % obj.getId())
 
     items = [
         ('coluna-3/falem', 'contact-info',
@@ -175,10 +172,8 @@ def cria_rodape(portal):
                             secao,
                             id=item_id,
                             title=item_title,
-                            description=item_title)
-        link = secao[item_id]
-        link.remoteUrl = item_url
-        link.reindexObject()
+                            description=item_title,
+                            remoteUrl=item_url)
 
 
 def cria_assuntos(portal):
@@ -277,7 +272,7 @@ def cria_servicos(portal):
     for link in links:
         id, title, url = link
         _createObjectByType('Link', folder, id=id,
-                            title=title, url=url)
+                            title=title, remoteUrl=url)
     publish_content(None, folder, [i[0] for i in links])
     return folder.getId()
 
