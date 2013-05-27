@@ -65,8 +65,7 @@ class ContentTypesTestCase(unittest.TestCase):
                  'Event',
                  'File',
                  'Folder',
-                 'Image',
-                 'collective.polls.poll']
+                 'Image']
         # NITF possui um campo proprio, por isto nao precisamos testar
         for t in types:
             fti = self.pt[t]
