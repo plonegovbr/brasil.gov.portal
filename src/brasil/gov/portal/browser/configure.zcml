@@ -9,6 +9,9 @@
       name="plonegovbr.png"
       />
 
+  <!-- Conteudos -->
+  <include package='.content' />
+
   <!-- Criacao de site -->
   <include package='.plone' />
 

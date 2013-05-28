@@ -20,7 +20,22 @@
                     type="audio/wav" />
               </tal:sources>
             </audio>
-
+            <div tal:condition="context/text">
+              <span id="audio-transcricao">Transcrição do Áudio</span>
+              <div id="parent-fieldname-text"
+                   tal:content="structure context/text/output" />
+            </div>
+            <div class="download">
+              <span id="audio-downloads">Download do Áudio</span>
+              <ul tal:define="downloads view/downloads">
+                <li tal:repeat='obj downloads'>
+                   <a tal:attributes="alt context/Description;
+                                      href obj/path">
+                        Baixar arquivo em formato <span tal:replace="obj/format" />
+                   </a> (<span tal:replace="obj/size" />)
+                </li>
+              </ul>
+            </div>          
         </metal:block>
     </metal:content-core>
 </body>

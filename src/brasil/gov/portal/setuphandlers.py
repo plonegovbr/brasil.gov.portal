@@ -33,6 +33,9 @@ def setupPortalContent(p):
     if 'rodape' not in existing:
         cria_rodape(p)
 
+    # Pasta de Menu de Apoio
+    cria_menu_apoio(p)
+
     # Pasta Servicos
     if 'servicos' not in existing:
         cria_servicos(p)
@@ -52,7 +55,7 @@ def setupPortalContent(p):
 
     wftool = getToolByName(p, "portal_workflow")
     obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
-               'noticias', 'rodape', 'destaques']
+               'noticias', 'rodape', 'destaques', 'menu-de-apoio']
     publish_content(wftool, p, obj_ids)
 
 
@@ -140,10 +143,9 @@ def cria_rodape(portal):
                             assuntos_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
-                            description=obj.Description())
-        link = assuntos_doormat[obj.getId()]
-        link.remoteUrl = '${portal_url}/assuntos/%s' % obj.getId()
-        link.reindexObject()
+                            description=obj.Description(),
+                            remoteUrl='${portal_url}/assuntos/%s' %
+                                      obj.getId())
 
     sobre = portal['sobre']
     sobre_doormat = rodape['coluna-2']['sobre']
@@ -153,10 +155,8 @@ def cria_rodape(portal):
                             sobre_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
-                            description=obj.Description())
-        link = sobre_doormat[obj.getId()]
-        link.remoteUrl = '${portal_url}/sobre/%s' % obj.getId()
-        link.reindexObject()
+                            description=obj.Description(),
+                            remoteUrl='${portal_url}/sobre/%s' % obj.getId())
 
     items = [
         ('coluna-3/falem', 'contact-info',
@@ -172,10 +172,8 @@ def cria_rodape(portal):
                             secao,
                             id=item_id,
                             title=item_title,
-                            description=item_title)
-        link = secao[item_id]
-        link.remoteUrl = item_url
-        link.reindexObject()
+                            description=item_title,
+                            remoteUrl=item_url)
 
 
 def cria_assuntos(portal):
@@ -229,6 +227,30 @@ def cria_sobre(portal):
     # Criar algumas paginas
 
 
+def cria_menu_apoio(portal):
+    title = 'Menu de Apoio'
+    description = u'Menu de apoio à navegação'
+    if not 'menu-de-apoio' in portal.objectIds():
+        _createObjectByType('Folder', portal, id='menu-de-apoio',
+                            title=title, description=description)
+    folder = portal['menu-de-apoio']
+    behavior = ISelectableConstrainTypes(folder)
+    behavior.setConstrainTypesMode(constrains.ENABLED)
+    # Permitimos apenas links
+    behavior.setImmediatelyAddableTypes(['Link'])
+    folder.setLayout('folder_summary_view')
+    # Criar links
+    links = [
+        ('ultimas-noticias', u'Últimas Notícias', '${portal_url}/noticias'),
+    ]
+    for link in links:
+        id, title, url = link
+        _createObjectByType('Link', folder, id=id,
+                            title=title, remoteUrl=url)
+    publish_content(None, folder, [i[0] for i in links])
+    return folder.getId()
+
+
 def cria_servicos(portal):
     title = 'Serviços'
     description = u'Serviços deste órgão'
@@ -250,7 +272,7 @@ def cria_servicos(portal):
     for link in links:
         id, title, url = link
         _createObjectByType('Link', folder, id=id,
-                            title=title, url=url)
+                            title=title, remoteUrl=url)
     publish_content(None, folder, [i[0] for i in links])
     return folder.getId()
 

@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Overrides do Doormat-->
+  <browser:page
+     for="Products.Doormat.content.interfaces.IDoormat"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     name="doormat-view"
+     class=".doormat.DoormatView"
+     template="templates/doormat_view.pt"     
+     permission="zope2.View"
+     />  
+  <browser:page
+     for="Products.Doormat.content.interfaces.IDoormat"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     name="doormat-view-bare"
+     class=".doormat.DoormatView"
+     template="templates/doormat_bare_view.pt"     
+     permission="zope2.View"
+     />
+
+</configure>
