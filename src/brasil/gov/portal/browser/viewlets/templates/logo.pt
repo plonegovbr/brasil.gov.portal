@@ -3,10 +3,11 @@
     <a metal:define-macro="portal_logo"
        id="portal-logo"
        title="Home"
+       accesskey="1"
        tal:attributes="href view/navigation_root_url;
                        title view/description">
             <span id="portal-title-1"
-                  tal:content="view/title_1">Secretaria de</span>
+                  tal:content="view/title_1">Secretaria de</span><br />
             <span id="portal-title"
                   tal:content="view/title_2">Comunicação Social</span><br />
             <span 
