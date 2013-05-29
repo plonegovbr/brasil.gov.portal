@@ -29,16 +29,16 @@ def setupPortalContent(p):
     if 'acesso-a-informacao' not in existing:
         cria_acesso(p)
 
-    # Rodape do site
-    if 'rodape' not in existing:
-        cria_rodape(p)
-
     # Pasta de Menu de Apoio
     cria_menu_apoio(p)
 
     # Pasta Servicos
     if 'servicos' not in existing:
         cria_servicos(p)
+
+    # Rodape do site
+    if 'rodape' not in existing:
+        cria_rodape(p)
 
     # Pasta Imagens
     if 'imagens' not in existing:
@@ -106,7 +106,6 @@ def cria_rodape(portal):
         ('coluna-1', u'Primeira coluna'),
         ('coluna-2', u'Segunda coluna'),
         ('coluna-3', u'Terceira coluna'),
-        ('coluna-4', u'Quarta coluna'),
     ]
     for col_id, col_title in colunas:
         _createObjectByType('DoormatColumn',
@@ -119,12 +118,8 @@ def cria_rodape(portal):
 
     secoes = [
         ('coluna-1', 'assuntos', u'Assuntos'),
-        ('coluna-2', 'acesso-a-informacao',
-         u'Acesso à Informação'),
-        ('coluna-3', 'falem', u'Falem Conosco'),
-        ('coluna-4', 'redes-sociais', u'Redes Sociais'),
-        ('coluna-4', 'mapa', u'Mapa do Site'),
-        ('coluna-4', 'rss', u'RSS'),
+        ('coluna-2', 'servicos', u'Serviços'),
+        ('coluna-3', 'redes-sociais', u'Redes Sociais'),
     ]
     for col_id, secao_id, secao_title in secoes:
         _createObjectByType('DoormatSection',
@@ -148,24 +143,21 @@ def cria_rodape(portal):
                             remoteUrl='${portal_url}/assuntos/%s' %
                                       obj.getId())
 
-    acesso = portal['acesso-a-informacao']
-    acesso_doormat = rodape['coluna-2']['acesso-a-informacao']
-    for item in acesso.objectIds():
-        obj = acesso[item]
+    servicos = portal['servicos']
+    servicos_doormat = rodape['coluna-2']['servicos']
+    for item in servicos.objectIds():
+        obj = servicos[item]
         _createObjectByType('Link',
-                            acesso_doormat,
+                            servicos_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
                             description=obj.Description(),
-                            remoteUrl=('${portal_url}/acesso-a-informacao/%s' %
-                                       obj.getId()))
+                            remoteUrl=(obj.remoteUrl))
 
     items = [
-        ('coluna-3/falem', 'contact-info',
-         u'Formulário de Contato', '${portal_url}/contact-info'),
-        ('coluna-4/redes-sociais', 'twitter',
+        ('coluna-3/redes-sociais', 'twitter',
          u'Twitter', 'http://twitter.com/portalbrasil'),
-        ('coluna-4/redes-sociais', 'youtube',
+        ('coluna-3/redes-sociais', 'youtube',
          u'YouTube', 'http://www.youtube.com/canalportalbrasil'),
     ]
     for path, item_id, item_title, item_url in items:
