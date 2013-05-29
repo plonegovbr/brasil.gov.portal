@@ -23,6 +23,7 @@ class ISiteSchema(Interface):
     site_title_1 = TextLine(
         title=_(u'Título do site (Primeira Linha)'),
         description=_(u"Primeira linha do título do site"),
+        required=False,
         default=u'')
 
     site_title_2 = TextLine(
@@ -34,6 +35,7 @@ class ISiteSchema(Interface):
         title=_(u'Órgão'),
         description=_(u"Nome do Ministério ou da Secretaria "
                       u"ao qual este site está subordinado."),
+        required=False,
         default=u'')
 
     site_description = Text(
@@ -95,13 +97,19 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
         return safe_unicode(title)
 
     def set_site_title_1(self, value):
+        value = value or ''
         self.portal.title_1 = value.encode(self.encoding)
+        title_1 = safe_unicode(self.portal.title_1)
+        title_2 = safe_unicode(self.portal.title_2)
+        title = u'%s %s' % (title_1, title_2)
+        self.portal.title = title.encode(self.encoding)
 
     def get_site_title_2(self):
         title = getattr(self.portal, 'title_2', u'')
         return safe_unicode(title)
 
     def set_site_title_2(self, value):
+        value = value or ''
         self.portal.title_2 = value.encode(self.encoding)
         title_1 = safe_unicode(self.portal.title_1)
         title_2 = safe_unicode(self.portal.title_2)
@@ -113,6 +121,7 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
         return safe_unicode(orgao)
 
     def set_site_orgao(self, value):
+        value = value or ''
         self.portal.orgao = value.encode(self.encoding)
 
     def get_site_description(self):
