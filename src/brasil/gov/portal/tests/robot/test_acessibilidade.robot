@@ -35,7 +35,7 @@ Validar contraste de elementos
 	link-buscar
 	link-rodape
 	em-destaque-titulo
-	portalservicos-ouvidoria
+	portalservicos-contato
 
 Validar contraste de elementos com alto contraste ativado
 	[Template]  Validar contraste do elemento com id em alto contraste
@@ -47,7 +47,7 @@ Validar contraste de elementos com alto contraste ativado
 	link-buscar
 	link-rodape
 	em-destaque-titulo
-	portalservicos-ouvidoria
+	portalservicos-contato
 
 
 Accesskeys
