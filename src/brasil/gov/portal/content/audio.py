@@ -16,6 +16,18 @@ class IAudio(Interface):
 class Audio(Container):
     implements(IAudio)
 
+    def return_ogg(self):
+        sources = self.objectValues()
+        for source in sources:
+            if IOGGAudioFile.providedBy(source):
+                return source
+
+    def return_mp3(self):
+        sources = self.objectValues()
+        for source in sources:
+            if IMPEGAudioFile.providedBy(source):
+                return source
+
 
 @grok.subscribe(IObjectAddedEvent)
 def object_added(event, obj=None):
