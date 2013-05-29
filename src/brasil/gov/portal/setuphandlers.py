@@ -25,9 +25,9 @@ def setupPortalContent(p):
     if 'assuntos' not in existing:
         cria_assuntos(p)
 
-    # Pasta Sobre
-    if 'sobre' not in existing:
-        cria_sobre(p)
+    # Pasta Acesso a informacao
+    if 'acesso-a-informacao' not in existing:
+        cria_acesso(p)
 
     # Rodape do site
     if 'rodape' not in existing:
@@ -54,7 +54,7 @@ def setupPortalContent(p):
         cria_destaques(p)
 
     wftool = getToolByName(p, "portal_workflow")
-    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
+    obj_ids = ['acesso-a-informacao', 'assuntos', 'servicos', 'imagens',
                'noticias', 'rodape', 'destaques', 'menu-de-apoio']
     publish_content(wftool, p, obj_ids)
 
@@ -119,7 +119,8 @@ def cria_rodape(portal):
 
     secoes = [
         ('coluna-1', 'assuntos', u'Assuntos'),
-        ('coluna-2', 'sobre', u'Sobre'),
+        ('coluna-2', 'acesso-a-informacao',
+         u'Acesso à Informação'),
         ('coluna-3', 'falem', u'Falem Conosco'),
         ('coluna-4', 'redes-sociais', u'Redes Sociais'),
         ('coluna-4', 'mapa', u'Mapa do Site'),
@@ -147,16 +148,17 @@ def cria_rodape(portal):
                             remoteUrl='${portal_url}/assuntos/%s' %
                                       obj.getId())
 
-    sobre = portal['sobre']
-    sobre_doormat = rodape['coluna-2']['sobre']
-    for item in sobre.objectIds():
-        obj = sobre[item]
+    acesso = portal['acesso-a-informacao']
+    acesso_doormat = rodape['coluna-2']['acesso-a-informacao']
+    for item in acesso.objectIds():
+        obj = acesso[item]
         _createObjectByType('Link',
-                            sobre_doormat,
+                            acesso_doormat,
                             id=obj.getId(),
                             title=obj.Title(),
                             description=obj.Description(),
-                            remoteUrl='${portal_url}/sobre/%s' % obj.getId())
+                            remoteUrl=('${portal_url}/acesso-a-informacao/%s' %
+                                       obj.getId()))
 
     items = [
         ('coluna-3/falem', 'contact-info',
@@ -209,14 +211,14 @@ def cria_imagens(portal):
     folder.setLayout('folder_summary_view')
 
 
-def cria_sobre(portal):
-    title = 'Sobre'
+def cria_acesso(portal):
+    title = u'Acesso à Informação'
     description = u'Conheça este órgão'
 
-    _createObjectByType('Folder', portal, id='sobre',
+    _createObjectByType('Folder', portal, id='acesso-a-informacao',
                         title=title, description=description)
 
-    folder = portal.sobre
+    folder = portal['acesso-a-informacao']
     folder.setOrdering('unordered')
     #folder.setConstrainTypesMode(1)
     # Permitimos preferencialmente outras pastas
