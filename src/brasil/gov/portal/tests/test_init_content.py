@@ -63,11 +63,11 @@ class InitContentTestCase(unittest.TestCase):
         types = ['Link']
         self.assertEqual(types, behavior.getImmediatelyAddableTypes())
 
-    def test_sobre_available(self):
-        self.assertTrue('sobre' in self.portal.objectIds(),
-                        u'Pasta Sobre não disponível')
-        pasta = self.portal['sobre']
-        self.assertEqual(u'Sobre', pasta.title,
+    def test_acesso_available(self):
+        self.assertTrue('acesso-a-informacao' in self.portal.objectIds(),
+                        u'Pasta Acesso à Informação não disponível')
+        pasta = self.portal['acesso-a-informacao']
+        self.assertEqual(u'Acesso à informação', pasta.title,
                          u'Título não aplicado')
         self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
                          'published')
@@ -80,7 +80,8 @@ class InitContentTestCase(unittest.TestCase):
         mapping = portal.restrictedTraverse(coluna)
         self.assertEqual(len(mapping.keys()), 3)
         self.assertTrue('assuntos' in mapping.keys())
-        self.assertTrue('sobre' in mapping.keys())
+        self.assertTrue('acesso-a-informacao' in mapping.keys())
+        self.assertTrue('apoio' in mapping.keys())
 
     def test_portlet_menu_apoio(self):
         portal = self.portal
@@ -102,12 +103,15 @@ class InitContentTestCase(unittest.TestCase):
         self.assertEqual(mapping['assuntos'].name, u'Assuntos')
         self.assertEqual(mapping['assuntos'].currentFolderOnly, False)
 
-    def test_portlet_sobre(self):
+    def test_portlet_acesso(self):
         portal = self.portal
         # Coluna da esquerda
         coluna = '++contextportlets++plone.leftcolumn'
         mapping = portal.restrictedTraverse(coluna)
         # Sobre
-        self.assertEqual(mapping['sobre'].root, u'/sobre')
-        self.assertEqual(mapping['sobre'].name, u'Sobre')
-        self.assertEqual(mapping['sobre'].currentFolderOnly, False)
+        self.assertEqual(mapping['acesso-a-informacao'].root,
+                         u'/acesso-a-informacao')
+        self.assertEqual(mapping['acesso-a-informacao'].name,
+                         u'Acesso à Informação')
+        self.assertEqual(mapping['acesso-a-informacao'].currentFolderOnly,
+                         False)
