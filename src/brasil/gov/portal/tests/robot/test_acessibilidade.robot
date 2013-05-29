@@ -32,7 +32,7 @@ Validar contraste de elementos
 	portal-description
 	link-conteudo
 	link-navegacao
-	link-busca
+	link-buscar
 	link-rodape
 	em-destaque-titulo
 	portalservicos-ouvidoria
@@ -44,7 +44,7 @@ Validar contraste de elementos com alto contraste ativado
 	portal-description
 	link-conteudo
 	link-navegacao
-	link-busca
+	link-buscar
 	link-rodape
 	em-destaque-titulo
 	portalservicos-ouvidoria
@@ -62,7 +62,6 @@ Accesskeys
 	Capturar tela visivel  accesskeys-02-navegacao.png
 
 	Clicar link  Ir para a Busca
-	Pagina deve conter  Resultado da busca
 	Capturar tela  accesskeys-03-busca.png
 
 	Clicar link  Ir para o rodapé 
