@@ -47,18 +47,19 @@ Conteudo base - Pasta Assuntos
     Ir para  ${PLONE_URL}/assuntos
     Capturar tela  criarsite-passo-04-pasta-assuntos.png
 
-Conteudo base - Pasta Sobre
+Conteudo base - Pasta Acesso a Informacao
     Como o usuario administrador  Machado de Assis
-    Ir para  ${PLONE_URL}/sobre
-    Capturar tela  criarsite-passo-04-pasta-assuntos.png
+    Ir para  ${PLONE_URL}/acesso-a-informacao
+    Capturar tela  criarsite-passo-05-pasta-acesso.png
 
 Alterar dados do site
     Como o usuario administrador  Machado de Assis
     Ir para  ${PLONE_URL}/@@site-controlpanel
-    Campo de texto  title_1  Secretaria de
-    Campo de texto  title_2  Comunicacao Social
-    Campo de texto  orgao  Presidencia da Republica
-    Campo de texto  description  Site da SECOM
+    Campo de texto  form.site_title_1  Secretaria de
+    Campo de texto  form.site_title_2  Comunicacao Social
+    Campo de texto  form.site_orgao  Presidencia da Republica
+    Campo de texto  form.site_description  Site da SECOM
+    Clicar botao  Salvar
 
     Ir para  ${PLONE_URL}
     Pagina deve conter  Secretaria de
