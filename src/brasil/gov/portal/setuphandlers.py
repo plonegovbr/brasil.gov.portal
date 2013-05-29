@@ -268,7 +268,7 @@ def cria_servicos(portal):
     folder.setLayout('folder_summary_view')
     # Criar links
     links = [
-        ('ouvidoria', 'Ouvidoria', '${portal_url}/ouvidoria'),
+        ('contato', 'Contato', '${portal_url}/contact-info'),
         ('central-servicos', 'Central de Serviços', '${portal_url}/servicos'),
     ]
     for link in links:
