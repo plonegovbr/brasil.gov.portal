@@ -12,7 +12,6 @@ PROFILE_ID = 'brasil.gov.portal:default'
 DEPENDENCIES = [
     'brasil.gov.temas',
     'collective.cover',
-    'collective.googleanalytics',
     'collective.nitf',
     'collective.polls',
     'collective.upload',

@@ -49,7 +49,6 @@ setup(
         'brasil.gov.tiles',
         'brasil.gov.vcge',
         'collective.cover',
-        'collective.googleanalytics',
         'collective.nitf',
         'collective.polls',
         'collective.upload',
