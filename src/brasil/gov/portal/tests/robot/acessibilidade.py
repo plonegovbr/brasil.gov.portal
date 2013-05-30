@@ -3,15 +3,15 @@
 
 def _luminance(r, g, b):
     def normalize(value):
-        value = value / 255
+        value = float(value) / 255
         if value <= 0.03928:
             value = value / 12.92
         else:
-            value = ((value + 0.055) / 1.055) ^ 2.4
-    r = r / 255
-    g = g / 255
-    b = b / 255
-
+            value = ((value + 0.055) / 1.055) ** 2.4
+        return value
+    r = normalize(r)
+    g = normalize(g)
+    b = normalize(b)
     L = 0.2126 * r + 0.7152 * g + 0.0722 * b
     return L + 0.05
 
