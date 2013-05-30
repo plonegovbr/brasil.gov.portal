@@ -23,7 +23,7 @@
   <record field="available_tiles"
           interface="collective.cover.controlpanel.ICoverSettings"
           name="collective.cover.controlpanel.ICoverSettings.available_tiles">
-    <value purge="false">
+    <value purge="true">
         <element>audio</element>
         <element>collective.cover.basic</element>
         <element>collective.cover.carousel</element>
