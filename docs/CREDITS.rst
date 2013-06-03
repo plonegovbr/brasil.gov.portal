@@ -7,3 +7,6 @@ seguintes pessoas:
 - Héctor Velarde
 - Érico Andrei
 - André Nogueira
+
+Para os testes do tipo áudio utilizamos o arquivo disponível em 
+http://commons.wikimedia.org/wiki/File:Thunder.ogg
