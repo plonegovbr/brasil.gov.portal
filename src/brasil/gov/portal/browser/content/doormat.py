@@ -34,6 +34,7 @@ class DoormatView(BaseView):
             for section in column['column_sections']:
                 for link in section['section_links']:
                     link_url = link['link_url']
+                    url = link_url
                     if not isinstance(link_url, str):
                         link_url = link_url()
                     if "${navigation_root_url}" in link_url:
