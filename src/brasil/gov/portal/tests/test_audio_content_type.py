@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from AccessControl import getSecurityManager
+from brasil.gov.portal.browser.content.audio import AudioView
 from brasil.gov.portal.content.audio import IAudio
 from brasil.gov.portal.content.audio_file import IMPEGAudioFile
 from brasil.gov.portal.content.audio_file import IOGGAudioFile
@@ -175,3 +176,48 @@ class OGGAudioFileTestCase(unittest.TestCase):
         from brasil.gov.portal.content.audio_file import validate_ogg
         self.assertTrue(validate_ogg(self.ogg))
         self.assertRaises(Invalid, validate_ogg, self.mp3)
+
+
+class AudioViewTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal.invokeFactory('Folder', 'test-folder')
+        # Invalidate schema cache
+        SCHEMA_CACHE.invalidate('Audio')
+        SCHEMA_CACHE.invalidate('MPEG Audio File')
+        SCHEMA_CACHE.invalidate('OGG Audio File')
+        self.folder = self.portal['test-folder']
+        audio_id = self.folder.invokeFactory('Audio', 'my-audio')
+        self.audio = self.folder[audio_id]
+        self.setup_content_data()
+
+    def setup_content_data(self):
+        audio = self.audio
+        path = os.path.dirname(__file__)
+        mp3_audio = open(os.path.join(path, 'files', 'file.mp3')).read()
+        audio.invokeFactory('MPEG Audio File', 'file.mp3')
+        audio['file.mp3'].file = NamedBlobFile(mp3_audio,
+                                               'audio/mp3',
+                                               u'file.mp3')
+        ogg_audio = open(os.path.join(path, 'files', 'file.ogg')).read()
+        audio.invokeFactory('OGG Audio File', 'file.ogg')
+        audio['file.ogg'].file = NamedBlobFile(ogg_audio,
+                                               'audio/ogg',
+                                               u'file.ogg')
+
+    def test_view(self):
+        view = self.audio.restrictedTraverse('@@view')
+        self.assertTrue(isinstance(view, AudioView))
+
+    def test_sources(self):
+        view = self.audio.restrictedTraverse('@@view')
+        self.assertEqual(len(view.sources()), 2)
+
+    def test_downloads(self):
+        view = self.audio.restrictedTraverse('@@view')
+        downloads = view.downloads()
+        self.assertEqual(len(downloads), 2)
