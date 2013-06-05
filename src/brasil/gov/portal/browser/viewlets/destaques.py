@@ -19,6 +19,21 @@ class Destaques_Viewlet(grok.Viewlet):
     grok.context(Interface)
     grok.order(100)
 
+    @property
+    def portal_state(self):
+        context = self.context
+        portal_state = getMultiAdapter((context, self.request),
+                                       name=u'plone_portal_state')
+        return portal_state
+
+    @property
+    def portal(self):
+        return self.portal_state.portal()
+
+    @property
+    def portal_url(self):
+        return self.portal_state.portal_url()
+
     def editable(self):
         ''' Validamos se o destaques eh editavel
         '''
@@ -31,11 +46,6 @@ class Destaques_Viewlet(grok.Viewlet):
     def available(self):
         ''' Exibiremos ou nao este viewlet
         '''
-        context = self.context
-        portal_state = getMultiAdapter((context, self.request),
-                                       name=u'plone_portal_state')
-        self.portal = portal_state.portal()
-        self.portal_url = portal_state.portal_url()
         self.destaques = getattr(self.portal, FEATURES_ID, None)
         if self.destaques:
             return ICover.providedBy(self.destaques)
