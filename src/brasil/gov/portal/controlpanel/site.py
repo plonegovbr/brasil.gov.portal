@@ -92,6 +92,13 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
         self.context = pprop.site_properties
         self.encoding = pprop.site_properties.default_charset
 
+    def get_site_title(self):
+        title = getattr(self.portal, 'title', u'')
+        return safe_unicode(title)
+
+    def set_site_title(self, value):
+        pass
+
     def get_site_title_1(self):
         title = getattr(self.portal, 'title_1', u'')
         return safe_unicode(title)
@@ -144,6 +151,7 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
         else:
             self.context.webstats_js = ''
 
+    site_title = property(get_site_title, set_site_title)
     site_title_1 = property(get_site_title_1, set_site_title_1)
     site_title_2 = property(get_site_title_2, set_site_title_2)
     site_orgao = property(get_site_orgao, set_site_orgao)
