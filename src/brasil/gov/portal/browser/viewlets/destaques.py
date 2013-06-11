@@ -20,6 +20,13 @@ class Destaques_Viewlet(grok.Viewlet):
     grok.order(100)
 
     @property
+    def canonical_object(self):
+        context = self.context
+        context_state = getMultiAdapter((context, self.request),
+                                        name=u'plone_context_state')
+        return context_state.canonical_object()
+
+    @property
     def portal_state(self):
         context = self.context
         portal_state = getMultiAdapter((context, self.request),
@@ -46,7 +53,9 @@ class Destaques_Viewlet(grok.Viewlet):
     def available(self):
         ''' Exibiremos ou nao este viewlet
         '''
-        self.destaques = getattr(self.portal, FEATURES_ID, None)
+        context = self.canonical_object
+        self.destaques = getattr(self.portal, FEATURES_ID, None) if (
+            context == self.portal) else None
         if self.destaques:
             return ICover.providedBy(self.destaques)
         else:
