@@ -42,12 +42,9 @@ class PortalPropertiesTestCase(unittest.TestCase):
         types_searched.sort()
         types_expected = [
             'Audio',
-            'Collection',
             'Document',
             'Event',
             'File',
-            'Folder',
-            'FormFolder',
             'Image',
             'Link',
             'collective.nitf.content',
