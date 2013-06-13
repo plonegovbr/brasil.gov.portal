@@ -48,7 +48,7 @@ def setupPortalContent(p):
 
 
 def capa_como_padrao(portal):
-    portal.manage_changeProperties(default_page='home')
+    portal.manage_addProperty('default_page', 'home', 'string')
 
 
 def configura_destaques(portal):
