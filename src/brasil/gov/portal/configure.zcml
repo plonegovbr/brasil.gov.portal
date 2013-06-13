@@ -18,6 +18,8 @@
   <include package=".content" />
   <include package=".controlpanel" />
 
+  <include package=".transmogrifier" />
+
   <include package="five.grok" />
  
   <grok:grok package="." />

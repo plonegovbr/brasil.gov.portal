@@ -26,7 +26,7 @@
       handler="brasil.gov.portal.setuphandlers.importContent"
       title="Plone Content Import"
       description="Plone content import.">
-   <depends name="plone-content" />
+   <depends name="typeinfo"/>
   </gs:importStep>
 
   <!-- Upgrades -->

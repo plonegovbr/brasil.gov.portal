@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="portlets" version="20130612" 
+         handler="plone.app.portlets.exportimport.portlets.importPortlets" 
+         title="Portlets">
+         Import portlet managers, types, assignments and blacklistings 
+         <dependency step="componentregistry"/>
+         <dependency step="content"/>
+         <dependency step="base-content"/>
+ </import-step>
+</import-steps>

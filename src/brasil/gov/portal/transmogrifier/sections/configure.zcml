@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+<utility
+    component=".source.JSONSourceSection"
+    name="brasil.sections.jsonsource"
+    />
+
+<utility
+    component=".refactor.RefactorSection"
+    name="brasil.sections.refactor"
+    />
+
+<utility
+    component=".refactor.UpdateCoverSection"
+    name="brasil.sections.cover"
+    />
+
+<utility
+    component=".refactor.RelatedItems"
+    name="brasil.sections.relatedItems"
+    />
+
+<utility
+    component=".datafields.DataFields"
+    name="brasil.sections.datafields"
+    />
+
+</configure>

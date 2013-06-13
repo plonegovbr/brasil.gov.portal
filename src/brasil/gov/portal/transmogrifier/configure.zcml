@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:transmogrifier="http://namespaces.plone.org/transmogrifier">
+
+	<include package="collective.transmogrifier" />
+	<include package="plone.app.transmogrifier" />
+    <include package="collective.transmogrifier" file="meta.zcml" />
+
+    <transmogrifier:registerConfig
+        name="brasil.gov.portal.conteudo"
+        title="Conteudo inicial do portal"
+        configuration="conteudo.cfg"
+        />
+
+    <include package=".sections" />
+
+</configure>
