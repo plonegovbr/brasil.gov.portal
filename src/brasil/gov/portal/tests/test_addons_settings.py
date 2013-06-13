@@ -31,8 +31,6 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'collective.cover.carousel',
             'collective.cover.collection',
             'collective.cover.contentbody',
-            'collective.cover.image',
-            'collective.cover.link',
             'collective.cover.list',
             'collective.cover.richtext',
             'em_destaque',
