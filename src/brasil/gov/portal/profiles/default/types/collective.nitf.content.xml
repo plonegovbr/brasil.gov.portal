@@ -5,7 +5,6 @@
   <property name="title" i18n:translate="">Notícia</property>
   <property name="behaviors" purge="False">
     <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
-    <element value="plone.app.relationfield.behavior.IRelatedItems"/>  	
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
   </property>
 </object>
