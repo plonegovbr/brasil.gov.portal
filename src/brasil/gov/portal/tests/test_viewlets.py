@@ -27,14 +27,21 @@ class DestaquesViewletTestCase(unittest.TestCase):
                                   'destaques', title=u'Destaques')
         self.destaques = self.portal['destaques']
 
-    def viewlet(self):
-        viewlet = Destaques_Viewlet(self.portal, self.request, None, None)
+    def viewlet(self, context=None):
+        context = context or self.portal
+        viewlet = Destaques_Viewlet(context, self.request, None, None)
         viewlet.update()
         return viewlet
 
     def test_available(self):
         viewlet = self.viewlet()
         self.assertTrue(viewlet.available())
+
+    def test_not_available_on_folder(self):
+        self.portal.invokeFactory('Folder',
+                                  'folder', title=u'Uma pasta')
+        viewlet = self.viewlet(self.portal['folder'])
+        self.assertFalse(viewlet.available())
 
     def test_not_available(self):
         # Apagamos a capa de destaques
@@ -101,6 +108,16 @@ class LogoViewletTestCase(unittest.TestCase):
         expected = self.portal.title_2
         viewlet = self.viewlet()
         self.assertEqual(viewlet.title_2(), expected)
+
+    def test_title_2_class(self):
+        # texto curto
+        self.portal.title_2 = u'Brasil'
+        viewlet = self.viewlet()
+        self.assertEqual(viewlet.title_2_class(), 'corto')
+        # texto longo
+        self.portal.title_2 = u'Desenvolvimento Social e Combate à Fome'
+        viewlet = self.viewlet()
+        self.assertEqual(viewlet.title_2_class(), 'luongo')
 
     def test_orgao(self):
         expected = self.portal.orgao
