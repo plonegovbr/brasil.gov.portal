@@ -18,13 +18,13 @@
   <property name="bottomLevel">0</property>
   <property name="root">/assuntos</property>
  </assignment>
- <assignment name="acesso-a-informacao" category="context" key="/"
+ <assignment name="sobre" category="context" key="/"
     manager="plone.leftcolumn" type="portlets.Navigation" visible="True">
   <property name="topLevel">0</property>
   <property name="currentFolderOnly">False</property>
-  <property name="name">Acesso à Informação</property>
+  <property name="name">Sobre</property>
   <property name="includeTop">False</property>
   <property name="bottomLevel">0</property>
-  <property name="root">/acesso-a-informacao</property>
+  <property name="root">/sobre</property>
  </assignment>
 </portlets>
