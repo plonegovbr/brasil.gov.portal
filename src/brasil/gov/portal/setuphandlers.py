@@ -40,19 +40,24 @@ def setupPortalContent(p):
 
     wftool = getToolByName(p, "portal_workflow")
     obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
-               'noticias', 'rodape', 'destaques', 'menu-de-apoio']
+               'noticias', 'rodape', 'destaques', 'menu-de-apoio',
+               'links-destaques', 'home', 'fale-com-orgao',
+               'videos', 'audios', 'infograficos', 'links',
+               'o-que-e', 'pastas-com-exemplos-de-pecas']
     publish_content(wftool, p, obj_ids)
 
 
 def capa_como_padrao(portal):
-    pass
+    portal.manage_changeProperties(default_page='home')
 
 
 def configura_destaques(portal):
     destaques = portal['destaques']
+    path = '/'.join(portal['links-destaques'])
     tile_id = '@@em_destaque/432cf6bf0ec1431588b8cf7b1717d300'
     tile = destaques.restrictedTraverse(tile_id)
-    for b in portal.portal_catalog.searchResults(portal_type='Link',
+    for b in portal.portal_catalog.searchResults(path=path,
+                                                 portal_type='Link',
                                                  sort_limit=5):
         obj = b.getObject()
         tile.populate_with_object(obj)
@@ -128,7 +133,8 @@ def publish_content(wftool, folder, obj_ids):
         wftool = getToolByName(folder, "portal_workflow")
     for oId in obj_ids:
         o = folder[oId]
-        if wftool.getInfoFor(o, 'review_state') != 'published':
+        review_state = wftool.getInfoFor(o, 'review_state', None)
+        if  review_state and (review_state != 'published'):
             wftool.doActionFor(o, 'publish')
             oIds = o.objectIds()
             if oIds:
