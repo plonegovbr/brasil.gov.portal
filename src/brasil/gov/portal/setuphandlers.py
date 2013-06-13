@@ -39,7 +39,7 @@ def setupPortalContent(p):
     configura_destaques(p)
 
     wftool = getToolByName(p, "portal_workflow")
-    obj_ids = ['acesso-a-informacao', 'assuntos', 'servicos', 'imagens',
+    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
                'noticias', 'rodape', 'destaques', 'menu-de-apoio']
     publish_content(wftool, p, obj_ids)
 
