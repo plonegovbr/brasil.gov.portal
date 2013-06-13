@@ -53,7 +53,7 @@ def capa_como_padrao(portal):
 
 def configura_destaques(portal):
     destaques = portal['destaques']
-    path = '/'.join(portal['links-destaques'])
+    path = '/'.join(portal['links-destaques'].getPhysicalPath())
     tile_id = '@@em_destaque/432cf6bf0ec1431588b8cf7b1717d300'
     tile = destaques.restrictedTraverse(tile_id)
     for b in portal.portal_catalog.searchResults(path=path,
