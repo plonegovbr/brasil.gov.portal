@@ -15,7 +15,8 @@ Test Teardown  Fechar todos os navegadores
 Navegacao no site
     Ir para  ${PLONE_URL}
 	Capturar tela  navegacao-capa.png
-	Pagina deve conter  Portal Brasil
-	Pagina deve conter  Secretaria de Comunica
+	Pagina deve conter  Secretaria de
+	Pagina deve conter  Comunica
+	Pagina deve conter  Presid
 	Clicar link  Mapa do Site
 	Pagina deve conter  Mantenha o ponteiro do mouse sobre o item
