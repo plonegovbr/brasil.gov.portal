@@ -28,10 +28,9 @@ class AddonsSettingsTestCase(unittest.TestCase):
         expected = [
             'audio',
             'audiogallery',
+            'collective.cover.banner',
             'collective.cover.carousel',
             'collective.cover.collection',
-            'collective.cover.image',
-            'collective.cover.link',
             'collective.cover.list',
             'collective.cover.richtext',
             'em_destaque',
