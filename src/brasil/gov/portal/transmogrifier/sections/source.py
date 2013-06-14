@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
-from zope.interface import classProvides, implements
-from collective.transmogrifier.interfaces import ISectionBlueprint
 from collective.transmogrifier.interfaces import ISection
+from collective.transmogrifier.interfaces import ISectionBlueprint
 from collective.transmogrifier.utils import resolvePackageReferenceOrFile
+from zope.interface import classProvides, implements
 
 import json
 

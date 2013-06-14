@@ -1,12 +1,12 @@
 # -*- coding:utf-8 -*-
-from plone.tiles.interfaces import ITileDataManager
-from zope.interface import classProvides, implements
-from collective.transmogrifier.interfaces import ISectionBlueprint
 from collective.transmogrifier.interfaces import ISection
-from z3c.relationfield import RelationValue
-from zope.intid.interfaces import IIntIds
-from zope.component import getUtility
+from collective.transmogrifier.interfaces import ISectionBlueprint
 from plone.namedfile.file import NamedBlobImage
+from plone.tiles.interfaces import ITileDataManager
+from z3c.relationfield import RelationValue
+from zope.component import getUtility
+from zope.interface import classProvides, implements
+from zope.intid.interfaces import IIntIds
 
 import base64
 
