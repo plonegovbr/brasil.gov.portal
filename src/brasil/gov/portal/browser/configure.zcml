@@ -18,6 +18,9 @@
   <!-- Contraste -->
   <include package='.contraste' />
 
+  <!-- Portlets -->
+  <include package='.portlets' />
+
   <!-- Viewlets -->
   <include package='.viewlets' />
 
