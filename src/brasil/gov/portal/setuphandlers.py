@@ -41,9 +41,8 @@ def setupPortalContent(p):
     wftool = getToolByName(p, "portal_workflow")
     obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
                'noticias', 'rodape', 'destaques', 'menu-de-apoio',
-               'links-destaques', 'home', 'fale-com-orgao',
-               'videos', 'audios', 'infograficos', 'links',
-               'o-que-e', 'pastas-com-exemplos-de-pecas']
+               'links-destaques', 'home', 'contato',
+               'videos', 'audios', 'links', 'pastas-com-exemplos-de-pecas']
     publish_content(wftool, p, obj_ids)
 
 
