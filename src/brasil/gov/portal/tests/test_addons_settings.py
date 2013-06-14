@@ -27,14 +27,20 @@ class AddonsSettingsTestCase(unittest.TestCase):
         settings = self.registry.forInterface(ICoverSettings)
         expected = [
             'audio',
-            'collective.cover.basic',
+            'audiogallery',
             'collective.cover.carousel',
             'collective.cover.collection',
-            'collective.cover.contentbody',
+            'collective.cover.image',
+            'collective.cover.link',
             'collective.cover.list',
             'collective.cover.richtext',
             'em_destaque',
+            'mediacarousel',
+            'nitf',
+            'social',
             'standaloneheader',
+            'video',
+            'videogallery'
         ]
         available_tiles = settings.available_tiles
         available_tiles.sort()
