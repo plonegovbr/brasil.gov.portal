@@ -24,8 +24,12 @@ class RefactorSection(object):
             yield item
 
     def transmogrify(self, item):
+        pt = item['_type']
         # Fix path
         item['_path'] = str(item['_path'])
+        # Default page
+        if pt not in ('Folder', 'Collection') and '_defaultpage' in item:
+            del(item['_defaultpage'])
         # VCGE
         if not item.get('skos'):
             item['skos'] = []
