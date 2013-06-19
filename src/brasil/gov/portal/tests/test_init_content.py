@@ -24,14 +24,23 @@ class InitContentTestCase(unittest.TestCase):
         self.st.runAllImportStepsFromProfile(profile)
         self.wt = self.portal.portal_workflow
 
+    def test_conteudos_publicados(self):
+        ids = ['acesso-a-sistemas', 'area-imprensa', 'assuntos', 'audios',
+               'contato', 'destaques', 'eventos', 'home', 'imagens', 'links',
+               'links-destaques', 'menu-de-apoio', 'noticias',
+               'pastas-com-exemplos-de-pecas', 'rodape', 'rss', 'servicos',
+               'sobre', 'videos']
+        for oId in ids:
+            o = self.portal[oId]
+            self.assertEqual(self.wt.getInfoFor(o, 'review_state'),
+                             'published')
+
     def test_assuntos_available(self):
         self.assertTrue('assuntos' in self.portal.objectIds(),
                         u'Pasta Assuntos não disponível')
         pasta = self.portal['assuntos']
         self.assertEqual(u'Assuntos', pasta.title,
                          u'Título não aplicado')
-        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
-                         'published')
 
     def test_imagens_available(self):
         self.assertTrue('imagens' in self.portal.objectIds(),
@@ -39,8 +48,6 @@ class InitContentTestCase(unittest.TestCase):
         pasta = self.portal['imagens']
         self.assertEqual(u'Imagens', pasta.title,
                          u'Título não aplicado')
-        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
-                         'published')
 
     def test_imagens_constrains(self):
         pasta = self.portal['imagens']
@@ -54,8 +61,6 @@ class InitContentTestCase(unittest.TestCase):
         pasta = self.portal['servicos']
         self.assertEqual(u'Serviços', pasta.title,
                          u'Título não aplicado')
-        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
-                         'published')
 
     def test_servicos_constrains(self):
         pasta = self.portal['servicos']
@@ -69,8 +74,6 @@ class InitContentTestCase(unittest.TestCase):
         pasta = self.portal['acesso-a-informacao']
         self.assertEqual(u'Sobre', pasta.title,
                          u'Título não aplicado')
-        self.assertEqual(self.wt.getInfoFor(pasta, 'review_state'),
-                         'published')
 
     def test_default_portlets(self):
         # Os portlets estao configurados corretamente?

@@ -42,6 +42,7 @@ def setupPortalContent(p):
     obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
                'noticias', 'rodape', 'destaques', 'menu-de-apoio',
                'links-destaques', 'home', 'contato',
+               'acesso-a-sistemas', 'area-imprensa', 'rss', 'eventos',
                'videos', 'audios', 'links', 'pastas-com-exemplos-de-pecas']
     publish_content(wftool, p, obj_ids)
 
