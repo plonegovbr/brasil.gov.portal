@@ -2,6 +2,7 @@
 <object name="collective.polls.poll" meta_type="Dexterity FTI"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
    i18n:domain="collective.polls.poll">
+   <property name="title" i18n:translate="">Enquete</property>
   <property name="behaviors" purge="False">
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
   </property>
