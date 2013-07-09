@@ -67,6 +67,8 @@ class AddonsSettingsTestCase(unittest.TestCase):
         expected = [
             'Azul Claro - borda|azul-claro-borda',
             'Azul Claro|azul-claro',
+            'Azul Turquesa - borda|azul-turquesa-borda',
+            'Azul Turquesa|azul-turquesa',
             'Bege - borda|bege-borda',
             'Bege|bege',
             'Laranja - borda|laranja-borda',
