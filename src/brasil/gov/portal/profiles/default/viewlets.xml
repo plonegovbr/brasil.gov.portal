@@ -6,5 +6,5 @@
   <order manager="plone.portalheader" skinname="*">
     <viewlet name="brasil.gov.portal.servicos" after="plone.global_sections"/>
     <viewlet name="brasil.gov.portal.redessociais" after="brasil.gov.portal.servicos"/>    
-  </order>  
+  </order>
 </object>
