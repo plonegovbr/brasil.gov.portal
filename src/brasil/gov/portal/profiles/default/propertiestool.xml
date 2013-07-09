@@ -43,7 +43,6 @@
       <element value="collective.polls.poll"/>
       <element value="Document"/>
       <element value="Event"/>
-      <element value="FormFolder"/>
       <element value="Image"/>
       <element value="sc.embedder"/>
     </property>
