@@ -2,7 +2,7 @@
 <object name="collective.nitf.content" meta_type="Dexterity FTI"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
    i18n:domain="collective.nitf">
-  <property name="title" i18n:translate="">Notícia</property>
+  <property name="title" i18n:translate="">Noticia</property>
   <property name="behaviors" purge="False">
     <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>

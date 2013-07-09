@@ -2,7 +2,7 @@
 <object name="sc.embedder" meta_type="Dexterity FTI"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
    i18n:domain="sc.embedder">
-  <property name="title" i18n:translate="">Multimídia</property>
+  <property name="title" i18n:translate="">Multimidia</property>
   <property name="behaviors" purge="False">
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
   </property>
