@@ -9,7 +9,7 @@
     </property>
   </object>
   <object name="site_properties" meta_type="Plone Property Sheet">
-    <property name="allowAnonymousViewAbout">True</property>
+    <property name="allowAnonymousViewAbout">False</property>
     <property name="localTimeFormat" type="string">%d/%m/%Y</property>
     <property name="localLongTimeFormat" type="string">%d/%m/%Y %Hh%M</property>
     <property name="enable_link_integrity_checks" type="boolean">True</property>
