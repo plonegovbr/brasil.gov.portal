@@ -5,6 +5,7 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import FunctionalTesting
 from plone.testing import z2
+from collective.transmogrifier.transmogrifier import configuration_registry
 
 
 class Fixture(PloneSandboxLayer):
@@ -24,6 +25,10 @@ class Fixture(PloneSandboxLayer):
         self.applyProfile(portal, 'brasil.gov.portal:default')
         portal.portal_workflow.setDefaultChain('simple_publication_workflow')
 
+    def tearDown(self):
+        super(Fixture, self).tearDown()
+        configuration_registry.clear()
+        #cleanup.cleanUp()
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
@@ -33,6 +38,27 @@ INTEGRATION_TESTING = IntegrationTesting(
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='brasil.gov.portal:Functional',
+)
+
+
+class InitContentFixture(Fixture):
+
+    def setUpPloneSite(self, portal):
+        super(InitContentFixture, self).setUpPloneSite(portal)
+        self.applyProfile(portal, 'brasil.gov.portal:initcontent')
+        portal.title = 'Portal Brasil'
+        portal.description = u'Secretaria de Comunicação Social'
+        wf = portal.portal_workflow
+        wf.setDefaultChain('simple_publication_workflow')
+        types = ('Document', 'Folder', 'Link', 'Topic', 'News Item')
+        wf.setChainForPortalTypes(types, '(Default)')
+
+
+INITCONTENT_FIXTURE = InitContentFixture()
+
+INITCONTENT_TESTING = IntegrationTesting(
+    bases=(INITCONTENT_FIXTURE,),
+    name='brasil.gov.portal:InitContent',
 )
 
 
