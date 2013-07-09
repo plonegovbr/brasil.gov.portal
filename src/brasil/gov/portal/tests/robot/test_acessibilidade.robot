@@ -68,19 +68,11 @@ Accesskeys
 	Capturar tela visivel  accesskeys-04-rodape.png
 
 Link de acessibilidade
-    Ir para  ${PLONE_URL}/@@acessibilidade
-	Pagina deve conter  Decreto nº 5.296
+    Ir para  ${PLONE_URL}/acessibilidade
+	Pagina deve conter  Decreto
+	Pagina deve conter  5.296
 	Capturar tela  acessibilidade-base.png
 	Verificar erros de acessibilidade
-
-	Clicar link  Grande
-	Capturar tela  acessibilidade-grande.png
-
-	Clicar link  Pequeno
-	Capturar tela  acessibilidade-pequeno.png
-
-	Clicar link  Normal
-	Capturar tela  acessibilidade-normal.png
 
 
 Validar acessibilidade nas paginas
