@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from brasil.gov.portal.testing import INTEGRATION_TESTING
+from brasil.gov.portal.testing import INITCONTENT_TESTING
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
@@ -10,26 +10,19 @@ import unittest
 
 class InitContentTestCase(unittest.TestCase):
 
-    layer = INTEGRATION_TESTING
+    layer = INITCONTENT_TESTING
 
     def setUp(self):
-        profile = 'profile-brasil.gov.portal:initcontent'
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        wf = self.portal.portal_workflow
-        wf.setDefaultChain('simple_publication_workflow')
-        types = ('Document', 'Folder', 'Link', 'Topic', 'News Item')
-        wf.setChainForPortalTypes(types, '(Default)')
-        self.st = self.portal.portal_setup
-        self.st.runAllImportStepsFromProfile(profile)
         self.wt = self.portal.portal_workflow
 
     def test_conteudos_publicados(self):
-        ids = ['acesso-a-sistemas', 'area-imprensa', 'assuntos', 'audios',
-               'contato', 'destaques', 'eventos', 'home', 'imagens', 'links',
-               'links-destaques', 'menu-de-apoio', 'noticias',
-               'pastas-com-exemplos-de-pecas', 'rodape', 'rss', 'servicos',
-               'sobre', 'videos']
+        ids = ['acessibilidade', 'acesso-a-sistemas', 'area-imprensa',
+               'assuntos', 'audios', 'contato', 'destaques', 'eventos',
+               'home', 'imagens', 'links', 'links-destaques', 'menu-de-apoio',
+               'noticias', 'pastas-com-exemplos-de-pecas', 'rodape', 'rss',
+               'servicos', 'sobre', 'videos']
         for oId in ids:
             o = self.portal[oId]
             self.assertEqual(self.wt.getInfoFor(o, 'review_state'),
@@ -71,7 +64,7 @@ class InitContentTestCase(unittest.TestCase):
     def test_sobre_available(self):
         self.assertTrue('sobre' in self.portal.objectIds(),
                         u'Conheça este órgão')
-        pasta = self.portal['acesso-a-informacao']
+        pasta = self.portal['sobre']
         self.assertEqual(u'Sobre', pasta.title,
                          u'Título não aplicado')
 
