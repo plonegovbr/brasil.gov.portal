@@ -137,7 +137,6 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'Audio',
             'Document',
             'Event',
-            'FormFolder',
             'Image',
             'collective.cover.content',
             'collective.nitf.content',
