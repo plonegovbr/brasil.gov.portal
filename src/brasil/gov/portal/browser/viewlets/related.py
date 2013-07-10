@@ -2,6 +2,7 @@
 """ Modulo que implementa o viewlet de conteudo relacionados do Portal """
 from Acquisition import aq_inner
 from five import grok
+from Products.CMFPlone.utils import base_hasattr
 from plone.app.layout.viewlets.interfaces import IBelowContentBody
 from plone.app.relationfield.behavior import IRelatedItems
 from plone.dexterity.interfaces import IDexterityContent
@@ -21,13 +22,16 @@ class RelatedItemsViewlet(grok.Viewlet):
     def related(self):
         context = aq_inner(self.context)
         res = ()
-        try:
-            behavior = IRelatedItems(context)
-        except TypeError:
-            return res
+        if base_hasattr(context, 'relatedItems'):
+            related = context.relatedItems
+        else:
+            try:
+                behavior = IRelatedItems(context)
+                related = behavior.relatedItems
+            except TypeError:
+                return res
         tools = context.restrictedTraverse('@@plone_tools')
         catalog = tools.catalog()
-        related = behavior.relatedItems
         if related:
             related = [item.to_path for item in related]
             brains = catalog(path=related)
