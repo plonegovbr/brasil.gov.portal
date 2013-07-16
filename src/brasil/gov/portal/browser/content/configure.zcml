@@ -44,4 +44,13 @@
       allowed_interface="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <browser:viewlet
+      name="plone.htmlhead.title"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      class="plone.app.layout.viewlets.common.TitleViewlet"
+      template="templates/title.pt"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>
