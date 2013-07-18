@@ -21,4 +21,36 @@
      permission="zope2.View"
      />
 
+  <browser:resource
+     name="search.js"
+     file="js/search.js"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     />
+
+  <browser:page
+     name="busca"
+     class="plone.app.search.browser.Search"
+     permission="zope2.View"
+     for="*"
+     template="templates/search.pt"
+     />
+
+  <browser:page
+      for="*"
+      name="mapadosite"
+      class="Products.CMFPlone.browser.sitemap.SitemapView"
+      template="templates/sitemap.pt"
+      permission="zope.Public"
+      allowed_interface="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+  <browser:viewlet
+      name="plone.htmlhead.title"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      class="plone.app.layout.viewlets.common.TitleViewlet"
+      template="templates/title.pt"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>
