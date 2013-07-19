@@ -26,7 +26,7 @@
             </div>
 
             <div id="embed_body_text" class="field" tal:condition="context/text">
-                <div tal:content="structure view/w/text/render" />
+                <div tal:content="structure context/text/output" />
             </div>
 
             <div tal:condition='python:context.player_position == "Bottom"'
@@ -36,7 +36,7 @@
 
             <div id="alt_cont" class="field" tal:condition="context/alternate_content">
                 <a i18n:translate="">Alternate content</a>
-                <div class="alt_cont_text" tal:content="structure view/w/alternate_content/render" />
+                <div class="alt_cont_text" tal:content="structure context/alternate_content/output" />
             </div>
 
             <div tal:replace="structure provider:plone.belowcontentbody" />
