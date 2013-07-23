@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="brasil.gov.portal">
+
+  <browser:page
+      for="*"
+      name="mapadosite"
+      class="Products.CMFPlone.browser.sitemap.SitemapView"
+      template="templates/sitemap.pt"
+      permission="zope.Public"
+      allowed_interface="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+</configure>
