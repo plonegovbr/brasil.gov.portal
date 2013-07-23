@@ -35,7 +35,7 @@
                       first_call not:request/advanced_search|nothing;
                       st python:request.get('SearchableText', '');
                       DateTime python:modules['DateTime'].DateTime;
-                      navigation_root_url view/navroot_url;"> 
+                      navigation_root_url view/navroot_url;">
 
         <input type="hidden" name="advanced_search" value="False" />
         <input type="hidden" name="sort_on" value="" />
@@ -327,7 +327,9 @@
 
                                         </span>
 
-                                        <span tal:define="categories item/Subject|nothing"
+                                        <span tal:define="categories item/Subject|nothing;
+                                                          std modules/Products.PythonScripts.standard;
+                                                          url_quote nocall: std/url_quote;"
                                               tal:condition="categories">
                                           &mdash;
                                           <tal:filedunder i18n:translate="">filed under:</tal:filedunder>
@@ -336,7 +338,8 @@
                                                class="link-category"
                                                rel="tag"
                                                tal:content="category"
-                                               tal:attributes="href string:$navigation_root_url/@@busca?Subject%3Alist=${category}">
+                                               tal:define="category_quote python:url_quote(category)"
+                                               tal:attributes="href string:$navigation_root_url/@@busca?Subject%3Alist=${category_quote}">
                                               Category
                                             </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
                                           </span>
