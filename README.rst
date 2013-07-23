@@ -19,11 +19,6 @@ Para uso deste pacote, seu site deve ter sido construído com:
 
     * Plone 4.3 ou superior (http://plone.org/products/plone)
 
-Captura de tela
-------------------
-
-TODO
-
 
 Estado deste pacote
 ---------------------
