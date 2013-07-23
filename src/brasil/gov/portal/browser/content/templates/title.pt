@@ -1,0 +1,7 @@
+<title tal:content="structure python:u'Resultados da Busca &mdash; ' + view.site_title
+                                     if ('busca' in request.getURL().split('/')[-1])
+                                     else
+                                     u'Mapa do Site &mdash; ' + view.site_title
+                                     if ('mapadosite' in request.getURL().split('/')[-1])
+                                     else
+                                     view.site_title">Site Title</title>
