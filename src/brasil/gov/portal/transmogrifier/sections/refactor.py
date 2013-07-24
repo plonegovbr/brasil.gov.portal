@@ -30,6 +30,8 @@ class RefactorSection(object):
         # Default page
         if pt not in ('Folder', 'Collection') and '_defaultpage' in item:
             del(item['_defaultpage'])
+        if pt in ('File', 'Image', 'Document', 'News Item'):
+            item['description'] = item.get('description', '')
         # VCGE
         if not item.get('skos'):
             item['skos'] = []
@@ -90,7 +92,10 @@ class RelatedItems(object):
         intids = getUtility(IIntIds)
         for path, refs in self.to_fix:
             relatedItems = []
-            o = self.context.restrictedTraverse(str(path))
+            try:
+                o = self.context.restrictedTraverse(str(path))
+            except KeyError:
+                continue
             for ref in refs:
                 oRef = self.context.restrictedTraverse(ref)
                 to_id = intids.getId(oRef)

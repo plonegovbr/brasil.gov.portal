@@ -5,7 +5,7 @@ from setuptools import setup
 
 import os
 
-version = '1.0'
+version = '1.0a2.dev0'
 long_description = open("README.rst").read() + "\n" + \
     open(os.path.join("docs", "INSTALL.rst")).read() + "\n" + \
     open(os.path.join("docs", "CREDITS.rst")).read() + "\n" + \
@@ -17,7 +17,7 @@ setup(
     description="Implementação Modelo da Identidade Digital de Governo",
     long_description=long_description,
     classifiers=[
-        "Development Status :: 1 - Alpha",
+        "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 4.3",

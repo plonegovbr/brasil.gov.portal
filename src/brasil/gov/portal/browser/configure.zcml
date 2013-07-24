@@ -9,6 +9,9 @@
       name="plonegovbr.png"
       />
 
+  <!-- Busca -->
+  <include package='.busca' />
+
   <!-- Conteudos -->
   <include package='.content' />
 
@@ -20,6 +23,9 @@
 
   <!-- Portlets -->
   <include package='.portlets' />
+
+  <!-- Sitemap -->
+  <include package='.sitemap' />
 
   <!-- Viewlets -->
   <include package='.viewlets' />

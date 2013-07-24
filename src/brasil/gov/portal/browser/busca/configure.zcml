@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="brasil.gov.portal">
+
+  <browser:resource
+     name="search.js"
+     file="js/search.js"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     />
+
+  <browser:page
+     name="busca"
+     class="plone.app.search.browser.Search"
+     permission="zope2.View"
+     for="*"
+     template="templates/search.pt"
+     />
+
+</configure>
