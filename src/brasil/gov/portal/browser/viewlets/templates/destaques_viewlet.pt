@@ -1,20 +1,13 @@
 <div id="portal-features" tal:condition="viewlet/available">
     <a href=""
-       id="editar-destaques"
-       tal:define="portal_url viewlet/portal_url"
-       tal:condition="viewlet/editable"
-       tal:attributes="href string:${portal_url}/destaques">Editar destaques</a>
+    	id="editar-destaques"
+    	tal:define="portal_url viewlet/portal_url"
+        tal:condition="viewlet/editable"
+        tal:attributes="href string:${portal_url}/destaques">Editar destaques</a>
     <script>
-        jq(function() {
-            jq('#featured-content').load(portal_url + '/destaques?ajax_load=1 #content > .row');
-        });
+    jq(function() {
+        jq('#featured-content').load(portal_url + '/destaques?ajax_load=1 #content > .row');
+    });
     </script>
-    <noscript>
-        <p>
-            <a tal:attributes="href string:${viewlet/portal_url}/destaques?ajax_load=1" class="noBorder">
-                Destaques do portal
-            </a>
-        </p>
-    </noscript>
     <div id="featured-content"></div>
 </div>
