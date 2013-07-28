@@ -7,11 +7,13 @@
   <browser:resource
       file="jquery.cookie.js"
       name="jquery.cookie.js"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
   <browser:resource
       file="contraste.js"
       name="contraste.js"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
 </configure>
