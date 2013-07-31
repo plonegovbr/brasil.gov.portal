@@ -7,7 +7,7 @@
   <!-- Profiles -->
   <gs:registerProfile
       name="default"
-      title="Portal Modelo: Versão 1000"
+      title="Identidade Digital: Versão 1000"
       directory="profiles/default"
       description="Configurações da Versão 1000 do portal"
       provides="Products.GenericSetup.interfaces.EXTENSION"
