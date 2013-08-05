@@ -7,7 +7,7 @@
   <!-- Profiles -->
   <gs:registerProfile
       name="default"
-      title="Identidade Digital: Versão 1000"
+      title="Identidade Digital: Versão 2000"
       directory="profiles/default"
       description="Configurações da Versão 1000 do portal"
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -15,14 +15,14 @@
   
   <!-- Upgrade Steps -->
   <gs:upgradeSteps
-        source="0.0"
-        destination="1000"
+        source="1000"
+        destination="2000"
         profile="brasil.gov.portal:default">
 
       <gs:upgradeStep
-          title="Configuração inicial"
-          description="Configuração do site"
-          handler=".handler.setup"
+          title="Atualiza portal para versão 2000"
+          description="Configura NITF para versionamento."
+          handler=".handler.apply_profile"
           />
 
   </gs:upgradeSteps>
