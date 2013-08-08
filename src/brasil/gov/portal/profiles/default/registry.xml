@@ -54,7 +54,7 @@
       <element>Link</element>
     </value>
   </record>
-  
+
   <!-- estilos do collective.cover -->
   <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
     <value>
@@ -67,6 +67,7 @@
       <element>Laranja - borda|laranja-borda</element>
       <element>Laranja|laranja</element>
       <element>Lista Horizontal|lista-horizontal</element>
+      <element>Lista Vertical|lista-vertical</element>
       <element>Roxo - borda|roxo-borda</element>
       <element>Roxo|roxo</element>
       <element>Verde|verde</element>
@@ -108,7 +109,7 @@
       <element>File</element>
       <element>Image</element>
     </value>
-  </record>  
+  </record>
   <!-- collective.upload settings -->
   <record name="collective.upload.interfaces.IUploadSettings.resize_max_width">
     <value>1024</value>
