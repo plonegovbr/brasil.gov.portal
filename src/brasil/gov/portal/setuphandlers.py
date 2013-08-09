@@ -48,7 +48,8 @@ def setupPortalContent(p):
 
 
 def capa_como_padrao(portal):
-    portal.manage_addProperty('default_page', 'home', 'string')
+    if not hasattr(portal, 'default_page'):
+        portal.manage_addProperty('default_page', 'home', 'string')
 
 
 def configura_destaques(portal):
