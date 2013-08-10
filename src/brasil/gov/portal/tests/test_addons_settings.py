@@ -39,7 +39,8 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'social',
             'standaloneheader',
             'video',
-            'videogallery'
+            'videogallery',
+            'banner_rotativo'
         ]
         available_tiles = settings.available_tiles
         available_tiles.sort()

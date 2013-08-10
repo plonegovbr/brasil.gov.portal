@@ -38,6 +38,7 @@
         <element>standaloneheader</element>
         <element>video</element>
         <element>videogallery</element>
+        <element>banner_rotativo</element>
     </value>
   </record>
 
