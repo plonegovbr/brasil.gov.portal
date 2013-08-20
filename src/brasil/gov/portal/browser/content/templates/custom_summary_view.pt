@@ -15,7 +15,7 @@
     <metal:block use-macro="context/standard_view/macros/entries">
     <metal:entry fill-slot="entry">
 
-        <div class="tileItem visualIEFloatFix"
+        <div tal:attributes="class python:'tileItem visualIEFloatFix tile-%s' % normalizeString(item.portal_type);"
              tal:define="obj item/getObject">
             <a href="#"
                   tal:condition="obj/image|nothing"
@@ -28,30 +28,109 @@
                   </div>
             </a>
 
+            <span class="subtitle" tal:content="item/subtitle" tal:condition="item/subtitle"></span>
             <h2 class="tileHeadline" metal:define-macro="listitem">
-                <a href="#"
-                   class="summary url"
-                   tal:attributes="href python:item_type in use_view_action and item_url+'/view' or item_url;"
-                   tal:content="item/Title">
-                    Item Title
-                </a>
+              <a href="#" class="summary url"
+                 tal:attributes="href python:item_type in use_view_action and item_url+'/view' or item_url;"
+                 tal:content="item/Title">
+                  Item Title
+              </a>
             </h2>
-
-            <div metal:use-macro="context/standard_view/macros/document_byline"></div>
-
-            <p class="tileBody" tal:condition="item_description">
-                <span class="description" tal:content="item_description">
+            <p tal:condition="item/Description">
+                <span class="description" tal:content="item/Description">
                     description
                 </span>
             </p>
-
-            <p class="tileFooter">
+            <div class="keywords" tal:define="tags item/Subject"
+                 tal:condition="tags">
+              Tags:
+              <span tal:repeat="tag tags">
                 <a href=""
-                   tal:attributes="href python:item_type in use_view_action and item_url+'/view' or item_url;"
-                   i18n:translate="read_more">
-                Read More&hellip;
-                </a>
-            </p>
+                   tal:content="tag"
+                   tal:attributes="href string:${portal_url}/@@busca?Subject:list=${tag}"
+                   class="link-category" rel="tag">Berlim</a>
+              </span>
+            </div>
+            <!-- Byline-->
+            <span class="documentByLine">
+                <span tal:condition="python: item_type == 'Event' and item_sametime"
+                      i18n:translate="label_event_byline_onlyfrom">
+                     <abbr class="dtstart"
+                           tal:attributes="title python:item_start"
+                           tal:content="python:toLocalizedTime(item_start,long_format=1)"
+                           i18n:name="start">from date</abbr>
+                </span>
+                <span tal:condition="python: item_type == 'Event' and item_samedate and not item_sametime"
+                      i18n:translate="label_event_byline_samedate">
+                     <abbr class="dtstart"
+                           tal:attributes="title python:item_start"
+                           tal:content="python:toLocalizedTime(item_start)"
+                           i18n:name="start">from date</abbr> from
+                     <abbr class="dtstart"
+                           tal:attributes="title python:item_start"
+                           tal:content="python:toLocalizedTime(item_start,time_only=1)"
+                           i18n:name="starttime">from time</abbr> to
+                     <abbr class="dtend"
+                           tal:attributes="title python:item_end"
+                           tal:content="python:toLocalizedTime(item_end,time_only=1)"
+                           i18n:name="end">to time</abbr>
+                </span>
+                <span tal:condition="python: item_type == 'Event' and not item_samedate and not item_sametime"
+                      i18n:translate="label_event_byline">
+                      from
+                           <abbr class="dtstart"
+                           tal:attributes="title python:item_start"
+                           tal:content="python:toLocalizedTime(item_start,long_format=1)"
+                           i18n:name="start">from date</abbr> to
+                     <abbr class="dtend"
+                           tal:attributes="title python:item_end"
+                           tal:content="python:toLocalizedTime(item_end,long_format=1)"
+                           i18n:name="end">to date</abbr>
+                </span>
+                 <span tal:condition="python: item_type == 'Event' and item.location"
+                      i18n:translate="label_event_byline_location">&mdash;
+                     <span tal:content="string:${item/location}"
+                           class="location"
+                           i18n:name="location">Oslo</span>,
+                </span>
+                <tal:byline condition="show_about">
+
+                    <tal:name tal:condition="item_creator"
+                        tal:define="author python:pas_member.info(item_creator);
+                                    creator_short_form author/username;
+                                    creator_long_form string:?author=${author/username};
+                                    creator_is_openid python:'/' in creator_short_form;
+                                    creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
+                      <span class="hiddenStructure"
+                         i18n:translate="label_by_author">
+                        by
+                      <a href="#"
+                         tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
+                         tal:content="author/name_or_id"
+                         tal:omit-tag="not:author"
+                         i18n:name="author">
+                        Bob Dobalina
+                      </a>
+                      </span>
+
+                    </tal:name>
+
+                    <tal:modified condition="python: item_type != 'Event'">
+                        <span class="hiddenStructure">
+                          <tal:mod i18n:translate="box_last_modified">
+                            last modified
+                          </tal:mod>
+                        </span>
+                        <span tal:replace="python:toLocalizedTime(item_modified,long_format=1)">
+                          August 16, 2001 at 23:35:59
+                        </span>
+                        <span class="icon-type"
+                          i18n:translate=""
+                          tal:content="item_type">
+                        </span>
+                    </tal:modified>
+
+            <!-- byline-->
 
             <div class="visualClear"><!-- --></div>
         </div>
