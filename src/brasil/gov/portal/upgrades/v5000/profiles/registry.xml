@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+  <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
+    <value purge="false">
+      <element>Azul Petroleo|azul-petroleo</element>
+      <element>Marrom Claro|marrom-claro</element>
+      <element>Amarelo|amarelo</element>
+      <element>Verde Escuro|verde-escuro</element>
+      <element>Azul|azul</element>
+      <element>Marrom|marrom</element>
+      <element>Verde Claro|verde-claro</element>
+      <element>Azul Piscina|azul-piscina</element>
+    </value>
+  </record>
+</registry>
