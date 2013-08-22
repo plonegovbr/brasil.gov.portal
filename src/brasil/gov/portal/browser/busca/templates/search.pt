@@ -281,6 +281,9 @@
                                          tal:content="item/Title" />
                                     </dt>
                                     <dd>
+                                      <div tal:content="item/CroppedDescription">
+                                        Cropped description
+                                      </div>
                                       <span class="discreet" i18n:domain="plone"
                                         tal:condition="show_about">
                                         <span class="documentAuthor"
@@ -326,7 +329,6 @@
                                                           std modules/Products.PythonScripts.standard;
                                                           url_quote nocall: std/url_quote;"
                                               tal:condition="categories">
-                                          &mdash;
                                           <tal:filedunder i18n:translate="">filed under:</tal:filedunder>
                                           <span tal:repeat="category categories">
                                             <a href=""
@@ -340,9 +342,6 @@
                                           </span>
                                         </span>
                                       </span>
-                                      <div tal:content="item/CroppedDescription">
-                                        Cropped description
-                                      </div>
                                     </dd>
                               </tal:results>
                           </dl>
