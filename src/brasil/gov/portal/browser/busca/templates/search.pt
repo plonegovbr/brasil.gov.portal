@@ -27,6 +27,9 @@
 <body>
 
   <div id="content-core" metal:fill-slot="main">
+    <h1 class="documentFirstHeading">
+        Busca
+    </h1>
 
     <form name="searchform"
           action="@@busca"
@@ -41,7 +44,7 @@
         <input type="hidden" name="sort_on" value="" />
 
         <fieldset id="search-field" i18n:domain="plone" class="noborder">
-            <legend class="hiddenStructure">Search site</legend>
+            <legend i18n:translate="title_search_title">Search Site</legend>
             <input class="searchPage"
                    name="SearchableText"
                    type="text"
@@ -103,16 +106,12 @@
                         items matching your search terms.
                     </span>
 
-                    <dl class="actionMenu deactivated"
-                        tal:attributes="class python:view.show_advanced_search() and 'actionMenu activated' or 'actionMenu deactivated'">
-
+                    <dl>
                       <dt class="actionMenuHeader">
-                          <a href="#"
-                             tal:attributes="href view/advanced_search_trigger"
-                             id="search-filter-toggle"
+                          <span id="search-filter-toggle"
                              i18n:translate="narrow_search_options">
                               Filter the results.
-                          </a>
+                          </span>
                       </dt>
                       <dd class="actionMenuContent">
                           <div id="search-filter" i18n:domain="plone">
@@ -277,7 +276,6 @@
                           <dl class="searchResults">
                               <tal:results repeat="item batch">
                                     <dt tal:attributes="class item/ContentTypeClass">
-                                      <img tal:replace="structure item/getIcon" />
                                       <a href="#"
                                          tal:define="item_url item/getURL;
                                                      item_type item/PortalType"
@@ -286,6 +284,9 @@
                                          tal:content="item/Title" />
                                     </dt>
                                     <dd>
+                                      <div tal:content="item/CroppedDescription">
+                                        Cropped description
+                                      </div>
                                       <span class="discreet" i18n:domain="plone"
                                         tal:condition="show_about">
                                         <span class="documentAuthor"
@@ -307,7 +308,6 @@
                                                           modification_date item/ModificationDate">
 
                                             <span class="documentPublished" tal:condition="python: publication_date != 'None'">
-                                              &mdash;
                                               <span i18n:translate="box_published">
                                                 published
                                               </span>
@@ -315,9 +315,9 @@
                                                 August 16, 2001 at 23:35:59
                                               </span>
                                             </span>
-
+                                            <span tal:condition="python: publication_date != 'None' and modification_date != publication_date"
+                                                  tal:replace="string:&mdash;" />
                                             <span class="documentModified" tal:condition="python: modification_date != publication_date">
-                                              &mdash;
                                               <span i18n:translate="box_last_modified">
                                                 last modified
                                               </span>
@@ -332,7 +332,6 @@
                                                           std modules/Products.PythonScripts.standard;
                                                           url_quote nocall: std/url_quote;"
                                               tal:condition="categories">
-                                          &mdash;
                                           <tal:filedunder i18n:translate="">filed under:</tal:filedunder>
                                           <span tal:repeat="category categories">
                                             <a href=""
@@ -346,37 +345,6 @@
                                           </span>
                                         </span>
                                       </span>
-                                      <div tal:content="item/CroppedDescription">
-                                        Cropped description
-                                      </div>
-
-                                      <cite class="documentLocation link-location"
-                                            tal:define="breadcrumbs python: view.breadcrumbs(item);
-                                                        is_rtl context/@@plone_portal_state/is_rtl;"
-                                            tal:condition='breadcrumbs'>
-                                          <span i18n:translate="text_searchitem_location">
-                                              Located in
-                                          </span>
-                                          <span tal:repeat="crumb breadcrumbs"
-                                                tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';">
-                                              <tal:item tal:define="is_last repeat/crumb/end;
-                                                                    url crumb/absolute_url;
-                                                                    title crumb/Title">
-                                                  <a href="#"
-                                                     tal:omit-tag="not: url"
-                                                     tal:attributes="href url"
-                                                     tal:content="title">
-                                                      crumb
-                                                  </a>
-                                                  <span class="breadcrumbSeparator" tal:condition="not: is_last">
-                                                      <tal:ltr condition="not: is_rtl">/</tal:ltr>
-                                                      <tal:rtl condition="is_rtl">/</tal:rtl>
-                                                  </span>
-                                               </tal:item>
-                                          </span>
-
-                                      </cite>
-
                                     </dd>
                               </tal:results>
                           </dl>

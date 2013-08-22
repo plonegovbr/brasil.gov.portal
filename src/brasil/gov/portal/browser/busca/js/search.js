@@ -17,7 +17,7 @@ jQuery(function ($) {
         return this.each(function () {
             var $container = $(this);
             $.get(
-                '@@updated_search',
+                '@@busca_atualizada',
                 query,
                 function (data) {
                     $container.hide();
@@ -36,7 +36,7 @@ jQuery(function ($) {
                         // Until now we had queries with empty search term. So
                         // we need a placeholder for the search term in
                         // result's title.
-                        $search_term = $('<strong id="search-term" />').appendTo('h1.documentFirstHeading');
+                        $search_term = $('<strong id="search-term" />').appendTo('.row>.cell>h1.documentFirstHeading');
                     }
 
                     $search_term.text(data_search_term);
