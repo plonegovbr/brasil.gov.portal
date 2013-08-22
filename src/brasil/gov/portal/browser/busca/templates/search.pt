@@ -273,7 +273,6 @@
                           <dl class="searchResults">
                               <tal:results repeat="item batch">
                                     <dt tal:attributes="class item/ContentTypeClass">
-                                      <img tal:replace="structure item/getIcon" />
                                       <a href="#"
                                          tal:define="item_url item/getURL;
                                                      item_type item/PortalType"
@@ -310,9 +309,9 @@
                                                 August 16, 2001 at 23:35:59
                                               </span>
                                             </span>
-
+                                            <span tal:condition="python: publication_date != 'None' and modification_date != publication_date"
+                                                  tal:replace="string:&mdash;" />
                                             <span class="documentModified" tal:condition="python: modification_date != publication_date">
-                                              &mdash;
                                               <span i18n:translate="box_last_modified">
                                                 last modified
                                               </span>
@@ -344,34 +343,6 @@
                                       <div tal:content="item/CroppedDescription">
                                         Cropped description
                                       </div>
-
-                                      <cite class="documentLocation link-location"
-                                            tal:define="breadcrumbs python: view.breadcrumbs(item);
-                                                        is_rtl context/@@plone_portal_state/is_rtl;"
-                                            tal:condition='breadcrumbs'>
-                                          <span i18n:translate="text_searchitem_location">
-                                              Located in
-                                          </span>
-                                          <span tal:repeat="crumb breadcrumbs"
-                                                tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';">
-                                              <tal:item tal:define="is_last repeat/crumb/end;
-                                                                    url crumb/absolute_url;
-                                                                    title crumb/Title">
-                                                  <a href="#"
-                                                     tal:omit-tag="not: url"
-                                                     tal:attributes="href url"
-                                                     tal:content="title">
-                                                      crumb
-                                                  </a>
-                                                  <span class="breadcrumbSeparator" tal:condition="not: is_last">
-                                                      <tal:ltr condition="not: is_rtl">/</tal:ltr>
-                                                      <tal:rtl condition="is_rtl">/</tal:rtl>
-                                                  </span>
-                                               </tal:item>
-                                          </span>
-
-                                      </cite>
-
                                     </dd>
                               </tal:results>
                           </dl>

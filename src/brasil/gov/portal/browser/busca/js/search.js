@@ -17,7 +17,7 @@ jQuery(function ($) {
         return this.each(function () {
             var $container = $(this);
             $.get(
-                '@@updated_search',
+                '@@busca_atualizada',
                 query,
                 function (data) {
                     $container.hide();
@@ -28,6 +28,9 @@ jQuery(function ($) {
                         data_search_term = $ajax_search_res.find('#updated-search-term').text(),
                         data_res_number = $ajax_search_res.find('#updated-search-results-number').text(),
                         data_sorting_opt = $ajax_search_res.find('#updated-sorting-options').html();
+
+                    console.log($container);
+                    console.log($data_res)
 
                     $container.html($data_res);
                     $container.fadeIn();
