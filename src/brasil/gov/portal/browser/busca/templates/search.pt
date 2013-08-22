@@ -27,6 +27,9 @@
 <body>
 
   <div id="content-core" metal:fill-slot="main">
+    <h1 class="documentFirstHeading">
+        Busca
+    </h1>
 
     <form name="searchform"
           action="@@busca"
