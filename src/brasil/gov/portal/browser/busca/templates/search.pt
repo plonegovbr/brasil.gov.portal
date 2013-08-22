@@ -103,16 +103,12 @@
                         items matching your search terms.
                     </span>
 
-                    <dl class="actionMenu deactivated"
-                        tal:attributes="class python:view.show_advanced_search() and 'actionMenu activated' or 'actionMenu deactivated'">
-
+                    <dl>
                       <dt class="actionMenuHeader">
-                          <a href="#"
-                             tal:attributes="href view/advanced_search_trigger"
-                             id="search-filter-toggle"
+                          <span id="search-filter-toggle"
                              i18n:translate="narrow_search_options">
                               Filter the results.
-                          </a>
+                          </span>
                       </dt>
                       <dd class="actionMenuContent">
                           <div id="search-filter" i18n:domain="plone">
@@ -307,7 +303,6 @@
                                                           modification_date item/ModificationDate">
 
                                             <span class="documentPublished" tal:condition="python: publication_date != 'None'">
-                                              &mdash;
                                               <span i18n:translate="box_published">
                                                 published
                                               </span>
