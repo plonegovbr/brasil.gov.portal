@@ -31,6 +31,12 @@
         template="templates/plone-overview.pt"
     />
 
+    <browser:viewlet
+        name="plone.htmlhead.title"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class="plone.app.layout.viewlets.common.TitleViewlet"
+        permission="zope2.View"
+        />
   </unconfigure>
 
 </configure>
