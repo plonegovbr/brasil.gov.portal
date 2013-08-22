@@ -29,9 +29,6 @@ jQuery(function ($) {
                         data_res_number = $ajax_search_res.find('#updated-search-results-number').text(),
                         data_sorting_opt = $ajax_search_res.find('#updated-sorting-options').html();
 
-                    console.log($container);
-                    console.log($data_res)
-
                     $container.html($data_res);
                     $container.fadeIn();
 
@@ -39,7 +36,7 @@ jQuery(function ($) {
                         // Until now we had queries with empty search term. So
                         // we need a placeholder for the search term in
                         // result's title.
-                        $search_term = $('<strong id="search-term" />').appendTo('h1.documentFirstHeading');
+                        $search_term = $('<strong id="search-term" />').appendTo('.row>.cell>h1.documentFirstHeading');
                     }
 
                     $search_term.text(data_search_term);
