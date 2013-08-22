@@ -8,6 +8,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 class TitleViewlet(PloneTitleViewlet):
     """Customize Plone TitleViewlet
     """
+    index = ViewPageTemplateFile('templates/title.pt')
 
     @property
     @memoize
