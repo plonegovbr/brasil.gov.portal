@@ -11,4 +11,6 @@
 
   <include package=".v4000" />
 
+  <include package=".v5000" />
+
 </configure>
