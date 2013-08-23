@@ -311,6 +311,7 @@
                                               <span i18n:translate="box_published">
                                                 published
                                               </span>
+                                              em
                                               <span tal:replace="python:toLocalizedTime(publication_date, long_format=0)">
                                                 August 16, 2001 at 23:35:59
                                               </span>
@@ -321,6 +322,7 @@
                                               <span i18n:translate="box_last_modified">
                                                 last modified
                                               </span>
+                                              em
                                               <span tal:replace="python:toLocalizedTime(modification_date, long_format=1)">
                                                 August 16, 2001 at 23:35:59
                                               </span>
@@ -342,6 +344,22 @@
                                                tal:attributes="href string:$navigation_root_url/@@busca?Subject%3Alist=${category_quote}">
                                               Category
                                             </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
+                                          </span>
+                                        </span>
+
+                                        <span i18n:domain="brasil.gov.vcge"
+                                             tal:define="categories python:view.skos(item)"
+                                             tal:condition="categories">
+                                          <tal:filedunder i18n:translate="">assunto(s):</tal:filedunder>
+                                          <span tal:repeat="category categories">
+                                            <a href=""
+                                               class="link-category"
+                                               tal:content="category/title"
+                                               tal:attributes="href category/url;
+                                                               property view/rel;
+                                                               resource category/id">
+                                              Category
+                                              </a><span class="separator" tal:condition="not: repeat/category/end">,</span>
                                           </span>
                                         </span>
                                       </span>
