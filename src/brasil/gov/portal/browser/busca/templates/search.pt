@@ -322,6 +322,7 @@
                                               <span i18n:translate="box_last_modified">
                                                 last modified
                                               </span>
+                                              em
                                               <span tal:replace="python:toLocalizedTime(modification_date, long_format=1)">
                                                 August 16, 2001 at 23:35:59
                                               </span>
