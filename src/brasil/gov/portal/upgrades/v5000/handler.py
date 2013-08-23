@@ -7,8 +7,8 @@ import logging
 
 
 def apply_profile(context):
-    ''' Atualiza perfil para versao 4000 '''
+    ''' Atualiza perfil para versao 5000 '''
     logger = logging.getLogger(PROJECTNAME)
-    profile = 'profile-brasil.gov.portal.upgrades.v4000:default'
+    profile = 'profile-brasil.gov.portal.upgrades.v5000:default'
     loadMigrationProfile(context, profile)
-    logger.info('Atualizado para versao 4000')
+    logger.info('Atualizado para versao 5000')
