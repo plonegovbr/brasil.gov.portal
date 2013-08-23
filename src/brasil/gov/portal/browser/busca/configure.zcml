@@ -11,7 +11,7 @@
 
   <browser:page
      name="busca"
-     class="plone.app.search.browser.Search"
+     class=".busca.Search"
      permission="zope2.View"
      for="*"
      template="templates/search.pt"
@@ -20,7 +20,7 @@
 
   <browser:page
      name="busca_atualizada"
-     class="plone.app.search.browser.Search"
+     class=".busca.Search"
      permission="zope2.View"
      for="Products.CMFCore.interfaces.IFolderish"
      template="templates/updated_search.pt"
