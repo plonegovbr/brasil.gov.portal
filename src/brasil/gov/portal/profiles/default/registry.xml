@@ -61,29 +61,29 @@
     <value>
       <element>Amarelo|amarelo</element>
       <element>Azul Claro - borda|azul-claro-borda</element>
-      <element>Azul Claro|azul-claro</element>
-      <element>Azul Petroleo|azul-petroleo</element>
+      <element>Azul Claro Saude|azul-claro</element>
+      <element>Azul Petroleo Defesa Seguranca|azul-petroleo</element>
       <element>Azul Piscina|azul-piscina</element>
       <element>Azul Turquesa - borda|azul-turquesa-borda</element>
       <element>Azul Turquesa|azul-turquesa</element>
-      <element>Azul|azul</element>
+      <element>Azul Governo|azul</element>
       <element>Bege - borda|bege-borda</element>
       <element>Bege|bege</element>
       <element>Fio separador|fio-separador</element>
       <element>Laranja - borda|laranja-borda</element>
-      <element>Laranja|laranja</element>
+      <element>Laranja Cidadania Justica|laranja</element>
       <element>Link Externo|link-externo</element>
       <element>Lista Horizontal|lista-horizontal</element>
       <element>Lista Vertical|lista-vertical</element>
-      <element>Marrom Claro|marrom-claro</element>
-      <element>Marrom|marrom</element>
+      <element>Marrom Claro Economia Emprego|marrom-claro</element>
+      <element>Marrom Infraestrutura|marrom</element>
       <element>Roxo - borda|roxo-borda</element>
-      <element>Roxo|roxo</element>
-      <element>Verde Claro|verde-claro</element>
-      <element>Verde Escuro|verde-escuro</element>
-      <element>Verde|verde</element>
-      <element>Dourado|dourado</element>
-      <element>Azul escuro|azul-escuro</element>
+      <element>Roxo Ciencia Tecnologia|roxo</element>
+      <element>Verde Claro Meio Ambiente|verde-claro</element>
+      <element>Verde Escuro Educacao|verde-escuro</element>
+      <element>Verde Esporte|verde</element>
+      <element>Dourado Cultura|dourado</element>
+      <element>Azul Escuro Turismo|azul-escuro</element>
     </value>
   </record>
 
