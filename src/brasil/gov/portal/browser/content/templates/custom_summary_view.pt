@@ -48,7 +48,7 @@
                 <a href=""
                    tal:content="tag"
                    tal:attributes="href string:${portal_url}/@@busca?Subject:list=${tag}"
-                   class="link-category" rel="tag">Berlim</a>
+                   class="link-category" rel="tag">Berlim</a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
               </span>
             </div>
             <!-- Byline-->
