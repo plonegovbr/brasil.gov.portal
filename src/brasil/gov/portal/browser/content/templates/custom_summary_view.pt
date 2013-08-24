@@ -117,11 +117,11 @@
 
                     <tal:modified condition="python: item_type != 'Event'">
                         <span class="hiddenStructure">
-                          <tal:mod i18n:translate="box_last_modified">
-                            last modified
+                          <tal:mod i18n:translate="box_published">
+                            Published
                           </tal:mod>
                         </span>
-                        <span tal:replace="python:toLocalizedTime(item_modified,long_format=1)">
+                        <span tal:replace="python:toLocalizedTime(item.effective,long_format=1)">
                           August 16, 2001 at 23:35:59
                         </span>
                         <span class="icon-type"
