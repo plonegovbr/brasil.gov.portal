@@ -1,0 +1,25 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+<body i18n:domain="plone"
+      tal:define="b_start python:0;
+                  b_start request/b_start | b_start;
+                  batch python:view.results(b_start=b_start);
+                  st python:request.get('SearchableText', '');
+                  here_url context/@@plone_context_state/object_url;
+                  batch_base_url string:${here_url}/@@busca;
+                  ">
+
+    <span id="updated-search-term" tal:content="st">Search Term</span>
+
+    <strong id="updated-search-results-number"
+            tal:content="batch/sequence_length|string:0">234</strong>
+
+    <span id="updated-sorting-options">
+        <metal:results use-macro="context/@@busca/sorting" />
+    </span>
+
+    <metal:results use-macro="context/@@busca/search_results" />
+
+</body>
+</html>

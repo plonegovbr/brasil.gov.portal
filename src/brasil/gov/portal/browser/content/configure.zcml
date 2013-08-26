@@ -21,4 +21,12 @@
      permission="zope2.View"
      />
 
+  <browser:page
+     for="plone.app.contenttypes.interfaces.ICollection"
+     name="summary_view"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     template="templates/custom_summary_view.pt"
+     permission="zope2.View"
+     />
+
 </configure>

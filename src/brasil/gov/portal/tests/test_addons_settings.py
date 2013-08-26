@@ -28,6 +28,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
         expected = [
             'audio',
             'audiogallery',
+            'banner_rotativo',
             'collective.cover.banner',
             'collective.cover.carousel',
             'collective.cover.collection',
@@ -39,7 +40,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'social',
             'standaloneheader',
             'video',
-            'videogallery'
+            'videogallery',
         ]
         available_tiles = settings.available_tiles
         available_tiles.sort()
@@ -65,18 +66,31 @@ class AddonsSettingsTestCase(unittest.TestCase):
         """
         settings = self.registry.forInterface(ICoverSettings)
         expected = [
+            'Amarelo|amarelo',
             'Azul Claro - borda|azul-claro-borda',
-            'Azul Claro|azul-claro',
+            'Azul Claro Saude|azul-claro',
+            'Azul Escuro Turismo|azul-escuro',
+            'Azul Governo|azul',
+            'Azul Petroleo Defesa Seguranca|azul-petroleo',
+            'Azul Piscina|azul-piscina',
             'Azul Turquesa - borda|azul-turquesa-borda',
             'Azul Turquesa|azul-turquesa',
             'Bege - borda|bege-borda',
             'Bege|bege',
+            'Dourado Cultura|dourado',
+            'Fio separador|fio-separador',
             'Laranja - borda|laranja-borda',
-            'Laranja|laranja',
+            'Laranja Cidadania Justica|laranja',
+            'Link Externo|link-externo',
             'Lista Horizontal|lista-horizontal',
+            'Lista Vertical|lista-vertical',
+            'Marrom Claro Economia Emprego|marrom-claro',
+            'Marrom Infraestrutura|marrom',
             'Roxo - borda|roxo-borda',
-            'Roxo|roxo',
-            'Verde|verde',
+            'Roxo Ciencia Tecnologia|roxo',
+            'Verde Claro Meio Ambiente|verde-claro',
+            'Verde Escuro Educacao|verde-escuro',
+            'Verde Esporte|verde',
         ]
         styles = list(settings.styles)
         styles.sort()
