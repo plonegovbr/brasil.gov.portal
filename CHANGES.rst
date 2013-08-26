@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.0rc1 (unreleased)
+1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
 
 * Atividade 320: Ajuste Estilo - Listagem Vertical [rennanrodrigues]
