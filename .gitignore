@@ -16,3 +16,4 @@ lib/
 local.cfg
 parts/
 var/
+Makefile

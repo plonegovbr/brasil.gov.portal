@@ -29,4 +29,11 @@
       template="templates/plone-overview.pt"
       />
 
+  <browser:viewlet
+      name="plone.htmlhead.title"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      class=".title.TitleViewlet"
+      permission="zope2.View"
+      />
+
 </configure>

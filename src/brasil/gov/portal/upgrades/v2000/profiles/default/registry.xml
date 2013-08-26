@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+  <record field="available_tiles"
+          interface="collective.cover.controlpanel.ICoverSettings"
+          name="collective.cover.controlpanel.ICoverSettings.available_tiles">
+    <value purge="false">
+        <element>banner_rotativo</element>
+    </value>
+  </record>
+  <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
+    <value purge="false">
+      <element>Link Externo|link-externo</element>
+      <element>Lista Vertical|lista-vertical</element>
+      <element>Fio separador|fio-separador</element>
+      <element>Azul Petroleo|azul-petroleo</element>
+      <element>Marrom Claro|marrom-claro</element>
+      <element>Amarelo|amarelo</element>
+      <element>Verde Escuro|verde-escuro</element>
+      <element>Azul|azul</element>
+      <element>Marrom|marrom</element>
+      <element>Verde Claro|verde-claro</element>
+      <element>Azul Piscina|azul-piscina</element>
+      <element>Azul Escuro|azul-escuro</element>
+      <element>Dourado|dourado</element>
+    </value>
+  </record>
+</registry>
