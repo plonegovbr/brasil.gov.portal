@@ -3,13 +3,12 @@
 from setuptools import find_packages
 from setuptools import setup
 
-import os
-
-version = '1.0a2.dev0'
-long_description = open("README.rst").read() + "\n" + \
-    open(os.path.join("docs", "INSTALL.rst")).read() + "\n" + \
-    open(os.path.join("docs", "CREDITS.rst")).read() + "\n" + \
-    open(os.path.join("docs", "HISTORY.rst")).read()
+version = '1.0rc1.dev0'
+long_description = (
+    open('README.rst').read() + '\n' +
+    open('CONTRIBUTORS.rst').read() + '\n' +
+    open('CHANGES.rst').read()
+)
 
 setup(
     name='brasil.gov.portal',
@@ -17,7 +16,7 @@ setup(
     description="Implementação Modelo da Identidade Digital de Governo",
     long_description=long_description,
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 4.3",
