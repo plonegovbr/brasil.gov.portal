@@ -62,13 +62,15 @@
       <element>Amarelo|amarelo</element>
       <element>Azul Claro - borda|azul-claro-borda</element>
       <element>Azul Claro Saude|azul-claro</element>
+      <element>Azul Escuro Turismo|azul-escuro</element>
+      <element>Azul Governo|azul</element>
       <element>Azul Petroleo Defesa Seguranca|azul-petroleo</element>
       <element>Azul Piscina|azul-piscina</element>
       <element>Azul Turquesa - borda|azul-turquesa-borda</element>
       <element>Azul Turquesa|azul-turquesa</element>
-      <element>Azul Governo|azul</element>
       <element>Bege - borda|bege-borda</element>
       <element>Bege|bege</element>
+      <element>Dourado Cultura|dourado</element>
       <element>Fio separador|fio-separador</element>
       <element>Laranja - borda|laranja-borda</element>
       <element>Laranja Cidadania Justica|laranja</element>
@@ -82,8 +84,6 @@
       <element>Verde Claro Meio Ambiente|verde-claro</element>
       <element>Verde Escuro Educacao|verde-escuro</element>
       <element>Verde Esporte|verde</element>
-      <element>Dourado Cultura|dourado</element>
-      <element>Azul Escuro Turismo|azul-escuro</element>
     </value>
   </record>
 

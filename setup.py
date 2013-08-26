@@ -59,7 +59,7 @@ setup(
         'plone.app.transmogrifier',
         'plone.app.upgrade',
         'Products.CMFPlone',
-        'Products.Doormat',
+        'Products.Doormat<0.8',
         'Products.PloneFormGen',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',
