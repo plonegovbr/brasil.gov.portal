@@ -3,6 +3,7 @@
 *.pyc
 *~
 .*project
+.coverage
 .installed.cfg
 .mr.developer.cfg
 .settings
@@ -11,9 +12,11 @@ coverage/
 develop-eggs/
 downloads/
 eggs/
+htmlcov/
 include/
 lib/
 local.cfg
-parts/
-var/
 Makefile
+parts/
+src/collective.cover/
+var/

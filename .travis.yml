@@ -8,5 +8,6 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 script: bin/test --layer '!Acceptance'
+after_success: bin/coverage.sh
 notifications:
   irc: irc.freenode.org#plonegovbr
