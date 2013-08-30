@@ -44,7 +44,7 @@
         <input type="hidden" name="sort_on" value="" />
 
         <fieldset id="search-field" i18n:domain="plone" class="noborder">
-            <legend i18n:translate="title_search_title">Search Site</legend>
+            <legend>Buscar no portal</legend>
             <input class="searchPage"
                    name="SearchableText"
                    type="text"
