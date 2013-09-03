@@ -26,15 +26,4 @@
       permission="zope2.View"
       />
 
-  <!-- Render the document byline -->
-  <browser:viewlet
-      for="collective.nitf.content.INITF"
-      name="plone.belowcontenttitle.documentbyline"
-      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
-      permission="zope2.View"
-      layer="brasil.gov.portal.interfaces.IBrasilGov"
-      template="templates/nitf_custom_byline.pt"
-      class="collective.nitf.browser.NITFBylineViewlet"
-      />
-
 </configure>
