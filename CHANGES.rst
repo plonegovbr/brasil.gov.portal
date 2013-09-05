@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Remoção do link no nome do autor após titulo (closes `#10`_).
+  [felipeduardo]
 
 
 1.0rc1 (2013-08-26)
@@ -23,3 +24,5 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 * Versão inicial do pacote [ericof]
+
+.. _`#10`: https://github.com/plonegovbr/brasil.gov.portal/issues/10
