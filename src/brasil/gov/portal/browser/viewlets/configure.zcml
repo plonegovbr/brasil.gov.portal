@@ -4,13 +4,13 @@
     i18n_domain="brasil.gov.portal">
 
   <!-- Viewlets -->
-    <browser:viewlet
-        name="plone.logo"
-        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        class=".logo.LogoViewlet"
-        permission="zope2.View"
-        layer="brasil.gov.portal.interfaces.IBrasilGov"
-        />
+  <browser:viewlet
+      name="plone.logo"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".logo.LogoViewlet"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
 
   <browser:viewlet
       name="brasil.gov.portal.servicos"
@@ -24,6 +24,15 @@
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
       class=".redes.RedesSociaisViewlet"
       permission="zope2.View"
+      />
+
+  <browser:viewlet
+      name="plone.belowcontenttitle.documentbyline"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      class="plone.app.layout.viewlets.content.DocumentBylineViewlet"
+      permission="zope2.View"
+      template="templates/document_byline.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
 </configure>
