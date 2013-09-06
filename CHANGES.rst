@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Criação de nova classe css para tiles cover e upgrade step (closes `#14`_).
+  [rodfersou]
 * Remoção do link no nome do autor após titulo (closes `#10`_).
   [felipeduardo]
 * Alteração textual no legend da pagina de busca (closes `#7`_) [felipeduardo]
@@ -27,10 +29,7 @@ Changelog
 
 * Versão inicial do pacote [ericof]
 
-
-
-
 .. _`#7`: https://github.com/plonegovbr/brasil.gov.portal/issues/7
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.portal/issues/10
-
+.. _`#14`: https://github.com/plonegovbr/brasil.gov.portal/issues/14
 
