@@ -21,7 +21,7 @@
 
       <gs:upgradeStep
           title="Atualiza portal para versão 3000"
-          description="Configura NITF para versionamento."
+          description="Adiciona classe Padrao para tiles cover."
           handler=".handler.apply_profile"
           />
 
