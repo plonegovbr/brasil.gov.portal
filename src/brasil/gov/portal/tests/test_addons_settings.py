@@ -86,6 +86,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'Lista Vertical|lista-vertical',
             'Marrom Claro Economia Emprego|marrom-claro',
             'Marrom Infraestrutura|marrom',
+            'Padrao|padrao',
             'Roxo - borda|roxo-borda',
             'Roxo Ciencia Tecnologia|roxo',
             'Verde Claro Meio Ambiente|verde-claro',
