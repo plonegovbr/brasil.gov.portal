@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+  <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
+    <value purge="false">
+      <element>Amarelo|amarelo</element>
+      <element>Azul Claro - borda|azul-claro-borda</element>
+      <element>Azul Claro Saude|azul-claro</element>
+      <element>Azul Escuro Turismo|azul-escuro</element>
+      <element>Azul Governo|azul</element>
+      <element>Azul Petroleo Defesa Seguranca|azul-petroleo</element>
+      <element>Azul Piscina|azul-piscina</element>
+      <element>Azul Turquesa - borda|azul-turquesa-borda</element>
+      <element>Azul Turquesa|azul-turquesa</element>
+      <element>Bege - borda|bege-borda</element>
+      <element>Bege|bege</element>
+      <element>Dourado Cultura|dourado</element>
+      <element>Fio separador|fio-separador</element>
+      <element>Laranja - borda|laranja-borda</element>
+      <element>Laranja Cidadania Justica|laranja</element>
+      <element>Link Externo|link-externo</element>
+      <element>Lista Horizontal|lista-horizontal</element>
+      <element>Lista Vertical|lista-vertical</element>
+      <element>Marrom Claro Economia Emprego|marrom-claro</element>
+      <element>Marrom Infraestrutura|marrom</element>
+      <element>Padrao|padrao</element>
+      <element>Roxo - borda|roxo-borda</element>
+      <element>Roxo Ciencia Tecnologia|roxo</element>
+      <element>Verde Claro Meio Ambiente|verde-claro</element>
+      <element>Verde Escuro Educacao|verde-escuro</element>
+      <element>Verde Esporte|verde</element>
+    </value>
+  </record>
+</registry>
