@@ -7,4 +7,6 @@
 
   <include package=".v2000" />
 
+  <include package=".v3000" />
+
 </configure>
