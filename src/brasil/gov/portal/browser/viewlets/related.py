@@ -33,7 +33,7 @@ class RelatedItemsViewlet(grok.Viewlet):
         tools = context.restrictedTraverse('@@plone_tools')
         catalog = tools.catalog()
         if related:
-            related = [item.to_path for item in related]
+            related = [item.to_path for item in related if item.to_path]
             brains = catalog(path=related)
             if brains:
                 # build a position dict by iterating over the items once
