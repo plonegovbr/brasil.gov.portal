@@ -6,6 +6,8 @@ Changelog
 
 * Customizado template do breadcrumb para ficar igual ao layout sugerido (closes `#17`_).
   [rodfersou]
+* Fix related itens viewlet exception (closes `#21`_).
+  [rodfersou]
 * Criação de nova classe css para tiles cover e upgrade step (closes `#14`_).
   [rodfersou]
 * Remoção do link no nome do autor após titulo (closes `#10`_).
@@ -35,4 +37,5 @@ Changelog
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.portal/issues/10
 .. _`#14`: https://github.com/plonegovbr/brasil.gov.portal/issues/14
 .. _`#17`: https://github.com/plonegovbr/brasil.gov.portal/issues/17
+.. _`#21`: https://github.com/plonegovbr/brasil.gov.portal/issues/21
 
