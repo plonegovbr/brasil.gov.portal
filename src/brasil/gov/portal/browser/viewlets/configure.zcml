@@ -35,4 +35,13 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <browser:viewlet
+      name="plone.path_bar"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      class="plone.app.layout.viewlets.common.PathBarViewlet"
+      permission="zope2.View"
+      template="templates/path_bar.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>
