@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+    <metal:content-core fill-slot="content-core">
+        <metal:block define-macro="content-core"
+                     tal:define="size context/image/getSize">
+
+            <a class="discreet"
+               tal:attributes="href string:${context/@@plone_context_state/object_url}/image_view_fullscreen"
+               tal:define="scale context/@@images;
+                           img_tag python:scale.scale('image', scale='large').tag()"
+                tal:on-error="string: Image cannot be displayed">
+                <img tal:replace="structure img_tag" />
+                <br />
+                <span class="visualNoPrint">
+                    <img src="" alt="" tal:replace="structure context/search_icon.png" />
+                    <span i18n:translate="label_click_to_view_full_image">Click to view full-size image&hellip;</span>
+                </span>
+            </a>
+
+            <span class="discreet visualNoPrint">
+            &mdash;
+                <span i18n:translate="label_size">Size</span>:
+                <span tal:replace="python:size/1024">
+                    File size
+                </span>KB
+            </span>
+        </metal:block>
+    </metal:content-core>
+</body>
+
+</html>

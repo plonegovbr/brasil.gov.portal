@@ -13,7 +13,7 @@
         class="Products.CMFPlone.browser.admin.AddPloneSite"
         permission="zope2.ViewManagementScreens"
         template="templates/plone-addsite.pt"
-    />
+        />
 
     <browser:page
         for="OFS.Folder.Folder"
@@ -21,7 +21,7 @@
         class="Products.CMFPlone.browser.admin.AddPloneSite"
         permission="zope2.ViewManagementScreens"
         template="templates/plone-addsite.pt"
-    />
+        />
 
     <browser:page
         for="OFS.interfaces.IApplication"
@@ -29,7 +29,27 @@
         class="Products.CMFPlone.browser.admin.Overview"
         permission="zope.Public"
         template="templates/plone-overview.pt"
-    />
+        />
+
+    <browser:page
+        name="folder_summary_view"
+        for="plone.app.contenttypes.interfaces.IFolder"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/folder_summary_view.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="Summary view"
+        />
+
+    <browser:page
+        name="image_view"
+        for="plone.app.contenttypes.interfaces.IImage"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/image.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="View Image"
+        />
 
     <browser:viewlet
         name="plone.htmlhead.title"
