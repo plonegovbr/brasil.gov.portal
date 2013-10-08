@@ -41,6 +41,16 @@
         title="Summary view"
         />
 
+    <browser:page
+        name="image_view"
+        for="plone.app.contenttypes.interfaces.IImage"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/image.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="View Image"
+        />
+
     <browser:viewlet
         name="plone.htmlhead.title"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
