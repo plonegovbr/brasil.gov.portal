@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Removidas customizações da pasta overrides to tema, e movidas para brasil.gov.portal
+  (closes `#19`_).
+  [rodfersou]
 * Customizado template do breadcrumb para ficar igual ao layout sugerido (closes `#17`_).
   [rodfersou]
 * Fix related itens viewlet exception (closes `#21`_).
@@ -37,5 +40,6 @@ Changelog
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.portal/issues/10
 .. _`#14`: https://github.com/plonegovbr/brasil.gov.portal/issues/14
 .. _`#17`: https://github.com/plonegovbr/brasil.gov.portal/issues/17
+.. _`#19`: https://github.com/plonegovbr/brasil.gov.portal/issues/19
 .. _`#21`: https://github.com/plonegovbr/brasil.gov.portal/issues/21
 

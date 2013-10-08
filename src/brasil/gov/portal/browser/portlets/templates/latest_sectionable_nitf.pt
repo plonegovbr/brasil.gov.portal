@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+
+<div id="portletSectionable">
+
+<dl class="portlet portletCollection portlet-latest-nitf"
+    i18n:domain="collective.nitf"
+    tal:define="section context/request/nitf-section-filter | nothing;
+                portal_state context/@@plone_portal_state;
+                portal_url portal_state/portal_url;">
+
+    <script type="text/javascript">
+
+    function showNitfFilterSpinner(){
+        $("#nitf-section-filter-spinner").css("display", "inline");
+    }
+
+    function hideNitfFilterSpinner(){
+        $("#nitf-section-filter-spinner").css("display", "none");
+    }
+
+    $(document).ready(function() {
+
+        $("#nitf-section-filter").change(function(event) {
+                        var $value = $(this).val();
+                        var c_uuid = $("#nitf-filter-collection-uuid").val();
+                        showNitfFilterSpinner();
+                        $("#nitf-section-filter-results").load("@@nitf-filter-list",
+                                                            {'nitf-section-filter':$value,
+                                                             'nitf-filter-collection-uuid':c_uuid},
+                                                            hideNitfFilterSpinner);
+            });
+        $("#submit-nitf-filter").remove();
+
+    });
+    </script>
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span tal:content="view/getHeader" />
+        <span class="portletTopRight"></span>...
+    </dt>
+
+    <form action="#" method="post"
+          tal:attributes="action context/absolute_url">
+
+        <select id="nitf-section-filter" name="nitf-section-filter"
+                 tal:define="options view/getAvailableSections">
+
+            <option tal:repeat="option options"
+                    tal:attributes="value option/token;
+                                    selected python: option.token == section and True or None"
+                    tal:content="option/value" />
+        </select>
+
+        <input id="nitf-filter-collection-uuid"
+               name="nitf-filter-collection-uuid"
+               type="hidden"
+               tal:attributes="value view/getCollectionUID"
+               tal:condition="view/data/filter_collection"/>
+
+        <input id="submit-nitf-filter" type="submit" value="Submit" i18n:attributes="value" />
+
+    </form>
+
+    <div style="text-align:center;">
+
+        <img tal:attributes="src string:${portal_url}/spinner.gif"
+                    alt=""
+                    id="nitf-section-filter-spinner"
+                    style="display:none"/>
+    </div>
+
+    <div id="nitf-section-filter-results">
+        <tal:contents replace="structure python:view.getResults(section)" />
+    </div>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>
+</div>
+</html>
