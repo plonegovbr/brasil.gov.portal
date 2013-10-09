@@ -2,7 +2,7 @@
 
 from collective.nitf.browser import Nitf_Galleria as NitfCustomGalleria
 from five import grok
-from secom.brasil.portal.interfaces import IBrasilGov
+from brasil.gov.portal.interfaces import IBrasilGov
 
 grok.templatedir('templates')
 

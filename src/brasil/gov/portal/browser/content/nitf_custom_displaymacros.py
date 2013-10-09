@@ -2,7 +2,7 @@
 
 from collective.nitf.browser import Display_Macros as NitfCustomDisplayMacros
 from five import grok
-from secom.brasil.portal.interfaces import IBrasilGov
+from brasil.gov.portal.interfaces import IBrasilGov
 
 grok.templatedir('templates')
 
