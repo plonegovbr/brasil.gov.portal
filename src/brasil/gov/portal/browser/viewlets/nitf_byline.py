@@ -4,6 +4,10 @@ from plone.app.layout.viewlets.content import DocumentBylineViewlet
 from Products.CMFPlone.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+import pkg_resources
+
+PLONE_VERSION = pkg_resources.require("Plone")[0].version
+
 
 class NITFBylineViewlet(DocumentBylineViewlet):
 

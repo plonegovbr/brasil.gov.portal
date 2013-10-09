@@ -9,6 +9,7 @@ class View(grok.View):
     grok.context(IEmbedder)
     grok.require('zope2.View')
     grok.name('view')
+    grok.template('embedder_custom_view')
 
     def get_player_pos_class(self):
         """ Returns the css class based on the position of the embed item.
