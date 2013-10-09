@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <object name="portal_properties" meta_type="Plone Properties Tool">
-  <object name="navtree_properties" meta_type="Plone Property Sheet">
-    <property name="metaTypesNotToList" type="lines">
+  <object name="navtree_properties" meta_type="Plone Property Sheet" purge="False">
+    <property name="metaTypesNotToList" type="lines" purge="False">
       <element value="Discussion Item"/>
       <element value="MPEG Audio File"/>
       <element value="News Item"/>
       <element value="OGG Audio File"/>
     </property>
   </object>
-  <object name="site_properties" meta_type="Plone Property Sheet">
+  <object name="site_properties" meta_type="Plone Property Sheet" purge="False">
     <property name="allowAnonymousViewAbout" type="boolean">True</property>
     <property name="displayPublicationDateInByline"
               type="boolean">True</property>
@@ -37,7 +37,7 @@
     </property>
     <property name="icon_visibility" type="string">disabled</property>
   </object>
-  <object name="sc_social_likes_properties" meta_type="Plone Property Sheet">
+  <object name="sc_social_likes_properties" meta_type="Plone Property Sheet" purge="False">
     <property name="enabled_portal_types" type="lines" purge="True">
       <element value="Audio"/>
       <element value="collective.cover.content"/>
@@ -49,10 +49,15 @@
       <element value="sc.embedder"/>
     </property>
   </object>
-  <object name="brasil_gov" meta_type="Plone Property Sheet">
-      <property name="social_networks" type="lines">
-          <element value="twitter|portalbrasil"/>
-          <element value="youtube|canalportalbrasil"/>
-      </property>
+  <object name="brasil_gov" meta_type="Plone Property Sheet" purge="False">
+    <property name="social_networks" type="lines">
+      <element value="twitter|portalbrasil"/>
+      <element value="youtube|canalportalbrasil"/>
+    </property>
+  </object>
+  <object name="imaging_properties" meta_type="Plone Property Sheet">
+    <property name="allowed_sizes" type="lines" purge="False">
+      <element value="capa 230:230"/>
+    </property>
   </object>
 </object>
