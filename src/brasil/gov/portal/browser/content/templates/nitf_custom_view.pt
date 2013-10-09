@@ -92,9 +92,6 @@
                     <div class="relatar-erros"
                          tal:condition="urlerros">
                         <a tal:attributes="href urlerros">
-                            <img class="icone"
-                                 alt="Reportar erro"
-                                 tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++theme++verde/img/reportar-erros.png"/>
                             <span class="texto">Reportar erro</span>
                         </a>
                     </div>
