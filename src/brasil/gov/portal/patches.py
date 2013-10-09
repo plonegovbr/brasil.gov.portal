@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 from brasil.gov.portal.config import PROJECTNAME
-from collective.nitf.browser import View
-from collective.z3cform.widgets.multicontent_search_widget \
-    import MultiContentSearchFieldWidget
+from collective.z3cform.widgets.multicontent_search_widget import (
+    MultiContentSearchFieldWidget
+)
 from plone.app.contenttypes.content import Link
 from plone.app.relationfield.behavior import IRelatedItems
 from plone.app.workflow.browser.sharing import SharingView
@@ -64,29 +64,8 @@ def sharing():
     logger.info('Patched sharing tab')
 
 
-def nitf_view():
-    def show_more_images(self):
-        return len(self.get_images()) > 1
-
-    def get_link_erros(self):
-        portal_obj = self.context.portal_url.getPortalObject()
-        if (hasattr(portal_obj, 'relatar-erros')):
-            return self.context.absolute_url() + '/relatar-erros'
-        else:
-            return None
-
-    setattr(Link,
-            'show_more_images',
-            show_more_images)
-    setattr(Link,
-            'get_link_erros',
-            get_link_erros)
-    logger.info('Patched NITF View content type')
-
-
 def run():
     outputfilters()
     link()
     related_items_widget()
     sharing()
-    nitf_view()
