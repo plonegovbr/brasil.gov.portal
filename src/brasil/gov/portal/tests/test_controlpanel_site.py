@@ -160,7 +160,7 @@ class SiteControlPanelTest(unittest.TestCase):
         self.assertEqual(viewlet.pub_date(), DateTime(effective.ISO8601()))
 
         adapter = self.adapter
-        # Ativamos a exibicao da data de publicacao
+        # Desativamos a exibicao da data de publicacao
         adapter.display_pub_date_in_byline = False
-        # Viewlet exibe a data
+        # Viewlet nao exibe a data
         self.assertEqual(viewlet.pub_date(), None)
