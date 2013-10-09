@@ -10,8 +10,6 @@
   </object>
   <object name="site_properties" meta_type="Plone Property Sheet" purge="False">
     <property name="allowAnonymousViewAbout" type="boolean">True</property>
-    <property name="displayPublicationDateInByline"
-              type="boolean">True</property>
     <property name="localTimeFormat" type="string">%d/%m/%Y</property>
     <property name="localLongTimeFormat" type="string">%d/%m/%Y %Hh%M</property>
     <property name="enable_link_integrity_checks" type="boolean">True</property>
