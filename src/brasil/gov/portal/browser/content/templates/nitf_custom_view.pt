@@ -1,0 +1,150 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.nitf">
+
+    <head>
+        <metal:styleslot fill-slot="style_slot">
+            <link rel="stylesheet" type="text/css"
+                  media="all"
+                  tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.nitf/galleria-theme/galleria.nitf_theme.css" />
+        </metal:styleslot>
+    </head>
+
+    <body>
+        <metal:bodytext fill-slot="main">
+            <article vocab="http://schema.org/" typeof="Article"
+                     prefix="rnews: http://iptc.org/std/rNews/2011-10-07#">
+
+                <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle"
+                     tal:condition="not:ajax_load" />
+                <p class="section" tal:content="context/section" property="rnews:articleSection"/>
+                <h1 class="documentFirstHeading" tal:content="context/title" property="rnews:name"/>
+                <h2 class="nitfSubtitle" tal:content="context/subtitle" property="rnews:alternativeHeadline"/>
+                <div class="documentDescription" tal:content="context/description" property="rnews:description"/>
+	            <div id="viewlet-below-content-title"
+                     tal:content="structure provider:plone.belowcontenttitle"
+		             tal:condition="not:ajax_load" />
+
+                <div class="newsLeftPane">
+                    <div class="newsImageContainer"
+                         tal:define="image context/getImage"
+                         tal:condition="image">
+                        <a href="#" class="photo-icon"
+                           tal:condition="view/show_more_images">Exibir carrossel de imagens</a>
+                        <span class="copyright"
+                              tal:content="image/Rights"
+                              tal:condition="image/Rights">Crédito</span>
+                        <a href="@@nitf_custom_galleria"
+                           id="parent-fieldname-image"
+                           class="parent-nitf-image"
+                           tal:attributes="href string:${context/absolute_url}/@@nitf_custom_galleria">
+                            <img tal:define="scales image/@@images;
+                                             thumbnail python: scales.scale('image', scale='capa');"
+                                 tal:condition="thumbnail"
+                                 tal:attributes="src thumbnail/url;
+                                                 width thumbnail/width;
+                                                 height thumbnail/height;
+                                                 alt context/imageCaption|nothing;"
+                                 property="rnews:thumbnailUrl" />
+                        </a>
+                        <ul class="carrossel-images">
+                            <tal:images tal:repeat="imgBrain view/get_images">
+                                <li tal:define="imgObj imgBrain/getObject">
+                                    <a class="parent-nitf-image"
+                                       tal:attributes="href string:${context/absolute_url}/@@nitf_galleria;
+                                                       data-index repeat/imgBrain/index;
+                                                       data-rights imgObj/Rights">
+                                        <img tal:define="scales imgObj/@@images;
+                                                         thumbnail python: scales.scale('image', scale='tile');"
+                                             tal:condition="thumbnail"
+                                             tal:attributes="src thumbnail/url;
+                                                             width thumbnail/width;
+                                                             height thumbnail/height;
+                                                             alt imgObj/Title|nothing;"
+                                             property="rnews:thumbnailUrl" />
+                                    </a>
+                                </li>
+                            </tal:images>
+                        </ul>
+                        <p class="discreet"
+                           tal:condition="context/imageCaption"
+                           tal:content="context/imageCaption">
+                            Image Caption
+                        </p>
+				        <span id="lupa"></span>
+                    </div>
+                    <div class="newsRelatedItems"
+                         tal:condition="context/relatedItems|nothing">
+                        <fieldset id="related-items">
+                            <legend i18n:translate="">Related items</legend>
+                            <tal:relateditems tal:content="structure view/w/relatedItems/render" />
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div tal:content="structure context/text/output|nothing" property="rnews:articleBody" />
+
+                <tal:reporterros tal:define="urlerros view/get_link_erros">
+                    <div class="relatar-erros"
+                         tal:condition="urlerros">
+                        <a tal:attributes="href urlerros">
+                            <span class="texto">Reportar erro</span>
+                        </a>
+                    </div>
+                </tal:reporterros>
+
+                <div class="newsview">
+	                <script type="text/javascript">
+                        (function ($) {
+                            "use strict";
+                            $(document).ready(function () {
+                                $(".parent-nitf-image").each(function () {
+                                    var link = $(this),
+                                        index = $(this).attr('data-index'),
+                                        rights = $(this).attr('data-rights');
+
+                                    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                                        link.attr('href', link.attr('href').replace('@@nitf_custom_galleria', '@@nitf_custom_galleria?ajax_include_head=1&ajax_load=1'));
+                                    } else {
+                                        link.prepOverlay({
+                                            subtype : 'ajax',
+                                            filter  : '#content-core > *',
+                                            width   : '524px',
+                                            wait: true,
+                                            config  : {
+                                                onLoad: function (e) {
+                                                    Galleria.loadTheme("++resource++collective.nitf/galleria-theme/galleria.nitf_theme.js");
+                                                    Galleria.configure({ debug: false, show: index });
+                                                    Galleria.on('loadstart', function (e) {
+                                                        var value_rights = $('a[data-rights][data-index=' + e.index + ']').attr('data-rights');
+                                                        // Verifying a not defined variable in javascript
+                                                        if (typeof value_rights != 'undefined') {
+                                                            var link_rights = '<span class="copyright">' + value_rights + '</span>';
+                                                        }
+                                                        if ($('.galleria-info-description + .copyright').length > 0) {
+                                                            $('.galleria-info-description + .copyright').html(link_rights);
+                                                        } else {
+                                                            $(link_rights).insertAfter('.galleria-info-description');
+                                                        }
+                                                    });
+                                                    Galleria.run(".pb-ajax #mediabox");
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            });
+                        })(jQuery);
+                    </script>
+                </div>
+	            <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" tal:condition="not:ajax_load" />
+            </article>
+        </metal:bodytext>
+
+    </body>
+
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="collective.nitf.content" meta_type="Dexterity FTI"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+   i18n:domain="collective.nitf" purge="False">
+ <property name="default_view">nitf_custom_view</property>
+ <property name="default_view_fallback">False</property>
+ <property name="view_methods">
+  <element value="nitf_custom_view"/>
+  <element value="view"/>
+  <element value="nitf_galleria"/>
+ </property>
+
+</object>

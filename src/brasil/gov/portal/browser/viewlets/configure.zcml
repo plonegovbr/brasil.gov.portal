@@ -70,4 +70,14 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <browser:viewlet
+      name="plone.belowcontenttitle.documentbyline"
+      for="collective.nitf.content.INITF"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      template="templates/nitf_byline.pt"
+      class=".nitf_byline.NITFBylineViewlet"
+      />
+
 </configure>

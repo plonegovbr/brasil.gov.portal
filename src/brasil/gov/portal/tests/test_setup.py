@@ -37,7 +37,7 @@ class InstallTestCase(unittest.TestCase):
     def test_gs_version(self):
         setup = self.st
         self.assertEqual(setup.getLastVersionForProfile(PROFILE_ID),
-                         (u'3000',),
+                         (u'4000',),
                          '%s version mismatch' % PROJECTNAME)
 
     @unittest.expectedFailure
