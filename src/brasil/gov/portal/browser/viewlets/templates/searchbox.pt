@@ -1,0 +1,63 @@
+<div id="portal-searchbox"
+     i18n:domain="plone"
+     tal:define="navigation_root_url view/navigation_root_url;
+                 search_input_id view/search_input_id;
+                 title_search_box string:'Buscar no portal'">
+
+    <form id="searchGadget_form"
+          action="@@busca"
+          tal:attributes="action string:${navigation_root_url}/@@busca;
+                          id string:${search_input_id}_form;">
+        <fieldset class="LSBox">
+            <legend class="hiddenStructure">Buscar no portal</legend>
+            <label class="hiddenStructure"
+                   tal:attributes="for search_input_id"
+                   i18n:translate="text_search">Search Site</label>
+
+            <input name="SearchableText"
+                   type="text"
+                   size="18"
+                   value=""
+                   title="Search Site"
+                   placeholder="Buscar no portal"
+                   i18n:attributes="title title_search_box;
+                                    placeholder title_search_box"
+                   tal:attributes="value request/form/SearchableText|nothing;
+                                   id search_input_id"
+                   class="searchField" />
+
+            <input class="searchButton"
+                   type="submit"
+                   value="Search"
+                   i18n:attributes="value label_search;" />
+
+            <div class="searchSection">
+                <input id="searchbox_currentfolder_only"
+                       class="noborder"
+                       type="checkbox"
+                       name="path"
+                       tal:attributes="value view/folder_path;
+                                       checked request/form/path|nothing"
+                       />
+                <label for="searchbox_currentfolder_only"
+                       i18n:translate="label_searchbox_currentfolder_only"
+                       style="cursor: pointer">
+                    only in current section
+                </label>
+            </div>
+
+            <div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
+        </fieldset>
+    </form>
+
+    <div id="portal-advanced-search"
+         class="hiddenStructure"
+         tal:condition="False">
+        <a href="#"
+           tal:attributes="href string:${navigation_root_url}/@@busca"
+           i18n:translate="label_advanced_search">
+            Advanced Search&hellip;
+        </a>
+    </div>
+
+</div>

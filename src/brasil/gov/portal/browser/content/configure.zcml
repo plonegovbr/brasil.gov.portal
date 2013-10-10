@@ -3,30 +3,41 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="brasil.gov.portal">
 
+  <browser:menuItems
+      for="collective.nitf.content.INITF"
+      menu="plone_displayviews">
+
+    <browser:menuItem
+        title="Custom View"
+        action="nitf_custom_view"
+        description="Essa view inclui galeria de imagens e se torna a view padrao de noticias"
+        />
+  </browser:menuItems>
+
   <!-- Overrides do Doormat-->
   <browser:page
-     for="Products.Doormat.content.interfaces.IDoormat"
-     layer="brasil.gov.portal.interfaces.IBrasilGov"
-     name="doormat-view"
-     class=".doormat.DoormatView"
-     template="templates/doormat_view.pt"     
-     permission="zope2.View"
-     />  
+      for="Products.Doormat.content.interfaces.IDoormat"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      name="doormat-view"
+      class=".doormat.DoormatView"
+      template="templates/doormat_view.pt"     
+      permission="zope2.View"
+      />  
   <browser:page
-     for="Products.Doormat.content.interfaces.IDoormat"
-     layer="brasil.gov.portal.interfaces.IBrasilGov"
-     name="doormat-view-bare"
-     class=".doormat.DoormatView"
-     template="templates/doormat_bare_view.pt"     
-     permission="zope2.View"
-     />
+      for="Products.Doormat.content.interfaces.IDoormat"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      name="doormat-view-bare"
+      class=".doormat.DoormatView"
+      template="templates/doormat_bare_view.pt"     
+      permission="zope2.View"
+      />
 
   <browser:page
-     for="plone.app.contenttypes.interfaces.ICollection"
-     name="summary_view"
-     layer="brasil.gov.portal.interfaces.IBrasilGov"
-     template="templates/custom_summary_view.pt"
-     permission="zope2.View"
-     />
+      for="plone.app.contenttypes.interfaces.ICollection"
+      name="summary_view"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      template="templates/custom_summary_view.pt"
+      permission="zope2.View"
+      />
 
 </configure>

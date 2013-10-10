@@ -9,4 +9,6 @@
 
   <include package=".v3000" />
 
+  <include package=".v4000" />
+
 </configure>

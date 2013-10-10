@@ -10,4 +10,10 @@
         layer="brasil.gov.portal.interfaces.IBrasilGov"
         />
 
+    <plone:portletRenderer
+        portlet="collective.nitf.portlets.latest_sectionable_nitf.ILatestSectionableNITFPortlet"
+        template="templates/latest_sectionable_nitf.pt"
+        layer="brasil.gov.portal.interfaces.IBrasilGov"
+        />
+
 </configure>

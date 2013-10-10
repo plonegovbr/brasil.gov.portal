@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+  <object name="imaging_properties" meta_type="Plone Property Sheet">
+    <property name="allowed_sizes" type="lines" purge="False">
+      <element value="capa 230:230"/>
+    </property>
+  </object>
+  <object name="site_properties" meta_type="Plone Property Sheet" purge="False">
+    <property name="allowAnonymousViewAbout" type="boolean">True</property>
+    <property name="displayPublicationDateInByline"
+              type="boolean">True</property>
+  </object>
+</object>

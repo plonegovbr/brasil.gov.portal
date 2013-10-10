@@ -4,6 +4,14 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Customizada viewlet plone.analytics para ter uma div em torno de seu conteúdo,
+  possibilitando mapeamento no Diazo (closes `#30`_).
+  [rodfersou]
+* Movidas customizacoes nitf do portal brasil para portal modelo (closes `#26`_).
+  [rodfersou]
+* Removidas customizações da pasta overrides to tema, e movidas para brasil.gov.portal
+  (closes `#19`_).
+  [rodfersou]
 * Customizado template do breadcrumb para ficar igual ao layout sugerido (closes `#17`_).
   [rodfersou]
 * Fix related itens viewlet exception (closes `#21`_).
@@ -37,5 +45,8 @@ Changelog
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.portal/issues/10
 .. _`#14`: https://github.com/plonegovbr/brasil.gov.portal/issues/14
 .. _`#17`: https://github.com/plonegovbr/brasil.gov.portal/issues/17
+.. _`#19`: https://github.com/plonegovbr/brasil.gov.portal/issues/19
 .. _`#21`: https://github.com/plonegovbr/brasil.gov.portal/issues/21
+.. _`#26`: https://github.com/plonegovbr/brasil.gov.portal/issues/26
+.. _`#30`: https://github.com/plonegovbr/brasil.gov.portal/issues/30
 

@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.nitf">
+
+<head>
+  <metal:styleslot fill-slot="style_slot">
+    <link rel="stylesheet" type="text/css"
+        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.nitf/galleria-theme/galleria.nitf_theme.css" />
+    <link rel="stylesheet" type="text/css"
+        tal:condition="ajax_load"
+        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.nitf/galleria-theme/galleria.nitf_theme_fullscreen.css" />
+  </metal:styleslot>
+</head>
+
+<body>
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <metal:title fill-slot="content-title">
+        <tal:content-title metal:define-macro="content-title"
+                           condition="not: ajax_load">
+            <p class="section" tal:content="context/section" />
+            <h1 class="documentFirstHeading" tal:content="context/title" />
+            <h2 class="nitfSubtitle" tal:content="context/subtitle" />
+        </tal:content-title>
+    </metal:title>
+
+    <metal:description fill-slot="content-description">
+        <tal:content-description metal:define-macro="content-description"
+                                 condition="not: ajax_load">
+            <div class="documentDescription" tal:content="context/description" />
+            <p class="nitfByline" tal:condition="context/byline|nothing">
+                <span i18n:translate="">By</span>
+                <span tal:content="context/byline" />
+            </p>
+        </tal:content-description>
+    </metal:description>
+
+    <metal:main fill-slot="content-core">
+        <tal:content-core metal:define-macro="content-core">
+        <div class="newsview">
+            <div id="mediabox" metal:use-macro="context/@@nitf_custom_displaymacros/macros/media-box" />
+        </div>
+
+        <script type="text/javascript"
+                tal:condition="not: ajax_load">
+            (function($) {
+                "use strict";
+                $(document).ready(function() {
+                    Galleria.loadTheme("++resource++collective.nitf/galleria-theme/galleria.nitf_theme.js");
+                    Galleria.configure({ autoplay: true, debug: false, thumbnails: true, _toggleInfo:true});
+                    Galleria.run('.newsview #mediabox', {keepSource: true});
+                });
+            })(jQuery);
+        </script>
+        <script type="text/javascript"
+                tal:condition="ajax_load">
+            (function($) {
+                "use strict";
+                $(document).ready(function() {
+                    Galleria.loadTheme("++resource++collective.nitf/galleria-theme/galleria.nitf_theme.js");
+                    Galleria.configure({ autoplay: false, debug: false, thumbnails: false, _toggleInfo:true, width: $(document).width(), height: $(document).height()});
+                    Galleria.run('.newsview #mediabox', {keepSource: true});
+                });
+            })(jQuery);
+            /* To hide address bar after page load */
+            function hideAddressBar()
+            {
+              if(!window.location.hash)
+              {
+                  if(document.height < window.outerHeight)
+                  {
+                      document.body.style.height = (window.outerHeight + 50) + 'px';
+                  }
+             
+                  setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+              }
+            }
+             
+            window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+            window.addEventListener("orientationchange", hideAddressBar );
+        </script>
+
+
+        <fieldset id="related-items"
+                  tal:condition="python:not ajax_load and context.relatedItems">
+            <legend i18n:translate="">Related items</legend>
+            <tal:relateditems tal:content="structure view/w/relatedItems/render" />
+        </fieldset>
+
+        <fieldset id="folder-listing"
+                  tal:condition="python:not ajax_load and not context.is_empty()">
+            <legend i18n:translate="">Contents</legend>
+            <tal:block define="listing_macro context/folder_listing/macros/listing;
+                               contentFilter python:{'portal_type': ['File', 'Link']}">
+                <metal:use_macro use-macro="listing_macro" />
+            </tal:block>
+        </fieldset>
+
+
+        </tal:content-core>
+
+    </metal:main>
+
+</body>
+
+</html>

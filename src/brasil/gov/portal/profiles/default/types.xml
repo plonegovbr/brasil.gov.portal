@@ -3,4 +3,5 @@
  <object meta_type="Dexterity FTI" name="Audio" />
  <object meta_type="Dexterity FTI" name="MPEG Audio File" />
  <object meta_type="Dexterity FTI" name="OGG Audio File" />
+ <object name="collective.nitf.content" meta_type="Dexterity FTI"/>
 </object>
