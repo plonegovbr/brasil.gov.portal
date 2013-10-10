@@ -10,7 +10,7 @@
     <browser:menuItem
         title="Custom View"
         action="nitf_custom_view"
-        description="Displays a gallery in the news article"
+        description="Essa view inclui galeria de imagens e se torna a view padrao de noticias"
         />
   </browser:menuItems>
 

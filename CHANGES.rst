@@ -4,7 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-* Customizacoes nitf para brasil.gov.portal (closes `#26`_).
+* Movidas customizacoes nitf do portal brasil para portal modelo (closes `#26`_).
   [rodfersou]
 * Removidas customizações da pasta overrides to tema, e movidas para brasil.gov.portal
   (closes `#19`_).
