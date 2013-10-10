@@ -16,7 +16,7 @@ class AnalyticsViewlet(AnalyticsViewletBase):
         # Putting a div arround the snippets
         div = html_builder.DIV({'id': 'plone-analytics'}) # create the div
         tags = html_fromstring(snippet) # parse the snippets from html to lxml classes
-        div.extend(tags) # insert the tags int the div
+        div.extend(tags) # insert the tags into the div
         snippet = safe_unicode(html_tostring(div)) # convert back to string the new tag
         # Putting a div arround the snippets
 
