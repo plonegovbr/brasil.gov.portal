@@ -62,4 +62,12 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <browser:viewlet
+      name="plone.analytics"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".analytics.AnalyticsViewlet"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>
