@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Customizada viewlet plone.analytics para ter uma div em torno de seu conteúdo,
+  possibilitando mapeamento no Diazo (closes `#30`_).
+  [rodfersou]
 * Removidas customizações da pasta overrides to tema, e movidas para brasil.gov.portal
   (closes `#19`_).
   [rodfersou]
@@ -42,4 +45,5 @@ Changelog
 .. _`#17`: https://github.com/plonegovbr/brasil.gov.portal/issues/17
 .. _`#19`: https://github.com/plonegovbr/brasil.gov.portal/issues/19
 .. _`#21`: https://github.com/plonegovbr/brasil.gov.portal/issues/21
+.. _`#30`: https://github.com/plonegovbr/brasil.gov.portal/issues/30
 
