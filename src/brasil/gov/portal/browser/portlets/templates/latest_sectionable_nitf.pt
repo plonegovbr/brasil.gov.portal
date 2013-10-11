@@ -36,6 +36,11 @@
 
     });
     </script>
+    <noscript>
+        <div class="error">
+            Seu navegador de internet está sem suporte à JavaScript, por esse motivo algumas funcionalidades do site podem não estar acessíveis.
+        </div>
+    </noscript>
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
@@ -65,12 +70,11 @@
 
     </form>
 
-    <div style="text-align:center;">
+    <div class="centered">
 
         <img tal:attributes="src string:${portal_url}/spinner.gif"
                     alt=""
-                    id="nitf-section-filter-spinner"
-                    style="display:none"/>
+                    id="nitf-section-filter-spinner"/>
     </div>
 
     <div id="nitf-section-filter-results">

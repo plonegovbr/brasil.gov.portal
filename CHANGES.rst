@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Remoção de estilos inline (closes `#32`_).
+  [rennanrodrigues]
 * Customizada viewlet plone.analytics para ter uma div em torno de seu conteúdo,
   possibilitando mapeamento no Diazo (closes `#30`_).
   [rodfersou]
@@ -49,4 +51,5 @@ Changelog
 .. _`#21`: https://github.com/plonegovbr/brasil.gov.portal/issues/21
 .. _`#26`: https://github.com/plonegovbr/brasil.gov.portal/issues/26
 .. _`#30`: https://github.com/plonegovbr/brasil.gov.portal/issues/30
+.. _`#32`: https://github.com/plonegovbr/brasil.gov.portal/issues/32
 
