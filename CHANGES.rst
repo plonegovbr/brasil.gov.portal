@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Movido main.css do brasil.gov.temas para brasil.gov.portal.
+  Será mantido no tema somente para previsualizacao do tema (closes `#34`_).
+  [rodfersou]
 * Customizada viewlet plone.analytics para ter uma div em torno de seu conteúdo,
   possibilitando mapeamento no Diazo (closes `#30`_).
   [rodfersou]
@@ -49,4 +52,5 @@ Changelog
 .. _`#21`: https://github.com/plonegovbr/brasil.gov.portal/issues/21
 .. _`#26`: https://github.com/plonegovbr/brasil.gov.portal/issues/26
 .. _`#30`: https://github.com/plonegovbr/brasil.gov.portal/issues/30
+.. _`#34`: https://github.com/plonegovbr/brasil.gov.portal/issues/34
 
