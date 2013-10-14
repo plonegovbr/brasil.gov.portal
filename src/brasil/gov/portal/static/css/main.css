@@ -382,12 +382,17 @@ div.position-10 { margin-left: -30.042%; }
     margin: 1.167em 0;
 }
 
-#social-icons ul { display: table-row; }
-#social-icons li { display: table-cell; }
+#social-icons li { display: inline-block; }
 
-#social-icons li a {
+#social-icons a {
+    display: block;
+    overflow: hidden;
+    margin: 0 0 0 5px;
+    width: 20px;
+    height: 20px;
     border: none;
-    padding: 0 0 0 5px;
+    text-indent: 100%;
+    white-space: nowrap;
 }
 
 /* Menu sobre o portal
