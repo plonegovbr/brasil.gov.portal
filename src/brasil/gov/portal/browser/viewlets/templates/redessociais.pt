@@ -7,8 +7,8 @@
             <li tal:define="tid tab/site"
                 tal:attributes="id string:portalredes-${tid};
                                 class string:portalredes-item;">
-                <a tal:attributes="href tab/url;
-                                   title tab/title|nothing;" />
+                <a tal:attributes="href tab/url;"
+                   tal:content="title tab/title|nothing;" />
             </li>
         </tal:rede>
     </ul>
