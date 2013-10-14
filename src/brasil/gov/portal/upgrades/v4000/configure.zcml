@@ -21,7 +21,7 @@
 
       <gs:upgradeStep
           title="Atualiza portal para versão 4000"
-          description="Modifica view padrao do nitf para customizacao."
+          description="Modifica view padrao do nitf para customizacao e adiciona novo css de estrutura para tema."
           handler=".handler.apply_profile"
           />
 
