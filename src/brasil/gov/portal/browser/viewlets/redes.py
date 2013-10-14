@@ -19,8 +19,6 @@ class RedesSociaisViewlet(ViewletBase):
         super(RedesSociaisViewlet, self).update()
         tools = self.context.restrictedTraverse('@@plone_tools')
         pp = tools.properties()
-        url = tools.url()
-        portal_url = url()
         configs = getattr(pp, 'brasil_gov', None)
         redes = {}
         for rede in REDES:
@@ -34,8 +32,6 @@ class RedesSociaisViewlet(ViewletBase):
                 selected.append({'site': k,
                                  'title': rede_info['title'],
                                  'info': v,
-                                 'icon': '%s/%s' % (portal_url,
-                                                    rede_info['icon']),
                                  'url': rede_info['url'] % v})
             self.redes = selected
 
