@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Padronização no espaçamento entre o menu de navegação e do conteudo principal
+  quando em três colunas. (closes `#40`_).
+  [felipeduardo]
 * Ajuste no alinhamento do menu de navegação e do conteudo principal (closes `#40`_).
   [felipeduardo]
 * AJuste no CSS em modo de Alto Contraste para manter a barra de identidade
