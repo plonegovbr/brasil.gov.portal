@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Ajuste no alinhamento do menu de navegação e do conteudo principal (closes `#40`_).
+  [felipeduardo]
 * AJuste no CSS em modo de Alto Contraste para manter a barra de identidade
   com as cores padrões. (closes `#38`_).
   [felipeduardo]
@@ -62,4 +64,5 @@ Changelog
 .. _`#34`: https://github.com/plonegovbr/brasil.gov.portal/issues/34
 .. _`#35`: https://github.com/plonegovbr/brasil.gov.portal/issues/35
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.portal/issues/38
+.. _`#40`: https://github.com/plonegovbr/brasil.gov.portal/issues/40
 
