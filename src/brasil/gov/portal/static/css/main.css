@@ -3117,6 +3117,16 @@ body.contraste #sobre {
     background: #333;
 }
 
+body.contraste #social-icons a,
+body.contraste #header input.searchButton {
+    background-image: url("../img/sprite-contraste.png");
+}
+
+body.contraste #header input.searchButton {
+    background-color: #fff;
+    background-position: 2px 3px;
+}
+
 /* ==========================================================================
    Print
    ========================================================================== */
