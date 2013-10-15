@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* AJuste no CSS em modo de Alto Contraste para manter a barra de identidade
+  com as cores padrões. (closes `#38`_).
+  [felipeduardo]
 * AJuste no CSS em modo de Alto Contraste (closes `#38`_).
   [felipeduardo]
 * Revisão de ícones de redes sociais para escolher cor por tema (closes `#35`_).
