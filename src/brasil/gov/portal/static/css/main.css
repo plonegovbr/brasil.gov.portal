@@ -3061,8 +3061,19 @@ body.contraste #content a:hover,
 body.contraste dl.portlet a:hover,
 body.contraste #category,
 body.contraste #category-vcge,
-body.contraste .tile-subtitle {
+body.contraste .tile-subtitle,
+body.contraste #content .gallery-element-metadata .title,
+body.contraste .videogallery-tile .description {
     color: #fff !important;
+}
+
+body.contraste .outstanding-header .outstanding-link,
+body.contraste #content .outstanding-header .outstanding-link:hover,
+body.contraste .galleria-info-title a,
+body.contraste #content .galleria-info-title a:hover,
+body.contraste #content .gallery-footer a,
+body.contraste #content .gallery-footer a:hover  {
+    color: #000 !important;
 }
 
 body.contraste .portletHeader,
@@ -3143,9 +3154,22 @@ body.contraste .outstanding-header .outstanding-link {
     background-position: 155px -100px;
 }
 
-body.contraste .outstanding-header .outstanding-link,
-body.contraste #content .outstanding-header .outstanding-link:hover {
-    color: #000 !important;
+body.contraste .videogallery-tile .gallery-footer a {
+    background-image: url("../img/seta_preta.png");
+}
+
+body.contraste .gallery-element {
+    border-bottom: 1px dotted #fff;
+}
+
+body.contraste .width-16 .gallery-3-columns .player-holder,
+body.contraste .width-15 .gallery-3-columns .player-holder {
+    border-right: 1px dotted #fff;
+}
+
+body.contraste .videogallery-tile .gallery-footer {
+    border-top: 1px dotted #fff;
+    background-color: #fff;
 }
 
 /* ==========================================================================
