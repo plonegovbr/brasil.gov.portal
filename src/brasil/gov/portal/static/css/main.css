@@ -3140,7 +3140,7 @@ body.contraste .outstanding-header .outstanding-link {
 
 body.contraste #header input.searchButton {
     background-color: #fff;
-    background-position: 2px 3px;
+    background-position: 5px 4px;
 }
 
 body.contraste .outstanding-header .outstanding-title {
@@ -3173,6 +3173,10 @@ body.contraste .width-15 .gallery-3-columns .player-holder {
 body.contraste .videogallery-tile .gallery-footer {
     border-top: 1px dotted #fff;
     background-color: #fff;
+}
+
+body.contraste #barra-brasil .link-barra {
+    color: #606060 !important;
 }
 
 /* ==========================================================================
