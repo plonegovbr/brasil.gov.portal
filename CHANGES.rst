@@ -6,6 +6,8 @@ Changelog
 
 * Ajuste no alinhamento do menu de navegação e do conteudo principal (closes `#40`_).
   [felipeduardo]
+* AJuste no CSS em modo de Alto Contraste (closes `#38`_).
+  [felipeduardo]
 * Revisão de ícones de redes sociais para escolher cor por tema (closes `#35`_).
   [rodfersou]
 * Movido main.css do brasil.gov.temas para brasil.gov.portal.
@@ -58,4 +60,6 @@ Changelog
 .. _`#30`: https://github.com/plonegovbr/brasil.gov.portal/issues/30
 .. _`#34`: https://github.com/plonegovbr/brasil.gov.portal/issues/34
 .. _`#35`: https://github.com/plonegovbr/brasil.gov.portal/issues/35
+.. _`#38`: https://github.com/plonegovbr/brasil.gov.portal/issues/38
 .. _`#40`: https://github.com/plonegovbr/brasil.gov.portal/issues/40
+
