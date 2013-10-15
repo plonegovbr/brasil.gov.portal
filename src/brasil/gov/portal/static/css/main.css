@@ -3018,7 +3018,6 @@ ul.formTabs { padding: 0px !important; }
 
 body.contraste,
 body.contraste #header,
-body.contraste #sobre,
 body.contraste #footer,
 body.contraste #main,
 body.contraste #doormat-container,
@@ -3051,7 +3050,31 @@ body.contraste #doormat-container dt,
 body.contraste #content .documentDescription,
 body.contraste #content #description,
 body.contraste .nitfByline,
-body.contraste p.section { color: #fff !important; }
+body.contraste p.section,
+body.contraste #portal-column-one > .portletWrapper dl.portlet.first-item-nav a,
+body.contraste #portal-column-one > .portletWrapper dl.portlet.first-item-nav a span,
+body.contraste .portletNavigationTree > .portletItem a span,
+body.contraste #portal-breadcrumbs > span > span.breadcrumbSeparator,
+body.contraste #portal-breadcrumbs a,
+body.contraste #portal-breadcrumbs span,
+body.contraste #content a:hover,
+body.contraste dl.portlet a:hover,
+body.contraste #category,
+body.contraste #category-vcge,
+body.contraste .tile-subtitle,
+body.contraste #content .gallery-element-metadata .title,
+body.contraste .videogallery-tile .description {
+    color: #fff !important;
+}
+
+body.contraste .outstanding-header .outstanding-link,
+body.contraste #content .outstanding-header .outstanding-link:hover,
+body.contraste .galleria-info-title a,
+body.contraste #content .galleria-info-title a:hover,
+body.contraste #content .gallery-footer a,
+body.contraste #content .gallery-footer a:hover  {
+    color: #000 !important;
+}
 
 body.contraste .portletHeader,
 body.contraste .portletHeader a,
@@ -3062,6 +3085,92 @@ body.contraste #doormat-container .doormatColumn {
     color: #fff !important;
 }
 
+body.contraste #portal-siteactions {
+    border-bottom: 1px dotted #fff;
+}
+
+body.contraste #sobre .portalservicos-item a {
+    border-right: 1px solid #fff;
+}
+
+body.contraste .navTreeLevel0 > li.navTreeItemInPath,
+body.contraste .navTreeLevel0 > li.navTreeCurrentNode {
+    border-top: 2px solid #fff !important;
+    border-bottom: 2px solid #fff !important;
+}
+
+body.contraste .navTreeLevel0 > li.navTreeItemInPath,
+body.contraste .navTreeLevel0 > li.navTreeCurrentNode,
+body.contraste .navTreeLevel1,
+body.contraste dl.portlet ul.navTreeLevel1 .navTreeItem,
+body.contraste dl.portlet ul.navTreeLevel1 .navTreeItem {
+    background-color: #000;
+}
+
+body.contraste #category {
+    border-top: 4px solid #fff;
+}
+
+body.contraste #category a.link-category,
+body.contraste span.selectedTag,
+body.contraste #category a.link-category:hover,
+body.contraste #category-vcge a.link-category {
+    border-color: #fff !important;
+    background: #fff !important;
+    color: #000 !important;
+}
+
+body.contraste #doormat-container dl {
+    border-left: 1px dotted #fff;
+}
+
+body.contraste #footer .footer-logos,
+body.contraste #sobre {
+    background: #333;
+}
+
+body.contraste #social-icons a,
+body.contraste #header input.searchButton,
+body.contraste .outstanding-header .outstanding-link {
+    background-image: url("../img/sprite-contraste.png");
+}
+
+body.contraste #header input.searchButton {
+    background-color: #fff;
+    background-position: 2px 3px;
+}
+
+body.contraste .outstanding-header .outstanding-title {
+    border-top: 2px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+body.contraste .outstanding-header {
+    border-top: 2px solid #fff;
+    background: #fff;
+}
+
+body.contraste .outstanding-header .outstanding-link {
+    background-position: 155px -100px;
+}
+
+body.contraste .videogallery-tile .gallery-footer a {
+    background-image: url("../img/seta_preta.png");
+}
+
+body.contraste .gallery-element {
+    border-bottom: 1px dotted #fff;
+}
+
+body.contraste .width-16 .gallery-3-columns .player-holder,
+body.contraste .width-15 .gallery-3-columns .player-holder {
+    border-right: 1px dotted #fff;
+}
+
+body.contraste .videogallery-tile .gallery-footer {
+    border-top: 1px dotted #fff;
+    background-color: #fff;
+}
 
 /* ==========================================================================
    Print
