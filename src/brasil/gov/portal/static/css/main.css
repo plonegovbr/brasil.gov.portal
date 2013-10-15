@@ -184,7 +184,8 @@ p {
 
 /* Tamanho das colunas */
 #portal-column-one {
-    margin-left: -98.958%;
+    margin-left: -100%;
+    /* margin-left: -98.958%; */
     width: 15.625%;
 }
 
@@ -221,7 +222,7 @@ div.width-16 { width: 97.963%; }
 
 div.position-0 { margin-left: -97.963%; }
 
-div.position-1\3a 4 { margin-left: -78.2291%; }
+div.position-1\3a 4 { margin-left: -79.755%; }
 
 div.position-3\3a 4 { margin-left: -16.75%; }
 
