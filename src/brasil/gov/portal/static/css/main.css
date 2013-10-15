@@ -3060,7 +3060,8 @@ body.contraste #portal-breadcrumbs span,
 body.contraste #content a:hover,
 body.contraste dl.portlet a:hover,
 body.contraste #category,
-body.contraste #category-vcge {
+body.contraste #category-vcge,
+body.contraste .tile-subtitle {
     color: #fff !important;
 }
 
@@ -3118,13 +3119,33 @@ body.contraste #sobre {
 }
 
 body.contraste #social-icons a,
-body.contraste #header input.searchButton {
+body.contraste #header input.searchButton,
+body.contraste .outstanding-header .outstanding-link {
     background-image: url("../img/sprite-contraste.png");
 }
 
 body.contraste #header input.searchButton {
     background-color: #fff;
     background-position: 2px 3px;
+}
+
+body.contraste .outstanding-header .outstanding-title {
+    border-top: 2px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+body.contraste .outstanding-header {
+    border-top: 2px solid #fff;
+    background: #fff;
+}
+
+body.contraste .outstanding-header .outstanding-link {
+    background-position: 155px -100px;
+}
+
+body.contraste .outstanding-header .outstanding-link,
+body.contraste #content .outstanding-header .outstanding-link:hover {
+    color: #000 !important;
 }
 
 /* ==========================================================================
