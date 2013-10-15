@@ -3172,6 +3172,10 @@ body.contraste .videogallery-tile .gallery-footer {
     background-color: #fff;
 }
 
+body.contraste #barra-brasil .link-barra {
+    color: #606060 !important;
+}
+
 /* ==========================================================================
    Print
    ========================================================================== */
