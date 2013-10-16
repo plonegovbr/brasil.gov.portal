@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Revisão dos ícones de redes sociais (closes `#44`_).
+  [rodfersou]
 * Padronização no espaçamento entre o menu de navegação e do conteudo principal
   quando em três colunas. (closes `#40`_).
   [felipeduardo]
@@ -68,4 +70,5 @@ Changelog
 .. _`#35`: https://github.com/plonegovbr/brasil.gov.portal/issues/35
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.portal/issues/38
 .. _`#40`: https://github.com/plonegovbr/brasil.gov.portal/issues/40
+.. _`#44`: https://github.com/plonegovbr/brasil.gov.portal/issues/44
 
