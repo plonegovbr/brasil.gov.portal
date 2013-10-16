@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Correção em modo de alto contraste para os temas amarelo e branco (closes `#38`_).
+  [felipeduardo]
 * Padronização no espaçamento entre o menu de navegação e do conteudo principal
   quando em três colunas. (closes `#40`_).
   [felipeduardo]
