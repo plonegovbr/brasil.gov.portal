@@ -6,6 +6,8 @@ Changelog
 
 * Revisão dos ícones de redes sociais (closes `#44`_).
   [rodfersou]
+* Movido arquivo javascript dos temas para brasil.gov.portal (closes `#46`_).
+  [rodfersou]
 * Padronização no espaçamento entre o menu de navegação e do conteudo principal
   quando em três colunas. (closes `#40`_).
   [felipeduardo]
@@ -71,4 +73,5 @@ Changelog
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.portal/issues/38
 .. _`#40`: https://github.com/plonegovbr/brasil.gov.portal/issues/40
 .. _`#44`: https://github.com/plonegovbr/brasil.gov.portal/issues/44
+.. _`#46`: https://github.com/plonegovbr/brasil.gov.portal/issues/46
 
