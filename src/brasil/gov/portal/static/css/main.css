@@ -398,6 +398,11 @@ div.position-10 { margin-left: -30.042%; }
     white-space: nowrap;
 }
 
+#portalredes-facebook a { background-position: -30px 0; }
+#portalredes-twitter a { background-position: -55px 0; }
+#portalredes-youtube a { background-position: -80px 0; }
+#portalredes-flickr a { background-position: -105px 0; }
+
 /* Menu sobre o portal
    ========================================================================== */
 
