@@ -262,13 +262,9 @@ div.position-10 { margin-left: -30.042%; }
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#accessibility a {
-    margin-right: 8px;
-}
+#accessibility a { margin-right: 8px; }
 
-#accessibility span {
-    padding: 0 4px;
-}
+#accessibility span { padding: 0 4px; }
 
 /* Titulo do portal
    ========================================================================== */
