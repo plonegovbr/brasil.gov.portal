@@ -2,5 +2,4 @@
 <object name="portal_javascripts">
 	<javascript id="++resource++jquery.cookie.js" />
 	<javascript id="++resource++contraste.js" />
-	<javascript id="++resource++brasil.gov.portal/js/main.js" insert-after="*" />
 </object>
