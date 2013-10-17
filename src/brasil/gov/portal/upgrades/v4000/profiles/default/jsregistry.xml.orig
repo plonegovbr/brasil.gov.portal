@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<<<<<<< HEAD
+<object name="portal_javascripts" purge="False">
+=======
+<object name="portal_javascripts"  purge="False">
+>>>>>>> master
+	<javascript id="++resource++brasil.gov.portal/js/main.js" insert-after="*" />
+</object>

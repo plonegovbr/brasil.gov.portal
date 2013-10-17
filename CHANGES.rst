@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Movido tipo de dados conteúdo externo do portal brasil para portal modelo
+  (closes `#49`_).
+  [rodfersou]
 * Revisão dos ícones de redes sociais (closes `#44`_).
   [rodfersou]
 * Movido arquivo javascript dos temas para brasil.gov.portal (closes `#46`_).
@@ -74,4 +77,5 @@ Changelog
 .. _`#40`: https://github.com/plonegovbr/brasil.gov.portal/issues/40
 .. _`#44`: https://github.com/plonegovbr/brasil.gov.portal/issues/44
 .. _`#46`: https://github.com/plonegovbr/brasil.gov.portal/issues/46
+.. _`#49`: https://github.com/plonegovbr/brasil.gov.portal/issues/49
 
