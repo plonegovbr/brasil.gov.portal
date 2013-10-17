@@ -4,6 +4,11 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Correção da img de sprites para centrais de conteudo, icone de busca, icones
+  de central de conteudo em modo de alto contraste, renomeados icones das setas
+  seguindo o nome da cor ao inves da editoria.
+  (closes `#51`_).
+  [felipeduardo]
 * Movido tipo de dados conteúdo externo do portal brasil para portal modelo
   (closes `#49`_).
   [rodfersou]
@@ -78,4 +83,5 @@ Changelog
 .. _`#44`: https://github.com/plonegovbr/brasil.gov.portal/issues/44
 .. _`#46`: https://github.com/plonegovbr/brasil.gov.portal/issues/46
 .. _`#49`: https://github.com/plonegovbr/brasil.gov.portal/issues/49
+.. _`#51`: https://github.com/plonegovbr/brasil.gov.portal/issues/51
 
