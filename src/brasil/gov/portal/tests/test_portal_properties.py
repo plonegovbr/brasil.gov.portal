@@ -44,6 +44,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
             'Audio',
             'Document',
             'Event',
+            'ExternalContent',
             'File',
             'Image',
             'Link',

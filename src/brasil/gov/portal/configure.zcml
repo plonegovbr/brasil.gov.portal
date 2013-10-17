@@ -21,6 +21,8 @@
 
   <include package=".transmogrifier" />
 
+  <i18n:registerTranslations directory="locales" />
+
   <include package="five.grok" />
  
   <grok:grok package="." />
