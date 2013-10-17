@@ -3048,7 +3048,8 @@ body.contraste #category,
 body.contraste #category-vcge,
 body.contraste .tile-subtitle,
 body.contraste #content .gallery-element-metadata .title,
-body.contraste .videogallery-tile .description {
+body.contraste .videogallery-tile .description,
+body.contraste .item-central .link-central {
     color: #fff !important;
 }
 
@@ -3116,8 +3117,18 @@ body.contraste #sobre {
 
 body.contraste #social-icons a,
 body.contraste #header input.searchButton,
-body.contraste .outstanding-header .outstanding-link {
+body.contraste .item-central .link-videos,
+body.contraste .item-central .link-audios,
+body.contraste .item-central .link-infograficos,
+body.contraste .item-central .link-publicacoes,
+body.contraste .item-central .link-fotos,
+body.contraste .item-central .link-aplicativos {
     background-image: url("../img/sprite-contraste.png");
+}
+
+body.contraste .outstanding-header .outstanding-link {
+    background: url("../img/seta_preta.png") no-repeat scroll right 5px transparent;
+}
 }
 
 body.contraste #header input.searchButton {
