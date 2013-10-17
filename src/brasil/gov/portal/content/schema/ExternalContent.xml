@@ -1,6 +1,6 @@
 <model xmlns="http://namespaces.plone.org/supermodel/schema"
        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-       i18n:domain="secom.brasil.portal">
+       i18n:domain="brasil.gov.portal">
     <schema>
       <field name="text" type="plone.app.textfield.RichText">
         <description />
