@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
+  [felipeduardo]
 * Correção da img de sprites para centrais de conteudo, icone de busca, icones
   de central de conteudo em modo de alto contraste, renomeados icones das setas
   seguindo o nome da cor ao inves da editoria. (closes `#51`_).
@@ -85,4 +87,4 @@ Changelog
 .. _`#46`: https://github.com/plonegovbr/brasil.gov.portal/issues/46
 .. _`#49`: https://github.com/plonegovbr/brasil.gov.portal/issues/49
 .. _`#51`: https://github.com/plonegovbr/brasil.gov.portal/issues/51
-
+.. _`#55`: https://github.com/plonegovbr/brasil.gov.portal/issues/55

@@ -1038,6 +1038,7 @@ dl.portlet ul.navTree .navTreeCurrentItem {
 .navTreeLevel5 { background: #cbcdcf !important; }
 
 dl.portlet ul.navTreeLevel1 .navTreeItem {
+    margin-bottom: 0;
     padding-left: 0em !important;
     border-top: 1px solid #d0d4d5;
 }
@@ -1097,8 +1098,12 @@ ul.navTreeLevel6 li a.navTreeCurrentNode {
  */
 
 dl.portlet ul.navTree li a {
-    padding: 0.55em 1.5em !important;
+    padding: 0.55em 1.043em !important;
     line-height: 1.3em !important;
+}
+
+dl.portlet ul.navTreeLevel0 > li  > .navTreeItemInPath {
+    padding-left: 1.5em !important;
 }
 
 dl.portlet ul.navTreeLevel1 li a {
@@ -1106,15 +1111,17 @@ dl.portlet ul.navTreeLevel1 li a {
     font-size: 1.05em;
 }
 
-dl.portlet ul.navTreeLevel2 li a { padding: 0.2em 2.5em !important; }
+dl.portlet ul.navTreeLevel2 li a { padding: 0.435em 2.5em !important; }
 dl.portlet ul.navTreeLevel3 li a { padding: 0.55em 3em !important; }
 dl.portlet ul.navTreeLevel4 li a { padding: 0.55em 3.5em !important; }
 dl.portlet ul.navTreeLevel5 li a { padding: 0.55em 4em !important; }
 dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 4.5em !important; }
 
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a,
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a span {
+#portal-column-one > .portletWrapper dl.portlet.first-item-nav a {
     padding: 0.475em 0 !important;
+}
+
+#portal-column-one > .portletWrapper dl.portlet.first-item-nav a span {
     font-size: 110%;
 }
 
