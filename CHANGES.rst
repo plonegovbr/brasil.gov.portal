@@ -6,8 +6,7 @@ Changelog
 
 * Correção da img de sprites para centrais de conteudo, icone de busca, icones
   de central de conteudo em modo de alto contraste, renomeados icones das setas
-  seguindo o nome da cor ao inves da editoria.
-  (closes `#51`_).
+  seguindo o nome da cor ao inves da editoria. (closes `#51`_).
   [felipeduardo]
 * Movido tipo de dados conteúdo externo do portal brasil para portal modelo
   (closes `#49`_).
