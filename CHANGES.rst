@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-* Movido implementação que havia ficado no produto de tema (closes `#46`_).
+* Movido implementação que havia ficado no produto de tema e alterado sintaxe
+  padrão do arquivo javascript (closes `#46`_).
   [felipeduardo]
 * Correção da img de sprites para centrais de conteudo, icone de busca, icones
   de central de conteudo em modo de alto contraste, renomeados icones das setas
