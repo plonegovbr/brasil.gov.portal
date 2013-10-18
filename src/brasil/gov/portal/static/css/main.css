@@ -465,9 +465,7 @@ input.searchField { -moz-appearance: none; }
     text-indent: -2000px;
 }
 
-#header input.searchButton {
-    background: url("../img/search-button.gif") no-repeat 3px 2px #FFFFFF;
-}
+#header input.searchButton { background-position: 5px 4px; }
 
 #LSResult {
     z-index: 1;
@@ -1006,7 +1004,8 @@ dl.portlet dt a:visited { color: #464a55 !important; }
 
 .portletNavigationTree li { list-style: none !important; }
 
-.portletNavigationTree > .portletItem a span { color: #172938 !important; }
+.portletNavigationTree > .portletItem a span,
+.item-central .link-central { color: #172938 !important; }
 
 dl.portlet ul.navTreeLevel0 > .navTreeItem {
     margin: 0;
@@ -1136,7 +1135,7 @@ dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 4.5em !important; }
 }
 
 .list-central .item-central {
-    padding: 15px 0;
+    padding: 4px 0 3px;
     border-bottom: 1px solid #d6dcd7;
     list-style: none;
 }
@@ -1146,37 +1145,19 @@ dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 4.5em !important; }
 .item-central .link-central {
     display: block;
     padding-left: 50px;
-    height: 38px;
-    color: #436976 !important;
-    line-height: 38px;
+    height: 40px;
+    line-height: 40px;
 }
 
 /* Icones da Central de conteudo
    ========================================================================== */
 
-.item-central .link-videos {
-    background: url("../img/sprite-icons.png") no-repeat -1px -127px;
-}
-
-.item-central .link-audios {
-    background: url("../img/sprite-icons.png") no-repeat -1px -167px;
-}
-
-.item-central .link-infograficos {
-    background: url("../img/sprite-icons.png") no-repeat -1px -207px;
-}
-
-.item-central .link-publicacoes {
-    background: url("../img/sprite-icons.png") no-repeat -1px -247px;
-}
-
-.item-central .link-fotos {
-    background: url("../img/sprite-icons.png") no-repeat -1px -326px;
-}
-
-.item-central .link-aplicativos {
-    background: url("../img/sprite-icons.png") no-repeat -1px -287px;
-}
+.item-central .link-videos { background-position: 0 -156px; }
+.item-central .link-audios { background-position: -1px -108px; }
+.item-central .link-fotos { background-position: -1px -300px; }
+.item-central .link-infograficos { background-position: -1px -252px; }
+.item-central .link-publicacoes { background-position: -1px -204px; }
+.item-central .link-aplicativos { background-position: -1px -350px; }
 
 /* Portlet de Lista
    ========================================================================== */
@@ -1748,7 +1729,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .laranja .outstanding-header .outstanding-link {
-    background: url("../img/seta_cidadania_justica.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_laranja.png") no-repeat scroll right 5px transparent;
 }
 
 /* Azul Petroleo - Defesa e Segurança
@@ -1773,10 +1754,10 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .azul-petroleo .outstanding-header .outstanding-link {
-    background: url("../img/seta_defesa_seguranca.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_azul-petroleo.png") no-repeat scroll right 5px transparent;
 }
 
-/* Dourado -
+/* Dourado - Cultura
    ========================================================================== */
 
 .dourado .tile-title {
@@ -1798,7 +1779,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .dourado .outstanding-header .outstanding-link {
-    background: url("../img/seta_cultura.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_dourado.png") no-repeat scroll right 5px transparent;
 }
 
 /* Roxo - Ciencia e Tecnologia
@@ -1823,7 +1804,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .roxo .outstanding-header .outstanding-link {
-    background: url("../img/seta_ciencia_tecnologia.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_roxo.png") no-repeat scroll right 5px transparent;
 }
 
 /* Marron Claro - Economia e Emprego
@@ -1848,7 +1829,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .marrom-claro .outstanding-header .outstanding-link {
-    background: url("../img/seta_economia_emprego.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_marrom-claro.png") no-repeat scroll right 5px transparent;
 }
 
 /* Verde Escuro - Educação
@@ -1873,7 +1854,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .verde-escuro .outstanding-header .outstanding-link {
-    background: url("../img/seta_educacao.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_verde-escuro.png") no-repeat scroll right 5px transparent;
 }
 
 /* Verde - Esporte
@@ -1898,7 +1879,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .verde .outstanding-header .outstanding-link {
-    background: url("../img/seta_esporte.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_verde.png") no-repeat scroll right 5px transparent;
 }
 
 /* Azul Governo
@@ -1923,7 +1904,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .azul .outstanding-header .outstanding-link {
-    background: url("../img/seta_governo.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_azul.png") no-repeat scroll right 5px transparent;
 }
 
 /* Marron - Infraestrutura
@@ -1948,7 +1929,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .marrom .outstanding-header .outstanding-link {
-    background: url("../img/seta_infraestrutura.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_marrom.png") no-repeat scroll right 5px transparent;
 }
 
 /* Verde Claro - Meio Ambiente
@@ -1973,7 +1954,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .verde-claro .outstanding-header .outstanding-link {
-    background: url("../img/seta_meio_ambiente.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_verde-claro.png") no-repeat scroll right 5px transparent;
 }
 
 /* Azul Claro - Saúde
@@ -1998,7 +1979,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .azul-claro .outstanding-header .outstanding-link {
-    background: url("../img/seta_saude.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_azul-claro.png") no-repeat scroll right 5px transparent;
 }
 
 /* Azul Escuro - Turismo
@@ -2023,7 +2004,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 .azul-escuro .outstanding-header .outstanding-link {
-    background: url("../img/seta_tursimo.png") no-repeat scroll right 5px transparent;
+    background: url("../img/seta_azul-escuro.png") no-repeat scroll right 5px transparent;
 }
 
 /* Azul Piscinba - Turismo
@@ -3068,6 +3049,7 @@ body.contraste #category-vcge,
 body.contraste .tile-subtitle,
 body.contraste #content .gallery-element-metadata .title,
 body.contraste .videogallery-tile .description,
+body.contraste .item-central .link-central {
 body.contraste #portal-siteactions a,
 body.contraste #portal-siteactions a:hover,
 body.contraste #portal-logo,
@@ -3139,8 +3121,17 @@ body.contraste #sobre {
 
 body.contraste #social-icons a,
 body.contraste #header input.searchButton,
-body.contraste .outstanding-header .outstanding-link {
+body.contraste .item-central .link-videos,
+body.contraste .item-central .link-audios,
+body.contraste .item-central .link-infograficos,
+body.contraste .item-central .link-publicacoes,
+body.contraste .item-central .link-fotos,
+body.contraste .item-central .link-aplicativos {
     background-image: url("../img/sprite-contraste.png");
+}
+
+body.contraste .outstanding-header .outstanding-link {
+    background: url("../img/seta_preta.png") no-repeat scroll right 5px transparent;
 }
 
 body.contraste #header input.searchButton {
