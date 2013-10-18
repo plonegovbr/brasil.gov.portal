@@ -1038,6 +1038,7 @@ dl.portlet ul.navTree .navTreeCurrentItem {
 .navTreeLevel5 { background: #cbcdcf !important; }
 
 dl.portlet ul.navTreeLevel1 .navTreeItem {
+    margin-bottom: 0;
     padding-left: 0em !important;
     border-top: 1px solid #d0d4d5;
 }
