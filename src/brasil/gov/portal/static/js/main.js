@@ -95,7 +95,6 @@ jQuery(document).ready(function ($) {
     /* Protection from the Content Manager */
     var firstNavigation = $("#portal-column-one .portletWrapper .portletNavigationTree")[0];
     if(firstNavigation){
-        console.log('teste');
         $(firstNavigation).addClass("first-item-nav");
     }
 
