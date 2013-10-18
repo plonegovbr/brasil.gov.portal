@@ -1098,8 +1098,12 @@ ul.navTreeLevel6 li a.navTreeCurrentNode {
  */
 
 dl.portlet ul.navTree li a {
-    padding: 0.55em 1.5em !important;
+    padding: 0.55em 1.043em !important;
     line-height: 1.3em !important;
+}
+
+dl.portlet ul.navTreeLevel0 > li  > .navTreeItemInPath {
+    padding-left: 1.5em !important;
 }
 
 dl.portlet ul.navTreeLevel1 li a {
