@@ -1106,7 +1106,7 @@ dl.portlet ul.navTreeLevel1 li a {
     font-size: 1.05em;
 }
 
-dl.portlet ul.navTreeLevel2 li a { padding: 0.2em 2.5em !important; }
+dl.portlet ul.navTreeLevel2 li a { padding: 0.435em 2.5em !important; }
 dl.portlet ul.navTreeLevel3 li a { padding: 0.55em 3em !important; }
 dl.portlet ul.navTreeLevel4 li a { padding: 0.55em 3.5em !important; }
 dl.portlet ul.navTreeLevel5 li a { padding: 0.55em 4em !important; }
