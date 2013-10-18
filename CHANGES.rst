@@ -6,6 +6,9 @@ Changelog
 
 * Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
   [felipeduardo]
+* Movido implementação que havia ficado no produto de tema e alterado sintaxe
+  padrão do arquivo javascript (closes `#46`_).
+  [felipeduardo]
 * Correção da img de sprites para centrais de conteudo, icone de busca, icones
   de central de conteudo em modo de alto contraste, renomeados icones das setas
   seguindo o nome da cor ao inves da editoria. (closes `#51`_).
