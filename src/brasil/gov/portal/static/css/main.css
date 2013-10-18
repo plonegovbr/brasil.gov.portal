@@ -3050,6 +3050,10 @@ body.contraste .tile-subtitle,
 body.contraste #content .gallery-element-metadata .title,
 body.contraste .videogallery-tile .description,
 body.contraste .item-central .link-central {
+body.contraste #portal-siteactions a,
+body.contraste #portal-siteactions a:hover,
+body.contraste #portal-logo,
+body.contraste #portal-title {
     color: #fff !important;
 }
 

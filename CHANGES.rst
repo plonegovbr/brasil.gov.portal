@@ -12,6 +12,8 @@ Changelog
 * Movido tipo de dados conteúdo externo do portal brasil para portal modelo
   (closes `#49`_).
   [rodfersou]
+* Correção em modo de alto contraste para os temas amarelo e branco (closes `#38`_).
+  [felipeduardo]
 * Revisão dos ícones de redes sociais (closes `#44`_).
   [rodfersou]
 * Movido arquivo javascript dos temas para brasil.gov.portal (closes `#46`_).
