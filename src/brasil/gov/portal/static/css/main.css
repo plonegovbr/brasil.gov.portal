@@ -1112,9 +1112,11 @@ dl.portlet ul.navTreeLevel4 li a { padding: 0.55em 3.5em !important; }
 dl.portlet ul.navTreeLevel5 li a { padding: 0.55em 4em !important; }
 dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 4.5em !important; }
 
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a,
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a span {
+#portal-column-one > .portletWrapper dl.portlet.first-item-nav a {
     padding: 0.475em 0 !important;
+}
+
+#portal-column-one > .portletWrapper dl.portlet.first-item-nav a span {
     font-size: 110%;
 }
 
