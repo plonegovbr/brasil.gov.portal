@@ -40,4 +40,13 @@
       permission="zope2.View"
       />
 
+  <browser:page
+      name="batchnavigation"
+      for="*"
+      permission="zope.Public"
+      class="plone.batching.browser.PloneBatchView"
+      template="templates/batchnavigation.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>
