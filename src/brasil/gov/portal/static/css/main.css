@@ -117,7 +117,8 @@ h1, h2, h3, h4, h5, h6 {
 a:link,
 #content a:link,
 dl.portlet a:link {
-    border-bottom: none !important;
+    /*border-bottom: none !important;*/
+    border-bottom: none;
     color: #2c67cd;
 }
 
@@ -2344,7 +2345,7 @@ dl.portlet div.listingBar a:link {
 .template-summary_view #content .pagination {
     display: block;
     text-align: center;
-    margin: 0;
+    margin: 72px 0 20px 0;
     font-size: 11px;
     font-weight: normal;
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
@@ -2381,13 +2382,15 @@ dl.portlet div.listingBar a:link {
     color: #2c66ce;
 }
 
-.template-summary_view #content .pagination li a.prev { margin-right: 30px; }
-.template-summary_view #content .pagination li a.next { margin-left: 30px; }
+.template-summary_view #content .pagination li a.prev { margin-right: 26px; }
+.template-summary_view #content .pagination li a.next { margin-left: 26px; }
 
 .template-summary_view #content .pagination li span {
     font-family: "open_sansbold", Arial, Helvetica, sans-serif;
     font-weight: normal;
-    margin: 0 10px 0 0;
+    width: 25px;
+    height: 25px;
+    display: block;
 }
 
 /*
