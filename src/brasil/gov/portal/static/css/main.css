@@ -2110,7 +2110,6 @@ ul.social-tabs.css-tabs > li > a {
    ========================================================================== */
 
 .template-summary_view h1#parent-fieldname-title,
-.template-summary_view h1.documentFirstHeading,
 .template-folder_summary_view h1#parent-fieldname-title,
 .template-folder_summary_view #content h1.documentFirstHeading {
     padding-bottom: 5px;
@@ -2206,6 +2205,116 @@ div.listingBar a:link,
 #content div.listingBar a:link,
 dl.portlet div.listingBar a:link {
     border-bottom: 0.1em solid #CCCCCC !important;
+}
+
+/* ==========================================================================
+   Listagem de notícias - Summary View
+   ========================================================================== */
+
+.template-summary_view #content h1.documentFirstHeading {
+    font-size: 28px;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #2c66ce;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d9dbda;
+}
+
+.template-summary_view #content .tileItem .documentByLine {
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #596e7f;
+}
+
+.template-summary_view #content .tileItem .subtitle {
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.template-summary_view #content .tileItem .tileHeadline {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.template-summary_view #content .tileItem .description {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.template-summary_view #content .tileItem .tileHeadline a,
+.template-summary_view #content .tileItem .description {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172938;
+    line-height: 21px;
+}
+
+.template-summary_view #content .tileItem .keywords {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #596e7f;
+    line-height: 16px;
+}
+
+.template-summary_view #content .tileItem .keywords a { color: #596e7f; }
+
+.template-summary_view #content .tileItem .tileImage img {
+    max-width: 230px;
+    max-height: 136px;
+    width: 100%;
+}
+
+.template-summary_view #content .pagination {
+    display: block;
+    text-align: center;
+    margin: 0;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+}
+
+.template-summary_view #content .pagination li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.template-summary_view #content .pagination li a {
+    text-transform: uppercase;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #c2c2c2;
+    border-radius: 3px;
+    display: block;
+    line-height: 25px;
+    color: #36424d;
+    margin: 0 4px;
+}
+
+.template-summary_view #content .pagination li a:hover,
+.template-summary_view #content .pagination li a:focus {
+    text-decoration: underline;
+}
+
+.template-summary_view #content .pagination li a.prev,
+.template-summary_view #content .pagination li a.next {
+    border: none;
+    width: auto;
+    height: auto;
+    color: #2c66ce;
+}
+
+.template-summary_view #content .pagination li a.prev { margin-right: 30px; }
+.template-summary_view #content .pagination li a.next { margin-left: 30px; }
+
+.template-summary_view #content .pagination li span {
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0 10px 0 0;
 }
 
 /*
