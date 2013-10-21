@@ -3242,7 +3242,12 @@ body.contraste .item-central .link-central,
 body.contraste #portal-siteactions a,
 body.contraste #portal-siteactions a:hover,
 body.contraste #portal-logo,
-body.contraste #portal-title {
+body.contraste #portal-title,
+body.contraste.template-summary_view #content .tileItem .subtitle,
+body.contraste.template-summary_view #content .tileItem .tileHeadline a,
+body.contraste.template-summary_view #content .tileItem .description,
+body.contraste.template-summary_view #content .tileItem .keywords,
+body.contraste.template-summary_view #content .tileItem .documentByLine {
     color: #fff !important;
 }
 
