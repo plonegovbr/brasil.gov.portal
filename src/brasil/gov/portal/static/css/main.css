@@ -2121,7 +2121,6 @@ ul.social-tabs.css-tabs > li > a {
     line-height: 1em;
 }
 
-.template-summary_view .tileItem,
 .template-folder_summary_view .tileItem {
     position: relative;
     margin: 30px 0;
@@ -2210,39 +2209,121 @@ dl.portlet div.listingBar a:link {
 /* ==========================================================================
    Listagem de notícias - Summary View
    ========================================================================== */
+.template-summary_view #content-core { margin-top: 0; }
+
+.template-summary_view #content h1.documentFirstHeading:before {
+    top: -24px;
+    left: 0px;
+}
+
+.template-summary_view #content h1.documentFirstHeading:after {
+    top: 24px;
+    left: 50px;
+}
+
+.template-summary_view #content h1.documentFirstHeading:before,
+.template-summary_view #content h1.documentFirstHeading:after {
+    width: 24px;
+    height: 24px;
+    background-color: #fdaf17;
+    position: absolute;
+    content: " ";
+
+} #viewlet-below-content-title { display: none; }
 
 .template-summary_view #content h1.documentFirstHeading {
     font-size: 28px;
     font-family: "open_sansbold", Arial, Helvetica, sans-serif;
     font-weight: normal;
-    margin: 0;
-    padding: 0;
+    margin: 24px 0 30px;
+    padding: 0 0 19px 0;
     border: 0;
     color: #2c66ce;
     text-transform: uppercase;
     border-bottom: 1px solid #d9dbda;
+    line-height: 28px;
+}
+
+.template-summary_view .tileItem:first-child:before {
+    content: " ";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #c12727;
+    top: -30px;
+    left: 0;
+}
+
+
+.template-summary_view .tileItem:before {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    width: 24px;
+    height: 24px;
+    background-color: #fdaf17;
+    content: " ";
+}
+
+.template-summary_view .tileItem:after {
+    position: absolute;
+    bottom: 0;
+    left: 97px;
+    width: 24px;
+    height: 24px;
+    background-color: #fdaf17;
+    content: " ";
+}
+
+.template-summary_view .tileItem {
+    margin: 0;
+    padding: 24px 0 24px 112px;
+    background-color: #efefef;
+    position: relative;
+    border-bottom: 1px solid #d7dbda;
+    clear: both;
 }
 
 .template-summary_view #content .tileItem .documentByLine {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: #596e7f;
+    color: #596E7F;
+    margin: 24px 0 0;
+    background: #F00;
+    padding: 0;
+    min-width: 94px;
 }
 
 .template-summary_view #content .tileItem .subtitle {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: normal;
+    margin: 0;
+    padding: 0;
 }
+
+.template-summary_view #content .tileItem .tileHeadline:before,
+.template-summary_view #content .tileItem .tileHeadline:after {
+    content: " ";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #ed008c;
+} .template-summary_view #content .tileItem .tileHeadline:before { top: 38px; left: 358px; }
+  .template-summary_view #content .tileItem .tileHeadline:after { top: 108px; left: 358px; }
 
 .template-summary_view #content .tileItem .tileHeadline {
     font-size: 16px;
     font-weight: bold;
+    margin: 7px 0;
+    padding: 0;
 }
 
 .template-summary_view #content .tileItem .description {
     font-size: 14px;
     font-weight: normal;
+    margin: 0;
+    padding: 0;
 }
 
 .template-summary_view #content .tileItem .tileHeadline a,
@@ -2250,22 +2331,35 @@ dl.portlet div.listingBar a:link {
     font-family: Arial, Helvetica, sans-serif;
     color: #172938;
     line-height: 21px;
+    margin: 0;
+    padding: 0;
 }
 
+.template-summary_view #content .tileItem p {
+    margin: 0;
+    padding: 0;
+}
+
+.template-summary_view #content .tileItem .keywords:before { content: " "; position: absolute; bottom: 37px; left: 112px; width: 24px; height: 24px;  background-color: gold;}
 .template-summary_view #content .tileItem .keywords {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: normal;
     color: #596e7f;
     line-height: 16px;
+    margin: 15px 0 0;
+    padding: 0;
 }
 
 .template-summary_view #content .tileItem .keywords a { color: #596e7f; }
 
+.template-summary_view #content .tileItem .tileImage { margin: 0 !important; }
 .template-summary_view #content .tileItem .tileImage img {
     max-width: 230px;
     max-height: 136px;
     width: 100%;
+    margin: 0 17px 0 0 !important;
+    padding: 0;
 }
 
 .template-summary_view #content .pagination {
