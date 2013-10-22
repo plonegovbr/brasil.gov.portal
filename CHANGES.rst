@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Corrigido caminho das referências css para funcionar em produção (closes `#64`_).
+  [rodfersou]
 * Customizada css de paginação padrão do plone
   Inserção de ícones na summary view de coleção
   Inserção de ícones na summary view de coleção no modo contraste
@@ -110,3 +112,4 @@ Changelog
 .. _`#57`: https://github.com/plonegovbr/brasil.gov.portal/issues/57
 .. _`#59`: https://github.com/plonegovbr/brasil.gov.portal/issues/59
 .. _`#60`: https://github.com/plonegovbr/brasil.gov.portal/issues/60
+.. _`#64`: https://github.com/plonegovbr/brasil.gov.portal/issues/64
