@@ -4,7 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-* MOvidas alterações de css da home que estavam no tema para estrutura principal
+* Movidas alterações de css da home que estavam no tema para estrutura principal
   de css. (closes `#60`_).
   [felipeduardo]
 * Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
