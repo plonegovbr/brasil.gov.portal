@@ -2708,6 +2708,27 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     color: #2c66ce;
 }
 
+/* Relatar erros */
+#content .relatar-erros .icone {
+    margin-right: 10px;
+    float: left;
+}
+
+#content .relatar-erros .texto {
+    margin-left: 2.1em;
+    line-height: 1em
+}
+
+#content .relatar-erros a {
+    height: 21px;
+    float: left;
+}
+
+#content .relatar-erros a:hover,
+#content .relatar-erros a:focus {
+    background-position: 0 -21px;
+}
+
 
 /* ==========================================================================
    Media Queries
@@ -3176,6 +3197,16 @@ body.contraste .width-15 .gallery-3-columns .player-holder {
 body.contraste .videogallery-tile .gallery-footer {
     border-top: 1px dotted #fff;
     background-color: #fff;
+}
+
+body.contraste #content .relatar-erros a {
+    background: url("../img/icon-reportar-erros-contraste.png") no-repeat;
+}
+
+body.contraste #content .relatar-erros a:hover,
+body.contraste #content .relatar-erros a:focus {
+    background-position: 0 -21px;
+    color: #3a3a3a !important;
 }
 
 body.contraste #barra-brasil .link-barra {
