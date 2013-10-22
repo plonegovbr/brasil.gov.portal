@@ -4,7 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-* Customizada view de paginação padrão do plone (closes `#??`_).
+* Customizada view de paginação padrão do plone (closes `#57`_).
   [rodfersou]
 * Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
   [felipeduardo]
@@ -93,3 +93,4 @@ Changelog
 .. _`#49`: https://github.com/plonegovbr/brasil.gov.portal/issues/49
 .. _`#51`: https://github.com/plonegovbr/brasil.gov.portal/issues/51
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.portal/issues/55
+.. _`#57`: https://github.com/plonegovbr/brasil.gov.portal/issues/57
