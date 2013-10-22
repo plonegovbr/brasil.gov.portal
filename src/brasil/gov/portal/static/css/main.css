@@ -2701,6 +2701,8 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     line-height: 1.6em;
 }
 
+#nitf-section-filter-spinner { display: none; }
+
 /* Fonte da noticia */
 #content article .external-link {
     font-family: Arial, Helvetica, sans-serif;
