@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Customizada view de paginação padrão do plone (closes `#??`_).
+  [rodfersou]
 * Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
   [felipeduardo]
 * Movido implementação que havia ficado no produto de tema e alterado sintaxe
