@@ -4,11 +4,19 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Customizada css de paginação padrão do plone
+  Inserção de ícones na summary view de coleção
+  Inserção de ícones na summary view de coleção no modo contraste
+  Revisão de layout conforme arte (closes `#57`_).
+  [rennanrodrigues]
 * Movidas alterações de css da home que estavam no tema para estrutura principal
   de css. (closes `#60`_).
   [felipeduardo]
 * CSS do icone de relatar erros (closes `#59`_).
   [rennanrodrigues]
+* Customizada view de paginação padrão do plone
+  Customização do template da summary view para inserir ícones (closes `#57`_).
+  [rodfersou]
 * Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
   [felipeduardo]
 * Movido implementação que havia ficado no produto de tema e alterado sintaxe
@@ -99,5 +107,6 @@ Changelog
 .. _`#49`: https://github.com/plonegovbr/brasil.gov.portal/issues/49
 .. _`#51`: https://github.com/plonegovbr/brasil.gov.portal/issues/51
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.portal/issues/55
+.. _`#57`: https://github.com/plonegovbr/brasil.gov.portal/issues/57
 .. _`#59`: https://github.com/plonegovbr/brasil.gov.portal/issues/59
 .. _`#60`: https://github.com/plonegovbr/brasil.gov.portal/issues/60
