@@ -1,0 +1,19 @@
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.skos">
+    <value key="title" i18n:translate="">VCGE</value>
+    <value key="description" i18n:translate="">Vocabulario Controlado do Governo Eletronico</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.is</element>
+      <element>plone.app.querystring.operation.string.is</element>
+    </value>
+    <value key="vocabulary">brasil.gov.vcge</value>
+    <value key="group" i18n:translate="">Metadata</value>
+  </records>
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.VCGE" remove="True">
+  </records>
+</registry>

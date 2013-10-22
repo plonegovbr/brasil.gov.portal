@@ -4,6 +4,39 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
+  [felipeduardo]
+* Movido implementação que havia ficado no produto de tema e alterado sintaxe
+  padrão do arquivo javascript (closes `#46`_).
+  [felipeduardo]
+* Correção da img de sprites para centrais de conteudo, icone de busca, icones
+  de central de conteudo em modo de alto contraste, renomeados icones das setas
+  seguindo o nome da cor ao inves da editoria. (closes `#51`_).
+  [felipeduardo]
+* Movido tipo de dados conteúdo externo do portal brasil para portal modelo
+  (closes `#49`_).
+  [rodfersou]
+* Correção em modo de alto contraste para os temas amarelo e branco (closes `#38`_).
+  [felipeduardo]
+* Revisão dos ícones de redes sociais (closes `#44`_).
+  [rodfersou]
+* Movido arquivo javascript dos temas para brasil.gov.portal (closes `#46`_).
+  [rodfersou]
+* Padronização no espaçamento entre o menu de navegação e do conteudo principal
+  quando em três colunas. (closes `#40`_).
+  [felipeduardo]
+* Ajuste no alinhamento do menu de navegação e do conteudo principal (closes `#40`_).
+  [felipeduardo]
+* AJuste no CSS em modo de Alto Contraste para manter a barra de identidade
+  com as cores padrões. (closes `#38`_).
+  [felipeduardo]
+* AJuste no CSS em modo de Alto Contraste (closes `#38`_).
+  [felipeduardo]
+* Revisão de ícones de redes sociais para escolher cor por tema (closes `#35`_).
+  [rodfersou]
+* Movido main.css do brasil.gov.temas para brasil.gov.portal.
+  Será mantido no tema somente para previsualizacao do tema (closes `#34`_).
+  [rodfersou]
 * Remoção de estilos inline (closes `#32`_).
   [rennanrodrigues]
 * Customizada viewlet plone.analytics para ter uma div em torno de seu conteúdo,
@@ -51,5 +84,13 @@ Changelog
 .. _`#21`: https://github.com/plonegovbr/brasil.gov.portal/issues/21
 .. _`#26`: https://github.com/plonegovbr/brasil.gov.portal/issues/26
 .. _`#30`: https://github.com/plonegovbr/brasil.gov.portal/issues/30
+.. _`#34`: https://github.com/plonegovbr/brasil.gov.portal/issues/34
+.. _`#35`: https://github.com/plonegovbr/brasil.gov.portal/issues/35
 .. _`#32`: https://github.com/plonegovbr/brasil.gov.portal/issues/32
-
+.. _`#38`: https://github.com/plonegovbr/brasil.gov.portal/issues/38
+.. _`#40`: https://github.com/plonegovbr/brasil.gov.portal/issues/40
+.. _`#44`: https://github.com/plonegovbr/brasil.gov.portal/issues/44
+.. _`#46`: https://github.com/plonegovbr/brasil.gov.portal/issues/46
+.. _`#49`: https://github.com/plonegovbr/brasil.gov.portal/issues/49
+.. _`#51`: https://github.com/plonegovbr/brasil.gov.portal/issues/51
+.. _`#55`: https://github.com/plonegovbr/brasil.gov.portal/issues/55

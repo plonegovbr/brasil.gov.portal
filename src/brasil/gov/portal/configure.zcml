@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:zcml="http://namespaces.zope.org/zcml"
@@ -20,8 +21,15 @@
 
   <include package=".transmogrifier" />
 
+  <i18n:registerTranslations directory="locales" />
+
   <include package="five.grok" />
  
   <grok:grok package="." />
+
+  <browser:resourceDirectory
+    name="brasil.gov.portal"
+    directory="static"
+    />
   
 </configure>

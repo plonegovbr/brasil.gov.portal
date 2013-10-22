@@ -1,0 +1,16 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="brasil.gov.portal">
+    <schema>
+      <field name="text" type="plone.app.textfield.RichText">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Text</title>
+      </field>
+      <field name="remoteUrl" type="zope.schema.TextLine">
+        <default>http://</default>
+        <description></description>
+        <title i18n:translate="">Original URL</title>
+      </field>     	
+    </schema>
+</model>
