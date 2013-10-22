@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* MOvidas alterações de css da home que estavam no tema para estrutura principal
+  de css. (closes `#60`_).
+  [felipeduardo]
 * Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
   [felipeduardo]
 * Movido implementação que havia ficado no produto de tema e alterado sintaxe
@@ -91,3 +94,4 @@ Changelog
 .. _`#49`: https://github.com/plonegovbr/brasil.gov.portal/issues/49
 .. _`#51`: https://github.com/plonegovbr/brasil.gov.portal/issues/51
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.portal/issues/55
+.. _`#60`: https://github.com/plonegovbr/brasil.gov.portal/issues/60
