@@ -2241,7 +2241,7 @@ dl.portlet div.listingBar a:link {
     margin: 24px 0 0;
     padding: 0;
     min-width: 94px;
-    min-height: 170px;
+    min-height: 130px;
 }
 
 .template-summary_view #content .tileItem:first-child { padding-top: 0; }
@@ -2331,7 +2331,7 @@ dl.portlet div.listingBar a:link {
 }
 
 /* Paginação - Summary view */
-.template-summary_view #content .pagination {
+.template-summary_view #content .paginacao {
     display: block;
     text-align: center;
     margin: 72px 0 20px 0;
@@ -2340,13 +2340,13 @@ dl.portlet div.listingBar a:link {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
 }
 
-.template-summary_view #content .pagination li {
+.template-summary_view #content .paginacao li {
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 
-.template-summary_view #content .pagination li a {
+.template-summary_view #content .paginacao li a {
     text-transform: uppercase;
     width: 25px;
     height: 25px;
@@ -2358,23 +2358,23 @@ dl.portlet div.listingBar a:link {
     margin: 0 4px;
 }
 
-.template-summary_view #content .pagination li a:hover,
-.template-summary_view #content .pagination li a:focus {
+.template-summary_view #content .paginacao li a:hover,
+.template-summary_view #content .paginacao li a:focus {
     text-decoration: underline;
 }
 
-.template-summary_view #content .pagination li a.prev,
-.template-summary_view #content .pagination li a.next {
+.template-summary_view #content .paginacao li a.anterior,
+.template-summary_view #content .paginacao li a.proximo {
     border: none;
     width: auto;
     height: auto;
     color: #2c66ce;
 }
 
-.template-summary_view #content .pagination li a.prev { margin-right: 26px; }
-.template-summary_view #content .pagination li a.next { margin-left: 26px; }
+.template-summary_view #content .paginacao li a.anterior { margin-right: 26px; }
+.template-summary_view #content .paginacao li a.proximo { margin-left: 26px; }
 
-.template-summary_view #content .pagination li span {
+.template-summary_view #content .paginacao li span {
     font-family: "open_sansbold", Arial, Helvetica, sans-serif;
     font-weight: normal;
     width: 25px;
