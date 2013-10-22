@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Correção em espaçamentos dos sub-itens do menu lateral esquerda (closes `#66`_).
+  [felipeduardo]
 * Corrigido caminho das referências css para funcionar em produção (closes `#64`_).
   [rodfersou]
 * Customizada css de paginação padrão do plone
@@ -113,3 +115,4 @@ Changelog
 .. _`#59`: https://github.com/plonegovbr/brasil.gov.portal/issues/59
 .. _`#60`: https://github.com/plonegovbr/brasil.gov.portal/issues/60
 .. _`#64`: https://github.com/plonegovbr/brasil.gov.portal/issues/64
+.. _`#66`: https://github.com/plonegovbr/brasil.gov.portal/issues/66
