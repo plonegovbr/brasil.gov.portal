@@ -2,12 +2,11 @@
 <tal:batchnavigation define="batch view/batch|nothing;"
                      condition="batch"
                      metal:define-macro="navigation">
-    <ul class="pagination listingBar"
+    <ul class="paginacao"
          i18n:domain="plone"
          tal:condition="batch/multiple_pages">
-        <li class="previous"
-              tal:condition="batch/has_previous">
-            <a class="prev"
+        <li tal:condition="batch/has_previous">
+            <a class="anterior"
                tal:attributes="href python:view.make_link(batch.previouspage)">
                 &laquo;
                 <span i18n:translate="label_previous" tal:omit-tag="">
@@ -48,7 +47,7 @@
                tal:content="batch/lastpage">3457</a>
         </li>
         <li tal:condition="batch/has_next">
-            <a class="next"
+            <a class="proximo"
                tal:attributes="href python:view.make_link(batch.nextpage)">
                 <span i18n:translate="label_next" tal:omit-tag="">
                     Next
