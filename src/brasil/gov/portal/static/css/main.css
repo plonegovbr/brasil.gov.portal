@@ -456,6 +456,8 @@ input.searchField { -moz-appearance: none; }
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
 }
 
+#portal-searchbox .searchSection label { cursor: pointer; }
+
 #searchGadget,
 #header input.searchButton {
     padding: 0.3em;
@@ -2581,6 +2583,9 @@ dl.portlet div.listingBar a:link {
     line-height: 14px;
 }
 
+#add-on-list { display: none; }
+form.inline-form { display: inline; }
+
 
 /* ==========================================================================
    Especificação de estilos para NITF
@@ -2697,6 +2702,8 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6em;
 }
+
+#nitf-section-filter-spinner { display: none; }
 
 /* Fonte da noticia */
 #content article .external-link {

@@ -44,8 +44,7 @@
                             <span i18n:translate="">
                             This site configuration is outdated and needs to be
                             upgraded:</span>
-                            <form action=""
-                                  style="display: inline;"
+                            <form class="inline-form" action=""
                                   method="get"
                                   tal:attributes="action python:view.upgrade_url(site)">
                             <input tal:condition="not:view/can_manage"
@@ -83,8 +82,7 @@
                                     This site configuration is outdated and
                                     needs to be upgraded:
                                 </span>
-                                 <form action=""
-                                       style="display: inline;"
+                                 <form class="inline-form" action=""
                                        method="get"
                                        tal:attributes="action python:view.upgrade_url(site)">
                                  <input tal:condition="not:view/can_manage"

@@ -42,6 +42,8 @@ Changelog
 * Movido main.css do brasil.gov.temas para brasil.gov.portal.
   Será mantido no tema somente para previsualizacao do tema (closes `#34`_).
   [rodfersou]
+* Remoção de estilos inline (closes `#32`_).
+  [rennanrodrigues]
 * Customizada viewlet plone.analytics para ter uma div em torno de seu conteúdo,
   possibilitando mapeamento no Diazo (closes `#30`_).
   [rodfersou]
@@ -89,6 +91,7 @@ Changelog
 .. _`#30`: https://github.com/plonegovbr/brasil.gov.portal/issues/30
 .. _`#34`: https://github.com/plonegovbr/brasil.gov.portal/issues/34
 .. _`#35`: https://github.com/plonegovbr/brasil.gov.portal/issues/35
+.. _`#32`: https://github.com/plonegovbr/brasil.gov.portal/issues/32
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.portal/issues/38
 .. _`#40`: https://github.com/plonegovbr/brasil.gov.portal/issues/40
 .. _`#44`: https://github.com/plonegovbr/brasil.gov.portal/issues/44
