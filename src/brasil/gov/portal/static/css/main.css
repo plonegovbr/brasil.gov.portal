@@ -2264,6 +2264,7 @@ dl.portlet div.listingBar a:link {
     top: 1px;
     width: 14px;
     height: 14px;
+    margin-right: 2px;
 }
 
 /*
@@ -2271,17 +2272,11 @@ dl.portlet div.listingBar a:link {
 ** <span><i class="ico-type-foto"></i> type content</span>
 */
 .template-summary_view #content .documentByLine .ico-type-period { background-position: -244px -392px; width: 13px; }
-
-.template-summary_view #content .documentByLine .ico-type-time { background-position: -274px -393px; }
-
+.template-summary_view #content .documentByLine .ico-type-time { background-position: -273px -393px; }
 .template-summary_view #content .documentByLine .ico-type-audio { background-position: -3px -391px; }
-
 .template-summary_view #content .documentByLine .ico-type-video { background-position: -33px -391px; }
-
 .template-summary_view #content .documentByLine .ico-type-foto { background-position: -123px -391px; }
-
 .template-summary_view #content .documentByLine .ico-type-infografico { background-position: -63px -391px; }
-
 .template-summary_view #content .documentByLine .ico-type-galeria { background-position: -303px -391px; width: 15px; }
 
 .template-summary_view #content .tileItem .subtitle {
@@ -3371,6 +3366,13 @@ body.contraste .videogallery-tile .gallery-footer {
 body.contraste #barra-brasil .link-barra {
     color: #606060 !important;
 }
+
+body.contraste.template-summary_view #content .documentByLine .ico-type-period { background-position: -624px -392px; width: 13px; }
+body.contraste.template-summary_view #content .documentByLine .ico-type-time { background-position: -653px -393px; }
+body.contraste.template-summary_view #content .documentByLine .ico-type-foto { background-position: -503px -391px; }
+body.contraste.template-summary_view #content .documentByLine .ico-type-audio { background-position: -383px -391px; }
+body.contraste.template-summary_view #content .documentByLine .ico-type-video { background-position: -413px -391px; }
+body.contraste.template-summary_view #content .documentByLine .ico-type-galeria { background-position: -683px -391px; }
 
 /* ==========================================================================
    Print
