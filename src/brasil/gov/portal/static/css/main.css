@@ -2255,7 +2255,7 @@ dl.portlet div.listingBar a:link {
 }
 
 /* Icones por tipo - Summary view */
-.template-summary_view #content .documentByLine [class*="ico-"] {
+#content .summary-view-icon [class*="icon"] {
     display: inline-block;
     background-image: url("../img/summary-view-icons-sprite.png");
     background-repeat: no-repeat;
@@ -2266,17 +2266,14 @@ dl.portlet div.listingBar a:link {
     margin-right: 2px;
 }
 
-/*
-** Como usar:
-** <span><i class="ico-type-foto"></i> type content</span>
-*/
-.template-summary_view #content .documentByLine .ico-type-period { background-position: -244px -392px; width: 13px; }
-.template-summary_view #content .documentByLine .ico-type-time { background-position: -273px -393px; }
-.template-summary_view #content .documentByLine .ico-type-audio { background-position: -3px -391px; }
-.template-summary_view #content .documentByLine .ico-type-video { background-position: -33px -391px; }
-.template-summary_view #content .documentByLine .ico-type-foto { background-position: -123px -391px; }
-.template-summary_view #content .documentByLine .ico-type-infografico { background-position: -63px -391px; }
-.template-summary_view #content .documentByLine .ico-type-galeria { background-position: -303px -391px; width: 15px; }
+#content .summary-view-icon .icon-audio { background-position: -3px -391px; }
+#content .summary-view-icon .icon-day { background-position: -244px -392px; width: 13px; }
+#content .summary-view-icon .icon-foto { background-position: -123px -391px; }
+#content .summary-view-icon .icon-galeria { background-position: -303px -391px; width: 15px; }
+#content .summary-view-icon .icon-hour { background-position: -273px -393px; }
+#content .summary-view-icon .icon-infografico { background-position: -63px -391px; }
+#content .summary-view-icon .icon-noticia { background-position: -94px -391px; }
+#content .summary-view-icon .icon-video { background-position: -33px -391px; }
 
 .template-summary_view #content .tileItem .subtitle {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
@@ -3366,12 +3363,15 @@ body.contraste #barra-brasil .link-barra {
     color: #606060 !important;
 }
 
-body.contraste.template-summary_view #content .documentByLine .ico-type-period { background-position: -624px -392px; width: 13px; }
-body.contraste.template-summary_view #content .documentByLine .ico-type-time { background-position: -653px -393px; }
-body.contraste.template-summary_view #content .documentByLine .ico-type-foto { background-position: -503px -391px; }
-body.contraste.template-summary_view #content .documentByLine .ico-type-audio { background-position: -383px -391px; }
-body.contraste.template-summary_view #content .documentByLine .ico-type-video { background-position: -413px -391px; }
-body.contraste.template-summary_view #content .documentByLine .ico-type-galeria { background-position: -683px -391px; }
+
+body.contraste #content .summary-view-icon .icon-audio { background-position: -383px -391px; }
+body.contraste #content .summary-view-icon .icon-day { background-position: -624px -392px; width: 13px; }
+body.contraste #content .summary-view-icon .icon-foto { background-position: -503px -391px; }
+body.contraste #content .summary-view-icon .icon-galeria { background-position: -683px -391px; }
+body.contraste #content .summary-view-icon .icon-hour { background-position: -653px -393px; }
+body.contraste #content .summary-view-icon .icon-infografico { background-position: -63px -391px; }
+body.contraste #content .summary-view-icon .icon-noticia { background-position: -474px -391px; }
+body.contraste #content .summary-view-icon .icon-video { background-position: -413px -391px; }
 
 /* ==========================================================================
    Print

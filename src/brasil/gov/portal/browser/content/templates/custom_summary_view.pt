@@ -125,7 +125,7 @@
                                                 <span tal:replace="item_type" />
                                             </span>
                                         </tal:modified>
-                                        <div class="visualClear"><!-- --></div>
+                                        <span class="visualClear"></span>
                                     </tal:byline>
                                 </span>
                             </div>

@@ -4,7 +4,13 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-* Customizada view de paginação padrão do plone (closes `#57`_).
+* Customizada css de paginação padrão do plone
+  Inserção de ícones na summary view de coleção
+  Inserção de ícones na summary view de coleção no modo contraste
+  Revisão de layout conforme arte (closes `#57`_).
+  [rennanrodrigues]
+* Customizada view de paginação padrão do plone
+  Customização do template da summary view para inserir ícones (closes `#57`_).
   [rodfersou]
 * Correção nos espaçamentos do menu da lateral esquerda (closes `#55`_).
   [felipeduardo]
