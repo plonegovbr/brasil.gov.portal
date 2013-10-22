@@ -1062,7 +1062,7 @@ a.navTreeCurrentNode {
 
 ul.navTreeLevel0 li a.navTreeItemInPath,
 ul.navTreeLevel0 li a.navTreeCurrentNode {
-    background-position: 8px 12px !important;
+    background-position: 4px 12px !important;
 }
 
 ul.navTreeLevel1 li a.navTreeItemInPath,
@@ -1072,27 +1072,27 @@ ul.navTreeLevel1 li a.navTreeCurrentNode {
 
 ul.navTreeLevel2 li a.navTreeItemInPath,
 ul.navTreeLevel2 li a.navTreeCurrentNode {
-    background-position: 20px 12px !important;
+    background-position: 24px 12px !important;
 }
 
 ul.navTreeLevel3 li a.navTreeItemInPath,
 ul.navTreeLevel3 li a.navTreeCurrentNode {
-    background-position: 26px 12px !important;
+    background-position: 34px 12px !important;
 }
 
 ul.navTreeLevel4 li a.navTreeItemInPath,
 ul.navTreeLevel4 li a.navTreeCurrentNode {
-    background-position: 32px 12px !important;
+    background-position: 44px 12px !important;
 }
 
 ul.navTreeLevel5 li a.navTreeItemInPath,
 ul.navTreeLevel5 li a.navTreeCurrentNode {
-    background-position: 38px 12px !important;
+    background-position: 54px 12px !important;
 }
 
 ul.navTreeLevel6 li a.navTreeItemInPath,
 ul.navTreeLevel6 li a.navTreeCurrentNode {
-    background-position: 44px 12px !important;
+    background-position: 64px 12px !important;
 }
 
 /*
@@ -1105,19 +1105,19 @@ dl.portlet ul.navTree li a {
 }
 
 dl.portlet ul.navTreeLevel0 > li  > .navTreeItemInPath {
-    padding-left: 1.5em !important;
+    padding-left: 1.043em !important;
 }
 
 dl.portlet ul.navTreeLevel1 li a {
-    padding: 0.55em 2em !important;
+    padding: 0.55em 1.043em 0.55em 1.755em !important;
     font-size: 1.05em;
 }
 
-dl.portlet ul.navTreeLevel2 li a { padding: 0.435em 2.5em !important; }
-dl.portlet ul.navTreeLevel3 li a { padding: 0.55em 3em !important; }
-dl.portlet ul.navTreeLevel4 li a { padding: 0.55em 3.5em !important; }
-dl.portlet ul.navTreeLevel5 li a { padding: 0.55em 4em !important; }
-dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 4.5em !important; }
+dl.portlet ul.navTreeLevel2 li a { padding: 0.435em 1.043em 0.435em 2.519em !important; }
+dl.portlet ul.navTreeLevel3 li a { padding: 0.55em 1.043em 0.55em 3.282em !important; }
+dl.portlet ul.navTreeLevel4 li a { padding: 0.55em 1.043em 0.55em 4.05em !important; }
+dl.portlet ul.navTreeLevel5 li a { padding: 0.55em 1.043em 0.55em 4em !important; }
+dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 1.043em 0.55em 4.5em !important; }
 
 #portal-column-one > .portletWrapper dl.portlet.first-item-nav a {
     padding: 0.475em 0 !important;
