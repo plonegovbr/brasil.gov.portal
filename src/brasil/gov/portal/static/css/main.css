@@ -2268,12 +2268,10 @@ dl.portlet div.listingBar a:link {
 
 #content .summary-view-icon .icon-audio { background-position: -3px -391px; }
 #content .summary-view-icon .icon-day { background-position: -244px -392px; width: 13px; }
-#content .summary-view-icon .icon-foto { background-position: -123px -391px; }
-#content .summary-view-icon .icon-galeria { background-position: -303px -391px; width: 15px; }
+#content .summary-view-icon .icon-image { background-position: -123px -391px; }
 #content .summary-view-icon .icon-hour { background-position: -273px -393px; }
-#content .summary-view-icon .icon-infografico { background-position: -63px -391px; }
 #content .summary-view-icon .icon-noticia { background-position: -94px -391px; }
-#content .summary-view-icon .icon-video { background-position: -33px -391px; }
+#content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
 
 .template-summary_view #content .tileItem .subtitle {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
@@ -3366,12 +3364,10 @@ body.contraste #barra-brasil .link-barra {
 
 body.contraste #content .summary-view-icon .icon-audio { background-position: -383px -391px; }
 body.contraste #content .summary-view-icon .icon-day { background-position: -624px -392px; width: 13px; }
-body.contraste #content .summary-view-icon .icon-foto { background-position: -503px -391px; }
-body.contraste #content .summary-view-icon .icon-galeria { background-position: -683px -391px; }
+body.contraste #content .summary-view-icon .icon-image { background-position: -503px -391px; }
 body.contraste #content .summary-view-icon .icon-hour { background-position: -653px -393px; }
-body.contraste #content .summary-view-icon .icon-infografico { background-position: -63px -391px; }
 body.contraste #content .summary-view-icon .icon-noticia { background-position: -474px -391px; }
-body.contraste #content .summary-view-icon .icon-video { background-position: -413px -391px; }
+body.contraste #content .summary-view-icon .icon-multimidia { background-position: -413px -391px; }
 
 /* ==========================================================================
    Print
