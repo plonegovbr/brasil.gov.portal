@@ -117,7 +117,6 @@ h1, h2, h3, h4, h5, h6 {
 a:link,
 #content a:link,
 dl.portlet a:link {
-    /*border-bottom: none !important;*/
     border-bottom: none;
     color: #2c67cd;
 }
