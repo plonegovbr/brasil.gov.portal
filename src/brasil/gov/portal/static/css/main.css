@@ -1300,7 +1300,7 @@ dl.portlet ol li { list-style: decimal outside; }
 
 .tile {
     clear: both;
-    margin-bottom: 24px;
+    margin-bottom: 3.605em;
 }
 
 .tile h1 {
@@ -1313,10 +1313,10 @@ dl.portlet ol li { list-style: decimal outside; }
 
 .tile h2 {
     margin: 0;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    line-height: 1.2em;
+    margin-bottom: 0.5em;
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.345em;
 }
 
 #content .cover-collection-tile h2 {
@@ -1339,13 +1339,14 @@ dl.portlet ol li { list-style: decimal outside; }
     line-height: 1.1em;
 }
 
-.tile.fio-separador { margin-bottom: 2em; }
+.tile.fio-separador { margin-bottom: 2.4em; }
 
-.tile-subtitle {
-    margin-bottom: 3px !important;
-    color: #2C67CD;
+.tile .tile-subtitle {
+    margin-bottom: 0.7em !important;
+    color: #2c67cd;
     text-transform: uppercase;
     font-weight: normal;
+    font-size: 0.9em;
 }
 
 .link-externo {
@@ -1583,7 +1584,12 @@ dl.portlet ol li { list-style: decimal outside; }
 .laranja-borda a { color: #e07f48 !important; }
 .bege-borda a { color: #ab6600 !important; }
 
-.tile p { line-height: 1.75em; }
+.tile p {
+    color: #172938;
+    font-size: 1.15em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.25em !important;
+}
 
 .left {
     float: left;
@@ -1652,12 +1658,12 @@ dl.portlet ol li { list-style: decimal outside; }
 
 .outstanding-header .outstanding-title {
     margin-left: 0 !important;
-    padding: 7px 0;
-    padding-left: 0.3em;
+    padding: 0.45em;
     border-top: 2px solid #172838;
     border-bottom: 1px solid #CCCCCC;
     color: #2C67CD;
     font-size: 1.7em;
+    line-height: 1em;
 }
 
 #content .tile .outstanding-header .outstanding-title {
@@ -1673,7 +1679,7 @@ dl.portlet ol li { list-style: decimal outside; }
 
 .outstanding-header h2 {
     min-height: 48px;
-    font-size: 1.8em !important;
+    font-size: 2.28em !important;
 }
 
 .outstanding-header h3 {
@@ -2674,7 +2680,7 @@ dl.portlet div.listingBar a:link {
 }
 
 #voltar-topo {
-    margin-top: 44px;
+    margin-top: 1.915em;
     text-align: right;
 }
 
@@ -2880,6 +2886,27 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1em;
     color: #2c66ce;
+}
+
+/* Relatar erros */
+#content .relatar-erros .icone {
+    margin-right: 10px;
+    float: left;
+}
+
+#content .relatar-erros .texto {
+    margin-left: 2.1em;
+    line-height: 1em
+}
+
+#content .relatar-erros a {
+    height: 21px;
+    float: left;
+}
+
+#content .relatar-erros a:hover,
+#content .relatar-erros a:focus {
+    background-position: 0 -21px;
 }
 
 
@@ -3355,6 +3382,16 @@ body.contraste .width-15 .gallery-3-columns .player-holder {
 body.contraste .videogallery-tile .gallery-footer {
     border-top: 1px dotted #fff;
     background-color: #fff;
+}
+
+body.contraste #content .relatar-erros a {
+    background: url("../img/icon-reportar-erros-contraste.png") no-repeat;
+}
+
+body.contraste #content .relatar-erros a:hover,
+body.contraste #content .relatar-erros a:focus {
+    background-position: 0 -21px;
+    color: #3a3a3a !important;
 }
 
 body.contraste #barra-brasil .link-barra {

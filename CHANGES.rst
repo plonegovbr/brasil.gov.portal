@@ -9,6 +9,11 @@ Changelog
   Inserção de ícones na summary view de coleção no modo contraste
   Revisão de layout conforme arte (closes `#57`_).
   [rennanrodrigues]
+* Movidas alterações de css da home que estavam no tema para estrutura principal
+  de css. (closes `#60`_).
+  [felipeduardo]
+* CSS do icone de relatar erros (closes `#59`_).
+  [rennanrodrigues]
 * Customizada view de paginação padrão do plone
   Customização do template da summary view para inserir ícones (closes `#57`_).
   [rodfersou]
@@ -100,3 +105,5 @@ Changelog
 .. _`#51`: https://github.com/plonegovbr/brasil.gov.portal/issues/51
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.portal/issues/55
 .. _`#57`: https://github.com/plonegovbr/brasil.gov.portal/issues/57
+.. _`#59`: https://github.com/plonegovbr/brasil.gov.portal/issues/59
+.. _`#60`: https://github.com/plonegovbr/brasil.gov.portal/issues/60
