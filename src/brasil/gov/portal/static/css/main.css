@@ -2785,8 +2785,6 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
    ========================================================================== */
 .template-summary_view #content-core { margin-top: 0; }
 
-#viewlet-below-content-title { }
-
 .template-summary_view #content h1.documentFirstHeading {
     font-size: 2.25em;
     font-family: "open_sansbold", Arial, Helvetica, sans-serif;
