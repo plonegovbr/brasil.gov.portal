@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Revisão de css do botão relatar erros (closes `#69`_).
+  [rennanrodrigues]
 * Correção em espaçamentos dos sub-itens do menu lateral esquerda (closes `#66`_).
   [felipeduardo]
 * Corrigido caminho das referências css para funcionar em produção (closes `#64`_).
@@ -116,3 +118,4 @@ Changelog
 .. _`#60`: https://github.com/plonegovbr/brasil.gov.portal/issues/60
 .. _`#64`: https://github.com/plonegovbr/brasil.gov.portal/issues/64
 .. _`#66`: https://github.com/plonegovbr/brasil.gov.portal/issues/66
+.. _`#69`: https://github.com/plonegovbr/brasil.gov.portal/issues/69
