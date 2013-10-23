@@ -2194,130 +2194,6 @@ dl.portlet div.listingBar a:link {
     border-bottom: 0.1em solid #CCCCCC !important;
 }
 
-/* ==========================================================================
-   Listagem de notícias - Summary View
-   ========================================================================== */
-.template-summary_view #content-core { margin-top: 0; }
-
-#viewlet-below-content-title { display: none; }
-
-.template-summary_view #content h1.documentFirstHeading {
-    font-size: 28px;
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    margin: 24px 0 30px;
-    padding: 0 0 19px 0;
-    border: 0;
-    color: #2c66ce;
-    text-transform: uppercase;
-    border-bottom: 1px solid #d9dbda;
-    line-height: 28px;
-}
-
-.template-summary_view #content .tileItem {
-    margin: 0;
-    padding: 24px 0 24px 112px;
-    position: relative;
-    border-bottom: 1px solid #d7dbda;
-    clear: both;
-}
-
-.template-summary_view #content .tileItem .documentByLine {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: #596E7F;
-    margin: 24px 0 0;
-    padding: 0;
-    min-width: 94px;
-    min-height: 130px;
-}
-
-.template-summary_view #content .tileItem:first-child { padding-top: 0; }
-.template-summary_view #content .tileItem:first-child .documentByLine { margin-top: 0; }
-
-.template-summary_view #content .documentByLine span {
-    display: block;
-    font-size: 12px;
-    line-height: 14px;
-    margin: 0 0 12px;
-}
-
-/* Icones por tipo - Summary view */
-#content .summary-view-icon [class*="icon"] {
-    display: inline-block;
-    background-image: url("++resource++brasil.gov.portal/img/summary-view-icons-sprite.png");
-    background-repeat: no-repeat;
-    position: relative;
-    top: 1px;
-    width: 14px;
-    height: 14px;
-    margin-right: 2px;
-}
-
-#content .summary-view-icon .icon-audio { background-position: -3px -391px; }
-#content .summary-view-icon .icon-day { background-position: -244px -392px; width: 13px; }
-#content .summary-view-icon .icon-image { background-position: -123px -391px; }
-#content .summary-view-icon .icon-hour { background-position: -273px -393px; }
-#content .summary-view-icon .icon-noticia { background-position: -94px -391px; }
-#content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
-
-.template-summary_view #content .tileItem .subtitle {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-}
-
-.template-summary_view #content .tileItem .tileHeadline {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 7px 0;
-    padding: 0;
-}
-
-.template-summary_view #content .tileItem .description {
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-}
-
-.template-summary_view #content .tileItem .tileHeadline a,
-.template-summary_view #content .tileItem .description {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #172938;
-    line-height: 21px;
-    margin: 0;
-    padding: 0;
-}
-
-.template-summary_view #content .tileItem p {
-    margin: 0;
-    padding: 0;
-}
-
-.template-summary_view #content .tileItem .keywords {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: normal;
-    color: #596e7f;
-    line-height: 16px;
-    margin: 15px 0 0;
-    padding: 0;
-}
-
-.template-summary_view #content .tileItem .keywords a { color: #596e7f; }
-
-.template-summary_view #content .tileItem .tileImage { margin: 0 !important; }
-.template-summary_view #content .tileItem .tileImage img {
-    max-width: 230px;
-    max-height: 136px;
-    width: 100%;
-    margin: 0 17px 0 0 !important;
-    padding: 0;
-}
-
 /* Paginação */
 #plone-content #content .paginacao {
     display: block;
@@ -3261,7 +3137,8 @@ body.contraste.template-summary_view #content .tileItem .subtitle,
 body.contraste.template-summary_view #content .tileItem .tileHeadline a,
 body.contraste.template-summary_view #content .tileItem .description,
 body.contraste.template-summary_view #content .tileItem .keywords,
-body.contraste.template-summary_view #content .tileItem .documentByLine {
+body.contraste.template-summary_view #content .tileItem .documentByLine,
+body.contraste #content .documentByLine .summary-view-icon {
     color: #fff !important;
 }
 
@@ -3394,7 +3271,6 @@ body.contraste #content .relatar-erros a .texto { color: #fff; }
 body.contraste #barra-brasil .link-barra {
     color: #606060 !important;
 }
-
 
 body.contraste #content .summary-view-icon .icon-audio { background-position: -383px -391px; }
 body.contraste #content .summary-view-icon .icon-day { background-position: -624px -392px; width: 13px; }

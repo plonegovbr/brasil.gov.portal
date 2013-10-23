@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Removidas as regras de css para os tiles, deixando apenas as definições para o contraste
+  (closes `#70`_).
+  [rennanrodrigues]
 * Revisão de css do botão relatar erros (closes `#69`_).
   [rennanrodrigues]
 * Correção em espaçamentos dos sub-itens do menu lateral esquerda (closes `#66`_).
@@ -119,3 +122,4 @@ Changelog
 .. _`#64`: https://github.com/plonegovbr/brasil.gov.portal/issues/64
 .. _`#66`: https://github.com/plonegovbr/brasil.gov.portal/issues/66
 .. _`#69`: https://github.com/plonegovbr/brasil.gov.portal/issues/69
+.. _`#70`: https://github.com/plonegovbr/brasil.gov.portal/issues/70
