@@ -2,7 +2,7 @@
 <tal:batchnavigation define="batch view/batch|nothing;"
                      condition="batch"
                      metal:define-macro="navigation">
-    <ul class="paginacao"
+    <ul class="paginacao listingBar"
          i18n:domain="plone"
          tal:condition="batch/multiple_pages">
         <li tal:condition="batch/has_previous">
