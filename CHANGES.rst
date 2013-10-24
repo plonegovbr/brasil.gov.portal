@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.0rc2 (unreleased)
+1.0rc2 (2013-10-24)
 ^^^^^^^^^^^^^^^^^^^
 
 * Removidas as regras de css para os tiles, deixando apenas as definições para o contraste
