@@ -2212,7 +2212,7 @@ dl.portlet div.listingBar a:link {
 
 #plone-content #content .paginacao li a {
     text-transform: uppercase;
-    width: 25px;
+    min-width: 25px;
     height: 25px;
     border: 1px solid #c2c2c2;
     border-radius: 3px;
