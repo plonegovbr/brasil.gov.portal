@@ -10,6 +10,8 @@ Changelog
 1.0rc2 (2013-10-24)
 ^^^^^^^^^^^^^^^^^^^
 
+* Novos ícones das redes sociais (closes `#74`_).
+  [rennanrodrigues]
 * Revisão da paginação padrão do plone (closes `#72`_).
   [rodfersou]
 * Removidas as regras de css para os tiles, deixando apenas as definições para o contraste
@@ -132,3 +134,4 @@ Changelog
 .. _`#69`: https://github.com/plonegovbr/brasil.gov.portal/issues/69
 .. _`#70`: https://github.com/plonegovbr/brasil.gov.portal/issues/70
 .. _`#72`: https://github.com/plonegovbr/brasil.gov.portal/issues/72
+.. _`#74`: https://github.com/plonegovbr/brasil.gov.portal/issues/74
