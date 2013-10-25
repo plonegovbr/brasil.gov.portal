@@ -22,6 +22,22 @@ REDES = [
      'title': 'Flickr',
      'icon': '++theme++verde/img/icone-flickr.png',
      'url': 'http://flickr.com/%s'},
+    {'id': 'googleplus',
+      'title': 'Google+',
+      'icon': '++theme++verde/img/icone-googleplus.png',
+      'url': 'http://plus.google.com/%s'},
+    {'id': 'slideshare',
+     'title': 'Slideshare',
+     'icon': '++theme++verde/img/icone-slideshare.png',
+     'url': 'http://slideshare.com/%s'},
+    {'id': 'soundcloud',
+     'title': 'SoundCloud',
+     'icon': '++theme++verde/img/icone-soundcloud.png',
+     'url': 'http://soundcloud.com/%s'},
+    {'id': 'rss',
+     'title': 'RSS',
+     'icon': '++theme++verde/img/icone-rss.png',
+     'url': '%s'},
 ]
 
 DEPS = [
