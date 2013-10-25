@@ -394,6 +394,7 @@ div.position-10 { margin-left: -30.042%; }
     white-space: nowrap;
     opacity: .85;
     filter: alpha(opacity=85);
+    border-radius: 4px;
 }
 
 #social-icons a:focus,
@@ -3348,7 +3349,7 @@ body.contraste .outstanding-header .outstanding-link {
 
 body.contraste #header input.searchButton {
     background-color: #fff;
-    background-position: 5px 4px;
+    background-position: 0px 2px;
 }
 
 body.contraste .outstanding-header .outstanding-title {
