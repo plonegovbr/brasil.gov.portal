@@ -13,6 +13,8 @@ Changelog
 1.0rc2 (2013-10-24)
 ^^^^^^^^^^^^^^^^^^^
 
+* Correção de registro de fonte no css (closes `#76`_).
+  [rennanrodrigues]
 * Revisão da paginação padrão do plone (closes `#72`_).
   [rodfersou]
 * Removidas as regras de css para os tiles, deixando apenas as definições para o contraste
@@ -136,3 +138,4 @@ Changelog
 .. _`#70`: https://github.com/plonegovbr/brasil.gov.portal/issues/70
 .. _`#72`: https://github.com/plonegovbr/brasil.gov.portal/issues/72
 .. _`#74`: https://github.com/plonegovbr/brasil.gov.portal/issues/74
+.. _`#76`: https://github.com/plonegovbr/brasil.gov.portal/issues/76
