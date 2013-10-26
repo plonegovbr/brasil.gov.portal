@@ -72,11 +72,11 @@
     font-weight: normal;
     font-style: normal;
     font-family: "open_sansextrabold";
-    src: url("opensans-800-webfont.eot");
-    src: url("opensans-800-webfont.eot?#iefix") format("embedded-opentype"),
-         url("opensans-800-webfont.woff") format("woff"),
-         url("opensans-800-webfont.ttf") format("truetype"),
-         url("opensans-800-webfont.svg#open_sansextrabold") format("svg");
+    src: url("++resource++brasil.gov.portal/fonts/opensans-800-webfont.eot");
+    src: url("++resource++brasil.gov.portal/fonts/opensans-800-webfont.eot?#iefix") format("embedded-opentype"),
+         url("++resource++brasil.gov.portal/fonts/opensans-800-webfont.woff") format("woff"),
+         url("++resource++brasil.gov.portal/fonts/opensans-800-webfont.ttf") format("truetype"),
+         url("++resource++brasil.gov.portal/fonts/opensans-800-webfont.svg#open_sansextrabold") format("svg");
 }
 
 
@@ -107,7 +107,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "open_sanssemibold", Arial, Helvetica, sans-serif;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
 }
 
 #content h1 { margin-top: 0 !important; }
@@ -292,7 +292,8 @@ div.position-10 { margin-left: -30.042%; }
     margin: 30px 0 46px;
     color: #fff;
     font-size: 3.35em;
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+    font-family: "open_sansextrabold", Arial, Helvetica, sans-serif;
+    font-weight: normal;
     line-height: 1em;
 }
 
@@ -1315,7 +1316,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .cover-collection-tile h2 {
-    font-family: "open_sanssemibold", Arial, Helvetica, sans-serif;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
 }
 
 #content .cover-collection-tile h2 a { color: #172938; }
