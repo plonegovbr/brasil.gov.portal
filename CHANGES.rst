@@ -4,7 +4,8 @@ Changelog
 1.0rc3 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Adicionado icones para os botões de impressão (closes `#78`_).
+  [felipeduardo]
 
 
 1.0rc2 (2013-10-24)
