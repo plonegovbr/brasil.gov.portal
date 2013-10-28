@@ -2569,6 +2569,10 @@ dl.portlet div.listingBar a:link {
     margin-left: 3px;
 }
 
+.sociallike-network-facebook {
+    padding-left: 20px;
+}
+
 /* correção de espaçamento dos icones de tiles na aba layout */
 #tiles-list .last-item { float: left; }
 
