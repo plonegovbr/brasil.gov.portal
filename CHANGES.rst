@@ -4,6 +4,8 @@ Changelog
 1.0rc3 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Regras de summary view adicionadas para navegação facetada (closes `#84`_).
+  [rennanrodrigues]
 * Correção em tamanho das imagens e espaçamentos na summary view de coleção (closes `#82`_).
   [rennanrodrigues]
 * Correções de espaçamento no tipo de conteúdo NITF (closes `#80`_).
@@ -146,3 +148,4 @@ Changelog
 .. _`#78`: https://github.com/plonegovbr/brasil.gov.portal/issues/78
 .. _`#80`: https://github.com/plonegovbr/brasil.gov.portal/issues/80
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.portal/issues/82
+.. _`#84`: https://github.com/plonegovbr/brasil.gov.portal/issues/84
