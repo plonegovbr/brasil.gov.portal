@@ -4,6 +4,8 @@ Changelog
 1.0rc3 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+* Correções de espaçamento no tipo de conteúdo NITF (closes `#80`_).
+  [rennanrodrigues]
 * Adicionado icones para os botões de impressão (closes `#78`_).
   [felipeduardo]
 * Correção de registro de fonte no css (closes `#76`_).
@@ -140,3 +142,4 @@ Changelog
 .. _`#74`: https://github.com/plonegovbr/brasil.gov.portal/issues/74
 .. _`#76`: https://github.com/plonegovbr/brasil.gov.portal/issues/76
 .. _`#78`: https://github.com/plonegovbr/brasil.gov.portal/issues/78
+.. _`#80`: https://github.com/plonegovbr/brasil.gov.portal/issues/80
