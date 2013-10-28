@@ -2117,7 +2117,6 @@ ul.social-tabs.css-tabs > li > a {
    Collections
    ========================================================================== */
 
-.template-summary_view h1#parent-fieldname-title,
 .template-folder_summary_view h1#parent-fieldname-title,
 .template-folder_summary_view #content h1.documentFirstHeading {
     padding-bottom: 5px;
@@ -2129,19 +2128,8 @@ ul.social-tabs.css-tabs > li > a {
     line-height: 1em;
 }
 
-.template-folder_summary_view .tileItem {
-    position: relative;
-    margin: 30px 0;
-    padding-bottom: 1em;
-    padding-left: 13%;
-    min-height: 120px;
-    border-bottom: 1px solid #D3D3D3;
-}
-
-.template-summary_view .tileItem p,
 .template-folder_summary_view .tileItem p { line-height: 1.4em; }
 
-.template-summary_view h2.tileHeadline,
 .template-folder_summary_view h2.tileHeadline {
     margin-top: 10px;
     margin-bottom: 0;
@@ -2150,7 +2138,6 @@ ul.social-tabs.css-tabs > li > a {
     font-size: 1.2em;
 }
 
-.template-summary_view h2.tileHeadline a.summary,
 .template-folder_summary_view h2.tileHeadline a.summary {
     color: #000 !important;
     font-size: 1.2em;
@@ -2162,33 +2149,27 @@ ul.social-tabs.css-tabs > li > a {
     font-size: 1em;
 }
 
-.template-summary_view .tileImage,
 .template-folder_summary_view .tileImage {
     float: none;
     margin: 0 1em 0.5em 0 !important;
 }
 
-.template-summary_view .tileImage img,
 .template-folder_summary_view .tileImage img {
     float: left !important;
 }
 
-.template-summary_view #content .description,
 .template-folder_summary_view #content .description {
     color: #666666;
     font-size: 1em;
 }
 
-.template-summary_view #content .tileBody,
 .template-folder_summary_view #content .tileBody { margin-bottom: 0; }
 
-.template-summary_view #content .tileBody .description,
 .template-folder_summary_view #content .tileBody .description {
     color: #000000;
     font-size: 1.3em;
 }
 
-.template-summary_view #content .tileFooter a,
 .template-folder_summary_view #content .tileFooter a { color: #7A8692; }
 
 .template-folder_summary_view .documentDescription { margin-top: 1em; }
@@ -2786,11 +2767,13 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 /* ==========================================================================
-   Listagem de notícias
+   Modo de exibição - Visão Sumária
    ========================================================================== */
-.template-summary_view #content-core { margin-top: 0; }
+.template-summary_view #content-core,
+.template-facetednavigation_view #content-core { margin-top: 0; }
 
-.template-summary_view #content h1.documentFirstHeading {
+.template-summary_view #content h1.documentFirstHeading,
+.template-facetednavigation_view #content h1.documentFirstHeading {
     margin: .85em 0 1.1em;
     padding: 0 0 .70em 0;
     border: 0;
@@ -2803,7 +2786,8 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     line-height: 1em;
 }
 
-.template-summary_view #content .tileItem {
+.template-summary_view #content .tileItem,
+.template-facetednavigation_view #content .tileItem {
     position: relative;
     clear: both;
     overflow: hidden;
@@ -2813,14 +2797,26 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     font-size: 1em;
 }
 
-.template-summary_view #content .tileItem:first-child { padding-top: 0; }
+.template-summary_view #content .tileItem:first-child,
+.template-facetednavigation_view #content .tileItem:first-child { padding-top: 0; }
 
-.template-summary_view #content .tileContent {
+.template-summary_view #content .tileContent,
+.template-facetednavigation_view #content .tileContent {
     border-left: 1px dotted #D6D6D6;
     padding-left: 1.8em;
 }
 
-.template-summary_view #content .tileItem .subtitle {
+.template-summary_view #content .tileImage,
+.template-facetednavigation_view #content .tileImage {
+    float: none;
+    margin: 0 1em 0.5em 0;
+}
+
+.template-summary_view #content .tileImage img,
+.template-facetednavigation_view #content .tileImage img { float: left; }
+
+.template-summary_view #content .tileItem .subtitle,
+.template-facetednavigation_view #content .tileItem .subtitle {
     display: block;
     margin: 0 0 .6em;
     padding: 0;
@@ -2829,7 +2825,8 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
 }
 
-.template-summary_view #content .tileItem .tileHeadline {
+.template-summary_view #content .tileItem .tileHeadline,
+.template-facetednavigation_view #content .tileItem .tileHeadline {
     margin: 0 0 0.438em;
     padding: 0;
     color: #172938;
@@ -2839,20 +2836,26 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .tileHeadline a,
-.template-summary_view #content .tileItem .description, {
+.template-summary_view #content .tileItem .description,
+.template-facetednavigation_view #content .tileItem .tileHeadline a,
+.template-facetednavigation_view #content .tileItem .description {
     margin: 0;
     padding: 0;
     color: #172938;
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.75em;
 }
 
-.template-summary_view #content .tileItem p {
+.template-summary_view #content .tileItem .description,
+.template-facetednavigation_view #content .tileItem .description { line-height: 1.75em; }
+
+.template-summary_view #content .tileItem p,
+.template-facetednavigation_view #content .tileItem p {
     margin: 0;
     padding: 0;
 }
 
-.template-summary_view #content .tileItem .keywords {
+.template-summary_view #content .tileItem .keywords,
+.template-facetednavigation_view #content .tileItem .keywords {
     margin: 15px 0 0;
     padding: 0;
     color: #596e7f;
@@ -2862,7 +2865,8 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     line-height: 1.3em;
 }
 
-.template-summary_view #content .tileItem .documentByLine {
+.template-summary_view #content .tileItem .documentByLine,
+.template-facetednavigation_view #content .tileItem .documentByLine {
     margin: 2em 0 0;
     padding: 0;
     min-width: 7.5em;
@@ -2875,9 +2879,11 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     left: 0;
 }
 
-.template-summary_view #content .tileItem:first-child .documentByLine { margin-top: 0; }
+.template-summary_view #content .tileItem:first-child .documentByLine,
+.template-facetednavigation_view #content .tileItem:first-child .documentByLine { margin-top: 0; }
 
-.template-summary_view #content .documentByLine .summary-view-icon {
+.template-summary_view #content .documentByLine .summary-view-icon,
+.template-facetednavigation_view #content .documentByLine .summary-view-icon {
     display: block;
     margin: 0 0 1em;
     color: #596e7f;
