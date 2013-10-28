@@ -2173,21 +2173,6 @@ ul.social-tabs.css-tabs > li > a {
     float: left !important;
 }
 
-.template-summary_view #content .tileItem .documentByLine,
-.template-folder_summary_view #content .tileItem .documentByLine {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline;
-    overflow: hidden;
-    padding-right: 5px;
-    width: 9%;
-    height: 90px;
-    border-right: 1px dotted #D6D6D6;
-    color: #7A8692;
-    font-size: 1em;
-}
-
 .template-summary_view #content .description,
 .template-folder_summary_view #content .description {
     color: #666666;
@@ -2806,59 +2791,60 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 .template-summary_view #content-core { margin-top: 0; }
 
 .template-summary_view #content h1.documentFirstHeading {
-    font-size: 2.25em;
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
-    font-weight: normal;
     margin: .85em 0 1.1em;
     padding: 0 0 .70em 0;
     border: 0;
+    border-bottom: 1px solid #d9dbda;
     color: #2c66ce;
     text-transform: uppercase;
-    border-bottom: 1px solid #d9dbda;
+    font-weight: normal;
+    font-size: 2.25em;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
     line-height: 1em;
 }
 
-.template-summary_view #content .tileItem .tileImage img {
-    max-width: 201px;
-    max-height: 119px;
-    width: 100%;
-}
-
 .template-summary_view #content .tileItem {
-    margin: 0;
-    font-size: 1em;
-    padding: 2em 0 2em 8.980em;
     position: relative;
-    border-bottom: 1px solid #d7dbda;
     clear: both;
+    overflow: hidden;
+    margin: 0;
+    padding: 2em 0 2em 7.5em;
+    border-bottom: 1px solid #d7dbda;
+    font-size: 1em;
 }
 
 .template-summary_view #content .tileItem:first-child { padding-top: 0; }
 
+.template-summary_view #content .tileContent {
+    border-left: 1px dotted #D6D6D6;
+    padding-left: 1.8em;
+}
+
 .template-summary_view #content .tileItem .subtitle {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    font-weight: normal;
-    margin: 0;
+    display: block;
+    margin: 0 0 .6em;
     padding: 0;
+    font-weight: normal;
+    font-size: 1em;
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
 }
 
 .template-summary_view #content .tileItem .tileHeadline {
-    font-size: 1.3em;
-    font-weight: bold;
-    margin: 0.438em 0;
+    margin: 0 0 0.438em;
     padding: 0;
     color: #172938;
+    font-weight: bold;
+    font-size: 1.3em;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .template-summary_view #content .tileItem .tileHeadline a,
 .template-summary_view #content .tileItem .description, {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #172938;
-    line-height: 1.75em;
     margin: 0;
     padding: 0;
+    color: #172938;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.75em;
 }
 
 .template-summary_view #content .tileItem p {
@@ -2867,34 +2853,37 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .keywords {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    font-weight: normal;
-    color: #596e7f;
-    line-height: 1.3em;
     margin: 15px 0 0;
     padding: 0;
+    color: #596e7f;
+    font-weight: normal;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3em;
 }
 
 .template-summary_view #content .tileItem .documentByLine {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    color: #596E7F;
     margin: 2em 0 0;
     padding: 0;
     min-width: 7.5em;
     min-height: 10.4em;
+    color: #596E7F;
+    font-size: 1em;
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .template-summary_view #content .tileItem:first-child .documentByLine { margin-top: 0; }
 
 .template-summary_view #content .documentByLine .summary-view-icon {
     display: block;
-    font-size: 1em;
-    line-height: 1.2em;
     margin: 0 0 1em;
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
     color: #596e7f;
+    font-size: 1em;
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
 }
 
 /* Icones */
