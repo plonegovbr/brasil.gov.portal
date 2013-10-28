@@ -2769,12 +2769,13 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 /* ==========================================================================
    Modo de exibição - Visão Sumária
    ========================================================================== */
+
 .template-summary_view #content-core,
-.template-facetednavigation_view #content-core { margin-top: 0; }
+.template-facetednavigation_view #content-core { margin-top: 40px; }
 
 .template-summary_view #content h1.documentFirstHeading,
 .template-facetednavigation_view #content h1.documentFirstHeading {
-    margin: .85em 0 1.1em;
+    margin: .85em 0 5px;
     padding: 0 0 .70em 0;
     border: 0;
     border-bottom: 1px solid #d9dbda;
@@ -2802,8 +2803,10 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 
 .template-summary_view #content .tileContent,
 .template-facetednavigation_view #content .tileContent {
-    border-left: 1px dotted #D6D6D6;
+    overflow: hidden;
     padding-left: 1.8em;
+    min-height: 75px;
+    border-left: 1px dotted #D6D6D6;
 }
 
 .template-summary_view #content .tileImage,
@@ -2905,7 +2908,8 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 #content .summary-view-icon .icon-audio { background-position: -3px -391px; }
-#content .summary-view-icon .icon-day { background-position: -244px -392px; width: 13px; }
+#content .summary-view-icon .icon-day,
+#content .summary-view-icon .icon-agenda { background-position: -244px -392px; width: 13px; }
 #content .summary-view-icon .icon-image { background-position: -123px -391px; }
 #content .summary-view-icon .icon-hour { background-position: -273px -393px; }
 #content .summary-view-icon .icon-noticia,
