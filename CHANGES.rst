@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.0rc3 (unreleased)
+1.0 (2013-10-29)
 ^^^^^^^^^^^^^^^^^^^
 
 * Regras de summary view adicionadas para navegação facetada (closes `#84`_).
