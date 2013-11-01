@@ -4,7 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Regras dos Tiles de Redes sociais deletadas deste produto (closes `#88`_).
+  [rennanrodrigues]
 
 
 1.0 (2013-10-29)
@@ -155,3 +156,4 @@ Changelog
 .. _`#80`: https://github.com/plonegovbr/brasil.gov.portal/issues/80
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.portal/issues/82
 .. _`#84`: https://github.com/plonegovbr/brasil.gov.portal/issues/84
+.. _`#88`: https://github.com/plonegovbr/brasil.gov.portal/issues/88

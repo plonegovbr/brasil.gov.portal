@@ -2092,22 +2092,7 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Tile de redes sociais
    ========================================================================== */
 
-.social-panes .fb_iframe_widget,
-.social-panes .fb_iframe_widget span[style],
-.social-panes .fb_iframe_widget iframe[style],
-.social-panes .twitter-timeline.twitter-timeline-rendered[style] {
-    width: 100% !important;
-    height: 100% !important;
-}
 
-ul.social-tabs.css-tabs > li > a {
-    padding: 5px;
-    width: 96px;
-    text-align: center;
-}
-
-.facebook-content.pane { height: 271px; }
-.facebook-content.pane + .twitter-content.pane { height: 307px; }
 
 /* fio separador */
 .fio-separador .outstanding-header { border-top: 1px solid #ddd; }
