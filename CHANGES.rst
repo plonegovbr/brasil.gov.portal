@@ -4,6 +4,9 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Criado patch para replicar alterações de autores para objetos filhos em
+  tipos de dados Folderish (closes `#90`_).
+  [rodfersou]
 * Regras dos Tiles de Redes sociais deletadas deste produto (closes `#88`_).
   [rennanrodrigues]
 
@@ -157,3 +160,4 @@ Changelog
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.portal/issues/82
 .. _`#84`: https://github.com/plonegovbr/brasil.gov.portal/issues/84
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.portal/issues/88
+.. _`#90`: https://github.com/plonegovbr/brasil.gov.portal/issues/90

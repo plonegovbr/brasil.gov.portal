@@ -9,6 +9,21 @@ from plone.app.workflow.browser.sharing import SharingView
 from plone.autoform.interfaces import WIDGETS_KEY
 from plone.outputfilters.filters import resolveuid_and_caption as base
 
+from Products.PloneFormGen.content.form import FormFolder
+from collective.nitf.content import NITF
+from Products.Doormat.content.DoormatColumn import DoormatColumn
+from Products.Doormat.content.DoormatSection import DoormatSection
+from Products.Doormat.content.Doormat import Doormat
+
+FOLDERISH_CLASSES = [
+    FormFolder,
+    NITF,
+    DoormatColumn,
+    DoormatSection,
+    Doormat
+]
+
+
 import logging
 
 logger = logging.getLogger(PROJECTNAME)
@@ -64,8 +79,33 @@ def sharing():
     logger.info('Patched sharing tab')
 
 
+def repplyCreatorToChilds():
+    """Change behaviour of folderish objects to repply creators to its childs
+       since some of these objects don't have option to change childs creators
+    """
+
+    def setCreators(self, creators):
+        """Set creators to the object and repply to it's childs
+        """
+        self._setCreators(creators)
+        self.reindexObject()
+        for brain in self.listFolderContents():
+            brain.setCreators(creators)
+            brain.reindexObject()
+
+    for cls in FOLDERISH_CLASSES:
+        setattr(cls,
+                '_setCreators',
+                cls.setCreators)
+        setattr(cls,
+                'setCreators',
+                setCreators)
+        logger.info('Patched setCreator of {0}'.format(cls.__name__))
+
+
 def run():
     outputfilters()
     link()
     related_items_widget()
     sharing()
+    repplyCreatorToChilds()

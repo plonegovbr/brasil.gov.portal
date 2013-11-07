@@ -28,6 +28,15 @@ class Audio(Container):
             if IMPEGAudioFile.providedBy(source):
                 return source
 
+    def setCreators(self, creators):
+        """Set creators to the object and repply to it's childs
+        """
+        super(Container, self).setCreators(creators)
+        self.reindexObject()
+        for brain in self.listFolderContents():
+            brain.setCreators(creators)
+            brain.reindexObject()
+
 
 @grok.subscribe(IObjectAddedEvent)
 def object_added(event, obj=None):
