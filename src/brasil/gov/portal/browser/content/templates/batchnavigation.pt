@@ -15,13 +15,18 @@
             </a>
         </li>
         <!-- Link to first -->
-        <li tal:condition="batch/show_link_to_first">
-            <a tal:attributes="href python:view.make_link(1)">1</a>
-            <span tal:condition="batch/second_page_not_in_navlist"
-                  tal:omit-tag="">
-                ...
-            </span>
-        </li>
+        <tal:last condition="batch/show_link_to_first">
+            <li>
+                <a class="pagina"
+                   tal:attributes="href python:view.make_link(1)">1</a>
+            </li>
+            <li>
+                <span class="reticencias"
+                      tal:condition="batch/second_page_not_in_navlist">
+                    ...
+                </span>
+            </li>
+        </tal:last>
         <!-- Pagelist with links to previous pages for quick navigation -->
         <li tal:repeat="pagenumber batch/previous_pages">
             <a tal:content="pagenumber" 

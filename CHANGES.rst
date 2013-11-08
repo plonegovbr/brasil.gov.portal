@@ -4,6 +4,9 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Correção nas reticencias no inicio da paginação padrão do Plone, quando a
+  página atual for um número alto (closes `#93`_).
+  [rodfersou]
 * Criado patch para replicar alterações de autores para objetos filhos em
   tipos de dados Folderish (closes `#90`_).
   [rodfersou]
@@ -161,3 +164,4 @@ Changelog
 .. _`#84`: https://github.com/plonegovbr/brasil.gov.portal/issues/84
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.portal/issues/88
 .. _`#90`: https://github.com/plonegovbr/brasil.gov.portal/issues/90
+.. _`#93`: https://github.com/plonegovbr/brasil.gov.portal/issues/93
