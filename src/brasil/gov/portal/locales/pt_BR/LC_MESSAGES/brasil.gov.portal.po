@@ -37,3 +37,7 @@ msgstr "Corpo"
 msgid "View"
 msgstr "Visão"
 
+#: brasil/gov/portal/profiles/default/types/Audio.xml
+msgid "Audio"
+msgstr "Áudio"
+
