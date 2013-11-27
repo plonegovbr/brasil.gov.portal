@@ -4,6 +4,9 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Removido patch para replicar alterações de autores para objetos filhos em
+  tipos de dados Folderish.
+  [dbarbato]
 * Correção nas reticencias no inicio da paginação padrão do Plone, quando a
   página atual for um número alto (closes `#93`_).
   [rodfersou]
