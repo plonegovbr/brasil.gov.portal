@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Adicionada informação "voce está aqui" no breadcrumbs (closes `#98`_).
+  [rodfersou]
 * Revisado funcionamento do viewlet de detaques (closes `#96`_).
   [rodfersou]
 * Removido patch para replicar alterações de autores para objetos filhos em
@@ -171,3 +173,4 @@ Changelog
 .. _`#90`: https://github.com/plonegovbr/brasil.gov.portal/issues/90
 .. _`#93`: https://github.com/plonegovbr/brasil.gov.portal/issues/93
 .. _`#96`: https://github.com/plonegovbr/brasil.gov.portal/issues/96
+.. _`#98`: https://github.com/plonegovbr/brasil.gov.portal/issues/98

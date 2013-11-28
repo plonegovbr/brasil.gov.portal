@@ -506,6 +506,11 @@ input.searchField { -moz-appearance: none; }
 .section-home #main,
 .portaltype-plone-site #portal-breadcrumbs { padding-top: 3.078em; }
 
+#portal-breadcrumbs span#breadcrumbs-you-are-here {
+    color: #000;
+    margin-right: 0.5em;
+}
+
 #portal-breadcrumbs a,
 #portal-breadcrumbs span {
     color: #2C66CE;
