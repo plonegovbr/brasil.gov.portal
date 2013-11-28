@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Revisado funcionamento do viewlet de detaques (closes `#96`_).
+  [rodfersou]
 * Removido patch para replicar alterações de autores para objetos filhos em
   tipos de dados Folderish.
   [dbarbato]
@@ -168,3 +170,4 @@ Changelog
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.portal/issues/88
 .. _`#90`: https://github.com/plonegovbr/brasil.gov.portal/issues/90
 .. _`#93`: https://github.com/plonegovbr/brasil.gov.portal/issues/93
+.. _`#96`: https://github.com/plonegovbr/brasil.gov.portal/issues/96
