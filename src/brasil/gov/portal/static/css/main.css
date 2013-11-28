@@ -233,6 +233,9 @@ div.position-5 { margin-left: -64.002%; }
 
 div.position-10 { margin-left: -30.042%; }
 
+#featured-content div.position-0 { margin-left: -100%; }
+
+#featured-content div.width-16 { width: 100%; }
 
 /* ==========================================================================
    Cabeçalho do portal

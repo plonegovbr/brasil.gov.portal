@@ -4,6 +4,7 @@ var PBrasil = {
         this.addClassHtml();
         this.onclickBuscar();
         this.bugfixBase();
+        this.carregaDestaques();
     },
 
     main: function() {
@@ -130,6 +131,17 @@ var PBrasil = {
 
             $("base").attr("href", aCurrentUrl[1]);
         }
+    },
+
+    /*
+     * Carrega capa /destaques no viewlet de destaques
+     */
+    carregaDestaques: function(){
+
+        if ($('#featured-content').length > 0) {
+            $('#featured-content').load(portal_url + '/destaques?ajax_load=1 #content > .row');
+        }
+
     }
 }
 
