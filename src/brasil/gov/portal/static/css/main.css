@@ -3261,6 +3261,9 @@ body.contraste .tile-subtitle,
 body.contraste #content .gallery-element-metadata .title,
 body.contraste .videogallery-tile .description,
 body.contraste .item-central .link-central,
+body.contraste #content #tile_banner_rotativo .title,
+body.contraste #content #tile_banner_rotativo .descr,
+body.contraste #content #tile_banner_rotativo .credito,
 body.contraste #portal-siteactions a,
 body.contraste #portal-siteactions a:hover,
 body.contraste #portal-logo,
@@ -3410,6 +3413,19 @@ body.contraste #content .summary-view-icon .icon-image { background-position: -5
 body.contraste #content .summary-view-icon .icon-hour { background-position: -653px -393px; }
 body.contraste #content .summary-view-icon .icon-noticia { background-position: -474px -391px; }
 body.contraste #content .summary-view-icon .icon-multimidia { background-position: -413px -391px; }
+
+/* botões de navegação */
+body.contraste #tile_banner_rotativo li .button-nav,
+body.contraste .orderTiles .button-nav {
+    background-image: url("++resource++brasil.gov.portal/img/bullets-branco-preto.gif");
+    background-color: #000;
+}
+
+body.contraste #tile_banner_rotativo .activeSlide .button-nav,
+body.contraste #tile_banner_rotativo li .button-nav:hover,
+body.contraste #tile_banner_rotativo li .button-nav:focus {
+    background-color: #fff;
+}
 
 /* ==========================================================================
    Print
