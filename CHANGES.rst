@@ -4,9 +4,11 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-* Aumentada fonte do menu de acessibilidade (closes `#100`_).
+* Melhorias de estilo no mapa do site (closes `#104`_).
   [rodfersou]
 * Aumentada fonte do menu site actions (closes `#102`_).
+  [rodfersou]
+* Aumentada fonte do menu de acessibilidade (closes `#100`_).
   [rodfersou]
 * Adicionada informação "voce está aqui" no breadcrumbs (closes `#98`_).
   [rodfersou]
@@ -180,3 +182,4 @@ Changelog
 .. _`#98`: https://github.com/plonegovbr/brasil.gov.portal/issues/98
 .. _`#100`: https://github.com/plonegovbr/brasil.gov.portal/issues/100
 .. _`#102`: https://github.com/plonegovbr/brasil.gov.portal/issues/102
+.. _`#104`: https://github.com/plonegovbr/brasil.gov.portal/issues/104
