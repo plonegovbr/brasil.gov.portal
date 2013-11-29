@@ -1689,17 +1689,17 @@ dl.portlet ol li { list-style: decimal outside; }
 .outstanding-header h1 {
     text-transform: uppercase;
     font-weight: bold !important;
-    font-size: 2.3em !important;
+    font-size: 1.91em !important;
 }
 
 .outstanding-header h2 {
     min-height: 48px;
-    font-size: 2.28em !important;
+    font-size: 1.62em !important;
 }
 
 .outstanding-header h3 {
     min-height: 48px;
-    font-size: 1.5em !important;
+    font-size: 1.42em !important;
 }
 
 .outstanding-header h4 {
