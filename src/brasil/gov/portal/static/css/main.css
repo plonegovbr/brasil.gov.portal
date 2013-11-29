@@ -3306,6 +3306,19 @@ body.contraste #sobre .portalservicos-item a {
     border-right: 1px solid #fff;
 }
 
+body.contraste .width-8 .gallery-element-wrapper,
+body.contraste .width-10 .gallery-element-wrapper,
+body.contraste .gallery-2-columns .gallery-element-wrapper {
+    border-left: 1px dotted #fff;
+}
+
+body.contraste .width-8 .galery-items,
+body.contraste .width-10 .galery-items,
+body.contraste .width-5 .galery-items,
+body.contraste .gallery-2-columns .galery-items {
+    border-top: 1px solid #fff;
+}
+
 body.contraste .navTreeLevel0 > li.navTreeItemInPath,
 body.contraste .navTreeLevel0 > li.navTreeCurrentNode {
     border-top: 2px solid #fff !important;
