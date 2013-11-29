@@ -377,9 +377,9 @@ div.position-10 { margin-left: -30.042%; }
 
 #portal-siteactions .last-item { margin-right: 0; }
 
-#portal-sitemap .navTree {
-    background: none !important;
-}
+#portal-sitemap .navTree { background: none !important; }
+
+#portal-sitemap .state-published { color: #1a2a39 !important; }
 
 /* Links de redes sociais
    ========================================================================== */
