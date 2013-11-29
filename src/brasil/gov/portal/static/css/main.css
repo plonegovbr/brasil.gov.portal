@@ -3276,7 +3276,8 @@ body.contraste.template-summary_view #content .tileItem .tileHeadline a,
 body.contraste.template-summary_view #content .tileItem .description,
 body.contraste.template-summary_view #content .tileItem .keywords,
 body.contraste.template-summary_view #content .tileItem .documentByLine,
-body.contraste #content .documentByLine .summary-view-icon {
+body.contraste #content .documentByLine .summary-view-icon,
+body.contraste .videogallery-tile .subtitle {
     color: #fff !important;
 }
 
@@ -3317,6 +3318,10 @@ body.contraste .width-10 .galery-items,
 body.contraste .width-5 .galery-items,
 body.contraste .gallery-2-columns .galery-items {
     border-top: 1px solid #fff;
+}
+
+body.contraste #content .videogallery-tile .gallery-tile {
+    border-bottom: 1px solid #fff;
 }
 
 body.contraste .navTreeLevel0 > li.navTreeItemInPath,
