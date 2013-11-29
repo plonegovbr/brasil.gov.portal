@@ -363,6 +363,7 @@ div.position-10 { margin-left: -30.042%; }
     float: right;
     clear: none;
     padding-bottom: 2px;
+    font-size: 0.93em;
 }
 
 #portal-siteactions li { display: inline; }
