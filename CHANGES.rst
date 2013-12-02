@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Correções de tamanhos de títulos nos tiles (closes `#106`_).
+  [rodfersou]
 * Melhorias de estilo no mapa do site (closes `#104`_).
   [rodfersou]
 * Aumentada fonte do menu site actions (closes `#102`_).
@@ -183,3 +185,4 @@ Changelog
 .. _`#100`: https://github.com/plonegovbr/brasil.gov.portal/issues/100
 .. _`#102`: https://github.com/plonegovbr/brasil.gov.portal/issues/102
 .. _`#104`: https://github.com/plonegovbr/brasil.gov.portal/issues/104
+.. _`#106`: https://github.com/plonegovbr/brasil.gov.portal/issues/106
