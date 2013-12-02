@@ -1335,7 +1335,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .cover-collection-tile h2 {
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #content .cover-collection-tile h2 a { color: #172938; }
@@ -1702,7 +1702,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .tile .outstanding-header .outstanding-title {
-    padding-right: 70px;
+    padding-right: 3.464em;
     font-weight: normal !important;
 }
 
@@ -1737,13 +1737,12 @@ dl.portlet ol li { list-style: decimal outside; }
     padding-top: 3px;
     padding-right: 30px;
     min-height: 30px;
-    width: 145px;
     background: url("++resource++brasil.gov.portal/img/readmoredarkblue.png") no-repeat scroll right 5px transparent;
     text-align: right;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 1.16em;
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    line-height: 2.8em;
+    line-height: 1.7em;
 }
 
 /* Paleta de cores - cor-editoria
