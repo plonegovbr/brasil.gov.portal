@@ -1681,6 +1681,64 @@ dl.portlet ol li { list-style: decimal outside; }
     color: #ad6500;
 }
 
+.cover-collection-tile .collection-item h1,
+.cover-collection-tile .collection-item h2,
+.cover-collection-tile .collection-item h3,
+.cover-collection-tile .collection-item h4 {
+    letter-spacing: normal;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cover-collection-tile .collection-item h1 {
+    font-size: 1.25em;
+    line-height: 1.25em;
+}
+
+.cover-collection-tile .collection-item h2 {
+    font-size: 1.19em;
+    line-height: 1.19em;
+}
+
+.cover-collection-tile .collection-item h3 {
+    font-size: 1.16em;
+    line-height: 1.16em;
+}
+
+.cover-collection-tile .collection-item h4 {
+    font-size: 0.937em;
+    line-height: 0.937em;
+}
+
+
+/* List tile */
+
+.cover-list-tile .list-item h1,
+.cover-list-tile .list-item h2,
+.cover-list-tile .list-item h3,
+.cover-list-tile .list-item h4 {
+    letter-spacing: normal;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cover-list-tile .list-item h1 {
+    font-size: 1.25em;
+    line-height: 1.25em;
+}
+.cover-list-tile .list-item h2 {
+    font-size: 1.19em;
+    line-height: 1.19em;
+}
+.cover-list-tile .list-item h3 {
+    font-size: 1.16em;
+    line-height: 1.16em;
+}
+.cover-list-tile .list-item h4 {
+    font-size: 0.937em;
+    line-height: 0.937em;
+}
+
 /* Tile header
    ========================================================================== */
 
