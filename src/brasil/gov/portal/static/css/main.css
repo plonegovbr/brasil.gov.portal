@@ -3279,12 +3279,12 @@ body.contraste.template-summary_view #content .tileItem .description,
 body.contraste.template-summary_view #content .tileItem .keywords,
 body.contraste.template-summary_view #content .tileItem .documentByLine,
 body.contraste #content .documentByLine .summary-view-icon,
-body.contraste .videogallery-tile .subtitle {
+body.contraste .videogallery-tile .subtitle,
+body.contraste .outstanding-header .outstanding-link,
+body.contraste #content .outstanding-header .outstanding-link:hover {
     color: #fff !important;
 }
 
-body.contraste .outstanding-header .outstanding-link,
-body.contraste #content .outstanding-header .outstanding-link:hover,
 body.contraste .galleria-info-title a,
 body.contraste #content .galleria-info-title a:hover,
 body.contraste #content .gallery-footer a,
