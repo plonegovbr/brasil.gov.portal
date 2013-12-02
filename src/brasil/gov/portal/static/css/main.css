@@ -3392,10 +3392,6 @@ body.contraste .outstanding-header {
     background: #fff;
 }
 
-body.contraste .outstanding-header .outstanding-link {
-    background-position: 155px -100px;
-}
-
 body.contraste .videogallery-tile .gallery-footer a {
     background-image: url("++resource++brasil.gov.portal/img/seta_preta.png");
 }
