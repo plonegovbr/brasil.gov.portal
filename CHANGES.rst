@@ -4,6 +4,9 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Implementação de CSS para modo de alto contraste em tiles que não tinham
+  essa opção (closes `#38`_).
+  [felipeduardo]
 * Melhorias de estilo no mapa do site (closes `#104`_).
   [rodfersou]
 * Aumentada fonte do menu site actions (closes `#102`_).
@@ -183,3 +186,4 @@ Changelog
 .. _`#100`: https://github.com/plonegovbr/brasil.gov.portal/issues/100
 .. _`#102`: https://github.com/plonegovbr/brasil.gov.portal/issues/102
 .. _`#104`: https://github.com/plonegovbr/brasil.gov.portal/issues/104
+.. _`#38`: https://github.com/plonegovbr/brasil.gov.portal/issues/38
