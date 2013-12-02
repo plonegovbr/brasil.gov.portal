@@ -3281,21 +3281,25 @@ body.contraste.template-summary_view #content .tileItem .documentByLine,
 body.contraste #content .documentByLine .summary-view-icon,
 body.contraste .videogallery-tile .subtitle,
 body.contraste .outstanding-header .outstanding-link,
-body.contraste #content .outstanding-header .outstanding-link:hover {
+body.contraste #content .outstanding-header .outstanding-link:hover,
+body.contraste .galleria-info-description,
+body.contraste .galleria-info-title a,
+body.contraste .galleria-info-title a:hover,
+body.contraste .galleria-info-text .rights {
     color: #fff !important;
 }
 
-body.contraste .galleria-info-title a,
-body.contraste #content .galleria-info-title a:hover,
 body.contraste #content .gallery-footer a,
-body.contraste #content .gallery-footer a:hover  {
+body.contraste #content .gallery-footer a:hover {
     color: #000 !important;
 }
 
 body.contraste .portletHeader,
 body.contraste .portletHeader a,
 body.contraste dl.portlet dt a:visited,
-body.contraste #doormat-container .doormatColumn {
+body.contraste #doormat-container .doormatColumn,
+body.contraste .mediacarousel,
+body.contraste .galleria-thumbnails-container {
     border-color: #fff !important;
     background: #000 !important;
     color: #fff !important;
@@ -3373,8 +3377,13 @@ body.contraste .item-central .link-aplicativos {
     background-image: url("++resource++brasil.gov.portal/img/sprite-contraste.png");
 }
 
-body.contraste .outstanding-header .outstanding-link {
+body.contraste .outstanding-header .outstanding-link,
+body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
     background: url("++resource++brasil.gov.portal/img/seta_preta.png") no-repeat scroll right 5px transparent;
+}
+
+body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
+    background-position: right 0;
 }
 
 body.contraste #header input.searchButton {
