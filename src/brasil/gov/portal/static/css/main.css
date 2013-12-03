@@ -1546,6 +1546,7 @@ dl.portlet ol li { list-style: decimal outside; }
     margin: 0;
     padding: 0 9px;
     border-bottom: 1px dotted #c1c2c2;
+    position: relative;
 }
 
 .lista-vertical .list-item h1,
@@ -3335,35 +3336,47 @@ body.contraste dl.portlet a:hover,
 body.contraste #category,
 body.contraste #category-vcge,
 body.contraste .tile-subtitle,
+body.contraste .tile-content p,
+body.contraste .tile p,
+body.contraste .tile a,
 body.contraste #content .gallery-element-metadata .title,
 body.contraste .videogallery-tile .description,
 body.contraste .item-central .link-central,
+body.contraste #content #tile_banner_rotativo .title,
+body.contraste #content #tile_banner_rotativo .descr,
+body.contraste #content #tile_banner_rotativo .credito,
 body.contraste #portal-siteactions a,
 body.contraste #portal-siteactions a:hover,
-body.contraste #portal-logo,
-body.contraste #portal-title,
+body.contraste #logo #portal-logo,
+body.contraste #logo #portal-title,
+body.contraste .cover-collection-tile p,
 body.contraste.template-summary_view #content .tileItem .subtitle,
 body.contraste.template-summary_view #content .tileItem .tileHeadline a,
 body.contraste.template-summary_view #content .tileItem .description,
 body.contraste.template-summary_view #content .tileItem .keywords,
 body.contraste.template-summary_view #content .tileItem .documentByLine,
-body.contraste #content .documentByLine .summary-view-icon {
+body.contraste #content .documentByLine .summary-view-icon,
+body.contraste .videogallery-tile .subtitle,
+body.contraste .outstanding-header .outstanding-link,
+body.contraste #content .outstanding-header .outstanding-link:hover,
+body.contraste .galleria-info-description,
+body.contraste .galleria-info-title a,
+body.contraste .galleria-info-title a:hover,
+body.contraste .galleria-info-text .rights {
     color: #fff !important;
 }
 
-body.contraste .outstanding-header .outstanding-link,
-body.contraste #content .outstanding-header .outstanding-link:hover,
-body.contraste .galleria-info-title a,
-body.contraste #content .galleria-info-title a:hover,
 body.contraste #content .gallery-footer a,
-body.contraste #content .gallery-footer a:hover  {
+body.contraste #content .gallery-footer a:hover {
     color: #000 !important;
 }
 
 body.contraste .portletHeader,
 body.contraste .portletHeader a,
 body.contraste dl.portlet dt a:visited,
-body.contraste #doormat-container .doormatColumn {
+body.contraste #doormat-container .doormatColumn,
+body.contraste .mediacarousel,
+body.contraste .galleria-thumbnails-container {
     border-color: #fff !important;
     background: #000 !important;
     color: #fff !important;
@@ -3375,6 +3388,23 @@ body.contraste #portal-siteactions {
 
 body.contraste #sobre .portalservicos-item a {
     border-right: 1px solid #fff;
+}
+
+body.contraste .width-8 .gallery-element-wrapper,
+body.contraste .width-10 .gallery-element-wrapper,
+body.contraste .gallery-2-columns .gallery-element-wrapper {
+    border-left: 1px dotted #fff;
+}
+
+body.contraste .width-8 .galery-items,
+body.contraste .width-10 .galery-items,
+body.contraste .width-5 .galery-items,
+body.contraste .gallery-2-columns .galery-items {
+    border-top: 1px solid #fff;
+}
+
+body.contraste #content .videogallery-tile .gallery-tile {
+    border-bottom: 1px solid #fff;
 }
 
 body.contraste .navTreeLevel0 > li.navTreeItemInPath,
@@ -3424,8 +3454,13 @@ body.contraste .item-central .link-aplicativos {
     background-image: url("++resource++brasil.gov.portal/img/sprite-contraste.png");
 }
 
-body.contraste .outstanding-header .outstanding-link {
+body.contraste .outstanding-header .outstanding-link,
+body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
     background: url("++resource++brasil.gov.portal/img/seta_preta.png") no-repeat scroll right 5px transparent;
+}
+
+body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
+    background-position: right 0;
 }
 
 body.contraste #header input.searchButton {
@@ -3441,10 +3476,6 @@ body.contraste .outstanding-header .outstanding-title {
 body.contraste .outstanding-header {
     border-top: 2px solid #fff;
     background: #fff;
-}
-
-body.contraste .outstanding-header .outstanding-link {
-    background-position: 155px -100px;
 }
 
 body.contraste .videogallery-tile .gallery-footer a {
@@ -3487,6 +3518,25 @@ body.contraste #content .summary-view-icon .icon-image { background-position: -5
 body.contraste #content .summary-view-icon .icon-hour { background-position: -653px -393px; }
 body.contraste #content .summary-view-icon .icon-noticia { background-position: -474px -391px; }
 body.contraste #content .summary-view-icon .icon-multimidia { background-position: -413px -391px; }
+
+/* botões de navegação */
+body.contraste #tile_banner_rotativo li .button-nav,
+body.contraste .orderTiles .button-nav {
+    background-image: url("++resource++brasil.gov.portal/img/bullets-branco-preto.gif");
+    background-color: #000;
+}
+
+body.contraste #tile_banner_rotativo .activeSlide .button-nav,
+body.contraste #tile_banner_rotativo li .button-nav:hover,
+body.contraste #tile_banner_rotativo li .button-nav:focus {
+    background-color: #fff;
+}
+
+body.contraste .lista-vertical {
+    border: 1px solid #fff;
+    background: #000 !important;
+}
+
 
 /* ==========================================================================
    Print

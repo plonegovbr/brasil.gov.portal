@@ -6,6 +6,9 @@ Changelog
 
 * Correções de tamanhos de títulos nos tiles (closes `#106`_).
   [rodfersou]
+* Implementação de CSS para modo de alto contraste em tiles que não tinham
+  essa opção (closes `#38`_).
+  [felipeduardo]
 * Melhorias de estilo no mapa do site (closes `#104`_).
   [rodfersou]
 * Aumentada fonte do menu site actions (closes `#102`_).
