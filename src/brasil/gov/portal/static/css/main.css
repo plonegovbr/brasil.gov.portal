@@ -1335,7 +1335,7 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .cover-collection-tile h2 {
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #content .cover-collection-tile h2 a { color: #172938; }
@@ -1371,6 +1371,26 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .tile-description { margin: 0; }
+
+/* Tile Basic
+   ========================================================================== */
+
+.tile[data-tile*=collective\.cover\.basic] h1 { font-size: 2.72em; }
+.tile[data-tile*=collective\.cover\.basic] h2.gigante { font-size: 2.72em; }
+.tile[data-tile*=collective\.cover\.basic] h2.grande { font-size: 1.9em; }
+.tile[data-tile*=collective\.cover\.basic] h2 { font-size: 1.25em; }
+.tile[data-tile*=collective\.cover\.basic] h3 { font-size: 1.21em; }
+.tile[data-tile*=collective\.cover\.basic] h4 { font-size: 1.1em; }
+
+/* Tile Basic News Article (nitf)
+   ========================================================================== */
+
+.tile[data-tile*=nitf] h1 { font-size: 2.72em; }
+.tile[data-tile*=nitf] h2.gigante { font-size: 2.72em; }
+.tile[data-tile*=nitf] h2.grande { font-size: 1.9em; }
+.tile[data-tile*=nitf] h2 { font-size: 1.25em; }
+.tile[data-tile*=nitf] h3 { font-size: 1.21em; }
+.tile[data-tile*=nitf] h4 { font-size: 1.1em; }
 
 /* Link externo
    ========================================================================== */
@@ -1662,6 +1682,64 @@ dl.portlet ol li { list-style: decimal outside; }
     color: #ad6500;
 }
 
+.cover-collection-tile .collection-item h1,
+.cover-collection-tile .collection-item h2,
+.cover-collection-tile .collection-item h3,
+.cover-collection-tile .collection-item h4 {
+    letter-spacing: normal;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cover-collection-tile .collection-item h1 {
+    font-size: 1.25em;
+    line-height: 1.25em;
+}
+
+.cover-collection-tile .collection-item h2 {
+    font-size: 1.19em;
+    line-height: 1.19em;
+}
+
+.cover-collection-tile .collection-item h3 {
+    font-size: 1.16em;
+    line-height: 1.16em;
+}
+
+.cover-collection-tile .collection-item h4 {
+    font-size: 0.937em;
+    line-height: 0.937em;
+}
+
+
+/* List tile */
+
+.cover-list-tile .list-item h1,
+.cover-list-tile .list-item h2,
+.cover-list-tile .list-item h3,
+.cover-list-tile .list-item h4 {
+    letter-spacing: normal;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cover-list-tile .list-item h1 {
+    font-size: 1.25em;
+    line-height: 1.25em;
+}
+.cover-list-tile .list-item h2 {
+    font-size: 1.19em;
+    line-height: 1.19em;
+}
+.cover-list-tile .list-item h3 {
+    font-size: 1.16em;
+    line-height: 1.16em;
+}
+.cover-list-tile .list-item h4 {
+    font-size: 0.937em;
+    line-height: 0.937em;
+}
+
 /* Tile header
    ========================================================================== */
 
@@ -1683,24 +1761,24 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .tile .outstanding-header .outstanding-title {
-    padding-right: 70px;
+    padding-right: 3.464em;
     font-weight: normal !important;
 }
 
 .outstanding-header h1 {
     text-transform: uppercase;
     font-weight: bold !important;
-    font-size: 2.3em !important;
+    font-size: 1.91em !important;
 }
 
 .outstanding-header h2 {
     min-height: 48px;
-    font-size: 2.28em !important;
+    font-size: 1.62em !important;
 }
 
 .outstanding-header h3 {
     min-height: 48px;
-    font-size: 1.5em !important;
+    font-size: 1.42em !important;
 }
 
 .outstanding-header h4 {
@@ -1718,13 +1796,12 @@ dl.portlet ol li { list-style: decimal outside; }
     padding-top: 3px;
     padding-right: 30px;
     min-height: 30px;
-    width: 145px;
     background: url("++resource++brasil.gov.portal/img/readmoredarkblue.png") no-repeat scroll right 5px transparent;
     text-align: right;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 1.16em;
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    line-height: 2.8em;
+    line-height: 1.7em;
 }
 
 /* Paleta de cores - cor-editoria
