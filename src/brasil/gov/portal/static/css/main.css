@@ -3362,7 +3362,15 @@ body.contraste #content .outstanding-header .outstanding-link:hover,
 body.contraste .galleria-info-description,
 body.contraste .galleria-info-title a,
 body.contraste .galleria-info-title a:hover,
-body.contraste .galleria-info-text .rights {
+body.contraste .galleria-info-text .rights,
+body.contraste .lista-vertical .tile-header h3,
+body.contraste .lista-vertical .tile-header span,
+body.contraste #content article div[property*="articleBody"] p,
+body.contraste #content div.newsImageContainer p.discreet,
+body.contraste #content article #viewlet-below-content-title .documentPublished,
+body.contraste #content article #viewlet-below-content-title .documentModified,
+body.contraste #content article #viewlet-below-content-title .contentHistory a,
+body.contraste #content .pullquote {
     color: #fff !important;
 }
 
@@ -3535,6 +3543,11 @@ body.contraste #tile_banner_rotativo li .button-nav:focus {
 body.contraste .lista-vertical {
     border: 1px solid #fff;
     background: #000 !important;
+}
+
+body.contraste #content .pullquote {
+    border-top: 4px solid #fff;
+    border-bottom: 1px solid #fff;
 }
 
 
