@@ -3362,7 +3362,9 @@ body.contraste #content .outstanding-header .outstanding-link:hover,
 body.contraste .galleria-info-description,
 body.contraste .galleria-info-title a,
 body.contraste .galleria-info-title a:hover,
-body.contraste .galleria-info-text .rights {
+body.contraste .galleria-info-text .rights,
+body.contraste .lista-vertical .tile-header h3,
+body.contraste .lista-vertical .tile-header span {
     color: #fff !important;
 }
 
