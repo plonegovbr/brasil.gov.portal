@@ -1350,8 +1350,8 @@ dl.portlet ol li { list-style: decimal outside; }
 .tile[data-tile*=nitf] h2,
 .tile[data-tile*=nitf] h3,
 .tile[data-tile*=nitf] h4 {
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #content .cover-collection-tile h2 a { color: #172938; }
@@ -1732,9 +1732,7 @@ dl.portlet ol li { list-style: decimal outside; }
     line-height: 0.937em;
 }
 
-.cover-collection-tile .tile-footer a {
-    font-size: 0.9em;
-}
+.cover-collection-tile .tile-footer a { font-size: 0.9em; }
 
 
 /* List tile */
@@ -1786,9 +1784,9 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .tile .outstanding-header .outstanding-title {
+    margin-bottom: 0.85em;
     padding-right: 3.464em;
     padding-bottom: 0;
-    margin-bottom: 0.85em;
     font-weight: normal !important;
 }
 
@@ -1814,19 +1812,20 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .outstanding-header .outstanding-link {
-    width: auto;
-    font-size: 0.9em;
-    line-height: 1.2em;
     position: static;
-    background-position: right 50%;
-    padding: 0.3em 2.7em 0.3em 0.3em;
-    margin: 0.9em 0.9em 0.9em 0.6em;
-    min-height: 1.3em;
     display: block;
+    margin: 0.9em 0.9em 0.9em 0.6em;
+    padding: 0.3em 2.7em 0.3em 0.3em;
+    min-height: 1.3em;
+    width: auto;
+    background-position: right 50%;
     text-align: right;
     text-transform: uppercase;
+    font-size: 0.9em;
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
 }
+
 
 /* Paleta de cores - cor-editoria
    ========================================================================== */
