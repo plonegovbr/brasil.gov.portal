@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Implementaçãop de comportamento dinamico na altura do breadcrumb (closes `#111`_).
+  [felipeduardo]
 * Correções de tamanhos de títulos nos tiles (closes `#106`_).
   [rodfersou]
 * Implementação de CSS para modo de alto contraste em tiles que não tinham
@@ -189,3 +191,4 @@ Changelog
 .. _`#102`: https://github.com/plonegovbr/brasil.gov.portal/issues/102
 .. _`#104`: https://github.com/plonegovbr/brasil.gov.portal/issues/104
 .. _`#106`: https://github.com/plonegovbr/brasil.gov.portal/issues/106
+.. _`#111`: https://github.com/plonegovbr/brasil.gov.portal/issues/111

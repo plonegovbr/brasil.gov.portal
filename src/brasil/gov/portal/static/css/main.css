@@ -177,10 +177,14 @@ p {
 
 #main {
     margin: 0 auto;
-    padding: 4.104em 0 1.5em;
+    padding: 0 0 1.5em;
     max-width: 960px;
     background: #fff;
     font-size: 1.3em;
+}
+
+.section-home #main {
+    padding-top: 4.104em;
 }
 
 /* Tamanho das colunas */
@@ -533,8 +537,6 @@ input.searchField { -moz-appearance: none; }
 #portal-breadcrumbs > span > a:hover { text-decoration: underline; }
 
 #main #portal-breadcrumbs {
-    position: absolute;
-    top: -5.128em;
     margin-top: 1.923em;
     margin-bottom: 1.923em;
 }
