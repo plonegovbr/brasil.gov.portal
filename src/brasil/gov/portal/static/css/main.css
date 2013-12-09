@@ -1340,6 +1340,22 @@ dl.portlet ol li { list-style: decimal outside; }
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.tile[data-tile*=collective\.cover\.basic] h1,
+.tile[data-tile*=collective\.cover\.basic] h2.gigante,
+.tile[data-tile*=collective\.cover\.basic] h2.grande,
+.tile[data-tile*=collective\.cover\.basic] h2,
+.tile[data-tile*=collective\.cover\.basic] h3,
+.tile[data-tile*=collective\.cover\.basic] h4,
+.tile[data-tile*=nitf] h1,
+.tile[data-tile*=nitf] h2.gigante,
+.tile[data-tile*=nitf] h2.grande,
+.tile[data-tile*=nitf] h2,
+.tile[data-tile*=nitf] h3,
+.tile[data-tile*=nitf] h4 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #content .cover-collection-tile h2 a { color: #172938; }
 
 .tile h3 {
@@ -1393,6 +1409,11 @@ dl.portlet ol li { list-style: decimal outside; }
 .tile[data-tile*=nitf] h2 { font-size: 1.25em; }
 .tile[data-tile*=nitf] h3 { font-size: 1.21em; }
 .tile[data-tile*=nitf] h4 { font-size: 1.1em; }
+
+.cover-collection-tile .tile-header span {
+    display: block;
+    margin-bottom: 0.5em;
+}
 
 /* Link externo
    ========================================================================== */
@@ -1713,6 +1734,8 @@ dl.portlet ol li { list-style: decimal outside; }
     line-height: 0.937em;
 }
 
+.cover-collection-tile .tile-footer a { font-size: 0.9em; }
+
 
 /* List tile */
 
@@ -1763,7 +1786,9 @@ dl.portlet ol li { list-style: decimal outside; }
 }
 
 #content .tile .outstanding-header .outstanding-title {
+    margin-bottom: 0.85em;
     padding-right: 3.464em;
+    padding-bottom: 0;
     font-weight: normal !important;
 }
 
@@ -1788,23 +1813,21 @@ dl.portlet ol li { list-style: decimal outside; }
     font-size: 1.3em !important;
 }
 
-.outstanding-header .outstanding-link {
-    position: absolute;
-    top: 0;
-    right: 0;
+#content .outstanding-header .outstanding-link {
+    position: static;
     display: block;
-    margin-top: 5px;
-    margin-right: 10px;
-    padding-top: 3px;
-    padding-right: 30px;
-    min-height: 30px;
-    background: url("++resource++brasil.gov.portal/img/readmoredarkblue.png") no-repeat scroll right 5px transparent;
+    margin: 0.9em 0.9em 0.9em 0.6em;
+    padding: 0.3em 2.7em 0.3em 0.3em;
+    min-height: 1.3em;
+    width: auto;
+    background-position: right 50%;
     text-align: right;
     text-transform: uppercase;
-    font-size: 1.16em;
+    font-size: 0.9em;
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    line-height: 1.7em;
+    line-height: 1.2em;
 }
+
 
 /* Paleta de cores - cor-editoria
    ========================================================================== */
