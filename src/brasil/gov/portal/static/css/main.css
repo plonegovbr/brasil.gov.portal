@@ -2783,30 +2783,30 @@ body[class*="nitf"] #content #viewlet-social-like {
     right: 0 !important;
 }
 
-body[class*="nitf"] div.width-1\3a 2 #viewlet-social-like > div {
+div.width-1\3a 2 #viewlet-social-like > div {
     float: left;
     margin-bottom: 0.6410em;
 }
 
-body[class*="nitf"] #content #viewlet-social-like > div {
+#content #viewlet-social-like > div {
     height: 20px;
     text-align: right;
 }
 
-body[class*="nitf"] #content #viewlet-social-like .sociallike-network-facebook {
+#content #viewlet-social-like .sociallike-network-facebook {
     padding-left: 20px;
     width: 90px;
 }
 
-body[class*="nitf"] #content #viewlet-social-like .sociallike-network-gplus {
+#content #viewlet-social-like .sociallike-network-gplus {
     width: 78px;
 }
 
-body[class*="nitf"] #content #viewlet-social-like .sociallike-network-twitter {
+#content #viewlet-social-like .sociallike-network-twitter {
     width: 93px;
 }
 
-body[class*="nitf"] #content #viewlet-social-like .sociallike-network-twitter iframe {
+#content #viewlet-social-like .sociallike-network-twitter iframe {
     margin-left: 0;
 }
 

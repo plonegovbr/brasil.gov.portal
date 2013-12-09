@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Generalizando regras de tamanho dos botoes do Social Like.
+  [dbarbato]
 * Implementaçãop de comportamento dinamico na altura do breadcrumb (closes `#111`_).
   [felipeduardo]
 * Correções de tamanhos de títulos nos tiles (closes `#106`_).
