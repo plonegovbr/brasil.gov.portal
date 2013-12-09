@@ -1818,7 +1818,7 @@ dl.portlet ol li { list-style: decimal outside; }
     font-size: 0.9em;
     line-height: 1.2em;
     position: static;
-    background: url("++resource++brasil.gov.portal/img/seta_roxo.png") no-repeat scroll right 50% transparent;
+    background-position: right 50%;
     padding: 0.3em 2.7em 0.3em 0.3em;
     margin: 0.9em 0.9em 0.9em 0.6em;
     min-height: 1.3em;
