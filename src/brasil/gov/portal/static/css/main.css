@@ -1417,8 +1417,8 @@ dl.portlet ol li { list-style: decimal outside; }
 .cover-collection-tile .tile-header span {
     display: block;
     margin-bottom: 0.5em;
-    font-family: open_sansregular, Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-family: open_sansregular, Arial, Helvetica, sans-serif;
 }
 
 /* Link externo
