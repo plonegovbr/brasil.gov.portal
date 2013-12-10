@@ -2708,6 +2708,9 @@ dl.portlet div.listingBar a:link {
 #add-on-list { display: none; }
 form.inline-form { display: inline; }
 
+/* altura para visualizar botoes do social like */
+#content div.documentByLine { min-height: 30px; }
+
 
 /* ==========================================================================
    Especificação de estilos para NITF

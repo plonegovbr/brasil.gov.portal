@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Definindo altura minima para visualizar Social Like.
+  [dbarbato]
 * Generalizando regras de tamanho dos botoes do Social Like.
   [dbarbato]
 * Implementaçãop de comportamento dinamico na altura do breadcrumb (closes `#111`_).
