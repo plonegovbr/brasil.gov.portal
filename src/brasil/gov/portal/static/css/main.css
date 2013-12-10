@@ -1417,8 +1417,9 @@ dl.portlet ol li { list-style: decimal outside; }
 .cover-collection-tile .tile-header span {
     display: block;
     margin-bottom: 0.5em;
-    font-weight: bold;
-    font-family: open_sansregular, Arial, Helvetica, sans-serif;
+    color: #444A53;
+    font-weight: normal;
+    font-family: open_sansbold, Arial, Helvetica, sans-serif;
 }
 
 /* Link externo
@@ -1543,8 +1544,6 @@ dl.portlet ol li { list-style: decimal outside; }
 
 .lista-vertical .tile-header h3,
 .lista-vertical .tile-header span {
-    color: #444a53;
-    font-weight: bold;
     font-size: 1.3em;
 }
 
