@@ -1410,9 +1410,15 @@ dl.portlet ol li { list-style: decimal outside; }
 .tile[data-tile*=nitf] h3 { font-size: 1.21em; }
 .tile[data-tile*=nitf] h4 { font-size: 1.1em; }
 
+.cover-list-tile .tile-header h1,
+.cover-list-tile .tile-header h2,
+.cover-list-tile .tile-header h3,
+.cover-list-tile .tile-header h4,
 .cover-collection-tile .tile-header span {
     display: block;
     margin-bottom: 0.5em;
+    font-weight: bold;
+    font-family: open_sansregular, Arial, Helvetica, sans-serif;
 }
 
 /* Link externo
