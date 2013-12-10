@@ -655,7 +655,7 @@ body[class*="nitf"] div.width-1\3a 2 #plone-document-byline { width: 68.7216%; }
 
 #viewlet-social-like iframe {
     margin-left: -20px;
-    width: 120px;
+    width: 120px !important;
 }
 
 #content .pullquote {
