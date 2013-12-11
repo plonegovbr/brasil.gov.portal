@@ -3538,10 +3538,12 @@ body.contraste #barra-brasil .link-barra {
 }
 
 body.contraste #content .summary-view-icon .icon-audio { background-position: -383px -391px; }
-body.contraste #content .summary-view-icon .icon-day { background-position: -624px -392px; width: 13px; }
+body.contraste #content .summary-view-icon .icon-day,
+body.contraste #content .summary-view-icon .icon-agenda { background-position: -624px -392px; width: 13px; }
 body.contraste #content .summary-view-icon .icon-image { background-position: -503px -391px; }
 body.contraste #content .summary-view-icon .icon-hour { background-position: -653px -393px; }
-body.contraste #content .summary-view-icon .icon-noticia { background-position: -474px -391px; }
+body.contraste #content .summary-view-icon .icon-noticia,
+body.contraste #content .summary-view-icon .icon-page { background-position: -474px -391px; }
 body.contraste #content .summary-view-icon .icon-multimidia { background-position: -413px -391px; }
 
 /* botões de navegação */
