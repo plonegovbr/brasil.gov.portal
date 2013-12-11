@@ -3398,6 +3398,7 @@ body.contraste .galleria-info-title a:hover,
 body.contraste .galleria-info-text .rights,
 body.contraste .lista-vertical .tile-header h3,
 body.contraste .lista-vertical .tile-header span,
+body.contraste .cover-collection-tile .tile-header span,
 body.contraste #content article div[property*="articleBody"] p,
 body.contraste #content div.newsImageContainer p.discreet,
 body.contraste #content article #viewlet-below-content-title .documentPublished,
@@ -3412,6 +3413,7 @@ body.contraste #content .gallery-footer a:hover {
     color: #000 !important;
 }
 
+body.contraste .lista-horizontal,
 body.contraste .portletHeader,
 body.contraste .portletHeader a,
 body.contraste dl.portlet dt a:visited,
@@ -3423,6 +3425,7 @@ body.contraste .galleria-thumbnails-container {
     color: #fff !important;
 }
 
+body.contraste .lista-horizontal .collection-item,
 body.contraste #portal-siteactions {
     border-bottom: 1px dotted #fff;
 }
@@ -3437,6 +3440,7 @@ body.contraste .gallery-2-columns .gallery-element-wrapper {
     border-left: 1px dotted #fff;
 }
 
+body.contraste .lista-horizontal .tile-footer,
 body.contraste .width-8 .galery-items,
 body.contraste .width-10 .galery-items,
 body.contraste .width-5 .galery-items,
@@ -3444,6 +3448,7 @@ body.contraste .gallery-2-columns .galery-items {
     border-top: 1px solid #fff;
 }
 
+body.contraste .lista-horizontal .tile-header,
 body.contraste #content .videogallery-tile .gallery-tile {
     border-bottom: 1px solid #fff;
 }
@@ -3516,7 +3521,7 @@ body.contraste .outstanding-header .outstanding-title {
 
 body.contraste .outstanding-header {
     border-top: 2px solid #fff;
-    background: #fff;
+    background: #000;
 }
 
 body.contraste .videogallery-tile .gallery-footer a {

@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Correções de contraste (closes `#38`_).
+  [rodfersou]
 * Definindo altura minima para visualizar Social Like.
   [dbarbato]
 * Generalizando regras de tamanho dos botoes do Social Like.
