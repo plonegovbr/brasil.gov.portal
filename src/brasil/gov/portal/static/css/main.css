@@ -3502,9 +3502,13 @@ body.contraste .width-15 .gallery-3-columns .player-holder {
     border-right: 1px dotted #fff;
 }
 
+body.contraste .videogallery-tile {
+    border: 1px solid #fff;
+}
+
 body.contraste .videogallery-tile .gallery-footer {
     border-top: 1px dotted #fff;
-    background-color: #fff;
+    background-color: #000;
 }
 
 body.contraste #content .relatar-erros a {
