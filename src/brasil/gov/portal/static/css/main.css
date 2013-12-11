@@ -3592,8 +3592,14 @@ body.contraste #faceted-right-column .faceted-widget {
     border-bottom: 1px dotted #fff;
 }
 
+body.contraste #search-results-bar > span:first-child {
+    background-color: #000;
+    color: #FFF !important;
+}
+
 body.contraste #faceted-form #top-area legend,
 body.contraste #content #faceted-form label,
+body.contraste #content #faceted-form .faceted-checkbox-item-disabled span,
 body.contraste #content #faceted-form #faceted-right-column legend,
 body.contraste.template-facetednavigation_view #content .tileItem .description,
 body.contraste.template-facetednavigation_view #content .tileItem .keywords,
