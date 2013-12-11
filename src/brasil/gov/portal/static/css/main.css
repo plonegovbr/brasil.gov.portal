@@ -3425,7 +3425,6 @@ body.contraste .galleria-thumbnails-container {
     color: #fff !important;
 }
 
-body.contraste .lista-horizontal .collection-item,
 body.contraste #portal-siteactions {
     border-bottom: 1px dotted #fff;
 }
@@ -3434,6 +3433,7 @@ body.contraste #sobre .portalservicos-item a {
     border-right: 1px solid #fff;
 }
 
+body.contraste .lista-horizontal .collection-item,
 body.contraste .width-8 .gallery-element-wrapper,
 body.contraste .width-10 .gallery-element-wrapper,
 body.contraste .gallery-2-columns .gallery-element-wrapper {
