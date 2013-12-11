@@ -2218,63 +2218,6 @@ dl.portlet ol li { list-style: decimal outside; }
    Collections
    ========================================================================== */
 
-.template-folder_summary_view h1#parent-fieldname-title,
-.template-folder_summary_view #content h1.documentFirstHeading {
-    padding-bottom: 5px;
-    color: #2c67cd;
-    text-transform: uppercase;
-    letter-spacing: 0.001em;
-    font-weight: bold;
-    font-size: 2.4em;
-    line-height: 1em;
-}
-
-.template-folder_summary_view .tileItem p { line-height: 1.4em; }
-
-.template-folder_summary_view h2.tileHeadline {
-    margin-top: 10px;
-    margin-bottom: 0;
-    letter-spacing: 0.0001em;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.template-folder_summary_view h2.tileHeadline a.summary {
-    color: #000 !important;
-    font-size: 1.2em;
-}
-
-.template-folder_summary_view .subtitle {
-    color: #2C67CD !important;
-    font-weight: normal;
-    font-size: 1em;
-}
-
-.template-folder_summary_view .tileImage {
-    float: none;
-    margin: 0 1em 0.5em 0 !important;
-}
-
-.template-folder_summary_view .tileImage img {
-    float: left !important;
-}
-
-.template-folder_summary_view #content .description {
-    color: #666666;
-    font-size: 1em;
-}
-
-.template-folder_summary_view #content .tileBody { margin-bottom: 0; }
-
-.template-folder_summary_view #content .tileBody .description {
-    color: #000000;
-    font-size: 1.3em;
-}
-
-.template-folder_summary_view #content .tileFooter a { color: #7A8692; }
-
-.template-folder_summary_view .documentDescription { margin-top: 1em; }
-
 div.listingBar a:link,
 #content div.listingBar a:link,
 dl.portlet div.listingBar a:link {
@@ -2879,9 +2822,11 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
    ========================================================================== */
 
 .template-summary_view #content-core,
+.template-folder_summary_view #content-core,
 .template-facetednavigation_view #content-core { margin-top: 40px; }
 
 .template-summary_view #content h1.documentFirstHeading,
+.template-folder_summary_view #content h1.documentFirstHeading,
 .template-facetednavigation_view #content h1.documentFirstHeading {
     margin: .85em 0 5px;
     padding: 0 0 .70em 0;
@@ -2896,6 +2841,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem,
+.template-folder_summary_view #content .tileItem,
 .template-facetednavigation_view #content .tileItem {
     position: relative;
     clear: both;
@@ -2907,9 +2853,11 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem:first-child,
+.template-folder_summary_view #content .tileItem:first-child,
 .template-facetednavigation_view #content .tileItem:first-child { padding-top: 0; }
 
 .template-summary_view #content .tileContent,
+.template-folder_summary_view #content .tileContent,
 .template-facetednavigation_view #content .tileContent {
     overflow: hidden;
     padding-left: 1.8em;
@@ -2918,15 +2866,18 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileImage,
+.template-folder_summary_view #content .tileImage,
 .template-facetednavigation_view #content .tileImage {
     float: none;
     margin: 0 1em 0.5em 0;
 }
 
 .template-summary_view #content .tileImage img,
+.template-folder_summary_view #content .tileImage img,
 .template-facetednavigation_view #content .tileImage img { float: left; }
 
 .template-summary_view #content .tileItem .subtitle,
+.template-folder_summary_view #content .tileItem .subtitle,
 .template-facetednavigation_view #content .tileItem .subtitle {
     display: block;
     margin: 0 0 .6em;
@@ -2937,6 +2888,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .tileHeadline,
+.template-folder_summary_view #content .tileItem .tileHeadline,
 .template-facetednavigation_view #content .tileItem .tileHeadline {
     margin: 0 0 0.438em;
     padding: 0;
@@ -2947,7 +2899,9 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .tileHeadline a,
+.template-folder_summary_view #content .tileItem .tileHeadline a,
 .template-summary_view #content .tileItem .description,
+.template-folder_summary_view #content .tileItem .description,
 .template-facetednavigation_view #content .tileItem .tileHeadline a,
 .template-facetednavigation_view #content .tileItem .description {
     margin: 0;
@@ -2957,15 +2911,18 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .description,
+.template-folder_summary_view #content .tileItem .description,
 .template-facetednavigation_view #content .tileItem .description { line-height: 1.75em; }
 
 .template-summary_view #content .tileItem p,
+.template-folder_summary_view #content .tileItem p,
 .template-facetednavigation_view #content .tileItem p {
     margin: 0;
     padding: 0;
 }
 
 .template-summary_view #content .tileItem .keywords,
+.template-folder_summary_view #content .tileItem .keywords,
 .template-facetednavigation_view #content .tileItem .keywords {
     margin: 15px 0 0;
     padding: 0;
@@ -2977,6 +2934,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .documentByLine,
+.template-folder_summary_view #content .tileItem .documentByLine,
 .template-facetednavigation_view #content .tileItem .documentByLine {
     margin: 2em 0 0;
     padding: 0;
@@ -2991,9 +2949,11 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem:first-child .documentByLine,
+.template-folder_summary_view #content .tileItem:first-child .documentByLine,
 .template-facetednavigation_view #content .tileItem:first-child .documentByLine { margin-top: 0; }
 
 .template-summary_view #content .documentByLine .summary-view-icon,
+.template-folder_summary_view #content .documentByLine .summary-view-icon,
 .template-facetednavigation_view #content .documentByLine .summary-view-icon {
     display: block;
     margin: 0 0 1em;
@@ -3384,10 +3344,15 @@ body.contraste #logo #portal-logo,
 body.contraste #logo #portal-title,
 body.contraste .cover-collection-tile p,
 body.contraste.template-summary_view #content .tileItem .subtitle,
+body.folder_contraste.template-summary_view #content .tileItem .subtitle,
 body.contraste.template-summary_view #content .tileItem .tileHeadline a,
+body.folder_contraste.template-summary_view #content .tileItem .tileHeadline a,
 body.contraste.template-summary_view #content .tileItem .description,
+body.folder_contraste.template-summary_view #content .tileItem .description,
 body.contraste.template-summary_view #content .tileItem .keywords,
+body.folder_contraste.template-summary_view #content .tileItem .keywords,
 body.contraste.template-summary_view #content .tileItem .documentByLine,
+body.folder_contraste.template-summary_view #content .tileItem .documentByLine,
 body.contraste #content .documentByLine .summary-view-icon,
 body.contraste .videogallery-tile .subtitle,
 body.contraste .outstanding-header .outstanding-link,

@@ -14,39 +14,39 @@
                             <div tal:attributes="class python:'tileItem visualIEFloatFix tile-%s' % normalizeString(item.portal_type);"
                                  tal:define="obj item/getObject">
                                 <div class="tileContent">
-                                  <a href="#"
-                                     tal:condition="obj/image|nothing"
-                                     tal:attributes="href item/getURL">
-                                      <div class="tileImage">
-                                          <img src="" alt=""
-                                               tal:define="scales obj/@@images;
-                                                           scale python:scales.scale('image', 'thumb')"
-                                               tal:replace="structure python:scale and scale.tag(css_class='tileImage') or None" />
-                                      </div>
-                                  </a>
-                                  <span class="subtitle" tal:content="item/subtitle" tal:condition="item/subtitle"></span>
-                                  <h2 class="tileHeadline" metal:define-macro="listitem">
-                                      <a href="#" class="summary url"
-                                         tal:attributes="href python:item_type in use_view_action and item_url+'/view' or item_url;"
-                                         tal:content="item/Title">
-                                          Item Title
-                                      </a>
-                                  </h2>
-                                  <p tal:condition="item/Description">
-                                      <span class="description" tal:content="item/Description">
-                                          description
-                                      </span>
-                                  </p>
-                                  <div class="keywords" tal:define="tags item/Subject"
-                                       tal:condition="tags">
-                                      Tags:
-                                      <span tal:repeat="tag tags">
-                                          <a href=""
-                                             tal:content="tag"
-                                             tal:attributes="href string:${portal_url}/@@busca?Subject:list=${tag}"
-                                             class="link-category" rel="tag">Berlim</a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
-                                      </span>
-                                  </div>
+                                    <a href="#"
+                                       tal:condition="obj/image|nothing"
+                                       tal:attributes="href item/getURL">
+                                        <div class="tileImage">
+                                            <img src="" alt=""
+                                                 tal:define="scales obj/@@images;
+                                                             scale python:scales.scale('image', 'thumb')"
+                                                 tal:replace="structure python:scale and scale.tag(css_class='tileImage') or None" />
+                                        </div>
+                                    </a>
+                                    <span class="subtitle" tal:content="item/subtitle" tal:condition="item/subtitle"></span>
+                                    <h2 class="tileHeadline" metal:define-macro="listitem">
+                                        <a href="#" class="summary url"
+                                           tal:attributes="href python:item_type in use_view_action and item_url+'/view' or item_url;"
+                                           tal:content="item/Title">
+                                            Item Title
+                                        </a>
+                                    </h2>
+                                    <p tal:condition="item/Description">
+                                        <span class="description" tal:content="item/Description">
+                                            description
+                                        </span>
+                                    </p>
+                                    <div class="keywords" tal:define="tags item/Subject"
+                                         tal:condition="tags">
+                                        Tags:
+                                        <span tal:repeat="tag tags">
+                                            <a href=""
+                                               tal:content="tag"
+                                               tal:attributes="href string:${portal_url}/@@busca?Subject:list=${tag}"
+                                               class="link-category" rel="tag">Berlim</a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+                                        </span>
+                                    </div>
                                 </div>
                                 <span class="documentByLine">
                                     <span tal:condition="python: item_type == 'Event' and item_sametime"

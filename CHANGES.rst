@@ -4,6 +4,9 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Visão sumária de pasta deve ser igual a visão sumária de coleções
+  (closes `#118`_).
+  [rodfersou]
 * Correções de contraste (closes `#38`_).
   [rodfersou]
 * Definindo altura minima para visualizar Social Like.
@@ -198,3 +201,4 @@ Changelog
 .. _`#104`: https://github.com/plonegovbr/brasil.gov.portal/issues/104
 .. _`#106`: https://github.com/plonegovbr/brasil.gov.portal/issues/106
 .. _`#111`: https://github.com/plonegovbr/brasil.gov.portal/issues/111
+.. _`#118`: https://github.com/plonegovbr/brasil.gov.portal/issues/118
