@@ -1,9 +1,10 @@
 Changelog
 ---------
 
-1.1 (unreleased)
-^^^^^^^^^^^^^^^^
-
+1.0.1 (unreleased)
+^^^^^^^^^^^^^^^^^^^
+* Adicionamos o Products.PloneHotfix20131210 como dependência do portal.
+  [ericof]
 * Visão sumária de pasta deve ser igual a visão sumária de coleções
   (closes `#118`_).
   [rodfersou]
@@ -13,7 +14,7 @@ Changelog
   [dbarbato]
 * Generalizando regras de tamanho dos botoes do Social Like.
   [dbarbato]
-* Implementaçãop de comportamento dinamico na altura do breadcrumb (closes `#111`_).
+* Implementação de comportamento dinamico na altura do breadcrumb (closes `#111`_).
   [felipeduardo]
 * Correções de tamanhos de títulos nos tiles (closes `#106`_).
   [rodfersou]
