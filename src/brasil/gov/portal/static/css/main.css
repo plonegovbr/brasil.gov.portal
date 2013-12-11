@@ -3567,6 +3567,29 @@ body.contraste #content .pullquote {
     border-bottom: 1px solid #fff;
 }
 
+body.contraste #faceted-form #top-area {
+    border: 1px solid #fff;
+    background-color: #000;
+    border-top: 5px solid #fff;
+}
+
+body.contraste #content #faceted-form #faceted-right-column .faceted-daterange-widget-form input,
+body.contraste #faceted-right-column {
+    border: 1px solid #FFF;
+    background-color: #000;
+    color: #FFF !important;
+}
+
+body.contraste #faceted-right-column .faceted-widget {
+    border-bottom: 1px dotted #fff;
+}
+
+body.contraste #faceted-form #top-area legend,
+body.contraste #content #faceted-form label,
+body.contraste #content #faceted-form #faceted-right-column legend {
+    color: #fff !important;
+}
+
 
 /* ==========================================================================
    Print
