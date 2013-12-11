@@ -3375,7 +3375,7 @@ body.contraste #content .pullquote {
 
 body.contraste #content .gallery-footer a,
 body.contraste #content .gallery-footer a:hover {
-    color: #000 !important;
+    color: #fff !important;
 }
 
 body.contraste .lista-horizontal,
@@ -3467,7 +3467,7 @@ body.contraste .item-central .link-aplicativos {
 
 body.contraste .outstanding-header .outstanding-link,
 body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
-    background: url("++resource++brasil.gov.portal/img/seta_preta.png") no-repeat scroll right 5px transparent;
+    background: url("++resource++brasil.gov.portal/img/seta_branca.png") no-repeat scroll right 5px transparent;
 }
 
 body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
@@ -3500,7 +3500,7 @@ body.contraste .outstanding-header {
 }
 
 body.contraste .videogallery-tile .gallery-footer a {
-    background-image: url("++resource++brasil.gov.portal/img/seta_preta.png");
+    background-image: url("++resource++brasil.gov.portal/img/seta_branca.png");
 }
 
 body.contraste .gallery-element {
@@ -3574,7 +3574,10 @@ body.contraste #faceted-form #top-area {
 }
 
 body.contraste #content #faceted-form #faceted-right-column .faceted-daterange-widget-form input,
-body.contraste #faceted-right-column {
+body.contraste #faceted-form #top-area .searchButton,
+body.contraste #faceted-form #top-area input[type="text"],
+body.contraste #faceted-right-column,
+body.contraste .css-panes .pane {
     border: 1px solid #FFF;
     background-color: #000;
     color: #FFF !important;
