@@ -3375,7 +3375,7 @@ body.contraste #content .pullquote {
 
 body.contraste #content .gallery-footer a,
 body.contraste #content .gallery-footer a:hover {
-    color: #000 !important;
+    color: #fff !important;
 }
 
 body.contraste .lista-horizontal,
@@ -3574,6 +3574,8 @@ body.contraste #faceted-form #top-area {
 }
 
 body.contraste #content #faceted-form #faceted-right-column .faceted-daterange-widget-form input,
+body.contraste #faceted-form #top-area .searchButton,
+body.contraste #faceted-form #top-area input[type="text"],
 body.contraste #faceted-right-column {
     border: 1px solid #FFF;
     background-color: #000;
