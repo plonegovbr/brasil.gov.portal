@@ -3581,8 +3581,9 @@ body.contraste #content #faceted-form #faceted-right-column .faceted-daterange-w
 body.contraste #faceted-form #top-area .searchButton,
 body.contraste #faceted-form #top-area input[type="text"],
 body.contraste #faceted-right-column,
-body.contraste .css-panes .pane {
-    border: 1px solid #FFF;
+body.contraste .css-panes .pane,
+body.contraste #search-results-bar {
+    border: 1px solid #FFF !important;
     background-color: #000;
     color: #FFF !important;
 }
@@ -3593,8 +3594,16 @@ body.contraste #faceted-right-column .faceted-widget {
 
 body.contraste #faceted-form #top-area legend,
 body.contraste #content #faceted-form label,
-body.contraste #content #faceted-form #faceted-right-column legend {
+body.contraste #content #faceted-form #faceted-right-column legend,
+body.contraste.template-facetednavigation_view #content .tileItem .description,
+body.contraste.template-facetednavigation_view #content .tileItem .keywords,
+body.contraste #search-results > dl.searchResults > dd > span.discreet > span,
+body.contraste #search-filter .field label {
     color: #fff !important;
+}
+
+body.contraste .highlightedSearchTerm {
+    background-color: #919191;
 }
 
 
