@@ -9,9 +9,8 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 script: bin/test --layer '!Acceptance'
 after_success:
-  - bin/coverage.sh
-  - pip install -q coveralls
-  - coveralls
+  - test -v QA && bin/buildout -c coverage.cfg -N -q || true
+  - test -v QA && bin/coverage.sh && pip install -q coveralls && coveralls || true
 after_failure:
   - bin/buildout annotate -c travis.cfg
   - firefox -v
