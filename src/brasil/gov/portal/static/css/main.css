@@ -3474,8 +3474,18 @@ body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-foo
     background-position: right 0;
 }
 
+body.contraste #portal-searchbox {
+    border-color: #FFF;
+    background-color: #000;
+}
+
+body.contraste #portal-searchbox .searchField {
+    background-color: #000;
+    color: #FFF !important;
+}
+
 body.contraste #header input.searchButton {
-    background-color: #fff;
+    background-color: #000;
     background-position: 0px 2px;
 }
 
@@ -3502,9 +3512,13 @@ body.contraste .width-15 .gallery-3-columns .player-holder {
     border-right: 1px dotted #fff;
 }
 
+body.contraste .videogallery-tile {
+    border: 1px solid #fff;
+}
+
 body.contraste .videogallery-tile .gallery-footer {
     border-top: 1px dotted #fff;
-    background-color: #fff;
+    background-color: #000;
 }
 
 body.contraste #content .relatar-erros a {
@@ -3551,6 +3565,29 @@ body.contraste .lista-vertical {
 body.contraste #content .pullquote {
     border-top: 4px solid #fff;
     border-bottom: 1px solid #fff;
+}
+
+body.contraste #faceted-form #top-area {
+    border: 1px solid #fff;
+    background-color: #000;
+    border-top: 5px solid #fff;
+}
+
+body.contraste #content #faceted-form #faceted-right-column .faceted-daterange-widget-form input,
+body.contraste #faceted-right-column {
+    border: 1px solid #FFF;
+    background-color: #000;
+    color: #FFF !important;
+}
+
+body.contraste #faceted-right-column .faceted-widget {
+    border-bottom: 1px dotted #fff;
+}
+
+body.contraste #faceted-form #top-area legend,
+body.contraste #content #faceted-form label,
+body.contraste #content #faceted-form #faceted-right-column legend {
+    color: #fff !important;
 }
 
 
