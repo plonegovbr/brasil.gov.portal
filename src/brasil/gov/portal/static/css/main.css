@@ -3474,8 +3474,18 @@ body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-foo
     background-position: right 0;
 }
 
+body.contraste #portal-searchbox {
+    border-color: #FFF;
+    background-color: #000;
+}
+
+body.contraste #portal-searchbox .searchField {
+    background-color: #000;
+    color: #FFF !important;
+}
+
 body.contraste #header input.searchButton {
-    background-color: #fff;
+    background-color: #000;
     background-position: 0px 2px;
 }
 
