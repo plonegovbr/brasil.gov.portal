@@ -2876,6 +2876,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 .template-folder_summary_view #content .tileImage img,
 .template-facetednavigation_view #content .tileImage img { float: left; }
 
+.template-summary_view #content .tileItem .subtitle,
 .template-folder_summary_view #content .tileItem .subtitle,
 .template-facetednavigation_view #content .tileItem .subtitle {
     display: block;
