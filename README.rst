@@ -30,6 +30,10 @@ O estado atual dos testes pode ser visto na imagem a seguir:
 
 .. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.portal.png?branch=master
     :target: http://travis-ci.org/plonegovbr/brasil.gov.portal
+    
+.. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.portal/badge.png?branch=master
+    :alt: Coveralls badge
+    :target: https://coveralls.io/r/plonegovbr/brasil.gov.portal
 
 Instalação
 ----------
