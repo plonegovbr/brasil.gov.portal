@@ -43,6 +43,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'brasil.gov.agenda',
         'brasil.gov.barra',
         'brasil.gov.temas',
         'brasil.gov.tiles',

@@ -5,6 +5,8 @@ Changelog
 ^^^^^^^^^^^^^^^^^^^
 * Adicionamos o Products.PloneHotfix20131210 como dependência do portal.
   [ericof]
+* Adiciona o brasil.gov.agenda ao portal padrão.
+  [ericof]
 * Visão sumária de pasta deve ser igual a visão sumária de coleções
   (closes `#118`_).
   [rodfersou]
