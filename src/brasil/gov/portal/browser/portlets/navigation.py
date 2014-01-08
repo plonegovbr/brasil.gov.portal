@@ -19,7 +19,7 @@ def buildFolderTree(context, obj=None, query={}, strategy=NavtreeStrategyBase())
     """
     tree = buildFolderTreeBase(context, obj, query, strategy)
     # fix tree order
-    if (query['path'].has_key('navtree')):
+    if ('navtree' in query['path']):
         treeChildren = tree.copy()
         queryRoot = query
         del(queryRoot['path']['navtree'])

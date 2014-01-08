@@ -3,8 +3,9 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
-- Nothing changed yet.
+* Correção na ordenação de itens do portlet de navegação, quando mostrados
+  sub-itens. (closes `#125`_).
+  [rodfersou]
 
 
 1.0.1 (2013-12-12)
@@ -211,3 +212,4 @@ Changelog
 .. _`#106`: https://github.com/plonegovbr/brasil.gov.portal/issues/106
 .. _`#111`: https://github.com/plonegovbr/brasil.gov.portal/issues/111
 .. _`#118`: https://github.com/plonegovbr/brasil.gov.portal/issues/118
+.. _`#125`: https://github.com/plonegovbr/brasil.gov.portal/issues/125
