@@ -42,7 +42,7 @@
                                 </button>
                                 <button type="button" class="btn btn-danger delete">
                                     <i class="icon-trash icon-white"></i>
-                                    <span i18n:translate="">Apagar selecionados</span>
+                                    <span i18n:translate="">Excluir selecionados</span>
                                 </button>
                                 <input type="checkbox" class="toggle">
                             </div>

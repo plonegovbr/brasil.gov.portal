@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+from Acquisition import aq_inner
 from collective.upload import browser
 from collective.upload.config import IMAGE_MIMETYPES
+from collective.upload.interfaces import IUploadBrowserLayer
 from five import grok
 from plone.namedfile.file import NamedBlobFile
 from plone.namedfile.file import NamedBlobImage
@@ -12,7 +14,6 @@ from zope.container.interfaces import INameChooser
 from zope.event import notify
 from zope.interface import Interface
 from zope.lifecycleevent import ObjectModifiedEvent
-from collective.upload.interfaces import IUploadBrowserLayer
 
 
 grok.templatedir('templates')
