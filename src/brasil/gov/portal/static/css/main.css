@@ -3279,6 +3279,34 @@ ul.formTabs { padding: 0px !important; }
     #barra-brasil .barra { width: 98% !important; }
 }
 
+/* Upload de imagens (collective.upload)
+   ========================================================================== */
+
+#content tr.template-upload td {
+    vertical-align: middle;
+}
+
+#content tr.template-upload td.name * {
+    float: left;
+    margin: 0 0 0.2em 5%;
+    width: 90%;
+}
+
+#content tr.template-upload td.size {
+    width: 10%;
+    text-align: center;
+}
+
+#content tr.template-upload td .progress {
+    margin-top: 9%;
+    margin-left: 5%;
+    max-width: 90%;
+}
+
+#content tr.template-upload td.cancel .btn {
+    margin-left: 5%;
+}
+
 
 /* ==========================================================================
    Contraste
