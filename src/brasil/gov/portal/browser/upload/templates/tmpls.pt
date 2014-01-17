@@ -5,9 +5,9 @@
                 <tr class="template-upload fade">
                     <td class="preview"><span class="fade"></span></td>
                     <td class="name">
-                        <input placeholder="Título" name="title[]" type="text" value="{%=file.name%}" required="required"/>
-                        <textarea placeholder="Descrição" name="description[]" cols="10" rows="3"></textarea>
-                        <input placeholder="Direitos" name="rights[]" type="text" value="{%=file.rights%}" />
+                        <input placeholder="Título" class="title" name="title[]" type="text" value="{%=file.name%}" required="required"/>
+                        <textarea placeholder="Descrição" class="description" name="description[]" cols="10" rows="3"></textarea>
+                        <input placeholder="Direitos" class="rights" name="rights[]" type="text" value="{%=file.rights%}" />
                     </td>
                     <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
                     {% if (file.error) { %}
@@ -42,7 +42,7 @@
                         <td></td>
                         <td class="name"><span>{%=file.title%}</span></td>
                         <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
-                        <td class="error" colspan="2"><span class="label label-important">{%=o.options.error_i18n%}</span> {%=file.error%}</td>
+                        <td class="error"><span class="label label-important">{%=o.options.error_i18n%}</span> {%=file.error%}</td>
                     {% } else { %}
                         <td class="preview">{% if (file.thumbnail_url) { %}
                             <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
@@ -51,8 +51,9 @@
                             <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
                         </td>
                         <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
-                        <td colspan="2"></td>   
+                        <td class="rights"><span>{%=file.rights%}</span></td>
                     {% } %}
+                    <td class="empty"></td>
                     <td class="delete">
                         <button class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
                             <i class="icon-trash icon-white"></i>
