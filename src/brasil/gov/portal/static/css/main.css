@@ -3283,9 +3283,7 @@ ul.formTabs { padding: 0px !important; }
    ========================================================================== */
 
 #fileupload table, #fileupload table tr { width: 100%; }
-
 #fileupload tr td { vertical-align: middle; }
-
 #fileupload tr td.name { width: 40%; }
 
 #fileupload tr td.name * {
