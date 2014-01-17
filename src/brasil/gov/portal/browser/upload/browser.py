@@ -42,49 +42,53 @@ class Media_Uploader(browser.Media_Uploader):
                 return json_view()
         return super(Media_Uploader, self).__call__(*args, **kwargs)
 
+    def _create_file(self, item, files, title, description, rights):
+        namechooser = INameChooser(self.context)
+        content_type = item.headers.get('Content-Type')
+        filename = safe_unicode(item.filename)
+        data = item.read()
+        id_name = ''
+        title = title and title[0] or filename
+        id_name = namechooser.chooseName(title, self.context)
+
+        if content_type in IMAGE_MIMETYPES:
+            portal_type = 'Image'
+            wrapped_data = NamedBlobImage(data=data, filename=filename)
+        else:
+            portal_type = 'File'
+            wrapped_data = NamedBlobFile(data=data, filename=filename)
+
+        self.context.invokeFactory(portal_type,
+                                   id=id_name,
+                                   title=title,
+                                   description=description[0],
+                                   rights=rights[0])
+        newfile = self.context[id_name]
+        if portal_type == 'File':
+            if IATFile.providedBy(newfile):
+                newfile.setFile(data, filename=filename)
+            else:
+                newfile.file = wrapped_data
+        elif portal_type == 'Image':
+            if IATImage.providedBy(newfile):
+                newfile.setImage(data, filename=filename)
+            else:
+                newfile.image = wrapped_data
+        newfile.reindexObject()
+        notify(ObjectModifiedEvent(newfile))
+        return newfile
+
     def upload(self, files, title='', description='', rights=''):
         loaded = []
-        namechooser = INameChooser(self.context)
         if not isinstance(files, list):
             files = [files]
         for item in files:
             if item.filename:
-                content_type = item.headers.get('Content-Type')
-                filename = safe_unicode(item.filename)
-                data = item.read()
-                id_name = ''
-                title = title and title[0] or filename
-                id_name = namechooser.chooseName(title, self.context)
-
-                if content_type in IMAGE_MIMETYPES:
-                    portal_type = 'Image'
-                    wrapped_data = NamedBlobImage(data=data, filename=filename)
-                else:
-                    portal_type = 'File'
-                    wrapped_data = NamedBlobFile(data=data, filename=filename)
-
-                self.context.invokeFactory(portal_type,
-                                           id=id_name,
-                                           title=title,
-                                           description=description[0],
-                                           rights=rights[0])
-                newfile = self.context[id_name]
-                if portal_type == 'File':
-                    if IATFile.providedBy(newfile):
-                        newfile.setFile(data, filename=filename)
-                    else:
-                        newfile.file = wrapped_data
-                elif portal_type == 'Image':
-                    if IATImage.providedBy(newfile):
-                        newfile.setImage(data, filename=filename)
-                    else:
-                        newfile.image = wrapped_data
-                newfile.reindexObject()
-                notify(ObjectModifiedEvent(newfile))
+                newfile = self._create_file(item, files, title, description, rights)
                 loaded.append(newfile)
-            if loaded:
-                return loaded
-            return False
+        if loaded:
+            return loaded
+        return False
 
 
 class JSON_View(browser.JSON_View):

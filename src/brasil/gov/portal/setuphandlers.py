@@ -9,7 +9,6 @@ from collective.transmogrifier.transmogrifier import Transmogrifier
 def setupPortalContent(p):
     ''' Cria conteudo de exemplo para este portal
     '''
-    language = 'pt_BR'
     # Importa conteudo
     transmogrify = Transmogrifier(p)
     transmogrify("brasil.gov.portal.conteudo")
@@ -135,7 +134,7 @@ def publish_content(wftool, folder, obj_ids):
     for oId in obj_ids:
         o = folder[oId]
         review_state = wftool.getInfoFor(o, 'review_state', None)
-        if  review_state and (review_state != 'published'):
+        if review_state and (review_state != 'published'):
             wftool.doActionFor(o, 'publish')
             oIds = o.objectIds()
             if oIds:

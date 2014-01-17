@@ -55,6 +55,7 @@ setup(
         'collective.upload',
         'five.pt',
         'Pillow',
+        'plone.api',
         'plone.app.contenttypes',
         'plone.app.transmogrifier',
         'plone.app.upgrade',
