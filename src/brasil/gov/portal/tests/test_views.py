@@ -84,3 +84,13 @@ class MediaUploaderViewTestCase(BaseViewTestCase):
         self.assertEqual(uploaded.Title(), u'test_title')
         self.assertEqual(uploaded.Description(), u'test_description')
         self.assertEqual(uploaded.Rights(), u'test_rights')
+
+
+class SearchTestCase(BaseViewTestCase):
+
+    def setUp(self):
+        super(SearchTestCase, self).setUp()
+        self.view = api.content.get_view(u'busca', self.portal, self.request)
+
+    def test_type_name(self):
+        self.assertEqual(self.view.type_name('Folder'), 'Pasta/Álbum')
