@@ -64,6 +64,7 @@ def sharing():
             updateSharingInfo)
     logger.info('Patched sharing tab')
 
+
 def run():
     outputfilters()
     link()
