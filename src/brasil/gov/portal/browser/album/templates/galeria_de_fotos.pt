@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="pt_BR"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+    <head>
+        <metal:javascript_head fill-slot="javascript_head_slot">
+            <script type="text/javascript" src="++resource++brasil.gov.portal/js/jquery.cycle2.min.js"></script>
+            <script type="text/javascript" src="++resource++brasil.gov.portal/js/jquery.cycle2.carousel.min.js"></script>
+        </metal:javascript_head>
+    </head>
+    <body>
+        <div metal:fill-slot="main">
+            <h1 class="documentFirstHeading">${context/title}</h1>
+            <p class="descriptionAlbum">${context/description}</p>
+            <div class="galeria_container">
+                <div id="slideshow-1">
+                    <div id="cycle-1" class="cycle-slideshow"
+                         data-cycle-slides="> div"
+                         data-cycle-timeout="0"
+                         data-allow-wrap="false"
+                         data-cycle-fx="fade">
+                        <div tal:repeat="image view/items">
+                            <tal:image define="scale python:view.scale(image['obj']);"
+                                       condition="scale">
+                                <img src="${scale/url}" alt="${image/obj/Title}">
+                            </tal:image>
+                            <div class="cycle-overlay">
+                                ${image/obj/Description}
+                                <span class="rights">${image/obj/Rights}</span>
+                            </div>
+                        </div>
+                    </div><!-- cycle-1 -->
+                </div><!-- slideshow-1 -->
+                <div id="slideshow-2">
+                    <div id="cycle-2" class="cycle-slideshow"
+                         data-cycle-slides="> div"
+                         data-cycle-timeout="0"
+                         data-cycle-fx="carousel"
+                         data-cycle-carousel-fluid="true"
+                         data-cycle-prev="#slideshow-2 .cycle-prev"
+                         data-cycle-next="#slideshow-2 .cycle-next"
+                         data-allow-wrap="false">
+                        <div class="thumb-itens" tal:repeat="image view/items">
+                            <tal:image define="thumbnail python:view.thumbnail(image['obj']);"
+                                       condition="thumbnail">
+                                <img src="${thumbnail/url}" alt="${image/obj/Title}">
+                            </tal:image>
+                        </div>
+                    </div><!-- cycle-2 -->
+                    <div class="cycle-nagivation">
+                        <a href="#" class="cycle-prev">&laquo; Anterior</a>
+                        <a href="#" class="cycle-next">Próximo &raquo;</a>
+                    </div>
+                </div><!-- slideshow-2 -->
+                <div id="slideshow-3">
+                    <div id="cycle-3" class="cycle-slideshow"
+                         data-cycle-slides="> div"
+                         data-cycle-timeout="0"
+                         data-cycle-fx="fade">
+                        <div tal:repeat="image view/items">
+                            <a href="${image/obj/absolute_url}/download"
+                               class="download">
+                                <span>Baixar imagem</span>
+                                <span class="size">${image/size}</span>
+                            </a>
+                        </div>
+                    </div><!-- cycle-3 -->
+                </div><!-- slideshow-3 -->
+            </div><!-- galeria_container -->
+        </div>
+    </body>
+</html>

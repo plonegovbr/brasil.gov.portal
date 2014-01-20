@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+  <object name="imaging_properties" meta_type="Plone Property Sheet">
+    <property name="allowed_sizes" type="lines" purge="False">
+      <element value="galeria_de_album_thumb 238:133"/>
+      <element value="galeria_de_foto_view 748:513"/>
+      <element value="galeria_de_foto_thumb 87:49"/>
+    </property>
+  </object>
+</object>
