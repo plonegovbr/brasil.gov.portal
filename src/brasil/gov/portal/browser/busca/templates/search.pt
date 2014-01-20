@@ -161,7 +161,7 @@
                                               <label for=""
                                                      i18n:translate=""
                                                      tal:attributes="for string:portal_type_${repeat/sublist/number}_${repeat/type/number}"
-                                                     tal:content="python: portal_types.getTypeInfo(type).Title()"
+                                                     tal:content="python: view.type_name(type)"
                                                      />
                                               <br />
                                           </tal:items>

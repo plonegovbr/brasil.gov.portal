@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from plone.app.search.browser import Search as PloneSearch
 from Acquisition import aq_base, aq_inner
-from zope.component import queryUtility
+from plone.app.search.browser import Search as PloneSearch
+from plone.contentrules import PloneMessageFactory as _
+from plone.memoize import forever
+from Products.CMFCore.utils import getToolByName
 from urllib import urlencode
+from zope.component import queryUtility
 from zope.schema.interfaces import IVocabularyFactory
 
 
@@ -33,6 +36,14 @@ class Search(PloneSearch):
                          'url': '%s/@@busca?%s' % (self.nav_root_url,
                                                    params)})
         return skos
+
+    @forever.memoize
+    def type_name(self, item):
+        portal_types = getToolByName(self.context, "portal_types")
+        name = portal_types.getTypeInfo(item).Title()
+        if (name == 'Folder'):
+            return 'Pasta/Álbum'
+        return _(name)
 
     def rel(self):
         '''Formata rel a ser utilizado no href de cada termo
