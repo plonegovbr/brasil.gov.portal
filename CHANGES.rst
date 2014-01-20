@@ -3,6 +3,9 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Correção na ordenação de itens do portlet de navegação, quando mostrados
+  sub-itens. (closes `#125`_).
+  [rodfersou]
 * Adicionado campo de direito no upload múltiplo de imagens. (closes `#128`_).
   [rodfersou]
 
@@ -211,4 +214,5 @@ Changelog
 .. _`#106`: https://github.com/plonegovbr/brasil.gov.portal/issues/106
 .. _`#111`: https://github.com/plonegovbr/brasil.gov.portal/issues/111
 .. _`#118`: https://github.com/plonegovbr/brasil.gov.portal/issues/118
+.. _`#125`: https://github.com/plonegovbr/brasil.gov.portal/issues/125
 .. _`#128`: https://github.com/plonegovbr/brasil.gov.portal/issues/128
