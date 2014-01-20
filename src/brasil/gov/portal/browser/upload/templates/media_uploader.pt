@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="collective.upload"
+    metal:use-macro="context/main_template/macros/master"
+    tal:define="portal_state context/@@plone_portal_state;
+                portal_url portal_state/portal_url;">
+    <head>
+        <meta content="text/html; charset=utf-8" />
+        <title>jQuery File Upload Example</title>
+    </head>
+    <body tal:define="errors options/state/getErrors">
+        <metal:main fill-slot="main">
+        <tal:protect
+            tal:condition="python: not checkPermission('List folder contents', here)"
+            tal:replace="here/raiseUnauthorized" />
+            <metal:main_macro define-macro="main">
+            <metal:uploader define-macro="file_uploader">
+            <tal:protect
+                tal:condition="python: checkPermission('List folder contents', here)">
+            <div>
+                <form id="fileupload" action="." tal:attributes="action string:${context/absolute_url}/media_uploader" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="fileupload-buttonbar">
+                            <div class="controls">
+                                <!-- The fileinput-button span is used to style the file input field as button -->
+                                <span class="btn btn-success fileinput-button">
+                                    <i class="icon-plus icon-white"></i>
+                                    <span i18n:translate="">Adicionar arquivos&hellip;</span>
+                                    <input type="file" name="files[]" multiple>
+                                </span>
+                                <button type="submit" class="btn btn-primary start">
+                                    <i class="icon-upload icon-white"></i>
+                                    <span i18n:translate="">Iniciar upload</span>
+                                </button>
+                                <button type="reset" class="btn btn-warning cancel">
+                                    <i class="icon-ban-circle icon-white"></i>
+                                    <span i18n:translate="">Cancelar upload</span>
+                                </button>
+                                <button type="button" class="btn btn-danger delete">
+                                    <i class="icon-trash icon-white"></i>
+                                    <span i18n:translate="">Excluir selecionados</span>
+                                </button>
+                                <input type="checkbox" class="toggle">
+                            </div>
+                        </div>
+                        <!-- The global progress information -->
+                        <div class="fileupload-progress">
+                            <!-- The global progress bar -->
+                            <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                <div class="bar" style="width:0%;"></div>
+                            </div>
+                            <!-- The extended global progress information -->
+                            <div class="progress-extended">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell position-0 width-full">
+                            <table class="zebra-striped results">
+                                <tbody class="files">
+                                    <tr>
+                                        <td colspan="6"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </tal:protect>
+            </metal:uploader>
+            </metal:main_macro>
+        </metal:main>
+    </body>
+</html>

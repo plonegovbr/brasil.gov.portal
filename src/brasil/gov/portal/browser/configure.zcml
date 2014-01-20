@@ -27,6 +27,9 @@
   <!-- Sitemap -->
   <include package='.sitemap' />
 
+  <!-- Collective.Upload -->
+  <include package='.upload' />
+
   <!-- Viewlets -->
   <include package='.viewlets' />
 
