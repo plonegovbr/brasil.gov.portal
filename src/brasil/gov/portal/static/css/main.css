@@ -3085,46 +3085,6 @@ body[class*="galeria_de_fotos"] #content .descriptionAlbum {
     font-size: 1em;
 }
 
-/* Botão de fazer download do .zip */
-body[class*="galeria_de_fotos"] #content .download.album {
-    margin: 2.650em 0 0 2em;
-    padding-left: 4em;
-    background-position: 10px 0;
-    border-left: 1px solid #d5d5d5;
-}
-
-body[class*="galeria_de_albuns"] #content .download.album { margin: 1.8em 0 3.5em; }
-
-body[class*="galeria_de_albuns"] #content .download {
-    bottom: 0;
-}
-
-body[class*="galeria_de_albuns"] #content .download,
-body[class*="galeria_de_fotos"] #content .download {
-    float: left;
-    padding-left: 3em;
-    min-height: 26px;
-    background: url("++resource++secom.planalto.portal/img/download-icon.png") no-repeat;
-    color: #2c66ce;
-    text-transform: uppercase;
-    font-size: 0.917em;
-}
-
-body[class*="galeria_de_albuns"] #content .download span,
-body[class*="galeria_de_fotos"] #content .download span {
-    display: block;
-    margin-top: -2px;
-    font-weight: normal;
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
-    line-height: 1.273em;
-}
-
-body[class*="galeria_de_albuns"] #content .download .size,
-body[class*="galeria_de_fotos"] #content .download .size {
-    margin-top: 0;
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-}
-
 @media screen and (max-width: 960px) {
     body[class*="galeria_de_albuns"] #content #gallery_albums {
         width: 100%
@@ -3218,7 +3178,7 @@ body[class*="galeria_de_fotos"] #content .download .size {
     width: 22px;
     height: 21px;
     border-radius: 3px;
-    background-image: url("++resource++secom.planalto.portal/img/icone-navegacao-cinza.png");
+    background-image: url("++resource++brasil.gov.portal/img/icone-navegacao-cinza.png");
     background-repeat: no-repeat;
     text-indent: 100%;
     white-space: nowrap;

@@ -55,20 +55,6 @@
                         <a href="#" class="cycle-next">Próximo &raquo;</a>
                     </div>
                 </div><!-- slideshow-2 -->
-                <div id="slideshow-3">
-                    <div id="cycle-3" class="cycle-slideshow"
-                         data-cycle-slides="> div"
-                         data-cycle-timeout="0"
-                         data-cycle-fx="fade">
-                        <div tal:repeat="image view/items">
-                            <a href="${image/obj/absolute_url}/download"
-                               class="download">
-                                <span>Baixar imagem</span>
-                                <span class="size">${image/size}</span>
-                            </a>
-                        </div>
-                    </div><!-- cycle-3 -->
-                </div><!-- slideshow-3 -->
             </div><!-- galeria_container -->
         </div>
     </body>
