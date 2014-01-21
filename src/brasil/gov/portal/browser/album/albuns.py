@@ -28,7 +28,7 @@ class Pagination(object):
         self.items_by_page = 9
         self.items_by_line = 3
         self.pages_visible = 7
-        self._calc_page_items(int(self.params.get('pagina', 0)))
+        self._calc_page_items(int(self.params.get('pagina', 1)))
         # initialize some variables
 
         self._set_album_attributes()
@@ -245,7 +245,7 @@ class Galeria_De_Albuns(grok.View):
                 scales = image.restrictedTraverse('@@images')
                 thumb = scales.scale('image', 'galeria_de_album_thumb')
                 return {
-                    'src': thumb.url,
+                    'src': thumb.url if thumb else image.absolute_url(),
                     'alt': image.Description(),
                 }
 

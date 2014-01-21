@@ -3,6 +3,7 @@
 from brasil.gov.portal.browser.album.albuns import Pagination
 from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from DateTime import DateTime
 from plone import api
 from plonetheme.sunburst.browser.interfaces import IThemeSpecific
 from zope.interface import alsoProvides
@@ -108,16 +109,19 @@ class PaginationTestCase(BaseViewTestCase):
                                 'Folder')
         pagination._calc_page_items(current_page)
         pagination._calc_total_items(total_items)
+
         return pagination
 
     def test_pagination(self):
         pagination = self._get_pagination()
+
         self.assertEqual(pagination.items_by_page, 9)
         self.assertEqual(pagination.items_by_line, 3)
         self.assertEqual(pagination.pages_visible, 7)
 
     def test_pagination_noitems(self):
         pagination = self._get_pagination()
+
         self.assertEqual(pagination.current_page, 1)
         self.assertEqual(pagination.first_item, 0)
         self.assertEqual(pagination.last_item, 9)
@@ -127,6 +131,7 @@ class PaginationTestCase(BaseViewTestCase):
 
     def test_pagination_manyitems_begin(self):
         pagination = self._get_pagination(100)
+
         self.assertEqual(pagination.current_page, 1)
         self.assertEqual(pagination.first_item, 0)
         self.assertEqual(pagination.last_item, 9)
@@ -136,6 +141,7 @@ class PaginationTestCase(BaseViewTestCase):
 
     def test_pagination_manyitems_middle(self):
         pagination = self._get_pagination(100, 5)
+
         self.assertEqual(pagination.current_page, 5)
         self.assertEqual(pagination.first_item, 36)
         self.assertEqual(pagination.last_item, 45)
@@ -145,12 +151,78 @@ class PaginationTestCase(BaseViewTestCase):
 
     def test_pagination_manyitems_end(self):
         pagination = self._get_pagination(100, 11)
+
         self.assertEqual(pagination.current_page, 11)
         self.assertEqual(pagination.first_item, 90)
         self.assertEqual(pagination.last_item, 99)
         self.assertEqual(pagination.total_items, 100)
         self.assertEqual(pagination.total_pages, 11)
         self.assertEqual(pagination.get_pagination(), PAGINATION_END)
+
+
+class GaleriaDeAlbunsTestCase(BaseViewTestCase):
+
+    def setUp(self):
+        super(GaleriaDeAlbunsTestCase, self).setUp()
+        alsoProvides(self.request, IThemeSpecific)
+        self.view = api.content.get_view(u'galeria_de_albuns',
+                                         self.folder,
+                                         self.request)
+
+    def test_album_total_images(self):
+        with api.env.adopt_roles(['Manager']):
+            gal_fotos = api.content.create(self.folder, 'Folder', 'gal_fotos')
+            self.assertEqual(self.view.album_total_images(gal_fotos), 0)
+
+            api.content.create(gal_fotos, 'Image', 'imagem')
+            self.assertEqual(self.view.album_total_images(gal_fotos), 1)
+
+            for i in xrange(3):
+                api.content.create(gal_fotos, 'Image', 'imagem{0}'.format(i))
+            self.assertEqual(self.view.album_total_images(gal_fotos), 4)
+
+    def test_album_date(self):
+        self.folder.setEffectiveDate(DateTime(2014, 1, 1, 0, 0))
+        self.assertEqual(self.view.album_date(self.folder), u'Jan 01, 2014')
+
+        self.folder.setEffectiveDate(DateTime(2013, 1, 31, 15, 38))
+        self.assertEqual(self.view.album_date(self.folder), u'Jan 31, 2013')
+
+        self.folder.setEffectiveDate(DateTime(2014, 1, 21, 15, 38))
+        self.assertEqual(self.view.album_date(self.folder), u'Jan 21, 2014')
+
+    def test_album_thumbnail(self):
+        with api.env.adopt_roles(['Manager']):
+            gal_fotos = api.content.create(self.folder, 'Folder', 'gal_fotos')
+            image = api.content.create(gal_fotos, 'Image', 'imagem')
+            image.setDescription('test_description')
+
+        thumb_test = {
+            'src': 'http://nohost/plone/folder/gal_fotos/imagem',
+            'alt': 'test_description'
+        }
+
+        self.assertEqual(self.view.thumbnail(gal_fotos), thumb_test)
+
+
+class GaleriaDeFotosTestCase(BaseViewTestCase):
+
+    def setUp(self):
+        super(GaleriaDeFotosTestCase, self).setUp()
+        alsoProvides(self.request, IThemeSpecific)
+        self.view = api.content.get_view(u'galeria_de_fotos',
+                                         self.folder,
+                                         self.request)
+
+    def test_view_items(self):
+        with api.env.adopt_roles(['Manager']):
+            image = api.content.create(self.folder, 'Image', 'imagem')
+        self.view.update()
+
+        self.assertEqual(len(self.view.items), 1)
+        self.assertEqual(self.view.items[0]['obj'], image)
+        import Missing
+        self.assertEqual(self.view.items[0]['size'], Missing.Value)
 
 
 PAGINATION_BEGIN = [
