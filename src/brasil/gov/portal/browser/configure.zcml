@@ -9,6 +9,9 @@
       name="plonegovbr.png"
       />
 
+  <!-- Album -->
+  <include package='.album' />
+
   <!-- Busca -->
   <include package='.busca' />
 

@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="pt_BR"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+    <body>
+        <div metal:fill-slot="main">
+            <h1 class="documentFirstHeading">
+                ${context/title}
+            </h1>
+            <ul id="gallery_albums">
+                <tal:items repeat="album view/items">
+                    <tal:loop tal:define="idx repeat/album/index">
+                        <tal:image define="thumbnail python:view.thumbnail(album);"
+                                   condition="thumbnail">
+                            <li>
+                                <a href="${album/absolute_url}" class="thumb">
+                                    <img src="${thumbnail/src}" alt="${thumbnail/alt}" />
+                                </a>
+                                <a href="${album/absolute_url}" class="title">
+                                    ${album/Title}
+                                </a>
+                                <a href="${album/absolute_url}" class="descr">
+                                    ${album/Description}
+                                </a>
+                                <span class="day">${python:view.album_date(album)}</span>
+                                <span class="amount">${python:view.album_total_images(album)} fotos</span>
+                                <span class="separator"></span>
+                            </li>
+                        </tal:image>
+                    </tal:loop>
+                </tal:items>
+            </ul>
+            <ul class="paginacao listingBar">
+                <li tal:repeat="page view/get_pagination">
+                    <a href="${page/href}"
+                       class="${page/class}"
+                       tal:condition="page/link">
+                        <tal:prev condition="page/is_prev">
+                            &laquo;
+                        </tal:prev>
+                        ${page/content}
+                        <tal:next condition="page/is_next">
+                            &raquo;
+                        </tal:next>
+                    </a>
+                    <span class="${page/class}"
+                          tal:condition="not:page/link">
+                        ${page/content}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
