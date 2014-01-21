@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from five import grok
 from plone.app.contenttypes.interfaces import IFolder
+from plone.contentrules import PloneMessageFactory as _
 from Products.CMFPlone.utils import getToolByName
 from zope.component import getMultiAdapter
-from plone.contentrules import PloneMessageFactory as _
 
 
 grok.templatedir('templates')
@@ -28,19 +28,21 @@ class Pagination(object):
         self.items_by_page = 9
         self.items_by_line = 3
         self.pages_visible = 7
-        self.current_page = 1
-        self.first_item = 0
-
-        if 'pagina' in self.params:
-            self.current_page = int(self.params['pagina'])
-            self.first_item += (self.current_page - 1) * self.items_by_page
-
-        self.last_item = self.first_item + self.items_by_page
+        self._calc_page_items(int(self.params.get('pagina', 0)))
         # initialize some variables
 
         self._set_album_attributes()
         self.brains = self._get_brains()
         self.items = self._get_items()
+
+    def _calc_page_items(self, current_page):
+        self.current_page = current_page
+        self.first_item = (self.current_page - 1) * self.items_by_page
+        self.last_item = self.first_item + self.items_by_page
+
+    def _calc_total_items(self, total_items):
+        self.total_items = total_items
+        self.total_pages = (self.total_items / self.items_by_page)
 
     def _set_album_attributes(self):
         catalog = getToolByName(self.context, 'portal_catalog')
@@ -91,8 +93,7 @@ class Pagination(object):
         # Retiro as pastas que não são albuns
 
         # initialize some variables
-        self.total_items = len(albuns)
-        self.total_pages = (self.total_items / self.items_by_page)
+        self._calc_total_items(len(albuns))
         # initialize some variables
 
         return albuns

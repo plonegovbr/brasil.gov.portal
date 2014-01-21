@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
+from brasil.gov.portal.browser.album.albuns import Pagination
 from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plonetheme.sunburst.browser.interfaces import IThemeSpecific
 from zope.interface import alsoProvides
 from zope.interface import directlyProvides
-from ZPublisher.tests.testHTTPRequest import TEST_FILE_DATA
 from ZPublisher.tests.testHTTPRequest import TEST_ENVIRON
+from ZPublisher.tests.testHTTPRequest import TEST_FILE_DATA
 
 import unittest
 
@@ -94,3 +95,310 @@ class SearchTestCase(BaseViewTestCase):
 
     def test_type_name(self):
         self.assertEqual(self.view.type_name('Folder'), 'Pasta/Álbum')
+
+
+class PaginationTestCase(BaseViewTestCase):
+
+    def setUp(self):
+        super(PaginationTestCase, self).setUp()
+
+    def _get_pagination(self, total_items=0, current_page=1):
+        pagination = Pagination(self.folder,
+                                self.request,
+                                'Folder')
+        pagination._calc_page_items(current_page)
+        pagination._calc_total_items(total_items)
+        return pagination
+
+    def test_pagination(self):
+        pagination = self._get_pagination()
+        self.assertEqual(pagination.items_by_page, 9)
+        self.assertEqual(pagination.items_by_line, 3)
+        self.assertEqual(pagination.pages_visible, 7)
+
+    def test_pagination_noitems(self):
+        pagination = self._get_pagination()
+        self.assertEqual(pagination.current_page, 1)
+        self.assertEqual(pagination.first_item, 0)
+        self.assertEqual(pagination.last_item, 9)
+        self.assertEqual(pagination.total_items, 0)
+        self.assertEqual(pagination.total_pages, 0)
+        self.assertEqual(pagination.get_pagination(), [])
+
+    def test_pagination_manyitems_begin(self):
+        pagination = self._get_pagination(100)
+        self.assertEqual(pagination.current_page, 1)
+        self.assertEqual(pagination.first_item, 0)
+        self.assertEqual(pagination.last_item, 9)
+        self.assertEqual(pagination.total_items, 100)
+        self.assertEqual(pagination.total_pages, 11)
+        self.assertEqual(pagination.get_pagination(), PAGINATION_BEGIN)
+
+    def test_pagination_manyitems_middle(self):
+        pagination = self._get_pagination(100, 5)
+        self.assertEqual(pagination.current_page, 5)
+        self.assertEqual(pagination.first_item, 36)
+        self.assertEqual(pagination.last_item, 45)
+        self.assertEqual(pagination.total_items, 100)
+        self.assertEqual(pagination.total_pages, 11)
+        self.assertEqual(pagination.get_pagination(), PAGINATION_MIDDLE)
+
+    def test_pagination_manyitems_end(self):
+        pagination = self._get_pagination(100, 11)
+        self.assertEqual(pagination.current_page, 11)
+        self.assertEqual(pagination.first_item, 90)
+        self.assertEqual(pagination.last_item, 99)
+        self.assertEqual(pagination.total_items, 100)
+        self.assertEqual(pagination.total_pages, 11)
+        self.assertEqual(pagination.get_pagination(), PAGINATION_END)
+
+
+PAGINATION_BEGIN = [
+    {
+        'class': 'atual',
+        'content': '1',
+        'href': '?pagina=1',
+        'is_next': False,
+        'is_prev': False,
+        'link': False
+    },
+    {
+        'class': 'pagina',
+        'content': '2',
+        'href': '?pagina=2',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '3',
+        'href': '?pagina=3',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '4',
+        'href': '?pagina=4',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '5',
+        'href': '?pagina=5',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '6',
+        'href': '?pagina=6',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '7',
+        'href': '?pagina=7',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'reticencias',
+        'content': '...',
+        'href': '',
+        'is_next': False,
+        'is_prev': False,
+        'link': False
+    },
+    {
+        'class': 'pagina',
+        'content': '11',
+        'href': '?pagina=11',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'proximo',
+        'content': u'label_next',
+        'href': '?pagina=2',
+        'is_next': True,
+        'is_prev': False,
+        'link': True
+    }
+]
+
+PAGINATION_MIDDLE = [
+    {
+        'class': 'anterior',
+        'content': u'label_previous',
+        'href': '?pagina=4',
+        'is_next': False,
+        'is_prev': True,
+        'link': True},
+    {
+        'class': 'pagina',
+        'content': '1',
+        'href': '?pagina=1',
+        'is_next': False,
+        'is_prev': False,
+        'link': True},
+    {
+        'class': 'pagina',
+        'content': '2',
+        'href': '?pagina=2',
+        'is_next': False,
+        'is_prev': False,
+        'link': True},
+    {
+        'class': 'pagina',
+        'content': '3',
+        'href': '?pagina=3',
+        'is_next': False,
+        'is_prev': False,
+        'link': True},
+    {
+        'class': 'pagina',
+        'content': '4',
+        'href': '?pagina=4',
+        'is_next': False,
+        'is_prev': False,
+        'link': True},
+    {
+        'class': 'atual',
+        'content': '5',
+        'href': '?pagina=5',
+        'is_next': False,
+        'is_prev': False,
+        'link': False},
+    {
+        'class': 'pagina',
+        'content': '6',
+        'href': '?pagina=6',
+        'is_next': False,
+        'is_prev': False,
+        'link': True},
+    {
+        'class': 'pagina',
+        'content': '7',
+        'href': '?pagina=7',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'reticencias',
+        'content': '...',
+        'href': '',
+        'is_next': False,
+        'is_prev': False,
+        'link': False
+    },
+    {
+        'class': 'pagina',
+        'content': '11',
+        'href': '?pagina=11',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'proximo',
+        'content': u'label_next',
+        'href': '?pagina=6',
+        'is_next': True,
+        'is_prev': False,
+        'link': True
+    }
+]
+
+PAGINATION_END = [
+    {
+        'class': 'anterior',
+        'content': u'label_previous',
+        'href': '?pagina=10',
+        'is_next': False,
+        'is_prev': True,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '1',
+        'href': '?pagina=1',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'reticencias',
+        'content': '...',
+        'href': '',
+        'is_next': False,
+        'is_prev': False,
+        'link': False
+    },
+    {
+        'class': 'pagina',
+        'content': '5',
+        'href': '?pagina=5',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '6',
+        'href': '?pagina=6',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '7',
+        'href': '?pagina=7',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '8',
+        'href': '?pagina=8',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '9',
+        'href': '?pagina=9',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'pagina',
+        'content': '10',
+        'href': '?pagina=10',
+        'is_next': False,
+        'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'atual',
+        'content': '11',
+        'href': '?pagina=11',
+        'is_next': False,
+        'is_prev': False,
+        'link': False
+    }
+]
