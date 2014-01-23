@@ -2981,6 +2981,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 #content .summary-view-icon .icon-hour { background-position: -273px -393px; }
 #content .summary-view-icon .icon-file { background-position: -303px -393px; width: 15px; }
 #content .summary-view-icon .icon-noticia,
+#content .summary-view-icon .icon-news,
 #content .summary-view-icon .icon-page { background-position: -94px -391px; }
 #content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
 
