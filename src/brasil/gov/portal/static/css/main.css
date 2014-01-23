@@ -2963,6 +2963,26 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
     line-height: 1.2em;
 }
 
+/* Icones */
+#content .summary-view-icon [class*="icon"] {
+    display: inline-block;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+}
+
+#content .summary-view-icon .icon-audio { background-position: -3px -391px; }
+#content .summary-view-icon .icon-day,
+#content .summary-view-icon .icon-agenda { background-position: -244px -392px; width: 13px; }
+#content .summary-view-icon .icon-image { background-position: -123px -391px; }
+#content .summary-view-icon .icon-hour { background-position: -273px -393px; }
+#content .summary-view-icon .icon-file { background-position: -303px -393px; width: 15px; }
+#content .summary-view-icon .icon-noticia,
+#content .summary-view-icon .icon-page { background-position: -94px -391px; }
+#content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
 
 /* ==========================================================================
    Galeria de álbuns
