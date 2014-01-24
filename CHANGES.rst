@@ -3,6 +3,8 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Inclui produto de compartilhamento automatizado no Twitter. (closes `#134`_).
+  [dbarbato]
 * Adicionada visualização de albuns para site padrão. (closes `#130`_).
   [rodfersou]
 * Adicionado campo de direito no upload múltiplo de imagens. (closes `#128`_).
@@ -215,3 +217,4 @@ Changelog
 .. _`#118`: https://github.com/plonegovbr/brasil.gov.portal/issues/118
 .. _`#128`: https://github.com/plonegovbr/brasil.gov.portal/issues/128
 .. _`#130`: https://github.com/plonegovbr/brasil.gov.portal/issues/130
+.. _`#134`: https://github.com/plonegovbr/brasil.gov.portal/issues/134
