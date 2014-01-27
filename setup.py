@@ -52,7 +52,6 @@ setup(
         'collective.jsonmigrator',
         'collective.nitf',
         'collective.polls',
-        'collective.twitter.tweet',
         'collective.upload',
         'five.pt',
         'Pillow',
