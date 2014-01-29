@@ -3,6 +3,8 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Remove não ordenação de pastas do conteúdo inicial (closes `#136`_).
+  [dbarbato]
 * CSS dos icones de summary view movidos para brasil.gov.tema (closes `#132`_).
   [felipeduardo]
 * Adicionada visualização de albuns para site padrão. (closes `#130`_).
@@ -218,3 +220,4 @@ Changelog
 .. _`#128`: https://github.com/plonegovbr/brasil.gov.portal/issues/128
 .. _`#130`: https://github.com/plonegovbr/brasil.gov.portal/issues/130
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.portal/issues/132
+.. _`#136`: https://github.com/plonegovbr/brasil.gov.portal/issues/136
