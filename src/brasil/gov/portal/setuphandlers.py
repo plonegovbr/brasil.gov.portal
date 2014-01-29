@@ -65,13 +65,11 @@ def configura_destaques(portal):
 
 def configura_assuntos(portal):
     folder = portal.assuntos
-    folder.setOrdering('unordered')
     folder.setLayout('folder_summary_view')
 
 
 def configura_imagens(portal):
     folder = portal.imagens
-    folder.setOrdering('unordered')
     behavior = ISelectableConstrainTypes(folder)
     behavior.setConstrainTypesMode(constrains.ENABLED)
     # Permitimos apenas imagens
@@ -81,7 +79,6 @@ def configura_imagens(portal):
 
 def configura_sobre(portal):
     folder = portal.sobre
-    folder.setOrdering('unordered')
     folder.setLayout('folder_summary_view')
 
 
