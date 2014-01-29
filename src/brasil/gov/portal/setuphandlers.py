@@ -78,7 +78,7 @@ def configura_imagens(portal):
 
 
 def configura_sobre(portal):
-    folder = portal.assuntos
+    folder = portal.sobre
     folder.setLayout('folder_summary_view')
 
 
