@@ -5,9 +5,13 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 * Remove não ordenação de pastas do conteúdo inicial (closes `#136`_).
   [dbarbato]
-* CSS dos icones de summary view movidos para brasil.gov.tema (closes `#132`_).
+* Altera definição de cor dos ícones da navegação sumária para as 4 cores
+  no produto de temas (closes `#132`_).
   [felipeduardo]
-* Adicionada visualização de albuns para site padrão. (closes `#130`_).
+* Adicionadas novas visualizações para pasta de imagens -
+  Galeria de álbuns e Galeria de fotos. (closes `#130`_).
+  [rodfersou]
+* Alterado o termo Pasta para Pasta/Álbum na página de busca.
   [rodfersou]
 * Adicionado campo de direito no upload múltiplo de imagens. (closes `#128`_).
   [rodfersou]
