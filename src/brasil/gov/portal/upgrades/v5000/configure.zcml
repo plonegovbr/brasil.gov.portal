@@ -21,7 +21,7 @@
 
       <gs:upgradeStep
           title="Atualiza portal para versão 5000"
-          description="Adiciona tamanhos de imagens para visão de albuns."
+          description="Adiciona visão de galeria de albuns e galeria de fotos."
           handler=".handler.apply_profile"
           />
 
