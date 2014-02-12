@@ -3,6 +3,9 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
+  esquerda (closes `#143`_).
+  [dbarbato]
 * Remove não ordenação de pastas do conteúdo inicial (closes `#136`_).
   [dbarbato]
 * Altera definição de cor dos ícones da navegação sumária para as 4 cores
@@ -225,3 +228,4 @@ Changelog
 .. _`#130`: https://github.com/plonegovbr/brasil.gov.portal/issues/130
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.portal/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.portal/issues/136
+.. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
