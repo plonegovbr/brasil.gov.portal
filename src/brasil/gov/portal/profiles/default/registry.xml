@@ -24,6 +24,7 @@
           interface="collective.cover.controlpanel.ICoverSettings"
           name="collective.cover.controlpanel.ICoverSettings.available_tiles">
     <value purge="true">
+      <element>agenda</element>
       <element>audio</element>
       <element>audiogallery</element>
       <element>collective.cover.banner</element>
