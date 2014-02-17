@@ -3,6 +3,9 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Removido o termo Pasta para Pasta/Álbum na página de busca.
+  (closes `#148`_).
+  [dbarbato]
 * Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
   esquerda (closes `#143`_).
   [dbarbato]
@@ -229,3 +232,4 @@ Changelog
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.portal/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.portal/issues/136
 .. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
+.. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
