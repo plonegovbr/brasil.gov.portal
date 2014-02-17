@@ -26,6 +26,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
         """
         settings = self.registry.forInterface(ICoverSettings)
         expected = [
+            'agenda',
             'audio',
             'audiogallery',
             'banner_rotativo',
