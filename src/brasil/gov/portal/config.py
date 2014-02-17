@@ -34,6 +34,10 @@ REDES = [
 
 DEPS = [
     'archetypes.querywidget',
+    'brasil.gov.agenda',
+    'brasil.gov.agenda.upgrades.v2000',
+    'brasil.gov.agenda.upgrades.v3000',
+    'brasil.gov.agenda.upgrades.v4000',
     'brasil.gov.barra',
     'brasil.gov.portal.upgrades.v1000',
     'brasil.gov.portal.upgrades.v2000',

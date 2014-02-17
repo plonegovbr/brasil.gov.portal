@@ -3,6 +3,8 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Adiciona brasil.gov.agenda como dependência e registra tile de Agenda.
+  [dbarbato]
 * Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
   esquerda (closes `#143`_).
   [dbarbato]
