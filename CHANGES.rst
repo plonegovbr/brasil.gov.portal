@@ -3,7 +3,12 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+<<<<<<< HEAD
+* Removido o termo Pasta para Pasta/Álbum na página de busca.
+  (closes `#148`_).
+=======
 * Adiciona brasil.gov.agenda como dependência e registra tile de Agenda.
+>>>>>>> master
   [dbarbato]
 * Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
   esquerda (closes `#143`_).
@@ -231,3 +236,4 @@ Changelog
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.portal/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.portal/issues/136
 .. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
+.. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
