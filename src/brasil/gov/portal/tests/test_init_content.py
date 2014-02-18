@@ -35,6 +35,14 @@ class InitContentTestCase(unittest.TestCase):
         self.assertEqual(u'Assuntos', pasta.title,
                          u'Título não aplicado')
 
+    def test_assuntos_ordering(self):
+        pasta = self.portal['assuntos']
+        ordering = pasta.getOrdering()
+        oId = ordering.idsInOrder()[0]
+        pasta.moveObjectsToBottom([oId])
+        self.assertEqual(oId, pasta.objectIds()[-1],
+                         u'Ordenação não aplicada')
+
     def test_imagens_available(self):
         self.assertTrue('imagens' in self.portal.objectIds(),
                         u'Pasta Imagens não disponível')
