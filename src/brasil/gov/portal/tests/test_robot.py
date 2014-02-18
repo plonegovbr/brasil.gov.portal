@@ -15,7 +15,7 @@ def test_suite():
     # Anonymous tests
     tests = [
         os.path.join('robot', doc) for doc in os.listdir(robot_dir)
-        if doc.endswith('.robot') and doc.startswith('test_')
+        if doc.endswith('.robot') and doc.startswith('test_') and 'acessibilidade' not in doc
     ]
     for test in tests:
         suite.addTests([
