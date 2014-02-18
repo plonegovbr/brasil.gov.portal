@@ -84,6 +84,14 @@ class InitContentTestCase(unittest.TestCase):
         self.assertEqual(u'Sobre', pasta.title,
                          u'Título não aplicado')
 
+    def test_sobre_ordering(self):
+        pasta = self.portal['sobre']
+        ordering = pasta.getOrdering()
+        oId = ordering.idsInOrder()[0]
+        pasta.moveObjectsToBottom([oId])
+        self.assertEqual(oId, pasta.objectIds()[-1],
+                         u'Ordenação não aplicada')
+
     def test_default_portlets(self):
         # Os portlets estao configurados corretamente?
         portal = self.portal
