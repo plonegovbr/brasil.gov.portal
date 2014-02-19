@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
 from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
@@ -136,6 +137,28 @@ def publish_content(wftool, folder, obj_ids):
             oIds = o.objectIds()
             if oIds:
                 publish_content(wftool, o, oIds)
+
+
+def instala_pacote_portal(context):
+    ''' Marcamos o brasil.gov.portal como instalado no
+        portal_quickinstaller, fazendo com que ele apareça no
+        painel de controle do portal
+    '''
+    # Executado apenas se o estivermos no Profile correto
+    if context.readDataFile('brasil.gov.portal.txt') is None:
+        return
+    site = context.getSite()
+    p = 'brasil.gov.portal'
+    qi = site.portal_quickinstaller
+    # Como o produto nao aparece na listagem original do
+    # portal_quickinstaller, o adicionamos manualmente
+    if not p in qi.objectIds():
+        ip = InstalledProduct(p)
+        qi._setObject(p, ip)
+
+    p = getattr(qi, p)
+    # E atualizamos seu status
+    p.update({}, locked=False, hidden=False, **{})
 
 
 def importContent(context):

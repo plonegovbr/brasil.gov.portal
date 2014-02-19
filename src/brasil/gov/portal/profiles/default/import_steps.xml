@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="instala_pacote_portal" version="20140219" 
+         handler="brasil.gov.portal.setuphandlers.instala_pacote_portal" 
+         title="Instala Pacote do Portal Padrão">
+         Realiza a instalação do pacote do Portal Padrão 
+ </import-step>
+</import-steps>
