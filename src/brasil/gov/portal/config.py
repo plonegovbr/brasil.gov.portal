@@ -56,6 +56,7 @@ DEPS = [
     'collective.nitf',
     'collective.oembed',
     'collective.polls',
+    'collective.portlet.calendar',
     'collective.upload',
     'collective.z3cform.datetimewidget',
     'collective.z3cform.widgets',
