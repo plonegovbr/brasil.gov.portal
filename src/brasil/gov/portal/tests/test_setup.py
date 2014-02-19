@@ -10,11 +10,19 @@ import unittest
 PROFILE_ID = 'brasil.gov.portal:default'
 
 DEPENDENCIES = [
-    'brasil.gov.temas',
+    'brasil.gov.agenda',
+    'brasil.gov.barra',
+    'brasil.gov.tiles',
+    'brasil.gov.vcge',
     'collective.cover',
+    'collective.js.jqueryui',
     'collective.nitf',
     'collective.polls',
     'collective.upload',
+    'plone.app.contenttypes',
+    'plone.app.theming',
+    'Products.Doormat',
+    'Products.PloneFormGen',
     'sc.embedder',
     'sc.social.like',
 ]
