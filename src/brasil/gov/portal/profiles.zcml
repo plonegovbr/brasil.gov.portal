@@ -24,8 +24,8 @@
   <gs:importStep
       name="base-content"
       handler="brasil.gov.portal.setuphandlers.importContent"
-      title="Plone Content Import"
-      description="Plone content import.">
+      title="Conteúdo inicial"
+      description="Instala o conteúdo inicial do Portal Padrão.">
    <depends name="typeinfo"/>
   </gs:importStep>
 
