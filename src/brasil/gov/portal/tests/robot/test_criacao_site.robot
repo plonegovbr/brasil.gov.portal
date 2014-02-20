@@ -66,6 +66,12 @@ Alterar dados do site
     Pagina deve conter  Comunicacao Social
 
 
+Validar se Portal Padrao esta listado
+    Como o usuario administrador  Machado de Assis
+    Ir para  ${PLONE_URL}/prefs_install_products_form
+    Pagina deve conter  de sites para o Governo Federal
+
+
 *** Keywords ***
 
 Apenas o tipo Imagem deve ser listado
