@@ -35,6 +35,7 @@ REDES = [
 
 DEPS = [
     'archetypes.querywidget',
+    'brasil.gov.agenda',
     'brasil.gov.agenda.upgrades.v2000',
     'brasil.gov.agenda.upgrades.v3000',
     'brasil.gov.agenda.upgrades.v4000',
@@ -91,6 +92,7 @@ DEPS = [
 
 HIDDEN_PROFILES = [
     'archetypes.querywidget:default',
+    'brasil.gov.agenda:default',
     'brasil.gov.agenda.upgrades.v2000:default',
     'brasil.gov.agenda.upgrades.v3000:default',
     'brasil.gov.agenda.upgrades.v4000:default',
