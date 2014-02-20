@@ -23,6 +23,16 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <!-- Oculta products -->
+  <utility
+        factory=".config.HiddenProducts"
+        name="brasil.gov.portal" />
+
+  <!-- Oculta profiles -->
+  <utility
+        factory=".config.HiddenProfiles"
+        name="brasil.gov.portal" />
+
   <include package="five.grok" />
  
   <grok:grok package="." />

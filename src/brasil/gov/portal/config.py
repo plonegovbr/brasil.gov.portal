@@ -2,6 +2,7 @@
 from five import grok
 from Products.CMFQuickInstallerTool import interfaces as qi_interfaces
 from Products.CMFPlone import interfaces as st_interfaces
+from zope.interface import implements
 
 PROJECTNAME = 'brasil.gov.portal'
 
@@ -159,10 +160,8 @@ HIDDEN_PROFILES = [
 
 
 class HiddenProducts(grok.GlobalUtility):
-
-    grok.implements(qi_interfaces.INonInstallable)
-    grok.provides(qi_interfaces.INonInstallable)
-    grok.name(PROJECTNAME)
+    """ Oculta produtos do QuickInstaller """
+    implements(qi_interfaces.INonInstallable)
 
     def getNonInstallableProducts(self):
         products = []
@@ -171,10 +170,8 @@ class HiddenProducts(grok.GlobalUtility):
 
 
 class HiddenProfiles(grok.GlobalUtility):
-
-    grok.implements(st_interfaces.INonInstallable)
-    grok.provides(st_interfaces.INonInstallable)
-    grok.name(PROJECTNAME)
+    """ Oculta profiles da tela inicial de criacao do site """
+    implements(st_interfaces.INonInstallable)
 
     def getNonInstallableProfiles(self):
         return HIDDEN_PROFILES
