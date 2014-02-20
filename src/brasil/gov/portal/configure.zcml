@@ -7,12 +7,14 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.portal">
 
+  <!-- ZCML de importacao de dependencias -->
   <include file="dependencies.zcml" />
 
   <include 
       zcml:condition="have plone-4"
       package="Products.CMFCore" file="permissions.zcml" />
 
+  <!-- Profiles de Generic Setup -->
   <include file='profiles.zcml' />
 
   <include package=".browser" />
@@ -21,7 +23,14 @@
 
   <include package=".transmogrifier" />
 
+  <!-- Registra pasta de traducoes -->
   <i18n:registerTranslations directory="locales" />
+
+  <!-- Registra pasta de elementos estaticos -->
+  <browser:resourceDirectory
+    name="brasil.gov.portal"
+    directory="static"
+    />
 
   <!-- Oculta products -->
   <utility
@@ -33,13 +42,8 @@
         factory=".config.HiddenProfiles"
         name="brasil.gov.portal" />
 
+  <!-- Inicializamos a magia do Grok -->
   <include package="five.grok" />
- 
   <grok:grok package="." />
 
-  <browser:resourceDirectory
-    name="brasil.gov.portal"
-    directory="static"
-    />
-  
 </configure>
