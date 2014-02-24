@@ -5,6 +5,7 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 * Removido o termo Pasta para Pasta/Álbum na página de busca.
   (closes `#148`_).
+  [dbarbato]
 * Adiciona brasil.gov.agenda como dependência e registra tile de Agenda.
   [dbarbato]
 * Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
