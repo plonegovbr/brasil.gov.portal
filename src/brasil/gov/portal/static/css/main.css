@@ -3635,6 +3635,9 @@ body.contraste #content .pullquote {
     color: #fff !important;
 }
 
+body.contraste .cycle-player .cycle-overlay,
+body.contraste #galeria_de_fotos,
+body.contraste .galeria_container,
 body.contraste #content .gallery-footer a,
 body.contraste #content .gallery-footer a:hover {
     color: #fff !important;
@@ -3690,7 +3693,10 @@ body.contraste .navTreeLevel0 > li.navTreeItemInPath,
 body.contraste .navTreeLevel0 > li.navTreeCurrentNode,
 body.contraste .navTreeLevel1,
 body.contraste dl.portlet ul.navTreeLevel1 .navTreeItem,
-body.contraste dl.portlet ul.navTreeLevel1 .navTreeItem {
+body.contraste dl.portlet ul.navTreeLevel1 .navTreeItem,
+body.contraste #galeria_de_fotos,
+body.contraste .galeria_container,
+body.contraste .slideshow-carrossel {
     background-color: #000;
 }
 
