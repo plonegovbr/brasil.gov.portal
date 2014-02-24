@@ -5,7 +5,6 @@ var PBrasil = {
         this.onclickBuscar();
         this.bugfixBase();
         this.carregaDestaques();
-        this.albuns.carrossel();
         this.albuns.fixAlbumHeight();
     },
 
@@ -147,44 +146,6 @@ var PBrasil = {
     },
 
     albuns: {
-        // View de álbum carrossel (carrossel de imagens do álbum)
-        carrossel: function () {
-            var obj = this,
-            slideshows = $('.cycle-slideshow').on('cycle-next cycle-prev', function (e, opts) {
-                slideshows.not(this).cycle('goto', opts.currSlide);
-                obj.layoutAdjustment(opts.currSlide);
-            });
-
-            // Aplicando o mesmo controle de navegacao para os thumbs e galerias
-            $('#cycle-2 .thumb-itens').click(function (e){
-                e.preventDefault();
-                var index = $('#cycle-2').data('cycle.API').getSlideIndex(this);
-                slideshows.cycle('goto', index);
-                obj.layoutAdjustment(index);
-            });
-
-            // Adicionando navegação por teclado
-            $(document.documentElement).keyup(function (event) {
-                if (event.keyCode == 37) {
-                    $('#slideshow-2 .cycle-prev').trigger('click');
-                } else if (event.keyCode == 39) {
-                    $('#slideshow-2 .cycle-next').trigger('click');
-                }
-            });
-        },
-
-        layoutAdjustment: function(index){
-            // Pula primeiro elemento
-            index = index + 1;
-
-            var aElem = $("#cycle-1 .cycle-slide");
-
-            var elem = aElem[index];
-            var novaaltura = $(elem).height();
-
-            $(".cycle-sentinel").height(novaaltura);
-        },
-
         fixAlbumHeight: function() {
             if ($('.template-galeria_de_albuns').length > 0) {
                 var albumResponsiveResize, root;
@@ -254,7 +215,7 @@ var PBrasil = {
             }
         }
     }
-}
+};
 
 jQuery(document).ready(function ($) {
     "use strict";

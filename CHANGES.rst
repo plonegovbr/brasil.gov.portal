@@ -3,6 +3,8 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Ajustes para novo tile de galeria de albuns (close `#141`_).
+  [rodfersou]
 * Removido o termo Pasta para Pasta/Álbum na página de busca.
   (closes `#148`_).
   [dbarbato]
@@ -233,5 +235,6 @@ Changelog
 .. _`#130`: https://github.com/plonegovbr/brasil.gov.portal/issues/130
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.portal/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.portal/issues/136
+.. _`#141`: https://github.com/plonegovbr/brasil.gov.portal/issues/141
 .. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
