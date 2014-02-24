@@ -3,6 +3,8 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Ajusta estilo de menu de idiomas.
+  [dbarbato]
 * Ajustes para novo tile de galeria de albuns (close `#141`_).
   [rodfersou]
 * Removido o termo Pasta para Pasta/Álbum na página de busca.

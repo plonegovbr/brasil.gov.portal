@@ -334,29 +334,28 @@ div.position-10 { margin-left: -30.042%; }
 #language {
     float: right;
     margin-left: 20px;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
     border-bottom: 1px dotted #9bc2a3;
-    font-size: 85%;
+    font-size: 0.93em;
 }
 
 #language li { display: inline; }
 
 #language a {
-    padding: 4px 0 4px 15px;
+    padding: 4px 0 4px 10px;
     color: #d9ffe3;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-#language a:hover { color: #fff !important; }
+#language a, #language a:hover { color: #fff !important; }
 
 #language .language-en {
-    margin-right: 10px;
-    background: url("++resource++brasil.gov.portal/img/flag-en.gif") no-repeat left;
+    margin-right: 0.5em;
 }
 
-#language .language-es {
-    background: url("++resource++brasil.gov.portal/img/flag-es.gif") no-repeat left;
+#language .language-en a {
+    padding-left: 0px;
 }
 
 /* Menu site actions - Acessibilidade, Alto Contraste, Mapa do site
