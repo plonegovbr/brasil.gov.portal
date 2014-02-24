@@ -7,15 +7,15 @@
   <!-- Profiles -->
   <gs:registerProfile
       name="default"
-      title="Brasil.gov.br: Portal Modelo"
+      title=".gov.br: Portal Padrão"
       directory="profiles/default"
-      description="Portal Modelo de sites para o Governo Federal"
+      description="Portal Padrão de sites para o Governo Federal"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
   <gs:registerProfile
       name="initcontent"
-      title="Brasil.gov.br: Portal Modelo - Conteúdo base"
+      title=".gov.br: Portal Padrão - Conteúdo base"
       directory="profiles/initcontent"
       description="Conteúdo de exemplo para sites do Governo Federal"
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -24,8 +24,8 @@
   <gs:importStep
       name="base-content"
       handler="brasil.gov.portal.setuphandlers.importContent"
-      title="Plone Content Import"
-      description="Plone content import.">
+      title="Conteúdo inicial"
+      description="Instala o conteúdo inicial do Portal Padrão.">
    <depends name="typeinfo"/>
   </gs:importStep>
 

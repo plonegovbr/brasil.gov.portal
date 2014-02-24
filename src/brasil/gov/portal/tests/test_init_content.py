@@ -35,6 +35,14 @@ class InitContentTestCase(unittest.TestCase):
         self.assertEqual(u'Assuntos', pasta.title,
                          u'Título não aplicado')
 
+    def test_assuntos_ordering(self):
+        pasta = self.portal['assuntos']
+        ordering = pasta.getOrdering()
+        oId = ordering.idsInOrder()[0]
+        pasta.moveObjectsToBottom([oId])
+        self.assertEqual(oId, pasta.objectIds()[-1],
+                         u'Ordenação não aplicada')
+
     def test_imagens_available(self):
         self.assertTrue('imagens' in self.portal.objectIds(),
                         u'Pasta Imagens não disponível')
@@ -47,6 +55,14 @@ class InitContentTestCase(unittest.TestCase):
         behavior = ISelectableConstrainTypes(pasta)
         types = ['Image']
         self.assertEqual(types, behavior.getImmediatelyAddableTypes())
+
+    def test_imagens_ordering(self):
+        pasta = self.portal['imagens']
+        ordering = pasta.getOrdering()
+        oId = ordering.idsInOrder()[0]
+        pasta.moveObjectsToBottom([oId])
+        self.assertEqual(oId, pasta.objectIds()[-1],
+                         u'Ordenação não aplicada')
 
     def test_servicos_available(self):
         self.assertTrue('servicos' in self.portal.objectIds(),
@@ -67,6 +83,14 @@ class InitContentTestCase(unittest.TestCase):
         pasta = self.portal['sobre']
         self.assertEqual(u'Sobre', pasta.title,
                          u'Título não aplicado')
+
+    def test_sobre_ordering(self):
+        pasta = self.portal['sobre']
+        ordering = pasta.getOrdering()
+        oId = ordering.idsInOrder()[0]
+        pasta.moveObjectsToBottom([oId])
+        self.assertEqual(oId, pasta.objectIds()[-1],
+                         u'Ordenação não aplicada')
 
     def test_default_portlets(self):
         # Os portlets estao configurados corretamente?

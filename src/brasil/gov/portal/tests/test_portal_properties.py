@@ -41,6 +41,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
         types_searched = list(all_types - types_not_searched)
         types_searched.sort()
         types_expected = [
+            'AgendaDiaria',
             'Audio',
             'Document',
             'Event',

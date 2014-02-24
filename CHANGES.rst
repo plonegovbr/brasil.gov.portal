@@ -5,6 +5,14 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 * Ajustes para novo tile de galeria de albuns (close `#141`_).
   [rodfersou]
+* Removido o termo Pasta para Pasta/Álbum na página de busca.
+  (closes `#148`_).
+  [dbarbato]
+* Adiciona brasil.gov.agenda como dependência e registra tile de Agenda.
+  [dbarbato]
+* Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
+  esquerda (closes `#143`_).
+  [dbarbato]
 * Remove não ordenação de pastas do conteúdo inicial (closes `#136`_).
   [dbarbato]
 * Altera definição de cor dos ícones da navegação sumária para as 4 cores
@@ -228,3 +236,5 @@ Changelog
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.portal/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.portal/issues/136
 .. _`#141`: https://github.com/plonegovbr/brasil.gov.portal/issues/141
+.. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
+.. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148

@@ -10,11 +10,19 @@ import unittest
 PROFILE_ID = 'brasil.gov.portal:default'
 
 DEPENDENCIES = [
-    'brasil.gov.temas',
+    'brasil.gov.agenda',
+    'brasil.gov.barra',
+    'brasil.gov.tiles',
+    'brasil.gov.vcge',
     'collective.cover',
+    'collective.js.jqueryui',
     'collective.nitf',
     'collective.polls',
     'collective.upload',
+    'plone.app.contenttypes',
+    'plone.app.theming',
+    'Products.Doormat',
+    'Products.PloneFormGen',
     'sc.embedder',
     'sc.social.like',
 ]
@@ -40,28 +48,25 @@ class InstallTestCase(unittest.TestCase):
                          (u'5000',),
                          '%s version mismatch' % PROJECTNAME)
 
-    @unittest.expectedFailure
     def test_hidden_dependencies(self):
-        packages = set([p['id'] for p in self.qi.listInstallableProducts()] +
-                       [p[0] for p in self.qi.items()])
+        packages = [p['id'] for p in self.qi.listInstallableProducts()]
         deps = set(DEPS)
         result = [p for p in deps if p in packages]
         self.assertFalse(result,
-                         ("These dependencies are not hidden: %s" %
+                         ("Estas dependencias nao estao ocultas: %s" %
                           ", ".join(result)))
 
-    @unittest.expectedFailure
     def test_installed(self):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
-                        '%s not installed' % PROJECTNAME)
+                        '%s nao esta instalado' % PROJECTNAME)
 
-    @unittest.expectedFailure
-    def test_dependencies_installed(self):
+    def test_installed_dependencies(self):
         expected = set(DEPENDENCIES)
-        installed = set(name for name, product in self.qi.items()
-                        if product.isInstalled())
-        result = sorted(expected - installed)
-
+        result = []
+        for item in expected:
+            profile_id = self.qi.getInstallProfile(item)['id']
+            if self.st.getLastVersionForProfile(profile_id) == 'unknown':
+                result.append(item)
         self.assertFalse(result,
-                         ("These dependencies are not installed: %s" %
+                         ("Estas dependencias nao estao instaladas: %s" %
                           ", ".join(result)))

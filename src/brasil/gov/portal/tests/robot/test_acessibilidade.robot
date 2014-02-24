@@ -6,7 +6,7 @@ Resource  brasil/gov/portal/tests/robot/keywords.robot
 
 Library  WAVELibrary
 Library  Remote  ${PLONE_URL}/RobotRemote
-Library  brasil.gov.portal.tests.robot.Acessibilidade
+Library  brasil.gov.portal.tests.robot.acessibilidade.Acessibilidade
 
 Test Setup  Abrir navegador
 Test Teardown  Fechar todos os navegadores

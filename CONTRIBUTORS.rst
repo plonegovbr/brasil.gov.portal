@@ -6,6 +6,7 @@ seguintes pessoas:
 
 - André Nogueira
 - Cleber J. Santos
+- Danilo Barbato
 - Érico Andrei
 - Héctor Velarde
 - Felipe Duardo
