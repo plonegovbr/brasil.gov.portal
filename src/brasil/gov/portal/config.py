@@ -31,6 +31,12 @@ REDES = [
     {'id': 'rss',
      'title': 'RSS',
      'url': '%s'},
+    {'id': 'instagram',
+     'title': 'Instagram',
+     'url': 'http://instagram.com/%s'},
+    {'id': 'tumblr',
+     'title': 'Thumblr',
+     'url': 'http://%s.tumblr.com'},
 ]
 
 DEPS = [
