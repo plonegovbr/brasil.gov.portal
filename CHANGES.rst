@@ -4,7 +4,7 @@ Changelog
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 * Adiciona ícones de redes sociais tumblr e instagram (closes `#150`_).
-  [rodfersou]
+  [rodfersou][rennanrodrigues]
 * Ajusta estilo de menu de idiomas.
   [dbarbato]
 * Ajustes para novo tile de galeria de albuns (close `#141`_).
