@@ -3,6 +3,8 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Registra view de albuns no profile default (close `#152`_).
+  [rodfersou]
 * Ajusta estilo de menu de idiomas.
   [dbarbato]
 * Ajustes para novo tile de galeria de albuns (close `#141`_).
@@ -240,3 +242,4 @@ Changelog
 .. _`#141`: https://github.com/plonegovbr/brasil.gov.portal/issues/141
 .. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
+.. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152

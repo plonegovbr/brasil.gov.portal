@@ -5,4 +5,8 @@
   	<element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
   </property>
+  <property name="view_methods" purge="False">
+    <element value="galeria_de_albuns" insert-after="*" />
+    <element value="galeria_de_fotos" insert-after="*" />
+  </property>
 </object>
