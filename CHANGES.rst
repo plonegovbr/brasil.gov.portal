@@ -5,8 +5,13 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 * Adiciona ícones de redes sociais tumblr e instagram (closes `#150`_).
   [rodfersou]
+* Ajusta estilo de menu de idiomas.
+  [dbarbato]
+* Ajustes para novo tile de galeria de albuns (close `#141`_).
+  [rodfersou]
 * Removido o termo Pasta para Pasta/Álbum na página de busca.
   (closes `#148`_).
+  [dbarbato]
 * Adiciona brasil.gov.agenda como dependência e registra tile de Agenda.
   [dbarbato]
 * Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
@@ -231,6 +236,7 @@ Changelog
 .. _`#130`: https://github.com/plonegovbr/brasil.gov.portal/issues/130
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.portal/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.portal/issues/136
+.. _`#141`: https://github.com/plonegovbr/brasil.gov.portal/issues/141
 .. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
