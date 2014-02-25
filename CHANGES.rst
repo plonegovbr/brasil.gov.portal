@@ -5,6 +5,8 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 * Registra view de albuns no profile default (close `#152`_).
   [rodfersou]
+* Adiciona ícones de redes sociais tumblr e instagram (closes `#150`_).
+  [rodfersou][rennanrodrigues]
 * Ajusta estilo de menu de idiomas.
   [dbarbato]
 * Ajustes para novo tile de galeria de albuns (close `#141`_).
@@ -78,7 +80,6 @@ Changelog
 
 1.0 (2013-10-29)
 ^^^^^^^^^^^^^^^^^^^
-
 * Regras de summary view adicionadas para navegação facetada (closes `#84`_).
   [rennanrodrigues]
 * Correção em tamanho das imagens e espaçamentos na summary view de coleção (closes `#82`_).
@@ -95,7 +96,6 @@ Changelog
 
 1.0rc2 (2013-10-24)
 ^^^^^^^^^^^^^^^^^^^
-
 * Revisão da paginação padrão do plone (closes `#72`_).
   [rodfersou]
 * Removidas as regras de css para os tiles, deixando apenas as definições para o contraste
@@ -177,7 +177,6 @@ Changelog
 
 1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
-
 * Atividade 320: Ajuste Estilo - Listagem Vertical [rennanrodrigues]
 * Atividade 324: Acertos na Busca [rodfersou]
 * Inserindo virgulas entre as tags - summary view  [dbarbato]
@@ -189,8 +188,8 @@ Changelog
 
 1.0a1 (2013-07-22)
 ^^^^^^^^^^^^^^^^^^
-
 * Versão inicial do pacote [ericof]
+
 
 .. _`#7`: https://github.com/plonegovbr/brasil.gov.portal/issues/7
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.portal/issues/10
@@ -242,4 +241,5 @@ Changelog
 .. _`#141`: https://github.com/plonegovbr/brasil.gov.portal/issues/141
 .. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
+.. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
 .. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
