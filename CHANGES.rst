@@ -3,6 +3,8 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Registra view de albuns no profile default (close `#152`_).
+  [rodfersou]
 * Adiciona ícones de redes sociais tumblr e instagram (closes `#150`_).
   [rodfersou][rennanrodrigues]
 * Ajusta estilo de menu de idiomas.
@@ -240,3 +242,4 @@ Changelog
 .. _`#143`: https://github.com/plonegovbr/brasil.gov.portal/issues/143
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
+.. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
