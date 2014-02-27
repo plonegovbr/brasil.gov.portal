@@ -3,11 +3,11 @@ Changelog
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-* Registra view de albuns no profile default (close `#152`_).
+* Registra view de álbuns no profile default (close `#152`_).
   [rodfersou]
 * Adiciona ícones de redes sociais tumblr e instagram (closes `#150`_).
   [rodfersou][rennanrodrigues]
-* Ajusta estilo de menu de idiomas.
+* Ajusta estilo do Menu de idiomas.
   [dbarbato]
 * Ajusta novo tile de galeria de álbuns (close `#141`_).
   [rodfersou]
