@@ -9,14 +9,14 @@ Changelog
   [rodfersou][rennanrodrigues]
 * Ajusta estilo de menu de idiomas.
   [dbarbato]
-* Ajustes para novo tile de galeria de albuns (close `#141`_).
+* Ajusta novo tile de galeria de álbuns (close `#141`_).
   [rodfersou]
-* Removido o termo Pasta para Pasta/Álbum na página de busca.
+* Remove o termo Pasta para Pasta/Álbum na página de busca.
   (closes `#148`_).
   [dbarbato]
 * Adiciona brasil.gov.agenda como dependência e registra tile de Agenda.
   [dbarbato]
-* Ajuste em Páginas do alinhamento de legenda de imagens alinhadas à
+* Ajusta alinhamento em páginas onde tem legenda de imagens à
   esquerda (closes `#143`_).
   [dbarbato]
 * Remove não ordenação de pastas do conteúdo inicial (closes `#136`_).
@@ -24,12 +24,12 @@ Changelog
 * Altera definição de cor dos ícones da navegação sumária para as 4 cores
   no produto de temas (closes `#132`_).
   [felipeduardo]
-* Adicionadas novas visualizações para pasta de imagens -
-  Galeria de álbuns e Galeria de fotos. (closes `#130`_).
+* Adicionada novas visualizações para pasta de imagens -
+  Galeria de álbuns e Galeria de fotos (closes `#130`_).
   [rodfersou]
-* Alterado o termo Pasta para Pasta/Álbum na página de busca.
+* Altera o termo Pasta para Pasta/Álbum na página de busca.
   [rodfersou]
-* Adicionado campo de direito no upload múltiplo de imagens. (closes `#128`_).
+* Adiciona o campo Direitos no upload múltiplo de imagens. (closes `#128`_).
   [rodfersou]
 
 
