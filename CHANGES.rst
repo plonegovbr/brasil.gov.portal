@@ -4,7 +4,8 @@ Changelog
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Ajusta tempo de execução de javascript na view de álbuns.
+  [dbarbato]
 
 
 1.0.2 (2014-02-28)

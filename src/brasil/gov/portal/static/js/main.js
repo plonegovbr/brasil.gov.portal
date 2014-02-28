@@ -5,7 +5,6 @@ var PBrasil = {
         this.onclickBuscar();
         this.bugfixBase();
         this.carregaDestaques();
-        this.albuns.fixAlbumHeight();
     },
 
     main: function() {
@@ -220,4 +219,8 @@ var PBrasil = {
 jQuery(document).ready(function ($) {
     "use strict";
     PBrasil.init();
+});
+
+$(window).load(function() {
+    PBrasil.albuns.fixAlbumHeight();
 });
