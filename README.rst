@@ -1,5 +1,5 @@
 *******************************************************************
-Brasil.gov.br: Identidade Digital do Governo (Implementação Modelo)
+.gov.br: Identidade Digital do Governo (Implementação Modelo)
 *******************************************************************
 
 .. contents:: Conteúdo
@@ -17,7 +17,7 @@ Requisitos
 
 Para uso deste pacote, seu site deve ter sido construído com:
 
-    * Plone 4.3 ou superior (http://plone.org/products/plone)
+    * Plone 4.3.2 ou superior (http://plone.org/products/plone)
 
 
 Estado deste pacote
