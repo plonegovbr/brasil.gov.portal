@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.0.2 (unreleased)
+1.0.2 (2014-02-28)
 ^^^^^^^^^^^^^^^^^^
 * Registra view de álbuns no profile default (close `#152`_).
   [rodfersou]
