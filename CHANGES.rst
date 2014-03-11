@@ -7,6 +7,8 @@ Changelog
 * Ajusta tempo de execução de javascript na view de álbuns.
   [dbarbato]
 
+* Cria passo de atualização para ordenação de pastas
+  [ericof]
 
 1.0.2 (2014-02-28)
 ^^^^^^^^^^^^^^^^^^

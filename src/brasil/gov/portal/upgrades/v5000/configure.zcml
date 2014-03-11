@@ -25,6 +25,12 @@
           handler=".handler.apply_profile"
           />
 
+      <gs:upgradeStep
+          title="Ajusta ordenacao de pastas assuntos, imagens e sobre"
+          description="Volta a ordenacao para o padrao do Plone"
+          handler=".handler.ordernacao_pastas"
+          />
+
   </gs:upgradeSteps>
 
 
