@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.0.2.1 (unreleased)
+1.0.2.1 (2014-03-11)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 * Ajusta tempo de execução de javascript na view de álbuns.
