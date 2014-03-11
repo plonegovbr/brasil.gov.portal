@@ -92,10 +92,10 @@ class TestUpgrade(unittest.TestCase):
 
         upgradeSteps = listUpgradeSteps(self.st,
                                         self.profile,
-                                        '0.0')
+                                        '0')
         step = [step for step in upgradeSteps
                 if (step[0]['dest'] == ('1000',))
-                and (step[0]['source'] == ('0.0',))]
+                and (step[0]['source'] == ('0', '0'))]
         self.assertEqual(len(step), 1)
 
     def test_to2000_available(self):
