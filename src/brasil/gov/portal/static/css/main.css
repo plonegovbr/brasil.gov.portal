@@ -3920,6 +3920,10 @@ body.contraste .portletCollection {
 background: #000 !important;
 }
 
+body.contraste #content .callout {
+background: #333;
+}
+
  /* afeta visão de agenda */
 body.contraste #content .portalMessage {
     color: #FFF !important;
@@ -4009,6 +4013,15 @@ background-color: #666;
 
 
 /* player de audio */
+
+body.contraste .audiogallery-footer-container .audiogallery-footer-link {
+background: url("++resource++brasil.gov.portal/img/seta_branca.png") no-repeat scroll right 0px transparent;
+line-height: 20px;
+}
+
+body.contraste #content .audiogallery-items-container .audiogallery-item {
+background-image: url("++resource++brasil.gov.portal/img/sound-icon-contraste.png") no-repeat;
+}
 
 body.contraste div.jp-interface {
 background-color: #FFF;
