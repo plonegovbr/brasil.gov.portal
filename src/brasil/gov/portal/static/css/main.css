@@ -4020,7 +4020,8 @@ line-height: 20px;
 }
 
 body.contraste #content .audiogallery-items-container .audiogallery-item {
-background-image: url("++resource++brasil.gov.portal/img/sound-icon-contraste.png") no-repeat;
+background: url("++resource++brasil.gov.portal/img/sound-icon-contraste.png") no-repeat;
+padding-left: 25px;
 }
 
 body.contraste div.jp-interface {
