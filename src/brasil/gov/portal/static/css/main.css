@@ -3915,7 +3915,8 @@ body.contraste .portletCalendar .portletItem,
 body.contraste .portletSearch .portletHeader,
 body.contraste .portletCalendar .portletHeader,
 body.contraste .portletSearch .portletFooter,
-body.contraste .portletCalendar .portletFooter {
+body.contraste .portletCalendar .portletFooter,
+body.contraste .portletCollection {
 background: #000 !important;
 }
 
