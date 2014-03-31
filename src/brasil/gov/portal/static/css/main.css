@@ -3626,6 +3626,10 @@ body.folder_contraste.template-summary_view #content .tileItem .keywords,
 body.contraste.template-summary_view #content .tileItem .documentByLine,
 body.folder_contraste.template-summary_view #content .tileItem .documentByLine,
 body.contraste #content .documentByLine .summary-view-icon,
+body.contraste #content .subtitle,
+body.contraste.template-summary_view #content .tileItem .keywords,
+body.contraste.template-folder_summary_view #content .tileItem .keywords,
+body.contraste.template-facetednavigation_view #content .tileItem .keywords,
 body.contraste .videogallery-tile .subtitle,
 body.contraste .outstanding-header .outstanding-link,
 body.contraste #content .outstanding-header .outstanding-link:hover,
@@ -3754,16 +3758,16 @@ body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-foo
 
 body.contraste #portal-searchbox {
     border-color: #FFF;
-    background-color: #000;
+    background-color: #FFF;
 }
 
 body.contraste #portal-searchbox .searchField {
-    background-color: #000;
+    background-color: #FFF;
     color: #FFF !important;
 }
 
 body.contraste #header input.searchButton {
-    background-color: #000;
+    background-color: #FFF;
     background-position: 0px 2px;
 }
 
@@ -3849,9 +3853,9 @@ body.contraste #content .pullquote {
 }
 
 body.contraste #faceted-form #top-area {
-    border: 1px solid #fff;
+    border: 1px solid #FFF;
     background-color: #000;
-    border-top: 5px solid #fff;
+    border-top: 5px solid #FFF;
 }
 
 body.contraste #content #faceted-form #faceted-right-column .faceted-daterange-widget-form input,
@@ -3887,6 +3891,378 @@ body.contraste #search-filter .field label {
 
 body.contraste .highlightedSearchTerm {
     background-color: #919191;
+}
+
+
+
+/* contraste que influenciam portlets */
+
+body.contraste #portal-column-two dl.portlet a:link,
+body.contraste #portal-column-two dl.portlet a:visited {
+color: #EEE !important;
+}
+
+body.contraste .ploneCalendar .todayevent,
+body.contraste .ploneCalendar .todaynoevent {
+background-color: #000;
+border: 2px solid #FFF;
+font-weight: bold;
+}
+
+body.contraste .portletSearch,
+body.contraste .portletCalendar,
+body.contraste .portletCalendar .portletItem,
+body.contraste .portletSearch .portletHeader,
+body.contraste .portletCalendar .portletHeader,
+body.contraste .portletSearch .portletFooter,
+body.contraste .portletCalendar .portletFooter {
+background: #000 !important;
+}
+
+ /* afeta visão de agenda */
+body.contraste #content .portalMessage {
+    color: #FFF !important;
+}
+
+body.contraste .sem-compromisso {
+color: #FFF;
+}
+
+body.contraste .horario.comprimisso-inicio {
+background: url(++resource++brasil.gov.portal/img/summary-view-icons-sprite.png) -653px -393px no-repeat;
+width: 0;
+}
+
+body.contraste .add-agenda {
+background: url(++resource++brasil.gov.portal/img/summary-view-icons-sprite.png) -624px -392px no-repeat;
+}
+
+/* mapa do site */
+body.contraste #portal-sitemap .state-published { 
+color: #FFF !important;
+}
+
+body[class*="nitf"].contraste #content .documentAuthor {
+color: #FFF;
+}
+
+/* contraste galeria de álbuns e galeria de fotos */
+body[class*="galeria_de_albuns"].contraste #content .download,
+body[class*="galeria_de_fotos"].contraste #content .download {
+background-position: 0 -28px;
+}
+body[class*="galeria_de_fotos"].contraste #content .download.album {
+background-position: 10px -28px;
+}
+body[class*="galeria_de_albuns"].contraste #content .descriptionAlbum,
+body[class*="galeria_de_fotos"].contraste #content .descriptionAlbum {
+color: #FFF;
+}
+
+/* contraste de formulários */
+body.contraste #content li.formTab a.required span:after,
+body.contraste #content-core li.formTab a.required span:after,
+body.contraste div.field span.required:after {
+content: "■";
+color: #FFF;
+}
+
+body.contraste .formHelp {
+color: #DDD;
+}
+
+/* contraste de visão de notícia */
+
+body.contraste #content .banner-tile .copyright,
+body.contraste #content .newsImageContainer .copyright,
+body.contraste #content .mediacarousel .rights {
+color: #FFF;
+}
+
+body.contraste #content .newsImageContainer .photo-icon {
+background: url("++resource++brasil.gov.portal/img/mais_fotos-contraste.png") no-repeat;
+}
+
+/* contraste blog view */
+
+body[class*="folder_summary_view"].contraste #content .tileItem .description {
+color: #FFF;
+}
+
+/* contraste de visão de imagens */
+
+body.contraste #content .discreet,
+body.contraste #sidebar .discreet {
+color: #DDD;
+}
+
+/* contraste de enquete */
+
+body.contraste .pollresultholder .bar {
+background: #FFF !important;
+}
+
+body.contraste .tasksplease li {
+background-color: #666;
+}
+
+
+/* player de audio */
+
+body.contraste div.jp-interface {
+background-color: #FFF;
+}
+
+body.contraste div.jp-audio, div.jp-audio-stream {
+color: #000;
+}
+
+body.contraste a.jp-play {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 0 no-repeat;
+}
+body.contraste a.jp-play:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -41px 0 no-repeat;
+}
+body.contraste a.jp-pause {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -42px no-repeat;
+}
+body.contraste a.jp-pause:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -41px -42px no-repeat;
+}
+body.contraste a.jp-previous {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -112px no-repeat;
+}
+body.contraste a.jp-previous:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -29px -112px no-repeat;
+}
+body.contraste a.jp-next {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -141px no-repeat;
+}
+body.contraste a.jp-next:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -29px -141px no-repeat;
+}
+body.contraste div.jp-seek-bar {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -202px repeat-x;
+}
+body.contraste div.jp-play-bar {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -218px repeat-x;
+}
+body.contraste div.jp-seeking-bg {
+background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.seeking.gif");
+}
+body.contraste a.jp-mute {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -186px no-repeat;
+}
+body.contraste a.jp-mute:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -19px -186px no-repeat;
+}
+body.contraste a.jp-unmute {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -60px -170px no-repeat;
+}
+body.contraste a.jp-unmute:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -79px -170px no-repeat;
+}
+body.contraste div.jp-volume-bar {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -250px repeat-x;
+}
+body.contraste div.jp-volume-bar-value {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -256px repeat-x;
+}
+body.contraste a.jp-full-screen {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -310px no-repeat;
+}
+body.contraste a.jp-full-screen:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -30px -310px no-repeat;
+}
+body.contraste a.jp-restore-screen {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -60px -310px no-repeat;
+}
+body.contraste a.jp-restore-screen:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -90px -310px no-repeat;
+}
+body.contraste a.jp-shuffle {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") 0 -270px no-repeat;
+}
+body.contraste a.jp-shuffle:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -30px -270px no-repeat;
+}
+body.contraste a.jp-shuffle-off {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -60px -270px no-repeat;
+}
+body.contraste a.jp-shuffle-off:hover {
+background: url("++resource++brasil.gov.portal/img/jplayer.blue.monday-contraste.jpg") -90px -270px no-repeat;
+}
+
+/* contraste de evento */
+
+body.contraste table.listing tbody th {
+border-top: 4px solid #ccc !important;
+border-bottom: 1px solid #ccc!important;
+background: #000;
+color: #FFF;
+}
+
+body.contraste table.listing tbody tr td {
+background: #333;
+}
+
+body.contraste table.listing tbody tr.odd td {
+background: #111;
+}
+
+/* date picker */
+
+body.contraste .ui-state-default,
+body.contraste .ui-widget-content .ui-state-default,
+body.contraste .ui-widget-header .ui-state-default {
+background: #222;
+}
+
+body.contraste .ui-state-highlight,
+body.contraste .ui-widget-content .ui-state-highlight,
+body.contraste .ui-widget-header .ui-state-highlight {
+border: #333;
+background: #FFF;
+color: #000 !important;
+}
+
+body.contraste .ui-state-hover,
+body.contraste .ui-widget-content .ui-state-hover,
+body.contraste .ui-widget-header .ui-state-hover,
+body.contraste .ui-state-focus,
+body.contraste .ui-widget-content .ui-state-focus,
+body.contraste .ui-widget-header .ui-state-focus {
+background: #555;
+color: #FFF;
+}
+
+body.contraste .ui-widget-content {
+color: #FFF;
+}
+
+body.contraste .ui-widget-header {
+background: #000;
+}
+
+body.contraste .ui-datepicker .ui-datepicker-prev span,
+body.contraste .ui-datepicker .ui-datepicker-next span {
+background-color: #FFF;
+}
+
+body.contraste .ui-widget-header .ui-icon {
+background-image: url(++resource++jquery-ui-themes/sunburst/images/ui-icons_444444_256x240.png);
+}
+
+
+/* contraste de gestão */
+
+body.contraste div.managePortletsLink,
+body.contraste a.managePortletsFallback {
+background: #555;
+}
+
+body.contraste #edit-bar {
+background-color: #000;
+border: 0.25em solid #FFF;
+}
+
+body.contraste #content-views li.selected a,
+body.contraste #content-views li a:hover,
+body.contraste #content li.formTab a.selected,
+body.contraste #content li.formTab a:hover,
+body.contraste #content-core li.formTab a.selected,
+body.contraste #content-core li.formTab a:hover,
+body.contraste #portal-personaltools,
+body.contraste #portal-personaltools dd {
+background: #666;
+}
+
+body.contraste #contentActionMenus {
+background: #000;
+border: 0.25em solid #FFF;
+border-top: none;
+}
+
+body.contraste #contentActionMenus dl.actionMenu.activated dd {
+border-bottom: 0.5em solid #000;
+}
+
+body.contraste #contentActionMenus dl.actionMenu.activated dd a:hover,
+body.contraste #contentActionMenus dl.actionMenu.activated dd .actionMenuSelected {
+background-color: #666 !important;
+}
+
+body.contraste #portal-personaltools dd a:hover {
+background: #999;
+}
+
+body.contraste dl.portalMessage,
+body.contraste div.attention,
+body.contraste div.caution,
+body.contraste div.danger,
+body.contraste div.error,
+body.contraste div.hint,
+body.contraste div.important,
+body.contraste div.note,
+body.contraste div.tip,
+body.contraste div.warning,
+body.contraste dl.portalMessage dt,
+body.contraste div > .admonition-title {
+border: 1px solid #FFF;
+background-color: #000;
+}
+
+body.contraste #content a.link-overlay {
+border-bottom: 1px dotted #FFF !important;
+}
+
+body.contraste .layout .cover-tile,
+body.contraste .tile-placeholder {
+background-color: #666;
+}
+
+body.contraste .btn {
+background-color: #666;
+background-image: linear-gradient(to bottom, #000, #666);
+border-color: #666;
+}
+
+body.contraste .state-published {
+color: #EEE !important;
+}
+
+body.contraste table.listing td.draggable {
+background: #333 !important;
+}
+
+body.contraste table.listing th {
+color: #FFF;
+border: #FFF;
+background: #222;
+}
+
+body.contraste .current,
+body.contraste .ui-widget-content,
+body.contraste #sidebar.fixed {
+background: #000;
+}
+
+body.contraste #content-views,
+body.contraste #contentActionMenus dl.actionMenu a,
+body.contraste #contentActionMenus dl.actionMenu.activated dd,
+body.contraste #contentchooser-content-search,
+body.contraste .warning > dd,
+body.contraste .warning > .last,
+body.contraste .pb-ajax, .pb-image,
+body.contraste .overlay iframe, 
+body.contraste .modal {
+background-color: #000;
+}
+
+body.contraste #content ul.formTabs,
+body.contraste .label,
+body.contraste .badge {
+background-color: #333;
 }
 
 

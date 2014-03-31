@@ -4,7 +4,8 @@ Changelog
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Ajusta CSS de contraste.
+  [dbarbato]
 
 
 1.0.2.1 (2014-03-11)
