@@ -6,6 +6,8 @@ Changelog
 
 * Ajusta CSS de contraste.
   [dbarbato]
+* Ajusta nome de tipo de item na visão sumária de pasta.
+  [dbarbato]
 
 
 1.0.2.1 (2014-03-11)
