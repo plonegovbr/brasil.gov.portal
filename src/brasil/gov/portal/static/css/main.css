@@ -3763,7 +3763,7 @@ body.contraste #portal-searchbox {
 
 body.contraste #portal-searchbox .searchField {
     background-color: #FFF;
-    color: #FFF !important;
+    color: #000 !important;
 }
 
 body.contraste #header input.searchButton {
