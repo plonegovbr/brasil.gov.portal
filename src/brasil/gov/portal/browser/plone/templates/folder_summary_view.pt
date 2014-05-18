@@ -46,7 +46,7 @@
                                             <a href=""
                                                tal:content="tag"
                                                tal:attributes="href string:${portal_url}/@@busca?Subject:list=${tag}"
-                                               class="link-category" rel="tag">Berlim</a>
+                                               class="link-category" rel="tag">Berlim</a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
                                         </span>
                                     </div>
                                 </div>
@@ -124,7 +124,8 @@
                                                 <i class="icon-hour"></i>
                                                 <span tal:replace="python:toLocalizedTime(item.effective,time_only=1)">23:35:59</span>
                                             </span>
-                                            <span class="summary-view-icon">
+                                            <span class="summary-view-icon"
+                                                tal:define="item_type obj/Type;">
                                                 <i tal:attributes="class string:icon-${item_type/lower}"/>
                                                 <span tal:replace="item_type" />
                                             </span>

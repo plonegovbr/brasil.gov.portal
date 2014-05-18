@@ -5,6 +5,7 @@ from collective.transmogrifier.utils import resolvePackageReferenceOrFile
 from zope.interface import classProvides, implements
 
 import json
+import os
 
 
 class JSONSourceSection(object):
@@ -13,7 +14,14 @@ class JSONSourceSection(object):
 
     def __init__(self, transmogrifier, name, options, previous):
         self.previous = previous
-        self.directory = resolvePackageReferenceOrFile(options['directory'])
+        self.directory = self.resolve_directory(options['directory'])
+
+    def resolve_directory(self, value):
+        if value.startswith('$'):
+            directory = os.getenv(value[1:], '')
+        else:
+            directory = resolvePackageReferenceOrFile(value)
+        return directory
 
     def read_directory(self, directory):
         data_file = 'data.json'

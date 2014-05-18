@@ -4,7 +4,12 @@ Changelog
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* brasil.sections.jsonsource agora suporta variáveis de ambiente para passagem de parâmetro.
+  [ericof]
+* Ajusta CSS de contraste.
+  [dbarbato]
+* Ajusta nome de tipo de item na visão sumária de pasta.
+  [dbarbato]
 
 
 1.0.2.1 (2014-03-11)
