@@ -129,12 +129,12 @@ class AddonsSettingsTestCase(unittest.TestCase):
         available_sections = list(self.nitf_settings.available_sections)
         available_sections.sort()
         expected = [
-            u'General',
+            u'Geral',
         ]
         self.assertListEqual(available_sections, expected)
 
     def test_collective_nitf_default_section(self):
-        self.assertEqual(self.nitf_settings.default_section, u'General')
+        self.assertEqual(self.nitf_settings.default_section, u'Geral')
 
     def test_collective_upload_settings(self):
         """ Images uploaded must be smaller than 1024x1024.
