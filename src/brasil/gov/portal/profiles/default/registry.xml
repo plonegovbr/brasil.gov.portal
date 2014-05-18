@@ -92,11 +92,11 @@
   <!-- collective.nitf settings -->
   <record name="collective.nitf.controlpanel.INITFSettings.available_sections">
     <value>
-      <element>General</element>
+      <element>Geral</element>
     </value>
   </record>
   <record name="collective.nitf.controlpanel.INITFSettings.default_section">
-    <value>General</value>
+    <value>Geral</value>
   </record>
   <record name="collective.nitf.controlpanel.INITFSettings.available_genres">
     <value>
