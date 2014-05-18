@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
 <object>
-  <use_combined_language_codes value="True" />
+      <default_language value="pt-br"/>
+      <use_combined_language_codes value="True" />
+      <supported_langs>
+          <element value="pt-br"/>
+      </supported_langs>
 </object>
