@@ -35,35 +35,36 @@ class OverviewViewIntegrationTestCase(unittest.TestCase):
         self.view = Overview(self.app, self.request)
 
     def test_overview_sites(self):
+        # Listagem de sites disponiveis nesta instalacao
         sites = self.view.sites()
-        # By default we have one site created
+        # Como estamos rodando um teste, teremos um site criado
         self.assertEqual(len(sites), 1)
         self.assertEqual(sites[0], self.portal)
 
     def test_overview_can_manage(self):
-        # Anonymous
+        # Usuarios anonimos nao podem gerenciar o ambiente
         self.assertEqual(self.view.can_manage(), None)
         with api.env.adopt_roles(['Manager']):
-            # As manager
+            # Usuarios com papel de Manager podem
             self.assertEqual(self.view.can_manage(), True)
 
     def test_overview_upgrade_url(self):
-        # Anonymous
+        # Usuarios anonimos serao redirecionados para o login
         self.assertEqual(
             self.view.upgrade_url(self.portal),
             '{0}/@@plone-root-login'.format(self.app.absolute_url())
         )
         with api.env.adopt_roles(['Manager']):
-            # As manager
+            # Usuarios com papel de manager poderao realizar o upgrade
             self.assertEqual(
                 self.view.upgrade_url(self.portal),
                 '{0}/@@plone-upgrade'.format(self.portal.absolute_url())
             )
 
     def test_overview_outdated(self):
-        # If we pass an object without portal_migration, we will receive
-        # False as return
+        # Objetos que nao contenham o portal_migration nao podem
+        # estar 'desatualizados'
         self.assertEqual(self.view.outdated(self.app), False)
 
-        # We have a fresh new site, not outdated
+        # Como temos um portal novissimo, ele nao precisa atualizacao
         self.assertEqual(self.view.outdated(self.portal), False)
