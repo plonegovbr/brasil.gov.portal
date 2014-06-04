@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*-
-from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
+from collective.transmogrifier.transmogrifier import Transmogrifier
 from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from Products.CMFPlone.utils import _createObjectByType
-from collective.transmogrifier.transmogrifier import Transmogrifier
+from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
 
 
 def setupPortalContent(p):
