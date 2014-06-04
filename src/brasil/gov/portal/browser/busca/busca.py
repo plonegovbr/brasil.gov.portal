@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from Acquisition import aq_base, aq_inner
 from plone.app.search.browser import Search as PloneSearch
 from urllib import urlencode
@@ -8,12 +7,12 @@ from zope.schema.interfaces import IVocabularyFactory
 
 
 class Search(PloneSearch):
-    """Customize NITF view
+    """Customize Plone Search
     """
 
     def skos(self, item):
-        ''' Retorna lista de itens selecionados neste conteudo
-        '''
+        """Retorna lista de itens selecionados neste conteudo
+        """
         ps = self.context.restrictedTraverse('@@plone_portal_state')
         self.nav_root_url = ps.navigation_root().absolute_url()
 
@@ -35,6 +34,6 @@ class Search(PloneSearch):
         return skos
 
     def rel(self):
-        '''Formata rel a ser utilizado no href de cada termo
-        '''
+        """Formata rel a ser utilizado no href de cada termo
+        """
         return u'dc:subject foaf:primaryTopic'
