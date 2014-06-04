@@ -134,7 +134,7 @@ def publish_content(folder, obj_ids):
         o = folder[oId]
         review_state = api.content.get_state(o)
         if review_state and (review_state != 'published'):
-            api.content.transition(obj=o, 'transition=publish')
+            api.content.transition(obj=o, transition='publish')
             oIds = o.objectIds()
             if oIds:
                 publish_content(o, oIds)
