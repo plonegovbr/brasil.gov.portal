@@ -113,6 +113,8 @@ def configura_ultimas_noticias(portal):
             title=title,
             description=description
         )
+    else:
+        colecao = portal['colecao']
     colecao.sort_on = u'effective'
     colecao.reverse_sort = True
     #: Query by Type and Review State
