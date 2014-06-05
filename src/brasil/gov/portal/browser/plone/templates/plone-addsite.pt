@@ -179,8 +179,7 @@
 
       <div class="formControls">
         <input type="hidden" name="form.submitted:boolean" value="True" />
-        <input type="submit" name="submit" value="Create Plone Site"
-               i18n:attributes="value;" />
+        <input type="submit" name="submit" value="Criar Portal" />
       </div>
 
   </form>
