@@ -148,10 +148,10 @@ def publish_content(folder, obj_ids):
 
 
 def instala_pacote_portal(context):
-    ''' Marcamos o brasil.gov.portal como instalado no
-        portal_quickinstaller, fazendo com que ele apareça no
-        painel de controle do portal
-    '''
+    """Marcamos o brasil.gov.portal como instalado no
+       portal_quickinstaller, fazendo com que ele apareça no
+       painel de controle do portal"""
+
     # Executado apenas se o estivermos no Profile correto
     if context.readDataFile('brasil.gov.portal.txt') is None:
         return
@@ -170,8 +170,7 @@ def instala_pacote_portal(context):
 
 
 def importContent(context):
-    ''' Criamos o conteudo padrao para o site
-    '''
+    """Criamos o conteudo padrao para o site."""
     # Executado apenas se o estivermos no Profile correto
     if context.readDataFile('initcontent.txt') is None:
         return
