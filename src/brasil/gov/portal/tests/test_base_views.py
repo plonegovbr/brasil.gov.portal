@@ -4,6 +4,8 @@ from brasil.gov.portal.browser.plone.admin import Overview
 from brasil.gov.portal.testing import FUNCTIONAL_TESTING
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
+from plone.app.testing import SITE_OWNER_NAME
+from plone.app.testing import SITE_OWNER_PASSWORD
 from plone.testing.z2 import Browser
 
 import unittest
@@ -68,3 +70,29 @@ class OverviewViewIntegrationTestCase(unittest.TestCase):
 
         # Como temos um portal novissimo, ele nao precisa atualizacao
         self.assertEqual(self.view.outdated(self.portal), False)
+
+
+class AddSiteViewFunctionalTestCase(unittest.TestCase):
+
+    layer = FUNCTIONAL_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.app = self.layer['app']
+        self.request = self.layer['request']
+
+    def test_addsite_view(self):
+        import base64
+        browser = Browser(self.layer['app'])
+        browser.handleErrors = False
+        basic_auth = 'Basic {0}'.format(
+            base64.encodestring('{0}:{1}'.format(
+                SITE_OWNER_NAME,
+                SITE_OWNER_PASSWORD)
+            )
+        )
+        browser.addHeader('Authorization', basic_auth)
+        browser.open('{0}/@@plone-addsite?site_id=site'.format(self.app.absolute_url()))
+        # site_id veio do parametro de query string
+        self.assertIn('"site"', browser.contents)
+        self.assertIn('Nome do Minist', browser.contents)
