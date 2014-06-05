@@ -1,12 +1,7 @@
     # -*- coding: utf-8 -*-
-from five import grok
 from plone.dexterity.content import Item
-from Products.CMFCore.utils import getToolByName
 from zope.interface import implements
 from zope.interface import Interface
-
-
-grok.templatedir('templates')
 
 
 def has_image(blog_entry):
@@ -39,19 +34,3 @@ class ExternalContent(Item):
                         scale=scale,
                         css_class=css_class,
                         **kw)
-
-
-class ExternalContentView(grok.View):
-    grok.context(IExternalContent)
-    grok.name('view')
-
-    def update(self):
-        """Redireciona usuarios sem poder de edicao para o conteudo externo"""
-        context = self.context
-        mtool = getToolByName(context, 'portal_membership')
-
-        can_edit = mtool.checkPermission('Modify portal content', context)
-
-        if not can_edit:
-            url = context.remoteUrl
-            return context.REQUEST.RESPONSE.redirect(url)
