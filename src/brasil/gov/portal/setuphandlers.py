@@ -3,6 +3,7 @@ from collective.transmogrifier.transmogrifier import Transmogrifier
 from plone import api
 from plone.app.dexterity.behaviors import constrains
 from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
 
@@ -134,7 +135,11 @@ def configura_ultimas_noticias(portal):
 def publish_content(folder, obj_ids):
     for oId in obj_ids:
         o = folder[oId]
-        review_state = api.content.get_state(o)
+        try:
+            review_state = api.content.get_state(o)
+        except WorkflowException:
+            # Sem informacao de workflow (Imagens, Arquivos)
+            continue
         if review_state and (review_state != 'published'):
             api.content.transition(obj=o, transition='publish')
             oIds = o.objectIds()
