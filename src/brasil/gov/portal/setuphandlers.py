@@ -9,8 +9,8 @@ from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
 
 
 def setupPortalContent(p):
-    ''' Cria conteudo de exemplo para este portal
-    '''
+    """Cria conteudo de exemplo para este portal"""
+
     # Importa conteudo
     transmogrify = Transmogrifier(p)
     transmogrify("brasil.gov.portal.conteudo")
