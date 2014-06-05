@@ -3,5 +3,4 @@ from zope.interface import Interface
 
 
 class IBrasilGov(Interface):
-    """
-    """
+    """Browser Layer para o pacote brasil.gov.portal"""
