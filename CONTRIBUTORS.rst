@@ -13,5 +13,6 @@ seguintes pessoas:
 - Rennan Rodrigues
 - Rodrigo Ferreira de Souza
 
-Para os testes do tipo áudio utilizamos o arquivo disponível em 
-http://commons.wikimedia.org/wiki/File:Thunder.ogg
+Para os testes do tipo áudio utilizamos o arquivo disponível no `Wikimedia Commons <http://commons.wikimedia.org/wiki/File:Thunder.ogg>`_
+
+Para os testes do tipo Conteúdo Externo utilizamos o `arquivo disponível na Wikipedia <http://en.wikipedia.org/wiki/Clube_Atl%C3%A9tico_Juventus#mediaviewer/File:Ju_Jovem.JPG>`_
