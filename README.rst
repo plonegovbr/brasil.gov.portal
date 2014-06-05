@@ -1,5 +1,5 @@
 *******************************************************************
-.gov.br: Identidade Digital do Governo (Implementação Modelo)
+.gov.br: Portal Padrão da Identidade Digital do Governo
 *******************************************************************
 
 .. contents:: Conteúdo
@@ -8,16 +8,16 @@
 Introdução
 ----------
 
-Este pacote provê configurações base para o Implementação Modelo da
-Identidade Digital de Governo, para uso em sites Plone do Governo da República 
-Federativa do Brasil.
+Este pacote provê configurações para implementação da Identidade Digital de Governo em sites Plone do Governo da República Federativa do Brasil.
+
+O desenvolvimento deste pacote foi feito como parte da iniciativa `Portal Padrão <http://portalpadrao.plone.org.br>`_ da comunidade `PloneGov.Br <http://www.softwarelivre.gov.br/plone>`_.
 
 Requisitos
 ----------
 
 Para uso deste pacote, seu site deve ter sido construído com:
 
-    * Plone 4.3.2 ou superior (http://plone.org/products/plone)
+    * Plone 4.3.3 ou superior (http://plone.org/products/plone)
 
 
 Estado deste pacote
@@ -26,7 +26,7 @@ Estado deste pacote
 O **brasil.gov.portal** tem testes automatizados e, a cada alteração em seu
 código os testes são executados pelo serviço Travis. 
 
-O estado atual dos testes pode ser visto na imagem a seguir:
+O estado atual dos testes, a cobertura de código e o número de downloads deste pacote podem ser vistos nas imagens a seguir:
 
 .. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.portal.png?branch=master
     :target: http://travis-ci.org/plonegovbr/brasil.gov.portal
@@ -34,6 +34,10 @@ O estado atual dos testes pode ser visto na imagem a seguir:
 .. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.portal/badge.png?branch=master
     :alt: Coveralls badge
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.portal
+
+.. image:: https://pypip.in/d/brasil.gov.portal/badge.png
+    :target: https://pypi.python.org/pypi/brasil.gov.portal/
+    :alt: Downloads
 
 Instalação
 ----------
