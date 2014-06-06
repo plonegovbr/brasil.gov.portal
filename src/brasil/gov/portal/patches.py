@@ -5,7 +5,6 @@ from collective.z3cform.widgets.multicontent_search_widget import (
 )
 from plone.app.contenttypes.content import Link
 from plone.app.relationfield.behavior import IRelatedItems
-from plone.app.workflow.browser.sharing import SharingView
 from plone.autoform.interfaces import WIDGETS_KEY
 from plone.outputfilters.filters import resolveuid_and_caption as base
 
@@ -49,24 +48,7 @@ def related_items_widget():
     logger.info('Patched Related Items widget')
 
 
-def sharing():
-    def updateSharingInfo(self, search_term=''):
-        data = self._updateSharingInfo(search_term)
-        self.request.response.setHeader('Content-Type',
-                                        'application/json;charset=utf-8')
-        return data
-
-    setattr(SharingView,
-            '_updateSharingInfo',
-            SharingView.updateSharingInfo)
-    setattr(SharingView,
-            'updateSharingInfo',
-            updateSharingInfo)
-    logger.info('Patched sharing tab')
-
-
 def run():
     outputfilters()
     link()
     related_items_widget()
-    sharing()
