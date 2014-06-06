@@ -243,10 +243,24 @@ class ServicosViewletTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'servicos')
-        self.servicos = self.portal['servicos']
-        self.servicos.invokeFactory('Link', 'servico-1', title=u'Servico 1')
-        self.servicos.invokeFactory('Link', 'servico-2', title=u'Servico 2')
+        self.servicos = api.content.create(
+            type='Folder',
+            container=self.portal,
+            id='servicos',
+            title=u'Servicos'
+        )
+        servico1 = api.content.create(
+            type='Link',
+            container=self.portal,
+            id='servico-1',
+            title=u'Servicos 1'
+        )
+        servico2 = api.content.create(
+            type='Link',
+            container=self.portal,
+            id='servico-2',
+            title=u'Servicos 2'
+        )
 
     def viewlet(self):
         viewlet = ServicosViewlet(self.portal, self.request, None, None)
@@ -259,7 +273,7 @@ class ServicosViewletTestCase(unittest.TestCase):
 
     def test_not_available(self):
         # Apagamos a pasta servicos
-        self.portal.manage_delObjects(['servicos'])
+        api.content.delete(obj=self.portal['servicos'])
         viewlet = self.viewlet()
         self.assertFalse(viewlet.available())
 
