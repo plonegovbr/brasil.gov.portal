@@ -3280,7 +3280,7 @@ ul.formTabs { padding: 0px !important; }
     }
 
     body.contraste .menuTrigger {
-        background: #000 url("../img/bg-menu-mobile-contraste.png") top right no-repeat;
+        background: #000 url("++resource++brasil.gov.portal/img/bg-menu-mobile-contraste.png") top right no-repeat;
         border-top: 1px solid #FFF;
         border-bottom: 1px solid #FFF;
     }
