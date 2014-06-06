@@ -3769,16 +3769,16 @@ body.contraste .mediacarousel .mediacarousel-footer-container .mediacarousel-foo
 
 body.contraste #portal-searchbox {
     border-color: #FFF;
-    background-color: #FFF;
+    background-color: #000;
 }
 
 body.contraste #portal-searchbox .searchField {
-    background-color: #FFF;
-    color: #000 !important;
+    background-color: #000;
+    color: #FFF !important;
 }
 
 body.contraste #header input.searchButton {
-    background-color: #FFF;
+    background-color: #000;
     background-position: 0px 2px;
 }
 

@@ -4,6 +4,8 @@ Changelog
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige contraste do campo de busca do header
+  [dbarbato]
 * Corrige factory dos tipos internos de Áudio
   [ericof]
 * brasil.sections.jsonsource agora suporta variáveis de ambiente para passagem de parâmetro.
