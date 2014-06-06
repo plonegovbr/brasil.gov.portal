@@ -5,6 +5,7 @@ from brasil.gov.portal.content.audio import IAudio
 from brasil.gov.portal.content.audio_file import IMPEGAudioFile
 from brasil.gov.portal.content.audio_file import IOGGAudioFile
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
@@ -25,14 +26,20 @@ class AudioTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
         # Invalidate schema cache
         SCHEMA_CACHE.invalidate('Audio')
         SCHEMA_CACHE.invalidate('MPEG Audio File')
         SCHEMA_CACHE.invalidate('OGG Audio File')
-        self.folder = self.portal['test-folder']
-        audio_id = self.folder.invokeFactory('Audio', 'my-audio')
-        self.audio = self.folder[audio_id]
+        self.folder = api.content.create(
+            type='Folder',
+            container=self.portal,
+            id='test-folder'
+        )
+        self.audio = api.content.create(
+            type='Audio',
+            container=self.folder,
+            id='my-audio'
+        )
         self.setup_content_data()
 
     def setup_content_data(self):
@@ -59,8 +66,11 @@ class AudioTestCase(unittest.TestCase):
         audio = self.audio
         self.assertIsNone(audio.return_mp3())
         # Now we add an mp3 file
-        oId = audio.invokeFactory('MPEG Audio File', 'file.mp3')
-        mp3_file = audio[oId]
+        mp3_file = api.content.create(
+            type='MPEG Audio File',
+            container=audio,
+            id='file.mp3'
+        )
         mp3_file.file = self.mp3
         self.assertEqual(audio.return_mp3(), mp3_file)
 
@@ -68,9 +78,11 @@ class AudioTestCase(unittest.TestCase):
         audio = self.audio
         self.assertIsNone(audio.return_ogg())
         # Now we add an ogg file
-        oId = audio.invokeFactory('OGG Audio File', 'file.ogg')
-        ogg_file = audio[oId]
-        ogg_file.file = self.ogg
+        ogg_file = api.content.create(
+            type='OGG Audio File',
+            container=audio,
+            id='file.ogg'
+        )
         self.assertEqual(audio.return_ogg(), ogg_file)
 
     def test_mp3_add_permission(self):
@@ -79,8 +91,11 @@ class AudioTestCase(unittest.TestCase):
         audio = self.audio
         self.assertTrue(sm.checkPermission(permission, audio))
         # Adicionamos um arquivo MP3
-        oId = audio.invokeFactory('MPEG Audio File', 'file.mp3')
-        mp3_file = audio[oId]
+        mp3_file = api.content.create(
+            type='MPEG Audio File',
+            container=audio,
+            id='file.mp3'
+        )
         mp3_file.file = self.mp3
         self.assertFalse(sm.checkPermission(permission, audio))
         # Removendo o arquivo, a permissao volta a ser dada
@@ -93,8 +108,11 @@ class AudioTestCase(unittest.TestCase):
         audio = self.audio
         self.assertTrue(sm.checkPermission(permission, audio))
         # Adicionamos um arquivo OGG
-        oId = audio.invokeFactory('OGG Audio File', 'file.ogg')
-        ogg_file = audio[oId]
+        ogg_file = api.content.create(
+            type='OGG Audio File',
+            container=audio,
+            id='file.ogg'
+        )
         ogg_file.file = self.ogg
         self.assertFalse(sm.checkPermission(permission, audio))
         # Removendo o arquivo, a permissao volta a ser dada
@@ -109,16 +127,27 @@ class MPEGAudioFileTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
         # Invalidate schema cache
         SCHEMA_CACHE.invalidate('Audio')
         SCHEMA_CACHE.invalidate('MPEG Audio File')
-        self.folder = self.portal['test-folder']
-        audio_id = self.folder.invokeFactory('Audio', 'my-audio')
-        self.audio = self.folder[audio_id]
+        self.folder = api.content.create(
+            type='Folder',
+            container=self.portal,
+            id='test-folder'
+        )
+        self.audio = api.content.create(
+            type='Audio',
+            container=self.folder,
+            id='my-audio'
+        )
         self.setup_content_data()
-        self.audio.invokeFactory('MPEG Audio File', 'file.mp3')
-        self.mp3_audio = self.audio['file.mp3']
+        self.mp3_audio = api.content.create(
+            type='MPEG Audio File',
+            container=self.audio,
+            id='file.mp3'
+        )
+        self.mp3_audio.file = self.mp3
+        self.mp3_audio.reindexObject()
 
     def setup_content_data(self):
         path = os.path.dirname(__file__)
@@ -139,6 +168,9 @@ class MPEGAudioFileTestCase(unittest.TestCase):
         self.assertTrue(validate_mpeg(self.mp3))
         self.assertRaises(Invalid, validate_mpeg, self.ogg)
 
+    def test_file_content_type(self):
+        self.assertEqual(self.mp3_audio.content_type, 'audio/mp3')
+
 
 class OGGAudioFileTestCase(unittest.TestCase):
 
@@ -147,16 +179,27 @@ class OGGAudioFileTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
         # Invalidate schema cache
         SCHEMA_CACHE.invalidate('Audio')
         SCHEMA_CACHE.invalidate('OGG Audio File')
-        self.folder = self.portal['test-folder']
-        audio_id = self.folder.invokeFactory('Audio', 'my-audio')
-        self.audio = self.folder[audio_id]
+        self.folder = api.content.create(
+            type='Folder',
+            container=self.portal,
+            id='test-folder'
+        )
+        self.audio = api.content.create(
+            type='Audio',
+            container=self.folder,
+            id='my-audio'
+        )
         self.setup_content_data()
-        self.audio.invokeFactory('OGG Audio File', 'file.ogg')
-        self.ogg_audio = self.audio['file.ogg']
+        self.ogg_audio = api.content.create(
+            type='OGG Audio File',
+            container=self.audio,
+            id='file.ogg'
+        )
+        self.ogg_audio.file = self.ogg
+        self.ogg_audio.reindexObject()
 
     def setup_content_data(self):
         path = os.path.dirname(__file__)
@@ -177,6 +220,9 @@ class OGGAudioFileTestCase(unittest.TestCase):
         self.assertTrue(validate_ogg(self.ogg))
         self.assertRaises(Invalid, validate_ogg, self.mp3)
 
+    def test_file_content_type(self):
+        self.assertEqual(self.ogg_audio.content_type, 'audio/ogg')
+
 
 class AudioViewTestCase(unittest.TestCase):
 
@@ -185,14 +231,20 @@ class AudioViewTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
         # Invalidate schema cache
         SCHEMA_CACHE.invalidate('Audio')
         SCHEMA_CACHE.invalidate('MPEG Audio File')
         SCHEMA_CACHE.invalidate('OGG Audio File')
-        self.folder = self.portal['test-folder']
-        audio_id = self.folder.invokeFactory('Audio', 'my-audio')
-        self.audio = self.folder[audio_id]
+        self.folder = api.content.create(
+            type='Folder',
+            container=self.portal,
+            id='test-folder'
+        )
+        self.audio = api.content.create(
+            type='Audio',
+            container=self.folder,
+            id='my-audio'
+        )
         self.setup_content_data()
 
     def setup_content_data(self):
