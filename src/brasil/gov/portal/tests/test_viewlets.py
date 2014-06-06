@@ -251,15 +251,15 @@ class ServicosViewletTestCase(unittest.TestCase):
         )
         servico1 = api.content.create(
             type='Link',
-            container=self.portal,
+            container=self.servicos,
             id='servico-1',
-            title=u'Servicos 1'
+            title=u'Servico 1'
         )
         servico2 = api.content.create(
             type='Link',
-            container=self.portal,
+            container=self.servicos,
             id='servico-2',
-            title=u'Servicos 2'
+            title=u'Servico 2'
         )
 
     def viewlet(self):
