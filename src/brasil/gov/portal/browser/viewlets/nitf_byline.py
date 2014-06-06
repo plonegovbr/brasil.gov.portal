@@ -25,26 +25,3 @@ class NITFBylineViewlet(DocumentBylineViewlet):
 
     def authorname(self):
         return self.context.byline
-
-    def pub_date(self):
-        """Return object effective date.
-
-        Return None if publication date is switched off in global site settings
-        or if Effective Date is not set on object.
-        """
-        if PLONE_VERSION >= '4.3':
-            return super(NITFBylineViewlet, self).pub_date()  # use parent's method
-
-        # compatibility for Plone < 4.3
-        # check if we are allowed to display publication date
-        properties = getToolByName(self.context, 'portal_properties')
-        site_properties = getattr(properties, 'site_properties')
-        if not site_properties.getProperty('displayPublicationDateInByline'):
-            return None
-
-        # check if we have Effective Date set
-        date = self.context.EffectiveDate()
-        if not date or date == 'None':
-            return None
-
-        return DateTime(date)
