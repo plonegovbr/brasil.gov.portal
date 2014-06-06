@@ -4,7 +4,7 @@
  <property name="title" i18n:translate="">MPEG Audio File</property>
  <property name="description" i18n:translate="">An Audio File using MPEG</property>
  <property name="icon_expr"></property>
- <property name="factory">File</property>
+ <property name="factory">MPEG Audio File</property>
  <property name="add_view_expr">string:${folder_url}/++add++MPEG Audio File</property>
  <property name="link_target"></property>
  <property name="immediate_view">view</property>
