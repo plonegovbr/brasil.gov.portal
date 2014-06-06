@@ -3279,6 +3279,12 @@ ul.formTabs { padding: 0px !important; }
         cursor: pointer;
     }
 
+    body.contraste .menuTrigger {
+        background: #000 url("../img/bg-menu-mobile-contraste.png") top right no-repeat;
+        border-top: 1px solid #FFF;
+        border-bottom: 1px solid #FFF;
+    }
+
     #navigation.ativo .menuTrigger { background-position: bottom right; }
 
     #navigation #portal-column-one { display: none; }
@@ -3455,6 +3461,24 @@ ul.formTabs { padding: 0px !important; }
         height: 30px;
         background: url("++resource++brasil.gov.portal/img/search-button-30px.gif") no-repeat;
         cursor: pointer;
+    }
+
+    body.contraste #header #portal-searchbox .searchButton {
+        background: url("++resource++brasil.gov.portal/img/search-button-30px-contraste.gif") no-repeat;
+    }
+
+    body.contraste #portal-searchbox .searchField {
+        border: 1px #FFF solid;
+        width: 99%;
+    }
+
+    #portal-title {
+        margin: 30px 0 36px;
+    }
+
+    #header #portal-searchbox {
+        border: none;
+        margin-bottom: 10px !important;
     }
 
     #language {
