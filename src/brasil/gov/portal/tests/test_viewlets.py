@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.browser.viewlets.destaques import Destaques_Viewlet
 from brasil.gov.portal.browser.viewlets.logo import LogoViewlet
+from brasil.gov.portal.browser.viewlets.nitf_byline import NITFBylineViewlet
 from brasil.gov.portal.browser.viewlets.redes import RedesSociaisViewlet
 from brasil.gov.portal.browser.viewlets.related import RelatedItemsViewlet
 from brasil.gov.portal.browser.viewlets.servicos import ServicosViewlet
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from plone import api
 from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -241,3 +243,53 @@ class ServicosViewletTestCase(unittest.TestCase):
         self.assertEqual(len(servicos), 2)
         self.assertEqual(servicos[0].Title, u'Servico 1')
         self.assertEqual(servicos[1].Title, u'Servico 2')
+
+
+class NITFBylineViewletTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.request = self.layer['request']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+
+        properties = dict(
+            fullname='Machado de Assis',
+            location='Cosme Velho',
+        )
+        user = api.user.create(
+            username='machado',
+            email='machado@brasil.gov.br',
+            properties=properties,
+        )
+
+        self.conteudo = api.content.create(
+            type='collective.nitf.content',
+            container=self.portal,
+            id='minha-noticia'
+        )
+        self.conteudo.byline = u'Machado de Assis'
+
+    def viewlet(self):
+        viewlet = NITFBylineViewlet(self.conteudo, self.request, None, None)
+        viewlet.update()
+        return viewlet
+
+    def test_autor_inexistente(self):
+        self.conteudo.byline = u'Erico Verissimo'
+        viewlet = self.viewlet()
+        self.assertFalse(viewlet.byline())
+
+    def test_byline(self):
+        viewlet = self.viewlet()
+        self.assertEqual(viewlet.byline(), 'machado')
+
+    def test_author(self):
+        viewlet = self.viewlet()
+        author_data = viewlet.author()
+        self.assertEqual(author_data.get('username'), 'machado')
+
+    def test_authorname(self):
+        viewlet = self.viewlet()
+        self.assertEqual(viewlet.authorname(), u'Machado de Assis')
