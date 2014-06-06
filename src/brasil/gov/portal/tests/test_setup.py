@@ -3,6 +3,7 @@
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.browserlayer.utils import registered_layers
@@ -86,77 +87,114 @@ class TestUpgrade(unittest.TestCase):
         self.portal = self.layer['portal']
         self.qi = self.portal['portal_quickinstaller']
         self.st = self.portal['portal_setup']
+        self.pp = self.portal['portal_properties']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
-    def test_to1000_available(self):
-
+    def list_upgrades(self, source, destination):
         upgradeSteps = listUpgradeSteps(self.st,
                                         self.profile,
-                                        '0')
+                                        source)
+        if source == '0':
+            source = (source, '0')
+        else:
+            source = (source, )
+
         step = [step for step in upgradeSteps
-                if (step[0]['dest'] == ('1000',))
-                and (step[0]['source'] == ('0', '0'))]
+                if (step[0]['dest'] == (destination,))
+                and (step[0]['source'] == source)]
+        return step
+
+    def execute_upgrade(self, source, destination):
+        # Setamos o profile para versao source
+        self.st.setLastVersionForProfile(self.profile, source)
+        # Pegamos os upgrade steps
+        upgradeSteps = listUpgradeSteps(self.st,
+                                        self.profile,
+                                        source)
+        if source == '0':
+            source = (source, '0')
+        else:
+            source = (source, )
+        steps = [step for step in upgradeSteps
+                 if (step[0]['dest'] == (destination,))
+                 and (step[0]['source'] == source)][0]
+        # Os executamos
+        for step in steps:
+            step['step'].doStep(self.st)
+
+    def test_to1000_available(self):
+        step = self.list_upgrades(u'0', u'1000')
         self.assertEqual(len(step), 1)
+
+    def test_to1000_execution(self):
+        # Executa upgrade
+        self.execute_upgrade(u'0', u'1000')
 
     def test_to2000_available(self):
-
-        upgradeSteps = listUpgradeSteps(self.st,
-                                        self.profile,
-                                        '1000')
-        step = [step for step in upgradeSteps
-                if (step[0]['dest'] == ('2000',))
-                and (step[0]['source'] == ('1000',))]
+        step = self.list_upgrades(u'1000', u'2000')
         self.assertEqual(len(step), 1)
+
+    def test_to2000_execution(self):
+        # Executa upgrade
+        self.execute_upgrade(u'1000', u'2000')
+        record = api.portal.get_registry_record(
+            'collective.cover.controlpanel.ICoverSettings.available_tiles'
+        )
+        self.assertIn(
+            'banner_rotativo',
+            record
+        )
 
     def test_to3000_available(self):
-
-        upgradeSteps = listUpgradeSteps(self.st,
-                                        self.profile,
-                                        '2000')
-        step = [step for step in upgradeSteps
-                if (step[0]['dest'] == ('3000',))
-                and (step[0]['source'] == ('2000',))]
+        step = self.list_upgrades(u'2000', u'3000')
         self.assertEqual(len(step), 1)
+
+    def test_to3000_execution(self):
+        # Executa upgrade
+        self.execute_upgrade(u'2000', u'3000')
+        record = api.portal.get_registry_record(
+            'collective.cover.controlpanel.ICoverSettings.styles'
+        )
+        self.assertIn(
+            'Verde Esporte|verde',
+            record
+        )
 
     def test_to4000_available(self):
-
-        upgradeSteps = listUpgradeSteps(self.st,
-                                        self.profile,
-                                        '3000')
-        step = [step for step in upgradeSteps
-                if (step[0]['dest'] == ('4000',))
-                and (step[0]['source'] == ('3000',))]
+        step = self.list_upgrades(u'3000', u'4000')
         self.assertEqual(len(step), 1)
 
-    def test_to5000_available(self):
+    def test_to4000_execution(self):
+        # Executa upgrade
+        self.execute_upgrade(u'3000', u'4000')
+        self.assertTrue(
+            self.pp.site_properties.displayPublicationDateInByline
+        )
 
-        upgradeSteps = listUpgradeSteps(self.st,
-                                        self.profile,
-                                        '4000')
-        step = [step for step in upgradeSteps
-                if (step[0]['dest'] == ('5000',))
-                and (step[0]['source'] == ('4000',))]
+    def test_to5000_available(self):
+        step = self.list_upgrades(u'4000', u'5000')
         self.assertEqual(len(step), 1)
 
     def test_5000_corrige_pastas(self):
         # Ajustamos as pastas para nao estarem ordenadas
-        pastas = ['assuntos', 'imagens', 'sobre']
+        pastas = ['assuntos', 'imagens', ]
         for pasta_id in pastas:
-            pasta_id = self.portal.invokeFactory('Folder', pasta_id)
-            pasta = self.portal[pasta_id]
+            pasta = api.content.create(
+                type='Folder',
+                container=self.portal,
+                id=pasta_id
+            )
             pasta.setOrdering('unordered')
-        # Setamos o profile para versao 4000
-        self.st.setLastVersionForProfile(self.profile, u'4000')
-        # Pegamos os upgrade steps
-        upgradeSteps = listUpgradeSteps(self.st,
-                                        self.profile,
-                                        '4000')
-        steps = [step for step in upgradeSteps
-                 if (step[0]['dest'] == ('5000',))
-                 and (step[0]['source'] == ('4000',))][0]
-        # Os executamos
-        for step in steps:
-            step['step'].doStep(self.st)
+            conteudo = api.content.create(
+                type='Folder',
+                container=pasta,
+                id='sub_{0}'.format(pasta_id)
+            )
+            conteudo.setOrdering('unordered')
+
+        # Executa upgrade
+        self.execute_upgrade(u'4000', u'5000')
+
         for pasta_id in pastas:
             pasta = self.portal[pasta_id]
             ordering = pasta.getOrdering()
