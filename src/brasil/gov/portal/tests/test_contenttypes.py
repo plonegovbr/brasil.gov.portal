@@ -2,6 +2,7 @@
 
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from collective.cover.controlpanel import ICoverSettings
+from plone import api
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 
@@ -88,3 +89,14 @@ class ContentTypesTestCase(unittest.TestCase):
             self.assertTrue('brasil.gov.vcge.dx.behaviors.IVCGE' in
                             fti.behaviors,
                             'Tipo %s nao suporta o VCGE' % t)
+
+    def test_link_patched(self):
+        with api.env.adopt_roles(['Manager', ]):
+            plone = api.content.create(
+                type='Link',
+                container=self.portal,
+                id='plone_foundation',
+                title=u'Plone Foundation'
+            )
+        plone.remoteUrl = 'http://plone.org/foundation'
+        self.assertEqual(plone.getRemoteUrl(), plone.remoteUrl)
