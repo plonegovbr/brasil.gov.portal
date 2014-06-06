@@ -25,9 +25,12 @@ class DestaquesViewletTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('collective.cover.content',
-                                  'destaques', title=u'Destaques')
-        self.destaques = self.portal['destaques']
+        self.destaques = api.content.create(
+            type='collective.cover.content',
+            container=self.portal,
+            id='destaques',
+            title=u'Destaques'
+        )
 
     def viewlet(self, context=None):
         context = context or self.portal
@@ -40,26 +43,35 @@ class DestaquesViewletTestCase(unittest.TestCase):
         self.assertTrue(viewlet.available())
 
     def test_not_available_on_folder(self):
-        self.portal.invokeFactory('Folder',
-                                  'folder', title=u'Uma pasta')
-        viewlet = self.viewlet(self.portal['folder'])
+        pasta = api.content.create(
+            type='Folder',
+            container=self.portal,
+            id='pasta',
+            title=u'Uma pasta'
+        )
+        viewlet = self.viewlet(self.portal['pasta'])
         self.assertFalse(viewlet.available())
 
     def test_not_available(self):
         # Apagamos a capa de destaques
-        self.portal.manage_delObjects(['destaques'])
+        api.content.delete(obj=self.portal['destaques'])
         viewlet = self.viewlet()
         self.assertFalse(viewlet.available())
 
     def test_available_for_different_content_type(self):
         portal = self.portal
         # Apagamos a capa de destaques
-        portal.manage_delObjects(['destaques'])
+        api.content.delete(obj=self.portal['destaques'])
         # Colocamos uma pasta no mesmo lugar
-        portal.invokeFactory('Folder',
-                             'destaques', title=u'Destaques')
+        pasta = api.content.create(
+            type='Folder',
+            container=self.portal,
+            id='destaques',
+            title=u'Uma pasta com destaques'
+        )
         viewlet = self.viewlet()
         # O Viewlet deve detectar o problema e nao exibir nada
+        self.assertEqual(pasta.portal_type, 'Folder')
         self.assertFalse(viewlet.available())
 
     def test_editable(self):
