@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-from zope.intid.interfaces import IIntIds
-from zope.component import getUtility
-from brasil.gov.portal.testing import INTEGRATION_TESTING
 from brasil.gov.portal.browser.viewlets.destaques import Destaques_Viewlet
 from brasil.gov.portal.browser.viewlets.logo import LogoViewlet
 from brasil.gov.portal.browser.viewlets.redes import RedesSociaisViewlet
 from brasil.gov.portal.browser.viewlets.related import RelatedItemsViewlet
 from brasil.gov.portal.browser.viewlets.servicos import ServicosViewlet
+from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from z3c.relationfield import RelationValue
+from zope.component import getUtility
+from zope.intid.interfaces import IIntIds
 
 import unittest
 
