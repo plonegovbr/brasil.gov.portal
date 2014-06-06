@@ -193,11 +193,19 @@ class RelatedViewletTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Link', 'servico-1', title=u'Servico 1')
-        to_id = intids.getId(self.portal['servico-1'])
-        self.portal.invokeFactory('collective.nitf.content',
-                                  'artigo', title=u'Artigo')
-        self.artigo = self.portal['artigo']
+        self.link = api.content.create(
+            type='Link',
+            container=self.portal,
+            id='servico-1',
+            title=u'Servico'
+        )
+        to_id = intids.getId(self.link)
+        self.artigo = api.content.create(
+            type='collective.nitf.content',
+            container=self.portal,
+            id='artigo',
+            title=u'Artigo'
+        )
         self.artigo.relatedItems = [RelationValue(to_id), ]
 
     def viewlet(self, context=None):
@@ -212,11 +220,17 @@ class RelatedViewletTestCase(unittest.TestCase):
         self.assertEqual(len(viewlet.related()), 1)
 
     def test_related_on_type_without_behavior(self):
-        self.portal.invokeFactory('Audio',
-                                  'audio', title=u'Audio')
-        audio = self.portal['audio']
-        audio_file = audio.invokeFactory('MPEG Audio File',
-                                         'file.mp3')
+        audio = api.content.create(
+            type='Audio',
+            container=self.portal,
+            id='audio',
+            title=u'Audio'
+        )
+        audio_file = api.content.create(
+            type='MPEG Audio File',
+            container=audio,
+            id='file.mp3',
+        )
         viewlet = self.viewlet(audio_file)
         self.assertEqual(len(viewlet.related()), 0)
 
