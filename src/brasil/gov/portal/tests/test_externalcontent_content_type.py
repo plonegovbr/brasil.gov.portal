@@ -3,8 +3,6 @@ from brasil.gov.portal.browser.content.external import ExternalContentView
 from brasil.gov.portal.content.external import IExternalContent
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.schema import SCHEMA_CACHE
 from plone.namedfile.file import NamedBlobImage
@@ -21,20 +19,20 @@ class ExternalContentTestCase(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.folder = api.content.create(
-            type='Folder',
-            container=self.portal,
-            id='test-folder'
-        )
-        # Invalidate schema cache
-        SCHEMA_CACHE.invalidate('ExternalContent')
-        self.content = api.content.create(
-            type='ExternalContent',
-            container=self.folder,
-            id='external'
-        )
-        self.setup_content_data()
+        with api.env.adopt_roles(['Manager', ]):
+            self.folder = api.content.create(
+                type='Folder',
+                container=self.portal,
+                id='test-folder'
+            )
+            # Invalidate schema cache
+            SCHEMA_CACHE.invalidate('ExternalContent')
+            self.content = api.content.create(
+                type='ExternalContent',
+                container=self.folder,
+                id='external'
+            )
+            self.setup_content_data()
 
     def setup_content_data(self):
         path = os.path.dirname(__file__)
@@ -77,21 +75,19 @@ class ExternalContentViewTestCase(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.folder = api.content.create(
-            type='Folder',
-            container=self.portal,
-            id='test-folder'
-        )
         # Invalidate schema cache
         SCHEMA_CACHE.invalidate('ExternalContent')
-        self.content = api.content.create(
-            type='ExternalContent',
-            container=self.folder,
-            id='external'
-        )
+        with api.env.adopt_roles(['Manager', ]):
+            self.folder = api.content.create(
+                type='Folder',
+                container=self.portal,
+                id='test-folder'
+            )
+            self.content = api.content.create(
+                type='ExternalContent',
+                container=self.folder,
+                id='external'
+            )
 
     def test_view(self):
         view = self.content.restrictedTraverse('@@view')
