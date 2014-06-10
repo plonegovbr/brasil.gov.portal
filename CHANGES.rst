@@ -4,6 +4,8 @@ Changelog
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige contraste dos botões do menu responsivo
+  [dbarbato]
 * Corrige contraste do campo de busca do header
   [dbarbato]
 * Corrige factory dos tipos internos de Áudio
