@@ -135,3 +135,16 @@ class InitContentTestCase(unittest.TestCase):
                          u'Sobre')
         self.assertEqual(mapping['sobre'].currentFolderOnly,
                          False)
+
+    def test_doormat_view(self):
+        from brasil.gov.portal.browser.content.doormat import DoormatView
+        portal = self.portal
+        request = self.layer['request']
+        view = DoormatView(portal['rodape'], request)
+        data = view.getDoormatData()
+        # Teste se a troca de {portal_url} e {navigation_root_url}
+        # esta sendo realizada
+        self.assertEqual(
+            data[0]['column_sections'][0]['section_links'][1]['link_url'],
+            'http://nohost/plone/assuntos/lorem-ipsum'
+        )
