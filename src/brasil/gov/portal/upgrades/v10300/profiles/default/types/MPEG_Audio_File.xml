@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<object name="MPEG Audio File" meta_type="Dexterity FTI" i18n:domain="brasil.gov.portal"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="title" i18n:translate="">MPEG Audio File</property>
+ <property name="description" i18n:translate="">An Audio File using MPEG</property>
+ <property name="icon_expr"></property>
+ <property name="factory">MPEG Audio File</property>
+ <property name="add_view_expr">string:${folder_url}/++add++MPEG Audio File</property>
+ <property name="link_target"></property>
+ <property name="immediate_view">view</property>
+ <property name="global_allow">False</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types"/>
+ <property name="allow_discussion">False</property>
+ <property name="default_view">view</property>
+ <property name="view_methods">
+  <element value="view"/>
+ </property>
+ <property name="default_view_fallback">False</property>
+ <property name="add_permission">brasil.gov.portal.AddMPEGFile</property>
+ <property name="klass">brasil.gov.portal.content.audio_file.MPEGAudioFile</property>
+ <property name="behaviors">
+  <element value="plone.app.dexterity.behaviors.filename.INameFromFileName"/>
+ </property>
+ <property name="schema">brasil.gov.portal.content.audio_file.IMPEGAudioFile</property>
+ <property name="model_source"></property>
+ <property name="model_file"></property>
+ <alias from="(Default)" to="@@display-file"/>
+ <alias from="edit" to="@@edit"/>
+ <alias from="sharing" to="@@sharing"/>
+ <alias from="view" to="(selected layout)"/>
+ <action title="View" action_id="view" category="object" condition_expr=""
+    icon_expr="" link_target="" url_expr="string:${object_url}/view"
+    visible="True" i18n:attributes="title">
+  <permission value="View"/>
+ </action>
+ <action title="Edit" action_id="edit" category="object" condition_expr=""
+    icon_expr="" link_target="" url_expr="string:${object_url}/edit"
+    visible="True" i18n:attributes="title">
+  <permission value="Modify portal content"/>
+ </action>
+</object>

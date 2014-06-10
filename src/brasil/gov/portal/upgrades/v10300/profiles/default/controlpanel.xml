@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="brasil.gov.portal">
+  <configlet title=".gov.br: Redes Sociais"
+  			 action_id="social-config"
+             appId="brasil.gov.portal"
+             category="Products"
+             condition_expr=""
+     		 url_expr="string:${portal_url}/@@brasil.gov.portal-social"
+     		 icon_expr="string:${portal_url}/++resource++brasil.gov.barra/ico-brasil.png"
+     		 visible="True"
+     		 i18n:attributes="title">
+    <permission>brasil.gov.portal: Social Networks</permission>
+  </configlet>
+</object>

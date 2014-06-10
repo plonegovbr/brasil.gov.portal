@@ -13,4 +13,6 @@
 
   <include package=".v5000" />
 
+  <include package=".v10300" />
+
 </configure>
