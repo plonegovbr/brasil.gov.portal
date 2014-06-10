@@ -204,7 +204,30 @@ class TestUpgrade(unittest.TestCase):
         step = self.list_upgrades(u'5000', u'10300')
         self.assertEqual(len(step), 1)
 
+    def _prepara_to10300(self):
+        portal = self.portal
+        #Cria conteudo NITF
+        self.noticia = api.content.create(
+            type='collective.nitf.content',
+            container=self.portal,
+            id='uma-noticia',
+            title=u'Uma notícia'
+        )
+        self.noticia.section = 'General'
+        self.noticia.reindexObject(idxs=['section', ])
+        #Deixa General como secao disponivel
+        api.portal.set_registry_record(
+            'collective.nitf.controlpanel.INITFSettings.available_sections',
+            set([u'General', ])
+        )
+        #Deixa General como padrao
+        api.portal.set_registry_record(
+            'collective.nitf.controlpanel.INITFSettings.default_section',
+            u'General'
+        )
+
     def test_to10300_execution(self):
+        self._prepara_to10300()
         controlpanel = api.portal.get_tool('portal_controlpanel')
         # Executa upgrade
         self.execute_upgrade(u'5000', u'10300')
@@ -220,3 +243,20 @@ class TestUpgrade(unittest.TestCase):
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
             # Validamos que o painel de controle da barra esteja instalado
             self.failIf('social-config' in installed)
+
+        #Validamos secoes disponiveis
+        available_sections = api.portal.get_registry_record(
+            'collective.nitf.controlpanel.INITFSettings.available_sections',
+        )
+        self.assertNotIn('General', available_sections)
+        self.assertIn(u'Notícias', available_sections)
+        #Validamos secao default
+        default_section = api.portal.get_registry_record(
+            'collective.nitf.controlpanel.INITFSettings.default_section',
+        )
+        self.assertNotEqual('General', default_section)
+        self.assertEqual(u'Notícias', default_section)
+        #A substituicao deve ter sido feita
+        ct = api.portal.get_tool('portal_catalog')
+        results = ct.searchResults(section=u'Notícias')
+        self.assertEqual(len(results), 1)
