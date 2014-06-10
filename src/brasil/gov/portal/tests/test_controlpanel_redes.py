@@ -2,9 +2,7 @@
 from brasil.gov.portal.controlpanel import socialnetworks
 from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
-from plone.app.testing import logout
-from Products.CMFCore.utils import getToolByName
-from zope.component import getMultiAdapter
+from plone import api
 from zope.interface import alsoProvides
 
 import unittest2 as unittest
@@ -23,8 +21,11 @@ class ControlPanelTest(unittest.TestCase):
 
     def test_controlpanel_view(self):
         ''' Validamos se o control panel esta acessivel '''
-        view = getMultiAdapter((self.portal, self.portal.REQUEST),
-                               name='brasil.gov.portal-social')
+        view = api.content.get_view(
+            name='brasil.gov.portal-social',
+            context=self.portal,
+            request=self.portal.REQUEST,
+        )
         view = view.__of__(self.portal)
         self.failUnless(view())
 
@@ -32,16 +33,14 @@ class ControlPanelTest(unittest.TestCase):
         ''' Acesso a view nao pode ser feito por usuario anonimo '''
         # Importamos a excecao esperada
         from AccessControl import Unauthorized
-        # Deslogamos do portal
-        logout()
-        # Ao acessar a view como anonimo, a excecao e levantada
-        self.assertRaises(Unauthorized, self.portal.restrictedTraverse,
-                          '@@brasil.gov.portal-social')
+        with api.env.adopt_roles(['Anonymous', ]):
+            self.assertRaises(Unauthorized, self.portal.restrictedTraverse,
+                              '@@brasil.gov.portal-social')
 
     def test_configlet_install(self):
         ''' Validamos se o control panel foi registrado '''
         # Obtemos a ferramenta de painel de controle
-        controlpanel = getToolByName(self.portal, 'portal_controlpanel')
+        controlpanel = api.portal.get_tool('portal_controlpanel')
         # Listamos todas as acoes do painel de controle
         installed = [a.getAction(self)['id']
                      for a in controlpanel.listActions()]

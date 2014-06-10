@@ -3,6 +3,13 @@
     xmlns:browser="http://namespaces.zope.org/browser">
 
 
+  <permission
+      id="brasil.gov.portal.social_networks"
+      title="brasil.gov.portal: Social Networks">
+    <role name="Manager"/>
+    <role name="Site Administrator"/>
+  </permission>
+
   <adapter factory=".socialnetworks.SocialNetworksPanelAdapter" />
 
   <browser:page
@@ -10,7 +17,7 @@
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     class=".socialnetworks.SocialNetworksControlPanel"
     layer="brasil.gov.portal.interfaces.IBrasilGov"
-    permission="cmf.ManagePortal"
+    permission="brasil.gov.portal.social_networks"
     />
 
   <adapter factory=".site.SiteControlPanelAdapter" />

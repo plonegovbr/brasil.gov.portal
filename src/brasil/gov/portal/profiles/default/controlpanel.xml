@@ -11,6 +11,6 @@
      		 icon_expr="string:${portal_url}/++resource++brasil.gov.barra/ico-brasil.png"
      		 visible="True"
      		 i18n:attributes="title">
-    <permission>Manage portal</permission>
+    <permission>brasil.gov.portal: Social Networks</permission>
   </configlet>
 </object>

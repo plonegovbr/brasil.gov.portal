@@ -199,3 +199,24 @@ class TestUpgrade(unittest.TestCase):
             pasta = self.portal[pasta_id]
             ordering = pasta.getOrdering()
             self.assertTrue(hasattr(ordering, 'ORDER_KEY'))
+
+    def test_to10300_available(self):
+        step = self.list_upgrades(u'5000', u'10300')
+        self.assertEqual(len(step), 1)
+
+    def test_to10300_execution(self):
+        controlpanel = api.portal.get_tool('portal_controlpanel')
+        # Executa upgrade
+        self.execute_upgrade(u'5000', u'10300')
+        # Ao acessar a view como site administrator conseguimos acesso
+        with api.env.adopt_roles(['Site Administrator', ]):
+            # Listamos todas as acoes do painel de controle
+            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            # Validamos que o painel de controle da barra esteja instalado
+            self.failUnless('social-config' in installed)
+        # Ao acessar a view como anonimo, a excecao e levantada
+        with api.env.adopt_roles(['Anonymous', ]):
+            # Listamos todas as acoes do painel de controle
+            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            # Validamos que o painel de controle da barra esteja instalado
+            self.failIf('social-config' in installed)
