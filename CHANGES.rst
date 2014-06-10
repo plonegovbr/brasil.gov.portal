@@ -6,6 +6,8 @@ Changelog
 
 * Corrige contraste dos botões do menu responsivo
   [dbarbato]
+* Corrige permissão do painel de controle de redes sociais
+  [ericof]
 * Corrige contraste do campo de busca do header
   [dbarbato]
 * Corrige factory dos tipos internos de Áudio
