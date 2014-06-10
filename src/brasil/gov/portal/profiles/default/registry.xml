@@ -93,10 +93,11 @@
   <record name="collective.nitf.controlpanel.INITFSettings.available_sections">
     <value>
       <element>Geral</element>
+      <element>Notícias</element>
     </value>
   </record>
   <record name="collective.nitf.controlpanel.INITFSettings.default_section">
-    <value>Geral</value>
+    <value>Notícias</value>
   </record>
   <record name="collective.nitf.controlpanel.INITFSettings.available_genres">
     <value>

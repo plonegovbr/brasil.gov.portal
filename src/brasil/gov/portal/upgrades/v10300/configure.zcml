@@ -25,6 +25,12 @@
           handler=".handler.apply_profile"
           />
 
+      <gs:upgradeStep
+          title="Substitui secao General por secao Noticias"
+          description="Para tipos de conteudo NITF faremos a substituicao da secao General pela secao Noticias."
+          handler=".handler.atualiza_secoes"
+          />
+
   </gs:upgradeSteps>
 
 
