@@ -4333,11 +4333,11 @@ body.contraste .badge {
 
 body.contraste .portlet-static-centrais-de-conteudos .portletHeader,
 body.contraste .portletNavigationTree .portletHeader {
-    background: #000 url("../img/portlet-header-contraste.jpg") no-repeat 96% center !important;
+    background: #000 url("++resource++brasil.gov.portal/img/portlet-header-contraste.jpg") no-repeat 96% center !important;
 }
 
 body.contraste .portletNavigationTree .portletHeader.ativo {
-background: url("../img/portlet-header-expanded-contraste.jpg") no-repeat 96% center !important;
+background: url("++resource++brasil.gov.portal/img/portlet-header-expanded-contraste.jpg") no-repeat 96% center !important;
 }
 
 /* ==========================================================================
