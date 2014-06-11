@@ -1,9 +1,10 @@
-Changelog
----------
+Histórico de Alterações
+-------------------------
 
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
+* Uso do plone.api
+  [ericof]
 * Corrige contraste dos botões do menu responsivo
   [dbarbato]
 * Corrige permissão do painel de controle de redes sociais
@@ -25,7 +26,6 @@ Changelog
 
 * Ajusta tempo de execução de javascript na view de álbuns.
   [dbarbato]
-
 * Cria passo de atualização para ordenação de pastas
   [ericof]
 
