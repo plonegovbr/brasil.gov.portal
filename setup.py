@@ -62,7 +62,6 @@ setup(
         'Products.CMFPlone',
         'Products.Doormat<0.8',
         'Products.PloneFormGen',
-        'Products.PloneHotfix20131210',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',
         'sc.contentrules.metadata',
