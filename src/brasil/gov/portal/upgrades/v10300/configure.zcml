@@ -26,6 +26,12 @@
           />
 
       <gs:upgradeStep
+          title="Exibe pacotes que podem ser atualizados"
+          description="Rotina para exibir os pacotes que podem ser atualizados pela interface do Plone"
+          handler=".handler.atualiza_pacotes_instalados"
+          />
+
+      <gs:upgradeStep
           title="Substitui secao General por secao Noticias"
           description="Para tipos de conteudo NITF faremos a substituicao da secao General pela secao Noticias."
           handler=".handler.atualiza_secoes"

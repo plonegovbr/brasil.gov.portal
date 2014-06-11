@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
 
 from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.config import SHOW_DEPS
+from brasil.gov.portal.setuphandlers import _instala_pacote
 from plone import api
 from plone.app.upgrade.utils import loadMigrationProfile
 
@@ -54,3 +56,14 @@ def atualiza_secoes(context):
             u'Notícias'
         )
         logger.info('Define Noticias como secao padrao')
+
+
+def atualiza_pacotes_instalados(context):
+    """Exibe pacotes de dependencias"""
+    logger.info(u'Rotina para exibir pacotes de dependências')
+    site = api.portal.get()
+    qi = api.portal.get_tool('portal_quickinstaller')
+
+    for p in SHOW_DEPS:
+        _instala_pacote(qi, p)
+        logger.info(u'Exibe pacote {0}'.format(p))

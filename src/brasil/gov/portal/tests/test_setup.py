@@ -2,6 +2,7 @@
 
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import setRoles
@@ -244,19 +245,26 @@ class TestUpgrade(unittest.TestCase):
             # Validamos que o painel de controle da barra esteja instalado
             self.failIf('social-config' in installed)
 
-        #Validamos secoes disponiveis
+        # Testamos se os pacotes estao instalados e disponiveis
+        qi = api.portal.get_tool('portal_quickinstaller')
+        installed = [p.get('id') for p in qi.listInstalledProducts()]
+        for p in SHOW_DEPS:
+            self.assertIn(p, qi)
+            self.assertIn(p, installed)
+
+        # Validamos secoes disponiveis
         available_sections = api.portal.get_registry_record(
             'collective.nitf.controlpanel.INITFSettings.available_sections',
         )
         self.assertNotIn('General', available_sections)
         self.assertIn(u'Notícias', available_sections)
-        #Validamos secao default
+        # Validamos secao default
         default_section = api.portal.get_registry_record(
             'collective.nitf.controlpanel.INITFSettings.default_section',
         )
         self.assertNotEqual('General', default_section)
         self.assertEqual(u'Notícias', default_section)
-        #A substituicao deve ter sido feita
+        # A substituicao deve ter sido feita
         ct = api.portal.get_tool('portal_catalog')
         results = ct.searchResults(section=u'Notícias')
         self.assertEqual(len(results), 1)

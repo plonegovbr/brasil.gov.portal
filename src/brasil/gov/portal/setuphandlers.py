@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+from brasil.gov.portal.config import SHOW_DEPS
 from collective.transmogrifier.transmogrifier import Transmogrifier
 from plone import api
 from plone.app.dexterity.behaviors import constrains
@@ -146,6 +147,15 @@ def publish_content(folder, obj_ids):
                 publish_content(o, oIds)
 
 
+def _instala_pacote(qi, package):
+    if not package in qi.objectIds():
+        ip = InstalledProduct(package)
+        qi._setObject(package, ip)
+
+    p = getattr(qi, package)
+    p.update({}, locked=False, hidden=False, **{})
+
+
 def instala_pacote_portal(context):
     """Marcamos o brasil.gov.portal como instalado no
        portal_quickinstaller, fazendo com que ele apareça no
@@ -154,18 +164,20 @@ def instala_pacote_portal(context):
     # Executado apenas se o estivermos no Profile correto
     if context.readDataFile('brasil.gov.portal.txt') is None:
         return
-    site = api.portal.get()
-    p = 'brasil.gov.portal'
     qi = api.portal.get_tool('portal_quickinstaller')
-    # Como o produto nao aparece na listagem original do
-    # portal_quickinstaller, o adicionamos manualmente
-    if not p in qi.objectIds():
-        ip = InstalledProduct(p)
-        qi._setObject(p, ip)
+    p = 'brasil.gov.portal'
+    _instala_pacote(qi, p)
+    instala_dependencias(context)
 
-    p = getattr(qi, p)
-    # E atualizamos seu status
-    p.update({}, locked=False, hidden=False, **{})
+def instala_dependencias(context):
+    """Marcamos dependencias importantes como instaladas"""
+    if context.readDataFile('brasil.gov.portal.txt') is None:
+        return
+    site = api.portal.get()
+    qi = api.portal.get_tool('portal_quickinstaller')
+
+    for p in SHOW_DEPS:
+        _instala_pacote(qi, p)
 
 
 def importContent(context):

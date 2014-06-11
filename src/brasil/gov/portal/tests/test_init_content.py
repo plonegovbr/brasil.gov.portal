@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.testing import INITCONTENT_TESTING
+from plone import api
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
@@ -148,3 +149,17 @@ class InitContentTestCase(unittest.TestCase):
             data[0]['column_sections'][0]['section_links'][1]['link_url'],
             'http://nohost/plone/assuntos/lorem-ipsum'
         )
+
+    def test_portal_available(self):
+        qi = api.portal.get_tool('portal_quickinstaller')
+        installed = [p.get('id') for p in qi.listInstalledProducts()]
+        p = 'brasil.gov.portal'
+        self.assertIn(p, qi)
+        self.assertIn(p, installed)
+
+    def test_installed_packages(self):
+        qi = api.portal.get_tool('portal_quickinstaller')
+        installed = [p.get('id') for p in qi.listInstalledProducts()]
+        for p in SHOW_DEPS:
+            self.assertIn(p, qi)
+            self.assertIn(p, installed)
