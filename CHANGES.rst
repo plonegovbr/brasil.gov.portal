@@ -1,6 +1,12 @@
 Histórico de Alterações
 -------------------------
 
+1.0.4 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.0.3 (2014-06-11)
 ^^^^^^^^^^^^^^^^^^
 * Uso do plone.api
