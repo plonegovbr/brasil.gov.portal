@@ -2,7 +2,6 @@
 from collective.transmogrifier.transmogrifier import Transmogrifier
 from plone import api
 from plone.app.dexterity.behaviors import constrains
-from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
