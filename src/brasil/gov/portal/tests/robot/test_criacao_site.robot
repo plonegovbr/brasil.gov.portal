@@ -23,7 +23,7 @@ Criar novo site
     Campo de texto  orgao  Ministerio do Planejamento
     Campo de texto  description  Portal do Governo Brasileiro
     Capturar tela  criarsite-passo-02.png
-    Clicar botao  Criar site Plone
+    Clicar botao  Criar Portal
 
     Pagina deve conter  Portal do
     Pagina deve conter  Governo Eletronico
