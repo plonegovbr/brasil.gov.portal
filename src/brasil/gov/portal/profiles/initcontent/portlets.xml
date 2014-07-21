@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <portlets>
- <assignment name="apoio" category="context" key="/"
+ <assignment name="relevancia" category="context" key="/"
     manager="plone.leftcolumn" type="portlets.Navigation" visible="True">
   <property name="topLevel">0</property>
   <property name="currentFolderOnly">False</property>
   <property name="name"></property>
   <property name="includeTop">False</property>
   <property name="bottomLevel">0</property>
-  <property name="root">/menu-de-apoio</property>
+  <property name="root">/menu-de-relevancia</property>
  </assignment>
  <assignment name="assuntos" category="context" key="/"
     manager="plone.leftcolumn" type="portlets.Navigation" visible="True">
@@ -18,13 +18,13 @@
   <property name="bottomLevel">0</property>
   <property name="root">/assuntos</property>
  </assignment>
- <assignment name="sobre" category="context" key="/"
+ <assignment name="acesso-a-informacao" category="context" key="/"
     manager="plone.leftcolumn" type="portlets.Navigation" visible="True">
   <property name="topLevel">0</property>
   <property name="currentFolderOnly">False</property>
-  <property name="name">Sobre</property>
+  <property name="name">Acesso à Informação</property>
   <property name="includeTop">False</property>
   <property name="bottomLevel">0</property>
-  <property name="root">/sobre</property>
+  <property name="root">/acesso-a-informacao</property>
  </assignment>
 </portlets>

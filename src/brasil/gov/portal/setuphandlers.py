@@ -21,11 +21,11 @@ def setupPortalContent(p):
     # Pasta Assuntos
     configura_assuntos(p)
 
-    # Pasta Sobre
-    configura_sobre(p)
+    # Pasta Acesso a Informacao
+    configura_acesso_informacao(p)
 
-    # Pasta de Menu de Apoio
-    configura_menu_apoio(p)
+    # Pasta de Menu de Relevancia
+    configura_menu_relevancia(p)
 
     # Pasta Servicos
     configura_servicos(p)
@@ -39,10 +39,10 @@ def setupPortalContent(p):
     # Destaques
     configura_destaques(p)
 
-    obj_ids = ['sobre', 'assuntos', 'servicos', 'imagens',
-               'noticias', 'rodape', 'destaques', 'menu-de-apoio',
+    obj_ids = ['acesso-a-informacao', 'assuntos', 'servicos', 'imagens',
+               'noticias', 'rodape', 'destaques', 'menu-de-relevancia',
                'links-destaques', 'home', 'contato', 'acessibilidade',
-               'acesso-a-sistemas', 'area-imprensa', 'rss', 'eventos',
+               'acesso-a-sistemas', 'area-de-imprensa', 'rss', 'eventos',
                'videos', 'audios', 'links', 'pastas-com-exemplos-de-pecas']
     publish_content(p, obj_ids)
 
@@ -79,13 +79,13 @@ def configura_imagens(portal):
     folder.setLayout('folder_summary_view')
 
 
-def configura_sobre(portal):
-    folder = portal.sobre
+def configura_acesso_informacao(portal):
+    folder = portal['acesso-a-informacao']
     folder.setLayout('folder_summary_view')
 
 
-def configura_menu_apoio(portal):
-    folder = portal['menu-de-apoio']
+def configura_menu_relevancia(portal):
+    folder = portal['menu-de-relevancia']
     behavior = ISelectableConstrainTypes(folder)
     behavior.setConstrainTypesMode(constrains.ENABLED)
     # Permitimos apenas links
@@ -103,7 +103,7 @@ def configura_servicos(portal):
 
 
 def configura_ultimas_noticias(portal):
-    oId = 'noticias'
+    oId = 'ultimas-noticias'
     if not oId in portal.objectIds():
         title = u'Últimas Notícias'
         description = u'Últimas notícias publicadas neste site'

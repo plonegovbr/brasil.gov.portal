@@ -51,8 +51,10 @@
   </object>
   <object name="brasil_gov" meta_type="Plone Property Sheet">
     <property name="social_networks" type="lines">
-      <element value="twitter|portalbrasil"/>
-      <element value="youtube|canalportalbrasil"/>
+      <element value="twitter|twitter"/>
+      <element value="youtube|youtube"/>
+      <element value="facebook|facebook"/>
+      <element value="flickr|flickr"/>
     </property>
   </object>
   <object name="imaging_properties" meta_type="Plone Property Sheet">

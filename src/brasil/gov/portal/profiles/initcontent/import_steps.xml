@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <import-steps>
- <import-step id="portlets" version="20130612" 
+ <import-step id="portlets" version="20140711" 
          handler="plone.app.portlets.exportimport.portlets.importPortlets" 
          title="Portlets">
          Import portlet managers, types, assignments and blacklistings 

@@ -160,7 +160,7 @@ class RedesViewletTestCase(unittest.TestCase):
         with api.env.adopt_roles(['Manager', ]):
             self.sheet = self.portal.portal_properties.brasil_gov
             self.sheet.manage_changeProperties(social_networks=[
-                'twitter|portalbrasil',
+                'twitter|twitter',
             ])
 
     def viewlet(self):
