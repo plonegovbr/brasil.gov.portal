@@ -4,7 +4,11 @@ Histórico de Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Acertos nos testes
+  [dbarbato]
+* Acertos de Flake8
+  [dbarbato]
+
 
 
 1.0.3 (2014-06-11)

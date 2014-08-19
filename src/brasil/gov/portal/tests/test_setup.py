@@ -206,7 +206,6 @@ class TestUpgrade(unittest.TestCase):
         self.assertEqual(len(step), 1)
 
     def _prepara_to10300(self):
-        portal = self.portal
         #Cria conteudo NITF
         self.noticia = api.content.create(
             type='collective.nitf.content',

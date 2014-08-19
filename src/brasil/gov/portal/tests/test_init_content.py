@@ -19,11 +19,11 @@ class InitContentTestCase(unittest.TestCase):
         self.wt = self.portal.portal_workflow
 
     def test_conteudos_publicados(self):
-        ids = ['acessibilidade', 'acesso-a-sistemas', 'area-imprensa',
+        ids = ['acessibilidade', 'acesso-a-sistemas', 'area-de-imprensa',
                'assuntos', 'audios', 'contato', 'destaques', 'eventos',
-               'home', 'imagens', 'links', 'links-destaques', 'menu-de-apoio',
+               'home', 'imagens', 'links', 'links-destaques', 'menu-de-relevancia',
                'noticias', 'pastas-com-exemplos-de-pecas', 'rodape', 'rss',
-               'servicos', 'sobre', 'videos']
+               'servicos', 'acesso-a-informacao', 'videos']
         for oId in ids:
             o = self.portal[oId]
             self.assertEqual(self.wt.getInfoFor(o, 'review_state'),
@@ -78,15 +78,15 @@ class InitContentTestCase(unittest.TestCase):
         types = ['Link']
         self.assertEqual(types, behavior.getImmediatelyAddableTypes())
 
-    def test_sobre_available(self):
-        self.assertTrue('sobre' in self.portal.objectIds(),
+    def test_acesso_a_informacao_available(self):
+        self.assertTrue('acesso-a-informacao' in self.portal.objectIds(),
                         u'Conheça este órgão')
-        pasta = self.portal['sobre']
-        self.assertEqual(u'Sobre', pasta.title,
+        pasta = self.portal['acesso-a-informacao']
+        self.assertEqual(u'Acesso à Informação', pasta.title,
                          u'Título não aplicado')
 
-    def test_sobre_ordering(self):
-        pasta = self.portal['sobre']
+    def test_acesso_a_informacao_ordering(self):
+        pasta = self.portal['acesso-a-informacao']
         ordering = pasta.getOrdering()
         oId = ordering.idsInOrder()[0]
         pasta.moveObjectsToBottom([oId])
@@ -101,18 +101,18 @@ class InitContentTestCase(unittest.TestCase):
         mapping = portal.restrictedTraverse(coluna)
         self.assertEqual(len(mapping.keys()), 3)
         self.assertTrue('assuntos' in mapping.keys())
-        self.assertTrue('sobre' in mapping.keys())
-        self.assertTrue('apoio' in mapping.keys())
+        self.assertTrue('acesso-a-informacao' in mapping.keys())
+        self.assertTrue('relevancia' in mapping.keys())
 
-    def test_portlet_menu_apoio(self):
+    def test_portlet_menu_de_relevancia(self):
         portal = self.portal
         # Coluna da esquerda
         coluna = '++contextportlets++plone.leftcolumn'
         mapping = portal.restrictedTraverse(coluna)
-        # Menu de Apoio
-        self.assertEqual(mapping['apoio'].root, u'/menu-de-apoio')
-        self.assertEqual(mapping['apoio'].name, u'')
-        self.assertEqual(mapping['apoio'].currentFolderOnly, False)
+        # Menu de Relevancia
+        self.assertEqual(mapping['relevancia'].root, u'/menu-de-relevancia')
+        self.assertEqual(mapping['relevancia'].name, u'')
+        self.assertEqual(mapping['relevancia'].currentFolderOnly, False)
 
     def test_portlet_assuntos(self):
         portal = self.portal
@@ -124,17 +124,17 @@ class InitContentTestCase(unittest.TestCase):
         self.assertEqual(mapping['assuntos'].name, u'Assuntos')
         self.assertEqual(mapping['assuntos'].currentFolderOnly, False)
 
-    def test_portlet_sobre(self):
+    def test_portlet_acesso_a_informacao(self):
         portal = self.portal
         # Coluna da esquerda
         coluna = '++contextportlets++plone.leftcolumn'
         mapping = portal.restrictedTraverse(coluna)
-        # Sobre
-        self.assertEqual(mapping['sobre'].root,
-                         u'/sobre')
-        self.assertEqual(mapping['sobre'].name,
-                         u'Sobre')
-        self.assertEqual(mapping['sobre'].currentFolderOnly,
+        # acesso-a-informacao
+        self.assertEqual(mapping['acesso-a-informacao'].root,
+                         u'/acesso-a-informacao')
+        self.assertEqual(mapping['acesso-a-informacao'].name,
+                         u'Acesso à Informação')
+        self.assertEqual(mapping['acesso-a-informacao'].currentFolderOnly,
                          False)
 
     def test_doormat_view(self):

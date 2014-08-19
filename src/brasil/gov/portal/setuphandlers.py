@@ -169,11 +169,11 @@ def instala_pacote_portal(context):
     _instala_pacote(qi, p)
     instala_dependencias(context)
 
+
 def instala_dependencias(context):
     """Marcamos dependencias importantes como instaladas"""
     if context.readDataFile('brasil.gov.portal.txt') is None:
         return
-    site = api.portal.get()
     qi = api.portal.get_tool('portal_quickinstaller')
 
     for p in SHOW_DEPS:

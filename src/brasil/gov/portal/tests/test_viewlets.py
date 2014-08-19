@@ -42,7 +42,7 @@ class DestaquesViewletTestCase(unittest.TestCase):
 
     def test_not_available_on_folder(self):
         with api.env.adopt_roles(['Manager', ]):
-            pasta = api.content.create(
+            api.content.create(
                 type='Folder',
                 container=self.portal,
                 id='pasta',
@@ -59,7 +59,6 @@ class DestaquesViewletTestCase(unittest.TestCase):
         self.assertFalse(viewlet.available())
 
     def test_available_for_different_content_type(self):
-        portal = self.portal
         with api.env.adopt_roles(['Manager', ]):
             # Apagamos a capa de destaques
             api.content.delete(obj=self.portal['destaques'])
@@ -251,13 +250,13 @@ class ServicosViewletTestCase(unittest.TestCase):
                 id='servicos',
                 title=u'Servicos'
             )
-            servico1 = api.content.create(
+            api.content.create(
                 type='Link',
                 container=self.servicos,
                 id='servico-1',
                 title=u'Servico 1'
             )
-            servico2 = api.content.create(
+            api.content.create(
                 type='Link',
                 container=self.servicos,
                 id='servico-2',
@@ -299,7 +298,7 @@ class NITFBylineViewletTestCase(unittest.TestCase):
                 fullname='Machado de Assis',
                 location='Cosme Velho',
             )
-            user = api.user.create(
+            api.user.create(
                 username='machado',
                 email='machado@brasil.gov.br',
                 properties=properties,

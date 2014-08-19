@@ -61,7 +61,6 @@ def atualiza_secoes(context):
 def atualiza_pacotes_instalados(context):
     """Exibe pacotes de dependencias"""
     logger.info(u'Rotina para exibir pacotes de dependências')
-    site = api.portal.get()
     qi = api.portal.get_tool('portal_quickinstaller')
 
     for p in SHOW_DEPS:
