@@ -66,4 +66,4 @@ Alterar dados do site
 Validar se Portal Padrao esta listado
     Como o usuario administrador  Machado de Assis
     Ir para  ${PLONE_URL}/prefs_install_products_form
-    Pagina deve conter  de sites para o Governo Federal
+    Capturar tela  criarsite-passo-06-validar-produto-portal-padrao.png
