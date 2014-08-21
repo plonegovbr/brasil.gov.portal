@@ -96,4 +96,7 @@ Abrir o menu
     Wait until keyword succeeds  1  5  Element Should Be Visible  css=dl#${elementId} dd.actionMenuContent
 
 Abrir o menu de Adicionar item
-    Abrir o menu  plone-contentmenu-factories
+    Element Should Be Visible  css=dl#plone-contentmenu-factories
+    Element Should Not Be Visible  css=dl#plone-contentmenu-factories dd.actionMenuContent
+    Click link  css=dl#plone-contentmenu-factories dt.actionMenuHeader a
+    Wait until keyword succeeds  1  5  Element Should Be Visible  css=dl#plone-contentmenu-factories dd.actionMenuContent

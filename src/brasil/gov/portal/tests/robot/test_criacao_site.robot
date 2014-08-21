@@ -47,10 +47,10 @@ Conteudo base - Pasta Assuntos
     Ir para  ${PLONE_URL}/assuntos
     Capturar tela  criarsite-passo-04-pasta-assuntos.png
 
-Conteudo base - Pasta Sobre
+Conteudo base - Pasta Acesso a Informacao
     Como o usuario administrador  Machado de Assis
-    Ir para  ${PLONE_URL}/sobre
-    Capturar tela  criarsite-passo-05-pasta-sobre.png
+    Ir para  ${PLONE_URL}/acesso-a-informacao
+    Capturar tela  criarsite-passo-05-pasta-acesso-a-informacao.png
 
 Alterar dados do site
     Como o usuario administrador  Machado de Assis
