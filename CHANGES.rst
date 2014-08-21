@@ -4,9 +4,11 @@ Histórico de Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-* Acertos nos testes
+* Inverte ícones de publicações e infográficos de central de conteúdos.
   [dbarbato]
-* Acertos de Flake8
+* Acertos nos testes.
+  [dbarbato]
+* Acertos de Flake8.
   [dbarbato]
 
 
