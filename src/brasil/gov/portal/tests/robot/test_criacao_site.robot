@@ -37,9 +37,6 @@ Criar novo site
 Conteudo base - Pasta de Imagens
     Como o usuario administrador  Machado de Assis
     Ir para  ${PLONE_URL}/imagens
-
-    Abrir o menu de Adicionar item
-    Apenas o tipo Imagem deve ser listado
     Capturar tela  criarsite-passo-04-pasta-imagens.png
 
 Conteudo base - Pasta Assuntos
@@ -70,14 +67,3 @@ Validar se Portal Padrao esta listado
     Como o usuario administrador  Machado de Assis
     Ir para  ${PLONE_URL}/prefs_install_products_form
     Pagina deve conter  de sites para o Governo Federal
-
-
-*** Keywords ***
-
-Apenas o tipo Imagem deve ser listado
-    Element should contain  plone-contentmenu-factories  Image
-    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.event
-    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.folder
-    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.collection
-    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.link
-    Page Should Not Contain Element  css=dl#plone-contentmenu-factories a.document
