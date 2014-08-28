@@ -19,4 +19,4 @@ Navegacao no site
 	Pagina deve conter  Comunica
 	Pagina deve conter  Presid
 	Clicar link  Mapa do Site
-	Pagina deve conter  Mantenha o ponteiro do mouse sobre o item
+	Pagina deve conter  visualizar sua descrição.
