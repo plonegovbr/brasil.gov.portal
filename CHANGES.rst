@@ -4,6 +4,8 @@ Histórico de Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Ajusta bug de coleções.
+  [dbarbato]
 * Inverte ícones de publicações e infográficos de central de conteúdos.
   [dbarbato]
 * Acertos nos testes.
