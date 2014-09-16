@@ -10,7 +10,7 @@
  * @Referencias
  *
  * Lista de padrões, convenções e boas praticas CSS que devem ser seguidas.
- * https: //github.com/necolas/idiomatic-css/tree/master/translations/pt-BR
+ * https://github.com/necolas/idiomatic-css/tree/master/translations/pt-BR
  *
  * Plugins para ordenar os atributos de CSS.
  * http://csscomb.com/
@@ -2538,19 +2538,19 @@ dl.portlet div.listingBar a:link {
    Footer
    ========================================================================== */
 
-#footer {
+#wrapper #footer {
     padding: 20px 0;
     min-height: 50px;
     width: 100%;
 }
 
-#footer > div {
+#wrapper #footer > div {
     margin: 2em auto;
     padding-top: 1em;
     max-width: 960px;
 }
 
-#footer .footer-logos {
+#wrapper #footer .footer-logos {
     margin: 0 0 -20px;
     padding: 2em 0;
     max-width: 100%;
@@ -2562,7 +2562,7 @@ dl.portlet div.listingBar a:link {
     max-width: 960px;
 }
 
-#footer .logo-brasil img { float: right; }
+#wrapper #footer .logo-brasil img { float: right; }
 
 #extra-footer p {
     margin: 1em auto;
@@ -3514,11 +3514,11 @@ ul.formTabs { padding: 0px !important; }
 
     #logo { width: 100% !important; }
 
-    #footer p { clear: both; }
+    #wrapper #footer p { clear: both; }
 
-    #footer > div { text-align: center; }
+    #wrapper #footer > div { text-align: center; }
 
-    #footer img {
+    #wrapper #footer img {
         float: none;
         margin: 1em;
         max-width: 40%;
@@ -4337,7 +4337,21 @@ body.contraste .portletNavigationTree .portletHeader {
 }
 
 body.contraste .portletNavigationTree .portletHeader.ativo {
-background: url("++resource++brasil.gov.portal/img/portlet-header-expanded-contraste.jpg") no-repeat 96% center !important;
+    background: url("++resource++brasil.gov.portal/img/portlet-header-expanded-contraste.jpg") no-repeat 96% center !important;
+}
+
+/* XXX: Fix no popup de link de Products.TinyMCE.
+É necessário sobrescrever a definição de #content presente em
+https://github.com/collective/collective.cover/blob/master/src/collective/cover/static/contentchooser.css#L1
+uma vez que no iframe do Products.TinyMCE também existe uma div#content, dando
+conflito nas regras e posicionando a div "Upload" por cima dos itens impedindo
+a seleção dos mesmos.
+Esse fix deve ser temporário, enquanto o bug mencionado em
+https://github.com/collective/collective.cover/issues/450
+não for corrigido.
+*/
+#plonebrowser #content {
+    position: static !important;
 }
 
 /* ==========================================================================
