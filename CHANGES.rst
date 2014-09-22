@@ -4,7 +4,7 @@ Histórico de Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 * Ajusta bug no popup do Products.TinyMCE que impedia de selecionar um item
-  para se tornar link. (close `#159`_)
+  para se tornar link. (closes `#159`_)
   [idgserpro]
 * Ajusta bug de coleções.
   [dbarbato]
@@ -287,4 +287,4 @@ Histórico de Alterações
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
 .. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
-.. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
+.. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
