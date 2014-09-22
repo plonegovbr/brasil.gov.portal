@@ -3,6 +3,8 @@ Histórico de Alterações
 
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Corrige versão do metadata.xml. (closes `#173`_)
+  [idgserpro]
 * Ajusta bug no popup do Products.TinyMCE que impedia de selecionar um item
   para se tornar link. (closes `#159`_)
   [idgserpro]
@@ -288,3 +290,4 @@ Histórico de Alterações
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
 .. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
+.. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
