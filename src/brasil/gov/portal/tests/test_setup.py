@@ -47,12 +47,6 @@ class InstallTestCase(unittest.TestCase):
         self.assertTrue('IBrasilGov' in layers,
                         'add-on layer was not installed')
 
-    def test_gs_version(self):
-        setup = self.st
-        self.assertEqual(setup.getLastVersionForProfile(PROFILE_ID),
-                         (u'5000',),
-                         '%s version mismatch' % PROJECTNAME)
-
     def test_hidden_dependencies(self):
         packages = [p['id'] for p in self.qi.listInstallableProducts()]
         deps = set(DEPS)
@@ -206,7 +200,7 @@ class TestUpgrade(unittest.TestCase):
         self.assertEqual(len(step), 1)
 
     def _prepara_to10300(self):
-        #Cria conteudo NITF
+        # Cria conteudo NITF
         self.noticia = api.content.create(
             type='collective.nitf.content',
             container=self.portal,
@@ -215,12 +209,12 @@ class TestUpgrade(unittest.TestCase):
         )
         self.noticia.section = 'General'
         self.noticia.reindexObject(idxs=['section', ])
-        #Deixa General como secao disponivel
+        # Deixa General como secao disponivel
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.available_sections',
             set([u'General', ])
         )
-        #Deixa General como padrao
+        # Deixa General como padrao
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.default_section',
             u'General'
@@ -234,13 +228,13 @@ class TestUpgrade(unittest.TestCase):
         # Ao acessar a view como site administrator conseguimos acesso
         with api.env.adopt_roles(['Site Administrator', ]):
             # Listamos todas as acoes do painel de controle
-            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
             self.failUnless('social-config' in installed)
         # Ao acessar a view como anonimo, a excecao e levantada
         with api.env.adopt_roles(['Anonymous', ]):
             # Listamos todas as acoes do painel de controle
-            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
             self.failIf('social-config' in installed)
 
@@ -267,3 +261,21 @@ class TestUpgrade(unittest.TestCase):
         ct = api.portal.get_tool('portal_catalog')
         results = ct.searchResults(section=u'Notícias')
         self.assertEqual(len(results), 1)
+
+    def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
+        """
+        Testa se o número do último upgradeStep disponível é o mesmo do
+        metadata.xml do profile.
+
+        É também útil para garantir que para toda alteração feita no version
+        do metadata.xml tenha um upgradeStep associado.
+
+        Esse teste parte da premissa que o número dos upgradeSteps é sempre
+        sequencial.
+        """
+        upgrade_info = self.qi.upgradeInfo(PROJECTNAME)
+        upgradeSteps = listUpgradeSteps(self.st, self.profile, '')
+        upgrades = [upgrade[0]['dest'][0] for upgrade in upgradeSteps]
+        last_upgrade = sorted(upgrades, key=int)[-1]
+        self.assertEqual(upgrade_info['installedVersion'],
+                         last_upgrade)
