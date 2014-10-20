@@ -3,6 +3,7 @@
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.config import SHOW_DEPS
+from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import setRoles
@@ -261,6 +262,41 @@ class TestUpgrade(unittest.TestCase):
         ct = api.portal.get_tool('portal_catalog')
         results = ct.searchResults(section=u'Notícias')
         self.assertEqual(len(results), 1)
+
+    def test_to10400_available(self):
+        step = self.list_upgrades(u'10300', u'10400')
+        self.assertEqual(len(step), 1)
+
+    def test_to10400_execution(self):
+        self.execute_upgrade(u'10300', u'10400')
+        portal_css = api.portal.get_tool('portal_css')
+        stylesheets_ids = portal_css.getResourceIds()
+        resource_id = '++resource++brasil.gov.portal/css/main-print.css'
+        self.assertTrue(resource_id in stylesheets_ids)
+        self.assertTrue(portal_css.getResource(resource_id).getEnabled())
+
+    def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
+        """
+        Testa se todos os upgradeSteps de brasil.gov.portal estão nas variáveis
+        HIDDEN_PROFILES e DEPS. Outros pacotes podem ser adicionados em outros
+        testes.
+        """
+        upgradeSteps = listUpgradeSteps(self.st, self.profile, '')
+        upgrades = [upgrade[0]['dest'][0] for upgrade in upgradeSteps]
+
+        upgrades_hidden_profiles = []
+        upgrades_deps = []
+        prefix = 'brasil.gov.portal.upgrades.v%s'
+        profile = self.profile.split(':')[-1]
+        for upgrade in upgrades:
+            upgrades_deps.append(prefix % upgrade)
+            upgrades_hidden_profiles.append(prefix % upgrade + ':' + profile)
+
+        self.assertTrue(all(upgrade in HIDDEN_PROFILES
+                            for upgrade in upgrades_hidden_profiles))
+
+        self.assertTrue(all(upgrade in DEPS
+                            for upgrade in upgrades_deps))
 
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
         """
