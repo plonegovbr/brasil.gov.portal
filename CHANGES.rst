@@ -1,6 +1,12 @@
 Histórico de Alterações
 -------------------------
 
+1.0.5 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.0.4 (2014-11-01)
 ^^^^^^^^^^^^^^^^^^
 * Altera página inicial após instalação do pacote.
