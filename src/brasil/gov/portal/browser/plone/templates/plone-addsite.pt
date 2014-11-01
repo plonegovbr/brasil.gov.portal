@@ -140,11 +140,11 @@
       <tal:extensionprofiles condition="extension_profiles">
         <fieldset id="add-on-list">
           <legend>
-             Extensões ao site
+             Funcionalidades adicionais
           </legend>
 
           <div class="formHelp" >
-              Selecione extensões que serão aplicadas imediatamente ao novo site.
+              Selecione funcionalidades adicionais que estar&atilde;o dispon&iacute;veis ao novo site ap&oacute;s sua instala&ccedil;&atilde;o.
           </div>
 
           <dl id="extension_ids">
