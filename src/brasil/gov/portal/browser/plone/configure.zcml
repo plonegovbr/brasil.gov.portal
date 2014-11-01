@@ -30,6 +30,14 @@
       />
 
   <browser:page
+      name="overview-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.OverviewControlPanel"
+      permission="plone.app.controlpanel.Overview"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+  <browser:page
       name="folder_summary_view"
       for="plone.app.contenttypes.interfaces.IFolder"
       layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
