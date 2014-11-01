@@ -3,6 +3,7 @@
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.config import SHOW_DEPS
+from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import setRoles
@@ -46,12 +47,6 @@ class InstallTestCase(unittest.TestCase):
         layers = [l.getName() for l in registered_layers()]
         self.assertTrue('IBrasilGov' in layers,
                         'add-on layer was not installed')
-
-    def test_gs_version(self):
-        setup = self.st
-        self.assertEqual(setup.getLastVersionForProfile(PROFILE_ID),
-                         (u'5000',),
-                         '%s version mismatch' % PROJECTNAME)
 
     def test_hidden_dependencies(self):
         packages = [p['id'] for p in self.qi.listInstallableProducts()]
@@ -206,7 +201,7 @@ class TestUpgrade(unittest.TestCase):
         self.assertEqual(len(step), 1)
 
     def _prepara_to10300(self):
-        #Cria conteudo NITF
+        # Cria conteudo NITF
         self.noticia = api.content.create(
             type='collective.nitf.content',
             container=self.portal,
@@ -215,12 +210,12 @@ class TestUpgrade(unittest.TestCase):
         )
         self.noticia.section = 'General'
         self.noticia.reindexObject(idxs=['section', ])
-        #Deixa General como secao disponivel
+        # Deixa General como secao disponivel
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.available_sections',
             set([u'General', ])
         )
-        #Deixa General como padrao
+        # Deixa General como padrao
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.default_section',
             u'General'
@@ -234,13 +229,13 @@ class TestUpgrade(unittest.TestCase):
         # Ao acessar a view como site administrator conseguimos acesso
         with api.env.adopt_roles(['Site Administrator', ]):
             # Listamos todas as acoes do painel de controle
-            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
             self.failUnless('social-config' in installed)
         # Ao acessar a view como anonimo, a excecao e levantada
         with api.env.adopt_roles(['Anonymous', ]):
             # Listamos todas as acoes do painel de controle
-            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
             self.failIf('social-config' in installed)
 
@@ -267,3 +262,56 @@ class TestUpgrade(unittest.TestCase):
         ct = api.portal.get_tool('portal_catalog')
         results = ct.searchResults(section=u'Notícias')
         self.assertEqual(len(results), 1)
+
+    def test_to10400_available(self):
+        step = self.list_upgrades(u'10300', u'10400')
+        self.assertEqual(len(step), 1)
+
+    def test_to10400_execution(self):
+        self.execute_upgrade(u'10300', u'10400')
+        portal_css = api.portal.get_tool('portal_css')
+        stylesheets_ids = portal_css.getResourceIds()
+        resource_id = '++resource++brasil.gov.portal/css/main-print.css'
+        self.assertTrue(resource_id in stylesheets_ids)
+        self.assertTrue(portal_css.getResource(resource_id).getEnabled())
+
+    def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
+        """
+        Testa se todos os upgradeSteps de brasil.gov.portal estão nas variáveis
+        HIDDEN_PROFILES e DEPS. Outros pacotes podem ser adicionados em outros
+        testes.
+        """
+        upgradeSteps = listUpgradeSteps(self.st, self.profile, '')
+        upgrades = [upgrade[0]['dest'][0] for upgrade in upgradeSteps]
+
+        upgrades_hidden_profiles = []
+        upgrades_deps = []
+        prefix = 'brasil.gov.portal.upgrades.v%s'
+        profile = self.profile.split(':')[-1]
+        for upgrade in upgrades:
+            upgrades_deps.append(prefix % upgrade)
+            upgrades_hidden_profiles.append(prefix % upgrade + ':' + profile)
+
+        self.assertTrue(all(upgrade in HIDDEN_PROFILES
+                            for upgrade in upgrades_hidden_profiles))
+
+        self.assertTrue(all(upgrade in DEPS
+                            for upgrade in upgrades_deps))
+
+    def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
+        """
+        Testa se o número do último upgradeStep disponível é o mesmo do
+        metadata.xml do profile.
+
+        É também útil para garantir que para toda alteração feita no version
+        do metadata.xml tenha um upgradeStep associado.
+
+        Esse teste parte da premissa que o número dos upgradeSteps é sempre
+        sequencial.
+        """
+        upgrade_info = self.qi.upgradeInfo(PROJECTNAME)
+        upgradeSteps = listUpgradeSteps(self.st, self.profile, '')
+        upgrades = [upgrade[0]['dest'][0] for upgrade in upgradeSteps]
+        last_upgrade = sorted(upgrades, key=int)[-1]
+        self.assertEqual(upgrade_info['installedVersion'],
+                         last_upgrade)

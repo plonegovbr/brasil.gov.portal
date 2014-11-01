@@ -4,11 +4,26 @@
     xmlns:gs="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.portal">
 
+  <!-- Profiles -->
+  <gs:registerProfile
+      name="default"
+      title="Identidade Digital: Versão 10400"
+      directory="profiles/default"
+      description="Configurações da Versão 10400 do portal"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <!-- Upgrade Steps -->
   <gs:upgradeSteps
         source="10300"
         destination="10400"
         profile="brasil.gov.portal:default">
+
+      <gs:upgradeStep
+          title="Atualiza portal para versão 10400"
+          description="Desmembra regras de print do main.css num novo arquivo para poder adicionar CSS Media = print"
+          handler=".handler.apply_profile"
+          />
 
       <gs:upgradeStep
           title="Altera visao da pasta Noticias"
