@@ -25,13 +25,13 @@ Estado deste pacote
 -------------------
 
 O **brasil.gov.portal** tem testes automatizados e, a cada alteração em seu
-código os testes são executados pelo serviço Travis. 
+código os testes são executados pelo serviço Travis.
 
 O estado atual dos testes, a cobertura de código e o número de downloads deste pacote podem ser vistos nas imagens a seguir:
 
 .. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.portal.png?branch=master
     :target: http://travis-ci.org/plonegovbr/brasil.gov.portal
-    
+
 .. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.portal/badge.png?branch=master
     :alt: Coveralls badge
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.portal
