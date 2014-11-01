@@ -31,5 +31,9 @@
 
   <!-- Upgrades -->
   <include package=".upgrades" />
-  
+
+  <!-- Oculta profile -->
+  <utility factory=".config.HiddenProducts" name="brasil.gov.portal" />
+  <utility factory=".config.HiddenProfiles" name="brasil.gov.portal" />
+
 </configure>

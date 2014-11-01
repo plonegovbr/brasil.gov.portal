@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from five import grok
 from Products.CMFQuickInstallerTool import interfaces as qi_interfaces
 from Products.CMFPlone import interfaces as st_interfaces
 from zope.interface import implements
@@ -183,7 +182,7 @@ HIDDEN_PROFILES = [
 ]
 
 
-class HiddenProducts(grok.GlobalUtility):
+class HiddenProducts(object):
     """ Oculta produtos do QuickInstaller """
     implements(qi_interfaces.INonInstallable)
 
@@ -193,7 +192,7 @@ class HiddenProducts(grok.GlobalUtility):
         return products
 
 
-class HiddenProfiles(grok.GlobalUtility):
+class HiddenProfiles(object):
     """ Oculta profiles da tela inicial de criacao do site """
     implements(st_interfaces.INonInstallable)
 
