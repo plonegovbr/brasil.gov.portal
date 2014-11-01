@@ -3,6 +3,10 @@ Histórico de Alterações
 
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Altera página inicial após instalação do pacote.
+  [ericof]
+* Altera página de criação de sites.
+  [ericof]
 * Corrige css de impressão. (closes `#161`_)
   [idgserpro]
 * Corrige versão do metadata.xml. (closes `#173`_)
@@ -18,7 +22,6 @@ Histórico de Alterações
   [dbarbato]
 * Acertos de Flake8.
   [dbarbato]
-
 
 
 1.0.3 (2014-06-11)
