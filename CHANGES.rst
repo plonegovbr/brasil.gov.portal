@@ -7,6 +7,8 @@ Histórico de Alterações
   [ericof]
 * Altera página de criação de sites.
   [ericof]
+* Adiciona versão do Portal Padrão à página do Painel de controle.
+  [ericof]
 * Corrige css de impressão. (closes `#161`_)
   [idgserpro]
 * Corrige versão do metadata.xml. (closes `#173`_)
