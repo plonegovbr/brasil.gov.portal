@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.0.4 (unreleased)
+1.0.4 (2014-11-01)
 ^^^^^^^^^^^^^^^^^^
 * Altera página inicial após instalação do pacote.
   [ericof]
