@@ -4,7 +4,8 @@ Histórico de Alterações
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Ajusta retração de menu apenas quando em versão responsiva.
+  [dbarbato]
 
 
 1.0.4 (2014-11-01)

@@ -13,8 +13,10 @@ var PBrasil = {
         // simulando click no botao do portlet header via mobile
         // author: deserto digital
         $('.portletNavigationTree .portletHeader').click(function () {
-            $(this).toggleClass('ativo');
-            $(this).next().slideToggle();
+            if ($(window).width() <= 768) {
+                $(this).toggleClass('ativo');
+                $(this).next().slideToggle();
+            }
         });
 
         var menuTrigger = $(".menuTrigger");
