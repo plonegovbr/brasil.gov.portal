@@ -1185,6 +1185,7 @@ dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 1.043em 0.55em 4.5em !importa
 .item-central .link-infograficos { background-position: -1px -204px; }
 .item-central .link-publicacoes { background-position: -1px -252px; }
 .item-central .link-aplicativos { background-position: -1px -350px; }
+.item-central .link-dadosabertos { background-position: -1px -400px; }
 
 /* Portlet de Lista
    ========================================================================== */
@@ -3779,7 +3780,8 @@ body.contraste .item-central .link-audios,
 body.contraste .item-central .link-infograficos,
 body.contraste .item-central .link-publicacoes,
 body.contraste .item-central .link-fotos,
-body.contraste .item-central .link-aplicativos {
+body.contraste .item-central .link-aplicativos,
+body.contraste .item-central .link-dadosabertos {
     background-image: url("++resource++brasil.gov.portal/img/sprite-contraste.png");
 }
 
