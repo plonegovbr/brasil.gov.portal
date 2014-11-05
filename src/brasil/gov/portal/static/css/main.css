@@ -889,7 +889,7 @@ dl.portlet dt.hiddenStructure { display: none; }
 
 #portal-column-one .portletNavigationTree { margin-bottom: 3.61em; }
 
-#portal-column-one .first-item-nav a { color: #2c66ce; }
+#portal-column-one .nav-menu-de-relevancia .first-item-nav a { color: #2c66ce; }
 
 #portal-column-two dl.portlet {
     border: 1px solid #c1c1c1;
@@ -1076,7 +1076,7 @@ a.navTreeCurrentNode {
 .first-item a.navTreeItemInPath,
 .first-item a.navTreeCurrentNode { background-image: none !important; }
 
-.first-item .portletNavigationTree .portletHeader { display: none; }
+.nav-menu-de-relevancia .first-item-nav .portletHeader { display: none; }
 
 ul.navTreeLevel0 li a.navTreeItemInPath,
 ul.navTreeLevel0 li a.navTreeCurrentNode {
@@ -1137,11 +1137,11 @@ dl.portlet ul.navTreeLevel4 li a { padding: 0.55em 1.043em 0.55em 4.05em !import
 dl.portlet ul.navTreeLevel5 li a { padding: 0.55em 1.043em 0.55em 4em !important; }
 dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 1.043em 0.55em 4.5em !important; }
 
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a {
+#portal-column-one > .nav-menu-de-relevancia .first-item-nav a {
     padding: 0.475em 0 !important;
 }
 
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a span {
+#portal-column-one > .nav-menu-de-relevancia .first-item-nav a span {
     font-size: 110%;
 }
 
@@ -3617,8 +3617,8 @@ body.contraste #content .documentDescription,
 body.contraste #content #description,
 body.contraste .nitfByline,
 body.contraste p.section,
-body.contraste #portal-column-one > .portletWrapper dl.portlet.first-item-nav a,
-body.contraste #portal-column-one > .portletWrapper dl.portlet.first-item-nav a span,
+body.contraste #portal-column-one > .nav-menu-de-relevancia .first-item-nav a,
+body.contraste #portal-column-one > .nav-menu-de-relevancia .first-item-nav a span,
 body.contraste .portletNavigationTree > .portletItem a span,
 body.contraste #portal-breadcrumbs > span > span.breadcrumbSeparator,
 body.contraste #portal-breadcrumbs a,

@@ -4,6 +4,9 @@ Histórico de Alterações
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Ajusta para alterar estilo da primeira navegação apenas quando título for
+  Menu de relevância.
+  [dbarbato]
 * Adiciona sprite e estilo de contraste para ícone de Dados Abertos do menu
   de Centrais de Conteúdos.
   [dbarbato]
