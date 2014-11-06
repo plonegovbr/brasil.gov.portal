@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-08-09 21:50+0000\n"
+"POT-Creation-Date: 2014-11-06 16:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
-#: brasil/gov/portal/profiles/default/registry.xml
-msgid "Text"
-msgstr "Texto"
+#: ./profiles/default/actions.xml
+msgid "Accessibility"
+msgstr "Acessibilidade"
 
-#: brasil/gov/portal/profiles/default/registry.xml
+#: ./profiles/default/actions.xml
+msgid "High Contrast"
+msgstr "Alto Contraste"
+
+#: ./profiles/default/registry.xml
+msgid "Metadata"
+msgstr "Metadado"
+
+#: ./profiles/default/actions.xml
+msgid "Site Map"
+msgstr "Mapa do site"
+
+#: ./profiles/default/actions.xml
+msgid "Site Setup"
+msgstr "Configuração do Site"
+
+#: ./profiles/default/registry.xml
 msgid "VCGE"
 msgstr "VCGE"
 
-#: brasil/gov/portal/profiles/default/registry.xml
+#: ./profiles/default/registry.xml
 msgid "Vocabulario Controlado do Governo Eletronico"
 msgstr "Vocabulário Controlado do Governo Eletrônico"
 

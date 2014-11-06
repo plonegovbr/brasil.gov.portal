@@ -2,7 +2,7 @@
 <object name="portal_controlpanel"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="brasil.gov.portal">
-  <configlet title=".gov.br: Redes Sociais"
+  <configlet title=".gov.br: Social Networks"
   			 action_id="social-config"
              appId="brasil.gov.portal"
              category="Products"

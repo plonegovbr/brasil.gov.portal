@@ -25,7 +25,7 @@ MPEGTYPES = [
 
 def validate_mimetype(value, audiotypes):
     if not value.contentType in audiotypes:
-        raise Invalid(_(u"Formato de arquivo não suportado"))
+        raise Invalid(_(u"File format not supported"))
     return True
 
 

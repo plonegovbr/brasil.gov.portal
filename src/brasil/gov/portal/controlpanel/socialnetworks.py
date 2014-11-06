@@ -44,7 +44,7 @@ class SocialNetworksPair:
 class ISocialNetworksSchema(Interface):
 
     accounts_info = schema.List(
-        title=_(u'Rede social'),
+        title=_(u'Social Network'),
         default=[],
         value_type=schema.Object(ISocialNetworksPair, title=u"Rede"),
         required=False)
@@ -105,8 +105,8 @@ class SocialNetworksControlPanel(ControlPanelForm):
     form_fields['accounts_info'].custom_widget = accounts_widget
 
     # Define o titulo deste painel de controle
-    label = _(u'Brasil.gov.br: Redes Sociais')
+    label = _(u'.gov.br: Social Network')
     # Define a descricao deste painel de controle
-    description = _(u'Configurações do comportamento da barra de identidade')
+    description = _(u'Identity Bar behavior Configuration')
     # Define o titulo do formulario deste painel de controle
-    form_name = _(u'Configuração funcional e visual')
+    form_name = _(u'Visual and functional Configuration')

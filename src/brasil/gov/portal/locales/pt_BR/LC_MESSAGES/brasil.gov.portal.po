@@ -1,43 +1,197 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danilo Sartorelli Barbato <dadlobr@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-08-09 21:50+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-11-06 16:36+0000\n"
+"PO-Revision-Date: 2014-11-06 14:28-0300\n"
+"Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: pt_br\n"
+"Language-Name: Português brasileiro\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: brasil.gov.portal\n"
+"Language: pt-BR\n"
 
-#: brasil/gov/portal/profiles/default/types/ExternalContent.xml
+#: ./controlpanel/socialnetworks.py:108
+msgid ".gov.br: Social Network"
+msgstr ".gov.br: Redes Sociais"
+
+#: ./profiles/default/controlpanel.xml
+#: ./upgrades/v10300/profiles/default/controlpanel.xml
+msgid ".gov.br: Social Networks"
+msgstr ".gov.br: Redes Sociais"
+
+#: ./profiles/default/types/MPEG_Audio_File.xml
+#: ./upgrades/v10300/profiles/default/types/MPEG_Audio_File.xml
+msgid "An Audio File using MPEG"
+msgstr "Um arquivo áudio com MPEG"
+
+#: ./profiles/default/types/OGG_Audio_File.xml
+#: ./upgrades/v10300/profiles/default/types/OGG_Audio_File.xml
+msgid "An Audio File using OGG"
+msgstr "Um arquivo áudio com OGG"
+
+#: ./profiles/default/types/Audio.xml
+msgid "Audio"
+msgstr "Áudio"
+
+#: ./controlpanel/site.py:35
+msgid "Department"
+msgstr "Órgão"
+
+#: ./controlpanel/site.py:56
+msgid "Display publication date in 'about' information"
+msgstr "Exibe data de publicação na informação de 'sobre'"
+
+#: ./controlpanel/site.py:57
+msgid "Displays content publication date on site pages."
+msgstr "Exibe data de publicação nas páginas do site"
+
+#: ./profiles/default/types/Audio.xml
+#: ./profiles/default/types/ExternalContent.xml
+#: ./profiles/default/types/MPEG_Audio_File.xml
 msgid "Edit"
 msgstr "Editar"
 
-#: brasil/gov/portal/profiles/default/types/ExternalContent.xml
+#: ./controlpanel/site.py:50
+msgid "Expose Dublin Core metadata"
+msgstr "Exibir metadados Dublin Core"
+
+#: ./controlpanel/site.py:62
+msgid "Expose sitemap.xml.gz"
+msgstr "Exibir sitemap.xml.gz"
+
+#: ./controlpanel/site.py:51
+msgid "Exposes the Dublin Core properties as metatags."
+msgstr "Exibir propriedades Dublin Core como metadados"
+
+#: ./controlpanel/site.py:63
+msgid "Exposes your content as a file according to the sitemaps.org standard. You can submit this to compliant search engines like Google, Yahoo and Microsoft. It allows these search engines to more intelligently crawl your site."
+msgstr "Exibe o seu conteúdo como um arquivo de acordo com o padrão do sitemaps.org. Você pode enviar este arquivo para os motores de busca compatíveis como Google, Yahoo e Microsoft. Ele permite que estes motores de busca indexem o seu site de forma mais inteligente."
+
+#: ./profiles/default/types/ExternalContent.xml
+#: ./upgrades/v4000/profiles/default/types/ExternalContent.xml
 msgid "External Content"
 msgstr "Conteúdo Externo"
 
-#: brasil/gov/portal/content/schema/ExternalContent.xml
+#: ./content/audio_file.py:44
+msgid "File"
+msgstr "Arquivo"
+
+#: ./content/audio_file.py:28
+msgid "File format not supported"
+msgstr "Formato de arquivo não suportado"
+
+#: ./controlpanel/site.py:25
+msgid "First line of site title"
+msgstr "Primeira linha do título do site"
+
+#: ./controlpanel/site.py:74
+msgid "For enabling web statistics support from external providers (for e.g. Google Analytics). Paste the code snippets provided. It will be included in the rendered HTML as entered near the end of the page."
+msgstr "Para habilitar estatísticas web de fornecedores externos (por exemplo Google Analytics). Cole os trechos de código fornecidos. O código será incluído no HTML renderizado próximo ao final da página."
+
+#: ./controlpanel/socialnetworks.py:110
+msgid "Identity Bar behavior Configuration"
+msgstr "Configurações do comportamento da barra de identidade"
+
+#: ./controlpanel/site.py:73
+msgid "JavaScript for web statistics support"
+msgstr "JavaScript para suporte a estatísticas web"
+
+#: ./profiles/default/types/MPEG_Audio_File.xml
+#: ./upgrades/v10300/profiles/default/types/MPEG_Audio_File.xml
+msgid "MPEG Audio File"
+msgstr "Arquivo de Áudio MPEG"
+
+#: ./controlpanel/site.py:36
+msgid "Name of Ministry or Departmentto which this site is subject."
+msgstr "Nome do Ministério ou da Secretaria ao qual este site está subordinado."
+
+#: ./profiles/default/types/OGG_Audio_File.xml
+#: ./upgrades/v10300/profiles/default/types/OGG_Audio_File.xml
+msgid "OGG Audio File"
+msgstr "Arquivo de Áudio OGG"
+
+#: ./content/schema/ExternalContent.xml
 msgid "Original URL"
 msgstr "URL original"
 
-#: brasil/gov/portal/content/schema/ExternalContent.xml
+#: ./content/audio_file.py:45
+msgid "Please upload a audio file."
+msgstr "Por favor faça upload de arquivo de áudio."
+
+#: ./controlpanel/site.py:31
+msgid "Second line of site title"
+msgstr "Segunda linha do título do site"
+
+#: ./controlpanel/socialnetworks.py:26
+msgid "Site"
+msgstr "Site"
+
+#: ./controlpanel/site.py:42
+msgid "Site description"
+msgstr "Descrição do site"
+
+#: ./controlpanel/site.py:190
+msgid "Site settings"
+msgstr "Configurações do Site"
+
+#: ./controlpanel/site.py:24
+msgid "Site title (First Line)"
+msgstr "Título do site (Primeira Linha)"
+
+#: ./controlpanel/site.py:30
+msgid "Site title (Second Line)"
+msgstr "Título do site (Segunda Linha)"
+
+#: ./controlpanel/site.py:191
+msgid "Site-wide settings."
+msgstr "Configurações globais do site"
+
+#: ./controlpanel/socialnetworks.py:47
+msgid "Social Network"
+msgstr "Rede social"
+
+#: ./content/schema/ExternalContent.xml
 msgid "Text"
 msgstr "Corpo"
 
-#: brasil/gov/portal/profiles/default/types/ExternalContent.xml
+#: ./controlpanel/site.py:43
+msgid "The site description is available in syndicated content and in search engines. Keep it brief."
+msgstr "A descrição do site será disponibilizada em conteúdos de sindicalização e motores de busca. Mantenha-a curta."
+
+#: ./content/schema/audio.xml
+msgid "Transcription"
+msgstr "Transcrição"
+
+#: ./profiles/default/types/Audio.xml
+#: ./profiles/default/types/ExternalContent.xml
+#: ./profiles/default/types/MPEG_Audio_File.xml
 msgid "View"
 msgstr "Visão"
 
-#: brasil/gov/portal/profiles/default/types/Audio.xml
-msgid "Audio"
-msgstr "Áudio"
+#: ./controlpanel/socialnetworks.py:112
+msgid "Visual and functional Configuration"
+msgstr "Configuração funcional e visual"
+
+#. Default: "Escolha a rede a ser cadastrada"
+#: ./controlpanel/socialnetworks.py:27
+msgid "help_social_network"
+msgstr ""
+
+#: ./browser/album/albuns.py:185
+msgid "label_next"
+msgstr ""
+
+#: ./browser/album/albuns.py:172
+msgid "label_previous"
+msgstr ""
+
+#: ./controlpanel/socialnetworks.py:20
+msgid "title"
+msgstr ""
 

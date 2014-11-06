@@ -21,20 +21,20 @@ from zope.site.hooks import getSite
 class ISiteSchema(Interface):
 
     site_title_1 = TextLine(
-        title=_(u'Título do site (Primeira Linha)'),
-        description=_(u"Primeira linha do título do site"),
+        title=_(u'Site title (First Line)'),
+        description=_(u"First line of site title"),
         required=False,
         default=u'')
 
     site_title_2 = TextLine(
-        title=_(u'Título do site (Segunda Linha)'),
-        description=_(u"Segunda linha do título do site"),
+        title=_(u'Site title (Second Line)'),
+        description=_(u"Second line of site title"),
         default=u'')
 
     site_orgao = TextLine(
-        title=_(u'Órgão'),
-        description=_(u"Nome do Ministério ou da Secretaria "
-                      u"ao qual este site está subordinado."),
+        title=_(u'Department'),
+        description=_(u"Name of Ministry or Department"
+                      u"to which this site is subject."),
         required=False,
         default=u'')
 
