@@ -1,0 +1,205 @@
+# Spanish translations for PACKAGE brasil.gov.portal.
+# Danilo Sartorelli Barbato <dadlobr@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-11-06 16:36+0000\n"
+"PO-Revision-Date: 2014-11-06 15:40-0200\n"
+"Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: brasil.gov.portal\n"
+"Language: es\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: controlpanel/socialnetworks.py:108
+msgid ".gov.br: Social Network"
+msgstr ""
+
+#: profiles/default/controlpanel.xml
+#: upgrades/v10300/profiles/default/controlpanel.xml
+msgid ".gov.br: Social Networks"
+msgstr ""
+
+#: profiles/default/types/MPEG_Audio_File.xml
+#: upgrades/v10300/profiles/default/types/MPEG_Audio_File.xml
+msgid "An Audio File using MPEG"
+msgstr ""
+
+#: profiles/default/types/OGG_Audio_File.xml
+#: upgrades/v10300/profiles/default/types/OGG_Audio_File.xml
+msgid "An Audio File using OGG"
+msgstr ""
+
+#: profiles/default/types/Audio.xml
+msgid "Audio"
+msgstr ""
+
+#: controlpanel/site.py:35
+msgid "Department"
+msgstr ""
+
+#: controlpanel/site.py:56
+msgid "Display publication date in 'about' information"
+msgstr ""
+
+#: controlpanel/site.py:57
+msgid "Displays content publication date on site pages."
+msgstr ""
+
+#: profiles/default/types/Audio.xml profiles/default/types/ExternalContent.xml
+#: profiles/default/types/MPEG_Audio_File.xml
+msgid "Edit"
+msgstr ""
+
+#: controlpanel/site.py:50
+msgid "Expose Dublin Core metadata"
+msgstr ""
+
+#: controlpanel/site.py:62
+msgid "Expose sitemap.xml.gz"
+msgstr ""
+
+#: controlpanel/site.py:51
+msgid "Exposes the Dublin Core properties as metatags."
+msgstr ""
+
+#: controlpanel/site.py:63
+msgid ""
+"Exposes your content as a file according to the sitemaps.org standard. You "
+"can submit this to compliant search engines like Google, Yahoo and "
+"Microsoft. It allows these search engines to more intelligently crawl your "
+"site."
+msgstr ""
+
+#: profiles/default/types/ExternalContent.xml
+#: upgrades/v4000/profiles/default/types/ExternalContent.xml
+msgid "External Content"
+msgstr ""
+
+#: content/audio_file.py:44
+msgid "File"
+msgstr ""
+
+#: content/audio_file.py:28
+msgid "File format not supported"
+msgstr ""
+
+#: controlpanel/site.py:25
+msgid "First line of site title"
+msgstr ""
+
+#: controlpanel/site.py:74
+msgid ""
+"For enabling web statistics support from external providers (for e.g. Google "
+"Analytics). Paste the code snippets provided. It will be included in the "
+"rendered HTML as entered near the end of the page."
+msgstr ""
+
+#: controlpanel/socialnetworks.py:110
+msgid "Identity Bar behavior Configuration"
+msgstr ""
+
+#: controlpanel/site.py:73
+msgid "JavaScript for web statistics support"
+msgstr ""
+
+#: profiles/default/types/MPEG_Audio_File.xml
+#: upgrades/v10300/profiles/default/types/MPEG_Audio_File.xml
+msgid "MPEG Audio File"
+msgstr ""
+
+#: controlpanel/site.py:36
+msgid "Name of Ministry or Departmentto which this site is subject."
+msgstr ""
+
+#: profiles/default/types/OGG_Audio_File.xml
+#: upgrades/v10300/profiles/default/types/OGG_Audio_File.xml
+msgid "OGG Audio File"
+msgstr ""
+
+#: content/schema/ExternalContent.xml
+msgid "Original URL"
+msgstr ""
+
+#: content/audio_file.py:45
+msgid "Please upload a audio file."
+msgstr ""
+
+#: controlpanel/site.py:31
+msgid "Second line of site title"
+msgstr ""
+
+#: controlpanel/socialnetworks.py:26
+msgid "Site"
+msgstr ""
+
+#: controlpanel/site.py:42
+msgid "Site description"
+msgstr ""
+
+#: controlpanel/site.py:190
+msgid "Site settings"
+msgstr ""
+
+#: controlpanel/site.py:24
+msgid "Site title (First Line)"
+msgstr ""
+
+#: controlpanel/site.py:30
+msgid "Site title (Second Line)"
+msgstr ""
+
+#: controlpanel/site.py:191
+msgid "Site-wide settings."
+msgstr ""
+
+#: controlpanel/socialnetworks.py:47
+msgid "Social Network"
+msgstr ""
+
+#: content/schema/ExternalContent.xml
+msgid "Text"
+msgstr ""
+
+#: controlpanel/site.py:43
+msgid ""
+"The site description is available in syndicated content and in search "
+"engines. Keep it brief."
+msgstr ""
+
+#: content/schema/audio.xml
+msgid "Transcription"
+msgstr ""
+
+#: profiles/default/types/Audio.xml profiles/default/types/ExternalContent.xml
+#: profiles/default/types/MPEG_Audio_File.xml
+msgid "View"
+msgstr ""
+
+#: controlpanel/socialnetworks.py:112
+msgid "Visual and functional Configuration"
+msgstr ""
+
+#. Default: "Escolha a rede a ser cadastrada"
+#: controlpanel/socialnetworks.py:27
+msgid "help_social_network"
+msgstr ""
+
+#: browser/album/albuns.py:185
+msgid "label_next"
+msgstr ""
+
+#: browser/album/albuns.py:172
+msgid "label_previous"
+msgstr ""
+
+#: controlpanel/socialnetworks.py:20
+msgid "title"
+msgstr ""
