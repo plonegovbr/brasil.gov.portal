@@ -692,6 +692,14 @@ body[class*="nitf"] div.width-1\3a 2 #plone-document-byline { width: 68.7216%; }
     white-space: nowrap;
 }
 
+#content .newsImageContainer a[class^="photo-icon-en"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_en.png") no-repeat;
+}
+
+#content .newsImageContainer a[class^="photo-icon-es"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_es.png") no-repeat;
+}
+
 #content .newsImageContainer .copyright {
     float: left;
     line-height: 31px;
@@ -4051,6 +4059,14 @@ body.contraste #content .mediacarousel .rights {
 
 body.contraste #content .newsImageContainer .photo-icon {
     background: url("++resource++brasil.gov.portal/img/mais_fotos-contraste.png") no-repeat;
+}
+
+body.contraste #content .newsImageContainer a[class^="photo-icon-en"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_en-contraste.png") no-repeat;
+}
+
+body.contraste #content .newsImageContainer a[class^="photo-icon-es"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_es-contraste.png") no-repeat;
 }
 
 /* contraste blog view */

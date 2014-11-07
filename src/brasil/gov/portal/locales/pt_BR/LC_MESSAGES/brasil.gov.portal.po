@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-06 16:36+0000\n"
+"POT-Creation-Date: 2014-11-07 15:13+0000\n"
 "PO-Revision-Date: 2014-11-06 14:28-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,9 +124,17 @@ msgstr "URL original"
 msgid "Please upload a audio file."
 msgstr "Por favor faça upload de arquivo de áudio."
 
+#: ./browser/content/templates/nitf_custom_view.pt:84
+msgid "Related items"
+msgstr "Itens relacionados"
+
 #: ./controlpanel/site.py:31
 msgid "Second line of site title"
 msgstr "Segunda linha do título do site"
+
+#: ./browser/content/templates/nitf_custom_view.pt:36
+msgid "Show image carousel"
+msgstr "Exibir carrossel de imagens"
 
 #: ./controlpanel/socialnetworks.py:26
 msgid "Site"

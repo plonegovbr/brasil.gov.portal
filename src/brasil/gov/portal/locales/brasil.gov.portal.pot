@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-06 16:36+0000\n"
+"POT-Creation-Date: 2014-11-07 15:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,8 +125,16 @@ msgstr ""
 msgid "Please upload a audio file."
 msgstr ""
 
+#: ./browser/content/templates/nitf_custom_view.pt:84
+msgid "Related items"
+msgstr ""
+
 #: ./controlpanel/site.py:31
 msgid "Second line of site title"
+msgstr ""
+
+#: ./browser/content/templates/nitf_custom_view.pt:36
+msgid "Show image carousel"
 msgstr ""
 
 #: ./controlpanel/socialnetworks.py:26

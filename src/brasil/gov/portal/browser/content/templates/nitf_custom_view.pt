@@ -4,7 +4,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="collective.nitf">
+      i18n:domain="brasil.gov.portal">
 
     <head>
         <metal:styleslot fill-slot="style_slot">
@@ -33,8 +33,10 @@
                     <div class="newsImageContainer"
                          tal:define="image context/getImage"
                          tal:condition="image">
-                        <a href="#" class="photo-icon"
-                           tal:condition="view/show_more_images">Exibir carrossel de imagens</a>
+                        <a href="#"
+                           tal:condition="view/show_more_images"
+                           tal:attributes="class string:photo-icon-${context/@@plone_portal_state/language} photo-icon"
+                           i18n:translate="">Show image carousel</a>
                         <span class="copyright"
                               tal:content="image/Rights"
                               tal:condition="image/Rights">Crédito</span>
