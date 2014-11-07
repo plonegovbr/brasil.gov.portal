@@ -4,6 +4,8 @@ Histórico de Alterações
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Adiciona estilos para portlet Centrais de Conteúdos em inglês e espanhol.
+  [dbarbato]
 * Ajusta para alterar estilo da primeira navegação apenas quando título for
   Menu de relevância.
   [dbarbato]
