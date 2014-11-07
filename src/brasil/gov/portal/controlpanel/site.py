@@ -1,16 +1,16 @@
 # -*- coding:utf-8 -*-
-from plone.app.controlpanel.form import ControlPanelForm
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
-from Products.CMFPlone import PloneMessageFactory as _
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
+from brasil.gov.portal import _ as _
+from plone.app.controlpanel.form import ControlPanelForm
 from zope.component import adapts
 from zope.formlib import form
 from zope.formlib.textwidgets import TextAreaWidget
-from zope.interface import implements
 from zope.interface import Interface
+from zope.interface import implements
 from zope.schema import Bool
 from zope.schema import SourceText
 from zope.schema import Text
