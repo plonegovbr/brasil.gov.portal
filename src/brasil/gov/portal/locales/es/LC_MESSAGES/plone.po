@@ -28,7 +28,7 @@ msgstr "Contraste Alto"
 
 #: ./profiles/default/registry.xml
 msgid "Metadata"
-msgstr ""
+msgstr "Metadatos"
 
 #: ./profiles/default/actions.xml
 msgid "Site Map"
@@ -36,13 +36,13 @@ msgstr "Mapa del Sitio"
 
 #: ./profiles/default/actions.xml
 msgid "Site Setup"
-msgstr ""
+msgstr "Configuración del sitio"
 
 #: ./profiles/default/registry.xml
 msgid "VCGE"
-msgstr ""
+msgstr "VCGE"
 
 #: ./profiles/default/registry.xml
 msgid "Vocabulario Controlado do Governo Eletronico"
-msgstr ""
+msgstr "Vocabulario Controlado para Gobierno Electrónico"
 

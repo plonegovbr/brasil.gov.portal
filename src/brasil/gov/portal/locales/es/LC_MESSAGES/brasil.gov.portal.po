@@ -20,194 +20,194 @@ msgstr ""
 
 #: ./browser/album/templates/galeria_de_fotos.pt:48
 msgid "&laquo; Previous"
-msgstr ""
+msgstr "&laquo; Anterior"
 
 #: ./browser/plone/templates/plone-overview.pt:95
 msgid "- Low-level settings."
-msgstr ""
+msgstr "- Configuración de bajo nivel."
 
 #: ./controlpanel/socialnetworks.py:108
 msgid ".gov.br: Social Network"
-msgstr ""
+msgstr ".gov.br: Red Social"
 
 #: ./profiles/default/controlpanel.xml
 #: ./upgrades/v10300/profiles/default/controlpanel.xml
 msgid ".gov.br: Social Networks"
-msgstr ""
+msgstr ".gov.br: Redes Sociales"
 
 #: ./browser/plone/templates/plone-addsite.pt:98
 msgid "A short site description"
-msgstr ""
+msgstr "Una breve descripción del sitio"
 
 #: ./browser/plone/templates/plone-addsite.pt:143
 msgid "Add-ons"
-msgstr ""
+msgstr "Complementos"
 
 #: ./browser/plone/templates/plone-overview.pt:88
 msgid "Administrative actions"
-msgstr ""
+msgstr "Acciones administrativas"
 
 #: ./profiles/default/types/MPEG_Audio_File.xml
 #: ./upgrades/v10300/profiles/default/types/MPEG_Audio_File.xml
 msgid "An Audio File using MPEG"
-msgstr ""
+msgstr "Un archivo de audio usando MPEG"
 
 #: ./profiles/default/types/OGG_Audio_File.xml
 #: ./upgrades/v10300/profiles/default/types/OGG_Audio_File.xml
 msgid "An Audio File using OGG"
-msgstr ""
+msgstr "Un archivo de audio usando OGG"
 
 #: ./profiles/default/types/Audio.xml
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 #: ./browser/content/templates/audioview.pt:30
 msgid "Audio Download"
-msgstr ""
+msgstr "Descargar Audio"
 
 #: ./browser/content/templates/audioview.pt:24
 msgid "Audio Transcript"
-msgstr ""
+msgstr "Audio Transcripción"
 
 #: ./browser/plone/templates/plone-addsite.pt:109
 msgid "Base configuration"
-msgstr ""
+msgstr "Configuración de la base"
 
 #: ./browser/plone/templates/plone-addsite.pt:13
 msgid "Create a Plone site"
-msgstr ""
+msgstr "Crear un sitio Plone"
 
 #: ./browser/plone/templates/plone-addsite.pt:37
 msgid "Create a new site"
-msgstr ""
+msgstr "Crear un nuevo sitio"
 
 #: ./browser/plone/templates/plone-overview.pt:74
 msgid "Create new Portal"
-msgstr ""
+msgstr "Crear nuevo Portal"
 
 #: ./browser/plone/templates/plone-addsite.pt:84
 #: ./controlpanel/site.py:35
 msgid "Department"
-msgstr ""
+msgstr "Departamento"
 
 #: ./browser/plone/templates/plone-addsite.pt:96
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: ./controlpanel/site.py:56
 msgid "Display publication date in 'about' information"
-msgstr ""
+msgstr "Mostrar la fecha de publicación en la información de 'sobre'"
 
 #: ./controlpanel/site.py:57
 msgid "Displays content publication date on site pages."
-msgstr ""
+msgstr "Muestra el contenido de la fecha de publicación en las páginas del sitio."
 
 #: ./browser/content/templates/audioview.pt:35
 msgid "Download file in file type"
-msgstr ""
+msgstr "Descargar archivo en"
 
 #: ./profiles/default/types/Audio.xml
 #: ./profiles/default/types/ExternalContent.xml
 #: ./profiles/default/types/MPEG_Audio_File.xml
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: ./browser/viewlets/templates/destaques_viewlet.pt:4
 msgid "Edit Features"
-msgstr ""
+msgstr "Editar Destacados"
 
 #: ./browser/plone/templates/plone-overview.pt:104
 msgid "Example site of the e-Government Digital Identity Plone Portal"
-msgstr ""
+msgstr "Ejemplo de sitio de portal de Identidad Digital para Gobierno Electrónico"
 
 #: ./controlpanel/site.py:50
 msgid "Expose Dublin Core metadata"
-msgstr ""
+msgstr "Expor metadados Dublin Core"
 
 #: ./controlpanel/site.py:62
 msgid "Expose sitemap.xml.gz"
-msgstr ""
+msgstr "Expor sitemap.xml.gz"
 
 #: ./controlpanel/site.py:51
 msgid "Exposes the Dublin Core properties as metatags."
-msgstr ""
+msgstr "Expone las propiedades de Dublin Core como metatags."
 
 #: ./controlpanel/site.py:63
 msgid "Exposes your content as a file according to the sitemaps.org standard. You can submit this to compliant search engines like Google, Yahoo and Microsoft. It allows these search engines to more intelligently crawl your site."
-msgstr ""
+msgstr "Expone su contenido como un archivo de acuerdo a la norma sitemaps.org. Usted puede enviar esto a los motores de búsqueda compatibles como Google, Yahoo y Microsoft. Permite que estos motores de búsqueda para rastrear de forma más inteligente de su sitio."
 
 #: ./profiles/default/types/ExternalContent.xml
 #: ./upgrades/v4000/profiles/default/types/ExternalContent.xml
 msgid "External Content"
-msgstr ""
+msgstr "Contenido Externo"
 
 #: ./content/audio_file.py:44
 msgid "File"
-msgstr ""
+msgstr "Archivo"
 
 #: ./content/audio_file.py:28
 msgid "File format not supported"
-msgstr ""
+msgstr "Formato de archivo no admitido"
 
 #: ./browser/plone/templates/plone-addsite.pt:65
 #: ./controlpanel/site.py:25
 msgid "First line of site title"
-msgstr ""
+msgstr "Primera línea de título del sitio"
 
 #: ./controlpanel/site.py:74
 msgid "For enabling web statistics support from external providers (for e.g. Google Analytics). Paste the code snippets provided. It will be included in the rendered HTML as entered near the end of the page."
-msgstr ""
+msgstr "Para habilitar el soporte de las estadísticas web de los proveedores externos (por ejemplo, Google Analytics es). Pegue los fragmentos de código proporcionados. Se incluye en el HTML en la parte inferior de la página."
 
 #: ./browser/plone/templates/plone-overview.pt:101
 msgid "For information and Support about e-Government Digital Identity Plone Portal visit"
-msgstr ""
+msgstr "Para obtener información y apoyo sobre la Identidad Digital de Gobierno Electrónico, visite"
 
 #: ./browser/plone/templates/plone-overview.pt:98
 msgid "Help and Support"
-msgstr ""
+msgstr "Ayuda y soporte técnico"
 
 #: ./controlpanel/socialnetworks.py:110
 msgid "Identity Bar behavior Configuration"
-msgstr ""
+msgstr "Establecer el comportamiento de la barra de Identificación"
 
 #: ./controlpanel/site.py:73
 msgid "JavaScript for web statistics support"
-msgstr ""
+msgstr "JavaScript para apoyo de estadísticas web"
 
 #: ./browser/plone/templates/plone-overview.pt:33
 msgid "List of portals created"
-msgstr ""
+msgstr "Lista de portales creado"
 
 #: ./profiles/default/types/MPEG_Audio_File.xml
 #: ./upgrades/v10300/profiles/default/types/MPEG_Audio_File.xml
 msgid "MPEG Audio File"
-msgstr ""
+msgstr "Archivo MPEG"
 
 #: ./browser/plone/templates/plone-addsite.pt:86
 #: ./controlpanel/site.py:36
 msgid "Name of Ministry or Department to which this site is subject."
-msgstr ""
+msgstr "Nombre del Ministerio o departamento al que este sitio está sujeto."
 
 #: ./browser/album/templates/galeria_de_fotos.pt:49
 msgid "Next &raquo;"
-msgstr ""
+msgstr "Próximo &raquo;"
 
 #: ./profiles/default/types/OGG_Audio_File.xml
 #: ./upgrades/v10300/profiles/default/types/OGG_Audio_File.xml
 msgid "OGG Audio File"
-msgstr ""
+msgstr "Archivo OGG"
 
 #: ./content/schema/ExternalContent.xml
 msgid "Original URL"
-msgstr ""
+msgstr "URL original"
 
 #: ./browser/plone/templates/plone-addsite.pt:49
 msgid "Path identifier"
-msgstr ""
+msgstr "Identificador de Camino"
 
 #: ./content/audio_file.py:45
 msgid "Please upload a audio file."
-msgstr ""
+msgstr "Por favor, sube un archivo de audio."
 
 #: ./browser/content/templates/nitf_custom_view.pt:85
 msgid "Related items"
@@ -215,21 +215,21 @@ msgstr "Elementos Relacionados"
 
 #: ./browser/content/templates/nitf_custom_view.pt:97
 msgid "Report error"
-msgstr ""
+msgstr "Informe de errores"
 
 #: ./browser/busca/templates/search.pt:47
 #: ./browser/viewlets/templates/searchbox.pt:12
 msgid "Search Site"
-msgstr ""
+msgstr "Búsqueda en el sitio"
 
 #: ./browser/plone/templates/plone-addsite.pt:75
 #: ./controlpanel/site.py:31
 msgid "Second line of site title"
-msgstr ""
+msgstr "Segunda línea de título del sitio"
 
 #: ./browser/plone/templates/plone-addsite.pt:147
 msgid "Select add-ons that will be available to the site after its installation."
-msgstr ""
+msgstr "Seleccione complementos que estará disponible en el sitio después de su instalación."
 
 #: ./browser/content/templates/nitf_custom_view.pt:36
 msgid "Show image carousel"
@@ -237,89 +237,89 @@ msgstr "Mostrar imagen del carrusel"
 
 #: ./controlpanel/socialnetworks.py:26
 msgid "Site"
-msgstr ""
+msgstr "Sitio"
 
 #: ./controlpanel/site.py:42
 msgid "Site description"
-msgstr ""
+msgstr "Descripción del sitio"
 
 #: ./controlpanel/site.py:190
 msgid "Site settings"
-msgstr ""
+msgstr "Configuración del sitio"
 
 #: ./browser/plone/templates/plone-addsite.pt:63
 #: ./controlpanel/site.py:24
 msgid "Site title (First Line)"
-msgstr ""
+msgstr "Título del sitio (Primera Línea)"
 
 #: ./browser/plone/templates/plone-addsite.pt:73
 #: ./controlpanel/site.py:30
 msgid "Site title (Second Line)"
-msgstr ""
+msgstr "Título del sitio (segunda línea)"
 
 #: ./controlpanel/site.py:191
 msgid "Site-wide settings."
-msgstr ""
+msgstr "Ajustes a nivel de sitio."
 
 #: ./controlpanel/socialnetworks.py:47
 msgid "Social Network"
-msgstr ""
+msgstr "Red Social"
 
 #: ./content/schema/ExternalContent.xml
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #: ./browser/plone/templates/plone-addsite.pt:53
 msgid "The id of the site. This ends up as part of the URL.<br /> No special characters are allowed."
-msgstr ""
+msgstr "El id del sitio. Esto termina como parte de la URL. <br /> No se permiten los caracteres especiales."
 
 #: ./controlpanel/site.py:43
 msgid "The site description is available in syndicated content and in search engines. Keep it brief."
-msgstr ""
+msgstr "La descripción del sitio está disponible en el contenido sindicado y en los motores de búsqueda. Sea breve."
 
 #: ./browser/plone/templates/plone-overview.pt:111
 msgid "This solution runs on Plone CMS, learn more by visiting the website of the international community at"
-msgstr ""
+msgstr "Esta solución funciona con Plone CMS, aprender más visitando el sitio web de la comunidad internacional en"
 
 #: ./content/schema/audio.xml
 msgid "Transcription"
-msgstr ""
+msgstr "Transcripción"
 
 #: ./profiles/default/types/Audio.xml
 #: ./profiles/default/types/ExternalContent.xml
 #: ./profiles/default/types/MPEG_Audio_File.xml
 msgid "View"
-msgstr ""
+msgstr "Vista"
 
 #: ./controlpanel/socialnetworks.py:112
 msgid "Visual and functional Configuration"
-msgstr ""
+msgstr "Configuración visual y funcional"
 
 #: ./browser/plone/templates/plone-addsite.pt:113
 msgid "You normally don't need to change anything here unless you have specific reasons and know what you are doing."
-msgstr ""
+msgstr "Normalmente no es necesario cambiar nada aquí a menos que tenga razones específicas y saber lo que está haciendo."
 
 #: ./browser/plone/templates/plone-addsite.pt:26
 #: ./browser/portlets/templates/latest_sectionable_nitf.pt:40
 msgid "Your browser is currently not supporting Javascript, for this reason some functionality may not be accessible."
-msgstr ""
+msgstr "Tu navegador actualmente no apoya Javascript, por esta razón algunas funciones puede que no sea accesible."
 
 #: ./browser/plone/templates/plone-overview.pt:91
 msgid "Zope Management Interface"
-msgstr ""
+msgstr "Interfaz de Administración de Zope"
 
 #. Default: "Create new e-Government Digital Identity Plone Portal"
 #: ./browser/plone/templates/plone-overview.pt:82
 msgid "add_new_site"
-msgstr ""
+msgstr "Añadir nuevo sitio"
 
 #: ./browser/plone/templates/plone-overview.pt:13
 msgid "e-Government Digital Identity -- Plone"
-msgstr ""
+msgstr "Identidade Digitales de Governo Eletrônico - Plone"
 
 #: ./browser/plone/templates/plone-overview.pt:28
 msgid "e-Government Digital Identity Plone Portal"
-msgstr ""
+msgstr "Plone portal da Identidade Digitales de Governo Eletrônico"
 
 #. Default: "Escolha a rede a ser cadastrada"
 #: ./controlpanel/socialnetworks.py:27
@@ -342,16 +342,16 @@ msgstr ""
 #. Default: "Plone Community"
 #: ./browser/plone/templates/plone-overview.pt:114
 msgid "plone_community"
-msgstr ""
+msgstr "Comunidad Plone"
 
 #. Default: "e-Government Digital Identity Plone Portal"
 #: ./browser/plone/templates/plone-overview.pt:104
 msgid "portal_padrao"
-msgstr ""
+msgstr "Plone portal da Identidade Digitales de Governo Eletrônico"
 
 #: ./browser/busca/templates/search.pt:354
 msgid "subject(s):"
-msgstr ""
+msgstr "tema(s)"
 
 #: ./controlpanel/socialnetworks.py:20
 msgid "title"
