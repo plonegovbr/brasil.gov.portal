@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-07 15:13+0000\n"
+"POT-Creation-Date: 2014-11-13 10:57+0000\n"
 "PO-Revision-Date: 2014-11-06 15:40-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -57,6 +57,10 @@ msgstr ""
 #: ./profiles/default/types/ExternalContent.xml
 #: ./profiles/default/types/MPEG_Audio_File.xml
 msgid "Edit"
+msgstr ""
+
+#: ./browser/viewlets/templates/destaques_viewlet.pt:4
+msgid "Edit Features"
 msgstr ""
 
 #: ./controlpanel/site.py:50
@@ -126,7 +130,7 @@ msgstr ""
 msgid "Please upload a audio file."
 msgstr ""
 
-#: ./browser/content/templates/nitf_custom_view.pt:84
+#: ./browser/content/templates/nitf_custom_view.pt:85
 msgid "Related items"
 msgstr "Elementos Relacionados"
 

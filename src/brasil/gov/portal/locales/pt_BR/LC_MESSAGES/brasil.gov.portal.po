@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-07 15:13+0000\n"
+"POT-Creation-Date: 2014-11-13 10:57+0000\n"
 "PO-Revision-Date: 2014-11-06 14:28-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,6 +56,10 @@ msgstr "Exibe data de publicação nas páginas do site"
 #: ./profiles/default/types/MPEG_Audio_File.xml
 msgid "Edit"
 msgstr "Editar"
+
+#: ./browser/viewlets/templates/destaques_viewlet.pt:4
+msgid "Edit Features"
+msgstr "Editar destaques"
 
 #: ./controlpanel/site.py:50
 msgid "Expose Dublin Core metadata"
@@ -124,7 +128,7 @@ msgstr "URL original"
 msgid "Please upload a audio file."
 msgstr "Por favor faça upload de arquivo de áudio."
 
-#: ./browser/content/templates/nitf_custom_view.pt:84
+#: ./browser/content/templates/nitf_custom_view.pt:85
 msgid "Related items"
 msgstr "Itens relacionados"
 
