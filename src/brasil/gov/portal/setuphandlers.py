@@ -1,11 +1,11 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
+from Products.CMFCore.WorkflowCore import WorkflowException
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
+from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
 from brasil.gov.portal.config import SHOW_DEPS
 from collective.transmogrifier.transmogrifier import Transmogrifier
 from plone import api
 from plone.app.dexterity.behaviors import constrains
-from Products.CMFCore.WorkflowCore import WorkflowException
-from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
-from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
 
 
 def setupPortalContent(p):
@@ -13,7 +13,7 @@ def setupPortalContent(p):
 
     # Importa conteudo
     transmogrify = Transmogrifier(p)
-    transmogrify("brasil.gov.portal.conteudo")
+    transmogrify('brasil.gov.portal.conteudo')
 
     # Pagina Inicial
     capa_como_padrao(p)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ Modulo que implementa o viewlet de servicos do Portal"""
-from plone.app.layout.viewlets import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.app.layout.viewlets import ViewletBase
 
 
 class ServicosViewlet(ViewletBase):

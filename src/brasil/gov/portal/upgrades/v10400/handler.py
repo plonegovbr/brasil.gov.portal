@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.portal.config import PROJECTNAME
 from plone import api
 from plone.app.upgrade.utils import loadMigrationProfile

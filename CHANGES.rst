@@ -3,8 +3,10 @@ Histórico de Alterações
 
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
-* Adiciona tradução inglês e espanhol para Mais Fotos do template de notícia.
+* Adiciona ao code-analysis Flake8, Deprecated aliases, Check utf-8 headers,
+  Check clean lines, Double quotes e Check imports
+  [dbarbato]
+* Adiciona internacionalização para templates e scripts.
   [dbarbato]
 * Adiciona estilos para portlet Centrais de Conteúdos em inglês e espanhol.
   [dbarbato]

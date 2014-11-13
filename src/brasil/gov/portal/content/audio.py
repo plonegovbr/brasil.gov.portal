@@ -1,12 +1,12 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.portal.content.audio_file import IMPEGAudioFile
 from brasil.gov.portal.content.audio_file import IOGGAudioFile
 from five import grok
 from plone.dexterity.content import Container
+from zope.interface import Interface
+from zope.interface import implements
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectRemovedEvent
-from zope.interface import implements
-from zope.interface import Interface
 
 
 class IAudio(Interface):

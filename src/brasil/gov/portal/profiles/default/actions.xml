@@ -13,7 +13,7 @@
     <element value="View"/>
    </property>
    <property name="visible">True</property>
-  </object>  
+  </object>
   <object name="contraste" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">High Contrast</property>
    <property name="description" i18n:translate=""></property>

@@ -26,7 +26,7 @@
       <element value="DoormatColumn"/>
       <element value="DoormatMixin"/>
       <element value="DoormatReference"/>
-      <element value="DoormatSection"/>  
+      <element value="DoormatSection"/>
       <element value="FormFolder"/>
       <element value="Folder"/>
       <element value="MPEG Audio File"/>

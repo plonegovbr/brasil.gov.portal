@@ -10,7 +10,7 @@
     <dependency>profile-brasil.gov.vcge.at:default</dependency>
     <dependency>profile-brasil.gov.vcge.dx:default</dependency>
     <dependency>profile-Products.Doormat:default</dependency>
-    <dependency>profile-Products.PloneFormGen:default</dependency>  
+    <dependency>profile-Products.PloneFormGen:default</dependency>
     <dependency>profile-sc.embedder:default</dependency>
     <dependency>profile-sc.social.like:default</dependency>
     <dependency>profile-brasil.gov.tiles:default</dependency>

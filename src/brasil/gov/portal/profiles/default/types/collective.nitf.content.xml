@@ -6,7 +6,7 @@
   <property name="behaviors" purge="False">
     <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
-	<element value="plone.app.versioningbehavior.behaviors.IVersionable" />    
+  <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
   </property>
   <property name="default_view">nitf_custom_view</property>
   <property name="default_view_fallback">False</property>

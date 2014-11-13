@@ -4,7 +4,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="pt_BR"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="brasil.gov.portal">
     <body>
         <div metal:fill-slot="main">
             <h1 class="documentFirstHeading">${context/title}</h1>
@@ -45,8 +45,8 @@
                         </div>
                     </div><!-- cycle-carrossel -->
                     <div class="cycle-nagivation">
-                        <a href="#" class="cycle-prev">&laquo; Anterior</a>
-                        <a href="#" class="cycle-next">Próximo &raquo;</a>
+                        <a href="#" class="cycle-prev" i18n:translate="">&laquo; Previous</a>
+                        <a href="#" class="cycle-next" i18n:translate="">Next &raquo;</a>
                     </div>
                 </div><!-- slideshow-carrossel -->
             </div><!-- galeria_container -->

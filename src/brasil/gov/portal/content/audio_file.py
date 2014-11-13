@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.portal import _
 from plone.dexterity.content import Item
 from plone.directives import form
@@ -25,7 +25,7 @@ MPEGTYPES = [
 
 def validate_mimetype(value, audiotypes):
     if not value.contentType in audiotypes:
-        raise Invalid(_(u"File format not supported"))
+        raise Invalid(_(u'File format not supported'))
     return True
 
 
@@ -41,8 +41,8 @@ class IMPEGAudioFile(form.Schema):
     ''' Representa um Arquivo de Audio MPEG'''
 
     model.primary('file')
-    file = NamedBlobFile(title=_(u"File"),
-                         description=_(u"Please upload a audio file."),
+    file = NamedBlobFile(title=_(u'File'),
+                         description=_(u'Please upload a audio file.'),
                          required=True,
                          constraint=validate_mpeg)
 
@@ -51,8 +51,8 @@ class IOGGAudioFile(form.Schema):
     ''' Representa um Arquivo de Audio OGG'''
 
     model.primary('file')
-    file = NamedBlobFile(title=_(u"File"),
-                         description=_(u"Please upload a audio file."),
+    file = NamedBlobFile(title=_(u'File'),
+                         description=_(u'Please upload a audio file.'),
                          required=True,
                          constraint=validate_ogg)
 

@@ -12,7 +12,7 @@
       description="Configurações da Versão 10300 do portal"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  
+
   <!-- Upgrade Steps -->
   <gs:upgradeSteps
         source="5000"

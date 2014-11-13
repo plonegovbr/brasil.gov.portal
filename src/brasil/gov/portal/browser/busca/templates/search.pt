@@ -44,7 +44,8 @@
         <input type="hidden" name="sort_on" value="" />
 
         <fieldset id="search-field" i18n:domain="plone" class="noborder">
-            <legend>Buscar no portal</legend>
+            <legend i18n:domain="brasil.gov.portal"
+                    i18n:translate="">Search Site</legend>
             <input class="searchPage"
                    name="SearchableText"
                    type="text"
@@ -347,10 +348,10 @@
                                           </span>
                                         </span>
 
-                                        <span i18n:domain="brasil.gov.vcge"
-                                             tal:define="categories python:view.skos(item)"
-                                             tal:condition="categories">
-                                          <tal:filedunder i18n:translate="">assunto(s):</tal:filedunder>
+                                        <span i18n:domain="brasil.gov.portal"
+                                              tal:define="categories python:view.skos(item)"
+                                              tal:condition="categories">
+                                          <tal:filedunder i18n:translate="">subject(s):</tal:filedunder>
                                           <span tal:repeat="category categories">
                                             <a href=""
                                                class="link-category"

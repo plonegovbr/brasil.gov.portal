@@ -25,9 +25,9 @@
                 <h1 class="documentFirstHeading" tal:content="context/title" property="rnews:name"/>
                 <h2 class="nitfSubtitle" tal:content="context/subtitle" property="rnews:alternativeHeadline"/>
                 <div class="documentDescription" tal:content="context/description" property="rnews:description"/>
-	            <div id="viewlet-below-content-title"
+                <div id="viewlet-below-content-title"
                      tal:content="structure provider:plone.belowcontenttitle"
-		             tal:condition="not:ajax_load" />
+                     tal:condition="not:ajax_load" />
 
                 <div class="newsLeftPane">
                     <div class="newsImageContainer"
@@ -39,7 +39,7 @@
                            i18n:translate="">Show image carousel</a>
                         <span class="copyright"
                               tal:content="image/Rights"
-                              tal:condition="image/Rights">Crédito</span>
+                              tal:condition="image/Rights">Credits</span>
                         <a href="@@nitf_custom_galleria"
                            id="parent-fieldname-image"
                            class="parent-nitf-image"
@@ -77,7 +77,7 @@
                            tal:content="context/imageCaption">
                             Image Caption
                         </p>
-				        <span id="lupa"></span>
+                        <span id="lupa"></span>
                     </div>
                     <div class="newsRelatedItems"
                          tal:condition="context/relatedItems|nothing">
@@ -94,13 +94,13 @@
                     <div class="relatar-erros"
                          tal:condition="urlerros">
                         <a tal:attributes="href urlerros">
-                            <span class="texto">Reportar erro</span>
+                            <span class="texto" i18n:translate="">Report error</span>
                         </a>
                     </div>
                 </tal:reporterros>
 
                 <div class="newsview">
-	                <script type="text/javascript">
+                    <script type="text/javascript">
                         (function ($) {
                             "use strict";
                             $(document).ready(function () {
@@ -143,7 +143,7 @@
                         })(jQuery);
                     </script>
                 </div>
-	            <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" tal:condition="not:ajax_load" />
+                <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" tal:condition="not:ajax_load" />
             </article>
         </metal:bodytext>
 

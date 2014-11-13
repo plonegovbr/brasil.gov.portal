@@ -20,15 +20,15 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       name="doormat-view"
       class=".doormat.DoormatView"
-      template="templates/doormat_view.pt"     
+      template="templates/doormat_view.pt"
       permission="zope2.View"
-      />  
+      />
   <browser:page
       for="Products.Doormat.content.interfaces.IDoormat"
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       name="doormat-view-bare"
       class=".doormat.DoormatView"
-      template="templates/doormat_bare_view.pt"     
+      template="templates/doormat_bare_view.pt"
       permission="zope2.View"
       />
 

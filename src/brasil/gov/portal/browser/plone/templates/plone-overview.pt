@@ -5,31 +5,33 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
-      i18n:domain="plone">
+      i18n:domain="brasil.gov.portal">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-  <title>Portal Padrão -- Plone</title>
+  <title i18n:translate="">e-Government Digital Identity -- Plone</title>
 
   <link rel="stylesheet" type="text/css"
         href="++resource++plone-admin-ui.css" />
 
 </head>
 
-
-<body tal:define="sites view/sites">
+<body tal:define="sites view/sites;
+                  add_new_site string:'Create new e-Government Digital Identity Plone Portal'
+                  portal_padrao string:'e-Government Digital Identity Plone Portal'
+                  plone_community string:'Plone Community'">
 <div id="box">
     <img src="++resource++plonegovbr.png" width="164" height="70"
          alt="Iniciativa PloneGov-Br"/>
     <div id="text">
         <h1 i18n:translate="">
-            Portal Padrão
+            e-Government Digital Identity Plone Portal
         </h1>
 
         <tal:block tal:condition="sites">
-        <h2>Portais já criados</h2>
-        <ul>
+        <h2 i18n:translate="">List of portals created</h2>
+        <ul i18n:domain="plone">
           <li tal:repeat="site sites">
               <span class="prominent">
                    <img tal:attributes="src string:${site/absolute_url}/logoIcon.png" height="16" width="16" />
@@ -69,7 +71,7 @@
           </li>
         </ul>
         </tal:block>
-        <h2>Criar novo Portal</h2>
+        <h2 i18n:translate="">Create new Portal</h2>
         <ul>
             <li>
                 <form id="add-plone-site"
@@ -78,39 +80,40 @@
                       tal:attributes="action string:${context/absolute_url}/@@plone-addsite">
                     <input type="hidden" name="site_id" value="Plone" />
                     <input type="submit"
-                           i18n:attributes="value;"
-                           value="Criar um novo Portal Padrão" />
+                           value="Create new e-Government Digital Identity Plone Portal"
+                           i18n:attributes="value add_new_site;" />
                 </form>
             </li>
         </ul>
-        <h2>Ações administrativas</h2>
+        <h2 i18n:translate="">Administrative actions</h2>
         <ul>
             <li>
                 <a href="#"
                    tal:attributes="href string:${context/absolute_url}/manage_main"
                    title="Acessar a ZMI"
-                   i18n:translate="label_zmi_link">Zope Management Interface</a>
-                <span>
-                    &#151; configurações de baixo nível.
-                </span>
+                   i18n:translate="">Zope Management Interface</a>
+                <span i18n:translate=""> - Low-level settings.</span>
             </li>
         </ul>
-        <h2>Suporte e ajuda</h2>
+        <h2 i18n:translate="">Help and Support</h2>
         <ul>
             <li>
-                <span>
-                    Para informações e suporte ao Portal Padrão visite
+                <span i18n:translate="">
+                   For information and Support about e-Government Digital Identity Plone Portal visit
                 </span>
                 <a href="http://portalpadrao.gov.br"
-                   title="Portal Padrão"
-                   target="_new">Site de exemplo do Portal Padrão</a>.
+                   title="e-Government Digital Identity Plone Portal"
+                   target="_new"
+                   i18n:attributes="title portal_padrao;"
+                   i18n:translate="">Example site of the e-Government Digital Identity Plone Portal</a>.
             </li>
             <li>
-                <span>
-                    Esta solução roda sobre o CMS Plone, conheça mais visitando o site da comunidade internacional em
+                <span i18n:translate="">
+                    This solution runs on Plone CMS, learn more by visiting the website of the international community at
                 </span>
                 <a href="http://plone.org"
-                   title="Comunidade Plone"
+                   title="Plone Community"
+                   i18n:attributes="title plone_community;"
                    target="_new">plone.org</a>.
             </li>
         </ul>

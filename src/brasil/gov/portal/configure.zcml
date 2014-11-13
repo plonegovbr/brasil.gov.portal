@@ -10,7 +10,7 @@
   <!-- ZCML de importacao de dependencias -->
   <include file="dependencies.zcml" />
 
-  <include 
+  <include
       zcml:condition="have plone-4"
       package="Products.CMFCore" file="permissions.zcml" />
 

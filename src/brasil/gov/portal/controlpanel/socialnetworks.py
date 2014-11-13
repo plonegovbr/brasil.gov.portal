@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -13,7 +13,8 @@ from zope.formlib.sequencewidget import ListSequenceWidget
 from zope.formlib.widget import CustomWidgetFactory
 from zope.interface import Interface
 from zope.interface import implements
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 
 networks = SimpleVocabulary(
@@ -26,11 +27,11 @@ class ISocialNetworksPair(Interface):
     site = schema.Choice(title=_(u'Site'),
                          description=_(
                              _(u'help_social_network'),
-                             default=u"Escolha a rede a ser cadastrada"),
+                             default=u'Escolha a rede a ser cadastrada'),
                          required=True,
                          vocabulary=networks)
 
-    info = schema.TextLine(title=u"Identificador")
+    info = schema.TextLine(title=u'Identificador')
 
 
 class SocialNetworksPair:
@@ -46,7 +47,7 @@ class ISocialNetworksSchema(Interface):
     accounts_info = schema.List(
         title=_(u'Social Network'),
         default=[],
-        value_type=schema.Object(ISocialNetworksPair, title=u"Rede"),
+        value_type=schema.Object(ISocialNetworksPair, title=u'Rede'),
         required=False)
 
 

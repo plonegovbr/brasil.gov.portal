@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from brasil.gov.portal.interfaces import IBrasilGov
 from collective.nitf.browser import Display_Macros as NitfCustomDisplayMacros
 from five import grok
-from brasil.gov.portal.interfaces import IBrasilGov
 
 grok.templatedir('templates')
 

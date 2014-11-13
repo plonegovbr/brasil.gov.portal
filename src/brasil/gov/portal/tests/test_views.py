@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
-
+from DateTime import DateTime
+from ZPublisher.tests.testHTTPRequest import TEST_ENVIRON
+from ZPublisher.tests.testHTTPRequest import TEST_FILE_DATA
 from brasil.gov.portal.browser.album.albuns import Pagination
 from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
-from DateTime import DateTime
 from plone import api
 from plonetheme.sunburst.browser.interfaces import IThemeSpecific
 from zope.interface import alsoProvides
 from zope.interface import directlyProvides
-from ZPublisher.tests.testHTTPRequest import TEST_ENVIRON
-from ZPublisher.tests.testHTTPRequest import TEST_FILE_DATA
 
 import unittest
 

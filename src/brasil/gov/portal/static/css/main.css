@@ -4016,7 +4016,7 @@ body.contraste .add-agenda {
 }
 
 /* mapa do site */
-body.contraste #portal-sitemap .state-published { 
+body.contraste #portal-sitemap .state-published {
     color: #FFF !important;
 }
 
@@ -4232,10 +4232,6 @@ body.contraste .ui-widget-header .ui-state-focus {
     color: #FFF;
 }
 
-body.contraste .ui-widget-content {
-    
-}
-
 body.contraste .ui-widget-header {
     background: #000;
 }
@@ -4276,10 +4272,6 @@ body.contraste #contentActionMenus {
     background: #000;
     border: 0.25em solid #FFF;
     border-top: none;
-}
-
-body.contraste #contentActionMenus dl.actionMenu.activated dd {
-    
 }
 
 body.contraste #contentActionMenus dl.actionMenu.activated dd a:hover,
@@ -4349,7 +4341,7 @@ body.contraste #contentchooser-content-search,
 body.contraste .warning > dd,
 body.contraste .warning > .last,
 body.contraste .pb-ajax, .pb-image,
-body.contraste .overlay iframe, 
+body.contraste .overlay iframe,
 body.contraste .modal {
     background-color: #000;
 }

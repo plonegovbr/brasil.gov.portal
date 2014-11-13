@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from brasil.gov.portal.interfaces import IBrasilGov
 from collective.nitf.browser import Nitf_Galleria as NitfCustomGalleria
 from five import grok
-from brasil.gov.portal.interfaces import IBrasilGov
 
 grok.templatedir('templates')
 

@@ -5,7 +5,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
-      i18n:domain="plone">
+      i18n:domain="brasil.gov.portal">
 
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -23,8 +23,9 @@
     window.onload = siteid_focus;
   </script>
   <noscript>
-      <div class="error">
-          Seu navegador de internet está sem suporte à JavaScript, por esse motivo algumas funcionalidades do site podem não estar acessíveis.
+      <div class="error" i18n:translate="">
+          Your browser is currently not supporting Javascript,
+          for this reason some functionality may not be accessible.
       </div>
   </noscript>
 
@@ -33,7 +34,7 @@
 
   <img src="++resource++plonegovbr.png" width="164" height="70" alt="Iniciativa PloneGov-Br"/>
 
-  <h1>Criar um novo site</h1>
+  <h1 i18n:translate="">Create a new site</h1>
 
   <form action="#"
         method="post"
@@ -59,20 +60,20 @@
       </div>
 
       <div class="field">
-        <label for="title_1" i18n:translate="label_title_1">Título (linha 1)</label>
+        <label for="title_1" i18n:translate="">Site title (First Line)</label>
 
         <div class="formHelp" i18n:translate="">
-          Primeira linha do título
+          First line of site title
         </div>
 
         <input type="text" name="title_1" size="30" value="Secretaria de" />
       </div>
 
       <div class="field">
-        <label for="title_2" i18n:translate="label_title_2">Título (linha 2)</label>
+        <label for="title_2" i18n:translate="">Site title (Second Line)</label>
 
         <div class="formHelp" i18n:translate="">
-          Segunda linha do título
+          Second line of site title
         </div>
 
         <input type="text" name="title_2" size="30"
@@ -80,10 +81,10 @@
       </div>
 
       <div class="field">
-        <label for="orgao" i18n:translate="label_orgao">Órgão</label>
+        <label for="orgao" i18n:translate="">Department</label>
 
         <div class="formHelp" i18n:translate="">
-          Nome do Ministério ou da Secretaria ao qual este site está subordinado.
+          Name of Ministry or Department to which this site is subject.
         </div>
 
         <input type="text" name="orgao"
@@ -92,10 +93,10 @@
       </div>
 
       <div class="field">
-        <label for="description" i18n:translate="label_description">Description</label>
+        <label for="description" i18n:translate="">Description</label>
 
         <div class="formHelp" i18n:translate="">
-          Uma breve descrição deste site.
+          A short site description
         </div>
 
         <input type="text" name="description"
@@ -139,12 +140,12 @@
 
       <tal:extensionprofiles condition="extension_profiles">
         <fieldset id="add-on-list">
-          <legend>
-             Funcionalidades adicionais
+          <legend i18n:translate="">
+             Add-ons
           </legend>
 
-          <div class="formHelp" >
-              Selecione funcionalidades adicionais que estar&atilde;o dispon&iacute;veis ao novo site ap&oacute;s sua instala&ccedil;&atilde;o.
+          <div class="formHelp" i18n:translate="">
+              Select add-ons that will be available to the site after its installation.
           </div>
 
           <dl id="extension_ids">

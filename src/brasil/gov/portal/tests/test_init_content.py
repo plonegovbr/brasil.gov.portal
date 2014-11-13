@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.testing import INITCONTENT_TESTING
 from plone import api
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
-from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 
 import unittest
 

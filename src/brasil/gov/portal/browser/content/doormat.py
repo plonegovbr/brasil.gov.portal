@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from Products.Doormat.browser.views import DoormatView as BaseView
 
 
@@ -25,7 +25,7 @@ class DoormatView(BaseView):
         ]
         """
         portal_state = self.context.restrictedTraverse(
-            "@@plone_portal_state"
+            '@@plone_portal_state'
         )
         navigation_root_url = portal_state.navigation_root_url()
         portal_url = portal_state.portal_url()
@@ -37,14 +37,14 @@ class DoormatView(BaseView):
                     url = link_url
                     if not isinstance(link_url, str):
                         link_url = link_url()
-                    if "${navigation_root_url}" in link_url:
+                    if '${navigation_root_url}' in link_url:
                         url = link_url.replace(
-                            "${navigation_root_url}",
+                            '${navigation_root_url}',
                             navigation_root_url
                         )
-                    elif "${portal_url}" in link_url:
+                    elif '${portal_url}' in link_url:
                         url = link_url.replace(
-                            "${portal_url}",
+                            '${portal_url}',
                             portal_url
                         )
                     link['link_url'] = url

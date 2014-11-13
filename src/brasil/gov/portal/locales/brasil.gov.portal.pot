@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-13 10:57+0000\n"
+"POT-Creation-Date: 2014-11-13 15:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: brasil.gov.portal\n"
 
+#: ./browser/album/templates/galeria_de_fotos.pt:48
+msgid "&laquo; Previous"
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:95
+msgid "- Low-level settings."
+msgstr ""
+
 #: ./controlpanel/socialnetworks.py:108
 msgid ".gov.br: Social Network"
 msgstr ""
@@ -24,6 +32,18 @@ msgstr ""
 #: ./profiles/default/controlpanel.xml
 #: ./upgrades/v10300/profiles/default/controlpanel.xml
 msgid ".gov.br: Social Networks"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:98
+msgid "A short site description"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:143
+msgid "Add-ons"
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:88
+msgid "Administrative actions"
 msgstr ""
 
 #: ./profiles/default/types/MPEG_Audio_File.xml
@@ -40,8 +60,37 @@ msgstr ""
 msgid "Audio"
 msgstr ""
 
+#: ./browser/content/templates/audioview.pt:30
+msgid "Audio Download"
+msgstr ""
+
+#: ./browser/content/templates/audioview.pt:24
+msgid "Audio Transcript"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:109
+msgid "Base configuration"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:13
+msgid "Create a Plone site"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:37
+msgid "Create a new site"
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:74
+msgid "Create new Portal"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:84
 #: ./controlpanel/site.py:35
 msgid "Department"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:96
+msgid "Description"
 msgstr ""
 
 #: ./controlpanel/site.py:56
@@ -52,6 +101,10 @@ msgstr ""
 msgid "Displays content publication date on site pages."
 msgstr ""
 
+#: ./browser/content/templates/audioview.pt:35
+msgid "Download file in file type"
+msgstr ""
+
 #: ./profiles/default/types/Audio.xml
 #: ./profiles/default/types/ExternalContent.xml
 #: ./profiles/default/types/MPEG_Audio_File.xml
@@ -60,6 +113,10 @@ msgstr ""
 
 #: ./browser/viewlets/templates/destaques_viewlet.pt:4
 msgid "Edit Features"
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:104
+msgid "Example site of the e-Government Digital Identity Plone Portal"
 msgstr ""
 
 #: ./controlpanel/site.py:50
@@ -91,12 +148,21 @@ msgstr ""
 msgid "File format not supported"
 msgstr ""
 
+#: ./browser/plone/templates/plone-addsite.pt:65
 #: ./controlpanel/site.py:25
 msgid "First line of site title"
 msgstr ""
 
 #: ./controlpanel/site.py:74
 msgid "For enabling web statistics support from external providers (for e.g. Google Analytics). Paste the code snippets provided. It will be included in the rendered HTML as entered near the end of the page."
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:101
+msgid "For information and Support about e-Government Digital Identity Plone Portal visit"
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:98
+msgid "Help and Support"
 msgstr ""
 
 #: ./controlpanel/socialnetworks.py:110
@@ -107,13 +173,22 @@ msgstr ""
 msgid "JavaScript for web statistics support"
 msgstr ""
 
+#: ./browser/plone/templates/plone-overview.pt:33
+msgid "List of portals created"
+msgstr ""
+
 #: ./profiles/default/types/MPEG_Audio_File.xml
 #: ./upgrades/v10300/profiles/default/types/MPEG_Audio_File.xml
 msgid "MPEG Audio File"
 msgstr ""
 
+#: ./browser/plone/templates/plone-addsite.pt:86
 #: ./controlpanel/site.py:36
-msgid "Name of Ministry or Departmentto which this site is subject."
+msgid "Name of Ministry or Department to which this site is subject."
+msgstr ""
+
+#: ./browser/album/templates/galeria_de_fotos.pt:49
+msgid "Next &raquo;"
 msgstr ""
 
 #: ./profiles/default/types/OGG_Audio_File.xml
@@ -125,6 +200,10 @@ msgstr ""
 msgid "Original URL"
 msgstr ""
 
+#: ./browser/plone/templates/plone-addsite.pt:49
+msgid "Path identifier"
+msgstr ""
+
 #: ./content/audio_file.py:45
 msgid "Please upload a audio file."
 msgstr ""
@@ -133,8 +212,22 @@ msgstr ""
 msgid "Related items"
 msgstr ""
 
+#: ./browser/content/templates/nitf_custom_view.pt:97
+msgid "Report error"
+msgstr ""
+
+#: ./browser/busca/templates/search.pt:47
+#: ./browser/viewlets/templates/searchbox.pt:12
+msgid "Search Site"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:75
 #: ./controlpanel/site.py:31
 msgid "Second line of site title"
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:147
+msgid "Select add-ons that will be available to the site after its installation."
 msgstr ""
 
 #: ./browser/content/templates/nitf_custom_view.pt:36
@@ -153,10 +246,12 @@ msgstr ""
 msgid "Site settings"
 msgstr ""
 
+#: ./browser/plone/templates/plone-addsite.pt:63
 #: ./controlpanel/site.py:24
 msgid "Site title (First Line)"
 msgstr ""
 
+#: ./browser/plone/templates/plone-addsite.pt:73
 #: ./controlpanel/site.py:30
 msgid "Site title (Second Line)"
 msgstr ""
@@ -173,8 +268,16 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
+#: ./browser/plone/templates/plone-addsite.pt:53
+msgid "The id of the site. This ends up as part of the URL.<br /> No special characters are allowed."
+msgstr ""
+
 #: ./controlpanel/site.py:43
 msgid "The site description is available in syndicated content and in search engines. Keep it brief."
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:111
+msgid "This solution runs on Plone CMS, learn more by visiting the website of the international community at"
 msgstr ""
 
 #: ./content/schema/audio.xml
@@ -191,6 +294,32 @@ msgstr ""
 msgid "Visual and functional Configuration"
 msgstr ""
 
+#: ./browser/plone/templates/plone-addsite.pt:113
+msgid "You normally don't need to change anything here unless you have specific reasons and know what you are doing."
+msgstr ""
+
+#: ./browser/plone/templates/plone-addsite.pt:26
+#: ./browser/portlets/templates/latest_sectionable_nitf.pt:40
+msgid "Your browser is currently not supporting Javascript, for this reason some functionality may not be accessible."
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:91
+msgid "Zope Management Interface"
+msgstr ""
+
+#. Default: "Create new e-Government Digital Identity Plone Portal"
+#: ./browser/plone/templates/plone-overview.pt:82
+msgid "add_new_site"
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:13
+msgid "e-Government Digital Identity -- Plone"
+msgstr ""
+
+#: ./browser/plone/templates/plone-overview.pt:28
+msgid "e-Government Digital Identity Plone Portal"
+msgstr ""
+
 #: ./controlpanel/socialnetworks.py:27
 msgid "help_social_network"
 msgstr ""
@@ -203,7 +332,31 @@ msgstr ""
 msgid "label_previous"
 msgstr ""
 
+#. Default: "Search"
+#: ./browser/viewlets/templates/searchbox.pt:30
+msgid "label_search"
+msgstr ""
+
+#. Default: "Plone Community"
+#: ./browser/plone/templates/plone-overview.pt:114
+msgid "plone_community"
+msgstr ""
+
+#. Default: "e-Government Digital Identity Plone Portal"
+#: ./browser/plone/templates/plone-overview.pt:104
+msgid "portal_padrao"
+msgstr ""
+
+#: ./browser/busca/templates/search.pt:354
+msgid "subject(s):"
+msgstr ""
+
 #: ./controlpanel/socialnetworks.py:20
 msgid "title"
+msgstr ""
+
+#. Default: "Search Site"
+#: ./browser/viewlets/templates/searchbox.pt:18
+msgid "title_search_box"
 msgstr ""
 

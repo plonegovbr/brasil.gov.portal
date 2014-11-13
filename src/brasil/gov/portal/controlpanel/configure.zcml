@@ -25,7 +25,7 @@
       name="site-controlpanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class=".site.SiteControlPanel"
-      layer="brasil.gov.portal.interfaces.IBrasilGov"      
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
       permission="plone.app.controlpanel.Site"
       />
 
