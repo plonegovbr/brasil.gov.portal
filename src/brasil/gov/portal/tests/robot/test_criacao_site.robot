@@ -17,7 +17,7 @@ Criar novo site
     Ir para  ${NOVO_SITE_URL}
     Capturar tela  criarsite-passo-01.png
 
-    Pagina deve conter  Criar um novo site
+    Pagina deve conter elemento  title_1
     Campo de texto  title_1  Portal do
     Campo de texto  title_2  Governo Eletronico
     Campo de texto  orgao  Ministerio do Planejamento
