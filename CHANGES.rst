@@ -16,8 +16,6 @@ Histórico de Alterações
 * Adiciona sprite e estilo de contraste para ícone de Dados Abertos do menu
   de Centrais de Conteúdos.
   [dbarbato]
-* Ajusta retração de menu apenas quando em versão responsiva.
-  [dbarbato]
 
 
 1.0.4 (2014-11-01)
