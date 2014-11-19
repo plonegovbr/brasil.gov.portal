@@ -1011,6 +1011,7 @@ dl.portlet dt a:visited { color: #464a55 !important; }
    ========================================================================== */
 
 .portlet-static-contents-central .portletHeader,
+.portlet-static-resource-center .portletHeader,
 .portlet-static-centrales-del-contenido .portletHeader,
 .portlet-static-centrais-de-conteudos .portletHeader,
 .portletNavigationTree .portletHeader {
@@ -1165,12 +1166,14 @@ dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 1.043em 0.55em 4.5em !importa
    ========================================================================== */
 
 .portlet-static-contents-central .portletItem,
+.portlet-static-resource-center .portletItem,
 .portlet-static-centrales-del-contenido .portletItem,
 .portlet-static-centrais-de-conteudos .portletItem {
     padding: 0 !important;
 }
 
 .portlet-static-contents-central .list-central,
+.portlet-static-resource-center .list-central,
 .portlet-static-centrales-del-contenido .list-central,
 .portlet-static-centrais-de-conteudos .list-central {
     margin: 0;
@@ -3314,6 +3317,7 @@ ul.formTabs { padding: 0px !important; }
     }
 
     .portlet-static-contents-central .portletHeader,
+    .portlet-static-resource-center .portletHeader,
     .portlet-static-centrales-del-contenido .portletHeader,
     .portlet-static-centrais-de-conteudos .portletHeader,
     .portletNavigationTree .portletHeader {
@@ -4353,6 +4357,7 @@ body.contraste .badge {
 }
 
 body.contraste .portlet-static-contents-central .portletHeader,
+body.contraste .portlet-static-resource-center .portletHeader,
 body.contraste .portlet-static-centrales-del-contenido .portletHeader,
 body.contraste .portlet-static-centrais-de-conteudos .portletHeader,
 body.contraste .portletNavigationTree .portletHeader {
