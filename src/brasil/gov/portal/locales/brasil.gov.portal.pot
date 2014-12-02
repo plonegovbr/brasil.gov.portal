@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-13 15:05+0000\n"
+"POT-Creation-Date: 2014-12-02 18:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "- Low-level settings."
 msgstr ""
 
-#: ./controlpanel/socialnetworks.py:108
+#: ./controlpanel/socialnetworks.py:109
 msgid ".gov.br: Social Network"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgid "Description"
 msgstr ""
 
 #: ./controlpanel/site.py:56
-msgid "Display publication date in 'about' information"
+msgid "Display publication date in about information"
 msgstr ""
 
 #: ./controlpanel/site.py:57
@@ -165,7 +165,7 @@ msgstr ""
 msgid "Help and Support"
 msgstr ""
 
-#: ./controlpanel/socialnetworks.py:110
+#: ./controlpanel/socialnetworks.py:111
 msgid "Identity Bar behavior Configuration"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr ""
 msgid "Show image carousel"
 msgstr ""
 
-#: ./controlpanel/socialnetworks.py:26
+#: ./controlpanel/socialnetworks.py:27
 msgid "Site"
 msgstr ""
 
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Site-wide settings."
 msgstr ""
 
-#: ./controlpanel/socialnetworks.py:47
+#: ./controlpanel/socialnetworks.py:48
 msgid "Social Network"
 msgstr ""
 
@@ -290,7 +290,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: ./controlpanel/socialnetworks.py:112
+#: ./controlpanel/socialnetworks.py:113
 msgid "Visual and functional Configuration"
 msgstr ""
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "e-Government Digital Identity Plone Portal"
 msgstr ""
 
-#: ./controlpanel/socialnetworks.py:27
+#: ./controlpanel/socialnetworks.py:28
 msgid "help_social_network"
 msgstr ""
 
@@ -351,7 +351,7 @@ msgstr ""
 msgid "subject(s):"
 msgstr ""
 
-#: ./controlpanel/socialnetworks.py:20
+#: ./controlpanel/socialnetworks.py:21
 msgid "title"
 msgstr ""
 

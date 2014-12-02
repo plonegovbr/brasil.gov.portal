@@ -53,7 +53,7 @@ class ISiteSchema(Interface):
         required=False)
 
     display_pub_date_in_byline = Bool(
-        title=_(u'Display publication date in "about" information'),
+        title=_(u'Display publication date in about information'),
         description=_(u'Displays content publication date on site pages.'),
         default=False,
         required=False)

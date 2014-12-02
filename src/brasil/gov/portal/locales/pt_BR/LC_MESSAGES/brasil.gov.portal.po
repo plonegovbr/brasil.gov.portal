@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-13 15:05+0000\n"
+"POT-Creation-Date: 2014-12-02 18:29+0000\n"
 "PO-Revision-Date: 2014-11-06 14:28-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "&laquo; Anterior"
 msgid "- Low-level settings."
 msgstr "- configurações de baixo nível."
 
-#: ./controlpanel/socialnetworks.py:108
+#: ./controlpanel/socialnetworks.py:109
 msgid ".gov.br: Social Network"
 msgstr ".gov.br: Redes Sociais"
 
@@ -93,8 +93,8 @@ msgid "Description"
 msgstr "Descrição"
 
 #: ./controlpanel/site.py:56
-msgid "Display publication date in 'about' information"
-msgstr "Exibe data de publicação na informação de 'sobre'"
+msgid "Display publication date in about information"
+msgstr "Exibe data de publicação na informação de sobre"
 
 #: ./controlpanel/site.py:57
 msgid "Displays content publication date on site pages."
@@ -164,7 +164,7 @@ msgstr "Para informações e suporte ao Portal Padrão visite"
 msgid "Help and Support"
 msgstr "Suporte e ajuda"
 
-#: ./controlpanel/socialnetworks.py:110
+#: ./controlpanel/socialnetworks.py:111
 msgid "Identity Bar behavior Configuration"
 msgstr "Configurações do comportamento da barra de identidade"
 
@@ -233,7 +233,7 @@ msgstr "Selecione funcionalidades adicionais que estarão disponíveis ao novo s
 msgid "Show image carousel"
 msgstr "Exibir carrossel de imagens"
 
-#: ./controlpanel/socialnetworks.py:26
+#: ./controlpanel/socialnetworks.py:27
 msgid "Site"
 msgstr "Site"
 
@@ -259,7 +259,7 @@ msgstr "Título do site (Segunda Linha)"
 msgid "Site-wide settings."
 msgstr "Configurações globais do site"
 
-#: ./controlpanel/socialnetworks.py:47
+#: ./controlpanel/socialnetworks.py:48
 msgid "Social Network"
 msgstr "Rede social"
 
@@ -289,7 +289,7 @@ msgstr "Transcrição"
 msgid "View"
 msgstr "Visão"
 
-#: ./controlpanel/socialnetworks.py:112
+#: ./controlpanel/socialnetworks.py:113
 msgid "Visual and functional Configuration"
 msgstr "Configuração funcional e visual"
 
@@ -320,7 +320,7 @@ msgid "e-Government Digital Identity Plone Portal"
 msgstr "Portal Padrão"
 
 #. Default: "Escolha a rede a ser cadastrada"
-#: ./controlpanel/socialnetworks.py:27
+#: ./controlpanel/socialnetworks.py:28
 msgid "help_social_network"
 msgstr ""
 
@@ -351,7 +351,7 @@ msgstr "Portal Padrão"
 msgid "subject(s):"
 msgstr "assunto(s):"
 
-#: ./controlpanel/socialnetworks.py:20
+#: ./controlpanel/socialnetworks.py:21
 msgid "title"
 msgstr ""
 
