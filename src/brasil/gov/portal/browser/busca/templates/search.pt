@@ -27,8 +27,10 @@
 <body>
 
   <div id="content-core" metal:fill-slot="main">
-    <h1 class="documentFirstHeading">
-        Busca
+    <h1 class="documentFirstHeading"
+        i18n:domain="brasil.gov.portal"
+        i18n:translate="">
+        Search
     </h1>
 
     <form name="searchform"

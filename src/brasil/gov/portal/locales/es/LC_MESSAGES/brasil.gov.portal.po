@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-02 18:29+0000\n"
+"POT-Creation-Date: 2014-12-03 10:41+0000\n"
 "PO-Revision-Date: 2014-11-06 15:40-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -217,7 +217,11 @@ msgstr "Elementos Relacionados"
 msgid "Report error"
 msgstr "Informe de errores"
 
-#: ./browser/busca/templates/search.pt:47
+#: ./browser/busca/templates/search.pt:30
+msgid "Search"
+msgstr ""
+
+#: ./browser/busca/templates/search.pt:49
 #: ./browser/viewlets/templates/searchbox.pt:12
 msgid "Search Site"
 msgstr "Búsqueda en el sitio"
@@ -337,7 +341,7 @@ msgstr ""
 #. Default: "Search"
 #: ./browser/viewlets/templates/searchbox.pt:30
 msgid "label_search"
-msgstr ""
+msgstr "Búsqueda"
 
 #. Default: "Plone Community"
 #: ./browser/plone/templates/plone-overview.pt:114
@@ -349,7 +353,7 @@ msgstr "Comunidad Plone"
 msgid "portal_padrao"
 msgstr "Plone portal da Identidade Digitales de Governo Eletrônico"
 
-#: ./browser/busca/templates/search.pt:354
+#: ./browser/busca/templates/search.pt:356
 msgid "subject(s):"
 msgstr "tema(s)"
 
