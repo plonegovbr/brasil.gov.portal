@@ -274,6 +274,13 @@ class TestUpgrade(unittest.TestCase):
         self.assertTrue(resource_id in stylesheets_ids)
         self.assertTrue(portal_css.getResource(resource_id).getEnabled())
 
+    def test_to10500_available(self):
+        step = self.list_upgrades(u'10400', u'10500')
+        self.assertEqual(len(step), 1)
+
+    def test_to10500_execution(self):
+        self.execute_upgrade(u'10400', u'10500')
+
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
         Testa se todos os upgradeSteps de brasil.gov.portal estão nas variáveis
