@@ -219,7 +219,7 @@ msgstr "Informe de errores"
 
 #: ./browser/busca/templates/search.pt:30
 msgid "Search"
-msgstr ""
+msgstr "Búsqueda"
 
 #: ./browser/busca/templates/search.pt:49
 #: ./browser/viewlets/templates/searchbox.pt:12
@@ -341,7 +341,7 @@ msgstr ""
 #. Default: "Search"
 #: ./browser/viewlets/templates/searchbox.pt:30
 msgid "label_search"
-msgstr "Búsqueda"
+msgstr "Búsqueda en el sitio"
 
 #. Default: "Plone Community"
 #: ./browser/plone/templates/plone-overview.pt:114
