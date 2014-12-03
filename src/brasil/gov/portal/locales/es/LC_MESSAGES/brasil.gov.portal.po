@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-03 10:41+0000\n"
+"POT-Creation-Date: 2014-12-03 11:01+0000\n"
 "PO-Revision-Date: 2014-11-06 15:40-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -183,10 +183,18 @@ msgstr "Lista de portales creado"
 msgid "MPEG Audio File"
 msgstr "Archivo MPEG"
 
+#: ./profiles/default/types/sc.embedder.xml
+msgid "Multimedia"
+msgstr "Multimedia"
+
 #: ./browser/plone/templates/plone-addsite.pt:86
 #: ./controlpanel/site.py:36
 msgid "Name of Ministry or Department to which this site is subject."
 msgstr "Nombre del Ministerio o departamento al que este sitio está sujeto."
+
+#: ./profiles/default/types/collective.nitf.content.xml
+msgid "News"
+msgstr "Noticias"
 
 #: ./browser/album/templates/galeria_de_fotos.pt:49
 msgid "Next &raquo;"
