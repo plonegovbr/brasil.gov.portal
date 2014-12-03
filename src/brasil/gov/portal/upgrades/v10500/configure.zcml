@@ -21,7 +21,7 @@
 
       <gs:upgradeStep
           title="Atualiza portal para versão 10500"
-          description="Atualiza traducao para tipos de itens."
+          description="Atualiza traducao para tipos de itens e permissao de comentarios para noticias."
           handler=".handler.apply_profile"
           />
 
