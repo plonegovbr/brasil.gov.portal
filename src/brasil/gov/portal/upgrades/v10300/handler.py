@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.config import SHOW_DEPS

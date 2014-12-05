@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from lxml.html import builder as html_builder
 from lxml.html import fragments_fromstring as html_fromstring
 from lxml.html import tostring as html_tostring
@@ -10,7 +11,7 @@ class AnalyticsViewlet(AnalyticsViewletBase):
     def render(self):
         """render the webstats snippet adding a div arround it
         """
-        ptool = getToolByName(self.context, "portal_properties")
+        ptool = getToolByName(self.context, 'portal_properties')
         snippet = safe_unicode(ptool.site_properties.webstats_js)
 
         # Putting a div arround the snippets

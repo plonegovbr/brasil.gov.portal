@@ -2,7 +2,7 @@
 <object name="Image" meta_type="Dexterity FTI" i18n:domain="plone"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="behaviors" purge="False">
-  	<element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
+    <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
   </property>
 </object>

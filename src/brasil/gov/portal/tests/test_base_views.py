@@ -23,7 +23,7 @@ class OverviewViewFunctionalTestCase(unittest.TestCase):
     def test_overview_view(self):
         browser = Browser(self.layer['app'])
         browser.open('{0}/plone-overview'.format(self.app.absolute_url()))
-        self.assertIn("<title>Portal Padr", browser.contents)
+        self.assertIn('<title>e-Government Digital Identity', browser.contents)
 
 
 class OverviewViewIntegrationTestCase(unittest.TestCase):
@@ -95,4 +95,4 @@ class AddSiteViewFunctionalTestCase(unittest.TestCase):
         browser.open('{0}/@@plone-addsite?site_id=site'.format(self.app.absolute_url()))
         # site_id veio do parametro de query string
         self.assertIn('"site"', browser.contents)
-        self.assertIn('Nome do Minist', browser.contents)
+        self.assertIn('Name of Ministry or', browser.contents)

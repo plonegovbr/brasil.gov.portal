@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from five import grok
 from sc.embedder.content.embedder import IEmbedder
 
@@ -15,5 +15,5 @@ class View(grok.View):
         """ Returns the css class based on the position of the embed item.
         """
         pos = self.context.player_position
-        css_class = "%s_embedded" % pos.lower()
+        css_class = '%s_embedded' % pos.lower()
         return css_class

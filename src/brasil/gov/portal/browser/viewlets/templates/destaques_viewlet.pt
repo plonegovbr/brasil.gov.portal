@@ -1,8 +1,10 @@
-<div id="portal-features" tal:condition="viewlet/available">
+<div id="portal-features"
+     i18n:domain="brasil.gov.portal"
+     tal:condition="viewlet/available">
     <a href=""
        id="editar-destaques"
        tal:define="portal_url viewlet/portal_url"
        tal:condition="viewlet/editable"
-       tal:attributes="href string:${portal_url}/destaques">Editar destaques</a>
+       tal:attributes="href string:${portal_url}/destaques" i18n:translate="">Edit Features</a>
     <div id="featured-content"></div>
 </div>

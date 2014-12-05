@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """ Modulo que implementa o viewlet de conteudo relacionados do Portal """
 from Acquisition import aq_inner
-from five import grok
 from Products.CMFPlone.utils import base_hasattr
+from five import grok
 from plone.app.layout.viewlets.interfaces import IBelowContentBody
 from plone.app.relationfield.behavior import IRelatedItems
 from plone.dexterity.interfaces import IDexterityContent

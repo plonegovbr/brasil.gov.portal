@@ -36,9 +36,9 @@
 
     });
     </script>
-    <noscript>
-        <div class="error">
-            Seu navegador de internet está sem suporte à JavaScript, por esse motivo algumas funcionalidades do site podem não estar acessíveis.
+    <noscript i18n:domain="brasil.gov.portal">
+        <div class="error" i18n:translate="">
+            Your browser is currently not supporting Javascript, for this reason some functionality may not be accessible.
         </div>
     </noscript>
 

@@ -2,9 +2,9 @@
 from brasil.gov.portal.controlpanel.site import SiteControlPanelAdapter
 from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from plone.app.testing import TEST_USER_ID
 from plone.app.testing import logout
 from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
 from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 
@@ -32,7 +32,7 @@ class SiteControlPanelTest(unittest.TestCase):
         view = getMultiAdapter((self.portal, self.portal.REQUEST),
                                name='site-controlpanel')
         view = view.__of__(self.portal)
-        self.failUnless(view())
+        self.assertTrue(view())
 
     def test_controlpanel_view_protected(self):
         ''' Acesso a view nao pode ser feito por usuario anonimo '''
@@ -55,7 +55,7 @@ class SiteControlPanelTest(unittest.TestCase):
         # Validamos que o painel de controle do site esteja instalado
         installed = [a.getAction(self)['id']
                      for a in controlpanel.listActions()]
-        self.failUnless('PloneReconfig' in installed)
+        self.assertTrue('PloneReconfig' in installed)
 
     def test_title(self):
         ''' Alterar site_title_1 e site_title_2 gera site_title '''

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
+from Products.ATContentTypes.interfaces import IATFile
+from Products.ATContentTypes.interfaces import IATImage
+from Products.CMFPlone.utils import safe_unicode
 from collective.upload import browser
 from collective.upload.config import IMAGE_MIMETYPES
 from collective.upload.interfaces import IUploadBrowserLayer
 from five import grok
 from plone.namedfile.file import NamedBlobFile
 from plone.namedfile.file import NamedBlobImage
-from Products.ATContentTypes.interfaces import IATFile
-from Products.ATContentTypes.interfaces import IATImage
-from Products.CMFPlone.utils import safe_unicode
 from zope.component import queryMultiAdapter
 from zope.container.interfaces import INameChooser
 from zope.event import notify
@@ -24,11 +24,11 @@ class Media_Uploader(browser.Media_Uploader):
     grok.require('collective.upload.UploadFiles')
 
     def __call__(self, *args, **kwargs):
-        if hasattr(self.request, "REQUEST_METHOD"):
+        if hasattr(self.request, 'REQUEST_METHOD'):
             json_view = queryMultiAdapter((self.context, self.request),
-                                          name=u"api")
-            if self.request["REQUEST_METHOD"] == "POST":
-                if getattr(self.request, "files[]", None) is not None:
+                                          name=u'api')
+            if self.request['REQUEST_METHOD'] == 'POST':
+                if getattr(self.request, 'files[]', None) is not None:
                     files = self.request['files[]']
                     title = self.request['title[]']
                     description = self.request['description[]']

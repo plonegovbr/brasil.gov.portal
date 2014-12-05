@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from brasil.gov.portal.interfaces import IBrasilGov
 from collective.nitf.browser import View as NITFView
 from five import grok
-from brasil.gov.portal.interfaces import IBrasilGov
 
 grok.templatedir('templates')
 
@@ -21,5 +20,9 @@ class View(NITFView):
         portal_obj = self.context.portal_url.getPortalObject()
         if (hasattr(portal_obj, 'relatar-erros')):
             return self.context.absolute_url() + '/relatar-erros'
+        elif (hasattr(portal_obj, 'report-erros')):
+            return self.context.absolute_url() + '/report-erros'
+        elif (hasattr(portal_obj, 'informe-de-errores')):
+            return self.context.absolute_url() + '/informe-de-errores'
         else:
             return None

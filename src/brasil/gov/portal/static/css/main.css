@@ -692,6 +692,14 @@ body[class*="nitf"] div.width-1\3a 2 #plone-document-byline { width: 68.7216%; }
     white-space: nowrap;
 }
 
+#content .newsImageContainer a[class^="photo-icon-en"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_en.png") no-repeat;
+}
+
+#content .newsImageContainer a[class^="photo-icon-es"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_es.png") no-repeat;
+}
+
 #content .newsImageContainer .copyright {
     float: left;
     line-height: 31px;
@@ -1003,6 +1011,7 @@ dl.portlet dt a:visited { color: #464a55 !important; }
    ========================================================================== */
 
 .portlet-static-contents-central .portletHeader,
+.portlet-static-resource-center .portletHeader,
 .portlet-static-centrales-del-contenido .portletHeader,
 .portlet-static-centrais-de-conteudos .portletHeader,
 .portletNavigationTree .portletHeader {
@@ -1157,12 +1166,14 @@ dl.portlet ul.navTreeLevel6 li a { padding: 0.55em 1.043em 0.55em 4.5em !importa
    ========================================================================== */
 
 .portlet-static-contents-central .portletItem,
+.portlet-static-resource-center .portletItem,
 .portlet-static-centrales-del-contenido .portletItem,
 .portlet-static-centrais-de-conteudos .portletItem {
     padding: 0 !important;
 }
 
 .portlet-static-contents-central .list-central,
+.portlet-static-resource-center .list-central,
 .portlet-static-centrales-del-contenido .list-central,
 .portlet-static-centrais-de-conteudos .list-central {
     margin: 0;
@@ -3306,6 +3317,7 @@ ul.formTabs { padding: 0px !important; }
     }
 
     .portlet-static-contents-central .portletHeader,
+    .portlet-static-resource-center .portletHeader,
     .portlet-static-centrales-del-contenido .portletHeader,
     .portlet-static-centrais-de-conteudos .portletHeader,
     .portletNavigationTree .portletHeader {
@@ -4008,7 +4020,7 @@ body.contraste .add-agenda {
 }
 
 /* mapa do site */
-body.contraste #portal-sitemap .state-published { 
+body.contraste #portal-sitemap .state-published {
     color: #FFF !important;
 }
 
@@ -4051,6 +4063,14 @@ body.contraste #content .mediacarousel .rights {
 
 body.contraste #content .newsImageContainer .photo-icon {
     background: url("++resource++brasil.gov.portal/img/mais_fotos-contraste.png") no-repeat;
+}
+
+body.contraste #content .newsImageContainer a[class^="photo-icon-en"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_en-contraste.png") no-repeat;
+}
+
+body.contraste #content .newsImageContainer a[class^="photo-icon-es"] {
+    background: url("++resource++brasil.gov.portal/img/mais_fotos_es-contraste.png") no-repeat;
 }
 
 /* contraste blog view */
@@ -4216,10 +4236,6 @@ body.contraste .ui-widget-header .ui-state-focus {
     color: #FFF;
 }
 
-body.contraste .ui-widget-content {
-    
-}
-
 body.contraste .ui-widget-header {
     background: #000;
 }
@@ -4260,10 +4276,6 @@ body.contraste #contentActionMenus {
     background: #000;
     border: 0.25em solid #FFF;
     border-top: none;
-}
-
-body.contraste #contentActionMenus dl.actionMenu.activated dd {
-    
 }
 
 body.contraste #contentActionMenus dl.actionMenu.activated dd a:hover,
@@ -4333,7 +4345,7 @@ body.contraste #contentchooser-content-search,
 body.contraste .warning > dd,
 body.contraste .warning > .last,
 body.contraste .pb-ajax, .pb-image,
-body.contraste .overlay iframe, 
+body.contraste .overlay iframe,
 body.contraste .modal {
     background-color: #000;
 }
@@ -4345,6 +4357,7 @@ body.contraste .badge {
 }
 
 body.contraste .portlet-static-contents-central .portletHeader,
+body.contraste .portlet-static-resource-center .portletHeader,
 body.contraste .portlet-static-centrales-del-contenido .portletHeader,
 body.contraste .portlet-static-centrais-de-conteudos .portletHeader,
 body.contraste .portletNavigationTree .portletHeader {

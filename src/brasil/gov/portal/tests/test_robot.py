@@ -1,7 +1,6 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.portal.testing import ACCEPTANCE_TESTING
 from plone.testing import layered
-
 
 import os
 import robotsuite

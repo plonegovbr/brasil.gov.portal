@@ -27,7 +27,7 @@ class ControlPanelTest(unittest.TestCase):
             request=self.portal.REQUEST,
         )
         view = view.__of__(self.portal)
-        self.failUnless(view())
+        self.assertTrue(view())
 
     def test_controlpanel_view_protected(self):
         ''' Acesso a view nao pode ser feito por usuario anonimo '''
@@ -45,7 +45,7 @@ class ControlPanelTest(unittest.TestCase):
         installed = [a.getAction(self)['id']
                      for a in controlpanel.listActions()]
         # Validamos que o painel de controle da barra esteja instalado
-        self.failUnless('social-config' in installed)
+        self.assertTrue('social-config' in installed)
 
     def test_site_accounts(self):
         adapter = self.adapter

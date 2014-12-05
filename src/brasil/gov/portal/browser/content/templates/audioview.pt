@@ -13,29 +13,33 @@
 
             <audio class="audioPlayer" preload="metadata" controls="controls" tal:condition="sources">
               <tal:sources repeat="source sources">
-                <source 
+                <source
                     tal:attributes="src source/absolute_url;
                                     type source/file/contentType"
-                    src="music.ogg" 
+                    src="music.ogg"
                     type="audio/wav" />
               </tal:sources>
             </audio>
             <div tal:condition="context/text">
-              <span id="audio-transcricao">Transcrição do Áudio</span>
+              <span id="audio-transcricao"
+                    i18n:translate="">Audio Transcript</span>
               <div id="parent-fieldname-text"
                    tal:content="structure context/text/output" />
             </div>
             <div class="download">
-              <span id="audio-downloads">Download do Áudio</span>
+              <span id="audio-downloads"
+                    i18n:translate="">Audio Download</span>
               <ul tal:define="downloads view/downloads">
                 <li tal:repeat='obj downloads'>
-                   <a tal:attributes="alt context/Description;
-                                      href obj/path">
-                        Baixar arquivo em formato <span tal:replace="obj/format" />
+                   <a tal:attributes="alt context/Description; href obj/path">
+                      <span i18n:translate="">
+                        Download file in file type
+                      </span>
+                      <span tal:replace="obj/format" />
                    </a> (<span tal:replace="obj/size" />)
                 </li>
               </ul>
-            </div>          
+            </div>
         </metal:block>
     </metal:content-core>
 </body>

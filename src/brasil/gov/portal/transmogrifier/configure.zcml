@@ -6,7 +6,7 @@
     <include package="collective.transmogrifier" file="meta.zcml" />
     <include package="plone.app.transmogrifier" />
     <include package="transmogrify.dexterity" />
-    <include package="collective.jsonmigrator" />    
+    <include package="collective.jsonmigrator" />
 
     <transmogrifier:registerConfig
         name="brasil.gov.portal.conteudo"

@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
-
+from Products.GenericSetup.upgrade import listUpgradeSteps
 from brasil.gov.portal.config import DEPS
+from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.config import SHOW_DEPS
-from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
-from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 from plone.browserlayer.utils import registered_layers
-from Products.GenericSetup.upgrade import listUpgradeSteps
 
 import unittest
 
@@ -53,8 +52,8 @@ class InstallTestCase(unittest.TestCase):
         deps = set(DEPS)
         result = [p for p in deps if p in packages]
         self.assertFalse(result,
-                         ("Estas dependencias nao estao ocultas: %s" %
-                          ", ".join(result)))
+                         ('Estas dependencias nao estao ocultas: %s' %
+                          ', '.join(result)))
 
     def test_installed(self):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
@@ -68,8 +67,8 @@ class InstallTestCase(unittest.TestCase):
             if self.st.getLastVersionForProfile(profile_id) == 'unknown':
                 result.append(item)
         self.assertFalse(result,
-                         ("Estas dependencias nao estao instaladas: %s" %
-                          ", ".join(result)))
+                         ('Estas dependencias nao estao instaladas: %s' %
+                          ', '.join(result)))
 
 
 class TestUpgrade(unittest.TestCase):
@@ -231,13 +230,13 @@ class TestUpgrade(unittest.TestCase):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
-            self.failUnless('social-config' in installed)
+            self.assertTrue('social-config' in installed)
         # Ao acessar a view como anonimo, a excecao e levantada
         with api.env.adopt_roles(['Anonymous', ]):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
-            self.failIf('social-config' in installed)
+            self.assertFalse('social-config' in installed)
 
         # Testamos se os pacotes estao instalados e disponiveis
         qi = api.portal.get_tool('portal_quickinstaller')
@@ -274,6 +273,13 @@ class TestUpgrade(unittest.TestCase):
         resource_id = '++resource++brasil.gov.portal/css/main-print.css'
         self.assertTrue(resource_id in stylesheets_ids)
         self.assertTrue(portal_css.getResource(resource_id).getEnabled())
+
+    def test_to10500_available(self):
+        step = self.list_upgrades(u'10400', u'10500')
+        self.assertEqual(len(step), 1)
+
+    def test_to10500_execution(self):
+        self.execute_upgrade(u'10400', u'10500')
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

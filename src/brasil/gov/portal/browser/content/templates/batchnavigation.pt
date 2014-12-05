@@ -29,7 +29,7 @@
         </tal:last>
         <!-- Pagelist with links to previous pages for quick navigation -->
         <li tal:repeat="pagenumber batch/previous_pages">
-            <a tal:content="pagenumber" 
+            <a tal:content="pagenumber"
                tal:attributes="href python:view.make_link(pagenumber)"/>
         </li>
         <!-- Current page -->
@@ -38,7 +38,7 @@
         </li>
         <!-- Pagelist with links to next pages for quick navigation -->
         <li tal:repeat="pagenumber batch/next_pages">
-            <a href="" tal:content="pagenumber" 
+            <a href="" tal:content="pagenumber"
                tal:attributes="href python:view.make_link(pagenumber)"/>
         </li>
         <!-- Link to last -->

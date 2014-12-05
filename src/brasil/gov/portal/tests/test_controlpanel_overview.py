@@ -25,7 +25,7 @@ class OverviewControlPanelTest(unittest.TestCase):
             request=self.portal.REQUEST,
         )
         view = view.__of__(self.portal)
-        self.failUnless(view())
+        self.assertTrue(view())
 
     def test_overview_controlpanel_portal_padrao_version(self):
         """Validamos se temos a versão do Portal Padrão"""

@@ -1,16 +1,16 @@
-# -*- coding:utf-8 -*-
-from plone.app.controlpanel.form import ControlPanelForm
+# -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
-from Products.CMFPlone import PloneMessageFactory as _
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
+from brasil.gov.portal import _ as _
+from plone.app.controlpanel.form import ControlPanelForm
 from zope.component import adapts
 from zope.formlib import form
 from zope.formlib.textwidgets import TextAreaWidget
-from zope.interface import implements
 from zope.interface import Interface
+from zope.interface import implements
 from zope.schema import Bool
 from zope.schema import SourceText
 from zope.schema import Text
@@ -21,61 +21,61 @@ from zope.site.hooks import getSite
 class ISiteSchema(Interface):
 
     site_title_1 = TextLine(
-        title=_(u'Título do site (Primeira Linha)'),
-        description=_(u"Primeira linha do título do site"),
+        title=_(u'Site title (First Line)'),
+        description=_(u'First line of site title'),
         required=False,
         default=u'')
 
     site_title_2 = TextLine(
-        title=_(u'Título do site (Segunda Linha)'),
-        description=_(u"Segunda linha do título do site"),
+        title=_(u'Site title (Second Line)'),
+        description=_(u'Second line of site title'),
         default=u'')
 
     site_orgao = TextLine(
-        title=_(u'Órgão'),
-        description=_(u"Nome do Ministério ou da Secretaria "
-                      u"ao qual este site está subordinado."),
+        title=_(u'Department'),
+        description=_(u'Name of Ministry or Department '
+                      u'to which this site is subject.'),
         required=False,
         default=u'')
 
     site_description = Text(
         title=_(u'Site description'),
-        description=_(u"The site description is available "
-                      u"in syndicated content and in search engines. "
-                      u"Keep it brief."),
+        description=_(u'The site description is available '
+                      u'in syndicated content and in search engines. '
+                      u'Keep it brief.'),
         default=u'',
         required=False)
 
     exposeDCMetaTags = Bool(
-        title=_(u"Expose Dublin Core metadata"),
-        description=_(u"Exposes the Dublin Core properties as metatags."),
+        title=_(u'Expose Dublin Core metadata'),
+        description=_(u'Exposes the Dublin Core properties as metatags.'),
         default=False,
         required=False)
 
     display_pub_date_in_byline = Bool(
-        title=_(u"Display publication date in 'about' information"),
-        description=_(u"Displays content publication date on site pages."),
+        title=_(u'Display publication date in about information'),
+        description=_(u'Displays content publication date on site pages.'),
         default=False,
         required=False)
 
     enable_sitemap = Bool(
-        title=_(u"Expose sitemap.xml.gz"),
-        description=_(u"Exposes your content as a file "
-                      u"according to the sitemaps.org standard. You "
-                      u"can submit this to compliant search engines "
-                      u"like Google, Yahoo and Microsoft. It allows "
-                      u"these search engines to more intelligently "
-                      u"crawl your site."),
+        title=_(u'Expose sitemap.xml.gz'),
+        description=_(u'Exposes your content as a file '
+                      u'according to the sitemaps.org standard. You '
+                      u'can submit this to compliant search engines '
+                      u'like Google, Yahoo and Microsoft. It allows '
+                      u'these search engines to more intelligently '
+                      u'crawl your site.'),
         default=False,
         required=False)
 
     webstats_js = SourceText(
         title=_(u'JavaScript for web statistics support'),
-        description=_(u"For enabling web statistics support "
-                      u"from external providers (for e.g. Google "
-                      u"Analytics). Paste the code snippets provided. "
-                      u"It will be included in the rendered HTML as "
-                      u"entered near the end of the page."),
+        description=_(u'For enabling web statistics support '
+                      u'from external providers (for e.g. Google '
+                      u'Analytics). Paste the code snippets provided. '
+                      u'It will be included in the rendered HTML as '
+                      u'entered near the end of the page.'),
         default=u'',
         required=False)
 
@@ -187,6 +187,6 @@ class SiteControlPanel(ControlPanelForm):
     form_fields['site_description'].custom_widget = MiniTextAreaWidget
     form_fields['webstats_js'].custom_widget = SmallTextAreaWidget
 
-    label = _("Site settings")
-    description = _("Site-wide settings.")
-    form_name = _("Site settings")
+    label = _('Site settings')
+    description = _('Site-wide settings.')
+    form_name = _('Site settings')

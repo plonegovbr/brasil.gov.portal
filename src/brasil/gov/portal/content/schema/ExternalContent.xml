@@ -11,6 +11,6 @@
         <default>http://</default>
         <description></description>
         <title i18n:translate="">Original URL</title>
-      </field>     	
+      </field>
     </schema>
 </model>

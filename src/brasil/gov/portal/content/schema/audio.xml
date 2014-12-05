@@ -7,6 +7,6 @@
       <description />
       <required>False</required>
       <title i18n:translate="">Transcription</title>
-    </field>      
+    </field>
   </schema>
 </model>

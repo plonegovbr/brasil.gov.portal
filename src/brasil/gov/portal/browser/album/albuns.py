@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
+from Products.CMFPlone.utils import getToolByName
 from five import grok
 from plone.app.contenttypes.interfaces import IFolder
 from plone.contentrules import PloneMessageFactory as _
-from Products.CMFPlone.utils import getToolByName
 from zope.component import getMultiAdapter
 
 

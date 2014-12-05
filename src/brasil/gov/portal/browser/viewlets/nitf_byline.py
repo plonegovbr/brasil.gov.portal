@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from plone.app.layout.viewlets.content import DocumentBylineViewlet
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class NITFBylineViewlet(DocumentBylineViewlet):
 
-    index = ViewPageTemplateFile("templates/nitf_byline.pt")
+    index = ViewPageTemplateFile('templates/nitf_byline.pt')
 
     def getMemberInfoByName(self, fullname):
         mt = api.portal.get_tool('portal_membership')

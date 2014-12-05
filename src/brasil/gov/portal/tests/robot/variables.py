@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.portal import tests
 from plone.app.testing.interfaces import PLONE_SITE_ID
 

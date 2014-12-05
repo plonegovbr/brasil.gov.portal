@@ -6,6 +6,6 @@
   <property name="behaviors" purge="False">
     <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
-	<element value="plone.app.versioningbehavior.behaviors.IVersionable" />    
+    <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
   </property>
 </object>

@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from AccessControl import getSecurityManager
 from AccessControl.Permissions import view as View
 from Products.CMFCore.permissions import ManagePortal

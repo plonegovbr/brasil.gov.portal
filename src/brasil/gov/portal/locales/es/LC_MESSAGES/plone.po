@@ -1,0 +1,48 @@
+# Spanish translations for PACKAGE brasil.gov.portal.
+# Danilo Sartorelli Barbato <dadlobr@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-12-03 11:01+0000\n"
+"PO-Revision-Date: 2014-11-06 15:41-0200\n"
+"Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: brasil.gov.portal\n"
+"Language: es\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: ./profiles/default/actions.xml
+msgid "Accessibility"
+msgstr "Accesibilidad"
+
+#: ./profiles/default/actions.xml
+msgid "High Contrast"
+msgstr "Contraste Alto"
+
+#: ./profiles/default/registry.xml
+msgid "Metadata"
+msgstr "Metadatos"
+
+#: ./profiles/default/actions.xml
+msgid "Site Map"
+msgstr "Mapa del Sitio"
+
+#: ./profiles/default/actions.xml
+msgid "Site Setup"
+msgstr "Configuración del sitio"
+
+#: ./profiles/default/registry.xml
+msgid "VCGE"
+msgstr "VCGE"
+
+#: ./profiles/default/registry.xml
+msgid "Vocabulario Controlado do Governo Eletronico"
+msgstr "Vocabulario Controlado para Gobierno Electrónico"
+
