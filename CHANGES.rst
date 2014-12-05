@@ -1,6 +1,12 @@
 Histórico de Alterações
 -------------------------
 
+1.0.6 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.0.5 (2014-12-05)
 ^^^^^^^^^^^^^^^^^^
 * Adiciona ao code-analysis Flake8, Deprecated aliases, Check utf-8 headers,
