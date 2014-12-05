@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.0.5 (unreleased)
+1.0.5 (2014-12-05)
 ^^^^^^^^^^^^^^^^^^
 * Adiciona ao code-analysis Flake8, Deprecated aliases, Check utf-8 headers,
   Check clean lines, Double quotes e Check imports
