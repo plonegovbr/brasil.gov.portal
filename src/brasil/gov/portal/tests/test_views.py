@@ -125,7 +125,7 @@ class PaginationTestCase(BaseViewTestCase):
         self.assertEqual(pagination.first_item, 0)
         self.assertEqual(pagination.last_item, 9)
         self.assertEqual(pagination.total_items, 100)
-        self.assertEqual(pagination.total_pages, 11)
+        self.assertEqual(pagination.total_pages, 12)
         self.assertEqual(pagination.get_pagination(), PAGINATION_BEGIN)
 
     def test_pagination_manyitems_middle(self):
@@ -135,17 +135,17 @@ class PaginationTestCase(BaseViewTestCase):
         self.assertEqual(pagination.first_item, 36)
         self.assertEqual(pagination.last_item, 45)
         self.assertEqual(pagination.total_items, 100)
-        self.assertEqual(pagination.total_pages, 11)
+        self.assertEqual(pagination.total_pages, 12)
         self.assertEqual(pagination.get_pagination(), PAGINATION_MIDDLE)
 
     def test_pagination_manyitems_end(self):
-        pagination = self._get_pagination(100, 11)
+        pagination = self._get_pagination(100, 12)
 
-        self.assertEqual(pagination.current_page, 11)
-        self.assertEqual(pagination.first_item, 90)
-        self.assertEqual(pagination.last_item, 99)
+        self.assertEqual(pagination.current_page, 12)
+        self.assertEqual(pagination.first_item, 99)
+        self.assertEqual(pagination.last_item, 108)
         self.assertEqual(pagination.total_items, 100)
-        self.assertEqual(pagination.total_pages, 11)
+        self.assertEqual(pagination.total_pages, 12)
         self.assertEqual(pagination.get_pagination(), PAGINATION_END)
 
 
@@ -281,8 +281,8 @@ PAGINATION_BEGIN = [
     },
     {
         'class': 'pagina',
-        'content': '11',
-        'href': '?pagina=11',
+        'content': '12',
+        'href': '?pagina=12',
         'is_next': False,
         'is_prev': False,
         'link': True
@@ -365,8 +365,8 @@ PAGINATION_MIDDLE = [
     },
     {
         'class': 'pagina',
-        'content': '11',
-        'href': '?pagina=11',
+        'content': '12',
+        'href': '?pagina=12',
         'is_next': False,
         'is_prev': False,
         'link': True
@@ -385,7 +385,7 @@ PAGINATION_END = [
     {
         'class': 'anterior',
         'content': u'label_previous',
-        'href': '?pagina=10',
+        'href': '?pagina=11',
         'is_next': False,
         'is_prev': True,
         'link': True
@@ -405,14 +405,6 @@ PAGINATION_END = [
         'is_next': False,
         'is_prev': False,
         'link': False
-    },
-    {
-        'class': 'pagina',
-        'content': '5',
-        'href': '?pagina=5',
-        'is_next': False,
-        'is_prev': False,
-        'link': True
     },
     {
         'class': 'pagina',
@@ -455,11 +447,19 @@ PAGINATION_END = [
         'link': True
     },
     {
-        'class': 'atual',
+        'class': 'pagina',
         'content': '11',
         'href': '?pagina=11',
         'is_next': False,
         'is_prev': False,
+        'link': True
+    },
+    {
+        'class': 'atual',
+        'content': '12',
+        'href': '?pagina=12',
+        'is_next': False,
+        'is_prev': False,
         'link': False
-    }
+    },
 ]
