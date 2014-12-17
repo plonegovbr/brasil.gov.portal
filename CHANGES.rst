@@ -3,8 +3,8 @@ Histórico de Alterações
 
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
-- Nothing changed yet.
+* Corrige bug em paginação na visão de galeria de álbuns.
+  [dbarbato]
 
 
 1.0.5 (2014-12-05)
