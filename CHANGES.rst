@@ -7,6 +7,10 @@ Histórico de Alterações
   [dbarbato]
 * Corrige bug em paginação na visão de galeria de álbuns.
   [dbarbato]
+* Corrige css de impressão, colocando texto como justificado. Alguns documentos
+oficiais que são impressos nos portais estão tendo problemas em juntas
+comerciais por não estarem com o texto alinhado na forma "justificada". `#161`_
+  [idgserpro]
 
 
 1.0.5 (2014-12-05)
