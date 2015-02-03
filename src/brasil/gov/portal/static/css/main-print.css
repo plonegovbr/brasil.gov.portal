@@ -66,14 +66,18 @@
     h2,
     h3 { page-break-after: avoid; }
 
+    .menuTrigger,
+    .section,
     #barra-brasil,
-    #header,
-    #footer,
-    #extra-footer,
+    #category,
+    #category-vcge,
     #em-destaque,
+    #extra-footer,
+    #footer,
+    #header,
+    #portal-features,
     #viewlet-social-like,
-    #voltar-topo,
-    #portal-features {
+    #voltar-topo {
         display: none !important;
     }
 
