@@ -11,6 +11,8 @@ Histórico de Alterações
 oficiais que são impressos nos portais estão tendo problemas em juntas
 comerciais por não estarem com o texto alinhado na forma "justificada". `#161`_
   [idgserpro]
+* Viabiliza uso de "tachado" e "sublinhado" no editor. (closes `#175`_)
+  [idgserpro]
 
 
 1.0.5 (2014-12-05)
@@ -328,3 +330,4 @@ comerciais por não estarem com o texto alinhado na forma "justificada". `#161`_
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
 .. _`#161`: https://github.com/plonegovbr/brasil.gov.portal/issues/161
 .. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
+.. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175

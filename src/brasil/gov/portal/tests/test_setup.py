@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
+import json
 from Products.GenericSetup.upgrade import listUpgradeSteps
+from Products.TinyMCE.interfaces.utility import ITinyMCE
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.config import SHOW_DEPS
+from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from plone.browserlayer.utils import registered_layers
+from zope.component import getUtility
 
 import unittest
 
@@ -288,6 +292,10 @@ class TestUpgrade(unittest.TestCase):
 
     def test_to10600_execution(self):
         self.execute_upgrade(u'10500', u'10600')
+        formats = json.loads(getUtility(ITinyMCE).formats)
+        # Todas as chaves dos formatos precisam estar presentes na tool após
+        # a execução do upgradeStep.
+        self.assertTrue(all(key in formats for key in TINYMCE_JSON_FORMATS))
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
