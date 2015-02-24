@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import json
 from Products.GenericSetup.upgrade import listUpgradeSteps
 from Products.TinyMCE.interfaces.utility import ITinyMCE
 from brasil.gov.portal.config import DEPS
@@ -14,6 +13,7 @@ from plone.app.testing import setRoles
 from plone.browserlayer.utils import registered_layers
 from zope.component import getUtility
 
+import json
 import unittest
 
 PROFILE_ID = 'brasil.gov.portal:default'
