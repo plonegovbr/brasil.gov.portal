@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-from Products.CMFCore.utils import getToolByName
 from brasil.gov.portal.config import PROJECTNAME
-from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
 from brasil.gov.portal.setuphandlers import set_tinymce_formats
 from plone import api
-from zope.component import getUtility
 
 import logging
 
@@ -25,4 +22,4 @@ def set_some_tiny_formats(context):
     set_tinymce_formats(context)
 
     # Novas regras foram adicionadas nos arquivos css.
-    getToolByName(context, 'portal_css').cookResources()
+    api.portal.get_tool('portal_css').cookResources()
