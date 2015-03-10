@@ -17,6 +17,7 @@ PROFILE_ID = 'brasil.gov.portal:default'
 DEPENDENCIES = [
     'brasil.gov.agenda',
     'brasil.gov.barra',
+    'brasil.gov.portlets',
     'brasil.gov.tiles',
     'brasil.gov.vcge',
     'collective.cover',

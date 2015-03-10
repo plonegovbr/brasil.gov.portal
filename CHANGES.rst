@@ -5,6 +5,8 @@ Histórico de Alterações
 ^^^^^^^^^^^^^^^^^^
 * Corrige bug em paginação na visão de galeria de álbuns.
   [dbarbato]
+* Adiciona brasil.gov.portlets como dependência de Portal Padrão.
+  [dbarbato]
 
 
 1.0.5 (2014-12-05)

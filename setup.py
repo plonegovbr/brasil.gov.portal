@@ -45,6 +45,7 @@ setup(
     install_requires=[
         'brasil.gov.agenda',
         'brasil.gov.barra',
+        'brasil.gov.portlets',
         'brasil.gov.temas',
         'brasil.gov.tiles',
         'brasil.gov.vcge',

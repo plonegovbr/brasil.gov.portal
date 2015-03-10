@@ -4,6 +4,7 @@
 
   <include package="brasil.gov.agenda" />
   <include package="brasil.gov.barra" />
+  <include package="brasil.gov.portlets" />
   <include package="brasil.gov.temas" />
   <include package="brasil.gov.tiles" />
   <include package="brasil.gov.vcge" />

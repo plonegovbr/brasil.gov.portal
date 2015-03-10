@@ -41,6 +41,7 @@ REDES = [
 SHOW_DEPS = [
     'brasil.gov.agenda',
     'brasil.gov.barra',
+    'brasil.gov.portlets',
     'brasil.gov.tiles',
     'brasil.gov.vcge',
     'collective.cover',
@@ -63,6 +64,7 @@ DEPS = [
     'brasil.gov.portal.upgrades.v3000',
     'brasil.gov.portal.upgrades.v4000',
     'brasil.gov.portal.upgrades.v5000',
+    'brasil.gov.portlets.upgrades.v1000',
     'brasil.gov.tiles.upgrades.v2000',
     'brasil.gov.vcge.at',
     'brasil.gov.vcge.dx',
@@ -120,6 +122,7 @@ HIDDEN_PROFILES = [
     'brasil.gov.portal.upgrades.v3000:default',
     'brasil.gov.portal.upgrades.v4000:default',
     'brasil.gov.portal.upgrades.v5000:default',
+    'brasil.gov.portlets.upgrades.v1000',
     'brasil.gov.portal:default',
     'brasil.gov.portal:initcontent',
     'brasil.gov.portal:testfixture',
