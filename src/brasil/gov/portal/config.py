@@ -119,6 +119,7 @@ HIDDEN_PROFILES = [
     'brasil.gov.portal.upgrades.v10300:default',
     'brasil.gov.portal.upgrades.v10400:default',
     'brasil.gov.portal.upgrades.v10500:default',
+    'brasil.gov.portal.upgrades.v10600:default',
     'brasil.gov.portal.upgrades.v2000:default',
     'brasil.gov.portal.upgrades.v3000:default',
     'brasil.gov.portal.upgrades.v4000:default',
