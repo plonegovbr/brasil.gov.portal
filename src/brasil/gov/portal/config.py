@@ -60,6 +60,7 @@ DEPS = [
     'brasil.gov.portal.upgrades.v10300',
     'brasil.gov.portal.upgrades.v10400',
     'brasil.gov.portal.upgrades.v10500',
+    'brasil.gov.portal.upgrades.v10600',
     'brasil.gov.portal.upgrades.v2000',
     'brasil.gov.portal.upgrades.v3000',
     'brasil.gov.portal.upgrades.v4000',
