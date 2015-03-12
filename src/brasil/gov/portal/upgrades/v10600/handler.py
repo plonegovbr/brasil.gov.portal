@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from Products.CMFCore.utils import getToolByName
 from brasil.gov.portal.config import PROJECTNAME
+from plone import api
 
 import logging
 
@@ -9,8 +9,7 @@ logger = logging.getLogger(PROJECTNAME)
 
 def install_product(context):
     """Atualiza perfil para versao 10600"""
-    portal = getToolByName(context, 'portal_url').getPortalObject()
-    qi = getToolByName(portal, 'portal_quickinstaller')
+    qi = api.portal.get_tool('portal_quickinstaller')
     if not qi.isProductInstalled('brasil.gov.portlets'):
         logger.info('Instalando produto brasil.gov.portlets')
         qi.installProduct('brasil.gov.portlets')
