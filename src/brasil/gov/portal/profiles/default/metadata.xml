@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>10500</version>
+  <version>10600</version>
   <dependencies>
     <dependency>profile-collective.js.jqueryui:default</dependency>
     <dependency>profile-plone.app.contenttypes:default</dependency>
     <dependency>profile-plone.app.theming:default</dependency>
     <dependency>profile-brasil.gov.agenda:default</dependency>
     <dependency>profile-brasil.gov.barra:default</dependency>
+    <dependency>profile-brasil.gov.portlets:default</dependency>
     <dependency>profile-brasil.gov.vcge.at:default</dependency>
     <dependency>profile-brasil.gov.vcge.dx:default</dependency>
     <dependency>profile-Products.Doormat:default</dependency>

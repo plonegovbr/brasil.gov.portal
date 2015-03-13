@@ -17,6 +17,7 @@ PROFILE_ID = 'brasil.gov.portal:default'
 DEPENDENCIES = [
     'brasil.gov.agenda',
     'brasil.gov.barra',
+    'brasil.gov.portlets',
     'brasil.gov.tiles',
     'brasil.gov.vcge',
     'collective.cover',
@@ -280,6 +281,13 @@ class TestUpgrade(unittest.TestCase):
 
     def test_to10500_execution(self):
         self.execute_upgrade(u'10400', u'10500')
+
+    def test_to10600_available(self):
+        step = self.list_upgrades(u'10500', u'10600')
+        self.assertEqual(len(step), 1)
+
+    def test_to10600_execution(self):
+        self.execute_upgrade(u'10500', u'10600')
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

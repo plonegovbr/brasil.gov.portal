@@ -3,6 +3,8 @@ Histórico de Alterações
 
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Adiciona brasil.gov.portlets como dependência de Portal Padrão.
+  [dbarbato]
 * Corrige bug em paginação na visão de galeria de álbuns.
   [dbarbato]
 
