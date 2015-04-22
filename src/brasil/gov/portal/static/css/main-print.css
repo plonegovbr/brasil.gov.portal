@@ -26,6 +26,7 @@
         background: transparent !important;
         box-shadow: none !important;
         color: #000 !important; /* Black prints faster: h5bp.com/s */
+        text-align: justify;
         text-shadow: none !important;
     }
 
@@ -65,14 +66,18 @@
     h2,
     h3 { page-break-after: avoid; }
 
+    .menuTrigger,
+    .section,
     #barra-brasil,
-    #header,
-    #footer,
-    #extra-footer,
+    #category,
+    #category-vcge,
     #em-destaque,
+    #extra-footer,
+    #footer,
+    #header,
+    #portal-features,
     #viewlet-social-like,
-    #voltar-topo,
-    #portal-features {
+    #voltar-topo {
         display: none !important;
     }
 

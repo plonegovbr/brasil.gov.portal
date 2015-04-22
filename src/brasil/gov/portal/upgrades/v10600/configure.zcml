@@ -13,19 +13,24 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <!-- Upgrade Steps -->
+    <!-- Upgrade Steps -->
   <gs:upgradeSteps
-        source="10500"
-        destination="10600"
-        profile="brasil.gov.portal:default">
+      source="10500"
+      destination="10600"
+      profile="brasil.gov.portal:default">
 
-      <gs:upgradeStep
-          title="Atualiza portal para versão 10600"
-          description="Instala produto de Portlets brasil.gov.portelts."
-          handler=".handler.install_product"
-          />
+    <gs:upgradeStep
+        title="Atualiza portal para versão 10600"
+        description="Instala produto de Portlets brasil.gov.portelts."
+        handler=".handler.install_product"
+        />
+
+    <gs:upgradeStep
+        title="Tachado e sublinhado"
+        description="Viabiliza uso de 'tachado' e 'sublinhado' no editor."
+        handler=".handler.set_some_tiny_formats"
+        />
 
   </gs:upgradeSteps>
-
 
 </configure>

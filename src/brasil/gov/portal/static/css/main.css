@@ -589,6 +589,10 @@ input.searchField { -moz-appearance: none; }
 
 #content-core p { font-size: 110%; }
 
+span.strikethrough { text-decoration: line-through; }
+
+span.underline { text-decoration: underline; }
+
 .hidden { display: none; }
 
 .clear { clear: both; }
@@ -2166,7 +2170,7 @@ dl.portlet ol li { list-style: decimal outside; }
     background: url("++resource++brasil.gov.portal/img/seta_azul-escuro.png") no-repeat scroll right 5px transparent;
 }
 
-/* Azul Piscinba - Turismo
+/* Azul Piscina - Turismo
    ========================================================================== */
 
 .azul-piscina .tile-title {

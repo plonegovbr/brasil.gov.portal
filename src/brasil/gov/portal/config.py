@@ -188,6 +188,14 @@ HIDDEN_PROFILES = [
     'sc.social.like:uninstall',
 ]
 
+# http://www.tinymce.com/wiki.php/Configuration:formats
+TINYMCE_JSON_FORMATS = {'strikethrough': {'inline': 'span',
+                                          'classes': 'strikethrough',
+                                          'exact': 'true'},
+                        'underline': {'inline': 'span',
+                                      'classes': 'underline',
+                                      'exact': 'true'}}
+
 
 class HiddenProducts(object):
     """ Oculta produtos do QuickInstaller """
