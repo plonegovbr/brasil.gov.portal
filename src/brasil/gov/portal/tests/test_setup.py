@@ -293,6 +293,26 @@ class TestUpgrade(unittest.TestCase):
         step = self.list_upgrades(u'10500', u'10600')
         self.assertEqual(len(step), 1)
 
+    def _get_viewlets_from_manager(self, manager):
+        """Returns all viewlets from a manager."""
+        request = self.portal.REQUEST
+        view = View(self.portal, request)
+        manager = queryMultiAdapter(
+            (self.portal, request, view),
+            IViewletManager,
+            manager,
+            default=None
+        )
+
+        self.assertIsNotNone(manager)
+
+        manager.update()
+
+        return manager.viewlets
+
+    def _get_available_viewlets_ids_from_manager(self, new_ids, from_manager):
+        return [v for v in from_manager if v.__name__ in new_ids]
+
     def test_to10600_execution(self):
         self.execute_upgrade(u'10500', u'10600')
 
@@ -303,22 +323,19 @@ class TestUpgrade(unittest.TestCase):
         self.assertTrue(all_formats)
 
         # Check if the new viewlets are registered.
-        new_viewlets = [u'plone.footer', u'brasil.gov.portal.topo']
-        request = self.portal.REQUEST
-        view = View(self.portal, request)
-        manager_name = 'plone.portalfooter'
-        manager = queryMultiAdapter(
-            (self.portal, request, view), IViewletManager, manager_name,
-            default=None
+        new_viewlets_top = [u'brasil.gov.portal.acessibilidade']
+        top_available = self._get_available_viewlets_ids_from_manager(
+            new_viewlets_top,
+            self._get_viewlets_from_manager('plone.portaltop')
         )
+        self.assertEqual(len(top_available), len(new_viewlets_top))
 
-        self.assertIsNotNone(manager)
-
-        manager.update()
-
-        available = [v for v in manager.viewlets if v.__name__ in new_viewlets]
-
-        self.assertEqual(len(available), len(new_viewlets))
+        new_viewlets_footer = [u'plone.footer', u'brasil.gov.portal.topo']
+        footer_available = self._get_available_viewlets_ids_from_manager(
+            new_viewlets_footer,
+            self._get_viewlets_from_manager('plone.portalfooter')
+        )
+        self.assertEqual(len(footer_available), len(new_viewlets_footer))
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

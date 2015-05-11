@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-08 18:15+0000\n"
+"POT-Creation-Date: 2015-05-11 14:46+0000\n"
 "PO-Revision-Date: 2014-11-06 14:28-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,6 +163,22 @@ msgstr "Para habilitar estatísticas web de fornecedores externos (por exemplo G
 #: ./browser/plone/templates/plone-overview.pt:101
 msgid "For information and Support about e-Government Digital Identity Plone Portal visit"
 msgstr "Para informações e suporte ao Portal Padrão visite"
+
+#: ./browser/viewlets/templates/acessibilidade.pt:3
+msgid "Go to content <span>1</span>"
+msgstr "Ir para o conte&uacute;do <span>1</span>"
+
+#: ./browser/viewlets/templates/acessibilidade.pt:21
+msgid "Go to footer <span>4</span>"
+msgstr "Ir para o rodap&eacute; <span>4</span>"
+                            
+#: ./browser/viewlets/templates/acessibilidade.pt:9
+msgid "Go to navigation <span>2</span>"
+msgstr "Ir para o menu <span>2</span>"
+                            
+#: ./browser/viewlets/templates/acessibilidade.pt:15
+msgid "Go to search <span>3</span>"
+msgstr "Ir para a busca <span>3</span>"
 
 #: ./browser/plone/templates/plone-overview.pt:98
 msgid "Help and Support"
@@ -361,7 +377,7 @@ msgid "plone_community"
 msgstr "Comunidade Plone"
 
 #. Default: "Powered by Open Source CMS <a href=\"http://plone.org\">Plone</a>"
-#: ./browser/viewlets/templates/footer.pt:1
+#: ./browser/viewlets/templates/footer.pt:2
 msgid "plone_footer"
 msgstr "Desenvolvido com o CMS de código aberto <a href=\"http://plone.org\">Plone</a>"
 

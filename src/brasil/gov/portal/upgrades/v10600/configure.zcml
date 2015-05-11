@@ -33,7 +33,7 @@
 
     <gs:upgradeStep
         title="Atualiza portal para versão 10600"
-        description="Registra viewlets de footer com dados do Plone e voltar para o topo"
+        description="Registra viewlets de footer com dados do Plone, voltar para o topo e acessibilidade"
         handler=".handler.apply_profile"
         />
 

@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <object>
+  <order manager="plone.portaltop" skinname="*">
+    <viewlet name="brasil.gov.portal.acessibilidade" after="brasil.gov.barra"/>
+  </order>
   <hidden manager="plone.portalheader" skinname="*">
     <viewlet name="plone.global_sections" />
   </hidden>

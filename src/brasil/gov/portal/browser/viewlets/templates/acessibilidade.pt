@@ -1,0 +1,26 @@
+                <ul i18n:domain="brasil.gov.portal" id="accessibility">
+                    <li>
+                        <a accesskey="1" i18n:translate="" href="#acontent" id="link-conteudo">
+                            Go to content
+                            <span>1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a accesskey="2" i18n:translate="" href="#anavigation" id="link-navegacao">
+                            Go to navigation
+                            <span>2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a accesskey="3" i18n:translate="" href="#SearchableText" id="link-buscar">
+                            Go to search
+                            <span>3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a accesskey="4" i18n:translate="" href="#afooter" id="link-rodape">
+                            Go to footer
+                            <span>4</span>
+                        </a>
+                    </li>
+                </ul>

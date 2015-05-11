@@ -3,9 +3,10 @@ Histórico de Alterações
 
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-* Adiciona viewlets internacionalizadas (i18n) para "Voltar para o topo" e
-  "Desenvolvido com o CMS de código aberto Plone" para evitar que
-  brasil.gov.temas tenha de ser customizado quando outra língua for adicionada.
+* Adiciona viewlets internacionalizadas (i18n) para "Voltar para o topo",
+  "Desenvolvido com o CMS de código aberto Plone" e os links de acessibilidade
+  para evitar que brasil.gov.temas tenha de ser customizado quando outra
+  língua for adicionada.
   [idgserpro]
 * Corrige css de impressão, colocando texto como justificado. Alguns documentos
   oficiais que são impressos nos portais estão tendo problemas em juntas

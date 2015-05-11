@@ -90,6 +90,15 @@
       />
 
   <browser:viewlet
+      name="brasil.gov.portal.acessibilidade"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class="plone.app.layout.viewlets.common.ViewletBase"
+      permission="zope2.View"
+      template="templates/acessibilidade.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+  <browser:viewlet
       name="plone.footer"
       manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
       class="plone.app.layout.viewlets.common.FooterViewlet"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-08 18:15+0000\n"
+"POT-Creation-Date: 2015-05-11 14:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,6 +163,22 @@ msgstr ""
 
 #: ./browser/plone/templates/plone-overview.pt:101
 msgid "For information and Support about e-Government Digital Identity Plone Portal visit"
+msgstr ""
+
+#: ./browser/viewlets/templates/acessibilidade.pt:3
+msgid "Go to content <span>1</span>"
+msgstr ""
+
+#: ./browser/viewlets/templates/acessibilidade.pt:21
+msgid "Go to footer <span>4</span>"
+msgstr ""
+
+#: ./browser/viewlets/templates/acessibilidade.pt:9
+msgid "Go to navigation <span>2</span>"
+msgstr ""
+
+#: ./browser/viewlets/templates/acessibilidade.pt:15
+msgid "Go to search <span>3</span>"
 msgstr ""
 
 #: ./browser/plone/templates/plone-overview.pt:98
@@ -361,7 +377,7 @@ msgid "plone_community"
 msgstr ""
 
 #. Default: "Powered by Open Source CMS <a href=\"http://plone.org\">Plone</a>"
-#: ./browser/viewlets/templates/footer.pt:1
+#: ./browser/viewlets/templates/footer.pt:2
 msgid "plone_footer"
 msgstr ""
 
