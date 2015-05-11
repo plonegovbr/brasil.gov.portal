@@ -80,4 +80,22 @@
       class=".nitf_byline.NITFBylineViewlet"
       />
 
+  <browser:viewlet
+      name="brasil.gov.portal.topo"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class="plone.app.layout.viewlets.common.ViewletBase"
+      permission="zope2.View"
+      template="templates/topo.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+  <browser:viewlet
+      name="plone.footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class="plone.app.layout.viewlets.common.FooterViewlet"
+      permission="zope2.View"
+      template="templates/footer.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>

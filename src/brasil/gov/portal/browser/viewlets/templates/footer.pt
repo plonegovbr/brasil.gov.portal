@@ -1,0 +1,3 @@
+<div i18n:domain="brasil.gov.portal" id="extra-footer">
+    <p i18n:translate="plone_footer">Powered by Open Source CMS <a href="http://plone.org">Plone</a></p>
+</div>

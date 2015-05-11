@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.GenericSetup.upgrade import listUpgradeSteps
+from Products.Five.browser import BrowserView as View
 from Products.TinyMCE.interfaces.utility import ITinyMCE
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import HIDDEN_PROFILES
@@ -12,6 +13,8 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from plone.browserlayer.utils import registered_layers
 from zope.component import getUtility
+from zope.component import queryMultiAdapter
+from zope.viewlet.interfaces import IViewletManager
 
 import json
 import unittest
@@ -292,10 +295,30 @@ class TestUpgrade(unittest.TestCase):
 
     def test_to10600_execution(self):
         self.execute_upgrade(u'10500', u'10600')
+
         formats = json.loads(getUtility(ITinyMCE).formats)
         # Todas as chaves dos formatos precisam estar presentes na tool após
         # a execução do upgradeStep.
-        self.assertTrue(all(key in formats for key in TINYMCE_JSON_FORMATS))
+        all_formats = all(key in formats for key in TINYMCE_JSON_FORMATS)
+        self.assertTrue(all_formats)
+
+        # Check if the new viewlets are registered.
+        new_viewlets = [u'plone.footer', u'brasil.gov.portal.topo']
+        request = self.portal.REQUEST
+        view = View(self.portal, request)
+        manager_name = 'plone.portalfooter'
+        manager = queryMultiAdapter(
+            (self.portal, request, view), IViewletManager, manager_name,
+            default=None
+        )
+
+        self.assertIsNotNone(manager)
+
+        manager.update()
+
+        available = [v for v in manager.viewlets if v.__name__ in new_viewlets]
+
+        self.assertEqual(len(available), len(new_viewlets))
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

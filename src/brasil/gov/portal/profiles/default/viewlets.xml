@@ -7,4 +7,7 @@
     <viewlet name="brasil.gov.portal.servicos" after="plone.global_sections"/>
     <viewlet name="brasil.gov.portal.redessociais" after="brasil.gov.portal.servicos"/>
   </order>
+  <order manager="plone.plonefooter" skinname="*">
+    <viewlet name="brasil.gov.portal.topo" before="doormat.footer"/>
+  </order>
 </object>

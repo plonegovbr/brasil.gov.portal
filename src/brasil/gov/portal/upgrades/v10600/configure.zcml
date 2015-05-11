@@ -20,8 +20,8 @@
       profile="brasil.gov.portal:default">
 
     <gs:upgradeStep
-        title="Atualiza portal para versão 10600"
-        description="Instala produto de Portlets brasil.gov.portelts."
+        title="Instala produto de Portlets brasil.gov.portlets."
+        description="Instala produto de Portlets brasil.gov.portlets."
         handler=".handler.install_product"
         />
 
@@ -29,6 +29,12 @@
         title="Tachado e sublinhado"
         description="Viabiliza uso de 'tachado' e 'sublinhado' no editor."
         handler=".handler.set_some_tiny_formats"
+        />
+
+    <gs:upgradeStep
+        title="Atualiza portal para versão 10600"
+        description="Registra viewlets de footer com dados do Plone e voltar para o topo"
+        handler=".handler.apply_profile"
         />
 
   </gs:upgradeSteps>

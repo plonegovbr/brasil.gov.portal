@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-03 11:01+0000\n"
+"POT-Creation-Date: 2015-05-08 18:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,6 +66,10 @@ msgstr ""
 
 #: ./browser/content/templates/audioview.pt:24
 msgid "Audio Transcript"
+msgstr ""
+
+#: ./browser/viewlets/templates/topo.pt:2
+msgid "Back to Top"
 msgstr ""
 
 #: ./browser/plone/templates/plone-addsite.pt:109
@@ -183,6 +187,7 @@ msgid "MPEG Audio File"
 msgstr ""
 
 #: ./profiles/default/types/sc.embedder.xml
+#: ./upgrades/v10500/profiles/default/types/sc.embedder.xml
 msgid "Multimedia"
 msgstr ""
 
@@ -192,6 +197,7 @@ msgid "Name of Ministry or Department to which this site is subject."
 msgstr ""
 
 #: ./profiles/default/types/collective.nitf.content.xml
+#: ./upgrades/v10500/profiles/default/types/collective.nitf.content.xml
 msgid "News"
 msgstr ""
 
@@ -336,11 +342,11 @@ msgstr ""
 msgid "help_social_network"
 msgstr ""
 
-#: ./browser/album/albuns.py:185
+#: ./browser/album/albuns.py:186
 msgid "label_next"
 msgstr ""
 
-#: ./browser/album/albuns.py:172
+#: ./browser/album/albuns.py:173
 msgid "label_previous"
 msgstr ""
 
@@ -352,6 +358,11 @@ msgstr ""
 #. Default: "Plone Community"
 #: ./browser/plone/templates/plone-overview.pt:114
 msgid "plone_community"
+msgstr ""
+
+#. Default: "Powered by Open Source CMS <a href=\"http://plone.org\">Plone</a>"
+#: ./browser/viewlets/templates/footer.pt:1
+msgid "plone_footer"
 msgstr ""
 
 #. Default: "e-Government Digital Identity Plone Portal"
