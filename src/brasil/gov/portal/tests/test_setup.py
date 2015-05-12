@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.GenericSetup.upgrade import listUpgradeSteps
+from Products.Five.browser import BrowserView as View
 from Products.TinyMCE.interfaces.utility import ITinyMCE
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import HIDDEN_PROFILES
@@ -12,6 +13,8 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from plone.browserlayer.utils import registered_layers
 from zope.component import getUtility
+from zope.component import queryMultiAdapter
+from zope.viewlet.interfaces import IViewletManager
 
 import json
 import unittest
@@ -290,12 +293,49 @@ class TestUpgrade(unittest.TestCase):
         step = self.list_upgrades(u'10500', u'10600')
         self.assertEqual(len(step), 1)
 
+    def _get_viewlets_from_manager(self, manager):
+        """Returns all viewlets from a manager."""
+        request = self.portal.REQUEST
+        view = View(self.portal, request)
+        manager = queryMultiAdapter(
+            (self.portal, request, view),
+            IViewletManager,
+            manager,
+            default=None
+        )
+
+        self.assertIsNotNone(manager)
+
+        manager.update()
+
+        return manager.viewlets
+
+    def _get_available_viewlets_ids_from_manager(self, new_ids, from_manager):
+        return [v for v in from_manager if v.__name__ in new_ids]
+
     def test_to10600_execution(self):
         self.execute_upgrade(u'10500', u'10600')
+
         formats = json.loads(getUtility(ITinyMCE).formats)
         # Todas as chaves dos formatos precisam estar presentes na tool após
         # a execução do upgradeStep.
-        self.assertTrue(all(key in formats for key in TINYMCE_JSON_FORMATS))
+        all_formats = all(key in formats for key in TINYMCE_JSON_FORMATS)
+        self.assertTrue(all_formats)
+
+        # Check if the new viewlets are registered.
+        new_viewlets_top = [u'brasil.gov.portal.acessibilidade']
+        top_available = self._get_available_viewlets_ids_from_manager(
+            new_viewlets_top,
+            self._get_viewlets_from_manager('plone.portaltop')
+        )
+        self.assertEqual(len(top_available), len(new_viewlets_top))
+
+        new_viewlets_footer = [u'plone.footer', u'brasil.gov.portal.topo']
+        footer_available = self._get_available_viewlets_ids_from_manager(
+            new_viewlets_footer,
+            self._get_viewlets_from_manager('plone.portalfooter')
+        )
+        self.assertEqual(len(footer_available), len(new_viewlets_footer))
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object>
+  <order manager="plone.portaltop" skinname="*">
+    <viewlet name="brasil.gov.portal.acessibilidade" after="brasil.gov.barra"/>
+  </order>
+  <order manager="plone.plonefooter" skinname="*">
+    <viewlet name="brasil.gov.portal.topo" before="doormat.footer"/>
+  </order>
+</object>

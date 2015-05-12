@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-03 11:01+0000\n"
+"POT-Creation-Date: 2015-05-11 14:46+0000\n"
 "PO-Revision-Date: 2014-11-06 14:28-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,6 +66,10 @@ msgstr "Download do Áudio"
 #: ./browser/content/templates/audioview.pt:24
 msgid "Audio Transcript"
 msgstr "Transcrição do Áudio"
+
+#: ./browser/viewlets/templates/topo.pt:2
+msgid "Back to Top"
+msgstr "Voltar para o topo"
 
 #: ./browser/plone/templates/plone-addsite.pt:109
 msgid "Base configuration"
@@ -160,6 +164,22 @@ msgstr "Para habilitar estatísticas web de fornecedores externos (por exemplo G
 msgid "For information and Support about e-Government Digital Identity Plone Portal visit"
 msgstr "Para informações e suporte ao Portal Padrão visite"
 
+#: ./browser/viewlets/templates/acessibilidade.pt:3
+msgid "Go to content <span>1</span>"
+msgstr "Ir para o conte&uacute;do <span>1</span>"
+
+#: ./browser/viewlets/templates/acessibilidade.pt:21
+msgid "Go to footer <span>4</span>"
+msgstr "Ir para o rodap&eacute; <span>4</span>"
+                            
+#: ./browser/viewlets/templates/acessibilidade.pt:9
+msgid "Go to navigation <span>2</span>"
+msgstr "Ir para o menu <span>2</span>"
+                            
+#: ./browser/viewlets/templates/acessibilidade.pt:15
+msgid "Go to search <span>3</span>"
+msgstr "Ir para a busca <span>3</span>"
+
 #: ./browser/plone/templates/plone-overview.pt:98
 msgid "Help and Support"
 msgstr "Suporte e ajuda"
@@ -182,6 +202,7 @@ msgid "MPEG Audio File"
 msgstr "Arquivo de Áudio MPEG"
 
 #: ./profiles/default/types/sc.embedder.xml
+#: ./upgrades/v10500/profiles/default/types/sc.embedder.xml
 msgid "Multimedia"
 msgstr "Multimídia"
 
@@ -191,6 +212,7 @@ msgid "Name of Ministry or Department to which this site is subject."
 msgstr "Nome do Ministério ou da Secretaria ao qual este site está subordinado."
 
 #: ./profiles/default/types/collective.nitf.content.xml
+#: ./upgrades/v10500/profiles/default/types/collective.nitf.content.xml
 msgid "News"
 msgstr "Notícia"
 
@@ -336,11 +358,11 @@ msgstr "Portal Padrão"
 msgid "help_social_network"
 msgstr ""
 
-#: ./browser/album/albuns.py:185
+#: ./browser/album/albuns.py:186
 msgid "label_next"
 msgstr ""
 
-#: ./browser/album/albuns.py:172
+#: ./browser/album/albuns.py:173
 msgid "label_previous"
 msgstr ""
 
@@ -353,6 +375,11 @@ msgstr "Buscar no portal"
 #: ./browser/plone/templates/plone-overview.pt:114
 msgid "plone_community"
 msgstr "Comunidade Plone"
+
+#. Default: "Powered by Open Source CMS <a href=\"http://plone.org\">Plone</a>"
+#: ./browser/viewlets/templates/footer.pt:2
+msgid "plone_footer"
+msgstr "Desenvolvido com o CMS de código aberto <a href=\"http://plone.org\">Plone</a>"
 
 #. Default: "e-Government Digital Identity Plone Portal"
 #: ./browser/plone/templates/plone-overview.pt:104

@@ -1,4 +1,5 @@
 *.egg-info
+*.log
 *.mo
 *.pyc
 *~
