@@ -4,11 +4,16 @@ Histórico de Alterações
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-* Corrige as dependências do pacote.
-  [hvelarde]
+* Adiciona "memoize" na renderização de viewlet byline do NITF por questões de
+  performance quando há muitos usuários sendo pesquisados.
+  Ver https://github.com/collective/collective.nitf/pull/129
+  [idgserpro]
 
 * Adiciona css para title de coleção.
   [idgserpro]
+
+* Corrige as dependências do pacote.
+  [hvelarde]
 
 * Adiciona viewlets internacionalizadas (i18n) para "Voltar para o topo",
   "Desenvolvido com o CMS de código aberto Plone" e os links de acessibilidade

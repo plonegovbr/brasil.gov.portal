@@ -2,12 +2,15 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from plone.app.layout.viewlets.content import DocumentBylineViewlet
+from plone.memoize import ram
+from time import time
 
 
 class NITFBylineViewlet(DocumentBylineViewlet):
 
     index = ViewPageTemplateFile('templates/nitf_byline.pt')
 
+    @ram.cache(lambda method, self, member_info: (time() // 60, member_info))
     def getMemberInfoByName(self, fullname):
         mt = api.portal.get_tool('portal_membership')
         members = mt.searchForMembers(name=fullname)
