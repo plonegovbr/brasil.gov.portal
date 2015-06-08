@@ -10,7 +10,7 @@ class NITFBylineViewlet(DocumentBylineViewlet):
 
     index = ViewPageTemplateFile('templates/nitf_byline.pt')
 
-    @ram.cache(lambda method, self, member_info: (time() // 60, member_info))
+    @ram.cache(lambda method, self, fullname: (time() // 60, fullname))
     def getMemberInfoByName(self, fullname):
         mt = api.portal.get_tool('portal_membership')
         members = mt.searchForMembers(name=fullname)
