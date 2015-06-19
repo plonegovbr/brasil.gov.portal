@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from Products.GenericSetup.upgrade import listUpgradeSteps
 from Products.Five.browser import BrowserView as View
+from Products.GenericSetup.upgrade import listUpgradeSteps
 from Products.TinyMCE.interfaces.utility import ITinyMCE
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import HIDDEN_PROFILES
@@ -100,7 +100,7 @@ class TestUpgrade(unittest.TestCase):
         if source == '0':
             source = (source, '0')
         else:
-            source = (source, )
+            source = (source,)
 
         step = [step for step in upgradeSteps
                 if (step[0]['dest'] == (destination,))
@@ -117,7 +117,7 @@ class TestUpgrade(unittest.TestCase):
         if source == '0':
             source = (source, '0')
         else:
-            source = (source, )
+            source = (source,)
         steps = [step for step in upgradeSteps
                  if (step[0]['dest'] == (destination,))
                  and (step[0]['source'] == source)][0]
