@@ -30,7 +30,7 @@ class JSONSourceSection(object):
         try:
             path = '%s/%s' % (directory, data_file)
             data = json.loads(open(path, 'r').read())
-        except:
+        except Exception:
             data = {}
 
         yield data
@@ -38,7 +38,7 @@ class JSONSourceSection(object):
         try:
             children = json.loads(open('%s/%s' % (directory, children_file),
                                        'r').read())
-        except:
+        except Exception:
             children = []
         for child in children:
             oId = child.get('id')
