@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from lxml.html import builder as html_builder
 from lxml.html import fragments_fromstring as html_fromstring
 from lxml.html import tostring as html_tostring
-from plone.app.layout.analytics.view import AnalyticsViewlet as AnalyticsViewletBase
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
+from plone.app.layout.analytics.view import AnalyticsViewlet as \
+    AnalyticsViewletBase
 
 
 class AnalyticsViewlet(AnalyticsViewletBase):

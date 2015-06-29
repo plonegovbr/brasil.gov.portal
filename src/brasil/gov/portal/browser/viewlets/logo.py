@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ Modulo que implementa o viewlet de logo do Portal"""
-from plone.app.layout.viewlets.common import LogoViewlet as ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.app.layout.viewlets.common import LogoViewlet as ViewletBase
 
 
 class LogoViewlet(ViewletBase):

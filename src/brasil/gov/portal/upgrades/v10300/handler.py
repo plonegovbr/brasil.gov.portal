@@ -27,7 +27,7 @@ def atualiza_secoes(context):
     )
     logger.info(u'{0} conteúdos na seção General'.format(len(resultados)))
     for item in resultados:
-        #Alteramos para Noticias
+        # Alteramos para Noticias
         o = item.getObject()
         o.section = u'Notícias'
         o.reindexObject(idxs=['section'])
@@ -39,7 +39,7 @@ def atualiza_secoes(context):
     if 'General' in available_sections:
         available_sections.remove('General')
         logger.info('Remove secao General')
-    if not u'Notícias' in available_sections:
+    if u'Notícias' not in available_sections:
         available_sections.append(u'Notícias')
         logger.info('Adiciona secao Noticias')
     # Adiciona a secao Noticias

@@ -110,7 +110,7 @@ def configura_servicos(portal):
 
 def configura_ultimas_noticias(portal):
     oId = 'ultimas-noticias'
-    if not oId in portal.objectIds():
+    if oId not in portal.objectIds():
         title = u'Últimas Notícias'
         description = u'Últimas notícias publicadas neste site'
         colecao = api.content.create(
@@ -124,7 +124,7 @@ def configura_ultimas_noticias(portal):
         colecao = portal[oId]
     colecao.sort_on = u'effective'
     colecao.reverse_sort = True
-    #: Query by Type and Review State
+    # : Query by Type and Review State
     colecao.query = [
         {'i': u'portal_type',
          'o': u'plone.app.querystring.operation.selection.is',
@@ -154,7 +154,7 @@ def publish_content(folder, obj_ids):
 
 
 def _instala_pacote(qi, package):
-    if not package in qi.objectIds():
+    if package not in qi.objectIds():
         ip = InstalledProduct(package)
         qi._setObject(package, ip)
 

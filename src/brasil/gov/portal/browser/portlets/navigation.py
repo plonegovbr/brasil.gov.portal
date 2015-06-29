@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from plone.app.portlets.portlets.navigation import Renderer as BaseRenderer
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.app.portlets.portlets.navigation import Renderer as BaseRenderer
 
 
 class Renderer(BaseRenderer):

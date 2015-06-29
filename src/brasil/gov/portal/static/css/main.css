@@ -1668,12 +1668,13 @@ dl.portlet ol li { list-style: decimal outside; }
     border-bottom: 1px solid #ccc;
 }
 
-.roxo-borda a { color: #5c1285 !important; }
-.verde-borda a { color: #01971c !important; }
-.azul-claro-borda a { color: #8fd9e4 !important; }
-.azul-claro-turquesa a { color: #097495 !important; }
-.laranja-borda a { color: #e07f48 !important; }
-.bege-borda a { color: #ab6600 !important; }
+.tile.roxo-borda a { color: #5c1285 !important; }
+.tile.verde-borda a { color: #01971c !important; }
+.tile.azul-claro-borda a { color: #8fd9e4 !important; }
+.tile.azul-claro-turquesa a { color: #097495 !important; }
+.tile.laranja-borda a { color: #e07f48 !important; }
+.tile.bege-borda a { color: #ab6600 !important; }
+.tile.azul-turquesa-borda a { color: #40e0d0 !important; }
 
 .tile p {
     color: #172938;
@@ -1712,29 +1713,48 @@ dl.portlet ol li { list-style: decimal outside; }
 .list-item h3,
 .list-item h4 { margin-bottom: 0.5em; }
 
-.roxo .tile-title {
+.roxo .tile-title,
+.roxo .tile-header {
     border-top: 4px solid #5b1285;
     color: #5b1285;
 }
 
-.verde .tile-title {
+.roxo .tile-header span {
+    color: #5b1285;
+    margin-top: 1%;
+}
+
+.verde .tile-title,
+.verde .tile-header {
     border-top: 4px solid #01971c;
     color: #01971c;
 }
 
-.azul-claro .tile-title {
-    border-top: 4px solid #018bb9;
-    color: #018bb9;
+.verde .tile-header span {
+    color: #01971c;
+    margin-top: 1%;
 }
 
-.laranja .tile-title {
+.laranja .tile-title,
+.laranja .tile-header {
     border-top: 4px solid #d25501;
     color: #d25501;
 }
 
-.bege .tile-title {
+.laranja .tile-header span {
+    color: #d25501;
+    margin-top: 1%;
+}
+
+.bege .tile-title,
+.bege .tile-header {
     border-top: 4px solid #ad6500;
     color: #ad6500;
+}
+
+.bege .tile-header span {
+    color: #ad6500;
+    margin-top: 1%;
 }
 
 .cover-collection-tile .collection-item h1,
@@ -1895,12 +1915,49 @@ dl.portlet ol li { list-style: decimal outside; }
     background: url("++resource++brasil.gov.portal/img/seta_laranja.png") no-repeat scroll right 5px transparent;
 }
 
+/* Azul Turquesa
+   ========================================================================== */
+
+.azul-turquesa .tile-title,
+.azul-turquesa .tile-header {
+    border-top: 4px solid #097495;
+    color: #097495;
+}
+
+.azul-turquesa .tile-header span {
+    color: #097495;
+    margin-top: 1%;
+}
+
+.azul-turquesa .outstanding-header {
+    min-height: 40px;
+    border-top: 2px solid #097495;
+    background: #eeeff1;
+}
+
+.azul-turquesa .outstanding-header .outstanding-title {
+    border-color: #097495;
+    border-bottom: none;
+    background: #eeeff1;
+    color: #097495;
+}
+
+.azul-turquesa .outstanding-header .outstanding-link {
+    background: url("++resource++brasil.gov.portal/img/seta_azul-claro.png") no-repeat scroll right 5px transparent;
+}
+
 /* Azul Petroleo - Defesa e Segurança
    ========================================================================== */
 
-.azul-petroleo .tile-title {
+.azul-petroleo .tile-title,
+.azul-petroleo .tile-header {
     border-top: 4px solid #3b7390;
     color: #3b7390;
+}
+
+.azul-petroleo .tile-header span {
+    color: #3b7390;
+    margin-top: 1%;
 }
 
 .azul-petroleo .outstanding-header {
@@ -1923,9 +1980,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Dourado - Cultura
    ========================================================================== */
 
-.dourado .tile-title {
+.dourado .tile-title,
+.dourado .tile-header {
     border-top: 4px solid #b97a00;
     color: #b97a00;
+}
+
+.dourado .tile-header span {
+    color: #b97a00;
+    margin-top: 1%;
 }
 
 .dourado .outstanding-header {
@@ -1973,9 +2036,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Marron Claro - Economia e Emprego
    ========================================================================== */
 
-.marrom-claro .tile-title {
+.marrom-claro .tile-title,
+.marrom-claro .tile-header {
     border-top: 4px solid #826938;
     color: #826938;
+}
+
+.marrom-claro .tile-header span {
+    color: #826938;
+    margin-top: 1%;
 }
 
 .marrom-claro .outstanding-header {
@@ -1998,9 +2067,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Verde Escuro - Educação
    ========================================================================== */
 
-.verde-escuro .tile-title {
+.verde-escuro .tile-title,
+.verde-escuro .tile-header {
     border-top: 4px solid #1D571F;
     color: #1d571f;
+}
+
+.verde-escuro .tile-header span {
+    color: #1d571f;
+    margin-top: 1%;
 }
 
 .verde-escuro .outstanding-header {
@@ -2048,9 +2123,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Azul Governo
    ========================================================================== */
 
-.azul .tile-title {
+.azul .tile-title,
+.azul .tile-header {
     border-top: 4px solid #1a55dd;
     color: #1a55dd;
+}
+
+.azul .tile-header span {
+    color: #1a55dd;
+    margin-top: 1%;
 }
 
 .azul .outstanding-header {
@@ -2073,9 +2154,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Marron - Infraestrutura
    ========================================================================== */
 
-.marrom .tile-title {
+.marrom .tile-title,
+.marrom .tile-header {
     border-top: 4px solid #753900;
     color: #753900;
+}
+
+.marrom .tile-header span {
+    color: #753900;
+    margin-top: 1%;
 }
 
 .marrom .outstanding-header {
@@ -2098,9 +2185,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Verde Claro - Meio Ambiente
    ========================================================================== */
 
-.verde-claro .tile-title {
+.verde-claro .tile-title,
+.verde-claro .tile-header {
     border-top: 4px solid #56762b;
     color: #56762b;
+}
+
+.verde-claro .tile-header span {
+    color: #56762b;
+    margin-top: 1%;
 }
 
 .verde-claro .outstanding-header {
@@ -2123,9 +2216,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Azul Claro - Saúde
    ========================================================================== */
 
-.azul-claro .tile-title {
+.azul-claro .tile-title,
+.azul-claro .tile-header {
     border-top: 4px solid #3867b7;
     color: #3867b7;
+}
+
+.azul-claro .tile-header span {
+    color: #3867b7;
+    margin-top: 1%;
 }
 
 .azul-claro .outstanding-header {
@@ -2148,9 +2247,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Azul Escuro - Turismo
    ========================================================================== */
 
-.azul-escuro .tile-title {
+.azul-escuro .tile-title,
+.azul-escuro .tile-header {
     border-top: 4px solid #00439e;
     color: #00439e;
+}
+
+.azul-escuro .tile-header span {
+    color: #00439e;
+    margin-top: 1%;
 }
 
 .azul-escuro .outstanding-header {
@@ -2173,9 +2278,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Azul Piscina - Turismo
    ========================================================================== */
 
-.azul-piscina .tile-title {
+.azul-piscina .tile-title,
+.azul-piscina .tile-header {
     border-top: 4px solid #00A0DB;
     color: #00A0DB;
+}
+
+.azul-piscina .tile-header span {
+    color: #00A0DB;
+    margin-top: 1%;
 }
 
 .azul-piscina .outstanding-header {
@@ -2219,9 +2330,15 @@ dl.portlet ol li { list-style: decimal outside; }
 /* Amarelo - Economia e Emprego
    ========================================================================== */
 
-.amarelo .tile-title {
+.amarelo .tile-title,
+.amarelo .tile-header {
     border-top: 4px solid #DE9200;
     color: #DE9200;
+}
+
+.amarelo .tile-header span {
+    color: #DE9200;
+    margin-top: 1%;
 }
 
 .amarelo .outstanding-header {
