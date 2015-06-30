@@ -1,4 +1,4 @@
-    # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.portal.content.external import IExternalContent
 from five import grok
 from plone import api
