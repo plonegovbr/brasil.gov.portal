@@ -123,7 +123,8 @@ jQuery(function ($) {
         queryParameters.push({"name":"SearchableText", "value": st});
 
         // parse query string into array of hash
-        while (m = re.exec(queryString)) {
+        m = re.exec(queryString)
+        if (m.length >= 2) {
             key = decodeURIComponent(m[1]);
             if (key !== 'SearchableText') {
                 // we remove '+' used between words

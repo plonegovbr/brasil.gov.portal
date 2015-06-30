@@ -22,7 +22,7 @@ def ordernacao_pastas(context):
     site = plone_view.portal()
     pastas = ['assuntos', 'imagens', 'sobre']
     for pasta_id in pastas:
-        if not pasta_id in site.objectIds():
+        if pasta_id not in site.objectIds():
             continue
         pasta = site[pasta_id]
         # Define ordenacao padrao

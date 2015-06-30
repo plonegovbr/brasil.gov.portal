@@ -28,7 +28,6 @@ class Fixture(PloneSandboxLayer):
     def tearDown(self):
         super(Fixture, self).tearDown()
         configuration_registry.clear()
-        #cleanup.cleanUp()
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
