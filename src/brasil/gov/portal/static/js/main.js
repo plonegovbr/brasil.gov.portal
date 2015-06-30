@@ -71,7 +71,7 @@ var PBrasil = {
             })();
 
 
-            if ((_base = root.ResponsiveResize).instance == null) {
+            if ((_base = root.ResponsiveResize).instance === null) {
                 _base.instance = new _Singleton();
             }
             return root.ResponsiveResize.instance;
@@ -80,7 +80,7 @@ var PBrasil = {
         var resize = function () {
             responsiveResize = new root.ResponsiveResize();
             responsiveResize.resize();
-        }
+        };
 
         $(window).resize(function () {
             resize();
@@ -232,7 +232,7 @@ var PBrasil = {
                         };
                         return _Singleton;
                     })();
-                    if ((_base = root.AlbumResponsiveResize).instance == null) {
+                    if ((_base = root.AlbumResponsiveResize).instance === null) {
                         _base.instance = new _Singleton();
                     }
                     return root.AlbumResponsiveResize.instance;
@@ -240,7 +240,7 @@ var PBrasil = {
                 var resize = function () {
                     albumResponsiveResize = new root.AlbumResponsiveResize();
                     albumResponsiveResize.resize();
-                }
+                };
                 $(window).resize(function () {
                     resize();
                 });
