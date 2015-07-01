@@ -10,7 +10,7 @@ from zope.component import createObject
 from zope.component import queryUtility
 
 import os
-import unittest2 as unittest
+import unittest
 
 
 class ExternalContentTestCase(unittest.TestCase):

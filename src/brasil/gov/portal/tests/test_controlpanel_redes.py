@@ -5,7 +5,7 @@ from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from zope.interface import alsoProvides
 
-import unittest2 as unittest
+import unittest
 
 
 class ControlPanelTest(unittest.TestCase):

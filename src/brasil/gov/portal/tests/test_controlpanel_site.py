@@ -8,7 +8,7 @@ from plone.app.testing import setRoles
 from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 
-import unittest2 as unittest
+import unittest
 
 
 class SiteControlPanelTest(unittest.TestCase):

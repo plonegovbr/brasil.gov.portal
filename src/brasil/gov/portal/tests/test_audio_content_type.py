@@ -16,7 +16,7 @@ from zope.component import queryUtility
 from zope.interface import Invalid
 
 import os
-import unittest2 as unittest
+import unittest
 
 
 class AudioTestCase(unittest.TestCase):

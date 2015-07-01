@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 
-import unittest2 as unittest
+import unittest
 
 
 class SiteSettingsTestCase(unittest.TestCase):
