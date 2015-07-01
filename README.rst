@@ -29,16 +29,17 @@ código os testes são executados pelo serviço Travis.
 
 O estado atual dos testes, a cobertura de código e o número de downloads deste pacote podem ser vistos nas imagens a seguir:
 
-.. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.portal.png?branch=master
+.. image:: http://img.shields.io/pypi/v/brasil.gov.portal.svg
+    :target: https://pypi.python.org/pypi/brasil.gov.portal
+
+.. image:: https://img.shields.io/pypi/dm/brasil.gov.portal.svg
+    :target: https://pypi.python.org/pypi/brasil.gov.portal
+
+.. image:: https://img.shields.io/travis/plonegovbr/brasil.gov.portal/master.svg
     :target: http://travis-ci.org/plonegovbr/brasil.gov.portal
 
-.. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.portal/badge.png?branch=master
-    :alt: Coveralls badge
+.. image:: https://img.shields.io/coveralls/plonegovbr/brasil.gov.portal/master.svg
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.portal
-
-.. image:: https://pypip.in/d/brasil.gov.portal/badge.png
-    :target: https://pypi.python.org/pypi/brasil.gov.portal/
-    :alt: Downloads
 
 Instalação
 ----------
