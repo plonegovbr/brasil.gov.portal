@@ -3,6 +3,10 @@ Histórico de Alterações
 
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+
+* Corrige as dependências do pacote.
+  [hvelarde]
+
 * Adiciona viewlets internacionalizadas (i18n) para "Voltar para o topo",
   "Desenvolvido com o CMS de código aberto Plone" e os links de acessibilidade
   para evitar que brasil.gov.temas tenha de ser customizado quando outra
