@@ -5,6 +5,7 @@ from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
 from brasil.gov.portal import _ as _
+from plone import api
 from plone.app.controlpanel.form import ControlPanelForm
 from zope.component import adapts
 from zope.formlib import form
@@ -15,7 +16,6 @@ from zope.schema import Bool
 from zope.schema import SourceText
 from zope.schema import Text
 from zope.schema import TextLine
-from zope.site.hooks import getSite
 
 
 class ISiteSchema(Interface):
@@ -87,7 +87,7 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
 
     def __init__(self, context):
         super(SiteControlPanelAdapter, self).__init__(context)
-        self.portal = getSite()
+        self.portal = api.portal.get()
         pprop = getToolByName(self.portal, 'portal_properties')
         self.context = pprop.site_properties
         self.encoding = pprop.site_properties.default_charset
