@@ -3617,9 +3617,7 @@ body.contraste #em-destaque li#em-destaque-titulo,
 body.contraste .outstanding-header .outstanding-title,
 body.contraste .audiogallery-tile,
 body.contraste .videogallery-tile,
-body.contraste ul.css-tabs a,
 body.contraste .timeline,
-body.contraste .timeline a,
 body.contraste #content .poll-tile {
     background: #000 !important;
     color: #fff !important;
@@ -3630,7 +3628,6 @@ body.contraste #accessibility span {
     color: #000 !important;
 }
 
-body.contraste a,
 body.contraste h1,
 body.contraste h2,
 body.contraste h3,
@@ -3643,35 +3640,24 @@ body.contraste #content .documentDescription,
 body.contraste #content #description,
 body.contraste .nitfByline,
 body.contraste p.section,
-body.contraste #portal-column-one > .nav-menu-de-relevancia .first-item-nav a,
-body.contraste #portal-column-one > .nav-menu-de-relevancia .first-item-nav a span,
-body.contraste .portletNavigationTree > .portletItem a span,
 body.contraste #portal-breadcrumbs > span > span.breadcrumbSeparator,
-body.contraste #portal-breadcrumbs a,
 body.contraste #portal-breadcrumbs span,
-body.contraste #content a:hover,
-body.contraste dl.portlet a:hover,
 body.contraste #category,
 body.contraste #category-vcge,
 body.contraste .tile-subtitle,
 body.contraste .tile-content p,
 body.contraste .tile p,
-body.contraste .tile a,
 body.contraste #content .gallery-element-metadata .title,
 body.contraste .videogallery-tile .description,
 body.contraste .item-central .link-central,
 body.contraste #content #tile_banner_rotativo .title,
 body.contraste #content #tile_banner_rotativo .descr,
 body.contraste #content #tile_banner_rotativo .credito,
-body.contraste #portal-siteactions a,
-body.contraste #portal-siteactions a:hover,
 body.contraste #logo #portal-logo,
 body.contraste #logo #portal-title,
 body.contraste .cover-collection-tile p,
 body.contraste.template-summary_view #content .tileItem .subtitle,
 body.folder_contraste.template-summary_view #content .tileItem .subtitle,
-body.contraste.template-summary_view #content .tileItem .tileHeadline a,
-body.folder_contraste.template-summary_view #content .tileItem .tileHeadline a,
 body.contraste.template-summary_view #content .tileItem .description,
 body.folder_contraste.template-summary_view #content .tileItem .description,
 body.contraste.template-summary_view #content .tileItem .keywords,
@@ -3687,8 +3673,6 @@ body.contraste .videogallery-tile .subtitle,
 body.contraste .outstanding-header .outstanding-link,
 body.contraste #content .outstanding-header .outstanding-link:hover,
 body.contraste .galleria-info-description,
-body.contraste .galleria-info-title a,
-body.contraste .galleria-info-title a:hover,
 body.contraste .galleria-info-text .rights,
 body.contraste .lista-vertical .tile-header h3,
 body.contraste .lista-vertical .tile-header span,
@@ -3697,16 +3681,42 @@ body.contraste #content article div[property*="articleBody"] p,
 body.contraste #content div.newsImageContainer p.discreet,
 body.contraste #content article #viewlet-below-content-title .documentPublished,
 body.contraste #content article #viewlet-below-content-title .documentModified,
-body.contraste #content article #viewlet-below-content-title .contentHistory a,
 body.contraste #content .pullquote,
 body.contraste .cycle-player .cycle-overlay,
 body.contraste #galeria_de_fotos,
 body.contraste .galeria_container,
-body.contraste #content .gallery-footer a,
-body.contraste #content .gallery-footer a:hover,
 body.contraste #content .poll-tile .tile-content-wrapper>form>input[type=radio]+span,
 body.contraste #content .poll-tile .poll-tile-header>.header {
     color: #fff !important;
+}
+
+body.contraste a,
+body.contraste #content a:hover,
+body.contraste dl.portlet a:hover,
+body.contraste .tile a,
+body.contraste .timeline a,
+body.contraste ul.css-tabs a,
+body.contraste #portal-column-one > .nav-menu-de-relevancia .first-item-nav a,
+body.contraste #portal-column-one > .nav-menu-de-relevancia .first-item-nav a span,
+body.contraste .portletNavigationTree > .portletItem a span,
+body.contraste #portal-breadcrumbs a,
+body.contraste #portal-siteactions a,
+body.contraste #portal-siteactions a:hover,
+body.contraste #content .gallery-footer a,
+body.contraste #content .gallery-footer a:hover,
+body.contraste .galleria-info-title a,
+body.contraste .galleria-info-title a:hover,
+body.contraste .portletHeader a,
+body.contraste dl.portlet dt a:visited,
+body.contraste.template-summary_view #content .tileItem .tileHeadline a,
+body.folder_contraste.template-summary_view #content .tileItem .tileHeadline a,
+body.contraste #category a.link-category,
+body.contraste #content article #viewlet-below-content-title .contentHistory a,
+body.contraste #category a.link-category:hover,
+body.contraste #category-vcge a.link-category{
+    color: #ff0 !important;
+    background: #000 !important;
+    text-decoration: underline;
 }
 
 body.contraste #content .poll-tile .tile-content-wrapper>h3 {
@@ -3722,8 +3732,6 @@ body.contraste #content .poll-tile .tile-content-wrapper>form>input[type=submit]
 
 body.contraste .lista-horizontal,
 body.contraste .portletHeader,
-body.contraste .portletHeader a,
-body.contraste dl.portlet dt a:visited,
 body.contraste #doormat-container .doormatColumn,
 body.contraste .mediacarousel,
 body.contraste .galleria-thumbnails-container {
@@ -3781,10 +3789,7 @@ body.contraste #category {
     border-top: 4px solid #fff;
 }
 
-body.contraste #category a.link-category,
-body.contraste span.selectedTag,
-body.contraste #category a.link-category:hover,
-body.contraste #category-vcge a.link-category {
+body.contraste span.selectedTag {
     border-color: #fff !important;
     background: #fff !important;
     color: #000 !important;
