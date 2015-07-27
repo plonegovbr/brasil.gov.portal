@@ -4,6 +4,9 @@ Histórico de Alterações
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Reduzindo tamanho das imagens pelo tinypng. Taxa de redução foi de 59% do total.
+  [caduvieira]
+
 * Adiciona "memoize" na renderização de viewlet byline do NITF por questões de
   performance quando há muitos usuários sendo pesquisados.
   Ver https://github.com/collective/collective.nitf/pull/129
