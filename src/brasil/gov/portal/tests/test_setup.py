@@ -336,6 +336,13 @@ class TestUpgrade(unittest.TestCase):
             self._get_viewlets_from_manager('plone.portalfooter')
         )
         self.assertEqual(len(footer_available), len(new_viewlets_footer))
+        configs = getattr(self.pp, 'brasil_gov', None)
+        url_orgao = configs.getProperty('url_orgao')
+        self.assertEqual(
+            url_orgao,
+            u'http://estruturaorganizacional.dados.gov.br/doc/' +
+            'unidade-organizacional/26'
+        )
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

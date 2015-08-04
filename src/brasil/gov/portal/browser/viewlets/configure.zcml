@@ -107,4 +107,12 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <!-- Adiciona o link indicando nossa relacao com vcge -->
+  <browser:viewlet
+      name="brasil.gov.portal.head"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      class=".portal_head.PortalHeadViewlet"
+      permission="zope.Public"
+      />
+
 </configure>

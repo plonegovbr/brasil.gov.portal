@@ -36,5 +36,4 @@
   <!-- Viewlets -->
   <include package='.viewlets' />
 
-
 </configure>
