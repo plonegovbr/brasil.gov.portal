@@ -399,3 +399,12 @@ msgstr ""
 msgid "title_search_box"
 msgstr ""
 
+#: ./controlpanel/site.py:42
+#: ./browser/viewlets/templates/searchbox.pt:96
+msgid "Url ID of Department"
+msgstr ""
+
+#: ./controlpanel/site.py:43
+#: ./browser/plone/templates/plone-addsite.pt:99
+msgid "Url ID for Ministry or Department to which this site is subject."
+msgstr ""

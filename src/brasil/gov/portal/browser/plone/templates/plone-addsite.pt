@@ -93,6 +93,18 @@
       </div>
 
       <div class="field">
+        <label for="url_orgao" i18n:translate="">Url ID of Department</label>
+
+        <div class="formHelp" i18n:translate="">
+          Url ID for Ministry or Department to which this site is subject.
+        </div>
+
+        <input type="text" name="url_orgao"
+               size="80"
+               value="http://estruturaorganizacional.dados.gov.br/id/unidade-organizacional/26" />
+      </div>
+
+      <div class="field">
         <label for="description" i18n:translate="">Description</label>
 
         <div class="formHelp" i18n:translate="">

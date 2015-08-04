@@ -56,6 +56,7 @@
       <element value="facebook|facebook"/>
       <element value="flickr|flickr"/>
     </property>
+    <property name="url_orgao" type="string"/>
   </object>
   <object name="imaging_properties" meta_type="Plone Property Sheet">
     <property name="allowed_sizes" type="lines" purge="False">

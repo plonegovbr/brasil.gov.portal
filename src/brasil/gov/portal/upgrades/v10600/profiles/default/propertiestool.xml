@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+  <object name="brasil_gov" meta_type="Plone Property Sheet" purge="False">
+    <!-- URL do SIORG para a Presidência -->
+    <property name="url_orgao" type="string">http://estruturaorganizacional.dados.gov.br/doc/unidade-organizacional/26</property>
+  </object>
+</object>

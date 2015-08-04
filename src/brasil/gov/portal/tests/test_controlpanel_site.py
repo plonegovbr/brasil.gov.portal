@@ -76,6 +76,14 @@ class SiteControlPanelTest(unittest.TestCase):
         adapter.site_orgao = u'Presidencia da Republica'
         self.assertEqual(adapter.site_orgao, portal.orgao)
 
+    def test_url_orgao(self):
+        portal = self.portal
+        configs = getattr(portal.portal_properties, 'brasil_gov')
+        url_orgao = configs.getProperty('url_orgao')
+        adapter = self.adapter
+        adapter.url_orgao = u''
+        self.assertEqual(adapter.url_orgao, url_orgao)
+
     def test_description(self):
         portal = self.portal
         adapter = self.adapter

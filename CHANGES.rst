@@ -4,6 +4,10 @@ Histórico de Alterações
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Adicionando meta tag creator.productor para contexto do link de Serviços da
+  barra conforme manual. Ver item 2 de http://barra.governoeletronico.gov.br/
+  [caduvieira]
+
 * Reduzindo tamanho das imagens pelo tinypng. Taxa de redução foi de 59% do total.
   [caduvieira]
 

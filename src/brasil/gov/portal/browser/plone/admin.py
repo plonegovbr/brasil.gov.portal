@@ -7,6 +7,7 @@ from Products.CMFPlone.browser.admin import Overview as OverviewView
 from Products.CMFPlone.factory import _DEFAULT_PROFILE
 from Products.CMFPlone.factory import addPloneSite
 from Products.CMFPlone.interfaces import IPloneSiteRoot
+from Products.CMFCore.utils import getToolByName
 
 
 class Overview(OverviewView):
@@ -56,6 +57,7 @@ class AddPloneSite(AddPloneSiteView):
         # Dados do formulario
         site_id = form.get('site_id', 'portal')
         orgao = form.get('orgao', '')
+        url_orgao = form.get('url_orgao', '')
         title_1 = form.get('title_1', '')
         title_2 = form.get('title_2', '')
         title = '%s %s' % (title_1, title_2)
@@ -79,6 +81,9 @@ class AddPloneSite(AddPloneSiteView):
                 title_2=title_2,
                 orgao=orgao,
             )
+            pprop = getToolByName(self.context, 'portal_properties')
+            configs = getattr(pprop, 'brasil_gov', None)
+            configs.manage_changeProperties(url_orgao=url_orgao)
             self.request.response.redirect(site.absolute_url())
 
         return self.index()

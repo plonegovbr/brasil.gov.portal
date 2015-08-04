@@ -38,6 +38,12 @@ class ISiteSchema(Interface):
         required=False,
         default=u'')
 
+    url_orgao = TextLine(
+        title=_(u'Url ID of Department'),
+        description=_(u'Url ID for Ministry or Department to which this site is subject.'),
+        required=False,
+        default=u'')
+
     site_description = Text(
         title=_(u'Site description'),
         description=_(u'The site description is available '
@@ -88,9 +94,9 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
     def __init__(self, context):
         super(SiteControlPanelAdapter, self).__init__(context)
         self.portal = api.portal.get()
-        pprop = getToolByName(self.portal, 'portal_properties')
-        self.context = pprop.site_properties
-        self.encoding = pprop.site_properties.default_charset
+        self.pprop = getToolByName(context, 'portal_properties')
+        self.context = self.pprop.site_properties
+        self.encoding = self.pprop.site_properties.default_charset
 
     def get_site_title(self):
         title = getattr(self.portal, 'title', u'')
@@ -131,6 +137,20 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
         value = value or ''
         self.portal.orgao = value.encode(self.encoding)
 
+    def get_url_orgao(self):
+        # Define que o contexto a ser utilizado
+        # sera a property sheet brasil_gov
+        configs = getattr(self.pprop, 'brasil_gov', None)
+        url_orgao = configs.getProperty('url_orgao', u'')
+        return safe_unicode(url_orgao)
+
+    def set_url_orgao(self, value):
+        value = value or ''
+        # Define que o contexto a ser utilizado
+        # sera a property sheet brasil_gov
+        configs = getattr(self.pprop, 'brasil_gov', None)
+        configs.manage_changeProperties(url_orgao=value)
+
     def get_site_description(self):
         description = getattr(self.portal, 'description', u'')
         return safe_unicode(description)
@@ -155,6 +175,7 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
     site_title_1 = property(get_site_title_1, set_site_title_1)
     site_title_2 = property(get_site_title_2, set_site_title_2)
     site_orgao = property(get_site_orgao, set_site_orgao)
+    url_orgao = property(get_url_orgao, set_url_orgao)
     site_description = property(get_site_description, set_site_description)
     webstats_js = property(get_webstats_js, set_webstats_js)
 
