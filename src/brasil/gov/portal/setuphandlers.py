@@ -189,7 +189,7 @@ def instala_dependencias(context):
         _instala_pacote(qi, p)
 
 
-def set_tinymce_formats(context):
+def set_tinymce_formats():
     # Baseado em: https://dev.plone.org/ticket/13715
     if getUtility(ITinyMCE).formats is None:
         # Como ainda não existem estilos, posso adicionar diretamente.
@@ -222,4 +222,4 @@ def importContent(context):
         return
     site = api.portal.get()
     setupPortalContent(site)
-    set_tinymce_formats(context)
+    set_tinymce_formats()
