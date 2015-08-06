@@ -20,7 +20,7 @@ def install_product(context):
 
 
 def set_some_tiny_formats(context):
-    set_tinymce_formats(context)
+    set_tinymce_formats()
 
     # Novas regras foram adicionadas nos arquivos css.
     api.portal.get_tool('portal_css').cookResources()
