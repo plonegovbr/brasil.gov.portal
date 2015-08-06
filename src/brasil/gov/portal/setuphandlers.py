@@ -52,6 +52,9 @@ def setupPortalContent(p):
                'videos', 'audios', 'links', 'pastas-com-exemplos-de-pecas']
     publish_content(p, obj_ids)
 
+    # Remove conteúdo default do Doormat
+    remove_conteudo_doormat(p)
+
 
 def capa_como_padrao(portal):
     if not hasattr(portal, 'default_page'):
@@ -124,7 +127,7 @@ def configura_ultimas_noticias(portal):
         colecao = portal[oId]
     colecao.sort_on = u'effective'
     colecao.reverse_sort = True
-    #: Query by Type and Review State
+    # : Query by Type and Review State
     colecao.query = [
         {'i': u'portal_type',
          'o': u'plone.app.querystring.operation.selection.is',
@@ -202,6 +205,14 @@ def set_tinymce_formats(context):
 
         json_formats = safe_unicode(json.dumps(dict_formats), 'utf-8')
         getUtility(ITinyMCE).formats = json_formats
+
+
+def remove_conteudo_doormat(context):
+    """Remove conteúdo default do Products.Doormat"""
+    # presente em Products.Doormat > 0.8
+    doormat = getattr(context, 'doormat', None)
+    if doormat:
+        api.content.delete(doormat)
 
 
 def importContent(context):
