@@ -78,7 +78,7 @@ setup(
         'Products.CMFCore',
         'Products.CMFDefault',
         'Products.CMFPlone',
-        'Products.Doormat<0.8',
+        'Products.Doormat>0.7',
         'Products.GenericSetup',
         'Products.PloneFormGen',
         'sc.contentrules.groupbydate',
