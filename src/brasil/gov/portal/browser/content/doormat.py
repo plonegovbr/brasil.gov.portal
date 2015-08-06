@@ -35,7 +35,7 @@ class DoormatView(BaseView):
                 for link in section['section_links']:
                     link_url = link['link_url']
                     url = link_url
-                    if not isinstance(link_url, str):
+                    if not isinstance(link_url, unicode):
                         link_url = link_url()
                     if '${navigation_root_url}' in link_url:
                         url = link_url.replace(

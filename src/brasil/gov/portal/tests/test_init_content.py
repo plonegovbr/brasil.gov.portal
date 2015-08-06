@@ -13,6 +13,13 @@ class InitContentTestCase(unittest.TestCase):
 
     layer = INITCONTENT_TESTING
 
+    def get_doormat_view(self):
+        """Retorna a view do Doormat."""
+        from brasil.gov.portal.browser.content.doormat import DoormatView
+        portal = self.portal
+        request = self.layer['request']
+        return DoormatView(portal['rodape'], request)
+
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
@@ -21,9 +28,10 @@ class InitContentTestCase(unittest.TestCase):
     def test_conteudos_publicados(self):
         ids = ['acessibilidade', 'acesso-a-sistemas', 'area-de-imprensa',
                'assuntos', 'audios', 'contato', 'destaques', 'eventos',
-               'home', 'imagens', 'links', 'links-destaques', 'menu-de-relevancia',
-               'noticias', 'pastas-com-exemplos-de-pecas', 'rodape', 'rss',
-               'servicos', 'acesso-a-informacao', 'videos']
+               'home', 'imagens', 'links', 'links-destaques',
+               'menu-de-relevancia', 'noticias',
+               'pastas-com-exemplos-de-pecas', 'rodape', 'rss', 'servicos',
+               'acesso-a-informacao', 'videos']
         for oId in ids:
             o = self.portal[oId]
             self.assertEqual(self.wt.getInfoFor(o, 'review_state'),
@@ -138,10 +146,7 @@ class InitContentTestCase(unittest.TestCase):
                          False)
 
     def test_doormat_view(self):
-        from brasil.gov.portal.browser.content.doormat import DoormatView
-        portal = self.portal
-        request = self.layer['request']
-        view = DoormatView(portal['rodape'], request)
+        view = self.get_doormat_view()
         data = view.getDoormatData()
         # Teste se a troca de {portal_url} e {navigation_root_url}
         # esta sendo realizada
@@ -149,6 +154,27 @@ class InitContentTestCase(unittest.TestCase):
             data[0]['column_sections'][0]['section_links'][1]['link_url'],
             'http://nohost/plone/assuntos/lorem-ipsum'
         )
+
+    def test_doormat_workflow(self):
+        """Testa se o Doormat está considerando o estado do workflow"""
+        catalog = api.portal.get_tool('portal_catalog')
+        sessoes = catalog(review_state='published',
+                          portal_type='DoormatSection',
+                          path='/plone/rodape')
+        obj_sessao = sessoes[0].getObject()
+        self.wt.doActionFor(obj_sessao, 'retract')
+        view = self.get_doormat_view()
+        setRoles(self.portal, TEST_USER_ID, ['Anonymous'])
+        data = view.getDoormatData()
+        titulos_sessoes = [section['section_title'] for column in data
+                           for section in column['column_sections']]
+        # Doormat não pode listar sessão não publicada. É necessário:
+        # Products.Doormat > 0.7
+        self.assertNotIn(obj_sessao.Title(), titulos_sessoes)
+
+    def test_conteudo_doormat_removido(self):
+        """Testa se o conteúdo default do Products.Doormat foi removido"""
+        self.assertNotIn('doormat', self.portal.objectIds())
 
     def test_portal_available(self):
         qi = api.portal.get_tool('portal_quickinstaller')

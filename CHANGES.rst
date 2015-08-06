@@ -4,6 +4,10 @@ Histórico de Alterações
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige erro do rodapé que exibia link e sessões não publicadas. Para isso,
+  forçamos Products.Doormat > 0.7 (closes `#182`_).
+  [idgserpro]
+
 * Reduzindo tamanho das imagens pelo tinypng. Taxa de redução foi de 59% do total.
   [caduvieira]
 
@@ -351,3 +355,4 @@ Histórico de Alterações
 .. _`#161`: https://github.com/plonegovbr/brasil.gov.portal/issues/161
 .. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
 .. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175
+.. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
