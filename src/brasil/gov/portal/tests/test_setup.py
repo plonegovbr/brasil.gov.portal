@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-from Products.GenericSetup.upgrade import listUpgradeSteps
-from Products.Five.browser import BrowserView as View
-from Products.TinyMCE.interfaces.utility import ITinyMCE
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.config import PROJECTNAME
@@ -11,7 +8,11 @@ from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.folder.default import DefaultOrdering
 from plone.browserlayer.utils import registered_layers
+from Products.Five.browser import BrowserView as View
+from Products.GenericSetup.upgrade import listUpgradeSteps
+from Products.TinyMCE.interfaces.utility import ITinyMCE
 from zope.component import getUtility
 from zope.component import queryMultiAdapter
 from zope.viewlet.interfaces import IViewletManager
@@ -100,11 +101,11 @@ class TestUpgrade(unittest.TestCase):
         if source == '0':
             source = (source, '0')
         else:
-            source = (source, )
+            source = (source,)
 
         step = [step for step in upgradeSteps
-                if (step[0]['dest'] == (destination,))
-                and (step[0]['source'] == source)]
+                if (step[0]['dest'] == (destination,)) and
+                (step[0]['source'] == source)]
         return step
 
     def execute_upgrade(self, source, destination):
@@ -117,10 +118,10 @@ class TestUpgrade(unittest.TestCase):
         if source == '0':
             source = (source, '0')
         else:
-            source = (source, )
+            source = (source,)
         steps = [step for step in upgradeSteps
-                 if (step[0]['dest'] == (destination,))
-                 and (step[0]['source'] == source)][0]
+                 if (step[0]['dest'] == (destination,)) and
+                 (step[0]['source'] == source)][0]
         # Os executamos
         for step in steps:
             step['step'].doStep(self.st)
@@ -209,14 +210,14 @@ class TestUpgrade(unittest.TestCase):
 
     def _prepara_to10300(self):
         # Cria conteudo NITF
-        self.noticia = api.content.create(
+        noticia = api.content.create(
             type='collective.nitf.content',
             container=self.portal,
             id='uma-noticia',
             title=u'Uma notícia'
         )
-        self.noticia.section = 'General'
-        self.noticia.reindexObject(idxs=['section', ])
+        noticia.section = 'General'
+        noticia.reindexObject(idxs=['section', ])
         # Deixa General como secao disponivel
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.available_sections',
@@ -293,6 +294,10 @@ class TestUpgrade(unittest.TestCase):
         step = self.list_upgrades(u'10500', u'10600')
         self.assertEqual(len(step), 1)
 
+    def test_to10700_available(self):
+        step = self.list_upgrades(u'10600', u'10700')
+        self.assertEqual(len(step), 1)
+
     def _get_viewlets_from_manager(self, manager):
         """Returns all viewlets from a manager."""
         request = self.portal.REQUEST
@@ -353,6 +358,36 @@ class TestUpgrade(unittest.TestCase):
         # A action de Configuracoes do Site deve ser desabilitada pelo
         # upgrade step.
         self.assertFalse(pa['site_actions'].plone_setup.visible)
+
+    def test_to10700_execution(self):
+        # Testa a ordenação das pastas na raiz: Preciso criar diretórios
+        # antes de executar o upgradeStep, sem ordenação, para testar de
+        # forma correta a ordenação em todos efetuada pelo upgradeStep.
+        # Ajustamos as pastas para nao estarem ordenadas
+        pastas = ['teste1', 'teste2', 'teste3', 'teste4', 'teste5']
+        for pasta_id in pastas:
+            pasta = api.content.create(
+                type='Folder',
+                container=self.portal,
+                id=pasta_id
+            )
+            pasta.setOrdering('unordered')
+            conteudo = api.content.create(
+                type='Folder',
+                container=pasta,
+                id='sub_{0}'.format(pasta_id)
+            )
+            conteudo.setOrdering('unordered')
+
+        for pasta_id in pastas:
+            pasta = self.portal[pasta_id]
+            self.assertFalse(isinstance(pasta.getOrdering(), DefaultOrdering))
+
+        self.execute_upgrade(u'10600', u'10700')
+
+        for pasta_id in pastas:
+            pasta = self.portal[pasta_id]
+            self.assertTrue(isinstance(pasta.getOrdering(), DefaultOrdering))
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

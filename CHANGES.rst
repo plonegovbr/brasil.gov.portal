@@ -4,7 +4,8 @@ Histórico de Alterações
 1.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Todas as pastas da raiz precisam ter a ordenação padrão do Plone. (closes `#190`_).
+  [idgserpro]
 
 
 1.1.1 (2015-09-04)
@@ -377,3 +378,4 @@ Histórico de Alterações
 .. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
 .. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
+.. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
