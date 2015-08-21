@@ -5,6 +5,12 @@
 
   <includeOverrides file="overrides.zcml" />
 
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
   <browser:page
       for="OFS.interfaces.IApplication"
       name="plone-addsite"
@@ -48,6 +54,15 @@
       />
 
   <browser:page
+      name="portal_settings"
+      for="*"
+      permission="zope.Public"
+      class=".portal_settings.PortalSettingsView"
+      allowed_interface=".interfaces.IPortalSettingsView"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+  <browser:page
       name="image_view"
       for="plone.app.contenttypes.interfaces.IImage"
       layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
@@ -56,6 +71,33 @@
       menu="plone_displayviews"
       title="View Image"
       />
+
+    <browser:page
+        name="folder_listing"
+        for="plone.app.contenttypes.interfaces.IFolder"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/folder_listing.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="Standard view"
+        />
+
+    <browser:page
+        name="standard_view"
+        permission="zope2.View"
+        for="plone.app.contenttypes.interfaces.ICollection"
+        template="templates/standard_view.pt"
+        />
+
+    <browser:page
+        name="folder_tabular_view"
+        for="plone.app.contenttypes.interfaces.IFolder"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/folder_tabular_view.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="Tabular view"
+        />
 
   <browser:viewlet
       name="plone.htmlhead.title"

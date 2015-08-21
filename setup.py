@@ -90,6 +90,7 @@ setup(
         'sc.social.like',
         'setuptools',
         'transmogrify.dexterity',
+        'z3c.jbot',
         'z3c.unconfigure',
         'zope.component',
         'zope.interface',
