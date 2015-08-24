@@ -40,3 +40,8 @@ class SiteSettingsTestCase(unittest.TestCase):
 
         self.assertEqual(languages.getDefaultLanguage(), 'pt-br',
                          'Language not set')
+
+    def test_action_site_actions_plone_setup_disabled(self):
+        pc = self.portal['portal_actions']
+        site_actions = pc['site_actions']
+        self.assertIs(site_actions.plone_setup.visible, False)
