@@ -4,6 +4,10 @@ Histórico de Alterações
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Desabilitando o item "Configurações do Site" do header do site.
+  Ver issue https://github.com/plonegovbr/brasil.gov.portal/issues/212.
+  [winstonf88]
+
 * Adicionando meta tag creator.productor para contexto do link de Serviços da
   barra conforme manual. Ver item 2 de http://barra.governoeletronico.gov.br/
   [caduvieira]
