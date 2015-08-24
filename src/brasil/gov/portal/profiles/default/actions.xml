@@ -46,7 +46,7 @@
    <property name="permissions">
     <element value="Plone Site Setup: Overview"/>
    </property>
-   <property name="visible">True</property>
+   <property name="visible">False</property>
   </object>
  </object>
  <object name="user" meta_type="CMF Action Category">
