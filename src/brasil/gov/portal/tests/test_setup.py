@@ -344,6 +344,10 @@ class TestUpgrade(unittest.TestCase):
             'unidade-organizacional/26'
         )
 
+        # A action de Configuracoes do Site deve estar desabilitada
+        site_actions = self.portal['portal_actions'].site_actions
+        self.assertIs(site_actions.plone_setup.visible, False)
+
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
         Testa se todos os upgradeSteps de brasil.gov.portal estão nas variáveis

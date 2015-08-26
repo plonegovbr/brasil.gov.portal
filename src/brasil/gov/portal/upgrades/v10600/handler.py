@@ -31,3 +31,8 @@ def apply_profile(context):
     profile = 'profile-brasil.gov.portal.upgrades.v10600:default'
     loadMigrationProfile(context, profile)
     logger.info('Atualizado para versao 10600')
+
+
+def disable_action_site_actions_plone_setup(context):
+    site_actions = api.portal.get_tool('portal_actions').site_actions
+    site_actions.plone_setup.visible = False

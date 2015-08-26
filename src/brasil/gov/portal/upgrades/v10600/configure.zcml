@@ -37,6 +37,12 @@
         handler=".handler.apply_profile"
         />
 
+    <gs:upgradeStep
+        title="Desabilita a action Configuracoes do Site"
+        description="Desabilita o item Configuracoes do Site do header do site"
+        handler=".handler.disable_action_site_actions_plone_setup"
+        />
+
   </gs:upgradeSteps>
 
 </configure>
