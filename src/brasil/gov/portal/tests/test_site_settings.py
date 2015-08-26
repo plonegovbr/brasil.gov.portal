@@ -1,4 +1,4 @@
-# -*- courl_orgaoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 
 import unittest
