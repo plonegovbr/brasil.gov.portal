@@ -36,3 +36,4 @@ def apply_profile(context):
 def disable_action_site_actions_plone_setup(context):
     site_actions = api.portal.get_tool('portal_actions').site_actions
     site_actions.plone_setup.visible = False
+    logger.info('Action de Configuracoes do Site desabilitada')
