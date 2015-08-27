@@ -314,6 +314,12 @@ class TestUpgrade(unittest.TestCase):
         return [v for v in from_manager if v.__name__ in new_ids]
 
     def test_to10600_execution(self):
+        # A action de Configuracoes do Site deve estar visivel para os testes
+        pa = self.portal['portal_actions']
+        if not pa['site_actions'].plone_setup.visible:
+            pa['site_actions'].plone_setup.visible = True
+        self.assertIs(pa['site_actions'].plone_setup.visible, True)
+
         self.execute_upgrade(u'10500', u'10600')
 
         formats = json.loads(getUtility(ITinyMCE).formats)
@@ -344,9 +350,9 @@ class TestUpgrade(unittest.TestCase):
             'unidade-organizacional/26'
         )
 
-        # A action de Configuracoes do Site deve estar desabilitada
-        site_actions = self.portal['portal_actions'].site_actions
-        self.assertIs(site_actions.plone_setup.visible, False)
+        # A action de Configuracoes do Site deve ser desabilitada pelo
+        # upgrade step.
+        self.assertIs(pa['site_actions'].plone_setup.visible, False)
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
