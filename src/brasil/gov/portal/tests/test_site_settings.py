@@ -44,4 +44,4 @@ class SiteSettingsTestCase(unittest.TestCase):
     def test_action_site_actions_plone_setup_disabled(self):
         pc = self.portal['portal_actions']
         site_actions = pc['site_actions']
-        self.assertIs(site_actions.plone_setup.visible, False)
+        self.assertFalse(site_actions.plone_setup.visible)

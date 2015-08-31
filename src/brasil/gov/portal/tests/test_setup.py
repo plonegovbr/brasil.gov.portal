@@ -318,7 +318,7 @@ class TestUpgrade(unittest.TestCase):
         pa = self.portal['portal_actions']
         if not pa['site_actions'].plone_setup.visible:
             pa['site_actions'].plone_setup.visible = True
-        self.assertIs(pa['site_actions'].plone_setup.visible, True)
+        self.assertTrue(pa['site_actions'].plone_setup.visible)
 
         self.execute_upgrade(u'10500', u'10600')
 
@@ -352,7 +352,7 @@ class TestUpgrade(unittest.TestCase):
 
         # A action de Configuracoes do Site deve ser desabilitada pelo
         # upgrade step.
-        self.assertIs(pa['site_actions'].plone_setup.visible, False)
+        self.assertFalse(pa['site_actions'].plone_setup.visible)
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
