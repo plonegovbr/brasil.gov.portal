@@ -6,6 +6,10 @@ cache:
   - eggs
 matrix:
   fast_finish: true
+before_install:
+- npm install csslint jshint
+- which csslint
+- which jshint
 install:
 - python bootstrap.py
 - bin/buildout annotate
