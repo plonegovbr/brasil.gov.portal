@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.0.6 (unreleased)
+1.1 (2015-09-03)
 ^^^^^^^^^^^^^^^^^^
 
 * Desabilitando o item "Configurações do Site" do header do site.
