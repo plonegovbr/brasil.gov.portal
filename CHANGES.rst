@@ -1,6 +1,12 @@
 Histórico de Alterações
 -------------------------
 
+1.2 (unreleased)
+^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.1 (2015-09-03)
 ^^^^^^^^^^^^^^^^^^
 
