@@ -13,16 +13,17 @@ class OverviewControlPanelTest(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
+        self.request = self.layer['request']
         # Como nao eh um teste funcional, este objeto
         # REQUEST precisa ser anotado com o browser layer
-        alsoProvides(self.portal.REQUEST, IBrasilGov)
+        alsoProvides(self.request, IBrasilGov)
 
     def test_overview_controlpanel_view(self):
         """Validamos se o control panel esta acessivel"""
         view = api.content.get_view(
             name='overview-controlpanel',
             context=self.portal,
-            request=self.portal.REQUEST,
+            request=self.request,
         )
         view = view.__of__(self.portal)
         self.assertTrue(view())
@@ -32,11 +33,8 @@ class OverviewControlPanelTest(unittest.TestCase):
         view = api.content.get_view(
             name='overview-controlpanel',
             context=self.portal,
-            request=self.portal.REQUEST,
+            request=self.request,
         )
         view = view.__of__(self.portal)
         content = view()
-        self.assertIn(
-            u'Portal Padrão 1.0.',
-            content
-        )
+        self.assertIn(u'Portal Padrão 1.', content)
