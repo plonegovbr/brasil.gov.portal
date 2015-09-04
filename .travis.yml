@@ -4,6 +4,7 @@ sudo: false
 cache:
   directories:
   - eggs
+  - parts/node
 matrix:
   fast_finish: true
 install:
