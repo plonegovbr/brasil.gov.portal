@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.1,1 (unreleased)
+1.1.1 (2015-09-04)
 ^^^^^^^^^^^^^^^^^^
 
 - Corrige release quebrado.
