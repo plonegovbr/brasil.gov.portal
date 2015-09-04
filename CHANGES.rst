@@ -1,14 +1,15 @@
 Histórico de Alterações
 -------------------------
 
-1.2 (unreleased)
-^^^^^^^^^^^^^^^^
+1.1,1 (unreleased)
+^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige release quebrado.
+  [hvelarde]
 
 
 1.1 (2015-09-03)
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 * Desabilitando o item "Configurações do Site" do header do site.
   Ver issue https://github.com/plonegovbr/brasil.gov.portal/issues/212.
