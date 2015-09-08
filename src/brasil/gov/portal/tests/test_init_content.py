@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
-from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.testing import INITCONTENT_TESTING
 from plone import api
+from plone.app.contenttypes.interfaces import IFolder
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.folder.default import DefaultOrdering
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
+
 
 import unittest
 
@@ -100,6 +103,26 @@ class InitContentTestCase(unittest.TestCase):
         pasta.moveObjectsToBottom([oId])
         self.assertEqual(oId, pasta.objectIds()[-1],
                          u'Ordenação não aplicada')
+
+    def test_folders_in_root_are_plone_default_ordering(self):
+        """
+        Após a ordenação de pastas no upgradeStep 10600 complementando o 5000,
+        para que todos os diretórios do root tenham a ordenação default do
+        Plone, é preciso garantir esse comportamento em todos os diretórios.
+
+        Esse teste hoje não retorna nada, é para garantir que, caso no futuro
+
+        self.applyProfile(portal, 'brasil.gov.portal:initcontent')
+
+        por exemplo seja utilizado em testing.py e que algum diretório criado
+        na raiz dessa forma não tenha a ordenação padrão.
+        """
+        all_ordered = all([
+            isinstance(self.portal[pasta_id].getOrdering(), DefaultOrdering)
+            for pasta_id in self.portal.objectIds()
+            if IFolder.providedBy(self.portal[pasta_id])
+        ])
+        self.assertTrue(all_ordered)
 
     def test_default_portlets(self):
         # Os portlets estao configurados corretamente?
