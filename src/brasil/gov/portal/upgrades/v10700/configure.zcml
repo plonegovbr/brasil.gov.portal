@@ -31,6 +31,12 @@
         handler=".handler.ordernacao_pastas"
         />
 
+    <gs:upgradeStep
+        title="Atualiza produtos de terceiros"
+        description="Executa os upgrade steps de outros produtos."
+        handler=".handler.atualiza_produtos"
+        />
+
   </gs:upgradeSteps>
 
 </configure>

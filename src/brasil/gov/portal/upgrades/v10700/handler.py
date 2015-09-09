@@ -10,6 +10,24 @@ import logging
 logger = logging.getLogger(PROJECTNAME)
 
 
+def atualiza_produtos_terceiros(context):
+    """ Atualiza os profiles de produtos de terceiros."""
+    profiles = [
+        'profile-brasil.gov.agenda.upgrades.v4003:default',
+        'profile-brasil.gov.barra.upgrades.v1010:default',
+        'profile-brasil.gov.portlets.upgrades.1001:default',
+        'profile-brasil.gov.tiles.upgrades.v3000:default',
+        'profile-collective.cover.upgrades.v12:default',
+        'profile-collective.nitf.upgrades.v2000:default',
+        'profile-collective.polls.upgrades.v3:default',
+        'profile-sc.embedder.upgrades.v1001:default',
+        'profile-sc.social.like.upgrades.v3020:default',
+    ]
+    for profile in profiles:
+        loadMigrationProfile(context, profile)
+    logger.info('Produtos de terceiros foram atualizados')
+
+
 def ordernacao_pastas(context):
     """ Ajusta a ordenacao das pastas da raiz do portal setando ordenação
         padrão Plone. Similar ao ordenacao_pastas feito no upgradeStep 5000, só
