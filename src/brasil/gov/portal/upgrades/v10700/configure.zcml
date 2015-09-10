@@ -32,6 +32,12 @@
         />
 
     <gs:upgradeStep
+	title="Atualização de conteúdo para collective.cover."
+	description="Correção para novas versões do collective.cover."
+	handler=".handler.corrige_conteudo_collectivecover"
+	/>
+
+    <gs:upgradeStep
         title="Atualiza produtos de terceiros"
         description="Executa os upgrade steps de outros produtos."
         handler=".handler.atualiza_produtos_terceiros"
