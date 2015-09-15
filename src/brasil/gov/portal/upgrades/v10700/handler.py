@@ -7,6 +7,7 @@ from plone.app.upgrade.utils import loadMigrationProfile
 from plone.folder.default import DefaultOrdering
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+from Products.CMFCore.utils import getToolByName
 
 import json
 import logging
@@ -15,21 +16,35 @@ import logging
 logger = logging.getLogger(PROJECTNAME)
 
 
+def _upgrade_profile(context, profile_id):
+    setup = getToolByName(context, 'portal_setup')
+    for upgrades in setup.listUpgrades(profile_id):  # get uninstalled upgrades
+        for upgrade in upgrades:
+            if upgrade['done']:
+                continue
+
+            step = upgrade['step']
+            step.doStep(setup)
+            msg = 'Ran upgrade step %s for profile %s' % (step.title,
+                                                          profile_id)
+            logger.info(msg)
+
+
 def atualiza_produtos_terceiros(context):
     """ Atualiza os profiles de produtos de terceiros."""
-    profiles = [
-        'profile-brasil.gov.agenda.upgrades.v4003:default',
-        'profile-brasil.gov.barra.upgrades.v1010:default',
-        'profile-brasil.gov.portlets.upgrades.1001:default',
-        'profile-brasil.gov.tiles.upgrades.v3000:default',
-        'profile-collective.cover.upgrades.v12:default',
-        'profile-collective.nitf.upgrades.v2000:default',
-        'profile-collective.polls.upgrades.v3:default',
-        'profile-sc.embedder.upgrades.v1001:default',
-        'profile-sc.social.like.upgrades.v3020:default',
-    ]
-    for profile in profiles:
-        loadMigrationProfile(context, profile)
+    profiles = (
+        'brasil.gov.agenda:default',
+        'brasil.gov.barra:default',
+        'brasil.gov.portlets:default',
+        'brasil.gov.tiles:default',
+        'collective.cover:default',
+        'collective.nitf:default',
+        'collective.polls:default',
+        'sc.embedder:default',
+        'sc.social.like:default',
+    )
+    for profile_id in profiles:
+        _upgrade_profile(context, profile_id)
     logger.info('Produtos de terceiros foram atualizados')
 
 
