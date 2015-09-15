@@ -7,7 +7,6 @@ from plone.app.upgrade.utils import loadMigrationProfile
 from plone.folder.default import DefaultOrdering
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
-from Products.CMFCore.utils import getToolByName
 
 import json
 import logging
@@ -16,18 +15,23 @@ import logging
 logger = logging.getLogger(PROJECTNAME)
 
 
-def _upgrade_profile(context, profile_id):
-    setup = getToolByName(context, 'portal_setup')
-    for upgrades in setup.listUpgrades(profile_id):  # get uninstalled upgrades
+def _upgrade_profile(setup, profile_id):
+    step = None
+    # get non-installed upgrades
+    for upgrades in setup.listUpgrades(profile_id):
         for upgrade in upgrades:
             if upgrade['done']:
                 continue
 
             step = upgrade['step']
             step.doStep(setup)
-            msg = 'Ran upgrade step %s for profile %s' % (step.title,
-                                                          profile_id)
-            logger.info(msg)
+            logger.info('Ran upgrade step %s for profile %s' % (
+                step.title,
+                profile_id
+            ))
+
+    if step and step.dest is not None and step.checker is None:
+        setup.setLastVersionForProfile(profile_id, step.dest)
 
 
 def atualiza_produtos_terceiros(context):
@@ -46,7 +50,6 @@ def atualiza_produtos_terceiros(context):
     for profile_id in profiles:
         _upgrade_profile(context, profile_id)
     logger.info('Produtos de terceiros foram atualizados')
-
 
 def ordernacao_pastas(context):
     """ Ajusta a ordenacao das pastas da raiz do portal setando ordenação
