@@ -8,30 +8,13 @@ from plone.folder.default import DefaultOrdering
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 
+from brasil.gov.portal.upgrades import upgrade_profile
+
 import json
 import logging
 
 
 logger = logging.getLogger(PROJECTNAME)
-
-
-def _upgrade_profile(setup, profile_id):
-    step = None
-    # get non-installed upgrades
-    for upgrades in setup.listUpgrades(profile_id):
-        for upgrade in upgrades:
-            if upgrade['done']:
-                continue
-
-            step = upgrade['step']
-            step.doStep(setup)
-            logger.info('Ran upgrade step %s for profile %s' % (
-                step.title,
-                profile_id
-            ))
-
-    if step and step.dest is not None and step.checker is None:
-        setup.setLastVersionForProfile(profile_id, step.dest)
 
 
 def atualiza_produtos_terceiros(context):
@@ -48,8 +31,10 @@ def atualiza_produtos_terceiros(context):
         'sc.social.like:default',
     )
     for profile_id in profiles:
-        _upgrade_profile(context, profile_id)
+        upgrade_profile(context, profile_id)
+
     logger.info('Produtos de terceiros foram atualizados')
+
 
 def ordernacao_pastas(context):
     """ Ajusta a ordenacao das pastas da raiz do portal setando ordenação
@@ -149,7 +134,8 @@ def corrige_conteudo_collectivecover(context):
 
     for cover in covers:
         obj = cover.getObject()
-        obj.cover_layout = _corrige_conteudo_collectivecover(obj, obj.cover_layout)
+        obj.cover_layout = _corrige_conteudo_collectivecover(obj,
+                                                             obj.cover_layout)
         logger.info('"{0}" was updated'.format(obj.absolute_url_path()))
 
 
