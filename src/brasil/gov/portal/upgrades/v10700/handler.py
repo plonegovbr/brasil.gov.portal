@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.upgrades import upgrade_profile
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICover
 from plone.app.contenttypes.interfaces import IFolder
@@ -7,8 +8,6 @@ from plone.app.upgrade.utils import loadMigrationProfile
 from plone.folder.default import DefaultOrdering
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
-
-from brasil.gov.portal.upgrades import upgrade_profile
 
 import json
 import logging
