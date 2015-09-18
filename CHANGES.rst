@@ -4,7 +4,8 @@ Histórico de Alterações
 1.1.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Corrige conteúdo inicial para novas versões do collective.cover. (closes `#221`_ `#229`_).
+  [rodfersou, winstonf88]
 
 
 1.1.2 (2015-09-18)
@@ -393,3 +394,5 @@ Histórico de Alterações
 .. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
+.. _`#221`: https://github.com/plonegovbr/brasil.gov.portal/issues/221
+.. _`#229`: https://github.com/plonegovbr/brasil.gov.portal/issues/229
