@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.upgrades import upgrade_profile
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICover
 from plone.app.contenttypes.interfaces import IFolder
@@ -13,6 +14,26 @@ import logging
 
 
 logger = logging.getLogger(PROJECTNAME)
+
+
+def atualiza_produtos_terceiros(context):
+    """ Atualiza os profiles de produtos de terceiros."""
+    profiles = (
+        'brasil.gov.agenda:default',
+        'brasil.gov.barra:default',
+        'brasil.gov.portlets:default',
+        'brasil.gov.tiles:default',
+        'brasil.gov.vcge:default',
+        'collective.cover:default',
+        'collective.nitf:default',
+        'collective.polls:default',
+        'sc.embedder:default',
+        'sc.social.like:default',
+    )
+    for profile_id in profiles:
+        upgrade_profile(context, profile_id)
+
+    logger.info('Produtos de terceiros foram atualizados')
 
 
 def ordernacao_pastas(context):
@@ -113,7 +134,8 @@ def corrige_conteudo_collectivecover(context):
 
     for cover in covers:
         obj = cover.getObject()
-        obj.cover_layout = _corrige_conteudo_collectivecover(obj, obj.cover_layout)
+        obj.cover_layout = _corrige_conteudo_collectivecover(obj,
+                                                             obj.cover_layout)
         logger.info('"{0}" was updated'.format(obj.absolute_url_path()))
 
 
