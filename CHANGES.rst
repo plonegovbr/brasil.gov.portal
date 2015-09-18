@@ -8,7 +8,7 @@ Histórico de Alterações
   [winstonf88]
 
 * Corrige conteúdo inicial para novas versões do collective.cover. (closes `#216`_).
-  [rodfersou]
+  [rodfersou, winstonf88]
 
 * Todas as pastas da raiz precisam ter a ordenação padrão do Plone. (closes `#190`_).
   [idgserpro]
@@ -386,3 +386,4 @@ Histórico de Alterações
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
 .. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
+.. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
