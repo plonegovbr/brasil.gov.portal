@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.1.2 (unreleased)
+1.1.2 (2015-09-18)
 ^^^^^^^^^^^^^^^^^^
 
 * Executa upgrade das dependências do brasil.gov.portal. (closes `#218`_).
