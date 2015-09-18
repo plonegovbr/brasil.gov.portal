@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Executa upgrade das dependências do brasil.gov.portal. (closes `#218`_).
+  [winstonf88]
+
 * Corrige conteúdo inicial para novas versões do collective.cover. (closes `#216`_).
   [rodfersou]
 

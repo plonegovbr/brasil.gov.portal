@@ -383,11 +383,22 @@ class TestUpgrade(unittest.TestCase):
             pasta = self.portal[pasta_id]
             self.assertFalse(isinstance(pasta.getOrdering(), DefaultOrdering))
 
+        self.st.setLastVersionForProfile('brasil.gov.tiles:default', '2000')
+        self.assertEqual(
+            len(self.st.listUpgrades('brasil.gov.tiles:default')),
+            1
+        )
+
         self.execute_upgrade(u'10600', u'10700')
 
         for pasta_id in pastas:
             pasta = self.portal[pasta_id]
             self.assertTrue(isinstance(pasta.getOrdering(), DefaultOrdering))
+
+        self.assertEqual(
+            len(self.st.listUpgrades('brasil.gov.tiles:default')),
+            0
+        )
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
