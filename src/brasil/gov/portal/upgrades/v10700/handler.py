@@ -23,6 +23,7 @@ def atualiza_produtos_terceiros(context):
         'brasil.gov.barra:default',
         'brasil.gov.portlets:default',
         'brasil.gov.tiles:default',
+        'brasil.gov.vcge:default',
         'collective.cover:default',
         'collective.nitf:default',
         'collective.polls:default',
