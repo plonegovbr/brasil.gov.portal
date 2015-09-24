@@ -3,6 +3,7 @@ from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.upgrades import upgrade_profile
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICover
+from plone import api
 from plone.app.contenttypes.interfaces import IFolder
 from plone.app.upgrade.utils import loadMigrationProfile
 from plone.folder.default import DefaultOrdering
@@ -114,14 +115,26 @@ def _corrige_conteudo_collectivecover(obj, layout, is_child=False):
         return fixed_layout.decode('utf-8')
 
 
+def _reindex_covers():
+    """Reindexa as capas do conteúdo inicial."""
+    catalog = api.portal.get_tool(name='portal_catalog')
+    covers = catalog(portal_type='collective.cover.content')
+    for brain in covers:
+        cover = brain.getObject()
+        cover.reindexObject()
+
+
 def corrige_conteudo_collectivecover(context):
     """ Verifica se o campo css_class não é uma string válida,
         e substitui por uma string vazia.
     """
-    logger.info('CSS classes will be fixed from Cover layouts.')
+    # Initial content was not indexed correctly, reindex all covers
+    _reindex_covers()
+    logger.info('All covers were reindexed.')
     # Make sure collective.cover is upgraded before continuing
     upgrade_profile(context, 'collective.cover:default')
 
+    logger.info('CSS classes will be fixed from Cover layouts.')
     # Fix registry layouts
     registry = getUtility(IRegistry)
     settings = registry.forInterface(ICoverSettings)
