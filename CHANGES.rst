@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige a execução do upgrade collective.cover. (closes `#225`_)
+  [winstonf88]
+
 * Corrige conteúdo inicial para novas versões do collective.cover. (closes `#221`_ `#229`_).
   [rodfersou, winstonf88]
 

@@ -119,6 +119,9 @@ def corrige_conteudo_collectivecover(context):
         e substitui por uma string vazia.
     """
     logger.info('CSS classes will be fixed from Cover layouts.')
+    # Make sure collective.cover is upgraded before continuing
+    upgrade_profile(context, 'collective.cover:default')
+
     # Fix registry layouts
     registry = getUtility(IRegistry)
     settings = registry.forInterface(ICoverSettings)
