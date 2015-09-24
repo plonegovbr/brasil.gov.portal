@@ -4,6 +4,10 @@ Histórico de Alterações
 1.1.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Adiciona Products.PloneHotfix20150910 como dependência do pacote. (closes `#232`_)
+  Ver: https://pypi.python.org/pypi/Products.PloneHotfix20150910
+  [idgserpro]
+
 * Corrige a execução do upgrade collective.cover. (closes `#225`_)
   [winstonf88]
 
@@ -399,3 +403,4 @@ Histórico de Alterações
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
 .. _`#221`: https://github.com/plonegovbr/brasil.gov.portal/issues/221
 .. _`#229`: https://github.com/plonegovbr/brasil.gov.portal/issues/229
+.. _`#232`: https://github.com/plonegovbr/brasil.gov.portal/issues/232
