@@ -81,6 +81,7 @@ setup(
         'Products.Doormat>0.7',
         'Products.GenericSetup',
         'Products.PloneFormGen',
+        'Products.PloneHotfix20150910',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',
         'sc.contentrules.metadata',
