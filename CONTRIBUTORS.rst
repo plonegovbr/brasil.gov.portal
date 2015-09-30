@@ -1,8 +1,7 @@
 Contribuidores
 -----------------
 
-O ``brasil.gov.portal`` não seria possível sem a contribuição das
-seguintes pessoas:
+O ``brasil.gov.portal`` não seria possível sem a contribuição das seguintes pessoas:
 
 - André Nogueira
 - Cleber J. Santos
@@ -12,6 +11,7 @@ seguintes pessoas:
 - Felipe Duardo
 - Rennan Rodrigues
 - Rodrigo Ferreira de Souza
+- Winston Ferreira
 
 Para os testes do tipo áudio utilizamos o arquivo disponível no `Wikimedia Commons <http://commons.wikimedia.org/wiki/File:Thunder.ogg>`_
 
