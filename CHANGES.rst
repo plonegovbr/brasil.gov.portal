@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.1.3 (unreleased)
+1.1.3 (2015-09-30)
 ^^^^^^^^^^^^^^^^^^
 
 * Reindexa capas para corrigir erro de consulta no catalog (closes `#226`_).
