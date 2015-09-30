@@ -4,30 +4,29 @@ Histórico de Alterações
 1.1.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-* Reindexa capas para corrigir erro de consulta no catalog. (closes `#226`_).
+* Reindexa capas para corrigir erro de consulta no catalog (closes `#226`_).
   [winstonf88]
 
-* Adiciona Products.PloneHotfix20150910 como dependência do pacote. (closes `#232`_)
-  Ver: https://pypi.python.org/pypi/Products.PloneHotfix20150910
+* Adiciona `Products.PloneHotfix20150910 <https://pypi.python.org/pypi/Products.PloneHotfix20150910>`_ como dependência do pacote (closes `#232`_).
   [idgserpro]
 
-* Corrige a execução do upgrade collective.cover. (closes `#225`_)
+* Corrige a execução do upgrade collective.cover (closes `#225`_).
   [winstonf88]
 
-* Corrige conteúdo inicial para novas versões do collective.cover. (closes `#221`_ `#229`_).
+* Corrige conteúdo inicial para novas versões do collective.cover (closes `#221`_, `#229`_).
   [rodfersou, winstonf88]
 
 
 1.1.2 (2015-09-18)
 ^^^^^^^^^^^^^^^^^^
 
-* Executa upgrade das dependências do brasil.gov.portal. (closes `#218`_).
+* Executa upgrade das dependências do brasil.gov.portal (closes `#218`_).
   [winstonf88]
 
-* Corrige conteúdo inicial para novas versões do collective.cover. (closes `#216`_).
+* Corrige conteúdo inicial para novas versões do collective.cover (closes `#216`_).
   [rodfersou, winstonf88]
 
-* Todas as pastas da raiz precisam ter a ordenação padrão do Plone. (closes `#190`_).
+* Todas as pastas da raiz precisam ter a ordenação padrão do Plone (closes `#190`_).
   [idgserpro]
 
 
@@ -74,9 +73,9 @@ Histórico de Alterações
   [idgserpro]
 * Corrige css de impressão, colocando texto como justificado. Alguns documentos
   oficiais que são impressos nos portais estão tendo problemas em juntas
-  comerciais por não estarem com o texto alinhado na forma "justificada". `#161`_
+  comerciais por não estarem com o texto alinhado na forma "justificada" (fixes `#161`_).
   [idgserpro]
-* Viabiliza uso de "tachado" e "sublinhado" no editor. (closes `#175`_)
+* Viabiliza uso de "tachado" e "sublinhado" no editor (closes `#175`_).
   [idgserpro]
 * Adiciona brasil.gov.portlets como dependência de Portal Padrão.
   [dbarbato]
@@ -109,12 +108,12 @@ Histórico de Alterações
   [ericof]
 * Adiciona versão do Portal Padrão à página do Painel de controle.
   [ericof]
-* Corrige css de impressão. (closes `#161`_)
+* Corrige css de impressão (closes `#161`_).
   [idgserpro]
-* Corrige versão do metadata.xml. (closes `#173`_)
+* Corrige versão do metadata.xml (closes `#173`_).
   [idgserpro]
 * Ajusta bug no popup do Products.TinyMCE que impedia de selecionar um item
-  para se tornar link. (closes `#159`_)
+  para se tornar link (closes `#159`_).
   [idgserpro]
 * Ajusta bug de coleções.
   [dbarbato]
