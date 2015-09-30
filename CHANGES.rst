@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Reindexa capas para corrigir erro de consulta no catalog. (closes `#226`_).
+  [winstonf88]
+
 * Adiciona Products.PloneHotfix20150910 como dependência do pacote. (closes `#232`_)
   Ver: https://pypi.python.org/pypi/Products.PloneHotfix20150910
   [idgserpro]
@@ -402,5 +405,7 @@ Histórico de Alterações
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
 .. _`#221`: https://github.com/plonegovbr/brasil.gov.portal/issues/221
+.. _`#225`: https://github.com/plonegovbr/brasil.gov.portal/issues/225
+.. _`#226`: https://github.com/plonegovbr/brasil.gov.portal/issues/226
 .. _`#229`: https://github.com/plonegovbr/brasil.gov.portal/issues/229
 .. _`#232`: https://github.com/plonegovbr/brasil.gov.portal/issues/232
