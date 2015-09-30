@@ -17,7 +17,7 @@ Requisitos
 
 Para uso deste pacote, seu site deve ter sido construído com:
 
-    * Plone 4.3.3 ou superior (http://plone.org/products/plone)
+    * Plone 4.3.3
 
 Recomendamos a leitura do `documento <http://identidade-digital-de-governo-plone.readthedocs.org/en/latest/>`_ sobre instalação deste pacote.
 
