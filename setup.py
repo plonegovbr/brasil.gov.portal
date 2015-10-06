@@ -82,6 +82,7 @@ setup(
         'Products.GenericSetup',
         'Products.PloneFormGen',
         'Products.PloneHotfix20150910',
+        'Products.TinyMCE',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',
         'sc.contentrules.metadata',
