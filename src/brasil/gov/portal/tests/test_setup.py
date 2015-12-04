@@ -422,6 +422,30 @@ class TestUpgrade(unittest.TestCase):
         del registry.records[id_esconde_autor]
         del registry.records[id_esconde_data]
 
+        layouts = {
+            u' Layout vazio': (
+                u'[{"type": "row", "children": [{"type": "group", '
+                u'"data":{"column-size":16, "layout-type":"column"}, '
+                u'"roles": ["Manager"]}]}]'
+            ),
+            u'Destaques': (
+                u'[{"type": "row", "children": [{"data": {"layout-type": '
+                u'"column", "column-size": 16}, "type": "group", '
+                u'"children": [{"tile-type": "em_destaque", "type": "tile", '
+                u'"id": "em_destaque_tile_destaque"}], '
+                u'"roles": ["Manager"]}]}]'
+            ),
+        }
+        api.portal.set_registry_record(
+            name='collective.cover.controlpanel.ICoverSettings.layouts',
+            value=layouts
+        )
+
+        layout_registry = api.portal.get_registry_record(
+            name='collective.cover.controlpanel.ICoverSettings.layouts'
+        )
+        self.assertDictEqual(layout_registry, layouts)
+
         self.execute_upgrade(u'10700', u'10800')
 
         # Verifica se o configulet 'portal' foi instalado.
@@ -437,6 +461,44 @@ class TestUpgrade(unittest.TestCase):
         # Verifica se o registro esconde_data existe.
         self.assertTrue(hasattr(settings, 'esconde_data'))
         self.assertEqual(settings.esconde_data, False)
+
+        layouts = {
+            'Layout vazio': [
+                {
+                    'type': 'row',
+                    'children': [
+                        {
+                            'type': 'group',
+                            'column-size': 16,
+                            'roles': ['Manager']
+                        }
+                    ]
+                },
+            ],
+            'Destaques': [
+                {
+                    'type': 'row',
+                    'children': [{
+                        'column-size': 16,
+                        'type': 'group',
+                        'children': [
+                            {
+                                'tile-type': 'em_destaque',
+                                'type': 'tile',
+                                'id': 'em_destaque_tile_destaque'
+                            }
+                        ],
+                        'roles': ['Manager']
+                    }]
+                }
+            ]
+        }
+
+        layout_registry = api.portal.get_registry_record(
+            name='collective.cover.controlpanel.ICoverSettings.layouts'
+        )
+        for name, layout in layouts.items():
+            self.assertListEqual(json.loads(layout_registry[name]), layout)
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
@@ -458,8 +520,7 @@ class TestUpgrade(unittest.TestCase):
         self.assertTrue(all(upgrade in HIDDEN_PROFILES
                             for upgrade in upgrades_hidden_profiles))
 
-        self.assertTrue(all(upgrade in DEPS
-                            for upgrade in upgrades_deps))
+        self.assertTrue(all(upgrade in DEPS for upgrade in upgrades_deps))
 
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
         """

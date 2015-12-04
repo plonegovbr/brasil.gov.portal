@@ -57,6 +57,16 @@ class ContentTypesTestCase(unittest.TestCase):
         for t in types:
             self.assertTrue(t in searchable_content_types)
 
+    def test_cover_insert(self):
+        with api.env.adopt_roles(roles=['Manager']):
+            cover = api.content.create(
+                container=self.portal,
+                type='collective.cover.content',
+                title='Cover Insert Test',
+                template_layout='Destaques',
+            )
+        self.assertTrue(cover)
+
     def test_poll_installed(self):
         self.assertTrue('collective.polls.poll' in self.pt.objectIds())
 

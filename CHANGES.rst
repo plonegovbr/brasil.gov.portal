@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige erro na criação de capas (closes `#242`_).
+  [winstonf88]
+
 * Corrige falha no carregamento dos destaques com visão padrão (closes `#167`_).
   [winstonf88]
 
@@ -440,4 +443,5 @@ Histórico de Alterações
 .. _`#229`: https://github.com/plonegovbr/brasil.gov.portal/issues/229
 .. _`#232`: https://github.com/plonegovbr/brasil.gov.portal/issues/232
 .. _`#241`: https://github.com/plonegovbr/brasil.gov.portal/issues/241
+.. _`#242`: https://github.com/plonegovbr/brasil.gov.portal/issues/242
 .. _`#275`: https://github.com/plonegovbr/brasil.gov.portal/issues/275
