@@ -15,8 +15,8 @@
       </value_type>
     </field>
     <value purge="true">
-      <element key=" Layout vazio">[{"type": "row", "children": [{"type": "group", "data":{"column-size":16, "layout-type":"column"}, "roles": ["Manager"]}]}]</element>
-      <element key="Destaques">[{"type": "row", "children": [{"data": {"layout-type": "column", "column-size": 16}, "type": "group", "children": [{"tile-type": "em_destaque", "type": "tile", "id": "em_destaque_tile_destaque"}], "roles": ["Manager"]}]}]</element>
+      <element key="Layout vazio">[{"type": "row", "children": [{"type": "group", "column-size": 16, "roles": ["Manager"]}]}]</element>
+      <element key="Destaques">[{"type": "row", "children": [{"column-size": 16, "type": "group", "children": [{"tile-type": "em_destaque", "type": "tile", "id": "em_destaque_tile_destaque"}], "roles": ["Manager"]}]}]</element>
     </value>
   </record>
 
