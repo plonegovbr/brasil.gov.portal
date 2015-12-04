@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige erro de exibição da data na visão sumária (closes `#157`_).
+  [winstonf88]
+
 * Corrige erro na criação de capas (closes `#242`_).
   [winstonf88]
 
@@ -425,6 +428,7 @@ Histórico de Alterações
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
 .. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
 .. _`#156`: https://github.com/plonegovbr/brasil.gov.portal/issues/156
+.. _`#157`: https://github.com/plonegovbr/brasil.gov.portal/issues/157
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
 .. _`#161`: https://github.com/plonegovbr/brasil.gov.portal/issues/161
 .. _`#167`: https://github.com/plonegovbr/brasil.gov.portal/issues/167
