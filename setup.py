@@ -90,10 +90,12 @@ setup(
         'sc.social.like',
         'setuptools',
         'transmogrify.dexterity',
+        'z3c.jbot',
         'z3c.unconfigure',
         'zope.component',
         'zope.interface',
         'zope.schema',
+        'plone4.csrffixes',
     ],
     extras_require={
         'test': [

@@ -4,12 +4,14 @@ from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
+from brasil.gov.portal.controlpanel.portal import ISettingsPortal
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
-from plone.folder.default import DefaultOrdering
 from plone.browserlayer.utils import registered_layers
+from plone.folder.default import DefaultOrdering
+from plone.registry.interfaces import IRegistry
 from Products.Five.browser import BrowserView as View
 from Products.GenericSetup.upgrade import listUpgradeSteps
 from Products.TinyMCE.interfaces.utility import ITinyMCE
@@ -89,6 +91,7 @@ class TestUpgrade(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
+        self.pc = self.portal['portal_controlpanel']
         self.qi = self.portal['portal_quickinstaller']
         self.st = self.portal['portal_setup']
         self.pp = self.portal['portal_properties']
@@ -298,6 +301,10 @@ class TestUpgrade(unittest.TestCase):
         step = self.list_upgrades(u'10600', u'10700')
         self.assertEqual(len(step), 1)
 
+    def test_to10800_available(self):
+        step = self.list_upgrades(u'10700', u'10800')
+        self.assertEqual(len(step), 1)
+
     def _get_viewlets_from_manager(self, manager):
         """Returns all viewlets from a manager."""
         request = self.portal.REQUEST
@@ -399,6 +406,37 @@ class TestUpgrade(unittest.TestCase):
             len(self.st.listUpgrades('brasil.gov.tiles:default')),
             0
         )
+
+    def test_to10800_execution(self):
+        # Remove configulet 'portal' para simular estado anterior ao upgrade.
+        self.pc.unregisterConfiglet('portal')
+        configlets = self.pc.enumConfiglets(group='Products')
+        configlets = [a['id'] for a in configlets]
+        self.assertNotIn('portal', configlets)
+        # Remove records para simular estado anterior ao upgrade.
+        registry = getUtility(IRegistry)
+        id_esconde_autor = 'brasil.gov.portal.controlpanel.portal.'\
+                           'ISettingsPortal.esconde_autor'
+        id_esconde_data = 'brasil.gov.portal.controlpanel.portal.'\
+                          'ISettingsPortal.esconde_data'
+        del registry.records[id_esconde_autor]
+        del registry.records[id_esconde_data]
+
+        self.execute_upgrade(u'10700', u'10800')
+
+        # Verifica se o configulet 'portal' foi instalado.
+        configlets = self.pc.enumConfiglets(group='Products')
+        configlets = [a['id'] for a in configlets]
+        self.assertIn('portal', configlets)
+
+        # Verifica se o registro esconde_autor existe.
+        settings = registry.forInterface(ISettingsPortal)
+        self.assertTrue(hasattr(settings, 'esconde_autor'))
+        self.assertEqual(settings.esconde_autor, False)
+
+        # Verifica se o registro esconde_data existe.
+        self.assertTrue(hasattr(settings, 'esconde_data'))
+        self.assertEqual(settings.esconde_data, False)
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
