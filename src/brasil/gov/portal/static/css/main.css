@@ -4507,3 +4507,4 @@ não for corrigido.
 #plonebrowser #content {
     position: static !important;
 }
+#contentActionMenus dl.actionMenu.activated dd { z-index: 110; }
