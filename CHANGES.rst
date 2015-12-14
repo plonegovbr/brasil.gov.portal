@@ -4,7 +4,8 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Corrige ícones de redes sociais cortados (closes `#203`_).
+  [winstonf88]
 
 
 1.1.3 (2015-09-30)
@@ -407,6 +408,7 @@ Histórico de Alterações
 .. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
 .. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
+.. _`#203`: https://github.com/plonegovbr/brasil.gov.portal/issues/203
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
 .. _`#221`: https://github.com/plonegovbr/brasil.gov.portal/issues/221
