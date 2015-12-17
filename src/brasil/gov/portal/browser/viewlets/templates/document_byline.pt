@@ -1,7 +1,9 @@
 <div class="documentByLine"
      id="plone-document-byline"
      i18n:domain="plone"
-     tal:condition="view/show">
+     tal:condition="view/show"
+     tal:define="mostra_autor view/mostra_autor;
+                 mostra_data view/mostra_data">
   <span id="lock-icon"
         tal:define="lock_icon view/locked_icon"
         tal:condition="python:lock_icon">
@@ -9,7 +11,7 @@
   </span>
 
   <tal:creator tal:define="creator_short_form view/creator;"
-               tal:condition="creator_short_form">
+               tal:condition="python:creator_short_form and mostra_autor">
   <tal:name tal:define="creator_long_form string:?author=${creator_short_form};
                         creator_is_openid python:'/' in creator_short_form;
                         creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
@@ -26,7 +28,8 @@
   </tal:creator>
 
   <tal:dates define="published view/pub_date;
-                     modified context/ModificationDate">
+                     modified context/ModificationDate;"
+             condition="mostra_data">
   <span class="documentPublished"
         tal:condition="published">
     <span i18n:translate="box_published">
@@ -56,7 +59,9 @@
 
   <span class="contentHistory" id="content-history"
         tal:condition="view/show_history">
+    <tal:traco condition="mostra_data">
     —
+    </tal:traco>
     <a href="#"
        tal:attributes="href string:${here/absolute_url}/@@historyview"
        i18n:translate="label_history">History</a>
