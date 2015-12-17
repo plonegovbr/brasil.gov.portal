@@ -66,3 +66,23 @@ buildout:
 4. Reinicie o Plone
 
 5. Adicione um novo site Plone.
+
+Sobrescrita de traduções do domínio plone
+-----------------------------------------
+
+Se você tem um produto que tem como dependência o brasil.gov.portal e precisa sobrescrever traduções do domínio plone nesse produto, sua diretiva ```<i18n:registerTranslations directory="locales" />``` deve vir antes da diretiva ```<includeDependencies package="." />```, ou de qualquer outra diretiva que carrege o ZCML do brasil.gov.portal. O seu configure.zcml deve ficar assim:
+::
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:five="http://namespaces.zope.org/five"
+        xmlns:i18n="http://namespaces.zope.org/i18n"
+        i18n_domain="meu.produto">
+
+      <i18n:registerTranslations directory="locales" />
+
+      <includeDependencies package="." />
+      
+      ...
+   </configure>
+
+O ZCML do brasil.gov.porta carrega o ZCML do Products.CMFPlone, que por sua vez carrega o ZCML do plone.app.locales. Assim o locales do seu produto precisa ser carregado antes do ZCML do  brasil.gov.portal para que as traduções do seu produto possam sobrescrever às do Plone.
