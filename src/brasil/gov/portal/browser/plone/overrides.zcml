@@ -3,6 +3,7 @@
     xmlns:browser="http://namespaces.zope.org/browser">
 
   <include package="Products.CMFPlone.browser" file="configure.zcml" />
+  <include package="plone.app.contenttypes.browser" file="configure.zcml" />
 
   <include package="z3c.unconfigure" file="meta.zcml" />
 
@@ -51,12 +52,40 @@
         title="View Image"
         />
 
+    <browser:page
+        name="folder_listing"
+        for="plone.app.contenttypes.interfaces.IFolder"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/folder_listing.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="Standard view"
+        />
+
     <browser:viewlet
         name="plone.htmlhead.title"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class="plone.app.layout.viewlets.common.TitleViewlet"
         permission="zope2.View"
         />
+
+    <browser:page
+        name="standard_view"
+        permission="zope2.View"
+        for="plone.app.contenttypes.interfaces.ICollection"
+        template="templates/standard_view.pt"
+        />
+
+    <browser:page
+        name="folder_tabular_view"
+        for="plone.app.contenttypes.interfaces.IFolder"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        template="templates/folder_tabular_view.pt"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="Tabular view"
+        />
+
   </unconfigure>
 
 </configure>

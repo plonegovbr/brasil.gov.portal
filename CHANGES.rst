@@ -4,7 +4,17 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Corrige erro de exibiçao dos botões de redes sociais (closes `#156`_).
+  [winstonf88]
+
+* Adiciona opção para esconder a data de publicação ou o autor de um conteúdo (closes `#202`_).
+  [idgserpro]
+
+* Corrige falha nos testes (closes `#241`_).
+  [winstonf88]
+
+* Corrige ícones de redes sociais cortados (closes `#203`_).
+  [winstonf88]
 
 
 1.1.3 (2015-09-30)
@@ -401,12 +411,14 @@ Histórico de Alterações
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
 .. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
+.. _`#156`: https://github.com/plonegovbr/brasil.gov.portal/issues/156
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
 .. _`#161`: https://github.com/plonegovbr/brasil.gov.portal/issues/161
 .. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
 .. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
 .. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
+.. _`#203`: https://github.com/plonegovbr/brasil.gov.portal/issues/203
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
 .. _`#221`: https://github.com/plonegovbr/brasil.gov.portal/issues/221

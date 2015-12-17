@@ -633,7 +633,6 @@ p.section a { color: #2c67cd; }
 }
 
 #viewlet-social-like {
-    position: absolute;
     right: 10px;
     float: right;
     margin: 0 0 15px 0;
@@ -4507,3 +4506,5 @@ não for corrigido.
 #plonebrowser #content {
     position: static !important;
 }
+
+#viewlet-social-like > div {margin-right: auto;}

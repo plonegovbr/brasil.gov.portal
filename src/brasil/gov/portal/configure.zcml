@@ -7,6 +7,9 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.portal">
 
+  <!-- Registra pasta de traducoes -->
+  <i18n:registerTranslations directory="locales" />
+
   <!-- ZCML de importacao de dependencias -->
   <include file="dependencies.zcml" />
 
@@ -22,9 +25,6 @@
   <include package=".controlpanel" />
 
   <include package=".transmogrifier" />
-
-  <!-- Registra pasta de traducoes -->
-  <i18n:registerTranslations directory="locales" />
 
   <!-- Registra pasta de elementos estaticos -->
   <browser:resourceDirectory

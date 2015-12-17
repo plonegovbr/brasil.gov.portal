@@ -8,8 +8,9 @@
       <img tal:replace="structure lock_icon" />
   </span>
 
-  <tal:author tal:define="author_short_form view/byline;"
-              tal:condition="author_short_form">
+  <tal:author tal:define="author_short_form view/byline;
+                          mostra_autor view/mostra_autor"
+              tal:condition="python:author_short_form and mostra_autor">
   <tal:name tal:define="author_long_form string:?author=${author_short_form};
                         author_is_openid python:'/' in author_short_form;
                         author_id python:(author_short_form, author_long_form)[author_is_openid];">
@@ -25,7 +26,9 @@
   </tal:author>
 
   <tal:dates define="published view/pub_date;
-                     modified context/ModificationDate">
+                     modified context/ModificationDate;
+                     mostra_data view/mostra_data"
+             condition="mostra_data">
   <span class="documentPublished"
         tal:condition="published">
     <span i18n:translate="box_published">

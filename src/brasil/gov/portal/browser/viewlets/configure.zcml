@@ -29,9 +29,8 @@
   <browser:viewlet
       name="plone.belowcontenttitle.documentbyline"
       manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
-      class="plone.app.layout.viewlets.content.DocumentBylineViewlet"
+      class=".content.DocumentBylineViewlet"
       permission="zope2.View"
-      template="templates/document_byline.pt"
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
