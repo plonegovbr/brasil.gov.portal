@@ -33,6 +33,10 @@
                    i18n:attributes="value label_search;" />
 
         </fieldset>
+
+        <div class="LSResult" id="LSResult">
+            <div class="LSShadow" id="LSShadow"></div>
+        </div>
     </form>
 
 </div>

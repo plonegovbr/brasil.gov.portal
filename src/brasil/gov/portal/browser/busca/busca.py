@@ -2,6 +2,7 @@
 from Acquisition import aq_base
 from Acquisition import aq_inner
 from plone.app.search.browser import Search as PloneSearch
+from Products.Five.browser import BrowserView
 from urllib import urlencode
 from zope.component import queryUtility
 from zope.schema.interfaces import IVocabularyFactory
@@ -38,3 +39,16 @@ class Search(PloneSearch):
         """Formata rel a ser utilizado no href de cada termo
         """
         return u'dc:subject foaf:primaryTopic'
+
+
+class LiveSearch(BrowserView):
+
+    def __call__(self):
+        # from pprint import pprint
+        # import ipdb; ipdb.set_trace()
+        result = self.context.livesearch_reply(
+            q=self.request.get('q'),
+            limit=self.request.get('limit', 10),
+            path=self.request.get('path'),
+        )
+        return result
