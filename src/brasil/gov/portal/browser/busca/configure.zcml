@@ -19,7 +19,7 @@
      />
 
   <browser:page
-     name="buscalivesearch_reply"
+     name="buscaativa_reply"
      class=".busca.LiveSearch"
      permission="zope2.View"
      for="*"
