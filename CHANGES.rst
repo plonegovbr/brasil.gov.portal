@@ -4,7 +4,8 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Corrige falha nos testes (closes `#241`_).
+  [winstonf88]
 
 
 1.1.3 (2015-09-30)

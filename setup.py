@@ -94,6 +94,7 @@ setup(
         'zope.component',
         'zope.interface',
         'zope.schema',
+        'plone4.csrffixes',
     ],
     extras_require={
         'test': [
