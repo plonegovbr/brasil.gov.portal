@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige falha nos testes (closes `#241`_).
+  [winstonf88]
+
 * Corrige erro de layout na visão de galeria (closes `#205`_).
   [winstonf88]
 
