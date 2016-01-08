@@ -18,8 +18,9 @@ Requisitos
 Para uso deste pacote, seu site deve ter sido construído com:
 
     * Plone 4.3.3
+    * Pinagem correta das `dependências <https://github.com/plonegovbr/brasil.gov.portal/blob/master/setup.py#L45>`_ do ``brasil.gov.portal``: cada release possui um ``versions.cfg`` específico em `portalpadrao.release <https://github.com/plonegovbr/portalpadrao.release>`_. Utilize o ``versions.cfg`` correspondente ao release de ``brasil.gov.portal`` utilizado.
 
-Recomendamos a leitura do `documento <http://identidade-digital-de-governo-plone.readthedocs.org/en/latest/>`_ sobre instalação deste pacote.
+Recomendamos a leitura do `documento <http://identidade-digital-de-governo-plone.readthedocs.org/en/latest/>`_ sobre a instalação deste pacote.
 
 Estado deste pacote
 -------------------
@@ -54,10 +55,14 @@ buildout:
         ...
         eggs =
             brasil.gov.portal
-
-2. Após alterar o arquivo de configuração é necessário executar
+            
+2. Editar o arquivo ``buildout.cfg`` (ou outro arquivo de configuração) 
+   referenciando o uso do versions.cfg de acordo com o release presente em
+   `portalpadrao.release <https://github.com/plonegovbr/portalpadrao.release>`_
+   
+3. Após alterar o arquivo de configuração é necessário executar
    ''bin/buildout'', que atualizará sua instalação.
 
-3. Reinicie o Plone
+4. Reinicie o Plone
 
-4. Adicione um novo site Plone.
+5. Adicione um novo site Plone.
