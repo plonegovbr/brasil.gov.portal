@@ -27,18 +27,27 @@ class JSONSourceSection(object):
     def read_directory(self, directory):
         data_file = 'data.json'
         children_file = 'children.json'
+
+        path = '{0}/{1}'.format(directory, data_file)
         try:
-            path = '%s/%s' % (directory, data_file)
             data = json.loads(open(path, 'r').read())
-        except:
+        except IOError:
+            # Arquivo data.json não existe
+            data = {}
+        except ValueError:
+            # json mal formado
             data = {}
 
         yield data
 
+        path = '{0}/{1}'.format(directory, children_file)
         try:
-            children = json.loads(open('%s/%s' % (directory, children_file),
-                                       'r').read())
-        except:
+            children = json.loads(open(path, 'r').read())
+        except IOError:
+            # Arquivo children.json não existe.
+            children = []
+        except ValueError:
+            # json mal formado
             children = []
         for child in children:
             oId = child.get('id')
