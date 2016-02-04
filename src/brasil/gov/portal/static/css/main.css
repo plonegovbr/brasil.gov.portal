@@ -4507,3 +4507,5 @@ não for corrigido.
 #plonebrowser #content {
     position: static !important;
 }
+
+#viewlet-social-like > div {margin-right: auto;}
