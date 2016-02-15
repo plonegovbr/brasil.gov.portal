@@ -4,13 +4,20 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige erro de layout na visão de galeria (closes `#205`_).
+  [winstonf88]
+
 * Adiciona opção para esconder a data de publicação ou o autor de um conteúdo (closes `#202`_).
   [idgserpro]
 
 * Corrige falha nos testes (closes `#241`_).
   [winstonf88]
 
+<<<<<<< HEAD
+* Corrige erro de layout na visão de galeria (closes `#205`_).
+=======
 * Corrige ícones de redes sociais cortados (closes `#203`_).
+>>>>>>> 59ed0207df5727dc714d919532591c5c5ff4431b
   [winstonf88]
 
 
@@ -414,6 +421,7 @@ Histórico de Alterações
 .. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
 .. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
+.. _`#205`: https://github.com/plonegovbr/brasil.gov.portal/issues/205
 .. _`#203`: https://github.com/plonegovbr/brasil.gov.portal/issues/203
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
