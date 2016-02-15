@@ -418,10 +418,14 @@ Histórico de Alterações
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
 .. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
 <<<<<<< HEAD
+<<<<<<< HEAD
 .. _`#205`: https://github.com/plonegovbr/brasil.gov.portal/issues/205
 =======
 .. _`#203`: https://github.com/plonegovbr/brasil.gov.portal/issues/203
 >>>>>>> 10b3055... corrige icones de redes sociais cortados
+=======
+.. _`#203`: https://github.com/plonegovbr/brasil.gov.portal/issues/203
+>>>>>>> master
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
 .. _`#221`: https://github.com/plonegovbr/brasil.gov.portal/issues/221
