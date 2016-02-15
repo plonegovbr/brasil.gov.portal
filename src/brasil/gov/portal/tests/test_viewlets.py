@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.portal.browser.viewlets.content import DocumentBylineViewlet
 from brasil.gov.portal.browser.viewlets.destaques import Destaques_Viewlet
 from brasil.gov.portal.browser.viewlets.logo import LogoViewlet
 from brasil.gov.portal.browser.viewlets.nitf_byline import NITFBylineViewlet
@@ -7,12 +8,28 @@ from brasil.gov.portal.browser.viewlets.related import RelatedItemsViewlet
 from brasil.gov.portal.browser.viewlets.servicos import ServicosViewlet
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
+from plone.app.layout.globals.interfaces import IViewView
 from plone.app.testing import logout
 from z3c.relationfield import RelationValue
 from zope.component import getUtility
+from zope.interface import implements
 from zope.intid.interfaces import IIntIds
 
 import unittest
+
+
+def esconde_autor():
+    """Seta a configuração esconde_autor para True"""
+    record = \
+        'brasil.gov.portal.controlpanel.portal.ISettingsPortal.esconde_autor'
+    api.portal.set_registry_record(record, True)
+
+
+def esconde_data():
+    """Seta a configuração esconde_data para True"""
+    record = \
+        'brasil.gov.portal.controlpanel.portal.ISettingsPortal.esconde_data'
+    api.portal.set_registry_record(record, True)
 
 
 class DestaquesViewletTestCase(unittest.TestCase):
@@ -333,3 +350,123 @@ class NITFBylineViewletTestCase(unittest.TestCase):
     def test_authorname(self):
         viewlet = self.viewlet()
         self.assertEqual(viewlet.authorname(), u'Machado de Assis')
+
+    def test_mostra_autor(self):
+        """Testa se o método retorna configuração para esconder o autor."""
+        viewlet = self.viewlet()
+        self.assertTrue(viewlet.mostra_autor())
+        esconde_autor()
+        self.assertFalse(viewlet.mostra_autor())
+
+    def test_mostra_data(self):
+        """Testa se o método retorna configuração para esconder a data."""
+        viewlet = self.viewlet()
+        self.assertTrue(viewlet.mostra_data())
+        esconde_data()
+        self.assertFalse(viewlet.mostra_data())
+
+    def test_esconde_autor(self):
+        """Testa se o autor deixa de ser exibido se configuração para esconder
+        o autor estiver marcada."""
+        esconde_autor()
+        viewlet = self.viewlet()
+        render = viewlet.render()
+        self.assertNotIn(self.conteudo.byline, render)
+
+    def test_esconde_data(self):
+        """Testa se a data deixa de ser exibida se configuração para esconder
+        a data estiver marcada."""
+        esconde_data()
+        viewlet = self.viewlet()
+        render = viewlet.render()
+        modified = self.conteudo.ModificationDate()
+        ano = modified[:4]
+        dia = modified[8:10]
+        self.assertNotIn(ano, render)
+        self.assertNotIn(dia, render)
+
+
+class DocumentBylineViewletTestCase(unittest.TestCase):
+    """Testes da viewlet customizada DocumentBylineViewlet."""
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        """Cria uma página para testes."""
+        self.portal = self.layer['portal']
+        self.request = self.layer['request']
+        with api.env.adopt_roles(['Manager', ]):
+            self.conteudo = api.content.create(
+                type='Document',
+                container=self.portal,
+                id='minha-pagina'
+            )
+
+    def viewlet(self):
+        """Retorna a viewlet DocumentBylineViewlet."""
+        viewlet = DocumentBylineViewlet(self.conteudo,
+                                        self.request,
+                                        None,
+                                        None)
+
+        class Parent(object):
+            """Classe que simula um parent. Para que a viewlet
+            DocumentBylineViewletTestCase exiba o histórico, é necessário que
+            o seu __parent__ implemente a interface IViewView"""
+            implements(IViewView)
+
+        viewlet.__parent__ = Parent()
+        viewlet.update()
+        return viewlet
+
+    def test_mostra_autor(self):
+        """Testa se o método retorna configuração para esconder o autor."""
+        viewlet = self.viewlet()
+        self.assertTrue(viewlet.mostra_autor())
+        esconde_autor()
+        self.assertFalse(viewlet.mostra_autor())
+
+    def test_mostra_data(self):
+        """Testa se o método retorna configuração para esconder a data."""
+        viewlet = self.viewlet()
+        self.assertTrue(viewlet.mostra_data())
+        esconde_data()
+        self.assertFalse(viewlet.mostra_data())
+
+    def test_esconde_autor(self):
+        """Testa se o autor deixa de ser exibido se configuração para esconder
+        o autor estiver marcada."""
+        esconde_autor()
+        viewlet = self.viewlet()
+        render = viewlet.render()
+        self.assertNotIn(self.conteudo.Creator(), render)
+
+    def test_esconde_data(self):
+        """Testa se a data deixa de ser exibida se configuração para esconder
+        a data estiver marcada."""
+        esconde_data()
+        viewlet = self.viewlet()
+        render = viewlet.render()
+        modified = self.conteudo.ModificationDate()
+        ano = modified[:4]
+        dia = modified[8:10]
+        self.assertNotIn(ano, render)
+        self.assertNotIn(dia, render)
+
+    def test_exibe_tracos(self):
+        """Confirma que a viewlet não está exibindo dois traços, quando a data
+        não é exibida ou quando nem a data nem o autor são exibidos.
+
+        Para que esse teste seja efetivo, é necessário que a
+        viewlet exiba o histórico, pois um dos traços vem do histórico. Para
+        que o hitórico seja exibido, o teste tem que ser feito com usuário
+        Manager e o atributo __parent__ da viewlet tem implementar a interface
+        IViewView. Ver método 'viewlet'"""
+        with api.env.adopt_roles(['Manager', ]):
+            esconde_data()
+            viewlet = self.viewlet()
+            render = viewlet.render()
+            self.assertEqual(render.count(u'—'), 1)
+            esconde_autor()
+            render = viewlet.render()
+            self.assertEqual(render.count(u'—'), 0)

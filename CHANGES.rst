@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Adiciona opção para esconder a data de publicação ou o autor de um conteúdo (closes `#202`_).
+  [idgserpro]
+
 * Corrige falha nos testes (closes `#241`_).
   [winstonf88]
 

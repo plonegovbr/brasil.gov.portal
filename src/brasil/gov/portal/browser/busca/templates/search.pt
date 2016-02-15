@@ -291,9 +291,13 @@
                                         Cropped description
                                       </div>
                                       <span class="discreet" i18n:domain="plone"
-                                        tal:condition="show_about">
+                                        tal:condition="show_about"
+                                        tal:define="portal_settings context/@@portal_settings;
+                                                            mostra_data not:portal_settings/get_esconde_data;
+                                                            mostra_autor not:portal_settings/get_esconde_autor;">
                                         <span class="documentAuthor"
-                                            i18n:translate="label_by_author">
+                                            i18n:translate="label_by_author"
+                                            tal:condition="mostra_autor">
                                         by
                                             <tal:block tal:condition="item/Creator"
                                                 tal:define="author python:context.portal_membership.getMemberInfo(item.Creator())">
@@ -307,64 +311,66 @@
                                             </tal:block>
                                         </span>
 
-                                        <span tal:define="publication_date item/EffectiveDate;
-                                                          modification_date item/ModificationDate">
+                                        <tal:data condition="mostra_data">
+                                            <span tal:define="publication_date item/EffectiveDate;
+                                                              modification_date item/ModificationDate">
 
-                                            <span class="documentPublished" tal:condition="python: publication_date != 'None'">
-                                              <span i18n:translate="box_published">
-                                                published
-                                              </span>
-                                              em
-                                              <span tal:replace="python:toLocalizedTime(publication_date, long_format=0)">
-                                                August 16, 2001 at 23:35:59
+                                                <span class="documentPublished" tal:condition="python: publication_date != 'None'">
+                                                  <span i18n:translate="box_published">
+                                                    published
+                                                  </span>
+                                                  em
+                                                  <span tal:replace="python:toLocalizedTime(publication_date, long_format=0)">
+                                                    August 16, 2001 at 23:35:59
+                                                  </span>
+                                                </span>
+                                                <span tal:condition="python: publication_date != 'None' and modification_date != publication_date"
+                                                      tal:replace="string:&mdash;" />
+                                                <span class="documentModified" tal:condition="python: modification_date != publication_date">
+                                                  <span i18n:translate="box_last_modified">
+                                                    last modified
+                                                  </span>
+                                                  em
+                                                  <span tal:replace="python:toLocalizedTime(modification_date, long_format=1)">
+                                                    August 16, 2001 at 23:35:59
+                                                  </span>
+                                                </span>
+
+                                            </span>
+
+                                            <span tal:define="categories item/Subject|nothing;
+                                                              std modules/Products.PythonScripts.standard;
+                                                              url_quote nocall: std/url_quote;"
+                                                  tal:condition="categories">
+                                              <tal:filedunder i18n:translate="">filed under:</tal:filedunder>
+                                              <span tal:repeat="category categories">
+                                                <a href=""
+                                                   class="link-category"
+                                                   rel="tag"
+                                                   tal:content="category"
+                                                   tal:define="category_quote python:url_quote(category)"
+                                                   tal:attributes="href string:$navigation_root_url/@@busca?Subject%3Alist=${category_quote}">
+                                                  Category
+                                                </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
                                               </span>
                                             </span>
-                                            <span tal:condition="python: publication_date != 'None' and modification_date != publication_date"
-                                                  tal:replace="string:&mdash;" />
-                                            <span class="documentModified" tal:condition="python: modification_date != publication_date">
-                                              <span i18n:translate="box_last_modified">
-                                                last modified
-                                              </span>
-                                              em
-                                              <span tal:replace="python:toLocalizedTime(modification_date, long_format=1)">
-                                                August 16, 2001 at 23:35:59
+
+                                            <span i18n:domain="brasil.gov.portal"
+                                                  tal:define="categories python:view.skos(item)"
+                                                  tal:condition="categories">
+                                              <tal:filedunder i18n:translate="">subject(s):</tal:filedunder>
+                                              <span tal:repeat="category categories">
+                                                <a href=""
+                                                   class="link-category"
+                                                   tal:content="category/title"
+                                                   tal:attributes="href category/url;
+                                                                   property view/rel;
+                                                                   resource category/id">
+                                                  Category
+                                                  </a><span class="separator" tal:condition="not: repeat/category/end">,</span>
                                               </span>
                                             </span>
-
-                                        </span>
-
-                                        <span tal:define="categories item/Subject|nothing;
-                                                          std modules/Products.PythonScripts.standard;
-                                                          url_quote nocall: std/url_quote;"
-                                              tal:condition="categories">
-                                          <tal:filedunder i18n:translate="">filed under:</tal:filedunder>
-                                          <span tal:repeat="category categories">
-                                            <a href=""
-                                               class="link-category"
-                                               rel="tag"
-                                               tal:content="category"
-                                               tal:define="category_quote python:url_quote(category)"
-                                               tal:attributes="href string:$navigation_root_url/@@busca?Subject%3Alist=${category_quote}">
-                                              Category
-                                            </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
-                                          </span>
-                                        </span>
-
-                                        <span i18n:domain="brasil.gov.portal"
-                                              tal:define="categories python:view.skos(item)"
-                                              tal:condition="categories">
-                                          <tal:filedunder i18n:translate="">subject(s):</tal:filedunder>
-                                          <span tal:repeat="category categories">
-                                            <a href=""
-                                               class="link-category"
-                                               tal:content="category/title"
-                                               tal:attributes="href category/url;
-                                                               property view/rel;
-                                                               resource category/id">
-                                              Category
-                                              </a><span class="separator" tal:condition="not: repeat/category/end">,</span>
-                                          </span>
-                                        </span>
+                                        </tal:data>
                                       </span>
                                     </dd>
                               </tal:results>
