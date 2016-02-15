@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige erro de exibiçao dos botões de redes sociais (closes `#156`_).
+  [winstonf88]
+
 * Adiciona opção para esconder a data de publicação ou o autor de um conteúdo (closes `#202`_).
   [idgserpro]
 
@@ -408,6 +411,7 @@ Histórico de Alterações
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
 .. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
+.. _`#156`: https://github.com/plonegovbr/brasil.gov.portal/issues/156
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
 .. _`#161`: https://github.com/plonegovbr/brasil.gov.portal/issues/161
 .. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
