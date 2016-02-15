@@ -4507,4 +4507,5 @@ não for corrigido.
     position: static !important;
 }
 
+#contentActionMenus dl.actionMenu.activated dd { z-index: 110; }
 #viewlet-social-like > div {margin-right: auto;}
