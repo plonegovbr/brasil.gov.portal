@@ -3,6 +3,8 @@ Histórico de Alterações
 
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Corrige erro de layout na visão de galeria (closes `#205`_).
+  [winstonf88]
 
 * Corrige erro de exibiçao dos botões de redes sociais (closes `#156`_).
   [winstonf88]
@@ -420,6 +422,7 @@ Histórico de Alterações
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
 .. _`#190`: https://github.com/plonegovbr/brasil.gov.portal/issues/190
 .. _`#203`: https://github.com/plonegovbr/brasil.gov.portal/issues/203
+.. _`#205`: https://github.com/plonegovbr/brasil.gov.portal/issues/204
 .. _`#216`: https://github.com/plonegovbr/brasil.gov.portal/issues/216
 .. _`#218`: https://github.com/plonegovbr/brasil.gov.portal/issues/218
 .. _`#221`: https://github.com/plonegovbr/brasil.gov.portal/issues/221
