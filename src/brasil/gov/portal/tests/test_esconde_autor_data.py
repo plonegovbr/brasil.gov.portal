@@ -86,13 +86,10 @@ class EscondeAutorDataFunctionalTestCase(unittest.TestCase):
     def base_teste_data(self, obj, contents):
         """Testa que a data de publicação e a data de modificação não aparecem
          na página."""
-        datas = (obj.EffectiveDate(), obj.ModificationDate())
+        datas = (obj.effective(), obj.modified())
         for data in datas:
             self.assertNotEqual('None', data)
-            ano = data[:4]
-            dia = data[8:10]
-            self.assertNotIn('/{0}'.format(ano), contents)
-            self.assertNotIn('{0}/'.format(dia), contents)
+            self.assertNotIn(data.strftime('%d/%m/%Y'), contents)
         self.assertNotIn('última', contents)
         self.assertNotIn('Modificado', contents)
 
