@@ -25,6 +25,12 @@
         handler=".handler.apply_profile"
         />
 
+    <gs:upgradeStep
+        title="Corrige as configurações de layout de capa"
+        description="Atualiza as configurações de layout da capa para a nova versão do collective.cover."
+        handler=".handler.atualiza_layouts_capa"
+        />
+
   </gs:upgradeSteps>
 
 </configure>
