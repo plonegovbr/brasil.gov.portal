@@ -4,6 +4,9 @@ Histórico de Alterações
 1.1.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige falha no carregamento dos destaques com visão padrão (closes `#167`_).
+  [winstonf88]
+
 * Corrige conteúdo inicial de tiles que possuem um uuid de referência a um
   objeto que não existe. (closes `#275`_).
   [idgserpro]
@@ -421,6 +424,7 @@ Histórico de Alterações
 .. _`#156`: https://github.com/plonegovbr/brasil.gov.portal/issues/156
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
 .. _`#161`: https://github.com/plonegovbr/brasil.gov.portal/issues/161
+.. _`#167`: https://github.com/plonegovbr/brasil.gov.portal/issues/167
 .. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
 .. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
