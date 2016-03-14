@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.1.4 (unreleased)
+1.1.4 (2016-03-14)
 ^^^^^^^^^^^^^^^^^^
 
 * Corrige erro de exibição da data na visão sumária (closes `#157`_).
