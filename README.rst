@@ -85,4 +85,4 @@ Se você tem um produto que tem como dependência o brasil.gov.portal e precisa 
       ...
    </configure>
 
-O ZCML do brasil.gov.porta carrega o ZCML do Products.CMFPlone, que por sua vez carrega o ZCML do plone.app.locales. Assim o locales do seu produto precisa ser carregado antes do ZCML do  brasil.gov.portal para que as traduções do seu produto possam sobrescrever às do Plone.
+O ZCML do brasil.gov.portal carrega o ZCML do Products.CMFPlone, que por sua vez carrega o ZCML do plone.app.locales. Assim o locales do seu produto precisa ser carregado antes do ZCML do  brasil.gov.portal para que as traduções do seu produto possam sobrescrever às do Plone.
