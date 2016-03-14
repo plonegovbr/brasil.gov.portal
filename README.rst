@@ -55,11 +55,11 @@ buildout:
         ...
         eggs =
             brasil.gov.portal
-            
-2. Editar o arquivo ``buildout.cfg`` (ou outro arquivo de configuração) 
+
+2. Editar o arquivo ``buildout.cfg`` (ou outro arquivo de configuração)
    referenciando o uso do versions.cfg de acordo com o release presente em
    `portalpadrao.release <https://github.com/plonegovbr/portalpadrao.release>`_
-   
+
 3. Após alterar o arquivo de configuração é necessário executar
    ''bin/buildout'', que atualizará sua instalação.
 
@@ -71,7 +71,9 @@ Sobrescrita de traduções do domínio plone
 -----------------------------------------
 
 Se você tem um produto que tem como dependência o brasil.gov.portal e precisa sobrescrever traduções do domínio plone nesse produto, sua diretiva ```<i18n:registerTranslations directory="locales" />``` deve vir antes da diretiva ```<includeDependencies package="." />```, ou de qualquer outra diretiva que carrege o ZCML do brasil.gov.portal. O seu configure.zcml deve ficar assim:
-::
+
+.. code-block:: xml
+
     <configure
         xmlns="http://namespaces.zope.org/zope"
         xmlns:five="http://namespaces.zope.org/five"
@@ -81,7 +83,7 @@ Se você tem um produto que tem como dependência o brasil.gov.portal e precisa 
       <i18n:registerTranslations directory="locales" />
 
       <includeDependencies package="." />
-      
+
       ...
    </configure>
 
