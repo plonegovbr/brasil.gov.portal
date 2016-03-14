@@ -3,7 +3,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-version = '1.1.4.dev0'
+version = '1.1.4'
 long_description = (
     open('README.rst').read() + '\n' +
     open('CONTRIBUTORS.rst').read() + '\n' +
@@ -13,7 +13,7 @@ long_description = (
 setup(
     name='brasil.gov.portal',
     version=version,
-    description="Implementação Modelo da Identidade Digital de Governo",
+    description="ImplementaĂ§ĂŁo Modelo da Identidade Digital de Governo",
     long_description=long_description,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
