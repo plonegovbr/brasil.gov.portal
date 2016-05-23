@@ -13,7 +13,7 @@ long_description = (
 setup(
     name='brasil.gov.portal',
     version=version,
-    description="ImplementaĂ§ĂŁo Modelo da Identidade Digital de Governo",
+    description="Implementação Modelo da Identidade Digital de Governo",
     long_description=long_description,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
