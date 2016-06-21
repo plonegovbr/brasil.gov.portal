@@ -391,10 +391,7 @@ class TestUpgrade(unittest.TestCase):
             self.assertFalse(isinstance(pasta.getOrdering(), DefaultOrdering))
 
         self.st.setLastVersionForProfile('brasil.gov.tiles:default', '2000')
-        self.assertEqual(
-            len(self.st.listUpgrades('brasil.gov.tiles:default')),
-            1
-        )
+        self.assertTrue(len(self.st.listUpgrades('brasil.gov.tiles:default')))
 
         self.execute_upgrade(u'10600', u'10700')
 

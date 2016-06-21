@@ -17,7 +17,7 @@ ${document_selector}  .ui-draggable .contenttype-document
 *** Test Cases ***
 
 Criar nova capa
-    
+
     # Todos os keywords de collective.cover têm como premissa as strings em
     # inglês na interface.
     # Como os testes de brasil.gov.portal são em português, existiam duas
@@ -30,14 +30,14 @@ Criar nova capa
     Enable Autologin as  Site Administrator
     Ir para  ${PLONE_URL}/@@language-controlpanel
     Select From List  xpath=//select[@id='form.default_language']  en
-    Clicar botao  Salvar 
+    Clicar botao  Salvar
 
     # Cria a capa Layout vazio
     Go to Homepage
     Create Cover  NewCoverLayoutVazio  NewCoverLayoutVazioDescription  Layout vazio
 
     # Adiciona um tile de banner
-    Edit Cover Layout
+    Open Layout Tab
     Add Tile  ${banner_tile_location}
     Save Cover Layout
 
@@ -54,7 +54,7 @@ Criar nova capa
     Click Link  link=View
     # Na estrutura atual, provavelmente vai pegar o item "Acessibilidade"
     # Se novos tipos padrão de conteúdo inicial forem adicionados
-    # em brasil.gov.portal, esse xpath pode ter que mudar para referenciar  
+    # em brasil.gov.portal, esse xpath pode ter que mudar para referenciar
     # outro documento.
     Wait Until Page Contains Element  xpath=//div[contains(@class, 'cover-banner-tile tile-content')]/h2/a[contains(@href, "acessibilidade")]
 
@@ -75,6 +75,6 @@ Criar nova capa
     Click Link  link=View
     # Na estrutura atual, provavelmente vai pegar o item "Acessibilidade"
     # Se novos tipos padrão de conteúdo inicial forem adicionados
-    # em brasil.gov.portal, esse xpath pode ter que mudar para referenciar  
+    # em brasil.gov.portal, esse xpath pode ter que mudar para referenciar
     # outro documento.
     Wait Until Page Contains Element  xpath=//div[@id='em-destaque']/ul[contains(@class, 'sortable-tile cover-list-tile')]/li/a[contains(@href, "acessibilidade")]
