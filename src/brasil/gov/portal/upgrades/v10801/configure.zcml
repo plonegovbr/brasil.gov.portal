@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Upgrade Steps -->
+  <gs:upgradeSteps
+      source="10800"
+      destination="10801"
+      profile="brasil.gov.portal:default">
+
+    <gs:upgradeStep
+        title="Instala profile do brasil.gov.agenda"
+        description="Em versões antigas do barsil.gov.portal o brasil.gov.agenda não era instalado."
+        handler=".handler.instala_profile_agenda"
+        />
+
+    <gs:upgradeStep
+        title="Atualiza estilos do collective.cover"
+        description="Atualiza estilos da configuração do collective.cover caso os mesmos tenham sido perdidos."
+        handler=".handler.atualiza_estilos_cover"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>

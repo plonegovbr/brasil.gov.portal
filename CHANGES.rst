@@ -4,7 +4,9 @@ Histórico de Alterações
 1.1.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Upgrade step que instala profile do brasil.gov.agenda se não estiver
+  instalado e atualiza os estilos do collective.cover(closes `#154`_).
+  [idgserpro]
 
 
 1.1.4 (2016-03-14)
@@ -433,6 +435,7 @@ Histórico de Alterações
 .. _`#148`: https://github.com/plonegovbr/brasil.gov.portal/issues/148
 .. _`#150`: https://github.com/plonegovbr/brasil.gov.portal/issues/150
 .. _`#152`: https://github.com/plonegovbr/brasil.gov.portal/issues/152
+.. _`#154`: https://github.com/plonegovbr/brasil.gov.portal/issues/154
 .. _`#156`: https://github.com/plonegovbr/brasil.gov.portal/issues/156
 .. _`#157`: https://github.com/plonegovbr/brasil.gov.portal/issues/157
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159

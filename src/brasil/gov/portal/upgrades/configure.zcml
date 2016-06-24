@@ -25,4 +25,6 @@
 
   <include package=".v10800" />
 
+  <include package=".v10801" />
+
 </configure>

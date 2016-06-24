@@ -206,7 +206,6 @@ class HiddenProducts(object):
     implements(qi_interfaces.INonInstallable)
 
     def getNonInstallableProducts(self):
-        products = []
         products = [p for p in DEPS]
         return products
 

@@ -99,12 +99,15 @@ setup(
     ],
     extras_require={
         'test': [
+            'brasil.gov.agenda',
+            'collective.cover',
             'plone.app.robotframework',
             'plone.app.testing [robot]',
             'plone.browserlayer',
             'plone.registry',
             'plone.testing',
             'plonetheme.sunburst',
+            'Products.GenericSetup',
             'robotframework-wavelibrary',
             'robotsuite',
         ]
