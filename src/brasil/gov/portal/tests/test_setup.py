@@ -1,18 +1,22 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.agenda.config import PROJECTNAME as AGENDAPROJECTNAME
 from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import HIDDEN_PROFILES
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
 from brasil.gov.portal.controlpanel.portal import ISettingsPortal
+from brasil.gov.portal.setuphandlers import _instala_pacote
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from collective.cover.controlpanel import ICoverSettings
 from plone import api
-from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from plone.browserlayer.utils import registered_layers
 from plone.folder.default import DefaultOrdering
 from plone.registry.interfaces import IRegistry
 from Products.Five.browser import BrowserView as View
+from Products.GenericSetup.tool import UNKNOWN
 from Products.GenericSetup.upgrade import listUpgradeSteps
 from Products.TinyMCE.interfaces.utility import ITinyMCE
 from zope.component import getUtility
@@ -22,7 +26,9 @@ from zope.viewlet.interfaces import IViewletManager
 import json
 import unittest
 
+
 PROFILE_ID = 'brasil.gov.portal:default'
+AGENDAPROFILE = '{0}:default'.format(AGENDAPROJECTNAME)
 
 DEPENDENCIES = [
     'brasil.gov.agenda',
@@ -95,6 +101,7 @@ class TestUpgrade(unittest.TestCase):
         self.qi = self.portal['portal_quickinstaller']
         self.st = self.portal['portal_setup']
         self.pp = self.portal['portal_properties']
+        self.pt = self.portal['portal_types']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
     def list_upgrades(self, source, destination):
@@ -128,6 +135,25 @@ class TestUpgrade(unittest.TestCase):
         # Os executamos
         for step in steps:
             step['step'].doStep(self.st)
+
+    def desinstala_agenda(self):
+        """Desinstala produto brasil.gov.agenda mas 'marca como instalado'.
+        Isso é para simular a situação em que o upgrade 10300 marcava o
+        brasil.gov.agenda como instalado mas não instalava o seu profile. Ver:
+        https://github.com/plonegovbr/brasil.gov.portal/issues/154#issuecomment-78988918
+        """
+        self.qi.uninstallProducts(products=[AGENDAPROJECTNAME])
+        # Marca como instalado. Isso não instala o profile.
+        _instala_pacote(self.qi, AGENDAPROJECTNAME)
+
+        # Quando marcamos o produto como instalado, mesmo quando instalamos
+        # ele pelo quickinstaller, ele não instala o profile.
+        self.qi.installProduct(AGENDAPROJECTNAME)
+        self.assertEqual(
+            self.st.getLastVersionForProfile(AGENDAPROFILE),
+            UNKNOWN)
+        types = self.pt.listContentTypes()
+        self.assertNotIn('Agenda', types)
 
     def test_to1000_available(self):
         step = self.list_upgrades(u'0', u'1000')
@@ -305,6 +331,10 @@ class TestUpgrade(unittest.TestCase):
         step = self.list_upgrades(u'10700', u'10800')
         self.assertEqual(len(step), 1)
 
+    def test_to10801_available(self):
+        step = self.list_upgrades(u'10800', u'10801')
+        self.assertEqual(len(step), 1)
+
     def _get_viewlets_from_manager(self, manager):
         """Returns all viewlets from a manager."""
         request = self.portal.REQUEST
@@ -404,6 +434,16 @@ class TestUpgrade(unittest.TestCase):
             0
         )
 
+        # Executa o upgrade step com o brasil.gov.agenda desinstalado.
+        # Em versões antigas do brasil.gov.portal o brasil.gov.agenda não era
+        # instalado. O step que instala produtos de terceiros tem que executar
+        # sem erro, quando o brasil.gov.agenda não está instalado.
+        self.desinstala_agenda()
+        self.execute_upgrade(u'10600', u'10700')
+        self.assertEqual(
+            self.st.getLastVersionForProfile(AGENDAPROFILE),
+            UNKNOWN)
+
     def test_to10800_execution(self):
         # Remove configulet 'portal' para simular estado anterior ao upgrade.
         self.pc.unregisterConfiglet('portal')
@@ -497,11 +537,58 @@ class TestUpgrade(unittest.TestCase):
         for name, layout in layouts.items():
             self.assertListEqual(json.loads(layout_registry[name]), layout)
 
+    def test_to10801_execution(self):
+        # Simula estado em que os estilos foram alterados.
+        record = '{0}.styles'.format(ICoverSettings.__identifier__)
+        api.portal.set_registry_record(record,
+                                       set(['Novo Estilo|novo-estilo']))
+
+        self.execute_upgrade(u'10800', u'10801')
+
+        expected = [
+            'Amarelo|amarelo',
+            'Azul Claro - borda|azul-claro-borda',
+            'Azul Claro Saude|azul-claro',
+            'Azul Escuro Turismo|azul-escuro',
+            'Azul Governo|azul',
+            'Azul Petroleo Defesa Seguranca|azul-petroleo',
+            'Azul Piscina|azul-piscina',
+            'Azul Turquesa - borda|azul-turquesa-borda',
+            'Azul Turquesa|azul-turquesa',
+            'Bege - borda|bege-borda',
+            'Bege|bege',
+            'Dourado Cultura|dourado',
+            'Fio separador|fio-separador',
+            'Laranja - borda|laranja-borda',
+            'Laranja Cidadania Justica|laranja',
+            'Link Externo|link-externo',
+            'Lista Horizontal|lista-horizontal',
+            'Lista Vertical|lista-vertical',
+            'Marrom Claro Economia Emprego|marrom-claro',
+            'Marrom Infraestrutura|marrom',
+            'Novo Estilo|novo-estilo',
+            'Padrao|padrao',
+            'Roxo - borda|roxo-borda',
+            'Roxo Ciencia Tecnologia|roxo',
+            'Verde Claro Meio Ambiente|verde-claro',
+            'Verde Escuro Educacao|verde-escuro',
+            'Verde Esporte|verde',
+        ]
+        styles = sorted(api.portal.get_registry_record(record))
+        self.assertEqual(styles, expected)
+
+        # Executa upgrade quando brasil.gov.agenda não está instalado.
+        self.desinstala_agenda()
+        self.execute_upgrade(u'10800', u'10801')
+        self.assertNotEqual(
+            self.st.getLastVersionForProfile(AGENDAPROFILE),
+            UNKNOWN)
+
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
-        Testa se todos os upgradeSteps de brasil.gov.portal estão nas variáveis
-        HIDDEN_PROFILES e DEPS. Outros pacotes podem ser adicionados em outros
-        testes.
+        Testa se todos os upgradeSteps de brasil.gov.portal que possuem profile
+        estão nas variáveis HIDDEN_PROFILES e DEPS. Outros pacotes podem ser
+        adicionados em outros testes.
         """
         upgradeSteps = listUpgradeSteps(self.st, self.profile, '')
         upgrades = [upgrade[0]['dest'][0] for upgrade in upgradeSteps]
@@ -510,9 +597,14 @@ class TestUpgrade(unittest.TestCase):
         upgrades_deps = []
         prefix = 'brasil.gov.portal.upgrades.v%s'
         profile = self.profile.split(':')[-1]
+        installable_profiles = self.qi.listInstallableProfiles()
         for upgrade in upgrades:
-            upgrades_deps.append(prefix % upgrade)
-            upgrades_hidden_profiles.append(prefix % upgrade + ':' + profile)
+            upgrade_profile = prefix % upgrade
+            # Verifica somente upgrades que possuem profiles
+            if upgrade_profile in installable_profiles:
+                upgrades_deps.append(upgrade_profile)
+                upgrades_hidden_profiles.append(
+                    '{0}:{1}'.format(upgrade_profile, profile))
 
         self.assertTrue(all(upgrade in HIDDEN_PROFILES
                             for upgrade in upgrades_hidden_profiles))

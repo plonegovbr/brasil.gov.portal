@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.agenda.config import PROJECTNAME as AGENDAPROJECTNAME
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.upgrades import upgrade_profile
 from collective.cover.controlpanel import ICoverSettings
@@ -8,6 +9,7 @@ from plone.app.contenttypes.interfaces import IFolder
 from plone.app.upgrade.utils import loadMigrationProfile
 from plone.folder.default import DefaultOrdering
 from plone.registry.interfaces import IRegistry
+from Products.GenericSetup.tool import UNKNOWN
 from zope.component import getUtility
 
 import json
@@ -17,9 +19,9 @@ import logging
 logger = logging.getLogger(PROJECTNAME)
 
 
-def atualiza_produtos_terceiros(context):
+def atualiza_produtos_terceiros(portal_setup):
     """ Atualiza os profiles de produtos de terceiros."""
-    profiles = (
+    profiles = [
         'brasil.gov.agenda:default',
         'brasil.gov.barra:default',
         'brasil.gov.portlets:default',
@@ -30,20 +32,28 @@ def atualiza_produtos_terceiros(context):
         'collective.polls:default',
         'sc.embedder:default',
         'sc.social.like:default',
-    )
+    ]
+
+    # Somente executo o upgrade step do brasil.gov.agenda se o seu profile foi
+    # instalado. Em versões antigas do brasil.gov.portal o brasil.gov.agenda
+    # não era instalado.
+    agenda_profile = '{0}:default'.format(AGENDAPROJECTNAME)
+    if portal_setup.getLastVersionForProfile(agenda_profile) == UNKNOWN:
+        profiles.remove(agenda_profile)
+
     for profile_id in profiles:
-        upgrade_profile(context, profile_id)
+        upgrade_profile(portal_setup, profile_id)
 
     logger.info('Produtos de terceiros foram atualizados')
 
 
-def ordernacao_pastas(context):
+def ordernacao_pastas(portal_setup):
     """ Ajusta a ordenacao das pastas da raiz do portal setando ordenação
         padrão Plone. Similar ao ordenacao_pastas feito no upgradeStep 5000, só
         que ao invés de ordenar pastas pontuais ele é executado em todas as
         pastas.
     """
-    plone_view = context.restrictedTraverse('@@plone_portal_state')
+    plone_view = portal_setup.restrictedTraverse('@@plone_portal_state')
     site = plone_view.portal()
     for pasta_id in site.objectIds():
         pasta = site[pasta_id]
@@ -124,7 +134,7 @@ def _reindex_covers():
         cover.reindexObject()
 
 
-def corrige_conteudo_collectivecover(context):
+def corrige_conteudo_collectivecover(portal_setup):
     """ Verifica se o campo css_class não é uma string válida,
         e substitui por uma string vazia.
     """
@@ -132,7 +142,7 @@ def corrige_conteudo_collectivecover(context):
     _reindex_covers()
     logger.info('All covers were reindexed.')
     # Make sure collective.cover is upgraded before continuing
-    upgrade_profile(context, 'collective.cover:default')
+    upgrade_profile(portal_setup, 'collective.cover:default')
 
     logger.info('CSS classes will be fixed from Cover layouts.')
     # Fix registry layouts
@@ -145,7 +155,7 @@ def corrige_conteudo_collectivecover(context):
     logger.info('Registry layouts were updated.')
 
     # Fix cover layouts
-    covers = context.portal_catalog(object_provides=ICover.__identifier__)
+    covers = portal_setup.portal_catalog(object_provides=ICover.__identifier__)
     logger.info('Layout of {0} objects will be updated'.format(len(covers)))
 
     for cover in covers:
@@ -155,8 +165,8 @@ def corrige_conteudo_collectivecover(context):
         logger.info('"{0}" was updated'.format(obj.absolute_url_path()))
 
 
-def apply_profile(context):
+def apply_profile(portal_setup):
     """Atualiza profile para versao 10700."""
     profile = 'profile-brasil.gov.portal.upgrades.v10700:default'
-    loadMigrationProfile(context, profile)
+    loadMigrationProfile(portal_setup, profile)
     logger.info('Atualizado para versao 10700')
