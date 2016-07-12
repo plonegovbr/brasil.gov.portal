@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-import logging
-from brasil.gov.portal.config import PROJECTNAME
-
-logger = logging.getLogger(PROJECTNAME)
+from brasil.gov.portal.logger import logger
 
 
 def upgrade_profile(setup, profile_id):
