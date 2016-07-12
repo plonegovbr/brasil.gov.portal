@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.logger import logger
 from collective.z3cform.widgets.multicontent_search_widget import MultiContentSearchFieldWidget
 from plone.app.contenttypes.content import Link
 from plone.app.relationfield.behavior import IRelatedItems
 from plone.autoform.interfaces import WIDGETS_KEY
 from plone.outputfilters.filters import resolveuid_and_caption as base
-
-
-import logging
-
-logger = logging.getLogger(PROJECTNAME)
 
 
 def outputfilters():

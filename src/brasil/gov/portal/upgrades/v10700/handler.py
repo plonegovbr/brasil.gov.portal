@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.agenda.config import PROJECTNAME as AGENDAPROJECTNAME
-from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.logger import logger
 from brasil.gov.portal.upgrades import upgrade_profile
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICover
@@ -13,10 +13,6 @@ from Products.GenericSetup.tool import UNKNOWN
 from zope.component import getUtility
 
 import json
-import logging
-
-
-logger = logging.getLogger(PROJECTNAME)
 
 
 def atualiza_produtos_terceiros(portal_setup):

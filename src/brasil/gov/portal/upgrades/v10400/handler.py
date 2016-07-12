@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.logger import logger
 from plone import api
 from plone.app.upgrade.utils import loadMigrationProfile
-
-import logging
-
-logger = logging.getLogger(PROJECTNAME)
 
 
 def apply_profile(context):

@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.agenda.config import PROJECTNAME as AGENDAPROJECTNAME
-from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.logger import logger
 from collective.cover.controlpanel import ICoverSettings
 from plone import api
 from Products.GenericSetup.tool import UNKNOWN
-
-import logging
-
-
-logger = logging.getLogger(PROJECTNAME)
 
 
 def atualiza_estilos_cover(portal_setup):
