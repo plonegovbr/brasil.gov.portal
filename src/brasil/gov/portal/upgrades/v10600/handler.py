@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.config import PROJECTNAME
+from brasil.gov.portal.logger import logger
 from brasil.gov.portal.setuphandlers import set_tinymce_formats
 from plone import api
 from plone.app.upgrade.utils import loadMigrationProfile
-
-import logging
-
-
-logger = logging.getLogger(PROJECTNAME)
 
 
 def install_product(context):

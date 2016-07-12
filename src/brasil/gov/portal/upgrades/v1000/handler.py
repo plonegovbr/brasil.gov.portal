@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-
-from brasil.gov.portal.config import PROJECTNAME
-
-import logging
-
-logger = logging.getLogger(PROJECTNAME)
+from brasil.gov.portal.logger import logger
 
 
 def setup(context):
