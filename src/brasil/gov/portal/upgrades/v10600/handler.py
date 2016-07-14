@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.logger import logger
 from brasil.gov.portal.setuphandlers import set_tinymce_formats
+from brasil.gov.portal.upgrades import csscookresources
 from plone import api
 from plone.app.upgrade.utils import loadMigrationProfile
 
@@ -18,7 +19,7 @@ def set_some_tiny_formats(context):
     set_tinymce_formats()
 
     # Novas regras foram adicionadas nos arquivos css.
-    api.portal.get_tool('portal_css').cookResources()
+    csscookresources()
 
 
 def apply_profile(context):

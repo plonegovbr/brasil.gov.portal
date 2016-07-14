@@ -22,6 +22,12 @@
         handler=".handler.atualiza_estilos_cover"
         />
 
+    <gs:upgradeStep
+        title="Cook Resources"
+        description="Atualiza estilos da configuração do brasil.gov.portal."
+        handler="brasil.gov.portal.upgrades.csscookresources"
+        />
+
   </gs:upgradeSteps>
 
 </configure>
