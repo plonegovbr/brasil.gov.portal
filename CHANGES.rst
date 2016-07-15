@@ -4,6 +4,10 @@ Histórico de Alterações
 1.1.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige o "Link to Collection" impedindo que o rodapé desse erro com links
+  para coleções. (closes `#95`_).
+  [idgserpro]
+
 * Complementa a css das tiles (closes `#189`_).
   [idgserpro]
 
@@ -421,6 +425,7 @@ Histórico de Alterações
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.portal/issues/88
 .. _`#90`: https://github.com/plonegovbr/brasil.gov.portal/issues/90
 .. _`#93`: https://github.com/plonegovbr/brasil.gov.portal/issues/93
+.. _`#95`: https://github.com/plonegovbr/brasil.gov.portal/issues/95
 .. _`#96`: https://github.com/plonegovbr/brasil.gov.portal/issues/96
 .. _`#98`: https://github.com/plonegovbr/brasil.gov.portal/issues/98
 .. _`#100`: https://github.com/plonegovbr/brasil.gov.portal/issues/100
