@@ -1655,6 +1655,85 @@ dl.portlet ol li { list-style: decimal outside; }
 .azul-escuro .tile-subtitle { color: #00439e; }
 .azul-turquesa .tile-subtitle { color: #097495; }
 .bege .tile-subtitle { color: #ab6600; }
+.tile.bege h1, .tile.bege p { color: #ab6600; }
+.tile.marrom h1, .tile.marrom p,
+.tile.marrom ul li  { color: #753900; }
+.tile.roxo h1, .tile.roxo p { color: #643c67; }
+.tile.azul-escuro h1, .tile.azul-escuro p { color: #00439e; }
+.tile.verde-escuro h1, .tile.verde-escuro p { color: #1d571f; }
+.tile.azul-turquesa h1, .tile.azul-turquesa p { color: #097495; }
+.tile.verde h1, .tile.verde p { color: #017b16; }
+.tile.laranja h1, .tile.laranja p { color: #ba4a00; }
+.tile.verde-claro h1, .tile.verde-claro p { color: #56762b; }
+.tile.marrom-claro h1, .tile.marrom-claro p { color: #826938; }
+.tile.dourado h1, .tile.dourado p { color: #b97a00; }
+.tile.azul-petroleo h1, .tile.azul-petroleo p { color: #3b7390; }
+.tile.azul h1, .tile.azul p { color: #1a55dd; }
+.tile.amarelo h1, .tile.amarelo p { color: #DE9200; }
+.tile.azul-piscina h1, .tile.azul-piscina p { color: #00A0DB; }
+.tile.azul-claro h1, .tile.azul-piscina p {color: #3867b7; }
+.tile.dourado .videogallery-tile{ background-color: #b97a00; }
+.tile.marrom-claro .videogallery-tile{ background-color: #826938; }
+.tile.marrom .videogallery-tile{ background-color: #753900; }
+.tile.laranja .videogallery-tile{ background-color: #ba4a00; }
+.tile.azul-petroleo .videogallery-tile{ background-color: #3b7390; }
+.tile.roxo .videogallery-tile{ background-color: #643c67; }
+.tile.verde-escuro .videogallery-tile{ background-color: #1d571f; }
+.tile.verde .videogallery-tile{ background-color: #017b16; }
+.tile.azul .videogallery-tile{ background-color: #1a55dd; }
+.tile.verde-claro .videogallery-tile{ background-color: #56762b; }
+.tile.azul-claro .videogallery-tile{ background-color: #3867b7; }
+.tile.azul-escuro .videogallery-tile{ background-color: #00439e; }
+.tile.azul-turquesa .videogallery-tile{ background-color: #097495; }
+.tile.bege .videogallery-tile{ background-color: #ab6600; }
+.tile.marrom .audiogallery-tile h2 { color: #753900; }
+.tile.bege .audiogallery-tile h2 { color: #ab6600; }
+.tile.roxo .audiogallery-tile h2 { color: #643c67; }
+.tile.azul-escuro .audiogallery-tile h2 { color: #00439e; }
+.tile.verde-escuro .audiogallery-tile h2 { color: #1d571f; }
+.tile.azul-turquesa .audiogallery-tile h2 { color: #097495; }
+.tile.verde .audiogallery-tile h2 { color: #017b16; }
+.tile.laranja .audiogallery-tile h2 { color: #ba4a00; }
+.tile.verde-claro .audiogallery-tile h2 { color: #56762b; }
+.tile.marrom-claro .audiogallery-tile h2 { color: #826938; }
+.tile.dourado .audiogallery-tile h2 { color: #b97a00; }
+.tile.azul-petroleo .audiogallery-tile h2 { color: #3b7390; }
+.tile.azul .audiogallery-tile h2 { color: #1a55dd; }
+.tile.amarelo .audiogallery-tile h2 { color: #DE9200; }
+.tile.azul-piscina .audiogallery-tile h2 { color: #00A0DB; }
+.tile.azul-claro .audiogallery-tile h2 {color: #3867b7; }
+.tile.marrom .mediacarousel.tile-content h2 { color: #753900; }
+.tile.bege .mediacarousel.tile-content h2 { color: #ab6600; }
+.tile.roxo .mediacarousel.tile-content h2 { color: #643c67; }
+.tile.azul-escuro .mediacarousel.tile-content h2 { color: #00439e; }
+.tile.verde-escuro .mediacarousel.tile-content h2 { color: #1d571f; }
+.tile.azul-turquesa .mediacarousel.tile-content h2 { color: #097495; }
+.tile.verde .mediacarousel.tile-content h2 { color: #017b16; }
+.tile.laranja .mediacarousel.tile-content h2 { color: #ba4a00; }
+.tile.verde-claro .mediacarousel.tile-content h2 { color: #56762b; }
+.tile.marrom-claro .mediacarousel.tile-content h2 { color: #826938; }
+.tile.dourado .mediacarousel.tile-content h2 { color: #b97a00; }
+.tile.azul-petroleo .mediacarousel.tile-content h2 { color: #3b7390; }
+.tile.azul .mediacarousel.tile-content h2 { color: #1a55dd; }
+.tile.amarelo .mediacarousel.tile-content h2 { color: #DE9200; }
+.tile.azul-piscina .mediacarousel.tile-content h2 { color: #00A0DB; }
+.tile.azul-claro .mediacarousel.tile-content h2 {color: #3867b7; }
+.tile.marrom div#em-destaque li#em-destaque-titulo { color: #753900; }
+.tile.bege div#em-destaque li#em-destaque-titulo { color: #ab6600; }
+.tile.roxo div#em-destaque li#em-destaque-titulo { color: #643c67; }
+.tile.azul-escuro div#em-destaque li#em-destaque-titulo { color: #00439e; }
+.tile.verde-escuro div#em-destaque li#em-destaque-titulo { color: #1d571f; }
+.tile.azul-turquesa div#em-destaque li#em-destaque-titulo { color: #097495; }
+.tile.verde div#em-destaque li#em-destaque-titulo { color: #017b16; }
+.tile.laranja div#em-destaque li#em-destaque-titulo { color: #ba4a00; }
+.tile.verde-claro div#em-destaque li#em-destaque-titulo { color: #56762b; }
+.tile.marrom-claro div#em-destaque li#em-destaque-titulo { color: #826938; }
+.tile.dourado div#em-destaque li#em-destaque-titulo { color: #b97a00; }
+.tile.azul-petroleo div#em-destaque li#em-destaque-titulo { color: #3b7390; }
+.tile.azul div#em-destaque li#em-destaque-titulo { color: #1a55dd; }
+.tile.amarelo div#em-destaque li#em-destaque-titulo { color: #DE9200; }
+.tile.azul-piscina div#em-destaque li#em-destaque-titulo { color: #00A0DB; }
+.tile.azul-claro div#em-destaque li#em-destaque-titulo {color: #3867b7; }
 
 /* destaques com borda cinza*/
 .roxo-borda,
