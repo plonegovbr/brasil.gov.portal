@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.logger import logger
+from plone import api
 
 
 def upgrade_profile(setup, profile_id):
@@ -20,3 +21,8 @@ def upgrade_profile(setup, profile_id):
 
     if step and step.dest is not None and step.checker is None:
         setup.setLastVersionForProfile(profile_id, step.dest)
+
+
+def csscookresources(portal_setup=None):
+
+    api.portal.get_tool('portal_css').cookResources()
