@@ -14,6 +14,9 @@
         />
   </browser:menuItems>
 
+  <!--FIXME:-->
+  <!--BBB:-->
+  <!--Veja em doormat.py quando esse override poderá ser removido.-->
   <!-- Overrides do Doormat-->
   <browser:page
       for="Products.Doormat.content.interfaces.IDoormat"
