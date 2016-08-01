@@ -2,6 +2,13 @@
 from Products.Doormat.browser.views import DoormatView as BaseView
 
 
+# FIXME
+# BBB
+# Essa customização, a partir do Products.Doormat 1.2, poderá ser
+# completamente removida. Para maiores detalhes, veja
+# https://github.com/plonegovbr/brasil.gov.portal/issues/95#issuecomment-229473089
+# Ver se não existe algum teste associado a essa customização para que também
+# seja removido.
 class DoormatView(BaseView):
     """ Doormat View lidando com os dados de links
     """
@@ -35,8 +42,6 @@ class DoormatView(BaseView):
                 for link in section['section_links']:
                     link_url = link['link_url']
                     url = link_url
-                    if not isinstance(link_url, unicode):
-                        link_url = link_url()
                     if '${navigation_root_url}' in link_url:
                         url = link_url.replace(
                             '${navigation_root_url}',
