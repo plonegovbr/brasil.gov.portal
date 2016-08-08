@@ -4,6 +4,10 @@ Histórico de Alterações
 1.1.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige a exibição de notícias com portlets, além de outras páginas onde seja
+  usado o CSS selector div.width-1:2. (closes `#303`_).
+  [finnicius]
+
 * Adiciona diretiva do plone4.csrffixes no dependencies.zcml (closes `#279`_).
   [idgserpro]
 
@@ -471,3 +475,4 @@ Histórico de Alterações
 .. _`#242`: https://github.com/plonegovbr/brasil.gov.portal/issues/242
 .. _`#275`: https://github.com/plonegovbr/brasil.gov.portal/issues/275
 .. _`#279`: https://github.com/plonegovbr/brasil.gov.portal/issues/279
+.. _`#303`: https://github.com/plonegovbr/brasil.gov.portal/issues/303
