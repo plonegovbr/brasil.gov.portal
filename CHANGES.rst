@@ -4,6 +4,10 @@ Histórico de Alterações
 1.1.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige erro na visualização de notícias com portlets, e em outras páginas
+  com o seletor CSS div.width-1:2. (closes `#303`_).
+  [finnicius]
+
 * Corrige o "Link to Collection" impedindo que o rodapé desse erro com links
   para coleções. (closes `#95`_).
   [idgserpro]
@@ -467,3 +471,4 @@ Histórico de Alterações
 .. _`#241`: https://github.com/plonegovbr/brasil.gov.portal/issues/241
 .. _`#242`: https://github.com/plonegovbr/brasil.gov.portal/issues/242
 .. _`#275`: https://github.com/plonegovbr/brasil.gov.portal/issues/275
+.. _`#303`: https://github.com/plonegovbr/brasil.gov.portal/issues/303
