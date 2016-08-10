@@ -13,6 +13,7 @@
   <include package="collective.polls" />
   <include package="collective.upload" />
   <include package="plone.app.contenttypes" />
+  <include package="plone4.csrffixes" />
   <include package="Products.CMFPlone" />
   <include package="Products.Doormat" />
   <include package="Products.PloneFormGen" />
