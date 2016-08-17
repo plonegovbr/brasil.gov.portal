@@ -203,7 +203,6 @@ p {
    ========================================================================== */
 
 div.width-1\3a 2 {
-    margin-left: -78.295% !important;
     width: 51.25%;
 }
 
@@ -3455,6 +3454,15 @@ ul.formTabs { padding: 0px !important; }
 #nav #seletor { display: none; }
 
 #nav #seletor { color: #fff; }
+
+/* Desktop
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+    div.width-1\3a 2 {
+        margin-left: -78.295%;
+    }
+}
 
 /* Smartphone
    ========================================================================== */
