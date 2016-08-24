@@ -17,7 +17,7 @@ Requisitos
 
 Para uso deste pacote, seu site deve ter sido construído com:
 
-    * Plone 4.3.3
+    * Plone 4.3.9
     * Pinagem correta das `dependências <https://github.com/plonegovbr/brasil.gov.portal/blob/master/setup.py#L45>`_ do ``brasil.gov.portal``: cada release possui um ``versions.cfg`` específico em `portalpadrao.release <https://github.com/plonegovbr/portalpadrao.release>`_. Utilize o ``versions.cfg`` correspondente ao release de ``brasil.gov.portal`` utilizado.
 
 Recomendamos a leitura do `documento <http://identidade-digital-de-governo-plone.readthedocs.org/en/latest/>`_ sobre a instalação deste pacote.
