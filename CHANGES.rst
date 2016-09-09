@@ -4,6 +4,10 @@ Histórico de Alterações
 1.1.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Corrige pickling errors entre upgradesteps ao retirar a layer do
+  collective.oembed e plone.app.collection.
+  [idgserpro]
+
 * Corrige a exibição de notícias com portlets, além de outras páginas onde seja
   usado o CSS selector div.width-1:2. (closes `#303`_).
   [finnicius]

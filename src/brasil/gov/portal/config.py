@@ -131,7 +131,6 @@ HIDDEN_PROFILES = [
     'brasil.gov.portlets.upgrades.v1000',
     'brasil.gov.portal:default',
     'brasil.gov.portal:initcontent',
-    'brasil.gov.portal:testfixture',
     'brasil.gov.portal:uninstall',
     'brasil.gov.tiles.upgrades.v2000:default',
     'brasil.gov.tiles:default',
