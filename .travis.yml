@@ -5,9 +5,16 @@ cache:
   directories:
   - eggs
   - parts/node
+env:
+  matrix:
+    - MASTER=true
+    - PENDING_RELEASE=true
 matrix:
+  allow_failures:
+    - env: MASTER=true
   fast_finish: true
 install:
+- test $MASTER && sed -ie '/https:\/\/raw\.githubusercontent\.com\/plonegovbr\/portal\.buildout\/new_use_base_versions_cfg\/buildout\.d\/versions\.cfg/d' buildout.cfg || true
 - python bootstrap.py
 - bin/buildout annotate
 - bin/buildout
