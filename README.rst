@@ -67,6 +67,27 @@ buildout:
 
 5. Adicione um novo site Plone.
 
+Rodando o buildout de uma tag antiga do pacote
+----------------------------------------------
+
+Para atender ao relato de ter vários jobs de integração contínua em pacottes brasil.gov.* (ver https://github.com/plonegovbr/portalpadrao.release/issues/11), no fim da seção extends do buildout.cfg de todos os pacotes brasil.gov.* temos a seguinte linha:
+
+.. code-block:: cfg
+
+    https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
+
+Hoje, esse arquivo contém sempre as versões pinadas de um release a ser lançado. Por esse motivo, quando é feito o checkout de uma tag mais antiga (por exemplo, 1.0.5), provavelmente você não conseguirá rodar o buildout. Dessa forma, após fazer o checkout de uma tag antiga, recomendamos que adicione, na última linha do extends, o arquivo de versões daquela tag, presente no repositório https://github.com/plonegovbr/portalpadrao.release/. Na tag 1.0.5 por exemplo desse pacote seu buildout.cfg ficaria da seguinte forma:
+
+.. code-block:: cfg
+
+    extends =
+        https://raw.github.com/collective/buildout.plonetest/master/test-4.3.x.cfg
+        https://raw.github.com/collective/buildout.plonetest/master/qa.cfg
+        http://downloads.plone.org.br/release/1.0.4/versions.cfg
+        https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
+        https://raw.githubusercontent.com/plone/plone.app.robotframework/master/versions.cfg
+        https://raw.githubusercontent.com/plonegovbr/portalpadrao.release/master/1.0.5/versions.cfg
+
 Sobrescrita de traduções do domínio plone
 -----------------------------------------
 
