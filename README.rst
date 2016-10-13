@@ -76,7 +76,9 @@ Para atender ao relato de ter vários jobs de integração contínua em pacottes
 
     https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
 
-Hoje, esse arquivo contém sempre as versões pinadas de um release a ser lançado. Por esse motivo, quando é feito o checkout de uma tag mais antiga (por exemplo, 1.0.5), provavelmente você não conseguirá rodar o buildout. Dessa forma, após fazer o checkout de uma tag antiga, recomendamos que adicione, na última linha do extends, o arquivo de versões daquela tag, presente no repositório https://github.com/plonegovbr/portalpadrao.release/. Na tag 1.0.5 por exemplo desse pacote seu buildout.cfg ficaria da seguinte forma:
+Hoje, esse arquivo contém sempre as versões pinadas de um release a ser lançado. Por esse motivo, quando é feito o checkout de uma tag mais antiga provavelmente você não conseguirá rodar o buildout. Dessa forma, após fazer o checkout de uma tag antiga, recomendamos que adicione, na última linha do extends, o arquivo de versões daquela tag, presente no repositório https://github.com/plonegovbr/portalpadrao.release/. 
+
+Exemplo: você clonou o repositório do brasil.gov.portal na sua máquina, e deu checkout na tag 1.0.5. Ao editar o buildout.cfg, ficaria dessa forma:
 
 .. code-block:: cfg
 
