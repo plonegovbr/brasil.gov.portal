@@ -9,6 +9,10 @@ Histórico de Alterações
   [finnicius]
 
 * Adiciona diretiva do plone4.csrffixes no dependencies.zcml (closes `#279`_).
+
+* Corrige upgradeStep 10700 para que execute o método "simplify_layout" do
+  collective.cover, necessário para se evitar quebra de capa dependendo da
+  ordem em que os upgradeSteps são executados. (closes `#289`_)
   [idgserpro]
 
 * Corrige o "Link to Collection" impedindo que o rodapé desse erro com links
@@ -475,4 +479,5 @@ Histórico de Alterações
 .. _`#242`: https://github.com/plonegovbr/brasil.gov.portal/issues/242
 .. _`#275`: https://github.com/plonegovbr/brasil.gov.portal/issues/275
 .. _`#279`: https://github.com/plonegovbr/brasil.gov.portal/issues/279
+.. _`#289`: https://github.com/plonegovbr/brasil.gov.portal/issues/289
 .. _`#303`: https://github.com/plonegovbr/brasil.gov.portal/issues/303

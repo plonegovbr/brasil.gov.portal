@@ -4,6 +4,7 @@ from brasil.gov.portal.logger import logger
 from brasil.gov.portal.upgrades import upgrade_profile
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICover
+from collective.cover.upgrades.v11 import simplify_layout
 from plone import api
 from plone.app.contenttypes.interfaces import IFolder
 from plone.app.upgrade.utils import loadMigrationProfile
@@ -159,6 +160,13 @@ def corrige_conteudo_collectivecover(portal_setup):
         obj.cover_layout = _corrige_conteudo_collectivecover(obj,
                                                              obj.cover_layout)
         logger.info('"{0}" was updated'.format(obj.absolute_url_path()))
+
+    # Necessário caso os upgradeSteps não sejam executados na ordem correta.
+    # Ver https://github.com/plonegovbr/brasil.gov.portal/issues/289
+    # Esse método está presente no collective.cover a partir da versão 1.0a11,
+    # e essa versão é pinada no IDG 1.1.3, momento em que esse upgradeStep foi
+    # gerado.
+    simplify_layout(api.portal.get())
 
 
 def apply_profile(portal_setup):

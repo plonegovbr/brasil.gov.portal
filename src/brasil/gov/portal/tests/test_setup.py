@@ -7,6 +7,7 @@ from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
 from brasil.gov.portal.controlpanel.portal import ISettingsPortal
 from brasil.gov.portal.setuphandlers import _instala_pacote
+from brasil.gov.portal.upgrades.v10700.handler import atualiza_produtos_terceiros
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from collective.cover.controlpanel import ICoverSettings
 from plone import api
@@ -443,6 +444,66 @@ class TestUpgrade(unittest.TestCase):
         self.assertEqual(
             self.st.getLastVersionForProfile(AGENDAPROFILE),
             UNKNOWN)
+
+    def test_to10700_execution_different_upgrade_step_order(self):
+        """
+        Teste para simular a situação de upgrades em ordens diferentes que
+        podem quebrar a capa. Ver
+        https://github.com/plonegovbr/brasil.gov.portal/issues/289
+        """
+
+        # Todo esse teste para testar formato antigo da capa é baseado em
+        # https://github.com/collective/collective.cover/blob/985d0faafdd3b3401c2ba56d5c0c2d8aaac2b48e/src/collective/cover/tests/test_upgrades.py#L368
+        # Com a diferença de que ao invés de usarmos os upgradeSteps de
+        # collective.cover, usaremos os métodos de atualização de terceiros
+        # disponibilizados em brasil.gov.portal.
+
+        old_data = (
+            u'[{"type": "row", "children": [{"data": {"layout-type": "column", '
+            u'"column-size": 16}, "type": "group", "children": [{"tile-type": '
+            u'"collective.cover.carousel", "type": "tile", "id": '
+            u'"ca6ba6675ef145e4a569c5e410af7511"}], "roles": ["Manager"]}]}]'
+        )
+
+        expected = (
+            u'[{"type": "row", "children": [{"type": "group", "children": '
+            u'[{"tile-type": "collective.cover.carousel", "type": "tile", '
+            u'"id": "ca6ba6675ef145e4a569c5e410af7511"}], "roles": '
+            u'["Manager"], "column-size": 16}]}]'
+        )
+
+        # simulate state on previous version of registry layouts
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(ICoverSettings)
+        settings.layouts = {
+            u'test_layout': old_data
+        }
+
+        with api.env.adopt_roles(['Manager']):
+            cover = api.content.create(
+                self.portal, 'collective.cover.content',
+                'test-cover',
+                template_layout='Empty layout',
+            )
+
+        cover.cover_layout = old_data
+
+        ps = api.portal.get_tool('portal_setup')
+
+        # Simulo a atualização de terceiros e depois a do brasil.gov.portal que
+        # "sobrescreve" o que o collective.cover fez: se for feito exatamente
+        # nessa ordem, a capa quebra, como apresentado no relato
+        # https://github.com/plonegovbr/brasil.gov.portal/issues/289
+        atualiza_produtos_terceiros(ps)
+        self.execute_upgrade(u'10600', u'10700')
+
+        # Acontece que agora, dentro do upgrade 10600-10700,
+        # em corrige_conteudo_collectivecover, chamo "simplify_layout"
+        # novamente bem no fim, corrigindo o problema caso o usuário execute
+        # os upgradeSteps nessa ordem problemática.
+        self.assertEqual(settings.layouts, {'test_layout': expected})
+
+        self.assertEqual(cover.cover_layout, expected)
 
     def test_to10800_execution(self):
         # Remove configulet 'portal' para simular estado anterior ao upgrade.
