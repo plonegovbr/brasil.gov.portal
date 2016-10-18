@@ -20,9 +20,11 @@ class NITFBylineViewlet(DocumentBylineViewlet):
             return mt.getMemberInfo(member)
 
     def byline(self):
-        member = self.getMemberInfoByName(self.context.byline)
-        if member:
-            return member['username']
+        fullname = self.context.byline
+        if fullname:
+            member = self.getMemberInfoByName(fullname)
+            if member:
+                return member['username']
 
     def author(self):
         return self.getMemberInfoByName(self.context.byline)
