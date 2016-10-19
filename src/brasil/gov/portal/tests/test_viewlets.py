@@ -338,6 +338,18 @@ class NITFBylineViewletTestCase(unittest.TestCase):
         viewlet = self.viewlet()
         self.assertFalse(viewlet.byline())
 
+    def test_autor_indefinido(self):
+        viewlet = self.viewlet()
+        viewlet.getMemberInfoByName = lambda x: {'username': 'mock_user'}
+
+        # Assegura que 'getMemberInfoByname' é chamada para um autor qualquer
+        self.conteudo.byline = u'Usuário Qualquer'
+        self.assertEqual(viewlet.byline(), 'mock_user')
+
+        # Assegura que 'getMemberInfoByname' NÃO é chamada sem um autor
+        self.conteudo.byline = u''
+        self.assertIsNone(viewlet.byline())
+
     def test_byline(self):
         viewlet = self.viewlet()
         self.assertEqual(viewlet.byline(), 'machado')
