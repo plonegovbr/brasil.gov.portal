@@ -8,6 +8,10 @@ Histórico de Alterações
   collective.oembed e plone.app.collection.
   [idgserpro]
 
+* Na viewlet NITFBylineViewlet, deixamos de buscar dados do usuário quando o
+  autor é indefinido (closes `#320`).
+  [tcurvelo]
+
 * Corrige a exibição de notícias com portlets, além de outras páginas onde seja
   usado o CSS selector div.width-1:2. (closes `#303`_).
   [finnicius]
