@@ -28,6 +28,12 @@
         handler="brasil.gov.portal.upgrades.csscookresources"
         />
 
+    <gs:upgradeStep
+        title="Remove Browserlayer"
+        description="Remove the browserlayer, which is not needed anymore."
+        handler=".handler.remove_browserlayer"
+        />
+
   </gs:upgradeSteps>
 
 </configure>

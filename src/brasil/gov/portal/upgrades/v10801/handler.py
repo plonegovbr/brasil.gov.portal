@@ -3,6 +3,8 @@ from brasil.gov.agenda.config import PROJECTNAME as AGENDAPROJECTNAME
 from brasil.gov.portal.logger import logger
 from collective.cover.controlpanel import ICoverSettings
 from plone import api
+from plone.browserlayer.utils import registered_layers
+from plone.browserlayer.utils import unregister_layer
 from Products.GenericSetup.tool import UNKNOWN
 
 
@@ -58,3 +60,15 @@ def instala_profile_agenda(portal_setup):
         profile = 'profile-{0}:default'.format(AGENDAPROJECTNAME)
         portal_setup.runAllImportStepsFromProfile(profile)
         logger.info('Profile do brasil.gov.agenda instalado')
+
+
+def remove_browserlayer(context):
+    """ Remove as browserlayers OEmbedLayer e IPloneAppCollectionLayer
+    caso elas ainda estejam registradas"""
+    for Ilayer in registered_layers():
+        if Ilayer.getName() == 'OEmbedLayer':
+            unregister_layer(name=u'collective.oembed')
+            logger.info('Layer collective.oembed removida')
+        elif Ilayer.getName() == 'IPloneAppCollectionLayer':
+            unregister_layer(name=u'plone.app.collection')
+            logger.info('Layer plone.app.collection removida')
