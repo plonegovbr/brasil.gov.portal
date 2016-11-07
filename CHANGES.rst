@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.1.5.1 (unreleased)
+1.1.5.1 (2016-11-07)
 ^^^^^^^^^^^^^^^^^^^^
 
 - Conserta ``_corrige_css_class``, upgradeStep 10700.
