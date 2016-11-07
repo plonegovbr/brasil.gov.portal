@@ -76,13 +76,24 @@ def ordernacao_pastas(portal_setup):
 
 
 def _corrige_css_class(row):
-    """ Verifica se o campo css_class não é uma
+    """
+        Verifica se o campo css_class não é uma
         string válida, e substitui por uma string vazia.
+
+        A principal função desse método é corrigir o relato
+
+            https://github.com/plonegovbr/brasil.gov.portal/issues/216
+
+        Evitando o erro:
+
+            TypeError: cannot concatenate 'str' and 'dict' objects
+
+        Assim, "limpamos" os tipos que são dict e --NOVALUE--.
+
     """
     if 'css_class' in row:
         css_class = row['css_class']
-        if (type(css_class) is not str or
-           css_class == '--NOVALUE--'):
+        if type(css_class) == dict or css_class == '--NOVALUE--':
             css_class = ''
         row['css_class'] = css_class
     return row
