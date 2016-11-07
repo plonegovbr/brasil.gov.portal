@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.1.5 (unreleased)
+1.1.5 (2016-11-07)
 ^^^^^^^^^^^^^^^^^^
 
 * Corrige pickling errors entre upgradesteps ao retirar a layer do
