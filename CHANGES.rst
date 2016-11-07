@@ -4,7 +4,8 @@ Histórico de Alterações
 1.1.5.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Conserta ``_corrige_css_class``, upgradeStep 10700.
+  [idgserpro]
 
 
 1.1.5 (2016-11-07)
