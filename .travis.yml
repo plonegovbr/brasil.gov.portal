@@ -25,6 +25,12 @@ before_script:
 script:
 - bin/code-analysis
 - bin/test
+after_script:
+# XXX:
+# Firefox reclama: GConf-WARNING **: Got Disconnected from DBus.
+# E continua falhndo, criando um job falho a cada 30-50 minutos.
+# Então simplesmente matamos o processo.
+- pkill -9 firefox
 after_success:
 - bin/createcoverage -t "--layer=!Acceptance"
 - pip install -q coveralls
