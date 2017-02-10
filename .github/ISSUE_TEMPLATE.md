@@ -2,29 +2,29 @@
 
 ### Possui plugins adicionados além dos definidos numa instalação padrão do Portal Padrão? Se sim, forneça o nome e as versões utilizadas.
 
-<!-- Marque essas opções trocando [] port [x] -->
+<!-- Marque essas opções trocando [ ] por [x] -->
 
-- [] Sim
+- [ ] Sim
 Nome e versões dos plugins:
 
-- [] Não
-- [] Não sei informar
+- [ ] Não
+- [ ] Não sei informar
 
 ### Está utilizando o buildout padrão como o usado em https://github.com/plonegovbr/portal.buildout?
 
-<!-- Marque essas opções trocando [] port [x] -->
+<!-- Marque essas opções trocando [ ] por [x] -->
 
-- [] Sim
-- [] Não
-- [] Não sei informar
+- [ ] Sim
+- [ ] Não
+- [ ] Não sei informar
 
 ### Se a resposta acima foi negativa, está utilizando o arquivo de versões de pinagens das dependências como definido em https://github.com/plonegovbr/portalpadrao.release/ e https://github.com/plonegovbr/brasil.gov.portal#requisitos?
 
-<!-- Marque essas opções trocando [] port [x] -->
+<!-- Marque essas opções trocando [ ] por [x] -->
 
-- [] Sim
-- [] Não
-- [] Não sei informar
+- [ ] Sim
+- [ ] Não
+- [ ] Não sei informar
 
 ### Quais são os passos para reproduzir o problema?
 
