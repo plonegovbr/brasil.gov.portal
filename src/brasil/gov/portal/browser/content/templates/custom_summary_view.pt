@@ -112,23 +112,25 @@
                                             </span>
                                         </tal:name>
                                         <tal:modified condition="python: item_type != 'Event' and mostra_data">
-                                            <span class="hiddenStructure">
-                                                <tal:mod i18n:translate="box_published">
-                                                    published
-                                                </tal:mod>
-                                            </span>
-                                            <span class="summary-view-icon">
-                                                <i class="icon-day"></i>
-                                                <span tal:replace="python:toLocalizedTime(item.effective)">16/08/2001</span>
-                                            </span>
-                                            <span class="summary-view-icon">
-                                                <i class="icon-hour"></i>
-                                                <span tal:replace="python:toLocalizedTime(item.effective,time_only=1)">23:35:59</span>
-                                            </span>
-                                            <span class="summary-view-icon">
-                                                <i tal:attributes="class string:icon-${item_type/lower}"/>
-                                                <span tal:replace="item_type" />
-                                            </span>
+                                            <tal:block define="itemDate python:item.EffectiveDate() == 'None' and item.modified or item.effective">
+                                                <span class="hiddenStructure">
+                                                    <tal:mod i18n:translate="box_published">
+                                                        published
+                                                    </tal:mod>
+                                                </span>
+                                                <span class="summary-view-icon">
+                                                    <i class="icon-day"></i>
+                                                    <span tal:replace="python:toLocalizedTime(itemDate)">16/08/2001</span>
+                                                </span>
+                                                <span class="summary-view-icon">
+                                                    <i class="icon-hour"></i>
+                                                    <span tal:replace="python:toLocalizedTime(itemDate, time_only=1)">23:35:59</span>
+                                                </span>
+                                                <span class="summary-view-icon">
+                                                    <i tal:attributes="class string:icon-${item_type/lower}"/>
+                                                    <span tal:replace="item_type" />
+                                                </span>
+                                            </tal:block>
                                         </tal:modified>
                                         <span class="visualClear"></span>
                                     </tal:byline>

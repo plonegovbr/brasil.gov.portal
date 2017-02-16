@@ -4,7 +4,8 @@ Histórico de Alterações
 1.1.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige a data na "Visão Sumária" nas coleções (closes '#335').
+  [claytonc]
 
 
 1.1.5.1 (2016-11-07)
