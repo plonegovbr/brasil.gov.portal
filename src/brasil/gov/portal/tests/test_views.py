@@ -214,6 +214,37 @@ class GaleriaDeFotosTestCase(BaseViewTestCase):
         self.assertEqual(self.view.items[0]['size'], Missing.Value)
 
 
+class BuscaTestCase(BaseViewTestCase):
+
+    def setUp(self):
+        super(BuscaTestCase, self).setUp()
+        alsoProvides(self.request, IThemeSpecific)
+        self.view = api.content.get_view(u'busca', self.folder, self.request)
+
+    def test_search_by_tag(self):
+        title = 'Test Tags Search'
+        tag = 'Tag 1'
+        with api.env.adopt_roles(['Manager']):
+            api.content.create(
+                container=self.folder,
+                type='Document',
+                title=title,
+                Subject=tag,
+            )
+
+        # busca pelo titulo retorna resultados
+        results = self.view.results({'SearchableText': title}, batch=False)
+        self.assertEqual(results.actual_result_count, 1)
+
+        # busca diretamente nas tags retorna resultados
+        results = self.view.results({'Subject': tag}, batch=False)
+        self.assertEqual(results.actual_result_count, 1)
+
+        # busca por tags usando o indice SearchableText nao retorna resultados
+        # quando deveria encontrar
+        results = self.view.results({'SearchableText': tag}, batch=False)
+        self.assertEqual(results.actual_result_count, 1)
+
 PAGINATION_BEGIN = [
     {
         'class': 'atual',
