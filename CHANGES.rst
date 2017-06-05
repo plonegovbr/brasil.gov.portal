@@ -47,6 +47,9 @@ Histórico de Alterações
   instalado e atualiza os estilos do collective.cover(closes `#154`_).
   [idgserpro]
 
+* Corrige erro na visualização de notícias quando há area de portlets, ou em outras páginas que utilizem o seletor CSS div.width-1:2 (closes `#303`_).
+  [finniciusrevem]
+
 
 1.1.4 (2016-03-14)
 ^^^^^^^^^^^^^^^^^^
