@@ -6,7 +6,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 class Renderer(BaseRenderer):
 
     def process_navigation(self, data):
-        ''' '''
+        """Process navigation."""
         portal_url = self.urltool()
         navroot_url = self.getNavRoot().absolute_url()
         for item in data:
@@ -20,6 +20,7 @@ class Renderer(BaseRenderer):
         return data
 
     def createNavTree(self):
+        """Creates navtree."""
         data = self.getNavTree()
 
         bottomLevel = (self.data.bottomLevel or

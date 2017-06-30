@@ -38,7 +38,7 @@ def validate_ogg(value):
 
 
 class IMPEGAudioFile(form.Schema):
-    ''' Representa um Arquivo de Audio MPEG'''
+    """ Representa um Arquivo de Audio MPEG"""
 
     model.primary('file')
     file = NamedBlobFile(title=_(u'File'),
@@ -48,7 +48,7 @@ class IMPEGAudioFile(form.Schema):
 
 
 class IOGGAudioFile(form.Schema):
-    ''' Representa um Arquivo de Audio OGG'''
+    """ Representa um Arquivo de Audio OGG"""
 
     model.primary('file')
     file = NamedBlobFile(title=_(u'File'),
@@ -61,7 +61,7 @@ class AudioFile(Item):
 
     @property
     def content_type(self):
-        ''' Retorna o mimetype do conteudo '''
+        """ Retorna o mimetype do conteudo """
         file = self.file
         if file:
             return file.contentType

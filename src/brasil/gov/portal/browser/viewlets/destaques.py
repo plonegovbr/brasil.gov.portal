@@ -42,8 +42,8 @@ class Destaques_Viewlet(grok.Viewlet):
         return self.portal_state.portal_url()
 
     def editable(self):
-        ''' Validamos se o destaques eh editavel
-        '''
+        """ Validamos se o destaques eh editavel
+        """
         destaques = getattr(self.portal, FEATURES_ID, None)
         if destaques:
             context_state = getMultiAdapter((destaques, self.request),
@@ -51,8 +51,8 @@ class Destaques_Viewlet(grok.Viewlet):
             return context_state.is_editable()
 
     def available(self):
-        ''' Exibiremos ou nao este viewlet
-        '''
+        """ Exibiremos ou nao este viewlet
+        """
         context = self.canonical_object
         self.destaques = getattr(self.portal, FEATURES_ID, None) if (
             context == self.portal) else None

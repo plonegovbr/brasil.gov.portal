@@ -28,14 +28,14 @@ class SiteControlPanelTest(unittest.TestCase):
         self.adapter = SiteControlPanelAdapter(self.portal)
 
     def test_controlpanel_view(self):
-        ''' Validamos se o control panel esta acessivel '''
+        """ Validamos se o control panel esta acessivel """
         view = getMultiAdapter((self.portal, self.portal.REQUEST),
                                name='site-controlpanel')
         view = view.__of__(self.portal)
         self.assertTrue(view())
 
     def test_controlpanel_view_protected(self):
-        ''' Acesso a view nao pode ser feito por usuario anonimo '''
+        """ Acesso a view nao pode ser feito por usuario anonimo """
         # Importamos a excecao esperada
         from AccessControl import Unauthorized
         # Deslogamos do portal
@@ -46,7 +46,7 @@ class SiteControlPanelTest(unittest.TestCase):
                           '@@site-controlpanel')
 
     def test_configlet_install(self):
-        ''' Validamos se o control panel foi registrado '''
+        """ Validamos se o control panel foi registrado """
         # Obtemos a ferramenta de painel de controle
         controlpanel = self.portal.portal_controlpanel
         # Listamos todas as acoes do painel de controle
@@ -58,7 +58,7 @@ class SiteControlPanelTest(unittest.TestCase):
         self.assertTrue('PloneReconfig' in installed)
 
     def test_title(self):
-        ''' Alterar site_title_1 e site_title_2 gera site_title '''
+        """ Alterar site_title_1 e site_title_2 gera site_title """
         portal = self.portal
         adapter = self.adapter
         adapter.site_title_1 = u'Portal'

@@ -58,11 +58,11 @@ accounts_widget = CustomWidgetFactory(ListSequenceWidget,
 
 
 class SocialNetworksPanelAdapter(SchemaAdapterBase):
-    ''' Adapter para a raiz do site Plone suportar o schema
+    """ Adapter para a raiz do site Plone suportar o schema
         de configuracao da barra de identidade
         Esta classe implementa uma maneira da raiz do site armazenar
         as configuracoes que serao geridas pelo painel de controle
-    '''
+    """
 
     adapts(IPloneSiteRoot)
     implements(ISocialNetworksSchema)
@@ -100,7 +100,7 @@ class SocialNetworksPanelAdapter(SchemaAdapterBase):
 
 
 class SocialNetworksControlPanel(ControlPanelForm):
-    ''' Implementacao do painel de controle da Barra de Identidade '''
+    """ Implementacao do painel de controle da Barra de Identidade """
     # Define quais serao os campos a serem exibidos (IBarraConfSchema)
     form_fields = FormFields(ISocialNetworksSchema)
     form_fields['accounts_info'].custom_widget = accounts_widget
