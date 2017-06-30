@@ -13,10 +13,10 @@ class TitleViewlet(PloneTitleViewlet):
     @property
     @memoize
     def page_title(self):
-        '''
+        """
         Override default method to add the right page name (translated) for
         search and sitemap pages
-        '''
+        """
         alternative_titles = {
             'busca': 'Busca',
             'mapadosite': 'Mapa do Site',

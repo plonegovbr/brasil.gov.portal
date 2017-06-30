@@ -4,7 +4,7 @@ from plone.app.upgrade.utils import loadMigrationProfile
 
 
 def apply_profile(context):
-    ''' Atualiza perfil para versao 5000 '''
+    """ Atualiza perfil para versao 5000 """
     profile = 'profile-brasil.gov.portal.upgrades.v5000:default'
     loadMigrationProfile(context, profile)
     logger.info('Atualizado para versao 5000')

@@ -5,14 +5,14 @@ from plone.app.layout.viewlets import ViewletBase
 
 
 class ServicosViewlet(ViewletBase):
-    ''' Viewlet de listagem de servicos
-    '''
+    """ Viewlet de listagem de servicos
+    """
     # Indica qual o template sera usado por este viewlet
     index = ViewPageTemplateFile('templates/servicos.pt')
 
     def update(self):
-        ''' Prepara/Atualiza os valores utilizados pelo Viewlet
-        '''
+        """ Prepara/Atualiza os valores utilizados pelo Viewlet
+        """
         super(ServicosViewlet, self).update()
         ps = self.context.restrictedTraverse('@@plone_portal_state')
         tools = self.context.restrictedTraverse('@@plone_tools')

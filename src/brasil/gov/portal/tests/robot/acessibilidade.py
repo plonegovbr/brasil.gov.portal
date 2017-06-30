@@ -46,8 +46,8 @@ class Acessibilidade:
         colors_luminance.sort()
         contrast_ratio = colors_luminance[1] / colors_luminance[0]
         if contrast_ratio < ratio:
-            msg = ('''Contraste incorreto para o seletor %s,'''
-                   ''' valor obtido: %.2f, valor esperado: %.2f''' %
+            msg = ("""Contraste incorreto para o seletor %s,"""
+                   """ valor obtido: %.2f, valor esperado: %.2f""" %
                    (selector, contrast_ratio, ratio))
             raise AssertionError(msg)
 
@@ -73,7 +73,7 @@ class Acessibilidade:
         colors_luminance.sort()
         contrast_ratio = colors_luminance[1] / colors_luminance[0]
         if contrast_ratio < ratio:
-            msg = ('''Contraste incorreto para o seletor %s,'''
-                   ''' valor obtido: %.2f, valor esperado: %.2f''' %
+            msg = ("""Contraste incorreto para o seletor %s,"""
+                   """ valor obtido: %.2f, valor esperado: %.2f""" %
                    (selector, contrast_ratio, ratio))
             raise AssertionError(msg)

@@ -20,7 +20,7 @@ class ControlPanelTest(unittest.TestCase):
         self.adapter = socialnetworks.SocialNetworksPanelAdapter(self.portal)
 
     def test_controlpanel_view(self):
-        ''' Validamos se o control panel esta acessivel '''
+        """ Validamos se o control panel esta acessivel """
         view = api.content.get_view(
             name='brasil.gov.portal-social',
             context=self.portal,
@@ -30,7 +30,7 @@ class ControlPanelTest(unittest.TestCase):
         self.assertTrue(view())
 
     def test_controlpanel_view_protected(self):
-        ''' Acesso a view nao pode ser feito por usuario anonimo '''
+        """ Acesso a view nao pode ser feito por usuario anonimo """
         # Importamos a excecao esperada
         from AccessControl import Unauthorized
         with api.env.adopt_roles(['Anonymous', ]):
@@ -38,7 +38,7 @@ class ControlPanelTest(unittest.TestCase):
                               '@@brasil.gov.portal-social')
 
     def test_configlet_install(self):
-        ''' Validamos se o control panel foi registrado '''
+        """ Validamos se o control panel foi registrado """
         # Obtemos a ferramenta de painel de controle
         controlpanel = api.portal.get_tool('portal_controlpanel')
         # Listamos todas as acoes do painel de controle

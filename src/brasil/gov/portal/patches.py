@@ -9,7 +9,7 @@ from plone.outputfilters.filters import resolveuid_and_caption as base
 
 def outputfilters():
     def patched_call(self, data):
-        ''' Patch original __call__ '''
+        """ Patch original __call__ """
         data = data.replace('/>', ' />')
         return self.__orig_call__(data)
 

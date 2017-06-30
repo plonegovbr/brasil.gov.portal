@@ -6,16 +6,16 @@ from plone.app.layout.viewlets import ViewletBase
 
 
 class RedesSociaisViewlet(ViewletBase):
-    ''' Viewlet de redes sociais
-    '''
+    """ Viewlet de redes sociais
+    """
     # Indica qual o template sera usado por este viewlet
     index = ViewPageTemplateFile('templates/redessociais.pt')
 
     redes = []
 
     def update(self):
-        ''' Prepara/Atualiza os valores utilizados pelo Viewlet
-        '''
+        """ Prepara/Atualiza os valores utilizados pelo Viewlet
+        """
         super(RedesSociaisViewlet, self).update()
         tools = self.context.restrictedTraverse('@@plone_tools')
         pp = tools.properties()

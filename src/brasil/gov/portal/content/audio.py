@@ -10,7 +10,7 @@ from zope.lifecycleevent.interfaces import IObjectRemovedEvent
 
 
 class IAudio(Interface):
-    ''' Representa um Audio '''
+    """ Representa um Audio """
 
 
 class Audio(Container):

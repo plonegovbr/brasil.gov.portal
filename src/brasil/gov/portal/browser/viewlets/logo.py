@@ -5,8 +5,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class LogoViewlet(ViewletBase):
-    ''' Viewlet de redes sociais
-    '''
+    """ Viewlet de redes sociais
+    """
     # Indica qual o template sera usado por este viewlet
     index = ViewPageTemplateFile('templates/logo.pt')
 
@@ -16,40 +16,40 @@ class LogoViewlet(ViewletBase):
         return portal
 
     def title(self):
-        ''' Retorna o titulo do portal
-        '''
+        """ Retorna o titulo do portal
+        """
         portal = self.portal()
         return getattr(portal, 'title', 'Portal Brasil')
 
     def title_1(self):
-        ''' Retorna a primeira linha do titulo do portal
-        '''
+        """ Retorna a primeira linha do titulo do portal
+        """
         portal = self.portal()
         return getattr(portal, 'title_1', 'Secretaria de')
 
     def title_2(self):
-        ''' Retorna a primeira linha do titulo do portal
-        '''
+        """ Retorna a primeira linha do titulo do portal
+        """
         portal = self.portal()
         return getattr(portal, 'title_2',
                        u'Comunicação Social')
 
     def title_2_class(self):
-        ''' Definimos a classe a ser aplicada ao title_2
+        """ Definimos a classe a ser aplicada ao title_2
             com base no tamanho da string
-        '''
+        """
         title_2 = self.title_2()
         return 'luongo' if len(title_2) > 22 else 'corto'
 
     def orgao(self):
-        ''' Retorna o nome do orgao ao qual este portal
+        """ Retorna o nome do orgao ao qual este portal
             esta vinculado
-        '''
+        """
         portal = self.portal()
         return getattr(portal, 'orgao', '')
 
     def description(self):
-        ''' Retorna uma breve descricao do portal
-        '''
+        """ Retorna uma breve descricao do portal
+        """
         portal = self.portal()
         return getattr(portal, 'description', '')
