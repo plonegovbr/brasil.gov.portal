@@ -10,7 +10,7 @@
         <metal:styleslot fill-slot="style_slot">
             <link rel="stylesheet" type="text/css"
                   media="all"
-                  tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.nitf/galleria-theme/galleria.nitf_theme.css" />
+                  tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.portal/css/galleria.nitf_theme.css" />
         </metal:styleslot>
     </head>
 
@@ -40,10 +40,10 @@
                         <span class="copyright"
                               tal:content="image/Rights"
                               tal:condition="image/Rights">Credits</span>
-                        <a href="@@nitf_custom_galleria"
+                        <a href="@@slideshow_view"
                            id="parent-fieldname-image"
                            class="parent-nitf-image"
-                           tal:attributes="href string:${context/absolute_url}/@@nitf_custom_galleria">
+                           tal:attributes="href string:${context/absolute_url}/@@slideshow_view">
                             <img tal:define="scales image/@@images;
                                              thumbnail python: scales.scale('image', scale='capa');"
                                  tal:condition="thumbnail"
@@ -57,7 +57,7 @@
                             <tal:images tal:repeat="imgBrain view/get_images">
                                 <li tal:define="imgObj imgBrain/getObject">
                                     <a class="parent-nitf-image"
-                                       tal:attributes="href string:${context/absolute_url}/@@nitf_galleria;
+                                       tal:attributes="href string:${context/absolute_url}/@@slideshow_view;
                                                        data-index repeat/imgBrain/index;
                                                        data-rights imgObj/Rights">
                                         <img tal:define="scales imgObj/@@images;
@@ -79,11 +79,19 @@
                         </p>
                         <span id="lupa"></span>
                     </div>
+                    <tal:comment tal:replace="nothing">
+                        Alterações aqui devem ser replicadas em nitf_custom_galleria.pt.
+                    </tal:comment>
                     <div class="newsRelatedItems"
-                         tal:condition="context/relatedItems|nothing">
+                         tal:define="items view/get_related_items"
+                         tal:condition="items">
                         <fieldset id="related-items">
                             <legend i18n:translate="">Related items</legend>
-                            <tal:relateditems tal:content="structure view/w/relatedItems/render" />
+                            <span id="form-widgets-relatedItems" class="contenttree-widget relationlist-field">
+                               <tal:items tal:repeat="item items">
+                                   <div><a tal:attributes="href item/getURL" tal:content="item/Title" ></a></div>
+                                </tal:items>
+                            </span>
                         </fieldset>
                     </div>
                 </div>
@@ -110,7 +118,7 @@
                                         rights = $(this).attr('data-rights');
 
                                     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                                        link.attr('href', link.attr('href').replace('@@nitf_custom_galleria', '@@nitf_custom_galleria?ajax_include_head=1&ajax_load=1'));
+                                        link.attr('href', link.attr('href').replace('@@slideshow_view', '@@slideshow_view?ajax_include_head=1&ajax_load=1'));
                                     } else {
                                         link.prepOverlay({
                                             subtype : 'ajax',
@@ -119,7 +127,7 @@
                                             wait: true,
                                             config  : {
                                                 onLoad: function (e) {
-                                                    Galleria.loadTheme("++resource++collective.nitf/galleria-theme/galleria.nitf_theme.js");
+                                                    Galleria.loadTheme("++resource++brasil.gov.portal/js/galleria.nitf_theme.js");
                                                     Galleria.configure({ debug: false, show: index });
                                                     Galleria.on('loadstart', function (e) {
                                                         var value_rights = $('a[data-rights][data-index=' + e.index + ']').attr('data-rights');

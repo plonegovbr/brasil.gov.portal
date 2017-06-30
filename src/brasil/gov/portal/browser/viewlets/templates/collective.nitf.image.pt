@@ -1,0 +1,20 @@
+<tal:comment tal:replace="nothing">
+Após a atualização do collective.nitf >= 2.1b2, ele passa a mostrar a imagem
+da notícia de forma destacada na notícia. O problema é que o IDG não prevê
+isso, portanto iremos esconder.
+
+Não consigo esconder usando viewlets.xml (ver mais sobre esse assunto em)
+
+https://community.plone.org/t/how-do-i-debug-why-a-viewlet-is-not-being-hidden-even-after-adding-it-to-viewlets-xml/4463/
+
+então escondo colocando essa template vazia.
+
+TODO: Em tese, como o pacote dá a opção de "Visão de artigo", há também a opção
+de customizar toda a viewlet e no render da mesma perguntar em "qual template
+estou" para definir se é renderizado ou não. O método para saber "em qual template
+está" poderia ser self.context.getLayout(). A se estudar.
+
+Ele também muda completamente a visão de galeria, ficando como "slideshow_view"
+mas nós mantemos a customização do brasil.gov.portal, por isso escondemos a
+viewlet.
+</tal:comment>

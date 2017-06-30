@@ -3,21 +3,24 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="brasil.gov.portal">
 
+  <includeOverrides file="overrides.zcml" />
+
   <browser:menuItems
       for="collective.nitf.content.INITF"
       menu="plone_displayviews">
 
     <browser:menuItem
-        title="Custom View"
+        title="Visão de notícia"
         action="nitf_custom_view"
         description="Essa view inclui galeria de imagens e se torna a view padrao de noticias"
         />
+
   </browser:menuItems>
 
   <!--FIXME:-->
   <!--BBB:-->
   <!--Veja em doormat.py quando esse override poderá ser removido.-->
-  <!-- Overrides do Doormat-->
+  <!-- Products.Doormat-->
   <browser:page
       for="Products.Doormat.content.interfaces.IDoormat"
       layer="brasil.gov.portal.interfaces.IBrasilGov"
@@ -34,6 +37,54 @@
       template="templates/doormat_bare_view.pt"
       permission="zope2.View"
       />
+  <!-- Products.Doormat-->
+
+  <!--NITF-->
+  <browser:page
+      for="collective.nitf.content.INITF"
+      name="nitf_custom_view"
+      template="templates/nitf_custom_view.pt"
+      class="brasil.gov.portal.browser.content.nitf_custom_view.View"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+  <!--Lembrando, essa lógica de displaymacros foi removida completamente no  -->
+  <!--collective.nitf em-->
+  <!--https://github.com/collective/collective.nitf/commit/474fb08ef13f2d07f1d279682552dcdf36333139/-->
+  <!--Portanto, se um dia for mudar esse layout para usar igualzinho está em-->
+  <!--collective.nitf, toda essa lógica não é mais necessária.-->
+  <browser:page
+      for="collective.nitf.content.INITF"
+      name="nitf_custom_displaymacros"
+      template="templates/nitf_custom_displaymacros.pt"
+      class="brasil.gov.portal.browser.content.nitf_custom_view.View"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
+  <!--A lógica de galeria no collective.nitf >= 2.0 foi completamente reformulada:-->
+  <!--Antes tínhamos uma estrutura toda usando grok -->
+  <!--https://github.com/collective/collective.nitf/blob/1.0b10/src/collective/nitf/configure.zcml#L43-->
+  <!--https://github.com/collective/collective.nitf/blob/1.0b10/src/collective/nitf/browser.py#L350-->
+  <!--e que foi customizada em nosso pacote em-->
+  <!--https://github.com/plonegovbr/brasil.gov.portal/blob/ad5e3a732efe4e5960ca6e7f8f91c6934adb9185/src/brasil/gov/portal/browser/content/nitf_custom_galleria.py#L9-->
+  <!--Essa view mudou para o nome de "slideshow_view" e com essa mudança se mudou-->
+  <!--inclusive o tipo de plugin de javascript para galeria.-->
+  <!--https://github.com/collective/collective.nitf/blob/42202ebf38fdca750b6a2797f584a6a76ab6a244/src/collective/nitf/upgrades/v2000/profile/types/collective.nitf.content.xml#L8-->
+  <!--IMPORTANTE: Se um dia atualizar o código para usar os javascripts, favor-->
+  <!--remover os arquivos e as referências de galleria.nitf_theme.css e -->
+  <!--galleria.nitf_theme.js.-->
+  <!--Essa view sobrescreve a original do nitf com uso de overrides.zcml.-->
+  <browser:page
+      for="collective.nitf.content.INITF"
+      name="slideshow_view"
+      class="brasil.gov.portal.browser.content.nitf_custom_view.View"
+      template="templates/nitf_custom_galleria.pt"
+      permission="zope2.View"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+  <!--NITF-->
 
   <browser:page
       for="plone.app.contenttypes.interfaces.ICollection"

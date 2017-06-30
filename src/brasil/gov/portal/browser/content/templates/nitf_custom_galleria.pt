@@ -9,10 +9,10 @@
 <head>
   <metal:styleslot fill-slot="style_slot">
     <link rel="stylesheet" type="text/css"
-        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.nitf/galleria-theme/galleria.nitf_theme.css" />
+        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.portal/css/galleria.nitf_theme.css" />
     <link rel="stylesheet" type="text/css"
         tal:condition="ajax_load"
-        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.nitf/galleria-theme/galleria.nitf_theme_fullscreen.css" />
+        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.portal/css/galleria.nitf_theme_fullscreen.css" />
   </metal:styleslot>
 </head>
 
@@ -29,17 +29,6 @@
         </tal:content-title>
     </metal:title>
 
-    <metal:description fill-slot="content-description">
-        <tal:content-description metal:define-macro="content-description"
-                                 condition="not: ajax_load">
-            <div class="documentDescription" tal:content="context/description" />
-            <p class="nitfByline" tal:condition="context/byline|nothing">
-                <span i18n:translate="">By</span>
-                <span tal:content="context/byline" />
-            </p>
-        </tal:content-description>
-    </metal:description>
-
     <metal:main fill-slot="content-core">
         <tal:content-core metal:define-macro="content-core">
         <div class="newsview">
@@ -51,7 +40,7 @@
             (function($) {
                 "use strict";
                 $(document).ready(function() {
-                    Galleria.loadTheme("++resource++collective.nitf/galleria-theme/galleria.nitf_theme.js");
+                    Galleria.loadTheme("++resource++brasil.gov.portal/js/galleria.nitf_theme.js");
                     Galleria.configure({ autoplay: true, debug: false, thumbnails: true, _toggleInfo:true});
                     Galleria.run('.newsview #mediabox', {keepSource: true});
                 });
@@ -62,7 +51,7 @@
             (function($) {
                 "use strict";
                 $(document).ready(function() {
-                    Galleria.loadTheme("++resource++collective.nitf/galleria-theme/galleria.nitf_theme.js");
+                    Galleria.loadTheme("++resource++brasil.gov.portal/js/galleria.nitf_theme.js");
                     Galleria.configure({ autoplay: false, debug: false, thumbnails: false, _toggleInfo:true, width: $(document).width(), height: $(document).height()});
                     Galleria.run('.newsview #mediabox', {keepSource: true});
                 });
@@ -85,12 +74,21 @@
             window.addEventListener("orientationchange", hideAddressBar );
         </script>
 
-
-        <fieldset id="related-items"
-                  tal:condition="python:not ajax_load and context.relatedItems">
-            <legend i18n:translate="">Related items</legend>
-            <tal:relateditems tal:content="structure view/w/relatedItems/render" />
-        </fieldset>
+        <tal:comment tal:replace="nothing">
+            Isso veio de nitf_custom_view.pt.
+        </tal:comment>
+        <div class="newsRelatedItems">
+            <fieldset id="related-items"
+                tal:define="items view/get_related_items"
+                tal:condition="python:not ajax_load and items">
+                <legend i18n:domain="brasil.gov.portal" i18n:translate="">Related items</legend>
+                <span id="form-widgets-relatedItems" class="contenttree-widget relationlist-field">
+                   <tal:items tal:repeat="item items">
+                       <div><a tal:attributes="href item/getURL" tal:content="item/Title" ></a></div>
+                    </tal:items>
+                </span>
+            </fieldset>
+        </div>
 
         <fieldset id="folder-listing"
                   tal:condition="python:not ajax_load and not context.is_empty()">

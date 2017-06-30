@@ -121,13 +121,6 @@
       <element>Wrap</element>
     </value>
   </record>
-  <record name="collective.nitf.controlpanel.INITFSettings.relatable_content_types">
-    <value>
-      <element>collective.nitf.content</element>
-      <element>File</element>
-      <element>Image</element>
-    </value>
-  </record>
   <!-- collective.upload settings -->
   <record name="collective.upload.interfaces.IUploadSettings.resize_max_width">
     <value>1024</value>

@@ -336,23 +336,25 @@ class NITFBylineViewletTestCase(unittest.TestCase):
     def test_autor_inexistente(self):
         self.conteudo.byline = u'Erico Verissimo'
         viewlet = self.viewlet()
-        self.assertFalse(viewlet.byline())
+        self.assertFalse(viewlet.author_id)
 
     def test_autor_indefinido(self):
         viewlet = self.viewlet()
-        viewlet.getMemberInfoByName = lambda x: {'username': 'mock_user'}
+        original_search_member_by_name = viewlet.search_member_by_name
+        viewlet.search_member_by_name = lambda x: {'username': 'mock_user'}
 
-        # Assegura que 'getMemberInfoByname' é chamada para um autor qualquer
+        # Assegura que 'search_member_by_name' é chamada para um autor qualquer
         self.conteudo.byline = u'Usuário Qualquer'
-        self.assertEqual(viewlet.byline(), 'mock_user')
+        self.assertEqual(viewlet.author_id, 'mock_user')
 
-        # Assegura que 'getMemberInfoByname' NÃO é chamada sem um autor
+        # Assegura que 'search_member_by_name' NÃO é chamada sem um autor
+        viewlet.search_member_by_name = original_search_member_by_name
         self.conteudo.byline = u''
-        self.assertIsNone(viewlet.byline())
+        self.assertIsNone(viewlet.author_id)
 
     def test_byline(self):
         viewlet = self.viewlet()
-        self.assertEqual(viewlet.byline(), 'machado')
+        self.assertEqual(viewlet.author_id, 'machado')
 
     def test_author(self):
         viewlet = self.viewlet()

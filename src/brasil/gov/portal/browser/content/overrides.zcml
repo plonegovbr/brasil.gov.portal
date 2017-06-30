@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <include package="collective.nitf.browser" file="configure.zcml" />
+
+  <include package="z3c.unconfigure" file="meta.zcml" />
+  <unconfigure>
+    <configure package="collective.nitf.browser">
+        <browser:page
+            for="collective.nitf.content.INITF"
+            name="slideshow_view"
+            class="collective.nitf.browser.Slideshow"
+            template="templates/view.pt"
+            permission="zope2.View"
+            layer="collective.nitf.interfaces.INITFLayer"
+            />
+    </configure>
+  </unconfigure>
+
+</configure>
