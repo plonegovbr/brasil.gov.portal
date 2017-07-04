@@ -4,7 +4,13 @@ Histórico de Alterações
 1.1.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+.. Warning::
+   ATENÇÃO: No momento de executar os upgradeSteps para esse release, os de
+   brasil.gov.portal devem ser os últimos a serem executados.
+
+- Prepara pacote para ser compatível com novas versões de collective.nitf a
+  partir da versão 2.1b2. (closes `#349`).
+  [idgserpro]
 
 
 1.1.5.1 (2016-11-07)
@@ -502,3 +508,5 @@ Histórico de Alterações
 .. _`#279`: https://github.com/plonegovbr/brasil.gov.portal/issues/279
 .. _`#289`: https://github.com/plonegovbr/brasil.gov.portal/issues/289
 .. _`#303`: https://github.com/plonegovbr/brasil.gov.portal/issues/303
+.. _`#320`: https://github.com/plonegovbr/brasil.gov.portal/issues/320
+.. _`#349`: https://github.com/plonegovbr/brasil.gov.portal/issues/349

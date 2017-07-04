@@ -8,7 +8,7 @@
       <img tal:replace="structure lock_icon" />
   </span>
 
-  <tal:author tal:define="author_short_form view/byline;
+  <tal:author tal:define="author_short_form view/author_id;
                           mostra_autor view/mostra_autor"
               tal:condition="python:author_short_form and mostra_autor">
   <tal:name tal:define="author_long_form string:?author=${author_short_form};
@@ -17,10 +17,14 @@
     <span class="documentAuthor">
       <tal:i18n i18n:translate="label_by_author">
       by
-      <span property="rnews:author"
+      <a href="#"
+         property="rnews:author"
+         tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${author_id}"
          tal:content="view/authorname"
-         i18n:name="author">Roland Barthes</span>
+         tal:omit-tag="not:view/author"
+         i18n:name="author">Roland Barthes</a>
       </tal:i18n>
+         —
     </span>
   </tal:name>
   </tal:author>
@@ -37,7 +41,7 @@
     <span tal:content="python:view.toLocalizedTime(published,long_format=1)"
           property="rnews:datePublished">
       August 16, 2001 at 23:35:59
-    </span>
+    </span><tal:sep condition="modified">,</tal:sep>
   </span>
 
   <span class="documentModified"
@@ -53,12 +57,14 @@
   </tal:dates>
 
   <tal:expired tal:condition="view/isExpired">
+    —
     <span class="state-expired"
           i18n:translate="time_expired">expired</span>
   </tal:expired>
 
   <span class="contentHistory" id="content-history"
         tal:condition="view/show_history">
+    —
     <a href="#"
        tal:attributes="href string:${here/absolute_url}/@@historyview"
        i18n:translate="label_history">History</a>

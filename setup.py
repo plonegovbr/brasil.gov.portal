@@ -53,7 +53,10 @@ setup(
         'brasil.gov.vcge',
         'collective.cover > 1.0a8',
         'collective.jsonmigrator',
-        'collective.nitf',
+        # Imports como
+        # "from collective.nitf.browser import NITFBylineViewlet as CollectiveNITFBylineViewlet"
+        # Só a partir dessa versão.
+        'collective.nitf >= 2.1b2',
         'collective.polls',
         'collective.upload',
         # FIXME:

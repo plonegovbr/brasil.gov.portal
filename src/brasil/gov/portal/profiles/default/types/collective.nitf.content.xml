@@ -12,9 +12,7 @@
   </property>
   <property name="default_view">nitf_custom_view</property>
   <property name="default_view_fallback">False</property>
-  <property name="view_methods">
+  <property name="view_methods" purge="false">
     <element value="nitf_custom_view"/>
-    <element value="view"/>
-    <element value="nitf_galleria"/>
   </property>
 </object>
