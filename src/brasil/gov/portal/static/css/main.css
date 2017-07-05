@@ -3051,11 +3051,11 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
    ========================================================================== */
 
 .template-summary_view #content-core,
-.template-folder_summary_view #content-core,
+.template-summary_view #content-core,
 .template-facetednavigation_view #content-core { margin-top: 40px; }
 
 .template-summary_view #content h1.documentFirstHeading,
-.template-folder_summary_view #content h1.documentFirstHeading,
+.template-summary_view #content h1.documentFirstHeading,
 .template-facetednavigation_view #content h1.documentFirstHeading {
     margin: .85em 0 5px;
     padding: 0 0 .70em 0;
@@ -3070,7 +3070,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem,
-.template-folder_summary_view #content .tileItem,
+.template-summary_view #content .tileItem,
 .template-facetednavigation_view #content .tileItem {
     position: relative;
     clear: both;
@@ -3082,11 +3082,11 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem:first-child,
-.template-folder_summary_view #content .tileItem:first-child,
+.template-summary_view #content .tileItem:first-child,
 .template-facetednavigation_view #content .tileItem:first-child { padding-top: 0; }
 
 .template-summary_view #content .tileContent,
-.template-folder_summary_view #content .tileContent,
+.template-summary_view #content .tileContent,
 .template-facetednavigation_view #content .tileContent {
     overflow: hidden;
     padding-left: 1.8em;
@@ -3095,18 +3095,18 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileImage,
-.template-folder_summary_view #content .tileImage,
+.template-summary_view #content .tileImage,
 .template-facetednavigation_view #content .tileImage {
     float: none;
     margin: 0 1em 0.5em 0;
 }
 
 .template-summary_view #content .tileImage img,
-.template-folder_summary_view #content .tileImage img,
+.template-summary_view #content .tileImage img,
 .template-facetednavigation_view #content .tileImage img { float: left; }
 
 .template-summary_view #content .tileItem .subtitle,
-.template-folder_summary_view #content .tileItem .subtitle,
+.template-summary_view #content .tileItem .subtitle,
 .template-facetednavigation_view #content .tileItem .subtitle {
     display: block;
     margin: 0 0 .6em;
@@ -3117,7 +3117,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .tileHeadline,
-.template-folder_summary_view #content .tileItem .tileHeadline,
+.template-summary_view #content .tileItem .tileHeadline,
 .template-facetednavigation_view #content .tileItem .tileHeadline {
     margin: 0 0 0.438em;
     padding: 0;
@@ -3128,9 +3128,9 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .tileHeadline a,
-.template-folder_summary_view #content .tileItem .tileHeadline a,
+.template-summary_view #content .tileItem .tileHeadline a,
 .template-summary_view #content .tileItem .description,
-.template-folder_summary_view #content .tileItem .description,
+.template-summary_view #content .tileItem .description,
 .template-facetednavigation_view #content .tileItem .tileHeadline a,
 .template-facetednavigation_view #content .tileItem .description {
     margin: 0;
@@ -3140,18 +3140,18 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .description,
-.template-folder_summary_view #content .tileItem .description,
+.template-summary_view #content .tileItem .description,
 .template-facetednavigation_view #content .tileItem .description { line-height: 1.75em; }
 
 .template-summary_view #content .tileItem p,
-.template-folder_summary_view #content .tileItem p,
+.template-summary_view #content .tileItem p,
 .template-facetednavigation_view #content .tileItem p {
     margin: 0;
     padding: 0;
 }
 
 .template-summary_view #content .tileItem .keywords,
-.template-folder_summary_view #content .tileItem .keywords,
+.template-summary_view #content .tileItem .keywords,
 .template-facetednavigation_view #content .tileItem .keywords {
     margin: 15px 0 0;
     padding: 0;
@@ -3163,7 +3163,7 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem .documentByLine,
-.template-folder_summary_view #content .tileItem .documentByLine,
+.template-summary_view #content .tileItem .documentByLine,
 .template-facetednavigation_view #content .tileItem .documentByLine {
     margin: 2em 0 0;
     padding: 0;
@@ -3178,11 +3178,11 @@ body[class*="nitf"] #content article div[property*="articleBody"] p {
 }
 
 .template-summary_view #content .tileItem:first-child .documentByLine,
-.template-folder_summary_view #content .tileItem:first-child .documentByLine,
+.template-summary_view #content .tileItem:first-child .documentByLine,
 .template-facetednavigation_view #content .tileItem:first-child .documentByLine { margin-top: 0; }
 
 .template-summary_view #content .documentByLine .summary-view-icon,
-.template-folder_summary_view #content .documentByLine .summary-view-icon,
+.template-summary_view #content .documentByLine .summary-view-icon,
 .template-facetednavigation_view #content .documentByLine .summary-view-icon {
     display: block;
     margin: 0 0 1em;
@@ -3870,7 +3870,7 @@ body.folder_contraste.template-summary_view #content .tileItem .documentByLine,
 body.contraste #content .documentByLine .summary-view-icon,
 body.contraste #content .subtitle,
 body.contraste.template-summary_view #content .tileItem .keywords,
-body.contraste.template-folder_summary_view #content .tileItem .keywords,
+body.contraste.template-summary_view #content .tileItem .keywords,
 body.contraste.template-facetednavigation_view #content .tileItem .keywords,
 body.contraste .videogallery-tile .subtitle,
 body.contraste .outstanding-header .outstanding-link,
@@ -4287,7 +4287,7 @@ body.contraste #content .newsImageContainer a[class^="photo-icon-es"] {
 
 /* contraste blog view */
 
-body[class*="folder_summary_view"].contraste #content .tileItem .description {
+body[class*="summary_view"].contraste #content .tileItem .description {
     color: #FFF;
 }
 

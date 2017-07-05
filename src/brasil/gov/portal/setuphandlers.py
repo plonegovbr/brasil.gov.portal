@@ -76,7 +76,7 @@ def configura_destaques(portal):
 
 def configura_assuntos(portal):
     folder = portal.assuntos
-    folder.setLayout('folder_summary_view')
+    folder.setLayout('summary_view')
 
 
 def configura_imagens(portal):
@@ -85,12 +85,12 @@ def configura_imagens(portal):
     behavior.setConstrainTypesMode(constrains.ENABLED)
     # Permitimos apenas imagens
     behavior.setImmediatelyAddableTypes(['Image'])
-    folder.setLayout('folder_summary_view')
+    folder.setLayout('summary_view')
 
 
 def configura_acesso_informacao(portal):
     folder = portal['acesso-a-informacao']
-    folder.setLayout('folder_summary_view')
+    folder.setLayout('summary_view')
 
 
 def configura_menu_relevancia(portal):
@@ -99,7 +99,7 @@ def configura_menu_relevancia(portal):
     behavior.setConstrainTypesMode(constrains.ENABLED)
     # Permitimos apenas links
     behavior.setImmediatelyAddableTypes(['Link'])
-    folder.setLayout('folder_summary_view')
+    folder.setLayout('summary_view')
 
 
 def configura_servicos(portal):
@@ -108,7 +108,7 @@ def configura_servicos(portal):
     behavior.setConstrainTypesMode(constrains.ENABLED)
     # Permitimos apenas links
     behavior.setImmediatelyAddableTypes(['Link'])
-    folder.setLayout('folder_summary_view')
+    folder.setLayout('summary_view')
 
 
 def configura_ultimas_noticias(portal):

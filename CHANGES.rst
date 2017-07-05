@@ -8,6 +8,8 @@ Histórico de Alterações
    ATENÇÃO: No momento de executar os upgradeSteps para esse release, os de
    brasil.gov.portal devem ser os últimos a serem executados.
 
+- Atualiza plone.app.contenttypes para a versão do Plone (1.1.1) (closes `#240`).
+
 - Prepara pacote para ser compatível com novas versões de collective.nitf a
   partir da versão 2.1b2. (closes `#349`).
   [idgserpro]
@@ -502,6 +504,7 @@ Histórico de Alterações
 .. _`#226`: https://github.com/plonegovbr/brasil.gov.portal/issues/226
 .. _`#229`: https://github.com/plonegovbr/brasil.gov.portal/issues/229
 .. _`#232`: https://github.com/plonegovbr/brasil.gov.portal/issues/232
+.. _`#240`: https://github.com/plonegovbr/brasil.gov.portal/issues/240
 .. _`#241`: https://github.com/plonegovbr/brasil.gov.portal/issues/241
 .. _`#242`: https://github.com/plonegovbr/brasil.gov.portal/issues/242
 .. _`#275`: https://github.com/plonegovbr/brasil.gov.portal/issues/275
