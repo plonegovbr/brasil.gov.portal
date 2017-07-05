@@ -49,7 +49,9 @@ setup(
         'brasil.gov.barra',
         'brasil.gov.portlets',
         'brasil.gov.temas',
-        'brasil.gov.tiles',
+        # Com a atualização para collective.nitf >= 2.1b2, a versão compatível
+        # do brasil.gov.tiles passa a ser essa.
+        'brasil.gov.tiles >= 1.4b1',
         'brasil.gov.vcge',
         'collective.cover > 1.0a8',
         'collective.jsonmigrator',
