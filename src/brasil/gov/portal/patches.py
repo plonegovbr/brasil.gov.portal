@@ -73,6 +73,10 @@ def attendees():
 
     Sobra assim a opção do patch logo abaixo.
 
+    FIXME: Se esse erro for corrigido upstream (ver https://github.com/plone/plone.app.contenttypes/issues/414)
+    e a versão de plone.app.contenttypes for corrigida no release, esse patch
+    pode ser removido.
+
     """
     def migrate_schema_fields(self):
         timezone = str(self.old.start_date.tzinfo) \
