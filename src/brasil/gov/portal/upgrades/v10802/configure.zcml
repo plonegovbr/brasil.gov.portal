@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Profiles -->
+  <gs:registerProfile
+      name="default"
+      title="Identidade Digital: Versão 10802"
+      directory="profiles/default"
+      description="Configurações da Versão 10802 do portal"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+    <!-- Upgrade Steps -->
+  <gs:upgradeSteps
+      source="10801"
+      destination="10802"
+      profile="brasil.gov.portal:default">
+
+    <gs:upgradeStep
+        title="Atualiza portal para versão 10802"
+        description="Aplica profile 10802."
+        handler=".handler.apply_profile"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>

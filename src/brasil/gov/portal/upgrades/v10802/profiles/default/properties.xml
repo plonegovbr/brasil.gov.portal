@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<site>
+ <property name="selectable_views" type="lines">
+  <element value="listing_view"/>
+  <element value="news_listing"/>
+ </property>
+</site>

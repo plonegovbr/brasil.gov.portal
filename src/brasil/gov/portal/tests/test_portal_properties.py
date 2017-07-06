@@ -4,6 +4,8 @@ from brasil.gov.portal.testing import INTEGRATION_TESTING
 
 import unittest
 
+SELECTABLE_VIEWS = ('listing_view', 'news_listing')
+
 
 class PortalPropertiesTestCase(unittest.TestCase):
 
@@ -64,3 +66,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
             'OGG Audio File',
         ]
         self.assertListEqual(metaTypesNotToList, types_expected)
+
+    def test_selectable_views(self):
+        selectable_views_property = self.portal.getProperty('selectable_views')
+        self.assertTupleEqual(selectable_views_property, SELECTABLE_VIEWS)
