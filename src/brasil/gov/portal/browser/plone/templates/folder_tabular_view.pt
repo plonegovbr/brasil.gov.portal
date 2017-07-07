@@ -9,7 +9,7 @@
 <body>
 
     <metal:content-core fill-slot="content-core">
-        <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
+        <metal:block define-macro="listing" extend-macro="context/listing_view/macros/content-core">
             <metal:entries fill-slot="entries">
 
             <div metal:use-macro="context/batch_macros/macros/navigation" />
@@ -33,7 +33,7 @@
                 </thead>
 
                 <tbody>
-                    <metal:block use-macro="context/folder_listing/macros/entries">
+                    <metal:block use-macro="context/listing_view/macros/entries">
                         <metal:entry fill-slot="entry">
 
                     <tr metal:define-macro="listitem"

@@ -7,9 +7,9 @@
       i18n:domain="plone">
     <body>
         <metal:content-core fill-slot="content-core">
-            <metal:block use-macro="context/standard_view/macros/content-core">
+            <metal:block use-macro="context/listing_view/macros/content-core">
                 <metal:entries fill-slot="entries">
-                    <metal:block use-macro="context/standard_view/macros/entries">
+                    <metal:block use-macro="context/listing_view/macros/entries">
                         <metal:entry fill-slot="entry">
                             <div tal:attributes="class python:'tileItem visualIEFloatFix tile-%s' % normalizeString(item.portal_type);"
                                  tal:define="obj item/getObject">

@@ -127,17 +127,17 @@ class EscondeAutorDataFunctionalTestCase(unittest.TestCase):
         # testa esconde data
         self.base_teste_data(obj, contents)
 
-    def test_summary_view(self):
+    def test_collection_summary_view(self):
         """Testa se o autor e a data são escondidos no summary_view da
         Coleção."""
         obj = self.cria_colecao()
         self.base_teste_esconde_autor_data('summary_view', obj)
 
-    def test_folder_summary_view(self):
-        """Testa se o autor e a data são escondidos no folder_summary_view de
+    def test_pasta_summary_view(self):
+        """Testa se o autor e a data são escondidos no summary_view de
         Pastas."""
         obj = self.cria_pasta()
-        self.base_teste_esconde_autor_data('folder_summary_view', obj)
+        self.base_teste_esconde_autor_data('summary_view', obj)
 
     def test_busca(self):
         """Testa se o autor e a data são escondidos na página resultado de
@@ -146,22 +146,22 @@ class EscondeAutorDataFunctionalTestCase(unittest.TestCase):
         self.base_teste_esconde_autor_data('@@busca?SearchableText=Pagina',
                                            obj)
 
-    def test_folder_listing(self):
-        """Testa se o autor e a data são escondidos no folder_listing."""
+    def test_listing_view(self):
+        """Testa se o autor e a data são escondidos no listing_view."""
         obj = self.cria_pasta()
-        self.base_teste_esconde_autor_data('folder_listing', obj)
+        self.base_teste_esconde_autor_data('listing_view', obj)
 
-    def test_standard_view(self):
-        """Testa se o autor e a data são escondidos no standard_view da
+    def test_collection_listing_view(self):
+        """Testa se o autor e a data são escondidos no listing_view da
         Coleção."""
         obj = self.cria_colecao()
-        self.base_teste_esconde_autor_data('standard_view', obj)
+        self.base_teste_esconde_autor_data('listing_view', obj)
 
-    def test_folder_tabular_view(self):
-        """Testa se o autor e a data são escondidos no folder_tabular_view da
+    def test_pasta_tabular_view(self):
+        """Testa se o autor e a data são escondidos no tabular_view da
         Pasta."""
         obj = self.cria_pasta()
-        self.base_teste_esconde_autor_data('folder_tabular_view', obj)
+        self.base_teste_esconde_autor_data('tabular_view', obj)
 
     def test_recently_modified(self):
         """Testa se o autor e a data são escondidos no recently_modified."""

@@ -44,16 +44,6 @@
       />
 
   <browser:page
-      name="folder_summary_view"
-      for="plone.app.contenttypes.interfaces.IFolder"
-      layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-      template="templates/folder_summary_view.pt"
-      permission="zope2.View"
-      menu="plone_displayviews"
-      title="Summary view"
-      />
-
-  <browser:page
       name="portal_settings"
       for="*"
       permission="zope.Public"
@@ -72,33 +62,6 @@
       title="View Image"
       />
 
-    <browser:page
-        name="folder_listing"
-        for="plone.app.contenttypes.interfaces.IFolder"
-        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-        template="templates/folder_listing.pt"
-        permission="zope2.View"
-        menu="plone_displayviews"
-        title="Standard view"
-        />
-
-    <browser:page
-        name="standard_view"
-        permission="zope2.View"
-        for="plone.app.contenttypes.interfaces.ICollection"
-        template="templates/standard_view.pt"
-        />
-
-    <browser:page
-        name="folder_tabular_view"
-        for="plone.app.contenttypes.interfaces.IFolder"
-        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-        template="templates/folder_tabular_view.pt"
-        permission="zope2.View"
-        menu="plone_displayviews"
-        title="Tabular view"
-        />
-
   <browser:viewlet
       name="plone.htmlhead.title"
       manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
@@ -106,4 +69,103 @@
       permission="zope2.View"
       />
 
+  <!--INICIO Customização plone.app.contenttypes
+      Para maiores explicações e detalhes sobre essas customizações, veja o
+      arquivo overrides.zcml.
+      FIXME: Com a mudança dos nomes das views, também mudar depois o nome do
+      .pt da customização para ficar mais consistente. Seria uma boa idéia
+      no commit colocar o de/para.-->
+  <!-- VIEWS FOR PLONE SITE ROOT -->
+  <browser:pages
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class="plone.app.contenttypes.browser.folder.FolderView"
+      layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+      permission="zope2.View">
+    <browser:page
+        name="listing_view"
+        template="templates/folder_listing.pt"
+        menu="plone_displayviews"
+        title="Standard view"
+        />
+    <browser:page
+        name="summary_view"
+        template="templates/folder_summary_view.pt"
+        menu="plone_displayviews"
+        title="Summary view"
+        />
+    <browser:page
+        name="tabular_view"
+        template="templates/folder_tabular_view.pt"
+        menu="plone_displayviews"
+        title="Tabular view"
+        />
+  </browser:pages>
+
+
+  <!-- VIEWS FOR FOLDERS -->
+  <browser:pages
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      class="plone.app.contenttypes.browser.folder.FolderView"
+      layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+      permission="zope2.View">
+    <browser:page
+        name="listing_view"
+        template="templates/folder_listing.pt"
+        menu="plone_displayviews"
+        title="Standard view"
+        />
+    <browser:page
+        name="summary_view"
+        template="templates/folder_summary_view.pt"
+        menu="plone_displayviews"
+        title="Summary view"
+        />
+    <browser:page
+        name="tabular_view"
+        template="templates/folder_tabular_view.pt"
+        menu="plone_displayviews"
+        title="Tabular view"
+        />
+  </browser:pages>
+
+
+  <!-- VIEWS FOR COLLECTION ITEM -->
+  <browser:page
+      name="listing_view"
+      for="plone.app.contenttypes.interfaces.ICollection"
+      class="plone.app.contenttypes.browser.collection.CollectionView"
+      layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+      template="templates/folder_listing.pt"
+      permission="zope2.View"
+      />
+
+  <!-- VIEWS FOR ANYTHING WITH THE COLLECTION BEHAVIOR.
+       Note that these ignore other fields, but integrators should
+       create other themplates if they want that.  Or improve the
+       query view widget.  -->
+  <browser:pages
+      for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+      class="plone.app.contenttypes.browser.collection.CollectionView"
+      layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+      permission="zope2.View">
+    <browser:page
+        name="listing_view"
+        template="templates/folder_listing.pt"
+        menu="plone_displayviews"
+        title="Standard view"
+        />
+    <browser:page
+        name="summary_view"
+        template="templates/folder_summary_view.pt"
+        menu="plone_displayviews"
+        title="Summary view"
+        />
+    <browser:page
+        name="tabular_view"
+        template="templates/folder_tabular_view.pt"
+        menu="plone_displayviews"
+        title="Tabular view"
+        />
+  </browser:pages>
+  <!--FIM Customização plone.app.contenttypes-->
 </configure>
