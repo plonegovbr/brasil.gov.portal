@@ -1,7 +1,7 @@
 Histórico de Alterações
 -------------------------
 
-1.1.6 (unreleased)
+1.2b1 (2017-07-07)
 ^^^^^^^^^^^^^^^^^^
 
 .. Warning::
@@ -9,6 +9,7 @@ Histórico de Alterações
    brasil.gov.portal devem ser os últimos a serem executados.
 
 - Atualiza plone.app.contenttypes para a versão do Plone (1.1.1) (closes `#240`).
+  [idgserpro]
 
 - Prepara pacote para ser compatível com novas versões de collective.nitf a
   partir da versão 2.1b2. (closes `#349`).
