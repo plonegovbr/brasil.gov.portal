@@ -53,7 +53,8 @@ setup(
         # do brasil.gov.tiles passa a ser essa.
         'brasil.gov.tiles >= 1.4b1',
         'brasil.gov.vcge',
-        'collective.cover > 1.0a8',
+        # Versão mínima requerida por brasil.gov.tiles.
+        'collective.cover > 1.3b1',
         'collective.jsonmigrator',
         # Imports como
         # "from collective.nitf.browser import NITFBylineViewlet as CollectiveNITFBylineViewlet"
@@ -71,7 +72,9 @@ setup(
         'five.grok',
         'five.pt',
         'plone.api > 1.1.0',
-        'plone.app.contenttypes',
+        # Passo a referenciar visões novas adicionadas nesse marco:
+        # https://github.com/plone/plone.app.contenttypes/blob/1.1.1/plone/app/contenttypes/upgrades.py#L153
+        'plone.app.contenttypes >= 1.1.1',
         'plone.app.controlpanel',
         'plone.app.dexterity',
         'plone.app.layout',

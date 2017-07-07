@@ -15,6 +15,6 @@ def aplica_view_noticias(context):
     """Aplica visao sumaria para pasta Noticias"""
     noticias = api.content.get(path='/noticias')
     if noticias:
-        noticias.setLayout('folder_summary_view')
+        noticias.setLayout('summary_view')
         noticias.reindexObject()
         logger.info(u'Visão sumária aplicada na pasta Notícias')

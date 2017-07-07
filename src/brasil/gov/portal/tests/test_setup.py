@@ -9,6 +9,7 @@ from brasil.gov.portal.controlpanel.portal import ISettingsPortal
 from brasil.gov.portal.setuphandlers import _instala_pacote
 from brasil.gov.portal.upgrades.v10700.handler import atualiza_produtos_terceiros
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from brasil.gov.portal.tests.test_portal_properties import SELECTABLE_VIEWS
 from collective.cover.controlpanel import ICoverSettings
 from plone import api
 from plone.app.testing import setRoles
@@ -336,6 +337,10 @@ class TestUpgrade(unittest.TestCase):
         step = self.list_upgrades(u'10800', u'10801')
         self.assertEqual(len(step), 1)
 
+    def test_to10802_available(self):
+        step = self.list_upgrades(u'10801', u'10802')
+        self.assertEqual(len(step), 1)
+
     def _get_viewlets_from_manager(self, manager):
         """Returns all viewlets from a manager."""
         request = self.portal.REQUEST
@@ -644,6 +649,20 @@ class TestUpgrade(unittest.TestCase):
         self.assertNotEqual(
             self.st.getLastVersionForProfile(AGENDAPROFILE),
             UNKNOWN)
+
+    def test_to10802_execution(self):
+        # Simula situação antiga
+        old_selectable_views = ('folder_listing', 'news_listing')
+        self.portal.manage_changeProperties(
+            selectable_views=old_selectable_views
+        )
+        selectable_views_property = self.portal.getProperty('selectable_views')
+        self.assertTupleEqual(selectable_views_property, old_selectable_views)
+
+        self.execute_upgrade(u'10801', u'10802')
+
+        selectable_views_property = self.portal.getProperty('selectable_views')
+        self.assertTupleEqual(selectable_views_property, SELECTABLE_VIEWS)
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

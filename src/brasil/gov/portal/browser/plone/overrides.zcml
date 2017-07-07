@@ -33,16 +33,6 @@
         />
 
     <browser:page
-        name="folder_summary_view"
-        for="plone.app.contenttypes.interfaces.IFolder"
-        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-        template="templates/folder_summary_view.pt"
-        permission="zope2.View"
-        menu="plone_displayviews"
-        title="Summary view"
-        />
-
-    <browser:page
         name="image_view"
         for="plone.app.contenttypes.interfaces.IImage"
         layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
@@ -52,39 +42,132 @@
         title="View Image"
         />
 
-    <browser:page
-        name="folder_listing"
-        for="plone.app.contenttypes.interfaces.IFolder"
-        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-        template="templates/folder_listing.pt"
-        permission="zope2.View"
-        menu="plone_displayviews"
-        title="Standard view"
-        />
-
     <browser:viewlet
         name="plone.htmlhead.title"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class="plone.app.layout.viewlets.common.TitleViewlet"
         permission="zope2.View"
         />
+_
+  <!--INICIO Customização plone.app.contenttypes
+      A customização anterior não precisava do <configure abaixo, porque as templates
+      não definiam classes como agora.
+      É importante ressaltar que não fizemos 'unconfigure' em todas as pages,
+      e sim apenas nas que customizamos no passado mas que mudaram de nome:
 
-    <browser:page
-        name="standard_view"
-        permission="zope2.View"
-        for="plone.app.contenttypes.interfaces.ICollection"
-        template="templates/standard_view.pt"
-        />
+          folder_summary_view
+          folder_listing
+          standard_view
+          folder_tabular_view
 
-    <browser:page
-        name="folder_tabular_view"
-        for="plone.app.contenttypes.interfaces.IFolder"
-        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-        template="templates/folder_tabular_view.pt"
-        permission="zope2.View"
-        menu="plone_displayviews"
-        title="Tabular view"
-        />
+      A relação de/para pode ser vista em
+      https://github.com/plone/plone.app.contenttypes/blob/1.1.1/plone/app/contenttypes/upgrades.py#L11
+  -->
+  <!-- VIEWS FOR PLONE SITE ROOT -->
+  <configure package="plone.app.contenttypes.browser">
+      <browser:pages
+          for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+          class=".folder.FolderView"
+          layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+          permission="zope2.View">
+        <!--Antigas folder_listing e standard_view-->
+        <browser:page
+            name="listing_view"
+            template="templates/listing.pt"
+            menu="plone_displayviews"
+            title="Standard view"
+            />
+        <!--Antiga folder_summary_view-->
+        <browser:page
+            name="summary_view"
+            template="templates/listing_summary.pt"
+            menu="plone_displayviews"
+            title="Summary view"
+            />
+        <!--Antiga folder_tabular_view  -->
+        <browser:page
+            name="tabular_view"
+            template="templates/listing_tabular.pt"
+            menu="plone_displayviews"
+            title="Tabular view"
+            />
+      </browser:pages>
+
+
+      <!-- VIEWS FOR FOLDERS -->
+      <browser:pages
+          for="plone.dexterity.interfaces.IDexterityContainer"
+          class=".folder.FolderView"
+          layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+          permission="zope2.View">
+        <!--Antigas folder_listing e standard_view-->
+        <browser:page
+            name="listing_view"
+            template="templates/listing.pt"
+            menu="plone_displayviews"
+            title="Standard view"
+            />
+        <!--Antiga folder_summary_view-->
+        <browser:page
+            name="summary_view"
+            template="templates/listing_summary.pt"
+            menu="plone_displayviews"
+            title="Summary view"
+            />
+        <!--Antiga folder_tabular_view  -->
+        <browser:page
+            name="tabular_view"
+            template="templates/listing_tabular.pt"
+            menu="plone_displayviews"
+            title="Tabular view"
+            />
+      </browser:pages>
+
+
+      <!-- VIEWS FOR COLLECTION ITEM -->
+        <!--Antiga folder_listing -->
+      <browser:page
+          name="listing_view"
+          for="plone.app.contenttypes.interfaces.ICollection"
+          class=".collection.CollectionView"
+          layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+          template="templates/listing.pt"
+          permission="zope2.View"
+          />
+
+      <!-- VIEWS FOR ANYTHING WITH THE COLLECTION BEHAVIOR.
+           Note that these ignore other fields, but integrators should
+           create other themplates if they want that.  Or improve the
+           query view widget.  -->
+      <browser:pages
+          for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+          class=".collection.CollectionView"
+          layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+          permission="zope2.View">
+        <!--Antigas folder_listing e standard_view-->
+        <browser:page
+            name="listing_view"
+            template="templates/listing.pt"
+            menu="plone_displayviews"
+            title="Standard view"
+            />
+        <!--Antiga folder_summary_view-->
+        <browser:page
+            name="summary_view"
+            template="templates/listing_summary.pt"
+            menu="plone_displayviews"
+            title="Summary view"
+            />
+        <!--Antiga folder_tabular_view  -->
+        <browser:page
+            name="tabular_view"
+            template="templates/listing_tabular.pt"
+            menu="plone_displayviews"
+            title="Tabular view"
+            />
+      </browser:pages>
+  <!--FIM Customização plone.app.contenttypes-->
+  </configure>
 
   </unconfigure>
 

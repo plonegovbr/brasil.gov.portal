@@ -6,7 +6,7 @@
  <property name="orgao" type="string">Presidência da República</property>
  <property name="description">O portal do Brasil</property>
  <property name="selectable_views" type="lines">
-  <element value="folder_listing"/>
+  <element value="listing_view"/>
   <element value="news_listing"/>
  </property>
  <property name="email_from_address" type="string"></property>
