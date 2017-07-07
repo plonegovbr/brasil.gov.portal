@@ -19,6 +19,9 @@ class Fixture(PloneSandboxLayer):
         # Load ZCML
         import brasil.gov.portal
         self.loadZCML(package=brasil.gov.portal)
+        # Install products that use an old-style initialize() function
+        # https://github.com/plone/plone.app.event/issues/81#issuecomment-23930996
+        z2.installProduct(app, 'Products.DateRecurringIndex')
 
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
@@ -28,6 +31,12 @@ class Fixture(PloneSandboxLayer):
     def tearDown(self):
         super(Fixture, self).tearDown()
         configuration_registry.clear()
+
+    def tearDownZope(self, app):
+        # Uninstall products installed above
+        # https://github.com/plone/plone.app.event/issues/81#issuecomment-23930996
+        z2.uninstallProduct(app, 'Products.DateRecurringIndex')
+
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
