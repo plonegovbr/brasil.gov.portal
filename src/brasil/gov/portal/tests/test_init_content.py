@@ -242,3 +242,34 @@ class InitContentTestCase(unittest.TestCase):
         for p in SHOW_DEPS:
             self.assertIn(p, qi)
             self.assertIn(p, installed)
+
+    def test_eventos_available(self):
+        """Testa se a pasta Eventos foi criada"""
+        self.assertIn('eventos',
+                      self.portal.objectIds(),
+                      u'Pasta Eventos não disponível')
+        folder = self.portal['eventos']
+        self.assertEqual(u'Eventos', folder.title, u'Título não aplicado')
+
+    def test_eventos_created(self):
+        """Testa se os eventos foram criados corretamente"""
+        folder = self.portal['eventos']
+        # As datas aqui tem 2 horas a mais por causa do timezone
+        eventos = [{'id': 'evento-1',
+                    'start': '2017-01-01 10:00:00',
+                    'end': '2017-01-01 11:00:00'},
+                   {'id': 'evento-2',
+                    'start': '2017-01-05 11:00:00',
+                    'end': '2017-01-06 12:00:00'},
+                   {'id': 'evento-3',
+                    'start': '2017-01-10 12:00:00',
+                    'end': '2017-01-11 13:00:00'},
+                   ]
+        d_format = '%Y-%m-%d %H:%M:%S'
+        for evento in eventos:
+            obj_evento = folder[evento['id']]
+            self.assertEqual(
+                evento['start'], obj_evento.start.strftime(d_format))
+            self.assertEqual(
+                evento['end'], obj_evento.end.strftime(d_format))
+            self.assertEqual('America/Sao_Paulo', obj_evento.timezone)
