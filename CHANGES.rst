@@ -4,7 +4,8 @@ Histórico de Alterações
 1.2b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige objetos eventos do conteúdo inicial (closes `#360`_).
+  [idgserpro]
 
 
 1.2b1 (2017-07-07)
@@ -14,11 +15,11 @@ Histórico de Alterações
    ATENÇÃO: No momento de executar os upgradeSteps para esse release, os de
    brasil.gov.portal devem ser os últimos a serem executados.
 
-- Atualiza plone.app.contenttypes para a versão do Plone (1.1.1) (closes `#240`).
+- Atualiza plone.app.contenttypes para a versão do Plone (1.1.1) (closes `#240`_).
   [idgserpro]
 
 - Prepara pacote para ser compatível com novas versões de collective.nitf a
-  partir da versão 2.1b2. (closes `#349`).
+  partir da versão 2.1b2. (closes `#349`_).
   [idgserpro]
 
 
@@ -37,7 +38,7 @@ Histórico de Alterações
   [idgserpro]
 
 * Na viewlet NITFBylineViewlet, deixamos de buscar dados do usuário quando o
-  autor é indefinido (closes `#320`).
+  autor é indefinido (closes `#320`_).
   [tcurvelo]
 
 * Corrige a exibição de notícias com portlets, além de outras páginas onde seja
@@ -520,3 +521,4 @@ Histórico de Alterações
 .. _`#303`: https://github.com/plonegovbr/brasil.gov.portal/issues/303
 .. _`#320`: https://github.com/plonegovbr/brasil.gov.portal/issues/320
 .. _`#349`: https://github.com/plonegovbr/brasil.gov.portal/issues/349
+.. _`#360`: https://github.com/plonegovbr/brasil.gov.portal/issues/360
