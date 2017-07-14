@@ -1,6 +1,6 @@
 ### Qual versão do produto você está usando e em qual sistema operacional (acesse /@@overview-controlpanel ou /prefs_install_products_form para obter essas informações)?
 
-### Possui plugins adicionados além dos definidos numa instalação padrão do Portal Padrão? Se sim, forneça o nome e as versões utilizadas.
+### Possui plugins adicionados além dos definidos numa instalação padrão do Portal Padrão? (IMPORTANTE: Pacotes apresentados [no manual de funcionalidades avançadas](http://www.secom.gov.br/orientacoes-gerais/comunicacao-digital/manual-de-funcionalidades-avancadas-para-portais-plone_dez2014.pdf), mesmo que estejam no prefixo brasil.gov.\*, são considerados plugins adicionais). Caso sua resposta seja sim, forneça o nome e as versões utilizadas.
 
 <!-- Marque essas opções trocando [ ] por [x] -->
 
