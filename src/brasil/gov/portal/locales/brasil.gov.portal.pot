@@ -174,12 +174,24 @@ msgstr ""
 msgid "Go to content <span>1</span>"
 msgstr ""
 
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:29
+msgid "content"
+msgstr ""
+
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:21
 msgid "Go to footer <span>4</span>"
 msgstr ""
 
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:32
+msgid "footer"
+msgstr ""
+
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:9
 msgid "Go to navigation <span>2</span>"
+msgstr ""
+
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:32
+msgid "navigation"
 msgstr ""
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:15

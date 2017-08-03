@@ -175,13 +175,25 @@ msgstr "Para obtener información y apoyo sobre la Identidad Digital de Gobierno
 msgid "Go to content <span>1</span>"
 msgstr "Ir a contenido <span>1</span>"
 
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:29
+msgid "content"
+msgstr "contenido"
+
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:21
 msgid "Go to footer <span>4</span>"
 msgstr "Ir a pie de página <span>4</span>"
 
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:32
+msgid "footer"
+msgstr "pie de página"
+
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:9
 msgid "Go to navigation <span>2</span>"
 msgstr "Ir a la navegación <span>2</span>"
+
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:32
+msgid "navigation"
+msgstr "navegación"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:15
 msgid "Go to search <span>3</span>"

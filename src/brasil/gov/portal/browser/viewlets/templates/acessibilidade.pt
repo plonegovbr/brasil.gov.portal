@@ -24,3 +24,14 @@
                         </a>
                     </li>
                 </ul>
+                <ul i18n:domain="brasil.gov.portal" id="anchor" style="display:none;">
+                    <li>
+                        <a name="acontent" id="acontent" class="anchor" i18n:translate="">content</a>
+                    </li>
+                    <li>
+                        <a name="anavigation" id="anavigation" class="anchor" i18n:translate="">navigation</a>
+                    </li>
+                    <li>
+                        <a name="afooter" id="afooter" class="anchor" i18n:translate="">footer</a>
+                    </li>
+                </ul>
