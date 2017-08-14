@@ -18,7 +18,7 @@
             <a href=""
                tal:content="tab/Title"
                tal:condition="not:tab/Description"
-               tal:attributes="href tab/getURL;">
+               tal:attributes="href tab/getRemoteUrl">
             Tab Name
             </a>
         </li>
