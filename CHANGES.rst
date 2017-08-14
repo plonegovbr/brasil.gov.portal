@@ -2,6 +2,22 @@ Histórico de Alterações
 -----------------------
 
 1.2.1 (unreleased)
+unreleased
+
+- Substitue o h1 por div no portal logo para adequar o portal a acessibilidade.
+
+- Altera a viewlet de site actions para retirar o atributo title dos links para 
+  adequar as regras de acessibilidade.
+
+- Altera a viewlet de serviços para incluir a descrição do objeto no atributo 
+  title do link para adequar as regras de acessibilidade.
+  
+- Insere descrição para os links vazios acontent, anavigation e afooter para atender os critérios de acessibilidade.
+
+- Altera a viewlet de serviços para obter a url do link do atributo remoteUrl do tipo Link.
+
+
+1.2b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
 - Corrige erro de regressão na exibição da data na visão sumária. Com a
