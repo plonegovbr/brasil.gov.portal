@@ -16,6 +16,9 @@ unreleased
 
 - Altera a viewlet de serviços para obter a url do link do atributo remoteUrl do tipo Link.
 
+- Altera o valor do atributo remoteUrl dos links da pasta /rodape/coluna-2 para que fiquem iguais aos links
+  da viewlet de serviços evitando assim erros de acessibilidade.
+
 
 1.2b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
