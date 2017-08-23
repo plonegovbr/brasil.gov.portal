@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-30 13:54+0000\n"
+"POT-Creation-Date: 2017-08-23 10:14+0000\n"
 "PO-Revision-Date: 2014-11-06 15:40-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -25,6 +25,14 @@ msgstr "&laquo; Anterior"
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:95
 msgid "- Low-level settings."
 msgstr "- Configuración de bajo nivel."
+
+#: brasil/gov/portal/profiles.zcml:14
+msgid ".gov.br: Portal Padrão"
+msgstr ""
+
+#: brasil/gov/portal/profiles.zcml:22
+msgid ".gov.br: Portal Padrão - Conteúdo base"
+msgstr ""
 
 #: brasil/gov/portal/controlpanel/socialnetworks.py:109
 msgid ".gov.br: Social Network"
@@ -82,6 +90,55 @@ msgstr "Ir arriba"
 msgid "Base configuration"
 msgstr "Configuración de la base"
 
+#: brasil/gov/portal/upgrades/v1000/configure.zcml:14
+#: brasil/gov/portal/upgrades/v2000/configure.zcml:14
+msgid "Configurações da Versão 1000 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10300/configure.zcml:14
+msgid "Configurações da Versão 10300 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10400/configure.zcml:14
+msgid "Configurações da Versão 10400 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10500/configure.zcml:14
+msgid "Configurações da Versão 10500 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10600/configure.zcml:14
+msgid "Configurações da Versão 10600 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10700/configure.zcml:14
+msgid "Configurações da Versão 10700 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10800/configure.zcml:14
+msgid "Configurações da Versão 10800 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10802/configure.zcml:14
+msgid "Configurações da Versão 10802 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v3000/configure.zcml:14
+msgid "Configurações da Versão 3000 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v4000/configure.zcml:14
+msgid "Configurações da Versão 4000 do portal"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v5000/configure.zcml:14
+msgid "Configurações da Versão 5000 do portal"
+msgstr ""
+
+#: brasil/gov/portal/profiles.zcml:22
+msgid "Conteúdo de exemplo para sites do Governo Federal"
+msgstr ""
+
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:13
 msgid "Create a Plone site"
 msgstr "Crear un sitio Plone"
@@ -124,6 +181,18 @@ msgstr "Editar"
 #: brasil/gov/portal/browser/viewlets/templates/destaques_viewlet.pt:4
 msgid "Edit Features"
 msgstr "Editar Destacados"
+
+#: brasil/gov/portal/browser/album/configure.zcml:13
+msgid "Essa view contem a visao da galeria de albuns"
+msgstr ""
+
+#: brasil/gov/portal/browser/album/configure.zcml:18
+msgid "Essa view contem a visao da galeria de fotos"
+msgstr ""
+
+#: brasil/gov/portal/browser/content/configure.zcml:16
+msgid "Essa view inclui galeria de imagens e se torna a view padrao de noticias"
+msgstr ""
 
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:104
 msgid "Example site of the e-Government Digital Identity Plone Portal"
@@ -171,29 +240,25 @@ msgstr "Para habilitar el soporte de las estadísticas web de los proveedores ex
 msgid "For information and Support about e-Government Digital Identity Plone Portal visit"
 msgstr "Para obtener información y apoyo sobre la Identidad Digital de Gobierno Electrónico, visite"
 
+#: brasil/gov/portal/browser/album/configure.zcml:13
+msgid "Galeria de albuns"
+msgstr ""
+
+#: brasil/gov/portal/browser/album/configure.zcml:18
+msgid "Galeria de fotos"
+msgstr ""
+
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:3
 msgid "Go to content <span>1</span>"
 msgstr "Ir a contenido <span>1</span>"
-
-#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:29
-msgid "content"
-msgstr "contenido"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:21
 msgid "Go to footer <span>4</span>"
 msgstr "Ir a pie de página <span>4</span>"
 
-#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:32
-msgid "footer"
-msgstr "pie de página"
-
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:9
 msgid "Go to navigation <span>2</span>"
 msgstr "Ir a la navegación <span>2</span>"
-
-#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:32
-msgid "navigation"
-msgstr "navegación"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:15
 msgid "Go to search <span>3</span>"
@@ -218,6 +283,54 @@ msgstr "Oculta autor"
 #: brasil/gov/portal/controlpanel/portal.py:19
 msgid "Hides publication date"
 msgstr "Oculta la fecha de publicación"
+
+#: brasil/gov/portal/upgrades/v1000/configure.zcml:14
+msgid "Identidade Digital: Versão 1000"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10300/configure.zcml:14
+msgid "Identidade Digital: Versão 10300"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10400/configure.zcml:14
+msgid "Identidade Digital: Versão 10400"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10500/configure.zcml:14
+msgid "Identidade Digital: Versão 10500"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10600/configure.zcml:14
+msgid "Identidade Digital: Versão 10600"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10700/configure.zcml:14
+msgid "Identidade Digital: Versão 10700"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10800/configure.zcml:14
+msgid "Identidade Digital: Versão 10800"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v10802/configure.zcml:14
+msgid "Identidade Digital: Versão 10802"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v2000/configure.zcml:14
+msgid "Identidade Digital: Versão 2000"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v3000/configure.zcml:14
+msgid "Identidade Digital: Versão 3000"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v4000/configure.zcml:14
+msgid "Identidade Digital: Versão 4000"
+msgstr ""
+
+#: brasil/gov/portal/upgrades/v5000/configure.zcml:14
+msgid "Identidade Digital: Versão 5000"
+msgstr ""
 
 #: brasil/gov/portal/controlpanel/socialnetworks.py:111
 msgid "Identity Bar behavior Configuration"
@@ -272,11 +385,16 @@ msgstr "Identificador de Camino"
 msgid "Please upload a audio file."
 msgstr "Por favor, sube un archivo de audio."
 
-#: brasil/gov/portal/browser/content/templates/nitf_custom_view.pt:85
+#: brasil/gov/portal/profiles.zcml:14
+msgid "Portal Padrão de sites para o Governo Federal"
+msgstr ""
+
+#: brasil/gov/portal/browser/content/templates/nitf_custom_galleria.pt:84
+#: brasil/gov/portal/browser/content/templates/nitf_custom_view.pt:89
 msgid "Related items"
 msgstr "Elementos Relacionados"
 
-#: brasil/gov/portal/browser/content/templates/nitf_custom_view.pt:97
+#: brasil/gov/portal/browser/content/templates/nitf_custom_view.pt:105
 msgid "Report error"
 msgstr "Informe de errores"
 
@@ -336,6 +454,18 @@ msgstr "Ajustes a nivel de sitio."
 msgid "Social Network"
 msgstr "Red Social"
 
+#: brasil/gov/portal/browser/plone/configure.zcml:89
+msgid "Standard view"
+msgstr ""
+
+#: brasil/gov/portal/browser/plone/configure.zcml:95
+msgid "Summary view"
+msgstr ""
+
+#: brasil/gov/portal/browser/plone/configure.zcml:101
+msgid "Tabular view"
+msgstr ""
+
 #: brasil/gov/portal/content/schema/ExternalContent.xml
 msgid "Text"
 msgstr "Texto"
@@ -372,9 +502,17 @@ msgstr ""
 msgid "View"
 msgstr "Vista"
 
+#: brasil/gov/portal/browser/plone/configure.zcml:63
+msgid "View Image"
+msgstr ""
+
 #: brasil/gov/portal/controlpanel/socialnetworks.py:113
 msgid "Visual and functional Configuration"
 msgstr "Configuración visual y funcional"
+
+#: brasil/gov/portal/browser/content/configure.zcml:16
+msgid "Visão de notícia"
+msgstr ""
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:125
 msgid "You normally don't need to change anything here unless you have specific reasons and know what you are doing."
@@ -394,6 +532,10 @@ msgstr "Interfaz de Administración de Zope"
 msgid "add_new_site"
 msgstr "Añadir nuevo sitio"
 
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:29
+msgid "content"
+msgstr "contenido"
+
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:13
 msgid "e-Government Digital Identity -- Plone"
 msgstr "Identidade Digitales de Governo Eletrônico - Plone"
@@ -405,6 +547,10 @@ msgstr "Plone portal da Identidade Digitales de Governo Eletrônico"
 #: brasil/gov/portal/controlpanel/portal.py:29
 msgid "e-Government Digital Identity Settings"
 msgstr "Configuración de Identidad Digital de Gobierno Electrónico"
+
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:35
+msgid "footer"
+msgstr "pie de página"
 
 #. Default: "Escolha a rede a ser cadastrada"
 #: brasil/gov/portal/controlpanel/socialnetworks.py:28
@@ -423,6 +569,10 @@ msgstr ""
 #: brasil/gov/portal/browser/viewlets/templates/searchbox.pt:30
 msgid "label_search"
 msgstr "Búsqueda en el sitio"
+
+#: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:32
+msgid "navigation"
+msgstr "navegación"
 
 #. Default: "Plone Community"
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:114
@@ -445,6 +595,7 @@ msgstr "tema(s)"
 
 #. Default: "last updated: ${date}"
 #: brasil/gov/portal/browser/plone/overrides/Products.CMFPlone.skins.plone_templates.recently_modified.pt:72
+#: brasil/gov/portal/browser/plone/overrides/Products.CMFPlone.skins.plone_templates.recently_published.pt:68
 msgid "text_date"
 msgstr "última actualización: ${date}"
 
@@ -456,4 +607,3 @@ msgstr ""
 #: brasil/gov/portal/browser/viewlets/templates/searchbox.pt:18
 msgid "title_search_box"
 msgstr "Búsqueda en el sitio"
-

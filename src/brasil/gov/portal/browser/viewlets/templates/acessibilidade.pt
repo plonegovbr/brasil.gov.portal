@@ -24,7 +24,7 @@
                         </a>
                     </li>
                 </ul>
-                <ul i18n:domain="brasil.gov.portal" id="anchor" style="display:none;">
+                <ul i18n:domain="brasil.gov.portal" id="anchor">
                     <li>
                         <a name="acontent" id="acontent" class="anchor" i18n:translate="">content</a>
                     </li>

@@ -34,17 +34,17 @@ class AccessibilityTestCase(unittest.TestCase):
         self.adapter = SiteControlPanelAdapter(self.portal)
         self.browser = Browser(self.layer['app'])
         transaction.begin()
-        ltool = self.portal.portal_languages
+        self.ltool = self.portal.portal_languages
         supportedLanguages = ['en', 'es', 'pt-br']
-        ltool.manage_setLanguageSettings('pt-br', supportedLanguages,
-                                         setUseCombinedLanguageCodes=True)
+        self.ltool.manage_setLanguageSettings('pt-br', supportedLanguages,
+                                              setUseCombinedLanguageCodes=True)
         transaction.commit()
 
 
 class PortalLogoTestCase(AccessibilityTestCase):
 
-    def base_test(self, cor):
-        """ Teste base dos temas
+    def portal_logo_tema_test(self, cor):
+        """ Testa se o portal logo está presente em todos os temas
         """
         adapter = self.adapter
         adapter.site_title_1 = u'Portal'
@@ -55,23 +55,22 @@ class PortalLogoTestCase(AccessibilityTestCase):
 
         self.browser.open(self.portal.absolute_url())
 
-        # Testa se a âncora para o conteúdo aparece.
         self.assertIn(
             '<div id="portal-title"',
             self.browser.contents
         )
 
     def test_tema_amarelo(self):
-        self.base_test('amarelo')
+        self.portal_logo_tema_test('amarelo')
 
     def test_tema_azul(self):
-        self.base_test('azul')
+        self.portal_logo_tema_test('azul')
 
     def test_tema_branco(self):
-        self.base_test('branco')
+        self.portal_logo_tema_test('branco')
 
     def test_tema_verde(self):
-        self.base_test('verde')
+        self.portal_logo_tema_test('verde')
 
 
 class AcessibilidadeViewletTestCase(AccessibilityTestCase):
@@ -101,14 +100,15 @@ class AcessibilidadeViewletTestCase(AccessibilityTestCase):
     # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
     # o replace dos itens acontent, anavigation e afooter na regra de cada tema
     @unittest.expectedFailure
-    def base_test(self, cor, defaultLanguage):
-        """Teste base dos temas"""
+    def find_translated_anchor_test(self, cor, defaultLanguage):
+        """ Verifica se os links acontent, anavigation e afooter estão presentes
+            e traduzidos.
+        """
         transaction.begin()
 
-        ltool = self.portal.portal_languages
         supportedLanguages = ['en', 'es', 'pt-br']
-        ltool.manage_setLanguageSettings(defaultLanguage, supportedLanguages,
-                                         setUseCombinedLanguageCodes=True)
+        self.ltool.manage_setLanguageSettings(defaultLanguage, supportedLanguages,
+                                              setUseCombinedLanguageCodes=True)
 
         transaction.commit()
 
@@ -171,33 +171,33 @@ class AcessibilidadeViewletTestCase(AccessibilityTestCase):
     # o replace dos itens acontent, anavigation e afooter na regra de cada tema
     @unittest.expectedFailure
     def test_tema_amarelo(self):
-        self.base_test('amarelo', 'en')
-        self.base_test('amarelo', 'es')
-        self.base_test('amarelo', 'pt-bt')
+        self.find_translated_anchor_test('amarelo', 'en')
+        self.find_translated_anchor_test('amarelo', 'es')
+        self.find_translated_anchor_test('amarelo', 'pt-bt')
 
     # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
     # o replace dos itens acontent, anavigation e afooter na regra de cada tema
     @unittest.expectedFailure
     def test_tema_azul(self):
-        self.base_test('azul', 'en')
-        self.base_test('azul', 'es')
-        self.base_test('azul', 'pt-br')
+        self.find_translated_anchor_test('azul', 'en')
+        self.find_translated_anchor_test('azul', 'es')
+        self.find_translated_anchor_test('azul', 'pt-br')
 
     # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
     # o replace dos itens acontent, anavigation e afooter na regra de cada tema
     @unittest.expectedFailure
     def test_tema_branco(self):
-        self.base_test('branco', 'en')
-        self.base_test('branco', 'es')
-        self.base_test('branco', 'pt-br')
+        self.find_translated_anchor_test('branco', 'en')
+        self.find_translated_anchor_test('branco', 'es')
+        self.find_translated_anchor_test('branco', 'pt-br')
 
     # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
     # o replace dos itens acontent, anavigation e afooter na regra de cada tema
     @unittest.expectedFailure
     def test_tema_verde(self):
-        self.base_test('verde', 'en')
-        self.base_test('verde', 'es')
-        self.base_test('verde', 'pt-br')
+        self.find_translated_anchor_test('verde', 'en')
+        self.find_translated_anchor_test('verde', 'es')
+        self.find_translated_anchor_test('verde', 'pt-br')
 
 
 class SiteActionsViewletTestCase(AccessibilityTestCase):
