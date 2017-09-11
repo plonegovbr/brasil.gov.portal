@@ -5,6 +5,18 @@ cache:
   directories:
   - eggs
   - parts/node
+addons:
+  # XXX:
+  # Essa versão é a mesma usada pelo Plone.
+  # https://github.com/plone/plone.jenkins_node/blob/9a74c2902da653de25020c39c67d0605615f74f4/defaults/main.yml#L3
+  # https://github.com/plone/jenkins.plone.org/issues/180#issuecomment-230234874
+  # Preciso pinar porque a distribuição padrão no Travis agora é a Trusty
+  # (https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming)
+  # e o Firefox nessa distribuição é o 50.0.x, dando o erro
+  # AssertionError: Parent suite setup failed:
+  # WebDriverException: Message: Can't load the profile. Profile Dir: %s If you specified a log_file in the FirefoxBinary constructor, check it for details.
+  # Mais referências: https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
+  firefox: 46.0.1
 env:
   matrix:
     - MASTER=true
@@ -17,7 +29,13 @@ install:
 - test $MASTER && sed -ie '/https:\/\/raw\.githubusercontent\.com\/plonegovbr\/portal\.buildout\/master\/buildout\.d\/versions\.cfg/d' buildout.cfg || true
 - python bootstrap.py
 - bin/buildout annotate
-- bin/buildout
+# FIXME:
+# Além de pinar a versão do firefox, preciso pinar a do selenium. A pinagem aqui
+# é a versão do selenium usada no último Plone 4 no momento do commit.
+# http://dist.plone.org/release/4.3.15/versions.cfg
+# Quando https://github.com/plonegovbr/brasil.gov.portal/issues/331 for atendido,
+# essa pinagem pode ser removida daqui.
+- bin/buildout versions:selenium=2.53.5
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
