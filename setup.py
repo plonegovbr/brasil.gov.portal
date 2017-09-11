@@ -68,6 +68,9 @@ setup(
         # https://github.com/collective/collective.nitf/commit/ebb385b353655fc9c39de0b4f5ec2abfe6f39375
         # Isso já foi feito no passado em outros pacotes, ver
         # https://github.com/plonegovbr/brasil.gov.portal/blob/ab55f0fdf09201bb26e6fe9b1815e178a94d5e2c/src/brasil/gov/portal/bbb.py
+        # Ele pode ser removido pois com a atualização de plone.app.contenttypes > 1.1.1
+        # passa a se usar o plone.formwidget.datetime, ver https://github.com/collective/collective.cover/issues/745
+        # para mais detalhes.
         'collective.z3cform.widgets',
         'five.grok',
         'five.pt',

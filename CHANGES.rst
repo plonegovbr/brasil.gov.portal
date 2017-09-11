@@ -4,6 +4,11 @@ Histórico de Alterações
 1.2b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Faz um patch nos upgrades de plone.app.contenttypes 1.0 para 1.1.1 e
+  Products.contentmigration para resolver problemas com o tipo evento e com a
+  reindexação dos itens migrados. (relacionado a `#360`_).
+  [idgserpro]
+
 - Corrige objetos eventos do conteúdo inicial (closes `#360`_).
   [idgserpro]
 

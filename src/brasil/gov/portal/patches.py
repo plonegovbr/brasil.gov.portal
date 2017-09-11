@@ -8,6 +8,8 @@ from plone.app.relationfield.behavior import IRelatedItems
 from plone.autoform.interfaces import WIDGETS_KEY
 from plone.event.utils import default_timezone
 from plone.outputfilters.filters import resolveuid_and_caption as base
+from Products.contentmigration.basemigrator.migrator import BaseCMFMigrator
+from Products.contentmigration.basemigrator.migrator import copyPermMap
 
 
 def outputfilters():
@@ -44,8 +46,11 @@ def related_items_widget():
     logger.info('Patched Related Items widget')
 
 
-def attendees():
+def attendees_e_timezone():
     """
+
+    attendees
+    =========
 
     Da forma como o método migrate_schema_fields está implementado
 
@@ -75,7 +80,38 @@ def attendees():
 
     FIXME: Se esse erro for corrigido upstream (ver https://github.com/plone/plone.app.contenttypes/issues/414)
     e a versão de plone.app.contenttypes for corrigida no release, esse patch
-    pode ser removido.
+    pode ser removido. Lembrar de alterar no setup.py colocando a versão
+    correspondente do plone.app.contenttypes que contenha essa correção.
+
+    timezone
+    ========
+
+    Sem esse patch, após rodar os upgradeSteps de plone.app.contenttypes, ao
+    tentar acessar a visão de um item do tipo evento, temos o erro:
+
+      Module zope.traversing.adapters, line 136, in traversePathElement
+       - __traceback_info__: (None, 'isoformat')
+      Module zope.traversing.adapters, line 50, in traverse
+       - __traceback_info__: (None, 'isoformat', ())
+    LocationError: getField
+
+     - Expression: "data/start/isoformat"
+     - Filename:   ... nt-1.1.5-py2.7.egg/plone/app/event/browser/event_view.pt
+     - Location:   (line 19: col 60)
+     - Source:     ... "dtstart" tal:content="data/start/isoformat">end</li>
+                                              ^^^^^^^^^^^^^^^^^^^^
+    Isso ocorre porque o método migrate_schema_fields chega a definir um timezone
+    mas não atribui ele a self.new.timezone, fazendo uma migração incompleta. Ao
+    adicionarmos
+
+        self.new.timezone = timezone
+
+    no método o erro pára de ocorrer.
+
+    FIXME: Se esse erro for corrigido upstream (ver https://github.com/plone/plone.app.contenttypes/issues/424)
+    e a versão de plone.app.contenttypes for corrigida no release, esse patch
+    pode ser removido. Lembrar de alterar no setup.py colocando a versão
+    correspondente do plone.app.contenttypes que contenha essa correção.
 
     """
     def migrate_schema_fields(self):
@@ -83,19 +119,23 @@ def attendees():
             if self.old.start_date.tzinfo \
             else default_timezone(fallback='UTC')
 
+        # Customização timezone inicia aqui
+        self.new.timezone = timezone
+        # Customização timezone finaliza aqui
+
         self.new.start = datetime_fixer(self.old.start_date, timezone)
         self.new.end = datetime_fixer(self.old.end_date, timezone)
 
         if hasattr(self.old, 'location'):
             self.new.location = self.old.location
         if hasattr(self.old, 'attendees'):
-            # Customização inicia aqui
+            # Customização attendess inicia aqui
             # self.new.attendees = tuple(self.old.attendees.splitlines())
             if self.old.attendees:
                 self.new.attendees = tuple(self.old.attendees.splitlines())
             else:
                 self.new.attendees = tuple()
-        # Customização finalizada
+            # Customização attendess finalizada
         if hasattr(self.old, 'event_url'):
             self.new.event_url = self.old.event_url
         if hasattr(self.old, 'contact_name'):
@@ -114,8 +154,38 @@ def attendees():
     logger.info('Patched migrate_schema_fields to help in attendees migration')
 
 
+def reindex_object_after_workflow_migration():
+    """
+    Após a migração do tipo evento, o título não fica correto e todos os objetos
+    do tipo evento ficam como privado, portanto precisamos desse patch que reindexa
+    os novos objetos.
+
+    FIXME:
+    Se esse erro for corrigido upstream (ver https://github.com/plone/Products.contentmigration/issues/16)
+    e a versão de plone.app.contenttypes for corrigida no release, esse patch
+    pode ser removido. Lembrar de alterar no setup.py colocando a versão
+    correspondente do plone.app.contenttypes que contenha essa correção.
+    """
+    def migrate_workflow(self):
+        """migrate the workflow state
+        """
+        wfh = getattr(self.old, 'workflow_history', None)
+        if wfh:
+            wfh = copyPermMap(wfh)
+            self.new.workflow_history = wfh
+            # INICIO Customização
+            self.new.reindexObject()
+            # FIM Customização
+
+    setattr(BaseCMFMigrator,
+            'migrate_workflow',
+            migrate_workflow)
+    logger.info('Patched migrate_workflow to help in events migration')
+
+
 def run():
     outputfilters()
     link()
     related_items_widget()
-    attendees()
+    attendees_e_timezone()
+    reindex_object_after_workflow_migration()
