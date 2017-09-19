@@ -19,7 +19,10 @@
   </div>
 
   <metal:listingmacro define-macro="listing">
-    <tal:results define="batch view/batch">
+    <tal:results define="batch view/batch;
+                 portal_settings context/@@portal_settings;
+                 mostra_data not:portal_settings/get_esconde_data;
+                 mostra_autor not:portal_settings/get_esconde_autor;">
       <tal:listing condition="batch">
         <div class="entries" metal:define-slot="entries">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
@@ -60,8 +63,10 @@
                           </span>
                         </tal:event>
                         <tal:byline condition="view/show_about">
-                          &mdash;
-                          <tal:name tal:condition="item_creator"
+                          <tal:traco condition="mostra_autor">
+                              &mdash;
+                          </tal:traco>
+                          <tal:name tal:condition="python:item_creator and mostra_autor"
                               tal:define="author python:view.pas_member.info(item_creator);
                                           creator_short_form author/username;
                                           creator_long_form string:?author=${author/username};
@@ -78,7 +83,7 @@
                           </span>
                           </tal:name>
 
-                          <tal:modified condition="python: item_type != 'Event'">
+                          <tal:modified condition="python: item_type != 'Event' and mostra_data">
                             &mdash;
                             <tal:mod i18n:translate="box_last_modified">last modified</tal:mod>
                             <span tal:replace="python:view.toLocalizedTime(item_modified,long_format=1)">

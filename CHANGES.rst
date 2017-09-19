@@ -4,6 +4,11 @@ Histórico de Alterações
 1.2b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige templates para que os testes test_collection_summary_view
+  e test_collection_listing_view que estavam como @unittest.expectedFailure
+  possam funcionar novamente. (closes `#359`_).
+  [idgserpro]
+
 - Faz um patch nos upgrades de plone.app.contenttypes 1.0 para 1.1.1 e
   Products.contentmigration para resolver problemas com o tipo evento e com a
   reindexação dos itens migrados. (relacionado a `#360`_).
@@ -526,4 +531,5 @@ Histórico de Alterações
 .. _`#303`: https://github.com/plonegovbr/brasil.gov.portal/issues/303
 .. _`#320`: https://github.com/plonegovbr/brasil.gov.portal/issues/320
 .. _`#349`: https://github.com/plonegovbr/brasil.gov.portal/issues/349
+.. _`#359`: https://github.com/plonegovbr/brasil.gov.portal/issues/359
 .. _`#360`: https://github.com/plonegovbr/brasil.gov.portal/issues/360

@@ -18,7 +18,10 @@
     <div metal:define-slot="inside" tal:replace="structure text">The body</div>
   </div>
 
-  <tal:results define="batch view/batch">
+  <tal:results define="batch view/batch;
+                       portal_settings context/@@portal_settings;
+                       mostra_data not:portal_settings/get_esconde_data;
+                       mostra_autor not:portal_settings/get_esconde_autor;">
     <tal:listing condition="batch">
 
       <div metal:use-macro="context/batch_macros/macros/navigation" />
@@ -28,10 +31,20 @@
             i18n:attributes="summary summary_content_listing;">
           <thead>
             <tr>
-              <th class="nosort"
-                  i18n:translate=""
-                  tal:repeat="field view/tabular_fields"
-                  tal:content="field">Field name</th>
+              <tal:field tal:repeat="field view/tabular_fields">
+                <th class="nosort"
+                    i18n:translate=""
+                    tal:condition="python:field not in ['Creator', 'ModificationDate']"
+                    tal:content="field">Field name</th>
+                <th class="nosort"
+                    i18n:translate=""
+                    tal:condition="python:view.show_about and field == 'ModificationDate' and mostra_data"
+                    tal:content="field">Field name</th>
+                <th class="nosort"
+                    i18n:translate=""
+                    tal:condition="python:view.show_about and field == 'Creator' and mostra_autor"
+                    tal:content="field">Field name</th>
+              </tal:field>
             </tr>
           </thead>
           <tbody>
@@ -50,9 +63,12 @@
                     tal:attributes="class python: oddrow and 'even' or 'odd'">
 
                   <tal:block tal:repeat="field view/tabular_fields">
-                    <td tal:condition="python:field not in ['Title', 'Creator', 'getIcon']"
+                    <td tal:condition="python:field not in ['Title', 'Creator', 'ModificationDate', 'getIcon']"
                         tal:define="field_data python:view.tabular_fielddata(item, field)">
                       <tal:block tal:replace="field_data/value" />
+                    </td>
+                    <td tal:condition="python:view.show_about and field == 'ModificationDate' and mostra_data">
+                      <tal:block tal:replace="python:view.tabular_fielddata(item, field)['value']" />
                     </td>
                     <td tal:condition="python:field == 'Title'">
                       <a href="#"
@@ -63,7 +79,7 @@
                         Item Title
                       </a>
                     </td>
-                    <td tal:condition="python:field == 'Creator'"
+                    <td tal:condition="python:view.show_about and field == 'Creator' and mostra_autor"
                         tal:define="author python:view.pas_member.info(item_creator);
                                     name python:author['fullname'] or author['username']">
                       <a tal:condition="author"
