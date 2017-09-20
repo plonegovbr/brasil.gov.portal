@@ -50,17 +50,17 @@
         />
 _
   <!--INICIO Customização plone.app.contenttypes
-      A customização anterior não precisava do <configure abaixo, porque as templates
-      não definiam classes como agora.
+      A customização anterior (pŕe plone.app.contenttypes 1.1.1) não precisava do
+      <configure abaixo, porque as templates não definiam classes como agora.
       É importante ressaltar que não fizemos 'unconfigure' em todas as pages,
       e sim apenas nas que customizamos no passado mas que mudaram de nome:
 
-          folder_summary_view
-          folder_listing
-          standard_view
-          folder_tabular_view
+          folder_summary_view (agora summary_view / listing_summary.pt)
+          folder_listing      (agora listing_view / listing.pt)
+          standard_view       (agora listing_view / listing.pt)
+          folder_tabular_view (agora tabular_view / listing_tabular.pt)
 
-      A relação de/para pode ser vista em
+      A relação completa de/para pode ser vista em
       https://github.com/plone/plone.app.contenttypes/blob/1.1.1/plone/app/contenttypes/upgrades.py#L11
   -->
   <!-- VIEWS FOR PLONE SITE ROOT -->
@@ -125,7 +125,7 @@ _
 
 
       <!-- VIEWS FOR COLLECTION ITEM -->
-        <!--Antiga folder_listing -->
+      <!--Antiga folder_listing -->
       <browser:page
           name="listing_view"
           for="plone.app.contenttypes.interfaces.ICollection"

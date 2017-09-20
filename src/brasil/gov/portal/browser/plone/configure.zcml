@@ -71,10 +71,7 @@
 
   <!--INICIO Customização plone.app.contenttypes
       Para maiores explicações e detalhes sobre essas customizações, veja o
-      arquivo overrides.zcml.
-      FIXME: Com a mudança dos nomes das views, também mudar depois o nome do
-      .pt da customização para ficar mais consistente. Seria uma boa idéia
-      no commit colocar o de/para.-->
+      arquivo overrides.zcml.-->
   <!-- VIEWS FOR PLONE SITE ROOT -->
   <browser:pages
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
@@ -83,19 +80,19 @@
       permission="zope2.View">
     <browser:page
         name="listing_view"
-        template="templates/folder_listing.pt"
+        template="templates/listing.pt"
         menu="plone_displayviews"
         title="Standard view"
         />
     <browser:page
         name="summary_view"
-        template="templates/folder_summary_view.pt"
+        template="templates/listing_summary.pt"
         menu="plone_displayviews"
         title="Summary view"
         />
     <browser:page
         name="tabular_view"
-        template="templates/folder_tabular_view.pt"
+        template="templates/listing_tabular.pt"
         menu="plone_displayviews"
         title="Tabular view"
         />
@@ -110,19 +107,19 @@
       permission="zope2.View">
     <browser:page
         name="listing_view"
-        template="templates/folder_listing.pt"
+        template="templates/listing.pt"
         menu="plone_displayviews"
         title="Standard view"
         />
     <browser:page
         name="summary_view"
-        template="templates/folder_summary_view.pt"
+        template="templates/listing_summary.pt"
         menu="plone_displayviews"
         title="Summary view"
         />
     <browser:page
         name="tabular_view"
-        template="templates/folder_tabular_view.pt"
+        template="templates/listing_tabular.pt"
         menu="plone_displayviews"
         title="Tabular view"
         />
@@ -135,7 +132,7 @@
       for="plone.app.contenttypes.interfaces.ICollection"
       class="plone.app.contenttypes.browser.collection.CollectionView"
       layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-      template="templates/folder_listing.pt"
+      template="templates/listing.pt"
       permission="zope2.View"
       />
 
@@ -150,19 +147,19 @@
       permission="zope2.View">
     <browser:page
         name="listing_view"
-        template="templates/folder_listing.pt"
+        template="templates/listing.pt"
         menu="plone_displayviews"
         title="Standard view"
         />
     <browser:page
         name="summary_view"
-        template="templates/folder_summary_view.pt"
+        template="templates/listing_summary.pt"
         menu="plone_displayviews"
         title="Summary view"
         />
     <browser:page
         name="tabular_view"
-        template="templates/folder_tabular_view.pt"
+        template="templates/listing_tabular.pt"
         menu="plone_displayviews"
         title="Tabular view"
         />
