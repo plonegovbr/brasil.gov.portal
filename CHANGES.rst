@@ -1,8 +1,26 @@
 Histórico de Alterações
 -------------------------
 
-1.2b2 (unreleased)
+1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+
+.. Warning::
+   ATENÇÃO:
+   1 - Com a atualização de plone.app.contenttypes para 1.1.1 nesse release
+   plone.app.event foi atualizado e, com ele, a necessidade de adição de uma
+   variável TZ (timezone) no seu buildout na seção environment-vars ANTES de
+   atualizar para essa versão. Se você não usa o buildout de exemplo portal.buildout,
+   segue um exemplo de como adicionar em seu buildout:
+   https://github.com/plonegovbr/portal.buildout/blob/d9e084275977b45ad5349057f95b05dda70db49a/buildout.d/base.cfg#L39
+   2 - Caso não esteja na última versão do marco 1.1.x (hoje a 1.1.5.3) recomendamos
+   que se atualize para essa versão antes de atualizar direto para 1.2.x. Lembre-se
+   de que o release IDG, com todas as suas dependências, pode ter um número diferente
+   do brasil.gov.portal. Para mais informações, leia
+   https://github.com/plonegovbr/portalpadrao.release/blob/1710d6261e53a629093933119d9c76d0708ae534/README.md#user-content-como-escolher-corretamente-o-arquivo-de-versões-de-um-release
+   3 - No momento de executar os upgradeSteps para esse release, os de
+   brasil.gov.portal devem ser os últimos a serem executados. Para entender
+   melhor o uso de upgradeSteps leia
+   http://identidade-digital-de-governo-plone.readthedocs.io/en/latest/atualizacao/
 
 - Corrige templates para que os testes test_collection_summary_view
   e test_collection_listing_view que estavam como @unittest.expectedFailure
