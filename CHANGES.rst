@@ -1,6 +1,12 @@
 Histórico de Alterações
 -----------------------
 
+1.2rc2 (unreleased)
+^^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.2rc1 (2017-09-21)
 ^^^^^^^^^^^^^^^^^^^
 
