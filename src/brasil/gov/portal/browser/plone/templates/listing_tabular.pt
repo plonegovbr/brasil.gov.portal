@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+  <div metal:define-macro="text-field-view"
+      id="parent-fieldname-text" class="stx"
+      tal:define="text view/text"
+      tal:condition="text"
+      tal:attributes="class view/text_class">
+    <div metal:define-slot="inside" tal:replace="structure text">The body</div>
+  </div>
+
+  <tal:results define="batch view/batch;
+                       portal_settings context/@@portal_settings;
+                       mostra_data not:portal_settings/get_esconde_data;
+                       mostra_autor not:portal_settings/get_esconde_autor;">
+    <tal:listing condition="batch">
+
+      <div metal:use-macro="context/batch_macros/macros/navigation" />
+      <div class="has-table">
+        <table class="listing"
+            summary="Content listing"
+            i18n:attributes="summary summary_content_listing;">
+          <thead>
+            <tr>
+              <tal:field tal:repeat="field view/tabular_fields">
+                <th class="nosort"
+                    i18n:translate=""
+                    tal:condition="python:field not in ['Creator', 'ModificationDate']"
+                    tal:content="field">Field name</th>
+                <th class="nosort"
+                    i18n:translate=""
+                    tal:condition="python:view.show_about and field == 'ModificationDate' and mostra_data"
+                    tal:content="field">Field name</th>
+                <th class="nosort"
+                    i18n:translate=""
+                    tal:condition="python:view.show_about and field == 'Creator' and mostra_autor"
+                    tal:content="field">Field name</th>
+              </tal:field>
+            </tr>
+          </thead>
+          <tbody>
+            <tal:entries tal:repeat="item batch">
+              <tal:block tal:define="item_url item/getURL;
+                                     item_title item/Title;
+                                     item_description item/Description;
+                                     item_type item/PortalType;
+                                     item_type_class python:'contenttype-' + view.normalizeString(item_type);
+                                     item_wf_state item/review_state;
+                                     item_wf_state_class python:'state-' + view.normalizeString(item_wf_state);
+                                     item_creator item/Creator;
+                                     item_link python:item_type in view.use_view_action and item_url+'/view' or item_url">
+                <tr metal:define-macro="listitem"
+                    tal:define="oddrow repeat/item/odd;"
+                    tal:attributes="class python: oddrow and 'even' or 'odd'">
+
+                  <tal:block tal:repeat="field view/tabular_fields">
+                    <td tal:condition="python:field not in ['Title', 'Creator', 'ModificationDate', 'getIcon']"
+                        tal:define="field_data python:view.tabular_fielddata(item, field)">
+                      <tal:block tal:replace="field_data/value" />
+                    </td>
+                    <td tal:condition="python:view.show_about and field == 'ModificationDate' and mostra_data">
+                      <tal:block tal:replace="python:view.tabular_fielddata(item, field)['value']" />
+                    </td>
+                    <td tal:condition="python:field == 'Title'">
+                      <a href="#"
+                          tal:attributes="href item_link;
+                          class string:$item_wf_state_class $item_type_class;
+                          title item_description;"
+                          tal:content="item_title">
+                        Item Title
+                      </a>
+                    </td>
+                    <td tal:condition="python:view.show_about and field == 'Creator' and mostra_autor"
+                        tal:define="author python:view.pas_member.info(item_creator);
+                                    name python:author['fullname'] or author['username']">
+                      <a tal:condition="author"
+                          tal:attributes="href string:${view/navigation_root_url}/author/${item_creator}"
+                          tal:content="name">Jos Henken</a>
+                    </td>
+                  </tal:block>
+
+                </tr>
+              </tal:block>
+            </tal:entries>
+          </tbody>
+        </table>
+      </div>
+
+      <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+    </tal:listing>
+
+    <metal:empty metal:define-slot="no_items_in_listing">
+    <p class="discreet"
+    tal:condition="not: view/batch"
+    tal:content="view/no_items_message">
+    There are currently no items in this folder.
+    </p>
+    </metal:empty>
+
+  </tal:results>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

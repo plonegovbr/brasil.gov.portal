@@ -1,0 +1,194 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block use-macro="context/@@listing_view/macros/content-core">
+
+  <tal:comment tal:replace="nothing">
+      Essas variáveis definidas aqui em metal:entries
+      vieram de folder_listing.pt de plone.app.contenttypes 1.1b3 e das customizações
+      antigas nas templates do brasil.gov.portal que foram feitas em
+      https://github.com/plonegovbr/brasil.gov.portal/pull/270
+      Com a atualização de plone.app.contenttypes 1.1.1, a partir de
+      https://github.com/plone/plone.app.contenttypes/blob/1.1.1/plone/app/contenttypes/browser/templates/listing.pt
+      foram feitas maiores alterações então preferimos manter o mais próximo
+      possível do que estava a customização original. Essas variáveis
+      são usadas na customização logo abaixo da span class="documentByLine".
+  </tal:comment>
+  <metal:entries fill-slot="entries"
+                 tal:define="portal_settings context/@@portal_settings;
+                             mostra_data not:portal_settings/get_esconde_data;
+                             mostra_autor not:portal_settings/get_esconde_autor;
+                             show_about view/show_about;
+                             navigation_root_url view/navigation_root_url;
+                             toLocalizedTime nocall:view/toLocalizedTime;
+                             pas_member context/@@pas_member;">
+    <metal:block use-macro="context/@@listing_view/macros/entries">
+      <metal:entry fill-slot="entry">
+
+      <article tal:attributes="class python:'tileItem visualIEFloatFix tile-%s' % view.normalizeString(item.portal_type);"
+           tal:define="obj item/getObject">
+
+        <div class="tileContent">
+          <tal:comment tal:replace="nothing">
+              Preciso desse teste pois 'item_has_image' sempre será 'True' no caso de collective.nitf.content: isso ocorre
+              porque no caso do nitf, 'image' é um método e não um atributo (e 'bound method NITF.image of NITF at' sempre será
+              True). Tivemos um problema parecido em https://github.com/plonegovbr/brasil.gov.portlets/issues/8
+              Abrimos um relato em plone.app.contenttypes para tratar essa questão.
+              https://github.com/plone/plone.app.contenttypes/issues/426
+          </tal:comment>
+          <div class="tileImage" tal:condition="python: (item_type != 'collective.nitf.content' and item_has_image) or
+                                                        (item_type == 'collective.nitf.content' and item_has_image and obj.image() is not None)">
+            <a tal:attributes="href item_link"
+               tal:define="scales obj/@@images;
+                           scale python:scales.scale('image', 'thumb');
+                           scale_html python:scale and scale.tag(css_class='tileImage')"
+               tal:condition="scale_html">
+              <img tal:replace="structure python:scale_html or None" />
+            </a>
+          </div>
+
+          <span class="subtitle" tal:content="item/subtitle" tal:condition="item/subtitle"></span>
+          <h2 class="tileHeadline" metal:define-macro="listitem">
+            <a class="summary url"
+                tal:attributes="href item_link;
+                                title item_type"
+                tal:content="item_title">
+              Item Title
+            </a>
+          </h2>
+
+          <p class="tileBody" tal:condition="item_description">
+            <span class="description" tal:content="item_description">
+              description
+            </span>
+          </p>
+
+          <div class="keywords" tal:define="tags item/subject"
+               tal:condition="tags">
+              tags:
+              <span tal:repeat="tag tags">
+                  <a href=""
+                     tal:content="tag"
+                     tal:attributes="href string:${portal_url}/@@busca?subject:list=${tag}"
+                     class="link-category" rel="nofollow tag">berlim</a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+              </span>
+          </div>
+
+        </div>
+
+        <tal:comment tal:replace="nothing">
+            Não posso usar o original da template em
+           <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
+           porque o layout é todo customizado, assim preciso replicar o que já
+           existia na template folder_summary_view.pt no brasil.gov.portal versões
+           < 1.2b1 logo abaixo.
+
+           Assim, <span class="documentByLine"> a seguir veio copiado diretamente de
+           https://github.com/plonegovbr/brasil.gov.portal/blob/9cb7649751e4843ac56f1fdbc8081f8de45ecd9b/src/brasil/gov/portal/browser/plone/templates/folder_summary_view.pt#L53,L139
+
+           A visão sumária do IDG é bem diferente da sumária padrão, por isso
+           a maior customização de todas as templates é feita nesse arquivo.
+        </tal:comment>
+        <span class="documentByLine">
+            <span tal:condition="python: item_type == 'Event' and item_sametime"
+                  i18n:translate="label_event_byline_onlyfrom">
+                <abbr class="dtstart"
+                      tal:attributes="title python:item_start"
+                      tal:content="python:toLocalizedTime(item_start,long_format=1)"
+                      i18n:name="start">from date</abbr>
+            </span>
+            <span tal:condition="python: item_type == 'Event' and item_samedate and not item_sametime"
+                  i18n:translate="label_event_byline_samedate">
+                <abbr class="dtstart"
+                      tal:attributes="title python:item_start"
+                      tal:content="python:toLocalizedTime(item_start)"
+                      i18n:name="start">from date</abbr> from
+                <abbr class="dtstart"
+                      tal:attributes="title python:item_start"
+                      tal:content="python:toLocalizedTime(item_start,time_only=1)"
+                      i18n:name="starttime">from time</abbr> to
+                <abbr class="dtend"
+                      tal:attributes="title python:item_end"
+                      tal:content="python:toLocalizedTime(item_end,time_only=1)"
+                      i18n:name="end">to time</abbr>
+            </span>
+            <span tal:condition="python: item_type == 'Event' and not item_samedate and not item_sametime"
+                  i18n:translate="label_event_byline">
+                from
+                <abbr class="dtstart"
+                      tal:attributes="title python:item_start"
+                      tal:content="python:toLocalizedTime(item_start,long_format=1)"
+                      i18n:name="start">from date</abbr> to
+                <abbr class="dtend"
+                      tal:attributes="title python:item_end"
+                      tal:content="python:toLocalizedTime(item_end,long_format=1)"
+                      i18n:name="end">to date</abbr>
+            </span>
+            <span tal:condition="python: item_type == 'Event' and item.location"
+                  i18n:translate="label_event_byline_location">&mdash;
+                <span tal:content="string:${item/location}"
+                      class="location"
+                      i18n:name="location">Oslo</span>,
+            </span>
+            <tal:byline condition="show_about">
+                <tal:name tal:condition="python:item.Creator() and mostra_autor"
+                          tal:define="author python:pas_member.info(item.Creator());
+                                      creator_short_form author/username;
+                                      creator_long_form string:?author=${author/username};
+                                      creator_is_openid python:'/' in creator_short_form;
+                                      creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
+                    <span class="hiddenStructure"
+                          i18n:translate="label_by_author">
+                        by
+                        <a href="#"
+                           tal:attributes="href string:${navigation_root_url}/author/${item/Creator}"
+                           tal:content="author/name_or_id"
+                           tal:omit-tag="not:author"
+                           i18n:name="author">
+                            Bob Dobalina
+                        </a>
+                    </span>
+                </tal:name>
+                <tal:modified condition="python: item_type != 'Event' and mostra_data"
+                              define="itemDate python:item.EffectiveDate == 'None' and item.modified or item.effective">
+                    <span class="hiddenStructure">
+                        <tal:mod i18n:translate="box_published">
+                            Published
+                        </tal:mod>
+                    </span>
+                    <span class="summary-view-icon">
+                        <i class="icon-day"></i>
+                        <span tal:replace="python:toLocalizedTime(itemDate)">16/08/2001</span>
+                    </span>
+                    <span class="summary-view-icon">
+                        <i class="icon-hour"></i>
+                        <span tal:replace="python:toLocalizedTime(itemDate, time_only=1)">23:35:59</span>
+                    </span>
+                    <span class="summary-view-icon"
+                        tal:define="item_type obj/Type;">
+                        <i tal:attributes="class string:icon-${item_type/lower}"/>
+                        <span tal:replace="item_type" />
+                    </span>
+                </tal:modified>
+                <div class="visualClear"><!-- --></div>
+            </tal:byline>
+        </span>
+
+      </article>
+
+      </metal:entry>
+    </metal:block>
+  </metal:entries>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>
