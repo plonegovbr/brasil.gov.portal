@@ -1,8 +1,8 @@
 Histórico de Alterações
 -----------------------
 
-1.2rc2 (unreleased)
-^^^^^^^^^^^^^^^^^^^
+1.2 (2017-09-22)
+^^^^^^^^^^^^^^^^
 
 - Atualiza as dependências do pacote.
   [hvelarde]
