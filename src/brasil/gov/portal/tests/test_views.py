@@ -3,13 +3,19 @@ from DateTime import DateTime
 from ZPublisher.tests.testHTTPRequest import TEST_ENVIRON
 from ZPublisher.tests.testHTTPRequest import TEST_FILE_DATA
 from brasil.gov.portal.browser.album.albuns import Pagination
-from brasil.gov.portal.interfaces import IBrasilGov
+from brasil.gov.portal.config import LOCAL_TIME_FORMAT
+from brasil.gov.portal.config import TIME_FORMAT
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_NAME
+from plone.app.testing import TEST_USER_PASSWORD
+from plone.testing.z2 import Browser
 from plonetheme.sunburst.browser.interfaces import IThemeSpecific
 from zope.interface import alsoProvides
-from zope.interface import directlyProvides
 
+import transaction
 import unittest
 
 
@@ -18,9 +24,9 @@ class BaseViewTestCase(unittest.TestCase):
     layer = INTEGRATION_TESTING
 
     def setUp(self):
+        self.browser = Browser(self.layer['app'])
         self.portal = self.layer['portal']
         self.request = self.layer['request']
-        directlyProvides(self.request, IBrasilGov)
         with api.env.adopt_roles(['Manager']):
             self.folder = api.content.create(self.portal, 'Folder', 'folder')
 
@@ -463,3 +469,52 @@ PAGINATION_END = [
         'link': False
     },
 ]
+
+
+class SummaryViewTestCase(BaseViewTestCase):
+
+    def login_browser(self):
+        """Autentica usuário de teste no browser"""
+        setRoles(self.portal, TEST_USER_ID, ['Site Administrator'])
+        self.browser.handleErrors = False
+        basic_auth = 'Basic {0}'.format(
+            '{0}:{1}'.format(TEST_USER_NAME, TEST_USER_PASSWORD)
+        )
+        self.browser.addHeader('Authorization', basic_auth)
+
+    def test_data_nao_pode_ser_1969_por_padrao_de_itens_criados(self):
+        with api.env.adopt_roles(['Manager', ]):
+            obj = api.content.create(
+                type='collective.nitf.content',
+                container=self.portal['folder'],
+                id='noticia',
+                title='noticia'
+            )
+            # Necessário para poder visualizar os objetos criados nos testes
+            # unitários em self.browser.
+            transaction.commit()
+            # Curioso que na template preciso fazer
+            # obj.EffectiveDate() mas não preciso obj.modified() e obj.effective()
+            # (só obj.modified já volta o valor) mas aqui no Python preciso disso.
+            item_date = obj.EffectiveDate() == 'None' and obj.modified() or obj.effective()
+            # XXX: Deveria usar o toLocalizedTime, que também é usado na template
+            # em listing_summary, mas não descobri, como, no código python sem
+            # renderizar na template, vir traduzido. Portanto, comparo os formatos
+            # renderizados na template com uso de strftime.
+            date = item_date.strftime(LOCAL_TIME_FORMAT)
+            time = item_date.strftime(TIME_FORMAT)
+        self.login_browser()
+        self.browser.open('{0}/{1}'.format(self.folder.absolute_url(), 'summary_view'))
+        # Como será comparada uma string em html, removeremos todos os espaços
+        # para evitar problemas e complicações na comparação.
+        contents_no_spaces = ''.join(self.browser.contents.split())
+        # Deve conter a data do objeto criado, assim como a hora.
+        self.assertIn(
+            '<iclass="icon-day"></i>{0}</span><spanclass="summary-view-icon"><iclass="icon-hour"></i>{1}'.format(date, time),
+            contents_no_spaces
+        )
+        # Não deve conter a data de 1969 padrão.
+        self.assertNotIn(
+            '<iclass="icon-day"></i>31/12/1969',
+            contents_no_spaces
+        )

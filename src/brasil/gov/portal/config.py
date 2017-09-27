@@ -5,6 +5,12 @@ from zope.interface import implements
 
 PROJECTNAME = 'brasil.gov.portal'
 
+LOCAL_TIME_FORMAT = '%d/%m/%Y'
+
+TIME_FORMAT = '%Hh%M'
+
+LOCAL_LONG_TIME_FORMAT = '{0} {1}'.format(LOCAL_TIME_FORMAT, TIME_FORMAT)
+
 REDES = [
     {'id': 'facebook',
      'title': 'Facebook',

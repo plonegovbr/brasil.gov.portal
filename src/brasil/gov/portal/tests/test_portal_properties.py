@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from brasil.gov.portal.config import LOCAL_TIME_FORMAT
+from brasil.gov.portal.config import LOCAL_LONG_TIME_FORMAT
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 
 import unittest
@@ -19,10 +21,13 @@ class PortalPropertiesTestCase(unittest.TestCase):
         self.types = self.portal['portal_types']
 
     def test_localTimeFormat(self):
-        self.assertEqual(self.properties.localTimeFormat, '%d/%m/%Y')
+        self.assertEqual(self.properties.localTimeFormat, LOCAL_TIME_FORMAT)
 
     def test_localLongTimeFormat(self):
-        self.assertEqual(self.properties.localLongTimeFormat, '%d/%m/%Y %Hh%M')
+        self.assertEqual(
+            self.properties.localLongTimeFormat,
+            LOCAL_LONG_TIME_FORMAT
+        )
 
     def test_enable_link_integrity_checks_enabled(self):
         self.assertTrue(self.properties.enable_link_integrity_checks)

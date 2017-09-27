@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.portal.config import LOCAL_TIME_FORMAT
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 
 import unittest
@@ -25,7 +26,7 @@ class SiteSettingsTestCase(unittest.TestCase):
 
     def test_localTimeFormat(self):
         site_properties = self.portal['portal_properties'].site_properties
-        self.assertEqual(site_properties.localTimeFormat, '%d/%m/%Y',
+        self.assertEqual(site_properties.localTimeFormat, LOCAL_TIME_FORMAT,
                          'Time format not set')
 
     def test_allowed_combined_language_code(self):

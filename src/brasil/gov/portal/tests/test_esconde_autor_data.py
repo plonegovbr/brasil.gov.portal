@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Testes da funcionalidade de esconder autor e data."""
 
+from brasil.gov.portal.config import LOCAL_TIME_FORMAT
 from brasil.gov.portal.tests.test_viewlets import esconde_autor
 from brasil.gov.portal.tests.test_viewlets import esconde_data
 from brasil.gov.portal.testing import FUNCTIONAL_TESTING
@@ -89,7 +90,7 @@ class EscondeAutorDataFunctionalTestCase(unittest.TestCase):
         datas = (obj.effective(), obj.modified())
         for data in datas:
             self.assertNotEqual('None', data)
-            self.assertNotIn(data.strftime('%d/%m/%Y'), contents)
+            self.assertNotIn(data.strftime(LOCAL_TIME_FORMAT), contents)
         self.assertNotIn('última', contents)
         self.assertNotIn('Modificado', contents)
 
