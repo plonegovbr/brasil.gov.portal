@@ -496,7 +496,7 @@ class SummaryViewTestCase(BaseViewTestCase):
             # Curioso que na template preciso fazer
             # obj.EffectiveDate() mas não preciso obj.modified() e obj.effective()
             # (só obj.modified já volta o valor) mas aqui no Python preciso disso.
-            item_date = obj.EffectiveDate() == 'None' and obj.modified() or obj.effective()
+            item_date = obj.modified() if obj.EffectiveDate() == 'None' else obj.effective()
             # XXX: Deveria usar o toLocalizedTime, que também é usado na template
             # em listing_summary, mas não descobri, como, no código python sem
             # renderizar na template, vir traduzido. Portanto, comparo os formatos
