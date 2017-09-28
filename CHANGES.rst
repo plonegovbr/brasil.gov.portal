@@ -4,7 +4,10 @@ Histórico de Alterações
 1.2.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige erro de regressão na exibição da data na visão sumária. Com a
+  atualização do plone.app.contenttypes, a lógica da template precisa chamar
+  um método e não um atributo indexado de um brain. (relacionado a `#157`_).
+  [idgserpro]
 
 
 1.2 (2017-09-22)

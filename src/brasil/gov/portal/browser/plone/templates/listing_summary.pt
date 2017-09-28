@@ -157,7 +157,7 @@
                     </span>
                 </tal:name>
                 <tal:modified condition="python: item_type != 'Event' and mostra_data"
-                              define="itemDate python:item.EffectiveDate == 'None' and item.modified or item.effective">
+                              define="itemDate python: item.modified if item.EffectiveDate() == 'None' else item.effective">
                     <span class="hiddenStructure">
                         <tal:mod i18n:translate="box_published">
                             Published
