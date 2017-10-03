@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.browser.viewlets.servicos import ServicosViewlet
-
 from brasil.gov.portal.controlpanel.site import SiteControlPanelAdapter
 from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
@@ -33,7 +32,6 @@ class AccessibilityTestCase(unittest.TestCase):
         self.request = self.layer['request']
         self.adapter = SiteControlPanelAdapter(self.portal)
         self.browser = Browser(self.layer['app'])
-        transaction.begin()
         self.ltool = self.portal.portal_languages
         supportedLanguages = ['en', 'es', 'pt-br']
         self.ltool.manage_setLanguageSettings('pt-br', supportedLanguages,
@@ -44,8 +42,7 @@ class AccessibilityTestCase(unittest.TestCase):
 class PortalLogoTestCase(AccessibilityTestCase):
 
     def portal_logo_tema_test(self, cor):
-        """ Testa se o portal logo está presente em todos os temas
-        """
+        """ Testa se o portal logo está presente em todos os temas """
         adapter = self.adapter
         adapter.site_title_1 = u'Portal'
         adapter.site_title_2 = u'Brasil'
@@ -76,8 +73,7 @@ class PortalLogoTestCase(AccessibilityTestCase):
 class AcessibilidadeViewletTestCase(AccessibilityTestCase):
 
     def test_viewlet_is_present(self):
-        """ Testa se a viewlet foi registrada corretamente
-        """
+        """ Testa se a viewlet foi registrada corretamente """
         request = self.request
         context = self.portal
 

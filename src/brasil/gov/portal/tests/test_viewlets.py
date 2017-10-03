@@ -272,14 +272,14 @@ class ServicosViewletTestCase(unittest.TestCase):
                 container=self.servicos,
                 id='servico-1',
                 title=u'Servico 1',
-                remoteUrl=u'http://www.google.com'
+                remoteUrl=u'http://www.google.com',
             )
             api.content.create(
                 type='Link',
                 container=self.servicos,
                 id='servico-2',
                 title=u'Servico 2',
-                remoteUrl=u'http://www.plone.org'
+                remoteUrl=u'http://www.plone.org',
             )
 
     def viewlet(self):
