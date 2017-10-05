@@ -34,15 +34,15 @@ class AccessibilityTestCase(unittest.TestCase):
         self.browser = Browser(self.layer['app'])
         self.ltool = self.portal.portal_languages
         supportedLanguages = ['en', 'es', 'pt-br']
-        self.ltool.manage_setLanguageSettings('pt-br', supportedLanguages,
-                                              setUseCombinedLanguageCodes=True)
+        self.ltool.manage_setLanguageSettings(
+            'pt-br', supportedLanguages, setUseCombinedLanguageCodes=True)
         transaction.commit()
 
 
 class PortalLogoTestCase(AccessibilityTestCase):
 
     def portal_logo_tema_test(self, cor):
-        """ Testa se o portal logo está presente em todos os temas """
+        """Testa se o portal logo está presente em todos os temas."""
         adapter = self.adapter
         adapter.site_title_1 = u'Portal'
         adapter.site_title_2 = u'Brasil'
@@ -52,10 +52,7 @@ class PortalLogoTestCase(AccessibilityTestCase):
 
         self.browser.open(self.portal.absolute_url())
 
-        self.assertIn(
-            '<div id="portal-title"',
-            self.browser.contents
-        )
+        self.assertIn('<div id="portal-title"', self.browser.contents)
 
     def test_tema_amarelo(self):
         self.portal_logo_tema_test('amarelo')
@@ -73,7 +70,7 @@ class PortalLogoTestCase(AccessibilityTestCase):
 class AcessibilidadeViewletTestCase(AccessibilityTestCase):
 
     def test_viewlet_is_present(self):
-        """ Testa se a viewlet foi registrada corretamente """
+        """Testa se a viewlet foi registrada corretamente."""
         request = self.request
         context = self.portal
 
@@ -103,8 +100,8 @@ class AcessibilidadeViewletTestCase(AccessibilityTestCase):
         transaction.begin()
 
         supportedLanguages = ['en', 'es', 'pt-br']
-        self.ltool.manage_setLanguageSettings(defaultLanguage, supportedLanguages,
-                                              setUseCombinedLanguageCodes=True)
+        self.ltool.manage_setLanguageSettings(
+            defaultLanguage, supportedLanguages, setUseCombinedLanguageCodes=True)
 
         transaction.commit()
 
@@ -118,49 +115,49 @@ class AcessibilidadeViewletTestCase(AccessibilityTestCase):
             # Testa se a âncora para o conteúdo aparece.
             self.assertIn(
                 u'<a name="acontent" id="acontent" class="anchor">content</a>',
-                contents
+                contents,
             )
             # Testa se a âncora para o menu aparece.
             self.assertIn(
                 u'<a name="anavigation" id="anavigation" class="anchor">navigation</a>',
-                contents
+                contents,
             )
             # Testa se a âncora para o rodapé aparece.
             self.assertIn(
                 u'<a name="afooter" id="afooter" class="anchor">footer</a>',
-                contents
+                contents,
             )
         elif defaultLanguage == 'es':
             # Testa se a âncora para o conteúdo aparece.
             self.assertIn(
                 u'<a name="acontent" id="acontent" class="anchor">contenido</a>',
-                contents
+                contents,
             )
             # Testa se a âncora para o menu aparece.
             self.assertIn(
                 u'<a name="anavigation" id="anavigation" class="anchor">navegación</a>',
-                contents
+                contents,
             )
             # Testa se a âncora para o rodapé aparece.
             self.assertIn(
                 u'<a name="afooter" id="afooter" class="anchor">pie de página</a>',
-                contents
+                contents,
             )
         elif defaultLanguage == 'pt-br':
             # Testa se a âncora para o conteúdo aparece.
             self.assertIn(
                 u'<a name="acontent" id="acontent" class="anchor">conteúdo</a>',
-                contents
+                contents,
             )
             # Testa se a âncora para o menu aparece.
             self.assertIn(
                 u'<a name="anavigation" id="anavigation" class="anchor">menu</a>',
-                contents
+                contents,
             )
             # Testa se a âncora para o rodapé aparece.
             self.assertIn(
                 u'<a name="afooter" id="afooter" class="anchor">rodapé</a>',
-                contents
+                contents,
             )
 
     # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
@@ -204,36 +201,40 @@ class SiteActionsViewletTestCase(AccessibilityTestCase):
         self.viewlet.update()
 
     def test_render(self):
-        """Teste do template da viewlet"""
+        """Teste do template da viewlet."""
 
         # Testa se os links foram gerados sem o atributo title.
         url_portal = self.portal.absolute_url()
         self.browser.open(url_portal)
-        self.assertIn('<a href="{0}/acessibilidade" accesskey="5">'.format(
-                      url_portal), self.browser.contents)
+        self.assertIn(
+            '<a href="{0}/acessibilidade" accesskey="5">'.format(url_portal),
+            self.browser.contents,
+        )
         self.assertIn('<a href="#" accesskey="6">', self.browser.contents)
-        self.assertIn('<a href="{0}/mapadosite" accesskey="7">'.format(
-                      url_portal), self.browser.contents)
+        self.assertIn(
+            '<a href="{0}/mapadosite" accesskey="7">'.format(url_portal),
+            self.browser.contents,
+        )
 
 
 class ServicosViewletTestCase(AccessibilityTestCase):
 
     def test_render_title(self):
-        """Teste para identificar se o atributo title está presente"""
+        """Teste para identificar se o atributo title está presente."""
 
         with api.env.adopt_roles(['Manager', ]):
             self.servicos = api.content.create(
                 type='Folder',
                 container=self.portal,
                 id='servicos',
-                title=u'Servicos'
+                title=u'Servicos',
             )
             api.content.create(
                 type='Link',
                 container=self.servicos,
                 id='servico',
                 title=u'Servico',
-                description=u'Descricao'
+                description=u'Descricao',
             )
         self.viewlet = ServicosViewlet(self.portal, self.request, None, None)
         self.viewlet.update()
@@ -242,20 +243,20 @@ class ServicosViewletTestCase(AccessibilityTestCase):
         self.assertIn('title', self.viewlet.render())
 
     def test_render_not_title(self):
-        """Teste para identificar se o atributo title está presente"""
+        """Teste para identificar se o atributo title está presente."""
 
         with api.env.adopt_roles(['Manager', ]):
             self.servicos = api.content.create(
                 type='Folder',
                 container=self.portal,
                 id='servicos',
-                title=u'Servicos'
+                title=u'Servicos',
             )
             api.content.create(
                 type='Link',
                 container=self.servicos,
                 id='servico',
-                title=u'Servico'
+                title=u'Servico',
             )
         self.viewlet = ServicosViewlet(self.portal, self.request, None, None)
         self.viewlet.update()

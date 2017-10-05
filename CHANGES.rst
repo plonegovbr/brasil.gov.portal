@@ -4,7 +4,8 @@ Histórico de Alterações
 1.2.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Substitue o h1 por div no portal logo para adequar o portal a acessibilidade. Se você possui temas customizados baseados no desse pacote, lembre-se de revisá-los para corrigir possíveis incompatibilidades.
+- Substitue o h1 por div no portal logo para adequar o portal a acessibilidade.
+  Se você possui temas customizados baseados no desse pacote, lembre-se de revisá-los para corrigir possíveis incompatibilidades.
   [idgserpro]
 
 - Altera a viewlet de site actions para retirar o atributo title dos links para adequar as regras de acessibilidade.
