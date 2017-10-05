@@ -1,7 +1,7 @@
 Histórico de Alterações
 -----------------------
 
-1.2.1 (unreleased)
+1.3 (2017-10-05)
 ^^^^^^^^^^^^^^^^^^
 
 - Substitue o h1 por div no portal logo para adequar o portal a acessibilidade.
