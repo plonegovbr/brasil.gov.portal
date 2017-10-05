@@ -90,9 +90,6 @@ class AcessibilidadeViewletTestCase(AccessibilityTestCase):
         # Testa se o viewlet existe
         self.assertEqual(len(my_viewlet), 1)
 
-    # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
-    # o replace dos itens acontent, anavigation e afooter na regra de cada tema
-    @unittest.expectedFailure
     def find_translated_anchor_test(self, cor, defaultLanguage):
         """ Verifica se os links acontent, anavigation e afooter estão presentes
             e traduzidos.
@@ -160,33 +157,21 @@ class AcessibilidadeViewletTestCase(AccessibilityTestCase):
                 contents,
             )
 
-    # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
-    # o replace dos itens acontent, anavigation e afooter na regra de cada tema
-    @unittest.expectedFailure
     def test_tema_amarelo(self):
         self.find_translated_anchor_test('amarelo', 'en')
         self.find_translated_anchor_test('amarelo', 'es')
         self.find_translated_anchor_test('amarelo', 'pt-bt')
 
-    # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
-    # o replace dos itens acontent, anavigation e afooter na regra de cada tema
-    @unittest.expectedFailure
     def test_tema_azul(self):
         self.find_translated_anchor_test('azul', 'en')
         self.find_translated_anchor_test('azul', 'es')
         self.find_translated_anchor_test('azul', 'pt-br')
 
-    # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
-    # o replace dos itens acontent, anavigation e afooter na regra de cada tema
-    @unittest.expectedFailure
     def test_tema_branco(self):
         self.find_translated_anchor_test('branco', 'en')
         self.find_translated_anchor_test('branco', 'es')
         self.find_translated_anchor_test('branco', 'pt-br')
 
-    # FIXME: o teste só irá funcionar com a versão do brasil.gov.temas que implementa
-    # o replace dos itens acontent, anavigation e afooter na regra de cada tema
-    @unittest.expectedFailure
     def test_tema_verde(self):
         self.find_translated_anchor_test('verde', 'en')
         self.find_translated_anchor_test('verde', 'es')
