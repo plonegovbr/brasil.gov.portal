@@ -4,9 +4,26 @@ Histórico de Alterações
 1.2.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Corrige erro de regressão na exibição da data na visão sumária. Com a
-  atualização do plone.app.contenttypes, a lógica da template precisa chamar
-  um método e não um atributo indexado de um brain. (relacionado a `#157`_).
+- Substitue o h1 por div no portal logo para adequar o portal a acessibilidade.
+  Se você possui temas customizados baseados no desse pacote, lembre-se de revisá-los para corrigir possíveis incompatibilidades.
+  [idgserpro]
+
+- Altera a viewlet de site actions para retirar o atributo title dos links para adequar as regras de acessibilidade.
+  [idgserpro]
+
+- Altera a viewlet de serviços para incluir a descrição do objeto no atributo title do link para adequar as regras de acessibilidade.
+  [idgserpro]
+
+- Insere descrição para os links vazios acontent, anavigation e afooter para atender aos critérios de acessibilidade.
+  [idgserpro]
+
+- Altera a viewlet de serviços para obter a url do link do atributo remoteUrl do tipo Link.
+  [idgserpro]
+
+- Altera o valor do atributo remoteUrl dos links da pasta /rodape/coluna-2 para que fiquem iguais aos links da viewlet de serviços evitando assim erros de acessibilidade.
+  [idgserpro]
+
+- Corrige erro de regressão na exibição da data na visão sumária. Com a atualização do plone.app.contenttypes, a lógica da template precisa chamar um método e não um atributo indexado de um brain. (relacionado a `#157`_).
   [idgserpro]
 
 

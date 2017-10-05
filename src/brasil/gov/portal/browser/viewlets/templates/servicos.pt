@@ -3,15 +3,25 @@
      i18n:domain="brasil.gov.portal">
     <p class="hiddenStructure">Serviços</p>
 
-    <ul id="portal-servicos"
-        ><tal:tabs tal:repeat="tab view/servicos"
-        ><li tal:define="tid tab/getId"
+    <ul id="portal-servicos">
+        <tal:tabs tal:repeat="tab view/servicos">
+        <li tal:define="tid tab/getId"
              tal:attributes="id string:portalservicos-${tid};
-                             class string:portalservicos-item;"
-            ><a href=""
+                             class string:portalservicos-item;">
+            <a href=""
                tal:content="tab/Title"
+               tal:condition="tab/Description"
                tal:attributes="href tab/getURL;
-                               title tab/Title|nothing;">
+                               title tab/Description|nothing;">
             Tab Name
-            </a></li></tal:tabs></ul>
+            </a>
+            <a href=""
+               tal:content="tab/Title"
+               tal:condition="not:tab/Description"
+               tal:attributes="href tab/getRemoteUrl">
+            Tab Name
+            </a>
+        </li>
+        </tal:tabs>
+    </ul>
 </tal:servicos>

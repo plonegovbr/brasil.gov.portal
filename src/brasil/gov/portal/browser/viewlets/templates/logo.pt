@@ -6,9 +6,9 @@
                        title view/description">
             <span id="portal-title-1"
                   tal:content="view/title_1">Secretaria de</span>
-            <h1 id="portal-title"
+            <div id="portal-title"
                   tal:attributes="class view/title_2_class"
-                  tal:content="view/title_2">Comunicação Social</h1>
+                  tal:content="view/title_2">Comunicação Social</div>
             <span id="portal-description"
                 tal:content="view/orgao">Presidência da República</span>
     </a>

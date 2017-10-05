@@ -265,19 +265,21 @@ class ServicosViewletTestCase(unittest.TestCase):
                 type='Folder',
                 container=self.portal,
                 id='servicos',
-                title=u'Servicos'
+                title=u'Servicos',
             )
             api.content.create(
                 type='Link',
                 container=self.servicos,
                 id='servico-1',
-                title=u'Servico 1'
+                title=u'Servico 1',
+                remoteUrl=u'http://www.google.com',
             )
             api.content.create(
                 type='Link',
                 container=self.servicos,
                 id='servico-2',
-                title=u'Servico 2'
+                title=u'Servico 2',
+                remoteUrl=u'http://www.plone.org',
             )
 
     def viewlet(self):
@@ -301,6 +303,12 @@ class ServicosViewletTestCase(unittest.TestCase):
         self.assertEqual(len(servicos), 2)
         self.assertEqual(servicos[0].Title, u'Servico 1')
         self.assertEqual(servicos[1].Title, u'Servico 2')
+
+    def test_render(self):
+        viewlet = self.viewlet()
+        render = viewlet.render()
+        self.assertIn(u'http://www.google.com', render)
+        self.assertIn(u'http://www.plone.org', render)
 
 
 class NITFBylineViewletTestCase(unittest.TestCase):
