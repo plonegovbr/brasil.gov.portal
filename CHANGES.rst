@@ -1,14 +1,16 @@
 Histórico de Alterações
 -----------------------
 
-1.3.1 (unreleased)
-^^^^^^^^^^^^^^^^^^
+1.4 (unreleased)
+^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado collective.nitf à versão 2.1b4;
+  isso adiciona pesquisa por tags ao tipo de conteúdo Artigo (corrige `#155 <https://github.com/plonegovbr/brasil.gov.portal/issues/155>`_).
+  [hvelarde]
 
 
 1.3 (2017-10-05)
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 - Substitue o h1 por div no portal logo para adequar o portal a acessibilidade.
   Se você possui temas customizados baseados no desse pacote, lembre-se de revisá-los para corrigir possíveis incompatibilidades.
