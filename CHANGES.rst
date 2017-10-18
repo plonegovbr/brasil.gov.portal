@@ -4,9 +4,11 @@ Histórico de Alterações
 1.4 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Remove customização do template do sc.embedder.
+  [hvelarde]
+
 - Atualizado collective.nitf à versão 2.1b4;
   isso adiciona pesquisa por tags ao tipo de conteúdo Artigo (corrige `#155 <https://github.com/plonegovbr/brasil.gov.portal/issues/155>`_).
-- Remove customização do template do sc.embedder.
   [hvelarde]
 
 
