@@ -5,6 +5,8 @@ Histórico de Alterações
 ^^^^^^^^^^^^^^^^
 
 - Remove customização do template do sc.embedder.
+- Atualizado sc.embedder à versão 1.5b1.
+  isso adiciona pesquisa por tags ao tipo de conteúdo Embedder, entre outra melhorias.
   [hvelarde]
 
 - Atualizado collective.nitf à versão 2.1b4;
