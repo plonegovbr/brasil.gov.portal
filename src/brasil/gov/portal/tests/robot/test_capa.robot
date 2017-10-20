@@ -14,24 +14,6 @@ ${banner_tile_location}  'collective.cover.banner'
 ${tile_selector}  div.tile-container div.tile
 ${document_selector}  .ui-draggable .contenttype-document
 
-*** Keywords ***
-# Metodo retirado do teste cover.robot do collective.cover para sobrescrever a chamada
-# deste metodo aqui no test_capa.robot, esta customização é necessária pois temos que inserir
-# Input Text For Sure para que o teste execute sem erros no travis
-# FIXME: essa customização já foi realizada no produto collective.cover:
-# https://github.com/collective/collective.cover/commit/dfd128a1ca6a75edc5f5190919bcffe7c9b4182f
-# A customização pode ser removida quando utilizarmos o collective.cover versão > 1.2b1
-Create Cover
-    [arguments]  ${title}  ${description}  ${layout}=Empty layout
-
-    Click Add Cover
-    # deal with delays caused by plone4.csrffixes
-    Input Text For Sure  css=${title_selector}  ${title}
-    Input Text  css=${description_selector}  ${description}
-    Select From List  css=${layout_selector}  ${layout}
-    Click Button  Save
-    Page Should Contain  Item created
-
 *** Test Cases ***
 
 Criar nova capa
