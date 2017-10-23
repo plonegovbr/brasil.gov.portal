@@ -3,6 +3,20 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="brasil.gov.portal">
 
+  <browser:page
+      name="galeria_de_albuns"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      permission="zope2.View"
+      class=".albuns.GaleriaDeAlbunsView"
+      />
+
+  <browser:page
+      name="galeria_de_fotos"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      permission="zope2.View"
+      class=".albuns.GaleriaDeFotosView"
+      />
+
   <browser:menuItems
       for="plone.app.contenttypes.interfaces.IFolder"
       menu="plone_displayviews">

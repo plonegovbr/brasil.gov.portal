@@ -212,7 +212,7 @@ class GaleriaDeFotosTestCase(BaseViewTestCase):
     def test_view_items(self):
         with api.env.adopt_roles(['Manager']):
             image = api.content.create(self.folder, 'Image', 'imagem')
-        self.view.update()
+        self.view.setup()
 
         self.assertEqual(len(self.view.items), 1)
         self.assertEqual(self.view.items[0]['obj'], image)
