@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.logger import logger
-from collective.z3cform.widgets.multicontent_search_widget import MultiContentSearchFieldWidget
 from plone.app.contenttypes.content import Link
 from plone.app.contenttypes.migration.dxmigration import DXOldEventMigrator
 from plone.app.contenttypes.migration.field_migrators import datetime_fixer
-from plone.app.relationfield.behavior import IRelatedItems
-from plone.autoform.interfaces import WIDGETS_KEY
 from plone.event.utils import default_timezone
 from plone.outputfilters.filters import resolveuid_and_caption as base
 from Products.contentmigration.basemigrator.migrator import BaseCMFMigrator
@@ -36,14 +33,6 @@ def link():
             'getRemoteUrl',
             getRemoteUrl)
     logger.info('Patched Link content type')
-
-
-def related_items_widget():
-    IRelatedItems.setTaggedValue(
-        WIDGETS_KEY,
-        {'relatedItems': MultiContentSearchFieldWidget}
-    )
-    logger.info('Patched Related Items widget')
 
 
 def attendees_e_timezone():
@@ -186,6 +175,5 @@ def reindex_object_after_workflow_migration():
 def run():
     outputfilters()
     link()
-    related_items_widget()
     attendees_e_timezone()
     reindex_object_after_workflow_migration()
