@@ -87,7 +87,6 @@ setup(
         'plone.app.theming',
         'plone.app.transmogrifier',
         'plone.app.upgrade',
-        'plone.autoform',
         'plone.browserlayer',
         'plone.contentrules',
         'plone.dexterity',
