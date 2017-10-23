@@ -119,6 +119,7 @@ setup(
         'zope.interface',
         'zope.lifecycleevent',
         'zope.schema',
+        'plone4.csrffixes',
     ],
     extras_require={
         'test': [
