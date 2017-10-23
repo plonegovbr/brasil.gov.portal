@@ -104,7 +104,6 @@ setup(
         'Products.Doormat>0.7',
         'Products.GenericSetup',
         'Products.PloneFormGen',
-        'Products.PloneHotfix20150910',
         'Products.TinyMCE',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',
@@ -120,7 +119,6 @@ setup(
         'zope.interface',
         'zope.lifecycleevent',
         'zope.schema',
-        'plone4.csrffixes',
     ],
     extras_require={
         'test': [
