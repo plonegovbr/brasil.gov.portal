@@ -4,16 +4,12 @@ from brasil.gov.portal.browser.viewlets.destaques import Destaques_Viewlet
 from brasil.gov.portal.browser.viewlets.logo import LogoViewlet
 from brasil.gov.portal.browser.viewlets.nitf_byline import NITFBylineViewlet
 from brasil.gov.portal.browser.viewlets.redes import RedesSociaisViewlet
-from brasil.gov.portal.browser.viewlets.related import RelatedItemsViewlet
 from brasil.gov.portal.browser.viewlets.servicos import ServicosViewlet
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.layout.globals.interfaces import IViewView
 from plone.app.testing import logout
-from z3c.relationfield import RelationValue
-from zope.component import getUtility
 from zope.interface import implements
-from zope.intid.interfaces import IIntIds
 
 import unittest
 
@@ -199,58 +195,6 @@ class RedesViewletTestCase(unittest.TestCase):
         redes = viewlet.redes
         self.assertEqual(len(redes), 1)
         self.assertEqual(redes[0]['site'], 'twitter')
-
-
-class RelatedViewletTestCase(unittest.TestCase):
-
-    layer = INTEGRATION_TESTING
-
-    def setUp(self):
-        intids = getUtility(IIntIds)
-        self.portal = self.layer['portal']
-        self.request = self.layer['request']
-        with api.env.adopt_roles(['Manager', ]):
-            self.link = api.content.create(
-                type='Link',
-                container=self.portal,
-                id='servico-1',
-                title=u'Servico'
-            )
-            to_id = intids.getId(self.link)
-            self.artigo = api.content.create(
-                type='collective.nitf.content',
-                container=self.portal,
-                id='artigo',
-                title=u'Artigo'
-            )
-            self.artigo.relatedItems = [RelationValue(to_id), ]
-
-    def viewlet(self, context=None):
-        if not context:
-            context = self.artigo
-        viewlet = RelatedItemsViewlet(context, self.request, None, None)
-        viewlet.update()
-        return viewlet
-
-    def test_related(self):
-        viewlet = self.viewlet()
-        self.assertEqual(len(viewlet.related()), 1)
-
-    def test_related_on_type_without_behavior(self):
-        with api.env.adopt_roles(['Manager', ]):
-            audio = api.content.create(
-                type='Audio',
-                container=self.portal,
-                id='audio',
-                title=u'Audio'
-            )
-            audio_file = api.content.create(
-                type='MPEG Audio File',
-                container=audio,
-                id='file.mp3',
-            )
-        viewlet = self.viewlet(audio_file)
-        self.assertEqual(len(viewlet.related()), 0)
 
 
 class ServicosViewletTestCase(unittest.TestCase):
