@@ -5,6 +5,13 @@
 
   <includeOverrides file="overrides.zcml" />
 
+  <browser:page
+      name="view"
+      for="brasil.gov.portal.content.external.IExternalContent"
+      permission="zope2.View"
+      class=".external.ExternalContentView"
+      />
+
   <browser:menuItems
       for="collective.nitf.content.INITF"
       menu="plone_displayviews">
