@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.content.audio import IAudio
 from brasil.gov.portal.content.audio_file import IOGGAudioFile
-from five import grok
-
-grok.templatedir('templates')
+from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 def sizeof_fmt(num):
@@ -13,9 +11,15 @@ def sizeof_fmt(num):
         num /= 1024.0
 
 
-class AudioView(grok.View):
-    grok.context(IAudio)
-    grok.name('view')
+class AudioView(BrowserView):
+
+    index = ViewPageTemplateFile('templates/audioview.pt')
+
+    def render(self):
+        return self.index()
+
+    def __call__(self):
+        return self.render()
 
     def sources(self):
         files = self.context.objectValues()

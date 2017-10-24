@@ -7,6 +7,13 @@
 
   <browser:page
       name="view"
+      for="brasil.gov.portal.content.audio.IAudio"
+      permission="zope2.View"
+      class=".audio.AudioView"
+      />
+
+  <browser:page
+      name="view"
       for="brasil.gov.portal.content.external.IExternalContent"
       permission="zope2.View"
       class=".external.ExternalContentView"
