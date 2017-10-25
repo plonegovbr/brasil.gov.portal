@@ -4,6 +4,9 @@ Histórico de Alterações
 1.4 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Atualizado collective.polls à versão 1.10b1.
+  [hvelarde]
+
 - Remove customização dos template do collective.upload.
   [hvelarde]
 
