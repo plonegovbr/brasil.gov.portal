@@ -4,6 +4,9 @@ Histórico de Alterações
 1.4 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Remove customização desnecessária do viewlet de itens relacionados.
+  [hvelarde]
+
 - Atualizado collective.polls à versão 1.10b1.
   [hvelarde]
 
