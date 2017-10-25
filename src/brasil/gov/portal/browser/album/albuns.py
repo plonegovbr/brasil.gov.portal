@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-from Products.CMFPlone.utils import getToolByName
-from five import grok
-from plone.app.contenttypes.interfaces import IFolder
 from plone.contentrules import PloneMessageFactory as _
+from Products.CMFPlone.utils import getToolByName
+from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.component import getMultiAdapter
-
-
-grok.templatedir('templates')
 
 
 class Pagination(object):
@@ -194,20 +191,25 @@ class Pagination(object):
         return pagination
 
 
-class Galeria_De_Albuns(grok.View):
-    """ View de galeria de albuns para pastas
-    """
-    grok.context(IFolder)
+class GaleriaDeAlbunsView(BrowserView):
+    """View de galeria de albuns para pastas."""
 
-    def update(self):
-        """ Seta variáveis da instância
-        """
+    index = ViewPageTemplateFile('templates/galeria_de_albuns.pt')
+
+    def setup(self):
         pagination = Pagination(self.context,
                                 self.request,
                                 'Folder')
         self.brains = pagination.brains
         self.items = pagination.items
         self.get_pagination = pagination.get_pagination
+
+    def render(self):
+        return self.index()
+
+    def __call__(self):
+        self.setup()
+        return self.render()
 
     def _toLocalizedTime(self,
                          time,
@@ -251,15 +253,20 @@ class Galeria_De_Albuns(grok.View):
                 }
 
 
-class Galeria_De_Fotos(grok.View):
-    """ View de galeria de albuns para pastas
-    """
-    grok.context(IFolder)
+class GaleriaDeFotosView(BrowserView):
+    """View de galeria de albuns para pastas."""
 
-    def update(self):
-        """ Seta variáveis da instância
-        """
+    index = ViewPageTemplateFile('templates/galeria_de_fotos.pt')
+
+    def setup(self):
         self.items = self._get_items()
+
+    def render(self):
+        return self.index()
+
+    def __call__(self):
+        self.setup()
+        return self.render()
 
     def _get_brains(self, data_type=None):
         """ Return a list of brains inside the folder

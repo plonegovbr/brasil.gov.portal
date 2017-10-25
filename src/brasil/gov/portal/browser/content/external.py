@@ -1,22 +1,25 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.content.external import IExternalContent
-from five import grok
+from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 
-grok.templatedir('templates')
 
+class ExternalContentView(BrowserView):
+    """Redireciona usuarios sem poder de edicao para o conteudo externo."""
 
-class ExternalContentView(grok.View):
-    grok.context(IExternalContent)
-    grok.name('view')
+    index = ViewPageTemplateFile('templates/externalcontentview.pt')
 
-    def update(self):
-        """Redireciona usuarios sem poder de edicao para o conteudo externo"""
-        context = self.context
+    def setup(self):
         mtool = api.portal.get_tool('portal_membership')
+        self.can_edit = mtool.checkPermission('Modify portal content', self.context)
 
-        can_edit = mtool.checkPermission('Modify portal content', context)
+    def render(self):
+        return self.index()
 
-        if not can_edit:
-            url = context.remoteUrl
-            return context.REQUEST.RESPONSE.redirect(url)
+    def __call__(self):
+        self.setup()
+
+        if self.can_edit:
+            return self.render()
+        else:
+            self.request.RESPONSE.redirect(self.context.remoteUrl)

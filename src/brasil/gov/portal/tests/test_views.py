@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from DateTime import DateTime
-from ZPublisher.tests.testHTTPRequest import TEST_ENVIRON
-from ZPublisher.tests.testHTTPRequest import TEST_FILE_DATA
 from brasil.gov.portal.browser.album.albuns import Pagination
 from brasil.gov.portal.config import LOCAL_TIME_FORMAT
 from brasil.gov.portal.config import TIME_FORMAT
@@ -29,68 +27,6 @@ class BaseViewTestCase(unittest.TestCase):
         self.request = self.layer['request']
         with api.env.adopt_roles(['Manager']):
             self.folder = api.content.create(self.portal, 'Folder', 'folder')
-
-
-class MediaUploaderViewTestCase(BaseViewTestCase):
-
-    # from ZPublisher.tests.testHTTPRequest import HTTPRequestTests
-    def _getTargetClass(self):
-        from ZPublisher.HTTPRequest import HTTPRequest
-        return HTTPRequest
-
-    # from ZPublisher.tests.testHTTPRequest import HTTPRequestTests
-    def _get_response(self, response):
-        from ZPublisher import NotFound
-        if response is None:
-            class _FauxResponse(object):
-                _auth = None
-                debug_mode = False
-                errmsg = 'OK'
-
-                def notFoundError(self, message):
-                    raise(NotFound, message)
-
-                def exception(self, *args, **kw):
-                    pass
-            response = _FauxResponse()
-        return response
-
-    # from ZPublisher.tests.testHTTPRequest import HTTPRequestTests
-    def _makeOne(self, stdin=None, environ=None, response=None, clean=1):
-        from StringIO import StringIO
-        if stdin is None:
-            stdin = StringIO()
-        if environ is None:
-            environ = {}
-        if 'REQUEST_METHOD' not in environ:
-            environ['REQUEST_METHOD'] = 'GET'
-        if 'SERVER_NAME' not in environ:
-            environ['SERVER_NAME'] = 'http://localhost'
-        if 'SERVER_PORT' not in environ:
-            environ['SERVER_PORT'] = '8080'
-        response = self._get_response(response)
-        return self._getTargetClass()(stdin, environ, response, clean)
-
-    def setUp(self):
-        super(MediaUploaderViewTestCase, self).setUp()
-        alsoProvides(self.request, IThemeSpecific)
-        self.view = api.content.get_view(u'media_uploader', self.portal, self.request)
-
-        from StringIO import StringIO
-        s = StringIO(TEST_FILE_DATA)
-        req = self._makeOne(stdin=s, environ=TEST_ENVIRON.copy())
-        req.processInputs()
-        self.f = req.form.get('file')
-
-    def test_upload(self):
-        with api.env.adopt_roles(['Manager']):
-            uploaded = self.view.upload([self.f],
-                                        [u'test_title'],
-                                        [u'test_description'],
-                                        [u'test_rights'])[0]
-        self.assertEqual(uploaded.Title(), u'test_title')
-        self.assertEqual(uploaded.Description(), u'test_description')
-        self.assertEqual(uploaded.Rights(), u'test_rights')
 
 
 class PaginationTestCase(BaseViewTestCase):
@@ -212,7 +148,7 @@ class GaleriaDeFotosTestCase(BaseViewTestCase):
     def test_view_items(self):
         with api.env.adopt_roles(['Manager']):
             image = api.content.create(self.folder, 'Image', 'imagem')
-        self.view.update()
+        self.view.setup()
 
         self.assertEqual(len(self.view.items), 1)
         self.assertEqual(self.view.items[0]['obj'], image)

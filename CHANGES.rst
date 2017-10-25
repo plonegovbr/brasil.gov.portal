@@ -4,6 +4,12 @@ Histórico de Alterações
 1.4 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Remove customização dos template do collective.upload.
+  [hvelarde]
+
+- Remove parcialmente dependência no five.grok.
+  [hvelarde]
+
 - Remove customização desnecessária do widget de itens relacionados.
   [hvelarde]
 
