@@ -4,7 +4,12 @@ Histórico de Alterações
 1.4 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Remove customização desnecessária do widget de itens relacionados.
+  [hvelarde]
+
 - Remove customização do template do sc.embedder.
+  [hvelarde]
+
 - Atualizado sc.embedder à versão 1.5b1.
   isso adiciona pesquisa por tags ao tipo de conteúdo Embedder, entre outra melhorias.
   [hvelarde]
