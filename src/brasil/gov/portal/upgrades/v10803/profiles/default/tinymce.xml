@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object>
+ <resourcetypes>
+  <containsanchors>
+   <element value="ATRelativePathCriterion"/>
+   <element value="collective.nitf.content|text"/>
+   <element value="Document|text"/>
+   <element value="Event|text"/>
+  </containsanchors>
+ </resourcetypes>
+ <contentbrowser>
+  <anchor_selector value="h2,h3,a[name]"/>
+ </contentbrowser>
+</object>

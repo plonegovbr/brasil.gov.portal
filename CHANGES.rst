@@ -15,6 +15,9 @@ Changelog
     mas após esta atualização ele não será mais utilizado nem será possível instalá-lo.
     A dependência será removida completamente em a versão 2.0.
 
+- Adiciona suporte a âncoras de links internos.
+  [idgserpro]
+
 - Habilita os ícones dos conteúdos para os usuários autenticados (fecha `#343 <https://github.com/plonegovbr/brasil.gov.portal/issues/343>`_).
   [claytonc]
 

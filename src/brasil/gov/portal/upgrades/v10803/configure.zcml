@@ -42,8 +42,8 @@
         />
 
     <genericsetup:upgradeStep
-        title="Habilita os ícones dos conteúdos para os usuários auteticados."
-        description=""
+        title="Atualiza portal para versão 10803."
+        description="Habilita os ícones dos conteúdos para os usuários auteticados. Adiciona suporte a âncoras de links internos."
         handler=".apply_profile"
         />
 
