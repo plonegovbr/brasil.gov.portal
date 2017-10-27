@@ -7,6 +7,9 @@ import robotsuite
 import unittest
 
 
+noncritical = ['Expected Failure']
+
+
 def test_suite():
     suite = unittest.TestSuite()
     current_dir = os.path.abspath(os.path.dirname(__file__))
@@ -19,7 +22,7 @@ def test_suite():
     for test in tests:
         suite.addTests([
             layered(
-                robotsuite.RobotTestSuite(test),
+                robotsuite.RobotTestSuite(test, noncritical=noncritical),
                 layer=ACCEPTANCE_TESTING
             ),
         ])
