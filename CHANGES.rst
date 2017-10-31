@@ -15,7 +15,7 @@ Histórico de Alterações
   isso corrige um problema na descarga de eggs do PyPI usando HTTPS e melhora a performance do Buildout.
   [hvelarde]
 
-- Remove dependência no five.grok (exeto do brasil.gov.paginadestaque) (fecha #373 <https://github.com/plonegovbr/brasil.gov.portal/issues/375>`_).
+- Remove dependência no five.grok (exeto do brasil.gov.paginadestaque e do viewlet de destaques) (fecha #373 <https://github.com/plonegovbr/brasil.gov.portal/issues/375>`_).
   [hvelarde]
 
 - Atualizado brasil.gov.vcge à versão 1.1.1.

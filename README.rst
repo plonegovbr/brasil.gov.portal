@@ -17,7 +17,7 @@ Requisitos
 
 Para uso deste pacote, seu site deve ter sido construído com:
 
-    * Plone 4.3.9
+    * Plone 4.3.15
     * Pinagem correta das `dependências <https://github.com/plonegovbr/brasil.gov.portal/blob/master/setup.py#L45>`_ do ``brasil.gov.portal``: cada release possui um ``versions.cfg`` específico em `portalpadrao.release <https://github.com/plonegovbr/portalpadrao.release>`_. **Atenção**: Leia atentamente `a seção sobre como escolher o seu arquivo de versões de release <https://github.com/plonegovbr/portalpadrao.release/#user-content-como-escolher-corretamente-o-arquivo-de-versões-de-um-release>`_ para entender qual versão usar.
 
 Recomendamos a leitura do `documento <http://identidade-digital-de-governo-plone.readthedocs.org/en/latest/>`_ sobre a instalação deste pacote.
@@ -89,7 +89,7 @@ Exemplo: você clonou o repositório do brasil.gov.portal na sua máquina, e deu
         https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
         https://raw.githubusercontent.com/plone/plone.app.robotframework/master/versions.cfg
         https://raw.githubusercontent.com/plonegovbr/portalpadrao.release/master/1.0.5/versions.cfg
-        
+
 Para saber qual arquivo de versões é compatível, no caso do brasil.gov.portal, é simples pois é a mesma versão (no máximo um bug fix, por exemplo, brasil.gov.portal é 1.1.3 e o arquivo de versão é 1.1.3.1). Para os demais pacotes, recomendamos comparar a data da tag do pacote e a data nos changelog entre uma versão e outra para adivinhar a versão compatível.
 
 Sobrescrita de traduções do domínio plone
