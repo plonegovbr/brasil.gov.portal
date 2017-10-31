@@ -29,13 +29,7 @@ install:
 - test $MASTER && sed -ie '/https:\/\/raw\.githubusercontent\.com\/plonegovbr\/portal\.buildout\/master\/buildout\.d\/versions\.cfg/d' buildout.cfg || true
 - python bootstrap.py
 - bin/buildout annotate
-# FIXME:
-# Além de pinar a versão do firefox, preciso pinar a do selenium. A pinagem aqui
-# é a versão do selenium usada no último Plone 4 no momento do commit.
-# http://dist.plone.org/release/4.3.15/versions.cfg
-# Quando https://github.com/plonegovbr/brasil.gov.portal/issues/331 for atendido,
-# essa pinagem pode ser removida daqui.
-- bin/buildout versions:selenium=2.53.5
+- bin/buildout
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
@@ -43,15 +37,9 @@ before_script:
 script:
 - bin/code-analysis
 - bin/test
-after_script:
-# XXX:
-# Firefox reclama: GConf-WARNING **: Got Disconnected from DBus.
-# E continua falhndo, criando um job falho a cada 30-50 minutos.
-# Então simplesmente matamos o processo.
-- pkill -9 firefox
 after_success:
-- bin/createcoverage -t "--layer=!Acceptance"
-- pip install -q coveralls
+- bin/createcoverage --output-dir=htmlcov -t "--layer=!Acceptance"
+- pip install coveralls
 - coveralls
 notifications:
   irc: irc.freenode.org#plonegovbr
