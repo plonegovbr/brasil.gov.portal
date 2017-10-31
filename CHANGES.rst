@@ -1,29 +1,52 @@
 Histórico de Alterações
 -----------------------
 
-1.4 (unreleased)
-^^^^^^^^^^^^^^^^
+1.4rc1 (unreleased)
+^^^^^^^^^^^^^^^^^^^
 
-- Remove customização desnecessária do viewlet de itens relacionados.
+.. Warning::
+    Após atualização das versões do setuptools e do zc.buildout será necessário dar bootstrap no projeto novamente antes de rodar o buildout.
+    Consulte a documentação do release para mais informação.
+
+- Atualizado Plone à versão 4.3.15.
+  [hvelarde]
+
+- Atualizado zc.buildout à versão 2.9.5;
+  isso corrige um problema na descarga de eggs do PyPI usando HTTPS e melhora a performance do Buildout.
+  [hvelarde]
+
+- Remove dependência no five.grok (exeto do brasil.gov.paginadestaque) (fecha #373 <https://github.com/plonegovbr/brasil.gov.portal/issues/375>`_).
+  [hvelarde]
+
+- Atualizado brasil.gov.vcge à versão 1.1.1.
+  [hvelarde]
+
+- Atualizado brasil.gov.tiles à versão 1.5.
+  [hvelarde]
+
+- Atualizado brasil.gov.temas à versão 1.2.3;
+  isso corrige um erro na aparência do portal após o login (fecha #318 <https://github.com/plonegovbr/brasil.gov.portal/issues/318>`_).
+  [hvelarde]
+
+- Atualizado brasil.gov.barra à versão 1.2.1.
+  [hvelarde]
+
+- Atualizado collective.cover à versão 1.6b4.
   [hvelarde]
 
 - Atualizado collective.polls à versão 1.10b1.
   [hvelarde]
 
-- Remove customização dos template do collective.upload.
+- Atualizado collective.upload à versão 9.18.0rc2.
+  Remove customização dos templates do collective.upload.
   [hvelarde]
 
-- Remove parcialmente dependência no five.grok.
+- Remove customização desnecessária do viewlet de itens relacionados (fecha #355 <https://github.com/plonegovbr/brasil.gov.portal/issues/355>`_).
   [hvelarde]
 
-- Remove customização desnecessária do widget de itens relacionados.
-  [hvelarde]
-
-- Remove customização do template do sc.embedder.
-  [hvelarde]
-
-- Atualizado sc.embedder à versão 1.5b1.
-  isso adiciona pesquisa por tags ao tipo de conteúdo Embedder, entre outra melhorias.
+- Atualizado sc.embedder à versão 1.5b1;
+  isso adiciona pesquisa por tags ao tipo de conteúdo Embedder.
+  Remove customização do template do sc.embedder.
   [hvelarde]
 
 - Atualizado collective.nitf à versão 2.1b4;
