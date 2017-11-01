@@ -1,7 +1,7 @@
 Histórico de Alterações
 -----------------------
 
-1.4rc1 (unreleased)
+1.4rc1 (2017-11-01)
 ^^^^^^^^^^^^^^^^^^^
 
 .. Warning::
