@@ -2,12 +2,12 @@
 from AccessControl import getSecurityManager
 from AccessControl.Permissions import view as View
 from Products.CMFCore.permissions import ManagePortal
+from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.browser.admin import AddPloneSite as AddPloneSiteView
 from Products.CMFPlone.browser.admin import Overview as OverviewView
 from Products.CMFPlone.factory import _DEFAULT_PROFILE
 from Products.CMFPlone.factory import addPloneSite
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from Products.CMFCore.utils import getToolByName
 
 
 class Overview(OverviewView):

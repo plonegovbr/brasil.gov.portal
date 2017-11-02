@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-
-from brasil.gov.portal.config import LOCAL_TIME_FORMAT
 from brasil.gov.portal.config import LOCAL_LONG_TIME_FORMAT
+from brasil.gov.portal.config import LOCAL_TIME_FORMAT
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 
 import unittest
+
 
 SELECTABLE_VIEWS = ('listing_view', 'news_listing')
 

@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 """Testes da funcionalidade de esconder autor e data."""
-
 from brasil.gov.portal.config import LOCAL_TIME_FORMAT
+from brasil.gov.portal.testing import FUNCTIONAL_TESTING
 from brasil.gov.portal.tests.test_viewlets import esconde_autor
 from brasil.gov.portal.tests.test_viewlets import esconde_data
-from brasil.gov.portal.testing import FUNCTIONAL_TESTING
 from DateTime import DateTime
 from plone import api
 from plone.testing.z2 import Browser
 from zope.component import getMultiAdapter
-
 
 import transaction
 import unittest

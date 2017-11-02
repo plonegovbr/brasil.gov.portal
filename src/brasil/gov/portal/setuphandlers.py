@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-from Products.CMFCore.WorkflowCore import WorkflowException
-from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
-from Products.CMFPlone.utils import safe_unicode
-from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
-from Products.TinyMCE.interfaces.utility import ITinyMCE
 from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
 from collective.transmogrifier.transmogrifier import Transmogrifier
 from plone import api
 from plone.app.dexterity.behaviors import constrains
+from Products.CMFCore.WorkflowCore import WorkflowException
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
+from Products.CMFPlone.utils import safe_unicode
+from Products.CMFQuickInstallerTool.InstalledProduct import InstalledProduct
+from Products.TinyMCE.interfaces.utility import ITinyMCE
 from zope.component import getUtility
 
 import json

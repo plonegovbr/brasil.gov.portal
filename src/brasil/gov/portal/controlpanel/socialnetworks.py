@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.portal import _
+from brasil.gov.portal.config import REDES
+from plone.app.controlpanel.form import ControlPanelForm
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from brasil.gov.portal import _ as _
-from brasil.gov.portal.config import REDES
-from plone.app.controlpanel.form import ControlPanelForm
 from zope import schema
 from zope.component import adapts
 from zope.formlib.form import FormFields
 from zope.formlib.objectwidget import ObjectWidget
 from zope.formlib.sequencewidget import ListSequenceWidget
 from zope.formlib.widget import CustomWidgetFactory
-from zope.interface import Interface
 from zope.interface import implements
+from zope.interface import Interface
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 

@@ -7,9 +7,9 @@ from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
 from brasil.gov.portal.controlpanel.portal import ISettingsPortal
 from brasil.gov.portal.setuphandlers import _instala_pacote
-from brasil.gov.portal.upgrades.v10700.handler import atualiza_produtos_terceiros
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from brasil.gov.portal.tests.test_portal_properties import SELECTABLE_VIEWS
+from brasil.gov.portal.upgrades.v10700.handler import atualiza_produtos_terceiros
 from collective.cover.controlpanel import ICoverSettings
 from plone import api
 from plone.app.testing import setRoles

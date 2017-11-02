@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from DateTime import DateTime
 from brasil.gov.portal.browser.album.albuns import Pagination
 from brasil.gov.portal.config import LOCAL_TIME_FORMAT
 from brasil.gov.portal.config import TIME_FORMAT
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from DateTime import DateTime
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID

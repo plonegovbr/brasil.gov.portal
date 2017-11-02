@@ -6,8 +6,8 @@ from brasil.gov.portal.content.audio_file import IMPEGAudioFile
 from brasil.gov.portal.content.audio_file import IOGGAudioFile
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
-from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.schema import SCHEMA_CACHE
 from plone.namedfile.file import NamedBlobFile
