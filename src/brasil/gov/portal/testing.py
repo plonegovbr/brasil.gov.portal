@@ -8,6 +8,14 @@ from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
 
+# FIXME: workaround for https://github.com/plone/plone.app.testing/issues/39
+autoform = ('plone.autoform', {'loadZCML': True})
+tinymce = ('Products.TinyMCE', {'loadZCML': True})
+products = list(PLONE_FIXTURE.products)
+products.insert(products.index(tinymce), autoform)
+PLONE_FIXTURE.products = tuple(products)
+
+
 class Fixture(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE,)
