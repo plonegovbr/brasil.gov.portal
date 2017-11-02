@@ -6,34 +6,24 @@ cache:
   - eggs
   - parts/node
 addons:
-  # XXX:
-  # Essa versão é a mesma usada pelo Plone.
-  # https://github.com/plone/plone.jenkins_node/blob/9a74c2902da653de25020c39c67d0605615f74f4/defaults/main.yml#L3
-  # https://github.com/plone/jenkins.plone.org/issues/180#issuecomment-230234874
-  # Preciso pinar porque a distribuição padrão no Travis agora é a Trusty
-  # (https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming)
-  # e o Firefox nessa distribuição é o 50.0.x, dando o erro
-  # AssertionError: Parent suite setup failed:
-  # WebDriverException: Message: Can't load the profile. Profile Dir: %s If you specified a log_file in the FirefoxBinary constructor, check it for details.
-  # Mais referências: https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
-  firefox: 46.0.1
+  # XXX: use an older Firefox ESR as we are stuck with selenium = 2.53.5
+  #      https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
+  firefox: 45.9.0esr
 env:
   matrix:
     - MASTER=true
-    - PENDING_RELEASE=true
+    - LAST_RELEASE=true
 matrix:
   allow_failures:
-    - env: MASTER=true
+    - env: LAST_RELEASE=true
   fast_finish: true
 install:
-- test $MASTER && sed -ie '/https:\/\/raw\.githubusercontent\.com\/plonegovbr\/portal\.buildout\/master\/buildout\.d\/versions\.cfg/d' buildout.cfg || true
 - python bootstrap.py
 - bin/buildout annotate
 - bin/buildout
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
-- firefox -v
 script:
 - bin/code-analysis
 - bin/test
