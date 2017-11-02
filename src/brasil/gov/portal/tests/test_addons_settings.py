@@ -138,13 +138,12 @@ class AddonsSettingsTestCase(unittest.TestCase):
         self.assertEqual(self.nitf_settings.default_section, u'Notícias')
 
     def test_collective_upload_settings(self):
-        """ Images uploaded must be smaller than 1024x1024.
-        """
+        # images uploaded must be smaller than 1024x1024
         settings = self.registry.forInterface(IUploadSettings)
         self.assertEqual(settings.resize_max_width, 1024)
         self.assertEqual(settings.resize_max_height, 1024)
-        self.assertEqual(settings.upload_extensions,
-                         u'gif, jpeg, jpg, png, pdf, doc, txt, docx')
+        self.assertEqual(
+            settings.upload_extensions, u'gif|jpeg|jpg|png|pdf|doc|txt|docx')
 
     def test_sc_social_likes_settings(self):
         likes = self.portal['portal_properties'].sc_social_likes_properties

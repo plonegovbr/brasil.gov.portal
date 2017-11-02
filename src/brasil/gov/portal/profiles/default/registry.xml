@@ -129,7 +129,7 @@
     <value>1024</value>
   </record>
   <record name="collective.upload.interfaces.IUploadSettings.upload_extensions">
-    <value>gif, jpeg, jpg, png, pdf, doc, txt, docx</value>
+    <value>gif|jpeg|jpg|png|pdf|doc|txt|docx</value>
   </record>
   <records interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.skos">

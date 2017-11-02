@@ -4,7 +4,8 @@ Histórico de Alterações
 1.4rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige configuração padrão do collective.upload (fecha #392 <https://github.com/plonegovbr/brasil.gov.portal/issues/392>`_).
+  [hvelarde]
 
 
 1.4rc1 (2017-11-01)

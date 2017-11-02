@@ -7,6 +7,10 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
+import os
+import shutil
+import tempfile
+
 
 # FIXME: workaround for https://github.com/plone/plone.app.testing/issues/39
 autoform = ('plone.autoform', {'loadZCML': True})
@@ -19,6 +23,14 @@ PLONE_FIXTURE.products = tuple(products)
 class Fixture(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE,)
+
+    def setUp(self):
+        """Copy all files used in tests to the temporary directory."""
+        super(Fixture, self).setUp()
+        tempdir = tempfile.gettempdir()
+        path = os.path.join(os.path.dirname(__file__), 'tests', 'files')
+        for i in os.listdir(path):
+            shutil.copy(os.path.join(path, i), tempdir)
 
     def setUpZope(self, app, configurationContext):
         # Instala produtos
