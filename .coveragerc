@@ -1,8 +1,2 @@
 [report]
-omit =
-    /home/*/.buildout/eggs/*
-    /usr/*
-    bin/test
-    buildout-cache/eggs/*
-    eggs/*
-    parts/*
+include = src/brasil/gov/portal/*
