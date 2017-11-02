@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """ Modulo que implementa o viewlet de redes sociais do Portal"""
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.portal.config import REDES
 from plone.app.layout.viewlets import ViewletBase
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class RedesSociaisViewlet(ViewletBase):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from Products.Archetypes.interfaces import IBaseObject
 from collective.transmogrifier.interfaces import ISection
 from collective.transmogrifier.interfaces import ISectionBlueprint
 from plone.namedfile.file import NamedBlobFile
 from plone.namedfile.file import NamedBlobImage
+from Products.Archetypes.interfaces import IBaseObject
 from zope.interface import classProvides
 from zope.interface import implements
 

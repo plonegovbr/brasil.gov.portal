@@ -6,8 +6,8 @@ from plone.indexer.decorator import indexer
 from plone.namedfile.field import NamedBlobFile
 from plone.rfc822.interfaces import IPrimaryFieldInfo
 from plone.supermodel import model
-from zope.interface import Invalid
 from zope.interface import implements
+from zope.interface import Invalid
 
 
 OGGTYPES = [

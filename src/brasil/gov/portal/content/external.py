@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone.dexterity.content import Item
-from zope.interface import Interface
 from zope.interface import implements
+from zope.interface import Interface
 
 
 def has_image(blog_entry):

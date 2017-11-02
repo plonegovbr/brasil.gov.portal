@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import TitleViewlet as PloneTitleViewlet
 from plone.memoize.view import memoize
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class TitleViewlet(PloneTitleViewlet):

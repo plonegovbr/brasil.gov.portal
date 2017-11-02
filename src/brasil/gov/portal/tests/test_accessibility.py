@@ -5,8 +5,8 @@ from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.layout.viewlets.common import SiteActionsViewlet
-from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from plone.app.theming.utils import applyTheme
 from plone.app.theming.utils import getTheme
 from plone.testing.z2 import Browser

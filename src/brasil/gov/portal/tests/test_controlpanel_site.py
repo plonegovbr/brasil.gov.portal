@@ -2,9 +2,9 @@
 from brasil.gov.portal.controlpanel.site import SiteControlPanelAdapter
 from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
-from plone.app.testing import TEST_USER_ID
 from plone.app.testing import logout
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 
