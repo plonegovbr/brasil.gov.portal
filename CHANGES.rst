@@ -4,6 +4,9 @@ Histórico de Alterações
 1.4rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Corrige visão sumária para o tipo de conteúdo Evento (fecha #397 <https://github.com/plonegovbr/brasil.gov.portal/issues/397>`_).
+  [hvelarde]
+
 - Corrige configuração padrão do collective.upload (fecha #392 <https://github.com/plonegovbr/brasil.gov.portal/issues/392>`_).
   [hvelarde]
 
