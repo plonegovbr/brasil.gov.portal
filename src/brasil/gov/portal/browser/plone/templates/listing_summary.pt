@@ -96,7 +96,11 @@
            A visão sumária do IDG é bem diferente da sumária padrão, por isso
            a maior customização de todas as templates é feita nesse arquivo.
         </tal:comment>
-        <span class="documentByLine">
+        <span class="documentByLine"
+            tal:define="item_start python:(item.start or item.StartDate) if item_type == 'Event' else None;
+                        item_end python:(item.end or item.EndDate) if item_type == 'Event' else None;
+                        item_sametime python: item_start == item_end if item_type == 'Event' else False;
+                        item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False;">
             <span tal:condition="python: item_type == 'Event' and item_sametime"
                   i18n:translate="label_event_byline_onlyfrom">
                 <abbr class="dtstart"
