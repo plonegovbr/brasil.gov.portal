@@ -1,8 +1,8 @@
 Histórico de Alterações
 -----------------------
 
-1.4rc2 (unreleased)
-^^^^^^^^^^^^^^^^^^^
+1.4 (2017-11-07)
+^^^^^^^^^^^^^^^^
 
 - Corrige carga da seção "Em destaque" (fecha #401 <https://github.com/plonegovbr/brasil.gov.portal/issues/401>`_).
   [hvelarde]
