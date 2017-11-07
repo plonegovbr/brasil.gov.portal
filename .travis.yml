@@ -10,12 +10,7 @@ addons:
   #      https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
   firefox: 45.9.0esr
 env:
-  matrix:
-    - MASTER=true
-    - LAST_RELEASE=true
 matrix:
-  allow_failures:
-    - env: LAST_RELEASE=true
   fast_finish: true
 install:
 - python bootstrap.py
