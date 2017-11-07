@@ -4,6 +4,9 @@ Histórico de Alterações
 1.4rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Corrige carga da seção "Em destaque" (fecha #401 <https://github.com/plonegovbr/brasil.gov.portal/issues/401>`_).
+  [hvelarde]
+
 - Corrige visão sumária para o tipo de conteúdo Evento (fecha #397 <https://github.com/plonegovbr/brasil.gov.portal/issues/397>`_).
   [hvelarde]
 
