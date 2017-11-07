@@ -4,6 +4,10 @@ Histórico de Alterações
 1.5rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Adiciona collective.lazysizes ao IDG;
+  se instalado, habilita lazy loading de imagens e iframes no conteúdo do portal.
+  [hvelarde]
+
 - Adiciona Products.RedirectionTool ao IDG;
   habilita gerenciamento dos alias da redirection tool (plone.app.redirector).
   [hvelarde]

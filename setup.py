@@ -56,6 +56,7 @@ setup(
         # Versão mínima requerida por brasil.gov.tiles.
         'collective.cover > 1.3b1',
         'collective.jsonmigrator',
+        'collective.lazysizes',
         # Imports como
         # "from collective.nitf.browser import NITFBylineViewlet as CollectiveNITFBylineViewlet"
         # Só a partir dessa versão.
