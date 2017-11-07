@@ -100,6 +100,7 @@ setup(
         'Products.Doormat>0.7',
         'Products.GenericSetup',
         'Products.PloneFormGen',
+        'Products.RedirectionTool',
         'Products.TinyMCE',
         'sc.contentrules.groupbydate',
         'sc.contentrules.layout',

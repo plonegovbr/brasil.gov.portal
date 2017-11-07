@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.portal">
+
+  <genericsetup:upgradeSteps
+      source="10802"
+      destination="10803"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeStep
+        title="Install Products.RedirectionTool"
+        description=""
+        handler=".install_redirection_tool"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>
