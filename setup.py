@@ -97,7 +97,7 @@ setup(
         'Products.CMFCore',
         'Products.CMFDefault',
         'Products.CMFPlone',
-        'Products.Doormat>0.7',
+        'Products.Doormat >=1.2',
         'Products.GenericSetup',
         'Products.PloneFormGen',
         'Products.TinyMCE',
