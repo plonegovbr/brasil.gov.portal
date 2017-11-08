@@ -31,12 +31,7 @@ Criar novo site
     Pagina deve conter elemento  portal-logo
     Listar rede social  youtube
     Listar rede social  twitter
-    # FIXME: this is failing for the same reason stated in
-    #        https://github.com/plone/plone.app.testing/issues/39
-    #        but the workaround in not working here and I don't
-    #        know why; for now on we just skip this specific test
-    #        as it's only making things difficult for development
-    # Pagina deve exibir Em Destaque
+    Pagina deve exibir Em Destaque
     Capturar tela  criarsite-passo-03.png
 
 Conteudo base - Pasta de Imagens
