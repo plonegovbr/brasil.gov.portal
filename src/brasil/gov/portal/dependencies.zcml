@@ -23,6 +23,7 @@
   <include package="sc.contentrules.layout" />
   <include package="sc.contentrules.metadata" />
   <include package="sc.embedder" />
+  <include package="sc.photogallery" />
   <include package="sc.social.like" />
 
 </configure>
