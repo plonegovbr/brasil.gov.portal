@@ -15,6 +15,9 @@ Histórico de Alterações
 - Revisa estilos "Normal", "Grande" e "Gigante" para a nova versão do collective.cover.
   [rodfersou]
 
+- Desinstala collective.z3cform.widgets e o browser layer associado.
+  [hvelarde]
+
 - Adiciona collective.fingerpointing ao IDG;
   se instalado, habilita um log de auditoria simples no portal.
   [hvelarde]
