@@ -15,6 +15,12 @@
         handler=".install_redirection_tool"
         />
 
+    <genericsetup:upgradeStep
+        title="Uninstall collective.z3cform.widgets"
+        description=""
+        handler=".uninstall_widgets"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>
