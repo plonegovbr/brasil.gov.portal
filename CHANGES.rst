@@ -12,6 +12,8 @@ Histórico de Alterações
 - Desinstala collective.z3cform.widgets e o browser layer associado.
 - Habilita suporte para `RESTful Hypermedia API <https://pypi.python.org/pypi/plone.restapi>`_ no IDG.
   [hvelarde]
+- Revisa estilos "Normal", "Grande" e "Gigante" para a nova versão do collective.cover.
+  [rodfersou]
 
 - Adiciona collective.fingerpointing ao IDG;
   se instalado, habilita um log de auditoria simples no portal.
