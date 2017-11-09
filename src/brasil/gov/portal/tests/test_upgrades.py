@@ -49,15 +49,15 @@ class To10803TestCase(UpgradeBaseTestCase):
         self.assertIsNotNone(step)
 
         # simulate (partially) state on previous version
-        redirection_tool = 'RedirectionTool'
+        addon = 'RedirectionTool'
         qi = api.portal.get_tool('portal_quickinstaller')
         with api.env.adopt_roles(['Manager']):
-            qi.uninstallProducts([redirection_tool])
-        self.assertFalse(qi.isProductInstalled(redirection_tool))
+            qi.uninstallProducts([addon])
+        self.assertFalse(qi.isProductInstalled(addon))
 
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
-        self.assertTrue(qi.isProductInstalled(redirection_tool))
+        self.assertTrue(qi.isProductInstalled(addon))
 
     def test_install_restapi(self):
         title = u'Install plone.restapi'
@@ -81,16 +81,16 @@ class To10803TestCase(UpgradeBaseTestCase):
         self.assertIsNotNone(step)
 
         # simulate (partially) state on previous version
-        package = 'collective.z3cform.widgets'
+        addon = 'collective.z3cform.widgets'
         qi = api.portal.get_tool('portal_quickinstaller')
         with api.env.adopt_roles(['Manager']):
-            qi.installProducts([package])
-        self.assertTrue(qi.isProductInstalled(package))
+            qi.installProducts([addon])
+        self.assertTrue(qi.isProductInstalled(addon))
 
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
         from collective.z3cform.widgets.interfaces import ILayer
         from plone.browserlayer.utils import registered_layers
-        self.assertFalse(qi.isProductInstalled(package))
-        self.assertFalse(qi.isProductInstallable(package))
+        self.assertFalse(qi.isProductInstalled(addon))
+        self.assertFalse(qi.isProductInstallable(addon))
         self.assertNotIn(ILayer, registered_layers())
