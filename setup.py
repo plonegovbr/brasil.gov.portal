@@ -57,6 +57,7 @@ setup(
         'collective.cover > 1.3b1',
         'collective.jsonmigrator',
         'collective.lazysizes',
+        'collective.liveblog',
         # Imports como
         # "from collective.nitf.browser import NITFBylineViewlet as CollectiveNITFBylineViewlet"
         # Só a partir dessa versão.
