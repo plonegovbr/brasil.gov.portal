@@ -10,6 +10,7 @@
   <include package="brasil.gov.vcge" />
   <include package="collective.cover" />
   <include package="collective.lazysizes" />
+  <include package="collective.liveblog" />
   <include package="collective.nitf" />
   <include package="collective.polls" />
   <include package="collective.upload" />
