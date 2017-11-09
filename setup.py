@@ -107,6 +107,7 @@ setup(
         'sc.contentrules.layout',
         'sc.contentrules.metadata',
         'sc.embedder',
+        'sc.photogallery',
         'sc.social.like',
         'setuptools',
         'transmogrify.dexterity',
