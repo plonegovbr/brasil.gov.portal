@@ -65,13 +65,7 @@ setup(
         'collective.nitf >= 2.1b2',
         'collective.polls',
         'collective.upload',
-        # FIXME:
-        # BBB: Com a atualização do collective.nitf para >= 2.1b2 esse pacote
-        # foi removido mas ainda mantém layers no ZODB para portais em produção.
-        # https://github.com/collective/collective.nitf/commit/ebb385b353655fc9c39de0b4f5ec2abfe6f39375
-        # Isso já foi feito no passado em outros pacotes, ver
-        # https://github.com/plonegovbr/brasil.gov.portal/blob/ab55f0fdf09201bb26e6fe9b1815e178a94d5e2c/src/brasil/gov/portal/bbb.py
-        'collective.z3cform.widgets',
+        'collective.z3cform.widgets',  # TODO: remove on release 2.0
         'five.grok',
         'five.pt',
         'lxml',

@@ -4,6 +4,14 @@ Histórico de Alterações
 1.5rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+.. Warning::
+    O collective.z3cform.widgets ainda é uma dependência do IDG,
+    mas após esta atualização ele não será mais utilizado nem será possível instalá-lo.
+    A dependência será removida completamente em a versão 2.0.
+
+- Desinstala collective.z3cform.widgets e o browser layer associado.
+  [hvelarde]
+
 - Adiciona collective.fingerpointing ao IDG;
   se instalado, habilita um log de auditoria simples no portal.
   [hvelarde]
