@@ -4,6 +4,10 @@ Histórico de Alterações
 1.5rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Adiciona collective.fingerpointing ao IDG;
+  se instalado, habilita um log de auditoria simples no portal.
+  [hvelarde]
+
 - Adiciona collective.liveblog ao IDG;
   se instalado, habilita o tipo de conteúdo Liveblog (uma ferramenta para cobertura ampla de um evento em curso) no portal.
   [hvelarde]

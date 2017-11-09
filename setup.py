@@ -55,6 +55,7 @@ setup(
         'brasil.gov.vcge',
         # Versão mínima requerida por brasil.gov.tiles.
         'collective.cover > 1.3b1',
+        'collective.fingerpointing',
         'collective.jsonmigrator',
         'collective.lazysizes',
         'collective.liveblog',
