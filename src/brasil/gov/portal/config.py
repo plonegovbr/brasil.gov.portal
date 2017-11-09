@@ -116,7 +116,6 @@ DEPS = [
     'plonetheme.classic',
     'Products.Doormat',
     'Products.PloneFormGen',
-    'Products.RedirectionTool',
     'raptus.autocompletewidget',
 ]
 
