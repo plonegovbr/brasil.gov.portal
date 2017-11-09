@@ -41,7 +41,7 @@ class To10803TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 2)
+        self.assertEqual(steps, 3)
 
     def test_install_redirection_tool(self):
         title = u'Install Products.RedirectionTool'
@@ -57,8 +57,23 @@ class To10803TestCase(UpgradeBaseTestCase):
 
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
-
         self.assertTrue(qi.isProductInstalled(redirection_tool))
+
+    def test_install_restapi(self):
+        title = u'Install plone.restapi'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        addon = 'plone.restapi'
+        qi = api.portal.get_tool('portal_quickinstaller')
+        with api.env.adopt_roles(['Manager']):
+            qi.uninstallProducts([addon])
+        self.assertFalse(qi.isProductInstalled(addon))
+
+        # execute upgrade step and verify changes were applied
+        self._do_upgrade(step)
+        self.assertTrue(qi.isProductInstalled(addon))
 
     def test_uninstall_widgets(self):
         title = u'Uninstall collective.z3cform.widgets'
@@ -74,7 +89,6 @@ class To10803TestCase(UpgradeBaseTestCase):
 
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
-
         from collective.z3cform.widgets.interfaces import ILayer
         from plone.browserlayer.utils import registered_layers
         self.assertFalse(qi.isProductInstalled(package))

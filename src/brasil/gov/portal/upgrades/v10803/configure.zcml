@@ -16,6 +16,12 @@
         />
 
     <genericsetup:upgradeStep
+        title="Install plone.restapi"
+        description=""
+        handler=".install_restapi"
+        />
+
+    <genericsetup:upgradeStep
         title="Uninstall collective.z3cform.widgets"
         description=""
         handler=".uninstall_widgets"
