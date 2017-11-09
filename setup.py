@@ -89,6 +89,7 @@ setup(
         'plone.memoize',
         'plone.namedfile',
         'plone.registry',
+        'plone.restapi',
         'plone.supermodel',
         'plone.tiles',
         'Products.CMFCore',

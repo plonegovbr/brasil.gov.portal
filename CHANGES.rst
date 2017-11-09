@@ -10,6 +10,7 @@ Histórico de Alterações
     A dependência será removida completamente em a versão 2.0.
 
 - Desinstala collective.z3cform.widgets e o browser layer associado.
+- Habilita suporte para `RESTful Hypermedia API <https://pypi.python.org/pypi/plone.restapi>`_ no IDG.
   [hvelarde]
 
 - Adiciona collective.fingerpointing ao IDG;
