@@ -47,6 +47,7 @@ DEPENDENCIES = [
     'plone.app.theming',
     'Products.Doormat',
     'Products.PloneFormGen',
+    'Products.RedirectionTool',
     'sc.embedder',
     'sc.social.like',
 ]
