@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.portal">
+
+  <!-- Profiles -->
+  <gs:registerProfile
+      name="default"
+      title="Identidade Digital: Versão 10804"
+      directory="profiles/default"
+      description="Configurações da Versão 10804 do portal"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+    <!-- Upgrade Steps -->
+  <gs:upgradeSteps
+      source="10803"
+      destination="10804"
+      profile="brasil.gov.portal:default">
+
+    <gs:upgradeStep
+        title="Atualiza portal para versão 10804"
+        description="Habilita a visualização dos ícones para os usuários autenticados."
+        handler=".handler.apply_profile"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>

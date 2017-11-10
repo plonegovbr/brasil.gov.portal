@@ -278,7 +278,7 @@
                                                    show_about python:not isAnon or allowAnonymousViewAbout;">
                           <dl class="searchResults">
                               <tal:results repeat="item batch">
-                                    <dt tal:attributes="class item/ContentTypeClass">
+                                    <dt>
                                       <a href="#"
                                          tal:define="item_url item/getURL;
                                                      item_type item/PortalType"
