@@ -41,7 +41,7 @@ class To10803TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 3)
+        self.assertEqual(steps, 4)
 
     def test_install_redirection_tool(self):
         title = u'Install Products.RedirectionTool'
