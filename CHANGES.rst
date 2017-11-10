@@ -15,7 +15,7 @@ Changelog
     mas após esta atualização ele não será mais utilizado nem será possível instalá-lo.
     A dependência será removida completamente em a versão 2.0.
 
-- Adiciona suporte a âncoras de links internos.
+- Adiciona suporte a âncoras de links internos: antes não era possível adicionar um link do tipo interno numa página que referenciava uma âncora adicionada em outro documento. Alterando as regras do TinyMCE isso agora é possível. Para entender melhor essa funcionalidade, basta rodar o test_tinymce_ancora.robot localmente.
   [idgserpro]
 
 - Habilita os ícones dos conteúdos para os usuários autenticados (fecha `#343 <https://github.com/plonegovbr/brasil.gov.portal/issues/343>`_).

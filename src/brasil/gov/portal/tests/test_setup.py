@@ -26,7 +26,6 @@ from zope.component import queryMultiAdapter
 from zope.viewlet.interfaces import IViewletManager
 
 import json
-import transaction
 import unittest
 
 
@@ -342,10 +341,6 @@ class TestUpgrade(unittest.TestCase):
 
     def test_to10802_available(self):
         step = self.list_upgrades(u'10801', u'10802')
-        self.assertEqual(len(step), 1)
-
-    def test_to10803_available(self):
-        step = self.list_upgrades(u'10802', u'10803')
         self.assertEqual(len(step), 1)
 
     def _get_viewlets_from_manager(self, manager):
@@ -670,49 +665,6 @@ class TestUpgrade(unittest.TestCase):
 
         selectable_views_property = self.portal.getProperty('selectable_views')
         self.assertTupleEqual(selectable_views_property, SELECTABLE_VIEWS)
-
-    def test_to10803_execution_tinymce_ancora(self):
-        # Simula situação antiga:
-        # https://github.com/plonegovbr/brasil.gov.portal/blob/502b98087450cc95ddeb277e09faffc59adbba0d/src/brasil/gov/portal/profiles/default/tinymce.xml#L23
-        before_10803_anchor_selector = u''
-        before_10803_containsanchors = [
-            u'collective.nitf.content',
-            u'Document',
-            u'Event',
-        ]
-
-        portal_tinymce = api.portal.get_tool(name='portal_tinymce')
-        portal_tinymce.containsanchors = u'\n'.join(before_10803_containsanchors)
-        portal_tinymce.anchor_selector = before_10803_anchor_selector
-        transaction.commit()
-        # Fim simulação antiga
-
-        self.execute_upgrade(u'10802', u'10803')
-
-        is_10803_containsanchors = [
-            u'ATRelativePathCriterion',
-            u'Document',
-            u'Document|text',
-            u'Event',
-            u'Event|text',
-            u'collective.nitf.content',
-            u'collective.nitf.content|text'
-        ]
-        is_10803_anchor_selector = [
-            u'h2',
-            u'h3',
-            u'a[name]',
-        ]
-
-        self.assertEqual(
-            portal_tinymce.containsanchors.split(),
-            is_10803_containsanchors
-        )
-
-        self.assertEqual(
-            portal_tinymce.anchor_selector.split(','),
-            is_10803_anchor_selector
-        )
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
