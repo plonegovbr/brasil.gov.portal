@@ -1,5 +1,5 @@
-Histórico de Alterações
------------------------
+Changelog
+---------
 
 1.5rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
@@ -9,8 +9,13 @@ Histórico de Alterações
     mas após esta atualização ele não será mais utilizado nem será possível instalá-lo.
     A dependência será removida completamente em a versão 2.0.
 
-- Desinstala collective.z3cform.widgets e o browser layer associado.
+- Revisa estilos "Normal", "Grande" e "Gigante" para a nova versão do collective.cover (fecha `#356 <https://github.com/plonegovbr/brasil.gov.portal/issues/356>`_).
+  [rodfersou]
+
 - Habilita suporte para `RESTful Hypermedia API <https://pypi.python.org/pypi/plone.restapi>`_ no IDG.
+  [hvelarde]
+
+- Desinstala collective.z3cform.widgets e o browser layer associado.
   [hvelarde]
 
 - Adiciona collective.fingerpointing ao IDG;
