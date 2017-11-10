@@ -27,7 +27,7 @@
         handler=".uninstall_widgets"
         />
 
-    <gs:upgradeStep
+    <genericsetup:upgradeStep
         title="Cook Resources"
         description="Atualiza estilos da configuração do brasil.gov.portal."
         handler="brasil.gov.portal.upgrades.csscookresources"
