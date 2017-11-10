@@ -42,13 +42,13 @@ Changelog
 1.4 (2017-11-07)
 ^^^^^^^^^^^^^^^^
 
-- Corrige carga da seção "Em destaque" (fecha #401 <https://github.com/plonegovbr/brasil.gov.portal/issues/401>`_).
+- Corrige carga da seção "Em destaque" (fecha `#401 <https://github.com/plonegovbr/brasil.gov.portal/issues/401>`_).
   [hvelarde]
 
-- Corrige visão sumária para o tipo de conteúdo Evento (fecha #397 <https://github.com/plonegovbr/brasil.gov.portal/issues/397>`_).
+- Corrige visão sumária para o tipo de conteúdo Evento (fecha `#397 <https://github.com/plonegovbr/brasil.gov.portal/issues/397>`_).
   [hvelarde]
 
-- Corrige configuração padrão do collective.upload (fecha #392 <https://github.com/plonegovbr/brasil.gov.portal/issues/392>`_).
+- Corrige configuração padrão do collective.upload (fecha `#392 <https://github.com/plonegovbr/brasil.gov.portal/issues/392>`_).
   [hvelarde]
 
 
@@ -66,7 +66,7 @@ Changelog
   isso corrige um problema na descarga de eggs do PyPI usando HTTPS e melhora a performance do Buildout.
   [hvelarde]
 
-- Remove dependência no five.grok (exeto do brasil.gov.paginadestaque e do viewlet de destaques) (fecha #373 <https://github.com/plonegovbr/brasil.gov.portal/issues/375>`_).
+- Remove dependência no five.grok (exeto do brasil.gov.paginadestaque e do viewlet de destaques) (fecha `#373 <https://github.com/plonegovbr/brasil.gov.portal/issues/375>`_).
   [hvelarde]
 
 - Atualizado brasil.gov.vcge à versão 1.1.1.
@@ -76,7 +76,7 @@ Changelog
   [hvelarde]
 
 - Atualizado brasil.gov.temas à versão 1.2.3;
-  isso corrige um erro na aparência do portal após o login (fecha #318 <https://github.com/plonegovbr/brasil.gov.portal/issues/318>`_).
+  isso corrige um erro na aparência do portal após o login (fecha `#318 <https://github.com/plonegovbr/brasil.gov.portal/issues/318>`_).
   [hvelarde]
 
 - Atualizado brasil.gov.barra à versão 1.2.1.
@@ -92,7 +92,7 @@ Changelog
   Remove customização dos templates do collective.upload.
   [hvelarde]
 
-- Remove customização desnecessária do viewlet de itens relacionados (fecha #355 <https://github.com/plonegovbr/brasil.gov.portal/issues/355>`_).
+- Remove customização desnecessária do viewlet de itens relacionados (fecha `#355 <https://github.com/plonegovbr/brasil.gov.portal/issues/355>`_).
   [hvelarde]
 
 - Atualizado sc.embedder à versão 1.5b1;
