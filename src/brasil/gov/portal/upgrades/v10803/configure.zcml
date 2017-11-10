@@ -4,6 +4,14 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.portal">
 
+  <genericsetup:registerProfile
+      name="default"
+      title="Identidade Digital: Versão 10803"
+      directory="profiles/default"
+      description="Configurações da Versão 10803 do portal"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <genericsetup:upgradeSteps
       source="10802"
       destination="10803"
@@ -31,6 +39,12 @@
         title="Cook Resources"
         description="Atualiza estilos da configuração do brasil.gov.portal."
         handler="brasil.gov.portal.upgrades.csscookresources"
+        />
+
+    <genericsetup:upgradeStep
+        title="Habilita a exibição dos ícones dos tipos de conteúdos somente para os usuários autenticados."
+        description=""
+        handler=".apply_profile"
         />
 
   </genericsetup:upgradeSteps>

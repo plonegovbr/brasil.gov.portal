@@ -14,6 +14,5 @@
   <include package=".v10801" />
   <include package=".v10802" />
   <include package=".v10803" />
-  <include package=".v10804" />
 
 </configure>
