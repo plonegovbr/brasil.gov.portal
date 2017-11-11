@@ -42,7 +42,7 @@
         />
 
     <genericsetup:upgradeStep
-        title="Habilita a exibição dos ícones dos tipos de conteúdos somente para os usuários autenticados."
+        title="Habilita os ícones dos conteúdos para os usuários auteticados."
         description=""
         handler=".apply_profile"
         />
