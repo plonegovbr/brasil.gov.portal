@@ -94,3 +94,7 @@ class To10803TestCase(UpgradeBaseTestCase):
         self.assertFalse(qi.isProductInstalled(addon))
         self.assertFalse(qi.isProductInstallable(addon))
         self.assertNotIn(ILayer, registered_layers())
+
+    def test_icon_visibility(self):
+        self.properties = api.portal.get_tool('portal_properties').site_properties
+        self.assertEqual(self.properties.icon_visibility, 'authenticated')
