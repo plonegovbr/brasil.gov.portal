@@ -2,7 +2,6 @@
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 
-import transaction
 import unittest
 
 
@@ -126,7 +125,6 @@ class To10803TestCase(UpgradeBaseTestCase):
         portal_tinymce = api.portal.get_tool(name='portal_tinymce')
         portal_tinymce.containsanchors = u'\n'.join(before_10803_containsanchors)
         portal_tinymce.anchor_selector = before_10803_anchor_selector
-        transaction.commit()
         # Fim simulação antiga
 
         # execute upgrade step and verify changes were applied
@@ -139,7 +137,7 @@ class To10803TestCase(UpgradeBaseTestCase):
             u'Event',
             u'Event|text',
             u'collective.nitf.content',
-            u'collective.nitf.content|text'
+            u'collective.nitf.content|text',
         ]
         is_10803_anchor_selector = [
             u'h2',
@@ -149,10 +147,10 @@ class To10803TestCase(UpgradeBaseTestCase):
 
         self.assertEqual(
             portal_tinymce.containsanchors.split(),
-            is_10803_containsanchors
+            is_10803_containsanchors,
         )
 
         self.assertEqual(
             portal_tinymce.anchor_selector.split(','),
-            is_10803_anchor_selector
+            is_10803_anchor_selector,
         )
