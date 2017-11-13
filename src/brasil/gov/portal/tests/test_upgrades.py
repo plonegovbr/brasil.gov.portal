@@ -96,7 +96,7 @@ class To10803TestCase(UpgradeBaseTestCase):
         self.assertNotIn(ILayer, registered_layers())
 
     def test_icon_visibility(self):
-        title = u'Habilita os ícones dos conteúdos para os usuários auteticados.'
+        title = u'Atualiza portal para versão 10803.'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
@@ -107,3 +107,50 @@ class To10803TestCase(UpgradeBaseTestCase):
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
         self.assertEqual(properties.icon_visibility, 'authenticated')
+
+    def test_tinymce_ancora_links_internos(self):
+        title = u'Atualiza portal para versão 10803.'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # Simula situação antiga:
+        # https://github.com/plonegovbr/brasil.gov.portal/blob/502b98087450cc95ddeb277e09faffc59adbba0d/src/brasil/gov/portal/profiles/default/tinymce.xml#L23
+        before_10803_anchor_selector = u''
+        before_10803_containsanchors = [
+            u'collective.nitf.content',
+            u'Document',
+            u'Event',
+        ]
+
+        portal_tinymce = api.portal.get_tool(name='portal_tinymce')
+        portal_tinymce.containsanchors = u'\n'.join(before_10803_containsanchors)
+        portal_tinymce.anchor_selector = before_10803_anchor_selector
+        # Fim simulação antiga
+
+        # execute upgrade step and verify changes were applied
+        self._do_upgrade(step)
+
+        is_10803_containsanchors = [
+            u'ATRelativePathCriterion',
+            u'Document',
+            u'Document|text',
+            u'Event',
+            u'Event|text',
+            u'collective.nitf.content',
+            u'collective.nitf.content|text',
+        ]
+        is_10803_anchor_selector = [
+            u'h2',
+            u'h3',
+            u'a[name]',
+        ]
+
+        self.assertEqual(
+            portal_tinymce.containsanchors.split(),
+            is_10803_containsanchors,
+        )
+
+        self.assertEqual(
+            portal_tinymce.anchor_selector.split(','),
+            is_10803_anchor_selector,
+        )

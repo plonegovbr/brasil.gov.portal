@@ -21,9 +21,13 @@
    <element value="Plone Site"/>
   </containsobjects>
   <containsanchors>
-   <element value="collective.nitf.content"/>
-   <element value="Document"/>
-   <element value="Event"/>
+   <element value="ATRelativePathCriterion"/>
+   <element value="collective.nitf.content|text"/>
+   <element value="Document|text"/>
+   <element value="Event|text"/>
   </containsanchors>
  </resourcetypes>
+ <contentbrowser>
+  <anchor_selector value="h2,h3,a[name]"/>
+ </contentbrowser>
 </object>
