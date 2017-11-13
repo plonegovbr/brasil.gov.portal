@@ -28,6 +28,7 @@ Criar nova capa
     # menos customização e não impactar os demais testes.
     Enable Autologin as  Site Administrator
     Ir para  ${PLONE_URL}/@@language-controlpanel
+    Wait Until Page Contains Element  xpath=//select[@id='form.default_language']
     Select From List  xpath=//select[@id='form.default_language']  en
     Clicar botao  Salvar
 
