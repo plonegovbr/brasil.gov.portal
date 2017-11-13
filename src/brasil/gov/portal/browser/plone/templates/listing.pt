@@ -35,7 +35,6 @@
                 item_modified item/ModificationDate;
                 item_created item/CreationDate;
                 item_icon item/getIcon;
-                item_type_class python:'contenttype-' + view.normalizeString(item_type);
                 item_wf_state item/review_state;
                 item_wf_state_class python:'state-' + view.normalizeString(item_wf_state);
                 item_creator item/Creator;
@@ -47,7 +46,7 @@
                   <header metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
                     <span class="summary">
                       <a tal:attributes="href item_link;
-                                         class string:$item_type_class $item_wf_state_class url;
+                                         class string: $item_wf_state_class url;
                                          title item_type"
                           tal:content="item_title">
                         Item Title

@@ -9,6 +9,9 @@ Changelog
     mas após esta atualização ele não será mais utilizado nem será possível instalá-lo.
     A dependência será removida completamente em a versão 2.0.
 
+- Habilita os ícones dos conteúdos para os usuários autenticados (fecha `#343 <https://github.com/plonegovbr/brasil.gov.portal/issues/343>`_).
+  [claytonc]
+
 - Revisa estilos "Normal", "Grande" e "Gigante" para a nova versão do collective.cover (fecha `#356 <https://github.com/plonegovbr/brasil.gov.portal/issues/356>`_).
   [rodfersou]
 

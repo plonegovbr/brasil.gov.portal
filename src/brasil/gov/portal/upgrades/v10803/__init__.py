@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.logger import logger
 from plone import api
+from plone.app.upgrade.utils import loadMigrationProfile
 
 
 def install_redirection_tool(setup_tool):
@@ -37,3 +38,10 @@ def uninstall_widgets(setup_tool):
     if ILayer in utils.registered_layers():
         utils.unregister_layer(name=addon)
         logger.info(addon + ' browser layer was removed')
+
+
+def apply_profile(setup_tool):
+    """Atualiza profile para versao 10803."""
+    profile = 'profile-brasil.gov.portal.upgrades.v10803:default'
+    loadMigrationProfile(setup_tool, profile)
+    logger.info('Atualizado para versao 10803')

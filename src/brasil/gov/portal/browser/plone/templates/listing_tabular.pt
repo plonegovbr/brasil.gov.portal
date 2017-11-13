@@ -53,7 +53,6 @@
                                      item_title item/Title;
                                      item_description item/Description;
                                      item_type item/PortalType;
-                                     item_type_class python:'contenttype-' + view.normalizeString(item_type);
                                      item_wf_state item/review_state;
                                      item_wf_state_class python:'state-' + view.normalizeString(item_wf_state);
                                      item_creator item/Creator;
@@ -73,7 +72,7 @@
                     <td tal:condition="python:field == 'Title'">
                       <a href="#"
                           tal:attributes="href item_link;
-                          class string:$item_wf_state_class $item_type_class;
+                          class string:$item_wf_state_class;
                           title item_description;"
                           tal:content="item_title">
                         Item Title

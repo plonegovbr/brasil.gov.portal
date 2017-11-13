@@ -41,7 +41,7 @@ class To10803TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 4)
+        self.assertEqual(steps, 5)
 
     def test_install_redirection_tool(self):
         title = u'Install Products.RedirectionTool'
@@ -94,3 +94,16 @@ class To10803TestCase(UpgradeBaseTestCase):
         self.assertFalse(qi.isProductInstalled(addon))
         self.assertFalse(qi.isProductInstallable(addon))
         self.assertNotIn(ILayer, registered_layers())
+
+    def test_icon_visibility(self):
+        title = u'Habilita os ícones dos conteúdos para os usuários auteticados.'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        properties = api.portal.get_tool('portal_properties').site_properties
+        properties.icon_visibility = 'disabled'
+
+        # execute upgrade step and verify changes were applied
+        self._do_upgrade(step)
+        self.assertEqual(properties.icon_visibility, 'authenticated')
