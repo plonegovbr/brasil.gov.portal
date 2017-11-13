@@ -2,7 +2,6 @@
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 
-import transaction
 import unittest
 
 
@@ -100,12 +99,11 @@ class To10803TestCase(UpgradeBaseTestCase):
         title = u'Habilita os ícones dos conteúdos para os usuários auteticados.'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
-        self.properties = api.portal.get_tool('portal_properties').site_properties
 
         # simulate state on previous version
-        self.properties.icon_visibility = 'disabled'
-        transaction.commit()
+        properties = api.portal.get_tool('portal_properties').site_properties
+        properties.icon_visibility = 'disabled'
 
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
-        self.assertEqual(self.properties.icon_visibility, 'authenticated')
+        self.assertEqual(properties.icon_visibility, 'authenticated')
