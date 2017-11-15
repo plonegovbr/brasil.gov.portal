@@ -15,6 +15,15 @@ Changelog
     mas após esta atualização ele não será mais utilizado nem será possível instalá-lo.
     A dependência será removida completamente em a versão 2.0.
 
+- Atualizado brasil.gov.tiles à versão 1.5.1.
+  [hvelarde]
+
+- Atualizado brasil.gov.temas à versão 1.2.4.
+  [hvelarde]
+
+- Atualizado brasil.gov.agenda à versão 1.1.2.
+  [hvelarde]
+
 - Adiciona suporte a âncoras de links internos: antes não era possível adicionar um link do tipo interno numa página que referenciava uma âncora adicionada em outro documento. Alterando as regras do TinyMCE isso agora é possível. Para entender melhor essa funcionalidade, basta rodar o test_tinymce_ancora.robot localmente.
   [idgserpro]
 
@@ -48,6 +57,16 @@ Changelog
 
 - Adiciona Products.RedirectionTool ao IDG;
   habilita gerenciamento dos alias da redirection tool (plone.app.redirector).
+  [hvelarde]
+
+- Atualizado plone.app.contenttypes à versão 1.1.5.
+  [hvelarde]
+
+- Atualizado Products.PloneFormGen à versão 1.7.23.
+  [hvelarde]
+
+- Atualizado sc.social.like à versão 2.13b2;
+  consulte a documentação do release para mais informação sobre as novas funcionalidades.
   [hvelarde]
 
 
