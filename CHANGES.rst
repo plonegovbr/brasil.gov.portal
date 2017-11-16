@@ -692,7 +692,6 @@ Changelog
 .. _`#157`: https://github.com/plonegovbr/brasil.gov.portal/issues/157
 .. _`#159`: https://github.com/plonegovbr/brasil.gov.portal/issues/159
 .. _`#161`: https://github.com/plonegovbr/brasil.gov.portal/issues/161
-.. _`#167`: https://github.com/plonegovbr/brasil.gov.portal/issues/167
 .. _`#173`: https://github.com/plonegovbr/brasil.gov.portal/issues/173
 .. _`#175`: https://github.com/plonegovbr/brasil.gov.portal/issues/175
 .. _`#182`: https://github.com/plonegovbr/brasil.gov.portal/issues/182
