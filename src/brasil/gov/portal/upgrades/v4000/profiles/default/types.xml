@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<object meta_type="Plone Types Tool" name="portal_types" purge="False">
- <object name="collective.nitf.content" meta_type="Dexterity FTI"/>
- <object meta_type="Dexterity FTI" name="ExternalContent" />
-</object>
