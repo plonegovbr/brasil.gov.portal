@@ -73,7 +73,6 @@ DEPS = [
     'collective.upload',
     'collective.z3cform.datagridfield',
     'collective.z3cform.datetimewidget',
-    'collective.z3cform.widgets',  # TODO: remove on release 2.0
     'ftw.upgrade',
     'plone.app.blocks',
     'plone.app.collection',
@@ -136,12 +135,6 @@ HIDDEN_PROFILES = [
     'collective.testcaselayer:testing',
     'collective.upload:default',
     'collective.z3cform.datagridfield:default',
-    # TODO: remove collective.z3cform.widgets on release 2.0
-    'collective.z3cform.widgets:1_to_2',
-    'collective.z3cform.widgets:default',
-    'collective.z3cform.widgets:test',
-    'collective.z3cform.widgets:uninstall',
-    'collective.z3cform.widgets:upgrade_1_to_2',
     'ftw.upgrade:default',
     'plone.app.blocks:default',
     'plone.app.caching:default',
