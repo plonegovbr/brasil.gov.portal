@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+1.6rc1 (unreleased)
+^^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.5 (2017-11-20)
 ^^^^^^^^^^^^^^^^
 
