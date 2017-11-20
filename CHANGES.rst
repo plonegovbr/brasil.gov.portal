@@ -499,6 +499,8 @@ Changelog
   [rodfersou]
 * Adiciona o campo Direitos no upload múltiplo de imagens. (closes `#128`_).
   [rodfersou]
+- Removidos upgrade steps anteriores a v10803.
+  [hvelarde]
 
 
 1.0.1 (2013-12-12)
