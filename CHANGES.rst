@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.5 (unreleased)
+1.5 (2017-11-20)
 ^^^^^^^^^^^^^^^^
 
 - Atualizado brasil.gov.barra à versão 1.2.2.
