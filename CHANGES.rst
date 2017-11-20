@@ -341,7 +341,8 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Removidos upgrade steps anteriores a v10803.
+  [hvelarde]
 
 
 Previous entries can be found in the HISTORY.rst file.

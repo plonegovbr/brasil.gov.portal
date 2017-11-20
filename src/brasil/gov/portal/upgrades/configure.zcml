@@ -1,18 +1,3 @@
 <configure xmlns="http://namespaces.zope.org/zope">
-
-  <include package=".v1000" />
-  <include package=".v2000" />
-  <include package=".v3000" />
-  <include package=".v4000" />
-  <include package=".v5000" />
-  <include package=".v10300" />
-  <include package=".v10400" />
-  <include package=".v10500" />
-  <include package=".v10600" />
-  <include package=".v10700" />
-  <include package=".v10800" />
-  <include package=".v10801" />
-  <include package=".v10802" />
-  <include package=".v10803" />
-
+  <!--include package=".v1001" /-->
 </configure>

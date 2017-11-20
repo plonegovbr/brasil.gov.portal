@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.testing import INTEGRATION_TESTING
-from plone import api
 
 import unittest
 
@@ -30,127 +29,16 @@ class UpgradeBaseTestCase(unittest.TestCase):
         self.setup.manage_doUpgrades(request=request)
 
 
-class To10803TestCase(UpgradeBaseTestCase):
+class To1001TestCase(UpgradeBaseTestCase):
 
-    from_ = '10802'
-    to_ = '10803'
+    from_ = '10803'
+    to_ = '1001'
 
     def test_profile_version(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
         self.assertEqual(version, self.from_)
 
+    @unittest.expectedFailure
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 5)
-
-    def test_install_redirection_tool(self):
-        title = u'Install Products.RedirectionTool'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        # simulate (partially) state on previous version
-        addon = 'RedirectionTool'
-        qi = api.portal.get_tool('portal_quickinstaller')
-        with api.env.adopt_roles(['Manager']):
-            qi.uninstallProducts([addon])
-        self.assertFalse(qi.isProductInstalled(addon))
-
-        # execute upgrade step and verify changes were applied
-        self._do_upgrade(step)
-        self.assertTrue(qi.isProductInstalled(addon))
-
-    def test_install_restapi(self):
-        title = u'Install plone.restapi'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        # simulate state on previous version
-        addon = 'plone.restapi'
-        qi = api.portal.get_tool('portal_quickinstaller')
-        with api.env.adopt_roles(['Manager']):
-            qi.uninstallProducts([addon])
-        self.assertFalse(qi.isProductInstalled(addon))
-
-        # execute upgrade step and verify changes were applied
-        self._do_upgrade(step)
-        self.assertTrue(qi.isProductInstalled(addon))
-
-    def test_uninstall_widgets(self):
-        title = u'Uninstall collective.z3cform.widgets'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        # simulate (partially) state on previous version
-        addon = 'collective.z3cform.widgets'
-        qi = api.portal.get_tool('portal_quickinstaller')
-        with api.env.adopt_roles(['Manager']):
-            qi.installProducts([addon])
-        self.assertTrue(qi.isProductInstalled(addon))
-
-        # execute upgrade step and verify changes were applied
-        self._do_upgrade(step)
-        from collective.z3cform.widgets.interfaces import ILayer
-        from plone.browserlayer.utils import registered_layers
-        self.assertFalse(qi.isProductInstalled(addon))
-        self.assertFalse(qi.isProductInstallable(addon))
-        self.assertNotIn(ILayer, registered_layers())
-
-    def test_icon_visibility(self):
-        title = u'Atualiza portal para versão 10803.'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        # simulate state on previous version
-        properties = api.portal.get_tool('portal_properties').site_properties
-        properties.icon_visibility = 'disabled'
-
-        # execute upgrade step and verify changes were applied
-        self._do_upgrade(step)
-        self.assertEqual(properties.icon_visibility, 'authenticated')
-
-    def test_tinymce_ancora_links_internos(self):
-        title = u'Atualiza portal para versão 10803.'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        # Simula situação antiga:
-        # https://github.com/plonegovbr/brasil.gov.portal/blob/502b98087450cc95ddeb277e09faffc59adbba0d/src/brasil/gov/portal/profiles/default/tinymce.xml#L23
-        before_10803_anchor_selector = u''
-        before_10803_containsanchors = [
-            u'collective.nitf.content',
-            u'Document',
-            u'Event',
-        ]
-
-        portal_tinymce = api.portal.get_tool(name='portal_tinymce')
-        portal_tinymce.containsanchors = u'\n'.join(before_10803_containsanchors)
-        portal_tinymce.anchor_selector = before_10803_anchor_selector
-        # Fim simulação antiga
-
-        # execute upgrade step and verify changes were applied
-        self._do_upgrade(step)
-
-        is_10803_containsanchors = [
-            u'ATRelativePathCriterion',
-            u'Document',
-            u'Document|text',
-            u'Event',
-            u'Event|text',
-            u'collective.nitf.content',
-            u'collective.nitf.content|text',
-        ]
-        is_10803_anchor_selector = [
-            u'h2',
-            u'h3',
-            u'a[name]',
-        ]
-
-        self.assertEqual(
-            portal_tinymce.containsanchors.split(),
-            is_10803_containsanchors,
-        )
-
-        self.assertEqual(
-            portal_tinymce.anchor_selector.split(','),
-            is_10803_anchor_selector,
-        )
+        self.assertEqual(steps, 0)
