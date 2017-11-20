@@ -32,4 +32,4 @@ class OverviewControlPanelTest(unittest.TestCase):
         )
         view = view.__of__(self.portal)
         content = view()
-        self.assertIn(u'Portal Padrão 1.', content)
+        self.assertIn(u'Portal Padrão 2.', content)
