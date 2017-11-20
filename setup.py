@@ -65,7 +65,6 @@ setup(
         'collective.nitf >= 2.1b2',
         'collective.polls',
         'collective.upload',
-        'collective.z3cform.widgets',  # TODO: remove on release 2.0
         'five.grok',
         'five.pt',
         'lxml',
