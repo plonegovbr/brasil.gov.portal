@@ -1,13 +1,24 @@
 # -*- coding: utf-8 -*-
+"""Overrides Products/CMFPlone/browser/admin.py
+
+XXX: we need to think how to reduce the pain of keeping this in sync.
+
+isort:skip_file
+"""
+from plone.protect.interfaces import IDisableCSRFProtection
+from zope.interface import alsoProvides
+
 from AccessControl import getSecurityManager
 from AccessControl.Permissions import view as View
+
 from Products.CMFCore.permissions import ManagePortal
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.browser.admin import AddPloneSite as AddPloneSiteView
-from Products.CMFPlone.browser.admin import Overview as OverviewView
 from Products.CMFPlone.factory import _DEFAULT_PROFILE
 from Products.CMFPlone.factory import addPloneSite
 from Products.CMFPlone.interfaces import IPloneSiteRoot
+
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.browser.admin import AddPloneSite as AddPloneSiteView
+from Products.CMFPlone.browser.admin import Overview as OverviewView
 
 
 class Overview(OverviewView):
@@ -55,7 +66,6 @@ class AddPloneSite(AddPloneSiteView):
         # Criamos com conteúdo inicial
         extension_ids.insert(1, 'brasil.gov.portal:initcontent')
         # Dados do formulario
-        site_id = form.get('site_id', 'portal')
         orgao = form.get('orgao', '')
         url_orgao = form.get('url_orgao', '')
         title_1 = form.get('title_1', '')
@@ -64,6 +74,8 @@ class AddPloneSite(AddPloneSiteView):
         # Se o formulario tiver sido enviado, criaremos o site
         submitted = form.get('form.submitted', False)
         if submitted:
+            alsoProvides(self.request, IDisableCSRFProtection)
+            site_id = form.get('site_id', 'portal')
             # Criacao do site
             site = addPloneSite(
                 context, site_id,

@@ -4,7 +4,9 @@ Changelog
 1.6rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige proteção CSRF na adição de sites;
+  atualiza views e templates de Plone para facilitar manutenção.
+  [hvelarde]
 
 
 1.5 (2017-11-20)
