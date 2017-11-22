@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.controlpanel import socialnetworks
-from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
-from zope.interface import alsoProvides
 
 import unittest
 
@@ -14,9 +12,6 @@ class ControlPanelTest(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-        # Como nao eh um teste funcional, este objeto
-        # REQUEST precisa ser anotado com o browser layer
-        alsoProvides(self.portal.REQUEST, IBrasilGov)
         self.adapter = socialnetworks.SocialNetworksPanelAdapter(self.portal)
 
     def test_controlpanel_view(self):

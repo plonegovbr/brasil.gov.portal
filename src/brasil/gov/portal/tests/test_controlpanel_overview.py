@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
-from zope.interface import alsoProvides
 
 import unittest
 
@@ -14,9 +12,6 @@ class OverviewControlPanelTest(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
-        # Como nao eh um teste funcional, este objeto
-        # REQUEST precisa ser anotado com o browser layer
-        alsoProvides(self.request, IBrasilGov)
 
     def test_overview_controlpanel_view(self):
         """Validamos se o control panel esta acessivel"""

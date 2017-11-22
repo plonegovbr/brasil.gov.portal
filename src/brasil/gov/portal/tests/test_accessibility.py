@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.browser.viewlets.servicos import ServicosViewlet
 from brasil.gov.portal.controlpanel.site import SiteControlPanelAdapter
-from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.layout.viewlets.common import SiteActionsViewlet
@@ -12,7 +11,6 @@ from plone.app.theming.utils import getTheme
 from plone.testing.z2 import Browser
 from Products.Five.browser import BrowserView as View
 from zope.component import queryMultiAdapter
-from zope.interface import alsoProvides
 from zope.viewlet.interfaces import IViewletManager
 
 import transaction
@@ -26,9 +24,6 @@ class AccessibilityTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        # Como nao eh um teste funcional, este objeto
-        # REQUEST precisa ser anotado com o browser layer
-        alsoProvides(self.portal.REQUEST, IBrasilGov)
         self.request = self.layer['request']
         self.adapter = SiteControlPanelAdapter(self.portal)
         self.browser = Browser(self.layer['app'])

@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.controlpanel.site import SiteControlPanelAdapter
-from brasil.gov.portal.interfaces import IBrasilGov
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from zope.component import getMultiAdapter
-from zope.interface import alsoProvides
 
 import unittest
 
@@ -21,9 +19,6 @@ class SiteControlPanelTest(unittest.TestCase):
         self.portal.invokeFactory('Document', 'my-document')
         self.doc = self.portal['my-document']
         setRoles(self.portal, TEST_USER_ID, ['Member'])
-        # Como nao eh um teste funcional, este objeto
-        # REQUEST precisa ser anotado com o browser layer
-        alsoProvides(self.portal.REQUEST, IBrasilGov)
         self.request = self.layer['request']
         self.adapter = SiteControlPanelAdapter(self.portal)
 
