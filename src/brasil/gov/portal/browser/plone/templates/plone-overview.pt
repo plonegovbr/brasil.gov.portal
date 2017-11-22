@@ -13,7 +13,8 @@
   <title i18n:translate="">e-Government Digital Identity -- Plone</title>
 
   <link rel="stylesheet" type="text/css"
-        href="++resource++plone-admin-ui.css" />
+        href="/++resource++plone-admin-ui.css"
+        tal:attributes="href string:${context/absolute_url}/++resource++plone-admin-ui.css" />
 
 </head>
 
@@ -22,22 +23,23 @@
                   portal_padrao string:'e-Government Digital Identity Plone Portal'
                   plone_community string:'Plone Community'">
 <div id="box">
-    <img src="++resource++plonegovbr.png" width="164" height="70"
+    <img src="/++resource++plonegovbr.png" width="164" height="70"
+         tal:attributes="src string:${context/absolute_url}/++resource++plonegovbr.png"
          alt="Iniciativa PloneGov-Br"/>
     <div id="text">
         <h1 i18n:translate="">
             e-Government Digital Identity Plone Portal
         </h1>
-
-        <tal:block tal:condition="sites">
-        <h2 i18n:translate="">List of portals created</h2>
-        <ul i18n:domain="plone">
-          <li tal:repeat="site sites">
-              <span class="prominent">
-                   <img tal:attributes="src string:${site/absolute_url}/logoIcon.png" height="16" width="16" />
-                  <a href="#"
-                     tal:attributes="href site/absolute_url;
-                                     title site/Title;">
+            <tal:block tal:condition="sites">
+              <h2 i18n:translate="">List of portals created</h2>
+                <ul i18n:domain="plone">
+                    <li tal:repeat="site sites">
+                        <span class="prominent">
+                            <img tal:attributes="src string:${site/absolute_url}/logoIcon.png"
+                                 height="16" width="16"/>
+                            <a href="#"
+                               tal:attributes="href site/absolute_url;
+                               title site/Title;">
                      <span
                      tal:content="site/Title">
                       Site title
@@ -49,27 +51,26 @@
                   </a>
                   <span class="discreet"
                         tal:content="string:(${site/getId})"/>
-              </span>
-              <div class="upgrade-warning"
-                   tal:condition="python:view.outdated(site)">
-                  <span i18n:translate="">
-                      This site configuration is outdated and
-                      needs to be upgraded:
-                  </span>
-                   <form class="inline-form" action=""
-                         method="get"
-                         tal:attributes="action python:view.upgrade_url(site)">
-                   <input tal:condition="not:view/can_manage"
-                          type="hidden" name="came_from"
-                          tal:attributes="value python:view.upgrade_url(site, can_manage=True)"/>
-                   <input type="submit"
-                          value="Upgrade&hellip;"
-                          i18n:attributes="value label_upgrade_hellip" />
-                   </form>
-
-              </div>
-          </li>
-        </ul>
+                        </span>
+                        <div class="upgrade-warning"
+                             tal:condition="python:view.outdated(site)">
+                            <span i18n:translate="">
+                            This site configuration is outdated and needs to be
+                            upgraded:</span>
+                            <form action=""
+                                  style="display: inline;"
+                                  method="get"
+                                  tal:attributes="action python:view.upgrade_url(site)">
+                            <input tal:condition="not:view/can_manage"
+                                   type="hidden" name="came_from"
+                                   tal:attributes="value python:view.upgrade_url(site, can_manage=True)"/>
+                            <input type="submit"
+                                   value="Upgrade&hellip;"
+                                   i18n:attributes="value label_upgrade_hellip" />
+                            </form>
+                            </div>
+                    </li>
+            </ul>
         </tal:block>
         <h2 i18n:translate="">Create new Portal</h2>
         <ul>
@@ -92,7 +93,9 @@
                    tal:attributes="href string:${context/absolute_url}/manage_main"
                    title="Acessar a ZMI"
                    i18n:translate="">Zope Management Interface</a>
-                <span i18n:translate=""> - Low-level settings.</span>
+                <span i18n:translate="label_zmi_link_description">
+                    &#151; low-level technical configuration.
+                </span>
             </li>
         </ul>
         <h2 i18n:translate="">Help and Support</h2>
@@ -112,9 +115,9 @@
                     This solution runs on Plone CMS, learn more by visiting the website of the international community at
                 </span>
                 <a href="http://plone.org"
-                   title="Plone Community"
-                   i18n:attributes="title plone_community;"
-                   target="_new">plone.org</a>.
+                   title="Plone Community Home"
+                   target="_new"
+                   i18n:attributes="title label_plone_org_title;">plone.org</a>.
             </li>
         </ul>
     </div>

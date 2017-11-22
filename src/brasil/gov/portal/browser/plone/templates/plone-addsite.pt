@@ -13,7 +13,8 @@
   <title i18n:translate="">Create a Plone site</title>
 
   <link rel="stylesheet" type="text/css"
-        href="++resource++plone-admin-ui.css" />
+        tal:attributes="href string:${context/absolute_url}/++resource++plone-admin-ui.css"
+        href="/++resource++plone-admin-ui.css" />
 
   <script type="text/javascript">
     function siteid_focus() {
@@ -32,7 +33,8 @@
 </head>
 <body>
 
-  <img src="++resource++plonegovbr.png" width="164" height="70" alt="Iniciativa PloneGov-Br"/>
+  <img src="/++resource++plonegovbr.png" width="164" height="70" alt="Iniciativa PloneGov-Br"
+    tal:attributes="src string:${context/absolute_url}/++resource++plonegovbr.png" />
 
   <h1 i18n:translate="">Create a new site</h1>
 
@@ -153,11 +155,13 @@
       <tal:extensionprofiles condition="extension_profiles">
         <fieldset id="add-on-list">
           <legend i18n:translate="">
-             Add-ons
+            Add-ons
           </legend>
 
           <div class="formHelp" i18n:translate="">
-              Select add-ons that will be available to the site after its installation.
+              Select any add-ons you want to activate immediately. You can
+              also activate add-ons after the site has been created using the
+              Add-ons control panel.
           </div>
 
           <dl id="extension_ids">
