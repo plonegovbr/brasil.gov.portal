@@ -63,8 +63,8 @@ class AddPloneSite(AddPloneSiteView):
         form = self.request.form
         extension_ids = form.get('extension_ids', [])
         extension_ids.insert(0, 'brasil.gov.portal:default')
-        # Criamos com conteúdo inicial
-        extension_ids.insert(1, 'brasil.gov.portal:initcontent')
+        # FIXME: Criamos com conteúdo inicial
+        # extension_ids.insert(1, 'brasil.gov.portal:initcontent')
         # Dados do formulario
         orgao = form.get('orgao', '')
         url_orgao = form.get('url_orgao', '')
