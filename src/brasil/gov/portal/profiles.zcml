@@ -11,23 +11,8 @@
       directory="profiles/default"
       description="Portal Padrão de sites para o Governo Federal"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler="brasil.gov.portal.setuphandlers.run_after"
       />
-
-  <gs:registerProfile
-      name="initcontent"
-      title=".gov.br: Portal Padrão - Conteúdo base"
-      directory="profiles/initcontent"
-      description="Conteúdo de exemplo para sites do Governo Federal"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-
-  <gs:importStep
-      name="base-content"
-      handler="brasil.gov.portal.setuphandlers.importContent"
-      title="Conteúdo inicial"
-      description="Instala o conteúdo inicial do Portal Padrão.">
-   <depends name="typeinfo"/>
-  </gs:importStep>
 
   <!-- Upgrades -->
   <include package=".upgrades" />

@@ -499,6 +499,15 @@ Changelog
   [rodfersou]
 * Adiciona o campo Direitos no upload múltiplo de imagens. (closes `#128`_).
   [rodfersou]
+- Remove dependência no plone.app.transmogrifier.
+  [hvelarde]
+
+- Remove criação de estrutura e conteúdo iniciais.
+  [hvelarde]
+
+- Remove dependência no collective.z3cform.widgets.
+  [hvelarde]
+
 - Removidos upgrade steps anteriores a v10803.
   [hvelarde]
 

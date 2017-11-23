@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from collective.transmogrifier.transmogrifier import configuration_registry
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
@@ -48,10 +47,6 @@ class Fixture(PloneSandboxLayer):
         self.applyProfile(portal, 'brasil.gov.portal:default')
         portal.portal_workflow.setDefaultChain('simple_publication_workflow')
 
-    def tearDown(self):
-        super(Fixture, self).tearDown()
-        configuration_registry.clear()
-
     def tearDownZope(self, app):
         # Uninstall products installed above
         # https://github.com/plone/plone.app.event/issues/81#issuecomment-23930996
@@ -73,7 +68,6 @@ class InitContentFixture(Fixture):
 
     def setUpPloneSite(self, portal):
         super(InitContentFixture, self).setUpPloneSite(portal)
-        self.applyProfile(portal, 'brasil.gov.portal:initcontent')
         portal.title = 'Portal Brasil'
         portal.description = u'Secretaria de Comunicação Social'
         wf = portal.portal_workflow
@@ -94,7 +88,6 @@ class AcceptanceFixture(Fixture):
 
     def setUpPloneSite(self, portal):
         super(AcceptanceFixture, self).setUpPloneSite(portal)
-        self.applyProfile(portal, 'brasil.gov.portal:initcontent')
         portal.title = 'Portal Brasil'
         portal.description = u'Secretaria de Comunicação Social'
 
