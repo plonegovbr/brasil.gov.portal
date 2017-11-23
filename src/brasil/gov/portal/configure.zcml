@@ -24,23 +24,11 @@
   <include package=".content" />
   <include package=".controlpanel" />
 
-  <include package=".transmogrifier" />
-
   <!-- Registra pasta de elementos estaticos -->
   <browser:resourceDirectory
     name="brasil.gov.portal"
     directory="static"
     />
-
-  <!-- Oculta products -->
-  <utility
-        factory=".config.HiddenProducts"
-        name="brasil.gov.portal" />
-
-  <!-- Oculta profiles -->
-  <utility
-        factory=".config.HiddenProfiles"
-        name="brasil.gov.portal" />
 
   <!-- Inicializamos a magia do Grok -->
   <include package="five.grok" />

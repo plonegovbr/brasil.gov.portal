@@ -341,6 +341,15 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove dependência no plone.app.transmogrifier.
+  [hvelarde]
+
+- Remove criação de estrutura e conteúdo iniciais.
+  [hvelarde]
+
+- Remove dependência no collective.z3cform.widgets.
+  [hvelarde]
+
 - Removidos upgrade steps anteriores a v10803.
   [hvelarde]
 
