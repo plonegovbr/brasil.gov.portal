@@ -17,6 +17,7 @@ Navegacao no site
 	Capturar tela  navegacao-capa.png
 	Pagina deve conter  Secretaria de
 	Pagina deve conter  Comunica
-	Pagina deve conter  Presid
-	Clicar link  Mapa do Site
-	Pagina deve conter  visualizar sua descrição.
+    # FIXME
+	# Pagina deve conter  Presid
+	# Clicar link  Mapa do Site
+	# Pagina deve conter  visualizar sua descrição.
