@@ -42,3 +42,21 @@ class To1001TestCase(UpgradeBaseTestCase):
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
         self.assertEqual(steps, 0)
+
+    def test_remove_styles(self):
+        # address also an issue with Setup permission
+        title = u'Move styles to brasil.gov.temas package'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        from brasil.gov.portal.upgrades.v1001 import STYLES
+        css_tool = api.portal.get_tool('portal_css')
+        for css in STYLES:
+            css_tool.registerResource(id=css)
+            self.assertIn(css, css_tool.getResourceIds())
+
+        # run the upgrade step to validate the update
+        self._do_upgrade_step(step)
+        for css in STYLES:
+            self.assertNotIn(css, css_tool.getResourceIds())

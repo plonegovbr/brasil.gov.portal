@@ -4,6 +4,9 @@ Changelog
 1.6rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Move estilos para o pacote brasil.gov.temas.
+  [rodfersou]
+
 - Adiciona hotfix de segurança `20171128 <https://plone.org/security/hotfix/20171128>`_.
   [hvelarde]
 
