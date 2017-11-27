@@ -7,6 +7,12 @@
       destination="1001"
       profile="brasil.gov.portal:default">
 
+    <genericsetup:upgradeStep
+        title="Move styles to brasil.gov.temas package"
+        description="Move styles to brasil.gov.temas package."
+        handler=".remove_styles"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>

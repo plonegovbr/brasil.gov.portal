@@ -13,6 +13,9 @@ Changelog
 - Atualizado brasil.gov.temas à versão 1.2.5.
   [hvelarde]
 
+- Move estilos para o pacote brasil.gov.temas.
+  [rodfersou]
+
 - Adiciona hotfix de segurança `20171128 <https://plone.org/security/hotfix/20171128>`_.
   [hvelarde]
 
