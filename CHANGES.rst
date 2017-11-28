@@ -7,6 +7,10 @@ Changelog
 - Adiciona hotfix de segurança `20171128 <https://plone.org/security/hotfix/20171128>`_.
   [hvelarde]
 
+- Atualizado collective.cover à versão 1.6b5;
+  corrige o crecimento exponencial dos objetos quando se usa versionamento.
+  [hvelarde]
+
 - Corrige proteção CSRF na adição de sites;
   atualiza views e templates de Plone para facilitar manutenção.
   [hvelarde]
