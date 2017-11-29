@@ -200,12 +200,12 @@ class SiteActionsViewletTestCase(AccessibilityTestCase):
         self.browser.open(url_portal)
         self.assertIn(
             '<a href="{0}/acessibilidade" accesskey="5">'.format(url_portal),
-            self.browser.contents
+            self.browser.contents,
         )
         self.assertIn('<a href="#" accesskey="6">', self.browser.contents)
         self.assertIn(
             '<a href="{0}/mapadosite" accesskey="7">'.format(url_portal),
-            self.browser.contents
+            self.browser.contents,
         )
 
 
