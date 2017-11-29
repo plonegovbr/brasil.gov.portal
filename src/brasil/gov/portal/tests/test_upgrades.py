@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
+from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
+from zope.component import queryUtility
 
 import unittest
 
@@ -39,10 +41,9 @@ class To10804TestCase(UpgradeBaseTestCase):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
         self.assertEqual(version, self.from_)
 
-    @unittest.expectedFailure
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 0)
+        self.assertEqual(steps, 2)
 
     def test_remove_styles(self):
         # address also an issue with Setup permission
@@ -61,3 +62,21 @@ class To10804TestCase(UpgradeBaseTestCase):
         self._do_upgrade(step)
         for css in STYLES:
             self.assertNotIn(css, css_tool.getResourceIds())
+
+    def test_show_global_sections(self):
+        # address also an issue with Setup permission
+        title = u'Show back global_sections viewlet'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        storage = queryUtility(IViewletSettingsStorage)
+        manager = u'plone.portalheader'
+        skinname = u'Plone Default'
+        hidden = (u'plone.global_sections',)
+        storage.setHidden(manager, skinname, hidden)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        hidden = storage.getHidden(manager, skinname)
+        self.assertEqual(hidden, ())

@@ -3,9 +3,6 @@
   <order manager="plone.portaltop" skinname="*">
     <viewlet name="brasil.gov.portal.acessibilidade" after="brasil.gov.barra"/>
   </order>
-  <hidden manager="plone.portalheader" skinname="*">
-    <viewlet name="plone.global_sections" />
-  </hidden>
   <order manager="plone.portalheader" skinname="*">
     <viewlet name="brasil.gov.portal.servicos" after="plone.global_sections"/>
     <viewlet name="brasil.gov.portal.redessociais" after="brasil.gov.portal.servicos"/>
