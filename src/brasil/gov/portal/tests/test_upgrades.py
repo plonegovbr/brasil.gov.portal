@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from plone import api
 
 import unittest
 
@@ -29,10 +30,10 @@ class UpgradeBaseTestCase(unittest.TestCase):
         self.setup.manage_doUpgrades(request=request)
 
 
-class To1001TestCase(UpgradeBaseTestCase):
+class To10804TestCase(UpgradeBaseTestCase):
 
     from_ = '10803'
-    to_ = '1001'
+    to_ = '10804'
 
     def test_profile_version(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
@@ -50,13 +51,13 @@ class To1001TestCase(UpgradeBaseTestCase):
         self.assertIsNotNone(step)
 
         # simulate state on previous version
-        from brasil.gov.portal.upgrades.v1001 import STYLES
+        from brasil.gov.portal.upgrades.v10804 import STYLES
         css_tool = api.portal.get_tool('portal_css')
         for css in STYLES:
             css_tool.registerResource(id=css)
             self.assertIn(css, css_tool.getResourceIds())
 
         # run the upgrade step to validate the update
-        self._do_upgrade_step(step)
+        self._do_upgrade(step)
         for css in STYLES:
             self.assertNotIn(css, css_tool.getResourceIds())
