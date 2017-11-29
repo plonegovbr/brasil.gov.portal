@@ -13,6 +13,12 @@
         handler=".remove_styles"
         />
 
+    <genericsetup:upgradeStep
+        title="Show back global_sections viewlet"
+        description="Show back global_sections viewlet."
+        handler=".show_global_sections"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>
