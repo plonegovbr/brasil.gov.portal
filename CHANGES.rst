@@ -1,8 +1,8 @@
 Changelog
 ---------
 
-1.6rc1 (unreleased)
-^^^^^^^^^^^^^^^^^^^
+1.5.1 (2017-11-30)
+^^^^^^^^^^^^^^^^^^
 
 - Adiciona hotfix de segurança `20171128 <https://plone.org/security/hotfix/20171128>`_.
   [hvelarde]
