@@ -10,11 +10,14 @@ Changelog
 1.5.1 (2017-11-30)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.temas à versão 1.2.5.
+  [hvelarde]
+
 - Adiciona hotfix de segurança `20171128 <https://plone.org/security/hotfix/20171128>`_.
   [hvelarde]
 
 - Atualizado collective.cover à versão 1.6b5;
-  corrige o crecimento exponencial dos objetos quando se usa versionamento.
+  corrige o crescimento exponencial dos objetos quando se usa versionamento.
   [hvelarde]
 
 - Corrige proteção CSRF na adição de sites;
