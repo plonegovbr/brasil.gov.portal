@@ -4,7 +4,11 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove customizações do Products.Doormat.
+  [hvelarde]
+
+- Atualizado Products.Doormat à versão 1.2 (fecha #295 <https://github.com/plonegovbr/brasil.gov.portal/issues/295>`_).
+  [hvelarde]
 
 
 1.5.1 (2017-11-30)

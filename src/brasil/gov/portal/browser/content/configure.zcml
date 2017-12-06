@@ -31,25 +31,6 @@
 
   </browser:menuItems>
 
-  <!--Products.Doormat - FIXME: BBB: Veja em doormat.py quando esse override poderá ser removido.-->
-  <browser:page
-      for="Products.Doormat.content.interfaces.IDoormat"
-      layer="brasil.gov.portal.interfaces.IBrasilGov"
-      name="doormat-view"
-      class=".doormat.DoormatView"
-      template="templates/doormat_view.pt"
-      permission="zope2.View"
-      />
-  <browser:page
-      for="Products.Doormat.content.interfaces.IDoormat"
-      layer="brasil.gov.portal.interfaces.IBrasilGov"
-      name="doormat-view-bare"
-      class=".doormat.DoormatView"
-      template="templates/doormat_bare_view.pt"
-      permission="zope2.View"
-      />
-  <!-- Products.Doormat-->
-
   <!--NITF-->
   <browser:page
       for="collective.nitf.content.INITF"
