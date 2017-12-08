@@ -1,10 +1,26 @@
 Changelog
 ---------
 
-1.5.2 (unreleased)
+2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- O viewlet ``global_sections`` é vissível novamente.
+  [rodfersou]
+
+- Move estilos para o pacote brasil.gov.temas.
+  [rodfersou]
+
+- Remove dependência no plone.app.transmogrifier.
+  [hvelarde]
+
+- Remove criação de estrutura e conteúdo iniciais.
+  [hvelarde]
+
+- Remove dependência no collective.z3cform.widgets.
+  [hvelarde]
+
+- Removidos upgrade steps anteriores a v10803.
+  [hvelarde]
 
 
 1.5.1 (2017-11-30)
@@ -12,9 +28,6 @@ Changelog
 
 - Atualizado brasil.gov.temas à versão 1.2.5.
   [hvelarde]
-
-- Move estilos para o pacote brasil.gov.temas.
-  [rodfersou]
 
 - Adiciona hotfix de segurança `20171128 <https://plone.org/security/hotfix/20171128>`_.
   [hvelarde]
@@ -502,17 +515,6 @@ Changelog
   [rodfersou]
 * Adiciona o campo Direitos no upload múltiplo de imagens. (closes `#128`_).
   [rodfersou]
-- Remove dependência no plone.app.transmogrifier.
-  [hvelarde]
-
-- Remove criação de estrutura e conteúdo iniciais.
-  [hvelarde]
-
-- Remove dependência no collective.z3cform.widgets.
-  [hvelarde]
-
-- Removidos upgrade steps anteriores a v10803.
-  [hvelarde]
 
 
 1.0.1 (2013-12-12)
