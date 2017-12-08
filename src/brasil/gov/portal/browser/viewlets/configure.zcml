@@ -114,26 +114,4 @@
       permission="zope.Public"
       />
 
-  <!--Leia a template para entender a customização.-->
-  <browser:viewlet
-      for="collective.nitf.content.INITF"
-      layer="brasil.gov.portal.interfaces.IBrasilGov"
-      name="collective.nitf.image"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
-      view="collective.nitf.browser.View"
-      template="templates/collective.nitf.image.pt"
-      permission="zope2.View"
-      />
-
-  <!--Leia a template para entender a customização.-->
-  <browser:viewlet
-      for="collective.nitf.content.INITF"
-      layer="brasil.gov.portal.interfaces.IBrasilGov"
-      name="collective.nitf.slideshow"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
-      view="collective.nitf.browser.Slideshow"
-      template="templates/collective.nitf.image.pt"
-      permission="zope2.View"
-      />
-
 </configure>
