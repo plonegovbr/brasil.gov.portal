@@ -5,14 +5,8 @@
   <property name="title" i18n:translate="">News</property>
   <property name="allow_discussion">False</property>
   <property name="behaviors" purge="False">
-    <element value="plone.app.referenceablebehavior.referenceable.IReferenceable"/>
     <element value="brasil.gov.vcge.dx.behaviors.IVCGE"/>
     <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
-  <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
-  </property>
-  <property name="default_view">nitf_custom_view</property>
-  <property name="default_view_fallback">False</property>
-  <property name="view_methods" purge="false">
-    <element value="nitf_custom_view"/>
+    <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
   </property>
 </object>
