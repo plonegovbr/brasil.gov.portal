@@ -19,6 +19,12 @@
         handler=".show_global_sections"
         />
 
+    <genericsetup:upgradeStep
+        title="Remove collective.nitf customizations"
+        description="Remove customized view from types tool and set default view on objects using custom view."
+        handler=".remove_nitf_customizations"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>
