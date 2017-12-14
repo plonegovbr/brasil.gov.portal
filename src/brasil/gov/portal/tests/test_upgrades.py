@@ -43,7 +43,7 @@ class To10804TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 2)
+        self.assertEqual(steps, 3)
 
     def test_remove_styles(self):
         # address also an issue with Setup permission
@@ -80,3 +80,35 @@ class To10804TestCase(UpgradeBaseTestCase):
         self._do_upgrade(step)
         hidden = storage.getHidden(manager, skinname)
         self.assertEqual(hidden, ())
+
+    def test_remove_nitf_customizations(self):
+        # check if the upgrade step is registered
+        title = u'Remove collective.nitf customizations'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        custom_view = 'nitf_custom_view'
+        types_tool = api.portal.get_tool('portal_types')
+        nitf = types_tool['collective.nitf.content']
+
+        # simulate state on previous version
+        nitf.view_methods += tuple(custom_view)
+        nitf.default_view_fallback = False
+
+        with api.env.adopt_roles(['Manager']):
+            self.n1 = api.content.create(
+                self.portal, 'collective.nitf.content', 'n1')
+            self.n2 = api.content.create(
+                self.portal, 'collective.nitf.content', 'n2')
+        self.n1.setLayout(custom_view)
+        self.n2.setLayout(custom_view)
+        self.assertEqual(self.n1.getLayout(), custom_view)
+        self.assertEqual(self.n2.getLayout(), custom_view)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        self.assertNotIn(custom_view, nitf.view_methods)
+        self.assertTrue(nitf.default_view_fallback)
+        self.assertEqual(self.n1.getLayout(), 'view')
+        self.assertEqual(self.n2.getLayout(), 'view')
