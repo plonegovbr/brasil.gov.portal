@@ -33,6 +33,18 @@
                    i18n:attributes="value label_search;" />
 
         </fieldset>
-    </form>
 
+        <div class="LSResult" id="LSResult">
+            <div class="LSShadow" id="LSShadow"></div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        function setupLiveSearch(){
+            var $form = $('#portal-searchbox form:first');
+            var $result = $form.find('div.LSResult')
+            $form.data('action', 'busca');
+            $result.data('livesearch', 'buscaativa_reply');
+        }
+        setupLiveSearch();
+    </script>
 </div>

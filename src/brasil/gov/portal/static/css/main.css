@@ -487,7 +487,6 @@ input.searchField { -moz-appearance: none; }
 
 #portal-searchbox .searchSection label { cursor: pointer; }
 
-#searchGadget,
 #header input.searchButton {
     padding: 0.3em;
     padding: 4px 15px;

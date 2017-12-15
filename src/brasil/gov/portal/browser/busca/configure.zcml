@@ -19,6 +19,14 @@
      />
 
   <browser:page
+     name="buscaativa_reply"
+     class=".busca.LiveSearch"
+     permission="zope2.View"
+     for="*"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     />
+
+  <browser:page
      name="busca_atualizada"
      class=".busca.Search"
      permission="zope2.View"

@@ -316,6 +316,9 @@ Changelog
 * Corrige ícones de redes sociais cortados (closes `#203`_).
   [winstonf88]
 
+* Corrige erro na busca ativa (closes `#237`_).
+  [winstonf88]
+
 
 1.1.3 (2015-09-30)
 ^^^^^^^^^^^^^^^^^^
