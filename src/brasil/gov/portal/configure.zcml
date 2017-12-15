@@ -4,7 +4,6 @@
     xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:zcml="http://namespaces.zope.org/zcml"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.portal">
 
   <!-- Registra pasta de traducoes -->
@@ -23,6 +22,7 @@
   <include package=".browser" />
   <include package=".content" />
   <include package=".controlpanel" />
+  <include package=".migration" zcml:condition="installed transmogrify.dexterity" />
 
   <!-- Registra pasta de elementos estaticos -->
   <browser:resourceDirectory

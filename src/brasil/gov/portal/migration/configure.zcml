@@ -1,0 +1,26 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:transmogrifier="http://namespaces.plone.org/transmogrifier">
+
+  <include package="collective.transmogrifier" file="meta.zcml" />
+  <include package="collective.transmogrifier" />
+  <include package="plone.app.transmogrifier" />
+  <include package="transmogrify.dexterity" />
+  <include package="collective.jsonmigrator" />
+
+  <genericsetup:registerProfile
+      name="migration"
+      title=".gov.br: Migration"
+      directory="profile"
+      description="Profile to import content into an existing IDG site."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <transmogrifier:registerConfig
+      name="migration"
+      title="Migration"
+      description="Pipeline to import content into an existing IDG site."
+      configuration="migration.cfg"
+      />
+
+</configure>

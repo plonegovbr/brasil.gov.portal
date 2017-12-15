@@ -115,6 +115,12 @@ setup(
         'plone4.csrffixes',
     ],
     extras_require={
+        'migration': [
+            'collective.jsonmigrator',
+            'collective.transmogrifier',
+            'plone.app.transmogrifier',
+            'transmogrify.dexterity',
+        ],
         'test': [
             'brasil.gov.agenda',
             'collective.cover',
