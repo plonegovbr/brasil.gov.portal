@@ -5,6 +5,7 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 - Remove customizações dos templates do collective.nitf.
+- Implementa importação de conteúdo usando formato JSON e collective.transmogrifier.
   [hvelarde]
 
 - O viewlet ``global_sections`` é vissível novamente.
@@ -12,9 +13,6 @@ Changelog
 
 - Move estilos para o pacote brasil.gov.temas.
   [rodfersou]
-
-- Remove dependência no plone.app.transmogrifier.
-  [hvelarde]
 
 - Remove criação de estrutura e conteúdo iniciais.
   [hvelarde]
