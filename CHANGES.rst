@@ -4,8 +4,10 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Remove customizações dos templates do collective.nitf.
 - Implementa importação de conteúdo usando formato JSON e collective.transmogrifier.
+  [hvelarde]
+
+- Remove customizações dos templates do collective.nitf.
   [hvelarde]
 
 - O viewlet ``global_sections`` é vissível novamente.
