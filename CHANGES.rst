@@ -4,8 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
-
+- Melhora a carga da seção "Em destaque" (fecha `#403 <https://github.com/plonegovbr/brasil.gov.portal/issues/403>`_).
+  Torna a utilizar a query string `ajax_load` para carregar os dados.
+  [brunobbbs]
 
 1.5.1 (2017-11-30)
 ^^^^^^^^^^^^^^^^^^
