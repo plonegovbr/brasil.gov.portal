@@ -15,9 +15,10 @@ matrix:
 before_install:
 # FIXME: I have no idea how and why six==1.11.0 is being installed
 - pip uninstall -y six
+- pip install -U setuptools==26.1.1
 - cp travis.cfg buildout.cfg
 install:
-- python bootstrap.py
+- python bootstrap.py --setuptools-version=26.1.1 --buildout-version=2.9.5
 - bin/buildout annotate
 - bin/buildout
 before_script:
