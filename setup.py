@@ -105,6 +105,7 @@ setup(
         'sc.photogallery',
         'sc.social.like',
         'setuptools',
+        'webcouturier.dropdownmenu',
         'z3c.jbot',
         'z3c.unconfigure',
         'zope.component',

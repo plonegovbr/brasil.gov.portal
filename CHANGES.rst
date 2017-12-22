@@ -4,6 +4,10 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona webcouturier.dropdownmenu ao IDG;
+  habilita menus dropdown para navegação global.
+  [hvelarde]
+
 - Implementa importação de conteúdo usando formato JSON e collective.transmogrifier.
   [hvelarde]
 

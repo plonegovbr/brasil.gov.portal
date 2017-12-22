@@ -28,5 +28,6 @@
   <include package="sc.embedder" />
   <include package="sc.photogallery" />
   <include package="sc.social.like" />
+  <include package="webcouturier.dropdownmenu" />
 
 </configure>
