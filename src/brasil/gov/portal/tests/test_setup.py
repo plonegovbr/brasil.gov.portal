@@ -29,6 +29,7 @@ DEPENDENCIES = [
     'Products.RedirectionTool',
     'sc.embedder',
     'sc.social.like',
+    'webcouturier.dropdownmenu',
 ]
 
 
