@@ -10,6 +10,9 @@ Changelog
 2.0a1 (2017-12-27)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.vcge à versão 2.0.2 (ainda não é possível a migração de 1.x).
+  [hvelarde]
+
 - Adiciona webcouturier.dropdownmenu ao IDG;
   habilita menus dropdown para navegação global.
   [hvelarde]
