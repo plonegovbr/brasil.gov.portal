@@ -21,9 +21,6 @@
   <!-- Criacao de site -->
   <include package='.plone' />
 
-  <!-- Contraste -->
-  <include package='.contraste' />
-
   <!-- Portlets -->
   <include package='.portlets' />
 

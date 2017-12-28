@@ -11,6 +11,7 @@ Changelog
   [hvelarde]
 
 - Adiciona parche para o widget de campos ordenados não engolir opções com mesmo nome (refs. `z3c.form#76 <https://github.com/zopefoundation/z3c.form/pull/76>`_).
+- Move scripts do contraste para o pacote brasil.gov.temas.
   [rodfersou]
 
 - Evita ``KeyError`` nos resultados da busca provocado por verbetes inexistentes.

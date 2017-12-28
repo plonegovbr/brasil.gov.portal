@@ -112,3 +112,35 @@ class To10804TestCase(UpgradeBaseTestCase):
         self.assertTrue(nitf.default_view_fallback)
         self.assertEqual(self.n1.getLayout(), 'view')
         self.assertEqual(self.n2.getLayout(), 'view')
+
+
+class To10805TestCase(UpgradeBaseTestCase):
+
+    from_ = '10804'
+    to_ = '10805'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_remove_scripts(self):
+        # address also an issue with Setup permission
+        title = u'Move contraste scripts to brasil.gov.temas package'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        from brasil.gov.portal.upgrades.v10805 import SCRIPTS
+        js_tool = api.portal.get_tool('portal_javascripts')
+        for js in SCRIPTS:
+            js_tool.registerResource(id=js)
+            self.assertIn(js, js_tool.getResourceIds())
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        for js in SCRIPTS:
+            self.assertNotIn(js, js_tool.getResourceIds())

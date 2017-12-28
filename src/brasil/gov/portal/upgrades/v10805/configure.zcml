@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeSteps
+      source="10804"
+      destination="10805"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeStep
+        title="Move contraste scripts to brasil.gov.temas package"
+        description="Move contraste scripts to brasil.gov.temas package."
+        handler=".remove_scripts"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>
