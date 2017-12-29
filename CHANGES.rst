@@ -24,7 +24,7 @@ Changelog
 - Remove customizações dos templates do collective.nitf.
   [hvelarde]
 
-- O viewlet ``global_sections`` é vissível novamente.
+- O viewlet ``global_sections`` é visível novamente.
   [rodfersou]
 
 - Move estilos para o pacote brasil.gov.temas.
