@@ -52,7 +52,7 @@ setup(
         # Com a atualização para collective.nitf >= 2.1b2, a versão compatível
         # do brasil.gov.tiles passa a ser essa.
         'brasil.gov.tiles >= 1.4b1',
-        'brasil.gov.vcge',
+        'brasil.gov.vcge [dexterity]',
         # Versão mínima requerida por brasil.gov.tiles.
         'collective.cover > 1.3b1',
         'collective.fingerpointing',
