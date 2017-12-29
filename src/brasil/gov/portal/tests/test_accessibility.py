@@ -36,7 +36,6 @@ class AccessibilityTestCase(unittest.TestCase):
 
 class PortalLogoTestCase(AccessibilityTestCase):
 
-    @unittest.expectedFailure
     def portal_logo_tema_test(self, cor):
         """Testa se o portal logo está presente em todos os temas."""
         adapter = self.adapter
