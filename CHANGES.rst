@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Widget do painel de controle engole 2 opções com mesmo nome.
+  [rodfersou]
+
 - Evita ``KeyError`` nos resultados da busca provocado por verbetes inexistentes.
   [hvelarde]
 
