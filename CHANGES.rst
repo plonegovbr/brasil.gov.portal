@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove monkey patches relacionados à atualização do plone.app.contenttypes.
+  [hvelarde]
+
 - Corrige configuração padrão do sc.social.like.
   [hvelarde]
 
