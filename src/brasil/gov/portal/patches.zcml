@@ -7,8 +7,7 @@
       description="Deal with items with same name but different values in ordered field widget."
       class="z3c.form.browser.orderedselect.OrderedSelectWidget"
       original="deselect"
-      replacement=".patches.patched_deselect"
-      handler=".patches.apply_patch"
+      replacement=".patches.deselect"
       />
 
 </configure>

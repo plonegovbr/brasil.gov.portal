@@ -7,7 +7,6 @@ from plone.event.utils import default_timezone
 from plone.outputfilters.filters import resolveuid_and_caption as base
 from Products.contentmigration.basemigrator.migrator import BaseCMFMigrator
 from Products.contentmigration.basemigrator.migrator import copyPermMap
-from z3c.form.browser.orderedselect import OrderedSelectWidget
 
 
 def outputfilters():
@@ -173,7 +172,9 @@ def reindex_object_after_workflow_migration():
     logger.info('Patched migrate_workflow to help in events migration')
 
 
-def patched_deselect(self):
+# XXXX: this patch should be removed when this is fixed:
+#       https://github.com/zopefoundation/z3c.form/pull/76
+def deselect(self):
     selecteditems = []
     notselecteditems = []
     for selecteditem in self.selectedItems:
@@ -182,12 +183,6 @@ def patched_deselect(self):
         if not item['value'] in selecteditems:
             notselecteditems.append(item)
     return notselecteditems
-
-
-def apply_patch(scope, original, replacement):
-    setattr(scope, '_{0}'.format(original), getattr(scope, original, None))
-    setattr(scope, original, replacement)
-    logger.info('Patched method "{}.{}".'.format(scope.__name__, original))
 
 
 def run():
