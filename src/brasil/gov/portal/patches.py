@@ -7,6 +7,7 @@ from plone.event.utils import default_timezone
 from plone.outputfilters.filters import resolveuid_and_caption as base
 from Products.contentmigration.basemigrator.migrator import BaseCMFMigrator
 from Products.contentmigration.basemigrator.migrator import copyPermMap
+from z3c.form.browser.orderedselect import OrderedSelectWidget
 
 
 def outputfilters():
@@ -172,8 +173,32 @@ def reindex_object_after_workflow_migration():
     logger.info('Patched migrate_workflow to help in events migration')
 
 
+def orderedselect_widget():
+    """
+    Este patch corrige a forma que são filtrados os itens no widget de seleção ordenada do Plone.
+    Basicamente este widget filtra pelo nome dos itens, quando deveria considerer o valor.
+    https://github.com/zopefoundation/z3c.form/pull/76/files
+    """
+
+    def deselect(self):
+        selecteditems = []
+        notselecteditems = []
+        for selecteditem in self.selectedItems:
+            selecteditems.append(selecteditem['value'])
+        for item in self.items:
+            if not item['value'] in selecteditems:
+                notselecteditems.append(item)
+        return notselecteditems
+
+    setattr(OrderedSelectWidget,
+            'deselect',
+            deselect)
+    logger.info('Patched ordered select widget')
+
+
 def run():
     outputfilters()
     link()
     attendees_e_timezone()
     reindex_object_after_workflow_migration()
+    orderedselect_widget()

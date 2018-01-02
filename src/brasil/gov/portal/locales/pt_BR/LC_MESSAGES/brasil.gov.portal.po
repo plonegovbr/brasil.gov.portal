@@ -360,7 +360,7 @@ msgstr "Nome do Ministério ou da Secretaria ao qual este site está subordinado
 #: brasil/gov/portal/profiles/default/types/collective.nitf.content.xml
 #: brasil/gov/portal/upgrades/v10500/profiles/default/types/collective.nitf.content.xml
 msgid "News"
-msgstr "Artigo"
+msgstr "Notícia"
 
 #: brasil/gov/portal/browser/album/templates/galeria_de_fotos.pt:49
 msgid "Next &raquo;"
