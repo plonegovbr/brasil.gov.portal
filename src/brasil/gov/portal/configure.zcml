@@ -19,6 +19,9 @@
   <!-- Profiles de Generic Setup -->
   <include file='profiles.zcml' />
 
+  <!-- Patches -->
+  <include file='patches.zcml' />
+
   <include package=".browser" />
   <include package=".content" />
   <include package=".controlpanel" />

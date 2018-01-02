@@ -173,27 +173,21 @@ def reindex_object_after_workflow_migration():
     logger.info('Patched migrate_workflow to help in events migration')
 
 
-def orderedselect_widget():
-    """
-    Este patch corrige a forma que são filtrados os itens no widget de seleção ordenada do Plone.
-    Basicamente este widget filtra pelo nome dos itens, quando deveria considerer o valor.
-    https://github.com/zopefoundation/z3c.form/pull/76/files
-    """
+def patched_deselect(self):
+    selecteditems = []
+    notselecteditems = []
+    for selecteditem in self.selectedItems:
+        selecteditems.append(selecteditem['value'])
+    for item in self.items:
+        if not item['value'] in selecteditems:
+            notselecteditems.append(item)
+    return notselecteditems
 
-    def deselect(self):
-        selecteditems = []
-        notselecteditems = []
-        for selecteditem in self.selectedItems:
-            selecteditems.append(selecteditem['value'])
-        for item in self.items:
-            if not item['value'] in selecteditems:
-                notselecteditems.append(item)
-        return notselecteditems
 
-    setattr(OrderedSelectWidget,
-            'deselect',
-            deselect)
-    logger.info('Patched ordered select widget')
+def apply_patch(scope, original, replacement):
+    setattr(scope, '_{0}'.format(original), getattr(scope, original, None))
+    setattr(scope, original, replacement)
+    logger.info('Patched method "{}.{}".'.format(scope.__name__, original))
 
 
 def run():
@@ -201,4 +195,3 @@ def run():
     link()
     attendees_e_timezone()
     reindex_object_after_workflow_migration()
-    orderedselect_widget()

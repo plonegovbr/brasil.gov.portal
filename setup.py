@@ -59,6 +59,7 @@ setup(
         'collective.jsonmigrator',
         'collective.lazysizes',
         'collective.liveblog',
+        'collective.monkeypatcher',
         # Imports como
         # "from collective.nitf.browser import NITFBylineViewlet as CollectiveNITFBylineViewlet"
         # Só a partir dessa versão.
