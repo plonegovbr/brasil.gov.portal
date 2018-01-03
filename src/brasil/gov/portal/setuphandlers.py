@@ -34,7 +34,24 @@ def remove_doormat_content(portal):
         api.content.delete(portal[doormat])
 
 
+def set_social_media_settings():
+    """Update configuration of sc.social.like package."""
+    name = 'sc.social.like.interfaces.ISocialLikeSettings.enabled_portal_types'
+    value = (
+        'Audio',
+        'collective.cover.content',
+        'collective.nitf.content',
+        'collective.polls.poll',
+        'Document',
+        'Event',
+        'Image',
+        'sc.embedder',
+    )
+    api.portal.set_registry_record(name, value)
+
+
 def run_after(context):
     portal = api.portal.get()
     set_tinymce_formats()
     remove_doormat_content(portal)
+    set_social_media_settings()

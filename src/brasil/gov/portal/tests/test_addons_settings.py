@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from collective.cover.controlpanel import ICoverSettings
 from collective.nitf.controlpanel import INITFSettings
@@ -146,17 +145,16 @@ class AddonsSettingsTestCase(unittest.TestCase):
             settings.upload_extensions, u'gif|jpeg|jpg|png|pdf|doc|txt|docx')
 
     def test_sc_social_likes_settings(self):
-        likes = self.portal['portal_properties'].sc_social_likes_properties
-        enabled_portal_types = list(likes.enabled_portal_types)
-        enabled_portal_types.sort()
-        types_expected = [
+        from sc.social.like.interfaces import ISocialLikeSettings
+        settings = self.registry.forInterface(ISocialLikeSettings)
+        types_expected = (
             'Audio',
-            'Document',
-            'Event',
-            'Image',
             'collective.cover.content',
             'collective.nitf.content',
             'collective.polls.poll',
+            'Document',
+            'Event',
+            'Image',
             'sc.embedder',
-        ]
-        self.assertListEqual(enabled_portal_types, types_expected)
+        )
+        self.assertTupleEqual(settings.enabled_portal_types, types_expected)
