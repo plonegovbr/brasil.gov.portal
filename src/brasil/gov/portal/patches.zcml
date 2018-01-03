@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
+    i18n_domain="brasil.gov.portal">
+
+  <monkey:patch
+      description="Deal with items with same name but different values in ordered field widget."
+      class="z3c.form.browser.orderedselect.OrderedSelectWidget"
+      original="deselect"
+      replacement=".patches.deselect"
+      />
+
+</configure>

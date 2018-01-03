@@ -172,6 +172,19 @@ def reindex_object_after_workflow_migration():
     logger.info('Patched migrate_workflow to help in events migration')
 
 
+# XXXX: this patch should be removed when this is fixed:
+#       https://github.com/zopefoundation/z3c.form/pull/76
+def deselect(self):
+    selecteditems = []
+    notselecteditems = []
+    for selecteditem in self.selectedItems:
+        selecteditems.append(selecteditem['value'])
+    for item in self.items:
+        if not item['value'] in selecteditems:
+            notselecteditems.append(item)
+    return notselecteditems
+
+
 def run():
     outputfilters()
     link()
