@@ -11,6 +11,7 @@
       directory="profiles/default"
       description="Portal Padrão de sites para o Governo Federal"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler="brasil.gov.portal.setuphandlers.run_after"
       />
 
   <gs:registerProfile
