@@ -17,6 +17,8 @@
       zcml:condition="have plone-4"
       package="Products.CMFCore" file="permissions.zcml" />
 
+  <include file='patches.zcml' />
+
   <!-- Profiles de Generic Setup -->
   <include file='profiles.zcml' />
 

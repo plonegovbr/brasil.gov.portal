@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
+    i18n_domain="brasil.gov.portal">
+
+  <include package="collective.monkeypatcher" />
+
+  <monkey:patch
+      description="Workaround for https://github.com/zopefoundation/z3c.form/pull/76"
+      class="z3c.form.browser.orderedselect.OrderedSelectWidget"
+      original="deselect"
+      replacement=".patches.deselect"
+      />
+
+</configure>
