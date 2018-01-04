@@ -44,6 +44,7 @@ def alias_module(name, target):
     # also make sure sys.modules is updated
     sys.modules[module_name + '.' + parts[-1]] = target
 
+
 for module in modules:
     alias_module(module, Interface)
 
