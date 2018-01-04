@@ -215,6 +215,22 @@ def remove_conteudo_doormat(context):
         api.content.delete(doormat)
 
 
+def set_social_media_settings():
+    """Update configuration of sc.social.like package."""
+    name = 'sc.social.like.interfaces.ISocialLikeSettings.enabled_portal_types'
+    value = (
+        'Audio',
+        'collective.cover.content',
+        'collective.nitf.content',
+        'collective.polls.poll',
+        'Document',
+        'Event',
+        'Image',
+        'sc.embedder',
+    )
+    api.portal.set_registry_record(name, value)
+
+
 def importContent(context):
     """Criamos o conteudo padrao para o site."""
     # Executado apenas se o estivermos no Profile correto
@@ -223,3 +239,7 @@ def importContent(context):
     site = api.portal.get()
     setupPortalContent(site)
     set_tinymce_formats()
+
+
+def run_after(context):
+    set_social_media_settings()

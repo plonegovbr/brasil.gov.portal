@@ -37,18 +37,6 @@
     </property>
     <property name="icon_visibility" type="string">authenticated</property>
   </object>
-  <object name="sc_social_likes_properties" meta_type="Plone Property Sheet">
-    <property name="enabled_portal_types" type="lines" purge="True">
-      <element value="Audio"/>
-      <element value="collective.cover.content"/>
-      <element value="collective.nitf.content"/>
-      <element value="collective.polls.poll"/>
-      <element value="Document"/>
-      <element value="Event"/>
-      <element value="Image"/>
-      <element value="sc.embedder"/>
-    </property>
-  </object>
   <object name="brasil_gov" meta_type="Plone Property Sheet">
     <property name="social_networks" type="lines">
       <element value="twitter|twitter"/>

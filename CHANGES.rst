@@ -4,7 +4,8 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige configuração padrão do sc.social.like.
+  [hvelarde]
 
 
 1.5.1 (2017-11-30)
