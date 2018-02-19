@@ -28,7 +28,7 @@ class ControlPanelTest(unittest.TestCase):
         """ Acesso a view nao pode ser feito por usuario anonimo """
         # Importamos a excecao esperada
         from AccessControl import Unauthorized
-        with api.env.adopt_roles(['Anonymous', ]):
+        with api.env.adopt_roles(['Anonymous']):
             self.assertRaises(Unauthorized, self.portal.restrictedTraverse,
                               '@@brasil.gov.portal-social')
 
@@ -50,7 +50,7 @@ class ControlPanelTest(unittest.TestCase):
         # Vamos cadastrar uma conta no Twitter
         info = socialnetworks.SocialNetworksPair
         twitter = info(site='twitter', info='plone')
-        adapter.accounts_info = [twitter, ]
+        adapter.accounts_info = [twitter]
 
         self.assertEqual(len(adapter.accounts_info), 1)
         self.assertEqual(adapter.accounts_info[0].site, 'twitter')
