@@ -70,6 +70,13 @@ class InstallTestCase(unittest.TestCase):
                          ('Estas dependencias nao estao instaladas: %s' %
                           ', '.join(result)))
 
+    def test_add_infographic_permission(self):
+        permission = 'brasil.gov.portal: Add Infographic'
+        expected = ['Contributor', 'Manager', 'Owner', 'Site Administrator']
+        roles = self.portal.rolesOfPermission(permission)
+        roles = [r['name'] for r in roles if r['selected']]
+        self.assertListEqual(roles, expected)
+
     @unittest.expectedFailure
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
         """

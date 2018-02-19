@@ -53,6 +53,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
             'ExternalContent',
             'File',
             'Image',
+            'Infographic',
             'Link',
             'collective.nitf.content',
             'collective.polls.poll',

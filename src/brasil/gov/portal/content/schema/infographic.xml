@@ -1,0 +1,22 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="brasil.gov.portal">
+  <schema>
+    <field name="title" type="zope.schema.TextLine">
+      <description />
+      <required>False</required>
+      <title i18n:translate="">Title</title>
+    </field>
+    <field name="description" type="zope.schema.Text">
+      <description />
+      <required>False</required>
+      <title i18n:translate="">Description</title>
+    </field>
+    <field name="image" type="plone.namedfile.field.NamedBlobImage"
+        marshal:primary="true">
+      <description />
+      <title i18n:translate="label_image">Image</title>
+    </field>
+  </schema>
+</model>
