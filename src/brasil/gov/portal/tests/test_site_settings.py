@@ -12,18 +12,6 @@ class SiteSettingsTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
 
-# Descomente aqui para testar suas configuracoes
-#    def test_title(self):
-#        self.assertTrue(self.portal.title.startswith('Portal Brasil'),
-#                        'Title not applied')
-
-# Descomente aqui para testar suas configuracoes
-#    def test_email_configs(self):
-#        self.assertTrue(self.portal.email_from_address,
-#                        'E-mail address not set')
-#        self.assertTrue(self.portal.email_from_name,
-#                        'E-mail name not set')
-
     def test_localTimeFormat(self):
         site_properties = self.portal['portal_properties'].site_properties
         self.assertEqual(site_properties.localTimeFormat, LOCAL_TIME_FORMAT,

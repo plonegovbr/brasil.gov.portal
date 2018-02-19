@@ -4,7 +4,8 @@ Changelog
 2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Habilita a busca de objetos de tipo ``sc.embedder``.
+  [hvelarde]
 
 
 2.0a2 (2018-01-11)

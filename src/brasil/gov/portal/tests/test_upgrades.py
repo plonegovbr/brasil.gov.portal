@@ -112,3 +112,31 @@ class To10804TestCase(UpgradeBaseTestCase):
         self.assertTrue(nitf.default_view_fallback)
         self.assertEqual(self.n1.getLayout(), 'view')
         self.assertEqual(self.n2.getLayout(), 'view')
+
+
+class To10805TestCase(UpgradeBaseTestCase):
+
+    from_ = '10804'
+    to_ = '10805'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_search_for_embedder(self):
+        title = u'Remove sc.embedder from types_not_searched'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        settings = api.portal.get_tool('portal_properties').site_properties
+        settings.types_not_searched += ('sc.embedder',)
+        self.assertIn('sc.embedder', settings.types_not_searched)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        self.assertNotIn('sc.embedder', settings.types_not_searched)
