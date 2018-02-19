@@ -19,8 +19,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 networks = SimpleVocabulary(
     [SimpleTerm(value=rede['id'], title=_(rede['title']))
-     for rede in REDES]
-)
+     for rede in REDES])
 
 
 class ISocialNetworksPair(Interface):

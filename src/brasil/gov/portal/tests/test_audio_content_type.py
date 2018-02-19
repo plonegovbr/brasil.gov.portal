@@ -33,12 +33,12 @@ class AudioTestCase(unittest.TestCase):
         self.folder = api.content.create(
             type='Folder',
             container=self.portal,
-            id='test-folder'
+            id='test-folder',
         )
         self.audio = api.content.create(
             type='Audio',
             container=self.folder,
-            id='my-audio'
+            id='my-audio',
         )
         self.setup_content_data()
 
@@ -69,7 +69,7 @@ class AudioTestCase(unittest.TestCase):
         mp3_file = api.content.create(
             type='MPEG Audio File',
             container=audio,
-            id='file.mp3'
+            id='file.mp3',
         )
         mp3_file.file = self.mp3
         self.assertEqual(audio.return_mp3(), mp3_file)
@@ -81,7 +81,7 @@ class AudioTestCase(unittest.TestCase):
         ogg_file = api.content.create(
             type='OGG Audio File',
             container=audio,
-            id='file.ogg'
+            id='file.ogg',
         )
         self.assertEqual(audio.return_ogg(), ogg_file)
 
@@ -94,7 +94,7 @@ class AudioTestCase(unittest.TestCase):
         mp3_file = api.content.create(
             type='MPEG Audio File',
             container=audio,
-            id='file.mp3'
+            id='file.mp3',
         )
         mp3_file.file = self.mp3
         self.assertFalse(sm.checkPermission(permission, audio))
@@ -111,7 +111,7 @@ class AudioTestCase(unittest.TestCase):
         ogg_file = api.content.create(
             type='OGG Audio File',
             container=audio,
-            id='file.ogg'
+            id='file.ogg',
         )
         ogg_file.file = self.ogg
         self.assertFalse(sm.checkPermission(permission, audio))
@@ -133,18 +133,18 @@ class MPEGAudioFileTestCase(unittest.TestCase):
         self.folder = api.content.create(
             type='Folder',
             container=self.portal,
-            id='test-folder'
+            id='test-folder',
         )
         self.audio = api.content.create(
             type='Audio',
             container=self.folder,
-            id='my-audio'
+            id='my-audio',
         )
         self.setup_content_data()
         self.mp3_audio = api.content.create(
             type='MPEG Audio File',
             container=self.audio,
-            id='file.mp3'
+            id='file.mp3',
         )
         self.mp3_audio.file = self.mp3
         self.mp3_audio.reindexObject()
@@ -185,18 +185,18 @@ class OGGAudioFileTestCase(unittest.TestCase):
         self.folder = api.content.create(
             type='Folder',
             container=self.portal,
-            id='test-folder'
+            id='test-folder',
         )
         self.audio = api.content.create(
             type='Audio',
             container=self.folder,
-            id='my-audio'
+            id='my-audio',
         )
         self.setup_content_data()
         self.ogg_audio = api.content.create(
             type='OGG Audio File',
             container=self.audio,
-            id='file.ogg'
+            id='file.ogg',
         )
         self.ogg_audio.file = self.ogg
         self.ogg_audio.reindexObject()
@@ -238,12 +238,12 @@ class AudioViewTestCase(unittest.TestCase):
         self.folder = api.content.create(
             type='Folder',
             container=self.portal,
-            id='test-folder'
+            id='test-folder',
         )
         self.audio = api.content.create(
             type='Audio',
             container=self.folder,
-            id='my-audio'
+            id='my-audio',
         )
         self.setup_content_data()
 

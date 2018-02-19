@@ -7,7 +7,7 @@ from zope.component import queryUtility
 
 STYLES = [
     '++resource++brasil.gov.portal/css/main.css',
-    '++resource++brasil.gov.portal/css/main-print.css'
+    '++resource++brasil.gov.portal/css/main-print.css',
 ]
 
 

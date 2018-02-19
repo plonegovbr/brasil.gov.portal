@@ -101,12 +101,12 @@ class ContentTypesTestCase(unittest.TestCase):
                             'Tipo %s nao suporta o VCGE' % t)
 
     def test_link_patched(self):
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             plone = api.content.create(
                 type='Link',
                 container=self.portal,
                 id='plone_foundation',
-                title=u'Plone Foundation'
+                title=u'Plone Foundation',
             )
         plone.remoteUrl = 'http://plone.org/foundation'
         self.assertEqual(plone.getRemoteUrl(), plone.remoteUrl)

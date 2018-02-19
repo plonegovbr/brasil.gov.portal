@@ -26,7 +26,7 @@ class ServicosViewlet(ViewletBase):
     def servicos(self):
         ct = self._ct
         folder_path = '/'.join(self._folder.getPhysicalPath())
-        portal_types = ['Link', ]
+        portal_types = ['Link']
         results = ct.searchResults(portal_type=portal_types,
                                    path=folder_path,
                                    sort_on='getObjPositionInParent')
