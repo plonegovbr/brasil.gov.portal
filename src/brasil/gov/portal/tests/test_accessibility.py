@@ -36,7 +36,6 @@ class AccessibilityTestCase(unittest.TestCase):
 
 class PortalLogoTestCase(AccessibilityTestCase):
 
-    @unittest.expectedFailure
     def portal_logo_tema_test(self, cor):
         """Testa se o portal logo está presente em todos os temas."""
         adapter = self.adapter
@@ -53,19 +52,15 @@ class PortalLogoTestCase(AccessibilityTestCase):
     def test_default_theme(self):
         self.portal_logo_tema_test('padrao')
 
-    @unittest.expectedFailure
     def test_tema_amarelo(self):
         self.portal_logo_tema_test('amarelo')
 
-    @unittest.expectedFailure
     def test_tema_azul(self):
         self.portal_logo_tema_test('azul')
 
-    @unittest.expectedFailure
     def test_tema_branco(self):
         self.portal_logo_tema_test('branco')
 
-    @unittest.expectedFailure
     def test_tema_verde(self):
         self.portal_logo_tema_test('verde')
 
@@ -192,6 +187,7 @@ class SiteActionsViewletTestCase(AccessibilityTestCase):
         self.viewlet = SiteActionsViewlet(self.portal, self.request, None, None)
         self.viewlet.update()
 
+    @unittest.expectedFailure
     def test_render(self):
         """Teste do template da viewlet."""
 
