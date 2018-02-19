@@ -32,7 +32,6 @@
       <element value="MPEG Audio File"/>
       <element value="News Item"/>
       <element value="OGG Audio File"/>
-      <element value="sc.embedder"/>
       <element value="Topic"/>
     </property>
     <property name="icon_visibility" type="string">authenticated</property>

@@ -56,6 +56,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
             'Link',
             'collective.nitf.content',
             'collective.polls.poll',
+            'sc.embedder',
         ]
         self.assertListEqual(types_searched, types_expected)
 
