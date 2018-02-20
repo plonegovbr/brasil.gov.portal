@@ -4,6 +4,9 @@ Changelog
 2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado plone.restapi à versão 1.1.0.
+  [hvelarde]
+
 - Atualizado brasil.gov.barra à versão 1.2.3.
   [hvelarde]
 
