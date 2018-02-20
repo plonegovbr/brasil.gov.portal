@@ -4,6 +4,9 @@ Changelog
 2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.barra à versão 1.2.3.
+  [hvelarde]
+
 - Corrige alinhamento do topo quando não informada primeira linha do título.
   [rodfersou]
 
