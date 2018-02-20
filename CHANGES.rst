@@ -4,6 +4,9 @@ Changelog
 2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige alinhamento do topo quando não informada primeira linha do título.
+  [rodfersou]
+
 - Habilita a busca de objetos de tipo ``sc.embedder``.
   [hvelarde]
 

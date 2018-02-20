@@ -5,6 +5,7 @@
        tal:attributes="href view/navigation_root_url;
                        title view/description">
             <span id="portal-title-1"
+                  tal:condition="view/title_1"
                   tal:content="view/title_1">Secretaria de</span>
             <div id="portal-title"
                   tal:attributes="class view/title_2_class"
