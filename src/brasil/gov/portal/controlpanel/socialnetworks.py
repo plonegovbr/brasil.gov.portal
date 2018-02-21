@@ -6,12 +6,12 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from zope import schema
-from zope.component import adapts
+from zope.component import adapter
 from zope.formlib.form import FormFields
 from zope.formlib.objectwidget import ObjectWidget
 from zope.formlib.sequencewidget import ListSequenceWidget
 from zope.formlib.widget import CustomWidgetFactory
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Interface
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
@@ -33,8 +33,8 @@ class ISocialNetworksPair(Interface):
     info = schema.TextLine(title=u'Identificador')
 
 
+@implementer(ISocialNetworksPair)
 class SocialNetworksPair:
-    implements(ISocialNetworksPair)
 
     def __init__(self, site='', info=''):
         self.site = site
@@ -56,15 +56,14 @@ accounts_widget = CustomWidgetFactory(ListSequenceWidget,
                                       subwidget=sn_widget)
 
 
+@implementer(ISocialNetworksSchema)
+@adapter(IPloneSiteRoot)
 class SocialNetworksPanelAdapter(SchemaAdapterBase):
     """ Adapter para a raiz do site Plone suportar o schema
         de configuracao da barra de identidade
         Esta classe implementa uma maneira da raiz do site armazenar
         as configuracoes que serao geridas pelo painel de controle
     """
-
-    adapts(IPloneSiteRoot)
-    implements(ISocialNetworksSchema)
 
     def __init__(self, context):
         super(SocialNetworksPanelAdapter, self).__init__(context)

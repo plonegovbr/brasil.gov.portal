@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualiza código para usar os decoradores ``implementer`` e ``adapter`` da ZCA.
+  [hvelarde]
+
 - Corrige ``icon_expr`` dos tipos de conteúdo definidos no pacote.
   [hvelarde]
 

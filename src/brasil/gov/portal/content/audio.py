@@ -8,7 +8,7 @@ that's is handled by a couple of subscribers.
 from brasil.gov.portal.content.audio_file import IMPEGAudioFile
 from brasil.gov.portal.content.audio_file import IOGGAudioFile
 from plone.dexterity.content import Container
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Interface
 
 
@@ -16,8 +16,8 @@ class IAudio(Interface):
     """An Audio (in fact a container of audio formats)."""
 
 
+@implementer(IAudio)
 class Audio(Container):
-    implements(IAudio)
 
     def return_ogg(self):
         """Return the Vorbis version of the audio."""

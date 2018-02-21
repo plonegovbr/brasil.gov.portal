@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.dexterity.content import Item
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Interface
 
 
@@ -14,8 +14,8 @@ class IExternalContent(Interface):
     """
 
 
+@implementer(IExternalContent)
 class ExternalContent(Item):
-    implements(IExternalContent)
 
     def image_thumb(self):
         """ Return a thumbnail """

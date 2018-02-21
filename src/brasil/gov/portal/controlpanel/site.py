@@ -7,10 +7,10 @@ from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
-from zope.component import adapts
+from zope.component import adapter
 from zope.formlib import form
 from zope.formlib.textwidgets import TextAreaWidget
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Interface
 from zope.schema import Bool
 from zope.schema import SourceText
@@ -86,10 +86,9 @@ class ISiteSchema(Interface):
         required=False)
 
 
+@implementer(ISiteSchema)
+@adapter(IPloneSiteRoot)
 class SiteControlPanelAdapter(SchemaAdapterBase):
-
-    adapts(IPloneSiteRoot)
-    implements(ISiteSchema)
 
     def __init__(self, context):
         super(SiteControlPanelAdapter, self).__init__(context)
