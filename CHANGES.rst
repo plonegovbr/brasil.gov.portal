@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige ``icon_expr`` dos tipos de conteúdo definidos no pacote.
+  [hvelarde]
+
 - Corrige as permissões ``brasil.gov.portal: Add MPEG File`` e ``brasil.gov.portal: Add OGG File``:
   um usuário com papel "Editor" não deve poder adicionar conteúdo.
   [hvelarde]
