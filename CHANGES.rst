@@ -1,6 +1,14 @@
 Changelog
 ---------
 
+2.0a4 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Corrige as permissões ``brasil.gov.portal: Add MPEG File`` e ``brasil.gov.portal: Add OGG File``:
+  um usuário com papel "Editor" não deve poder adicionar conteúdo.
+  [hvelarde]
+
+
 2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 

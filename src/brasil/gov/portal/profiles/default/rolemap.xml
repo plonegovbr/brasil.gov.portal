@@ -3,14 +3,12 @@
   <permissions>
     <permission name="brasil.gov.portal: Add MPEG File" acquire="True">
       <role name="Contributor" />
-      <role name="Editor" />
       <role name="Manager" />
       <role name="Owner" />
       <role name="Site Administrator" />
     </permission>
     <permission name="brasil.gov.portal: Add OGG File" acquire="True">
       <role name="Contributor" />
-      <role name="Editor" />
       <role name="Manager" />
       <role name="Owner" />
       <role name="Site Administrator" />
