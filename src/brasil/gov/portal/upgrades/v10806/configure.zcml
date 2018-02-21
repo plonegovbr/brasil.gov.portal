@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="brasil.gov.portal (v10806)"
+      directory="profile"
+      description='Configuration fo version 10806'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:upgradeSteps
+      source="10805"
+      destination="10806"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeDepends
+        title="Apply rolemap.xml"
+        import_steps="rolemap"
+        />
+
+    <genericsetup:upgradeDepends
+        title="Add Infographic content type"
+        import_profile="brasil.gov.portal.upgrades.v10806:default"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>
