@@ -8,6 +8,12 @@ Changelog
 
 
 2.0a3 (2018-02-28)
+- Adicionado tipo de conteúdo ``Infografic``;
+  por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.
+  [hvelarde]
+
+
+2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza código para usar os decoradores ``implementer`` e ``adapter`` da ZCA.

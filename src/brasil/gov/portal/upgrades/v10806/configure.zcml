@@ -6,7 +6,7 @@
       name="default"
       title="brasil.gov.portal (v10806)"
       directory="profile"
-      description='Configuration fo version 10806'
+      description='Configuration for version 10806'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

@@ -4,7 +4,7 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">Infographic</property>
   <property name="description" i18n:translate="">Infographics can be referenced in pages or displayed in an album.</property>
-  <property name="icon_expr"></property>
+  <property name="icon_expr">string:${portal_url}/image_icon.png</property>
   <property name="factory">Infographic</property>
   <property name="add_view_expr">string:${folder_url}/++add++Infographic</property>
   <property name="link_target"></property>
