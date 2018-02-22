@@ -1,6 +1,20 @@
 Changelog
 ---------
 
+2.0a4 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Atualiza código para usar os decoradores ``implementer`` e ``adapter`` da ZCA.
+  [hvelarde]
+
+- Corrige ``icon_expr`` dos tipos de conteúdo definidos no pacote.
+  [hvelarde]
+
+- Corrige as permissões ``brasil.gov.portal: Add MPEG File`` e ``brasil.gov.portal: Add OGG File``:
+  um usuário com papel "Editor" não deve poder adicionar conteúdo.
+  [hvelarde]
+
+
 2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 

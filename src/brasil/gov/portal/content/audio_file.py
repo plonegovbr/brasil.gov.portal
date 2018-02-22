@@ -6,7 +6,7 @@ from plone.indexer.decorator import indexer
 from plone.namedfile.field import NamedBlobFile
 from plone.rfc822.interfaces import IPrimaryFieldInfo
 from plone.supermodel import model
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Invalid
 
 
@@ -67,12 +67,14 @@ class AudioFile(Item):
             return file.contentType
 
 
+@implementer(IMPEGAudioFile)
 class MPEGAudioFile(AudioFile):
-    implements(IMPEGAudioFile)
+    """MPEG audio file."""
 
 
+@implementer(IOGGAudioFile)
 class OGGAudioFile(AudioFile):
-    implements(IOGGAudioFile)
+    """OGG audio file."""
 
 
 @indexer(IMPEGAudioFile)

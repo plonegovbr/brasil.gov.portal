@@ -4,12 +4,12 @@
 from brasil.gov.portal.browser.plone.interfaces import IPortalSettingsView
 from plone import api
 from Products.Five import BrowserView
-from zope.interface import implements
+from zope.interface import implementer
 
 
+@implementer(IPortalSettingsView)
 class PortalSettingsView(BrowserView):
     """View para obter configurações do portal."""
-    implements(IPortalSettingsView)
 
     def get_esconde_autor(self):
         """Retorna o valor da configuração esconde_autor."""

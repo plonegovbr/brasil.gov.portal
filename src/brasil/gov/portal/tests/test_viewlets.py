@@ -9,7 +9,7 @@ from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.layout.globals.interfaces import IViewView
 from plone.app.testing import logout
-from zope.interface import implements
+from zope.interface import implementer
 
 import unittest
 
@@ -375,11 +375,11 @@ class DocumentBylineViewletTestCase(unittest.TestCase):
                                         None,
                                         None)
 
+        @implementer(IViewView)
         class Parent(object):
             """Classe que simula um parent. Para que a viewlet
             DocumentBylineViewletTestCase exiba o histórico, é necessário que
             o seu __parent__ implemente a interface IViewView"""
-            implements(IViewView)
 
         viewlet.__parent__ = Parent()
         viewlet.update()

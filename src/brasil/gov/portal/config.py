@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone import interfaces as st_interfaces
 from Products.CMFQuickInstallerTool import interfaces as qi_interfaces
-from zope.interface import implements
+from zope.interface import implementer
 
 
 PROJECTNAME = 'brasil.gov.portal'
@@ -179,18 +179,18 @@ TINYMCE_JSON_FORMATS = {'strikethrough': {'inline': 'span',
                                       'exact': 'true'}}
 
 
+@implementer(qi_interfaces.INonInstallable)
 class HiddenProducts(object):
     """ Oculta produtos do QuickInstaller """
-    implements(qi_interfaces.INonInstallable)
 
     def getNonInstallableProducts(self):
         products = [p for p in DEPS]
         return products
 
 
+@implementer(st_interfaces.INonInstallable)
 class HiddenProfiles(object):
     """ Oculta profiles da tela inicial de criacao do site """
-    implements(st_interfaces.INonInstallable)
 
     def getNonInstallableProfiles(self):
         return HIDDEN_PROFILES
