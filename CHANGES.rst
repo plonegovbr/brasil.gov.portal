@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0a4 (unreleased)
+2.0a3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza código para usar os decoradores ``implementer`` e ``adapter`` da ZCA.
@@ -13,10 +13,6 @@ Changelog
 - Corrige as permissões ``brasil.gov.portal: Add MPEG File`` e ``brasil.gov.portal: Add OGG File``:
   um usuário com papel "Editor" não deve poder adicionar conteúdo.
   [hvelarde]
-
-
-2.0a3 (unreleased)
-^^^^^^^^^^^^^^^^^^
 
 - Atualizado plone.restapi à versão 1.1.0.
   [hvelarde]
