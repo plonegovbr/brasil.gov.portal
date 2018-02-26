@@ -125,7 +125,7 @@ class To10805TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
+        self.assertEqual(steps, 2)
 
     def test_search_for_embedder(self):
         title = u'Remove sc.embedder from types_not_searched'
