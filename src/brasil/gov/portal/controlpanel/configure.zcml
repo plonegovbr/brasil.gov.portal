@@ -42,4 +42,26 @@
       permission="plone.app.controlpanel.Site"
       />
 
+  <browser:page
+      name="portal-tabs-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".portaltabs.PortalTabsSettings"
+      permission="brasil.gov.portal.settings"
+      allowed_attributes="template"
+      />
+
+  <browser:page
+      name="portal-tabs-add"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".portaltabs.PortalTabsAddFormPageWrapper"
+      permission="brasil.gov.portal.settings"
+      />
+
+  <browser:page
+      name="portal-tabs-edit"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".portaltabs.PortalTabsEditFormPageWrapper"
+      permission="brasil.gov.portal.settings"
+      />
+
 </configure>

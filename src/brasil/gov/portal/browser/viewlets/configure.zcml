@@ -19,6 +19,13 @@
       permission="zope2.View"
       />
 
+    <browser:viewlet
+      name="brasil.gov.portal.tablinks"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".tabslinks.TabsLinksViewlet"
+      permission="zope2.View"
+      />
+
   <browser:viewlet
       name="brasil.gov.portal.redessociais"
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"

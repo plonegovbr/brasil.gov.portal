@@ -12,6 +12,12 @@
         handler=".search_for_embedder"
         />
 
+    <genericsetup:upgradeDepends
+        title="Add new fields to configlet"
+        description="Adds new configlet for features do portal tabs."
+        import_steps="plone.app.registry"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>
