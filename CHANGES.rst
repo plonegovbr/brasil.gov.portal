@@ -20,6 +20,9 @@ Changelog
 - Atualizado brasil.gov.barra à versão 1.2.3.
   [hvelarde]
 
+- Atualizado brasil.gov.temas à versão 2.0a4.
+  [hvelarde]
+
 - Corrige alinhamento do topo quando não informada primeira linha do título.
   [rodfersou]
 
