@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0a3 (unreleased)
+2.0a3 (2018-02-28)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza código para usar os decoradores ``implementer`` e ``adapter`` da ZCA.
