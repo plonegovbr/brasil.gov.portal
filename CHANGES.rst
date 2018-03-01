@@ -4,14 +4,12 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona um configlet para gerenciar os links no portal tabs.
+  [claytonc.sousa]
+
 - Adicionado tipo de conteúdo ``Infografic``;
   por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.
   [hvelarde]
-- Adiciona um configlet para gerenciar os links no portal tabs.
-  [claytonc.sousa]
-- Nothing changed yet.
-- Adiciona um configlet para gerenciar os links no portal tabs.
-  [claytonc.sousa]
 
 
 2.0a3 (2018-02-28)
