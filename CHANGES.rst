@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona um configlet para gerenciar os links no portal tabs.
+  [claytonc.sousa]
+
 - Adicionado tipo de conteúdo ``Infografic``;
   por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.
   [hvelarde]
@@ -36,7 +39,6 @@ Changelog
 
 - Habilita a busca de objetos de tipo ``sc.embedder``.
   [hvelarde]
-
 
 2.0a2 (2018-01-11)
 ^^^^^^^^^^^^^^^^^^

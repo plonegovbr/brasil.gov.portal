@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/prefs_main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<div metal:fill-slot="prefs_configlet_main">
+
+    <h1 class="documentFirstHeading">Portal Services Settings</h1>
+
+    <div class="documentDescription">
+        Configurações dos links do portal services
+    </div>
+
+    <p>
+      <a href="${context/absolute_url}/@@portal-services-add">
+        <button i18n:translate="">Adicionar Link</button>
+      </a>
+    </p>
+
+    <div id="tabs_table_form" tal:define="items python:view.get_items()">
+        <table  class="listing nosort controlpanel-listing" tal:condition="items">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Visível</th>
+                    <th >&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:block tal:repeat="item items">
+                  <tr tal:define="oddrow repeat/item/odd"
+                      tal:attributes="class python:(oddrow and 'even ' or 'odd ')">
+                    <td>
+                        <a tal:attributes="href string:${context/portal_url}/portal-services-edit?pid=${item/id}">
+                          <span tal:replace="item/title"/>
+                        </a>
+                    </td>
+                    <td>
+                        <img tal:condition="item/visible"
+                             src="confirm_icon.png"
+                             alt="enabled"
+                             width="16"
+                             height="16" />
+
+                        <img tal:condition="not:item/visible"
+                             src="error_icon.png"
+                             alt="unassigned"
+                             title="this rule has not been assigned"
+                             width="16"
+                             height="16" />
+                    </td>
+                    <td>
+                        <form style="display: inline" method="POST"
+                              tal:attributes="action string:${context/absolute_url}/@@portal-services-settings">
+                        <span tal:replace="structure context/@@authenticator/authenticator"/>
+                          <input type="hidden"
+                                 name="pid"
+                                  tal:attributes="value item/id">
+                          <input class="context btn-action btn-action-delete" type="submit" value="Delete"
+                                 tal:attributes="data-value item/id"
+                                 i18n:attributes="value label_delete;"
+                                 name="form.button.delete" />
+                          <input class="context btn-action btn-action-moveup" type="submit" value="Move up"
+                                 tal:attributes="data-value item/id"
+                                 i18n:attributes="value"
+                                 name="form.button.moveup"/>
+                          <input class="context btn-action btn-action-movedown" type="submit" value="Move down"
+                                 tal:attributes="data-value item/id"
+                                 i18n:attributes="value"
+                                 name="form.button.movedown" />
+                         </form>
+                     </td>
+                  </tr>
+                </tal:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+

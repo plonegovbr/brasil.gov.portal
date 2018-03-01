@@ -21,7 +21,8 @@
         />
 
     <genericsetup:upgradeDepends
-        title="Add Infographic content type"
+        title="Import various"
+        description="Adds new configlet and content type."
         import_profile="brasil.gov.portal.upgrades.v10806:default"
         />
 
