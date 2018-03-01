@@ -9,6 +9,7 @@ Changelog
   [hvelarde]
 - Adiciona um configlet para gerenciar os links no portal tabs.
   [claytonc.sousa]
+- Nothing changed yet.
 
 
 2.0a3 (2018-02-28)
@@ -39,6 +40,8 @@ Changelog
 - Habilita a busca de objetos de tipo ``sc.embedder``.
   [hvelarde]
 
+- Adiciona um configlet para gerenciar os links no portal tabs.
+  [claytonc.sousa]
 
 2.0a2 (2018-01-11)
 ^^^^^^^^^^^^^^^^^^
