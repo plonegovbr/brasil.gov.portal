@@ -21,10 +21,10 @@ import time
 import z3c.form.interfaces
 
 
-ACTION_CATEGORY = 'portal_tabs_links'
+ACTION_CATEGORY = 'portal_services'
 
 
-class IPortalTabsSettings(Interface):
+class IPortalServicesSettings(Interface):
     """Campos dos formulários de inserção e edição do Configlet."""
 
     pid = schema.TextLine(
@@ -79,10 +79,10 @@ def url_expression(url):
         return 'string:${portal_url}/%s' % url
 
 
-class PortalTabsSettings(BrowserView):
+class PortalServicesSettings(BrowserView):
     """Configlet gereciador dos links adicionados."""
 
-    template = ViewPageTemplateFile('portaltabs.pt')
+    template = ViewPageTemplateFile('portalservices.pt')
 
     def __call__(self):
 
@@ -136,14 +136,14 @@ class PortalTabsSettings(BrowserView):
         return True
 
 
-class PortalTabsAddForm(form.AddForm):
+class PortalServicesAddForm(form.AddForm):
     """Formulário de adicição de action no portal_actions."""
 
-    label = _(u'Adicionar links no portal tabs')
-    fields = field.Fields(IPortalTabsSettings)
+    label = _(u'Add a link.')
+    fields = field.Fields(IPortalServicesSettings)
 
     def updateWidgets(self):
-        super(PortalTabsAddForm, self).updateWidgets()
+        super(PortalServicesAddForm, self).updateWidgets()
         self.widgets['pid'].mode = z3c.form.interfaces.HIDDEN_MODE
         self.widgets['visible'].mode = z3c.form.interfaces.HIDDEN_MODE
 
@@ -173,22 +173,21 @@ class PortalTabsAddForm(form.AddForm):
 
     def nextURL(self):
         url = self.context.absolute_url()
-        url += '/@@portal-tabs-settings'
+        url += '/@@portal-services-settings'
         return url
 
 
-class PortalTabsAddFormPageWrapper(controlpanel.ControlPanelFormWrapper):
+class PortalServicesAddFormPageWrapper(controlpanel.ControlPanelFormWrapper):
     """Página de configuração do Portal Padrão"""
-    form = PortalTabsAddForm
+    form = PortalServicesAddForm
 
 
-class PortalTabsEditForm(form.EditForm):
-    """Formulálio de edição do
-    """
+class PortalServicesEditForm(form.EditForm):
+    """Formulálio de edição de action no portal_actions."""
+
     label = _(u'Edit link')
-    description = _(u'Edit an existing link.')
-    schema = IPortalTabsSettings
-    fields = field.Fields(IPortalTabsSettings)
+    schema = IPortalServicesSettings
+    fields = field.Fields(IPortalServicesSettings)
 
     def getContent(self):
 
@@ -212,7 +211,7 @@ class PortalTabsEditForm(form.EditForm):
         return item
 
     def updateWidgets(self):
-        super(PortalTabsEditForm, self).updateWidgets()
+        super(PortalServicesEditForm, self).updateWidgets()
         self.widgets['pid'].mode = z3c.form.interfaces.HIDDEN_MODE
 
     @button.buttonAndHandler(_(u'label_save', default=u'Save'), name='save')
@@ -249,10 +248,10 @@ class PortalTabsEditForm(form.EditForm):
                 item._setPropValue(key, data[key])
 
     def nextURL(self):
-        url = self.context.absolute_url() + '/@@portal-tabs-settings'
+        url = self.context.absolute_url() + '/@@portal-services-settings'
         return url
 
 
-class PortalTabsEditFormPageWrapper(controlpanel.ControlPanelFormWrapper):
-    """Página de configuração do Portal Padrão"""
-    form = PortalTabsEditForm
+class PortalServicesEditFormPageWrapper(controlpanel.ControlPanelFormWrapper):
+    """Página de configuração do Portal Services"""
+    form = PortalServicesEditForm

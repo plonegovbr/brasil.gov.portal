@@ -20,9 +20,9 @@
       />
 
     <browser:viewlet
-      name="brasil.gov.portal.tablinks"
+      name="brasil.gov.portal.services"
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-      class=".tabslinks.TabsLinksViewlet"
+      class=".services.ServicesViewlet"
       permission="zope2.View"
       />
 

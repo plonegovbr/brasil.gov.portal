@@ -43,24 +43,24 @@
       />
 
   <browser:page
-      name="portal-tabs-settings"
+      name="portal-services-settings"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      class=".portaltabs.PortalTabsSettings"
+      class=".portalservices.PortalServicesSettings"
       permission="brasil.gov.portal.settings"
       allowed_attributes="template"
       />
 
   <browser:page
-      name="portal-tabs-add"
+      name="portal-services-add"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      class=".portaltabs.PortalTabsAddFormPageWrapper"
+      class=".portalservices.PortalServicesAddFormPageWrapper"
       permission="brasil.gov.portal.settings"
       />
 
   <browser:page
-      name="portal-tabs-edit"
+      name="portal-services-edit"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      class=".portaltabs.PortalTabsEditFormPageWrapper"
+      class=".portalservices.PortalServicesEditFormPageWrapper"
       permission="brasil.gov.portal.settings"
       />
 

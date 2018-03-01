@@ -9,14 +9,14 @@
 
 <div metal:fill-slot="prefs_configlet_main">
 
-    <h1 class="documentFirstHeading">Portal Tabs Settings</h1>
+    <h1 class="documentFirstHeading">Portal Services Settings</h1>
 
     <div class="documentDescription">
-        Configurações dos links do portal tabs
+        Configurações dos links do portal services
     </div>
 
     <p>
-      <a href="${context/absolute_url}/@@portal-tabs-add">
+      <a href="${context/absolute_url}/@@portal-services-add">
         <button i18n:translate="">Adicionar Link</button>
       </a>
     </p>
@@ -35,7 +35,7 @@
                   <tr tal:define="oddrow repeat/item/odd"
                       tal:attributes="class python:(oddrow and 'even ' or 'odd ')">
                     <td>
-                        <a tal:attributes="href string:${context/portal_url}/portal-tabs-edit?pid=${item/id}">
+                        <a tal:attributes="href string:${context/portal_url}/portal-services-edit?pid=${item/id}">
                           <span tal:replace="item/title"/>
                         </a>
                     </td>
@@ -55,7 +55,7 @@
                     </td>
                     <td>
                         <form style="display: inline" method="POST"
-                              tal:attributes="action string:${context/absolute_url}/@@portal-tabs-settings">
+                              tal:attributes="action string:${context/absolute_url}/@@portal-services-settings">
                         <span tal:replace="structure context/@@authenticator/authenticator"/>
                           <input type="hidden"
                                  name="pid"

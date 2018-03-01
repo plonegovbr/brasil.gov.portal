@@ -14,7 +14,7 @@
 
     <genericsetup:upgradeDepends
         title="Add new fields to configlet"
-        description="Adds new configlet for features do portal tabs."
+        description="Adds new configlet for features do portal services."
         import_steps="plone.app.registry"
         />
 

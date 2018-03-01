@@ -5,10 +5,10 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.component import getMultiAdapter
 
 
-class TabsLinksViewlet(ViewletBase):
-    index = ViewPageTemplateFile('templates/tabslinks.pt')
+class ServicesViewlet(ViewletBase):
+    index = ViewPageTemplateFile('templates/services.pt')
 
     def update(self):
         context = aq_inner(self.context)
-        portal_tabs_view = getMultiAdapter((context, self.request), name='portal_tabs_view')
-        self.portal_tabs = portal_tabs_view.topLevelTabs(category='portal_tabs_links')
+        portal_services_view = getMultiAdapter((context, self.request), name='portal_tabs_view')
+        self.portal_tabs = portal_services_view.topLevelTabs(category='portal_services')
