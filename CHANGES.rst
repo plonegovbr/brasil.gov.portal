@@ -4,7 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Adicionado tipo de conteúdo ``Infografic``;
+  por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.
+  [hvelarde]
 
 
 2.0a3 (2018-02-28)

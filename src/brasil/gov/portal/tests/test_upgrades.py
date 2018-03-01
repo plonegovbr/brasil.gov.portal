@@ -140,3 +140,33 @@ class To10805TestCase(UpgradeBaseTestCase):
         # run the upgrade step to validate the update
         self._do_upgrade(step)
         self.assertNotIn('sc.embedder', settings.types_not_searched)
+
+
+class To10806TestCase(UpgradeBaseTestCase):
+
+    from_ = '10805'
+    to_ = '10806'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 2)
+
+    # XXX: there is no clear way to remove a permission
+    #      and then test if it has been added
+
+    def test_infographic_content_type(self):
+        # simulate state on previous version
+        types = api.portal.get_tool('portal_types')
+        del types['Infographic']
+        self.assertNotIn('Infographic', types)
+
+        # run the upgrade to validate the update
+        self.setup.upgradeProfile(u'brasil.gov.portal:default')
+        self.assertIn('Infographic', types)
+        with api.env.adopt_roles(['Manager']):
+            api.content.create(self.portal, 'Infographic', 'foo')
+            api.content.delete(self.portal['foo'])

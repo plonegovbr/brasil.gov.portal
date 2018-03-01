@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <object meta_type="Plone Types Tool" name="portal_types">
  <object meta_type="Dexterity FTI" name="Audio" />
+ <object meta_type="Dexterity FTI" name="Infographic" />
  <object meta_type="Dexterity FTI" name="MPEG Audio File" />
  <object meta_type="Dexterity FTI" name="OGG Audio File" />
  <object meta_type="Dexterity FTI" name="ExternalContent" />

@@ -57,4 +57,14 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <browser:page
+      name="infographic_view"
+      for="brasil.gov.portal.content.infographic.IInfographic"
+      template="templates/infographic.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      permission="zope2.View"
+      menu="plone_displayviews"
+      title="View Infographic"
+      />
+
 </configure>

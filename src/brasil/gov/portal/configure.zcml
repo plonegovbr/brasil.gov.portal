@@ -16,6 +16,11 @@
       zcml:condition="have plone-4"
       package="Products.CMFCore" file="permissions.zcml" />
 
+  <permission
+      id="brasil.gov.portal.addInfographic"
+      title="brasil.gov.portal: Add Infographic"
+      />
+
   <include file='patches.zcml' />
 
   <!-- Profiles de Generic Setup -->
