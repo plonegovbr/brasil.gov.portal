@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="brasil.gov.portal">
+  <configlet title=".gov.br: Portal Services"
+      action_id="portal-services-settings"
+      appId="brasil.gov.portal"
+      category="Products"
+      condition_expr=""
+      url_expr="string:${portal_url}/@@portal-services-settings"
+      icon_expr="string:${portal_url}/++resource++brasil.gov.barra/ico-brasil.png"
+      visible="True"
+      i18n:attributes="title">
+    <permission>brasil.gov.portal: Settings</permission>
+  </configlet>
+</object>

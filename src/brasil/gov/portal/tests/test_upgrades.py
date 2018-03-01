@@ -125,7 +125,7 @@ class To10805TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 2)
+        self.assertEqual(steps, 1)
 
     def test_search_for_embedder(self):
         title = u'Remove sc.embedder from types_not_searched'
@@ -170,3 +170,20 @@ class To10806TestCase(UpgradeBaseTestCase):
         with api.env.adopt_roles(['Manager']):
             api.content.create(self.portal, 'Infographic', 'foo')
             api.content.delete(self.portal['foo'])
+
+    def test_portal_services_settings_configlet(self):
+        # simulate state on previous version
+        configlet = 'portal-services-settings'
+        portal_controlpanel = api.portal.get_tool('portal_controlpanel')
+        actions = portal_controlpanel.listActions()
+        idx = [actions.index(i) for i in actions if i.getId() == configlet]
+        portal_controlpanel.deleteActions(idx)
+        self.assertNotIn(
+            configlet, [c.getId() for c in portal_controlpanel.listActions()])
+
+        # run the upgrade to validate the update
+        self.setup.upgradeProfile(u'brasil.gov.portal:default')
+        self.assertIn(
+            configlet, [c.getId() for c in portal_controlpanel.listActions()])
+
+        # TODO: check for registry registration
