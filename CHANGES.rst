@@ -4,15 +4,15 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige o viewlet services responsável pelos links de destaques.
+  [claytonc.sousa]
+
 - Adiciona um configlet para gerenciar os links no portal tabs.
   [claytonc.sousa]
 
 - Adicionado tipo de conteúdo ``Infografic``;
   por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.
   [hvelarde]
-
-- Corrige o viewlet services responsável pelos links de destaques.
-  [claytonc.sousa]
 
 
 2.0a3 (2018-02-28)
