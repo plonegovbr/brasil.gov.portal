@@ -9,6 +9,8 @@ class ServicesViewlet(ViewletBase):
     index = ViewPageTemplateFile('templates/services.pt')
 
     def update(self):
+        super(ServicesViewlet, self).update()
+
         context = aq_inner(self.context)
-        portal_services_view = getMultiAdapter((context, self.request), name='portal_tabs_view')
-        self.portal_tabs = portal_services_view.topLevelTabs(category='portal_services')
+        portal_services_view = getMultiAdapter((context, self.request), name='plone_context_state')
+        self.portal_services = portal_services_view.actions('portal_services')

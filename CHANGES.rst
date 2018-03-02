@@ -11,6 +11,9 @@ Changelog
   por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.
   [hvelarde]
 
+- Corrige o viewlet services responsável pelos links de destaques.
+  [claytonc.sousa]
+
 
 2.0a3 (2018-02-28)
 ^^^^^^^^^^^^^^^^^^
