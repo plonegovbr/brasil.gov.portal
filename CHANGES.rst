@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige o viewlet services responsável pelos links de destaques.
+  [claytonc.sousa]
+
 - Adiciona um configlet para gerenciar os links no portal tabs.
   [claytonc.sousa]
 
