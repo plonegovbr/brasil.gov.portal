@@ -1,0 +1,5 @@
+<script async="async">
+  var url = portal_url + '/relatar-erros?ajax_load=1 #content';
+  $('#error-reporting').load(url);
+</script>
+<div id="error-reporting"></div>

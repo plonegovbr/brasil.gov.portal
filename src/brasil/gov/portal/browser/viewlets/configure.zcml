@@ -121,4 +121,13 @@
       permission="zope.Public"
       />
 
+  <browser:viewlet
+      name="brasil.gov.portal.errorreporting"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      class=".ErrorReportingViewlet"
+      permission="zope2.View"
+      template="templates/errorreporting.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>
