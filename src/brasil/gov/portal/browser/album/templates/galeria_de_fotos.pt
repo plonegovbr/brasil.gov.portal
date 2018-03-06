@@ -5,51 +5,43 @@
       lang="pt_BR"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="brasil.gov.portal">
-    <body>
-        <div metal:fill-slot="main">
-            <h1 class="documentFirstHeading">${context/title}</h1>
-            <p class="descriptionAlbum">${context/description}</p>
-            <div class="galeria_container">
-                <div class="slideshow-player">
-                    <div class="cycle-player cycle-slideshow"
-                         data-cycle-slides="> div"
-                         data-cycle-timeout="0"
-                         data-allow-wrap="false"
-                         data-cycle-fx="fade">
-                        <div tal:repeat="image view/items">
-                            <tal:image define="scale python:view.scale(image['obj']);"
-                                       condition="scale">
-                                <img src="${scale/url}" alt="${image/obj/Title}">
-                            </tal:image>
-                            <div class="cycle-overlay">
-                                ${image/obj/Description}
-                                <span class="rights">${image/obj/Rights}</span>
-                            </div>
-                        </div>
-                    </div><!-- cycle-player -->
-                </div><!-- slideshow-player -->
-                <div class="slideshow-carrossel">
-                    <div class="cycle-carrossel cycle-slideshow"
-                         data-cycle-slides="> div"
-                         data-cycle-timeout="0"
-                         data-cycle-fx="carousel"
-                         data-cycle-carousel-fluid="true"
-                         data-cycle-prev=".slideshow-carrossel .cycle-prev"
-                         data-cycle-next=".slideshow-carrossel .cycle-next"
-                         data-allow-wrap="false">
-                        <div class="thumb-itens" tal:repeat="image view/items">
-                            <tal:image define="thumbnail python:view.thumbnail(image['obj']);"
-                                       condition="thumbnail">
-                                <img src="${thumbnail/url}" alt="${image/obj/Title}">
-                            </tal:image>
-                        </div>
-                    </div><!-- cycle-carrossel -->
-                    <div class="cycle-nagivation">
-                        <a href="#" class="cycle-prev" i18n:translate="">&laquo; Previous</a>
-                        <a href="#" class="cycle-next" i18n:translate="">Next &raquo;</a>
-                    </div>
-                </div><!-- slideshow-carrossel -->
-            </div><!-- galeria_container -->
+  <body>
+    <div metal:fill-slot="main">
+      <h1 class="documentFirstHeading">${context/title}</h1>
+      <p class="descriptionAlbum">${context/description}</p>
+      <div class="swiper-container photogallery-container">
+        <div class="swiper-wrapper">
+          <tal:items repeat="obj view/items">
+            <div class="swiper-slide">
+              <div class="image-container"
+                   tal:define="scale python:view.scale(obj);"
+                   tal:condition="scale">
+                <img tal:attributes="src scale/url;
+                                     class string:gallery-image;
+                                     alt obj/Description|obj/Title" />
+                <div class="container-bar">
+                  <div class="text-bottom">
+                    <p class="description" tal:content="obj/Description">Description</p>
+                    <p class="credits" tal:content="obj/Rights">Credits</p>
+                  </div>
+                  <div class="links-bottom">
+                    <a class="zoom-icon"
+                       tal:attributes="href string:${scale/url}">
+                      Zoom
+                    </a>
+                    <a class="download-icon"
+                       tal:attributes="href string:${obj/absolute_url}/@@download/image">
+                      Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tal:items>
         </div>
-    </body>
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+      </div>
+    </div>
+  </body>
 </html>

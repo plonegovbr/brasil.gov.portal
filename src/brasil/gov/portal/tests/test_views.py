@@ -151,9 +151,7 @@ class GaleriaDeFotosTestCase(BaseViewTestCase):
         self.view.setup()
 
         self.assertEqual(len(self.view.items), 1)
-        self.assertEqual(self.view.items[0]['obj'], image)
-        import Missing
-        self.assertEqual(self.view.items[0]['size'], Missing.Value)
+        self.assertEqual(self.view.items[0], image)
 
 
 PAGINATION_BEGIN = [

@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Revisa view de Galleria de Fotos.
+  [rodfersou]
+
 - Corrige o viewlet services responsável pelos links de destaques.
   [claytonc.sousa]
 

@@ -283,8 +283,7 @@ class GaleriaDeFotosView(BrowserView):
     def _get_items(self):
         """ Return a list of image objects inside the album
         """
-        return [{'obj': b.getObject(),
-                 'size': b.getObjSize} for b in self._get_brains('Image')]
+        return [b.getObject() for b in self._get_brains('Image')]
 
     def scale(self, item):
         scales = item.restrictedTraverse('@@images')
