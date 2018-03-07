@@ -187,3 +187,25 @@ class To10806TestCase(UpgradeBaseTestCase):
             configlet, [c.getId() for c in portal_controlpanel.listActions()])
 
         # TODO: check for registry registration
+
+    def test_review_galeria_image_sizes(self):
+        title = u'Review galeria image sizes.'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        settings = api.portal.get_tool('portal_properties').imaging_properties
+        allowed_sizes = list(settings.allowed_sizes)
+        allowed_sizes.append(u'galeria_de_foto_thumb 87:49')
+        allowed_sizes.append(u'galeria_de_foto_view 748:513')
+        allowed_sizes.remove(u'galeria_de_foto_view 1150:650')
+        settings.allowed_sizes = tuple(allowed_sizes)
+        self.assertIn(u'galeria_de_foto_thumb 87:49', settings.allowed_sizes)
+        self.assertIn(u'galeria_de_foto_view 748:513', settings.allowed_sizes)
+        self.assertNotIn(u'galeria_de_foto_view 1150:650', settings.allowed_sizes)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        self.assertNotIn(u'galeria_de_foto_thumb 87:49', settings.allowed_sizes)
+        self.assertNotIn(u'galeria_de_foto_view 748:513', settings.allowed_sizes)
+        self.assertIn(u'galeria_de_foto_view 1150:650', settings.allowed_sizes)

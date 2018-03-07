@@ -49,7 +49,7 @@
     <property name="allowed_sizes" type="lines" purge="False">
       <element value="capa 230:230"/>
       <element value="galeria_de_album_thumb 238:133"/>
-      <element value="galeria_de_foto_view 1150:602"/>
+      <element value="galeria_de_foto_view 1150:650"/>
     </property>
   </object>
 </object>
