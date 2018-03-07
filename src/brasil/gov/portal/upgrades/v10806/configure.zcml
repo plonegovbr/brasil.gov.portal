@@ -27,9 +27,9 @@
         />
 
     <genericsetup:upgradeStep
-        title="Review galeria image sizes."
-        description="Review galeria de fotos image sizes."
-        handler=".review_galeria_image_sizes"
+        title="Update galeria image sizes."
+        description="Update galeria de fotos image sizes."
+        handler=".update_galeria_image_sizes"
         />
 
   </genericsetup:upgradeSteps>

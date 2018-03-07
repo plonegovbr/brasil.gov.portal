@@ -153,7 +153,7 @@ class To10806TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 2)
+        self.assertEqual(steps, 3)
 
     # XXX: there is no clear way to remove a permission
     #      and then test if it has been added
@@ -188,17 +188,17 @@ class To10806TestCase(UpgradeBaseTestCase):
 
         # TODO: check for registry registration
 
-    def test_review_galeria_image_sizes(self):
-        title = u'Review galeria image sizes.'
+    def test_update_galeria_image_sizes(self):
+        title = u'Update galeria image sizes.'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
         # simulate state on previous version
         settings = api.portal.get_tool('portal_properties').imaging_properties
-        allowed_sizes = list(settings.allowed_sizes)
-        allowed_sizes.append(u'galeria_de_foto_thumb 87:49')
-        allowed_sizes.append(u'galeria_de_foto_view 748:513')
-        allowed_sizes.remove(u'galeria_de_foto_view 1150:650')
+        allowed_sizes = set(settings.allowed_sizes)
+        allowed_sizes |= frozenset([
+            u'galeria_de_foto_thumb 87:49', u'galeria_de_foto_view 748:513'])
+        allowed_sizes -= frozenset([u'galeria_de_foto_view 1150:650'])
         settings.allowed_sizes = tuple(allowed_sizes)
         self.assertIn(u'galeria_de_foto_thumb 87:49', settings.allowed_sizes)
         self.assertIn(u'galeria_de_foto_view 748:513', settings.allowed_sizes)

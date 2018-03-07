@@ -258,32 +258,17 @@ class GaleriaDeFotosView(BrowserView):
 
     index = ViewPageTemplateFile('templates/galeria_de_fotos.pt')
 
-    def setup(self):
-        self.items = self._get_items()
-
     def render(self):
         return self.index()
 
     def __call__(self):
-        self.setup()
         return self.render()
 
-    def _get_brains(self, data_type=None):
-        """ Return a list of brains inside the folder
-        """
-        catalog = getToolByName(self.context, 'portal_catalog')
-        path = '/'.join(self.context.getPhysicalPath())
-        brains = catalog(Type=data_type,
-                         path={'query': path,
-                               'depth': 1},
-                         sort_on='getObjPositionInParent')
-
-        return brains
-
-    def _get_items(self):
-        """ Return a list of image objects inside the album
-        """
-        return [b.getObject() for b in self._get_brains('Image')]
+    @property
+    def items(self):
+        """Return a list of image objects inside the album."""
+        content_filter = {'portal_type': 'Image'}
+        return self.context.listFolderContents(content_filter)
 
     def scale(self, item):
         scales = item.restrictedTraverse('@@images')
