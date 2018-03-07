@@ -26,6 +26,12 @@
         import_profile="brasil.gov.portal.upgrades.v10806:default"
         />
 
+    <genericsetup:upgradeStep
+        title="Update galeria image sizes."
+        description="Update galeria de fotos image sizes."
+        handler=".update_galeria_image_sizes"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>

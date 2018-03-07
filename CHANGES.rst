@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Revisa a view de galeria de fotos e atualiza a lista de dimensões de imagens validas.
+  [rodfersou]
+
 - Corrige o viewlet services responsável pelos links de destaques.
   [claytonc.sousa]
 
