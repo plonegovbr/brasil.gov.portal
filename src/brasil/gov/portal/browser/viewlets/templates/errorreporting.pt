@@ -1,5 +1,9 @@
+<script type="text/javascript" tal:content="string:var absolute_url = '${context/absolute_url}'"></script>
 <script async="async">
-  var url = portal_url + '/relatar-erros?ajax_load=1 #content';
-  $('#error-reporting').load(url);
+  jQuery(document).ready(function() {
+    var url = portal_url + '/relatar-erros?ajax_load=1&url=' + absolute_url + ' #content';
+    $('#error-reporting').load(url);
+  });
 </script>
 <div id="error-reporting"></div>
+
