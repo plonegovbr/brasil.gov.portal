@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualiza as traduções a português brasileiro e espanhol.
+  [hvelarde]
+
 - Revisa a view de galeria de fotos e atualiza a lista de dimensões de imagens validas.
   [rodfersou]
 

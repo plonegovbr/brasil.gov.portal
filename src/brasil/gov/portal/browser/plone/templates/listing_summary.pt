@@ -164,7 +164,7 @@
                               define="itemDate python: item.modified if item.EffectiveDate() == 'None' else item.effective">
                     <span class="hiddenStructure">
                         <tal:mod i18n:translate="box_published">
-                            Published
+                            published
                         </tal:mod>
                     </span>
                     <span class="summary-view-icon">
