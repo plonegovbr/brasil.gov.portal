@@ -52,7 +52,9 @@
                               tal:define="portal_settings context/@@portal_settings;
                                           mostra_data not:portal_settings/get_esconde_data;
                                           mostra_autor not:portal_settings/get_esconde_autor;">
-                            <tal:autor i18n:translate="label_by_author" condition="mostra_autor">
+                            <tal:autor condition="mostra_autor"
+                                i18n:domain="brasil.gov.portal"
+                                i18n:translate="label_by_creator">
                                 by
                                 <span tal:define="creator result/Creator;
                                                   author python:context.portal_membership.getMemberInfo(creator)"
