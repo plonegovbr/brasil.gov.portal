@@ -6,15 +6,17 @@ Changelog
 
 - Atualiza as traduções a português brasileiro e espanhol.
   [hvelarde]
+- Adiciona um viewlet para relatórios de erros.
+  [hvelarde, claytonc]
 
 - Revisa a view de galeria de fotos e atualiza a lista de dimensões de imagens validas.
   [rodfersou]
 
 - Corrige o viewlet services responsável pelos links de destaques.
-  [claytonc.sousa]
+  [claytonc]
 
 - Adiciona um configlet para gerenciar os links no portal tabs.
-  [claytonc.sousa]
+  [claytonc]
 
 - Adicionado tipo de conteúdo ``Infografic``;
   por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.
