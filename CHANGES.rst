@@ -4,6 +4,10 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona um viewlet para relatórios de erros;
+  é preciso criar um formulário de contato com id ``relatar-erros`` na raiz do site para utilizar este recurso.
+  [hvelarde, claytonc]
+
 - Atualiza as traduções a português brasileiro e espanhol.
   [hvelarde]
 
@@ -11,10 +15,10 @@ Changelog
   [rodfersou]
 
 - Corrige o viewlet services responsável pelos links de destaques.
-  [claytonc.sousa]
+  [claytonc]
 
 - Adiciona um configlet para gerenciar os links no portal tabs.
-  [claytonc.sousa]
+  [claytonc]
 
 - Adicionado tipo de conteúdo ``Infografic``;
   por enquanto é simplesmente um clone do tipo de conteúdo ``Image``.

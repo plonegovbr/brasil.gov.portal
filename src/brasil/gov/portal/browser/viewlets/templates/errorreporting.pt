@@ -1,0 +1,17 @@
+<script tal:content="string:var absolute_url = '${context/absolute_url}'"></script>
+<script>
+  $(function() {
+    var url = portal_url + '/relatar-erros?ajax_load=1&amp;url=' + absolute_url + ' #content';
+    $('#error-reporting').load(url);
+
+    $('#error-reporting').hide();
+    $(document).on('click', '#error-reporting-toggle', function (e) {
+      e.preventDefault();
+      $(this).toggleClass('open');
+      $('#error-reporting').slideToggle();
+    });
+
+  });
+</script>
+<a id="error-reporting-toggle" href="#">Reportar erro</a>
+<div id="error-reporting"></div>
