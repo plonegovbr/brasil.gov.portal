@@ -130,4 +130,15 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <configure package="collective.texttospeech.browser">
+    <browser:viewlet
+        name="collective.texttospeech"
+        class="collective.texttospeech.browser.viewlets.TextToSpeechViewlet"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="templates/texttospeech.pt"
+        layer="collective.texttospeech.interfaces.IBrowserLayer"
+        permission="zope2.View"
+        />
+  </configure>
+
 </configure>

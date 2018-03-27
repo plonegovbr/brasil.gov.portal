@@ -57,6 +57,7 @@ setup(
         'collective.cover > 1.3b1',
         'collective.fingerpointing',
         'collective.jsonmigrator',
+        'collective.texttospeech',
         'collective.lazysizes',
         'collective.liveblog',
         'collective.monkeypatcher',
