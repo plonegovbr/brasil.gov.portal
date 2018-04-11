@@ -47,11 +47,11 @@ Editar o link
     Campo de texto  form.widgets.url_expr  /fale-conosco
     Clicar botao  Adicionar
 
-    Clicar link  Fale Conosco
+    Clicar link  css=.controlpanel-listing a:first-child
     Campo de texto  form.widgets.title  Participe
     Campo de texto  form.widgets.description  Link para Participe
     Campo de texto  form.widgets.url_expr  /participe
-    Clicar botao  Save
+    Clicar botao  name=form.buttons.save
 
     Ir para  ${PLONE_URL}/@@portal-services-settings
     Pagina deve conter  Participe

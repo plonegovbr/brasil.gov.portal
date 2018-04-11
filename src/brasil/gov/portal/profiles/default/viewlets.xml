@@ -3,6 +3,9 @@
   <order manager="plone.portaltop" skinname="*">
     <viewlet name="brasil.gov.portal.acessibilidade" after="brasil.gov.barra"/>
   </order>
+  <order manager="plone.abovecontentbody" skinname="*">
+    <viewlet name="collective.texttospeech" insert-after="*" />
+  </order>
   <order manager="plone.portalheader" skinname="*">
     <viewlet name="brasil.gov.portal.servicos" after="plone.global_sections"/>
     <viewlet name="brasil.gov.portal.redessociais" after="brasil.gov.portal.servicos"/>
@@ -10,4 +13,7 @@
   <order manager="plone.plonefooter" skinname="*">
     <viewlet name="brasil.gov.portal.topo" before="doormat.footer"/>
   </order>
+  <hidden manager="plone.abovecontent" skinname="*">
+    <viewlet name="collective.texttospeech" />
+  </hidden>
 </object>

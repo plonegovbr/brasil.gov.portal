@@ -1,5 +1,7 @@
 *** Settings ***
 
+Resource  plone/app/robotframework/keywords.robot
+
 Variables  brasil/gov/portal/tests/robot/variables.py
 
 *** Keywords ***
