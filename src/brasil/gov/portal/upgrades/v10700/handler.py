@@ -123,7 +123,7 @@ def _corrige_conteudo_collectivecover(obj, layout, is_child=False):
             fixed_row[u'children'] = _corrige_conteudo_collectivecover(
                 obj,
                 fixed_row[u'children'],
-                True
+                True,
             )
         fixed_layout.append(fixed_row)
     if is_child:

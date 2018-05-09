@@ -20,7 +20,7 @@ import sys
 
 modules = [
     'collective.oembed.interfaces.OEmbedLayer',
-    'plone.app.collection.interfaces.IPloneAppCollectionLayer'
+    'plone.app.collection.interfaces.IPloneAppCollectionLayer',
 ]
 
 
@@ -51,5 +51,5 @@ for module in modules:
 logger.warning(
     'Criando as classes fake para retirar a layer'
     ' do collective.oembed e plone.app.collection'
-    ' evitando pickling errors entre upgradesteps'
+    ' evitando pickling errors entre upgradesteps',
 )

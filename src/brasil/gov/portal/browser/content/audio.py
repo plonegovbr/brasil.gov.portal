@@ -36,6 +36,6 @@ class AudioView(BrowserView):
             downloads.append(
                 {'format': format,
                  'size': sizeof_fmt(size),
-                 'path': '%s/download' % obj.absolute_url()}
+                 'path': '%s/download' % obj.absolute_url()},
             )
         return downloads

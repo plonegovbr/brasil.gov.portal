@@ -121,7 +121,7 @@ def configura_ultimas_noticias(portal):
             container=portal,
             id=oId,
             title=title,
-            description=description
+            description=description,
         )
     else:
         colecao = portal[oId]

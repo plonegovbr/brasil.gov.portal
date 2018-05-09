@@ -17,6 +17,6 @@ class OverviewControlPanel(ControlPanelView):
         versions = super(OverviewControlPanel, self).version_overview()
         versions.insert(
             0,
-            u'Portal Padrão {0}'.format(self.portal_padrao_version())
+            u'Portal Padrão {0}'.format(self.portal_padrao_version()),
         )
         return versions

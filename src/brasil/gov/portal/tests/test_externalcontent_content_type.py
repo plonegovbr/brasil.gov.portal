@@ -19,18 +19,18 @@ class ExternalContentTestCase(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.folder = api.content.create(
                 type='Folder',
                 container=self.portal,
-                id='test-folder'
+                id='test-folder',
             )
             # Invalidate schema cache
             SCHEMA_CACHE.invalidate('ExternalContent')
             self.content = api.content.create(
                 type='ExternalContent',
                 container=self.folder,
-                id='external'
+                id='external',
             )
             self.setup_content_data()
 
@@ -76,7 +76,7 @@ class ExternalContentViewTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
 
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.content = api.content.create(
                 container=self.portal,
                 type='ExternalContent',
@@ -90,7 +90,7 @@ class ExternalContentViewTestCase(unittest.TestCase):
         self.assertTrue(isinstance(view, ExternalContentView))
 
     def test_view_manager(self):
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             view = self.content.restrictedTraverse('@@view')
             self.assertIn('The link address is', view())
 
@@ -98,7 +98,7 @@ class ExternalContentViewTestCase(unittest.TestCase):
         self.assertNotIn('location', headers)
 
     def test_view_anonymous(self):
-        with api.env.adopt_roles(['Anonymous', ]):
+        with api.env.adopt_roles(['Anonymous']):
             view = self.content.restrictedTraverse('@@view')
             self.assertIsNone(view())
 

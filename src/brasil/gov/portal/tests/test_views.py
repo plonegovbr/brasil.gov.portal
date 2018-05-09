@@ -130,7 +130,7 @@ class GaleriaDeAlbunsTestCase(BaseViewTestCase):
 
         thumb_test = {
             'src': 'http://nohost/plone/folder/gal_fotos/imagem',
-            'alt': 'test_description'
+            'alt': 'test_description',
         }
 
         self.assertEqual(self.view.thumbnail(gal_fotos), thumb_test)
@@ -163,7 +163,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=1',
         'is_next': False,
         'is_prev': False,
-        'link': False
+        'link': False,
     },
     {
         'class': 'pagina',
@@ -171,7 +171,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=2',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -179,7 +179,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=3',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -187,7 +187,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=4',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -195,7 +195,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=5',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -203,7 +203,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=6',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -211,7 +211,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=7',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'reticencias',
@@ -219,7 +219,7 @@ PAGINATION_BEGIN = [
         'href': '',
         'is_next': False,
         'is_prev': False,
-        'link': False
+        'link': False,
     },
     {
         'class': 'pagina',
@@ -227,7 +227,7 @@ PAGINATION_BEGIN = [
         'href': '?pagina=12',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'proximo',
@@ -235,8 +235,8 @@ PAGINATION_BEGIN = [
         'href': '?pagina=2',
         'is_next': True,
         'is_prev': False,
-        'link': True
-    }
+        'link': True,
+    },
 ]
 
 PAGINATION_MIDDLE = [
@@ -295,7 +295,7 @@ PAGINATION_MIDDLE = [
         'href': '?pagina=7',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'reticencias',
@@ -303,7 +303,7 @@ PAGINATION_MIDDLE = [
         'href': '',
         'is_next': False,
         'is_prev': False,
-        'link': False
+        'link': False,
     },
     {
         'class': 'pagina',
@@ -311,7 +311,7 @@ PAGINATION_MIDDLE = [
         'href': '?pagina=12',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'proximo',
@@ -319,8 +319,8 @@ PAGINATION_MIDDLE = [
         'href': '?pagina=6',
         'is_next': True,
         'is_prev': False,
-        'link': True
-    }
+        'link': True,
+    },
 ]
 
 PAGINATION_END = [
@@ -330,7 +330,7 @@ PAGINATION_END = [
         'href': '?pagina=11',
         'is_next': False,
         'is_prev': True,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -338,7 +338,7 @@ PAGINATION_END = [
         'href': '?pagina=1',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'reticencias',
@@ -346,7 +346,7 @@ PAGINATION_END = [
         'href': '',
         'is_next': False,
         'is_prev': False,
-        'link': False
+        'link': False,
     },
     {
         'class': 'pagina',
@@ -354,7 +354,7 @@ PAGINATION_END = [
         'href': '?pagina=6',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -362,7 +362,7 @@ PAGINATION_END = [
         'href': '?pagina=7',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -370,7 +370,7 @@ PAGINATION_END = [
         'href': '?pagina=8',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -378,7 +378,7 @@ PAGINATION_END = [
         'href': '?pagina=9',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -386,7 +386,7 @@ PAGINATION_END = [
         'href': '?pagina=10',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'pagina',
@@ -394,7 +394,7 @@ PAGINATION_END = [
         'href': '?pagina=11',
         'is_next': False,
         'is_prev': False,
-        'link': True
+        'link': True,
     },
     {
         'class': 'atual',
@@ -402,7 +402,7 @@ PAGINATION_END = [
         'href': '?pagina=12',
         'is_next': False,
         'is_prev': False,
-        'link': False
+        'link': False,
     },
 ]
 
@@ -414,17 +414,17 @@ class SummaryViewTestCase(BaseViewTestCase):
         setRoles(self.portal, TEST_USER_ID, ['Site Administrator'])
         self.browser.handleErrors = False
         basic_auth = 'Basic {0}'.format(
-            '{0}:{1}'.format(TEST_USER_NAME, TEST_USER_PASSWORD)
+            '{0}:{1}'.format(TEST_USER_NAME, TEST_USER_PASSWORD),
         )
         self.browser.addHeader('Authorization', basic_auth)
 
     def test_data_nao_pode_ser_1969_por_padrao_de_itens_criados(self):
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             obj = api.content.create(
                 type='collective.nitf.content',
                 container=self.portal['folder'],
                 id='noticia',
-                title='noticia'
+                title='noticia',
             )
             # Necessário para poder visualizar os objetos criados nos testes
             # unitários em self.browser.
@@ -447,10 +447,10 @@ class SummaryViewTestCase(BaseViewTestCase):
         # Deve conter a data do objeto criado, assim como a hora.
         self.assertIn(
             '<iclass="icon-day"></i>{0}</span><spanclass="summary-view-icon"><iclass="icon-hour"></i>{1}'.format(date, time),
-            contents_no_spaces
+            contents_no_spaces,
         )
         # Não deve conter a data de 1969 padrão.
         self.assertNotIn(
             '<iclass="icon-day"></i>31/12/1969',
-            contents_no_spaces
+            contents_no_spaces,
         )

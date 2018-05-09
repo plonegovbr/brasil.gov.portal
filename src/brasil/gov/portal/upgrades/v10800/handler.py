@@ -11,7 +11,7 @@ def atualiza_layouts_capa(context):
         collective.cover
     """
     layout_registry = api.portal.get_registry_record(
-        name='collective.cover.controlpanel.ICoverSettings.layouts'
+        name='collective.cover.controlpanel.ICoverSettings.layouts',
     )
     cover_layouts = {}
     for name, json_layouts in layout_registry.items():
@@ -29,7 +29,7 @@ def atualiza_layouts_capa(context):
 
     api.portal.set_registry_record(
         name='collective.cover.controlpanel.ICoverSettings.layouts',
-        value=cover_layouts
+        value=cover_layouts,
     )
 
 

@@ -202,7 +202,7 @@ class ServicosViewletTestCase(AccessibilityTestCase):
     def test_render_title(self):
         """Teste para identificar se o atributo title está presente."""
 
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.servicos = api.content.create(
                 type='Folder',
                 container=self.portal,
@@ -225,7 +225,7 @@ class ServicosViewletTestCase(AccessibilityTestCase):
     def test_render_not_title(self):
         """Teste para identificar se o atributo title está presente."""
 
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.servicos = api.content.create(
                 type='Folder',
                 container=self.portal,

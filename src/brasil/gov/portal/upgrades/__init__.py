@@ -16,7 +16,7 @@ def upgrade_profile(setup, profile_id):
             step.doStep(setup)
             logger.info('Ran upgrade step %s for profile %s' % (
                 step.title,
-                profile_id
+                profile_id,
             ))
 
     if step and step.dest is not None and step.checker is None:

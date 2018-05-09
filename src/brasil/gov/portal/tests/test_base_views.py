@@ -54,13 +54,13 @@ class OverviewViewIntegrationTestCase(unittest.TestCase):
         # Usuarios anonimos serao redirecionados para o login
         self.assertEqual(
             self.view.upgrade_url(self.portal),
-            '{0}/@@plone-root-login'.format(self.app.absolute_url())
+            '{0}/@@plone-root-login'.format(self.app.absolute_url()),
         )
         with api.env.adopt_roles(['Manager']):
             # Usuarios com papel de manager poderao realizar o upgrade
             self.assertEqual(
                 self.view.upgrade_url(self.portal),
-                '{0}/@@plone-upgrade'.format(self.portal.absolute_url())
+                '{0}/@@plone-upgrade'.format(self.portal.absolute_url()),
             )
 
     def test_overview_outdated(self):
@@ -88,8 +88,8 @@ class AddSiteViewFunctionalTestCase(unittest.TestCase):
         basic_auth = 'Basic {0}'.format(
             base64.encodestring('{0}:{1}'.format(
                 SITE_OWNER_NAME,
-                SITE_OWNER_PASSWORD)
-            )
+                SITE_OWNER_PASSWORD),
+            ),
         )
         browser.addHeader('Authorization', basic_auth)
         browser.open('{0}/@@plone-addsite?site_id=site'.format(self.app.absolute_url()))
