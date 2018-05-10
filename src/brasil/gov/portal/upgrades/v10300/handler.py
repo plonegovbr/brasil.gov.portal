@@ -29,8 +29,7 @@ def atualiza_secoes(context):
     logger.info('Conteudos atualizados')
 
     available_sections = list(api.portal.get_registry_record(
-        'collective.nitf.controlpanel.INITFSettings.available_sections',
-    ))
+        'collective.nitf.controlpanel.INITFSettings.available_sections'))
     if 'General' in available_sections:
         available_sections.remove('General')
         logger.info('Remove secao General')
@@ -40,16 +39,13 @@ def atualiza_secoes(context):
     # Adiciona a secao Noticias
     api.portal.set_registry_record(
         'collective.nitf.controlpanel.INITFSettings.available_sections',
-        set(available_sections),
-    )
+        set(available_sections))
     default_section = api.portal.get_registry_record(
-        'collective.nitf.controlpanel.INITFSettings.default_section',
-    )
+        'collective.nitf.controlpanel.INITFSettings.default_section')
     if default_section == 'General':
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.default_section',
-            u'Notícias',
-        )
+            u'Notícias')
         logger.info('Define Noticias como secao padrao')
 
 

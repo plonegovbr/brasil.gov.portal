@@ -120,11 +120,7 @@ def _corrige_conteudo_collectivecover(obj, layout, is_child=False):
                 tile.set_tile_configuration(tile_conf)
         fixed_row = _corrige_css_class(fixed_row)
         if u'children' in fixed_row:
-            fixed_row[u'children'] = _corrige_conteudo_collectivecover(
-                obj,
-                fixed_row[u'children'],
-                True,
-            )
+            fixed_row[u'children'] = _corrige_conteudo_collectivecover(obj, fixed_row[u'children'], True)
         fixed_layout.append(fixed_row)
     if is_child:
         return fixed_layout

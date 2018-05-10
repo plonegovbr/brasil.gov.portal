@@ -31,9 +31,7 @@ class DoormatView(BaseView):
             },
         ]
         """
-        portal_state = self.context.restrictedTraverse(
-            '@@plone_portal_state',
-        )
+        portal_state = self.context.restrictedTraverse('@@plone_portal_state')
         navigation_root_url = portal_state.navigation_root_url()
         portal_url = portal_state.portal_url()
         data = super(DoormatView, self).getDoormatData()
@@ -45,12 +43,10 @@ class DoormatView(BaseView):
                     if '${navigation_root_url}' in link_url:
                         url = link_url.replace(
                             '${navigation_root_url}',
-                            navigation_root_url,
-                        )
+                            navigation_root_url)
                     elif '${portal_url}' in link_url:
                         url = link_url.replace(
                             '${portal_url}',
-                            portal_url,
-                        )
+                            portal_url)
                     link['link_url'] = url
         return data

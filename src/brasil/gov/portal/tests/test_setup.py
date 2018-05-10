@@ -175,12 +175,8 @@ class TestUpgrade(unittest.TestCase):
         # Executa upgrade
         self.execute_upgrade(u'1000', u'2000')
         record = api.portal.get_registry_record(
-            'collective.cover.controlpanel.ICoverSettings.available_tiles',
-        )
-        self.assertIn(
-            'banner_rotativo',
-            record,
-        )
+            'collective.cover.controlpanel.ICoverSettings.available_tiles')
+        self.assertIn('banner_rotativo', record)
 
     def test_to3000_available(self):
         step = self.list_upgrades(u'2000', u'3000')
@@ -190,12 +186,8 @@ class TestUpgrade(unittest.TestCase):
         # Executa upgrade
         self.execute_upgrade(u'2000', u'3000')
         record = api.portal.get_registry_record(
-            'collective.cover.controlpanel.ICoverSettings.styles',
-        )
-        self.assertIn(
-            'Verde Esporte|verde',
-            record,
-        )
+            'collective.cover.controlpanel.ICoverSettings.styles')
+        self.assertIn('Verde Esporte|verde', record)
 
     def test_to4000_available(self):
         step = self.list_upgrades(u'3000', u'4000')
@@ -204,9 +196,7 @@ class TestUpgrade(unittest.TestCase):
     def test_to4000_execution(self):
         # Executa upgrade
         self.execute_upgrade(u'3000', u'4000')
-        self.assertTrue(
-            self.pp.site_properties.displayPublicationDateInByline,
-        )
+        self.assertTrue(self.pp.site_properties.displayPublicationDateInByline)
 
     def test_to5000_available(self):
         step = self.list_upgrades(u'4000', u'5000')
@@ -259,8 +249,7 @@ class TestUpgrade(unittest.TestCase):
         # Deixa General como padrao
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.default_section',
-            u'General',
-        )
+            u'General')
 
     def test_to10300_execution(self):
         self._prepara_to10300()
@@ -382,23 +371,20 @@ class TestUpgrade(unittest.TestCase):
         new_viewlets_top = [u'brasil.gov.portal.acessibilidade']
         top_available = self._get_available_viewlets_ids_from_manager(
             new_viewlets_top,
-            self._get_viewlets_from_manager('plone.portaltop'),
-        )
+            self._get_viewlets_from_manager('plone.portaltop'))
         self.assertEqual(len(top_available), len(new_viewlets_top))
 
         new_viewlets_footer = [u'plone.footer', u'brasil.gov.portal.topo']
         footer_available = self._get_available_viewlets_ids_from_manager(
             new_viewlets_footer,
-            self._get_viewlets_from_manager('plone.portalfooter'),
-        )
+            self._get_viewlets_from_manager('plone.portalfooter'))
         self.assertEqual(len(footer_available), len(new_viewlets_footer))
         configs = getattr(self.pp, 'brasil_gov', None)
         url_orgao = configs.getProperty('url_orgao')
         self.assertEqual(
             url_orgao,
             u'http://estruturaorganizacional.dados.gov.br/doc/' +
-            'unidade-organizacional/26',
-        )
+            u'unidade-organizacional/26')
 
         # A action de Configuracoes do Site deve ser desabilitada pelo
         # upgrade step.
@@ -437,10 +423,7 @@ class TestUpgrade(unittest.TestCase):
             pasta = self.portal[pasta_id]
             self.assertTrue(isinstance(pasta.getOrdering(), DefaultOrdering))
 
-        self.assertEqual(
-            len(self.st.listUpgrades('brasil.gov.tiles:default')),
-            0,
-        )
+        self.assertEqual(len(self.st.listUpgrades('brasil.gov.tiles:default')), 0)
 
         # Executa o upgrade step com o brasil.gov.agenda desinstalado.
         # Em versões antigas do brasil.gov.portal o brasil.gov.agenda não era
@@ -543,12 +526,10 @@ class TestUpgrade(unittest.TestCase):
         }
         api.portal.set_registry_record(
             name='collective.cover.controlpanel.ICoverSettings.layouts',
-            value=layouts,
-        )
+            value=layouts)
 
         layout_registry = api.portal.get_registry_record(
-            name='collective.cover.controlpanel.ICoverSettings.layouts',
-        )
+            name='collective.cover.controlpanel.ICoverSettings.layouts')
         self.assertDictEqual(layout_registry, layouts)
 
         self.execute_upgrade(u'10700', u'10800')
@@ -656,8 +637,7 @@ class TestUpgrade(unittest.TestCase):
         # Simula situação antiga
         old_selectable_views = ('folder_listing', 'news_listing')
         self.portal.manage_changeProperties(
-            selectable_views=old_selectable_views,
-        )
+            selectable_views=old_selectable_views)
         selectable_views_property = self.portal.getProperty('selectable_views')
         self.assertTupleEqual(selectable_views_property, old_selectable_views)
 

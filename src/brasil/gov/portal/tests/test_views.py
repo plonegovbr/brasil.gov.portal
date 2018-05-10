@@ -414,8 +414,7 @@ class SummaryViewTestCase(BaseViewTestCase):
         setRoles(self.portal, TEST_USER_ID, ['Site Administrator'])
         self.browser.handleErrors = False
         basic_auth = 'Basic {0}'.format(
-            '{0}:{1}'.format(TEST_USER_NAME, TEST_USER_PASSWORD),
-        )
+            '{0}:{1}'.format(TEST_USER_NAME, TEST_USER_PASSWORD))
         self.browser.addHeader('Authorization', basic_auth)
 
     def test_data_nao_pode_ser_1969_por_padrao_de_itens_criados(self):
@@ -447,10 +446,6 @@ class SummaryViewTestCase(BaseViewTestCase):
         # Deve conter a data do objeto criado, assim como a hora.
         self.assertIn(
             '<iclass="icon-day"></i>{0}</span><spanclass="summary-view-icon"><iclass="icon-hour"></i>{1}'.format(date, time),
-            contents_no_spaces,
-        )
+            contents_no_spaces)
         # Não deve conter a data de 1969 padrão.
-        self.assertNotIn(
-            '<iclass="icon-day"></i>31/12/1969',
-            contents_no_spaces,
-        )
+        self.assertNotIn('<iclass="icon-day"></i>31/12/1969', contents_no_spaces)

@@ -29,8 +29,7 @@ def atualiza_layouts_capa(context):
 
     api.portal.set_registry_record(
         name='collective.cover.controlpanel.ICoverSettings.layouts',
-        value=cover_layouts,
-    )
+        value=cover_layouts)
 
 
 def apply_profile(context):

@@ -174,8 +174,7 @@ class InitContentTestCase(unittest.TestCase):
         # esta sendo realizada
         self.assertEqual(
             data[0]['column_sections'][0]['section_links'][1]['link_url'],
-            'http://nohost/plone/assuntos/lorem-ipsum',
-        )
+            'http://nohost/plone/assuntos/lorem-ipsum')
 
     def test_doormat_workflow(self):
         """Testa se o Doormat está considerando o estado do workflow"""
