@@ -581,8 +581,7 @@ class TestUpgrade(unittest.TestCase):
         }
 
         layout_registry = api.portal.get_registry_record(
-            name='collective.cover.controlpanel.ICoverSettings.layouts',
-        )
+            name='collective.cover.controlpanel.ICoverSettings.layouts')
         for name, layout in layouts.items():
             self.assertListEqual(json.loads(layout_registry[name]), layout)
 
