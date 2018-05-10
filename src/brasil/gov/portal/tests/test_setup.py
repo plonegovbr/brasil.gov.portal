@@ -11,6 +11,7 @@ from brasil.gov.portal.testing import INTEGRATION_TESTING
 from brasil.gov.portal.tests.test_portal_properties import SELECTABLE_VIEWS
 from brasil.gov.portal.upgrades.v10700.handler import atualiza_produtos_terceiros
 from collective.cover.controlpanel import ICoverSettings
+from distutils.version import LooseVersion
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -686,6 +687,6 @@ class TestUpgrade(unittest.TestCase):
         upgrade_info = self.qi.upgradeInfo(PROJECTNAME)
         upgradeSteps = listUpgradeSteps(self.st, self.profile, '')
         upgrades = [upgrade[0]['dest'][0] for upgrade in upgradeSteps]
-        last_upgrade = sorted(upgrades, key=int)[-1]
+        last_upgrade = sorted(upgrades, key=LooseVersion)[-1]
         self.assertEqual(upgrade_info['installedVersion'],
                          last_upgrade)
