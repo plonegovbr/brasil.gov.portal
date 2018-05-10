@@ -175,12 +175,8 @@ class TestUpgrade(unittest.TestCase):
         # Executa upgrade
         self.execute_upgrade(u'1000', u'2000')
         record = api.portal.get_registry_record(
-            'collective.cover.controlpanel.ICoverSettings.available_tiles'
-        )
-        self.assertIn(
-            'banner_rotativo',
-            record
-        )
+            'collective.cover.controlpanel.ICoverSettings.available_tiles')
+        self.assertIn('banner_rotativo', record)
 
     def test_to3000_available(self):
         step = self.list_upgrades(u'2000', u'3000')
@@ -190,12 +186,8 @@ class TestUpgrade(unittest.TestCase):
         # Executa upgrade
         self.execute_upgrade(u'2000', u'3000')
         record = api.portal.get_registry_record(
-            'collective.cover.controlpanel.ICoverSettings.styles'
-        )
-        self.assertIn(
-            'Verde Esporte|verde',
-            record
-        )
+            'collective.cover.controlpanel.ICoverSettings.styles')
+        self.assertIn('Verde Esporte|verde', record)
 
     def test_to4000_available(self):
         step = self.list_upgrades(u'3000', u'4000')
@@ -204,9 +196,7 @@ class TestUpgrade(unittest.TestCase):
     def test_to4000_execution(self):
         # Executa upgrade
         self.execute_upgrade(u'3000', u'4000')
-        self.assertTrue(
-            self.pp.site_properties.displayPublicationDateInByline
-        )
+        self.assertTrue(self.pp.site_properties.displayPublicationDateInByline)
 
     def test_to5000_available(self):
         step = self.list_upgrades(u'4000', u'5000')
@@ -214,18 +204,18 @@ class TestUpgrade(unittest.TestCase):
 
     def test_5000_corrige_pastas(self):
         # Ajustamos as pastas para nao estarem ordenadas
-        pastas = ['assuntos', 'imagens', ]
+        pastas = ['assuntos', 'imagens']
         for pasta_id in pastas:
             pasta = api.content.create(
                 type='Folder',
                 container=self.portal,
-                id=pasta_id
+                id=pasta_id,
             )
             pasta.setOrdering('unordered')
             conteudo = api.content.create(
                 type='Folder',
                 container=pasta,
-                id='sub_{0}'.format(pasta_id)
+                id='sub_{0}'.format(pasta_id),
             )
             conteudo.setOrdering('unordered')
 
@@ -247,20 +237,19 @@ class TestUpgrade(unittest.TestCase):
             type='collective.nitf.content',
             container=self.portal,
             id='uma-noticia',
-            title=u'Uma notícia'
+            title=u'Uma notícia',
         )
         noticia.section = 'General'
-        noticia.reindexObject(idxs=['section', ])
+        noticia.reindexObject(idxs=['section'])
         # Deixa General como secao disponivel
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.available_sections',
-            set([u'General', ])
+            set([u'General']),
         )
         # Deixa General como padrao
         api.portal.set_registry_record(
             'collective.nitf.controlpanel.INITFSettings.default_section',
-            u'General'
-        )
+            u'General')
 
     def test_to10300_execution(self):
         self._prepara_to10300()
@@ -268,13 +257,13 @@ class TestUpgrade(unittest.TestCase):
         # Executa upgrade
         self.execute_upgrade(u'5000', u'10300')
         # Ao acessar a view como site administrator conseguimos acesso
-        with api.env.adopt_roles(['Site Administrator', ]):
+        with api.env.adopt_roles(['Site Administrator']):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
             self.assertTrue('social-config' in installed)
         # Ao acessar a view como anonimo, a excecao e levantada
-        with api.env.adopt_roles(['Anonymous', ]):
+        with api.env.adopt_roles(['Anonymous']):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]  # NOQA
             # Validamos que o painel de controle da barra esteja instalado
@@ -351,7 +340,7 @@ class TestUpgrade(unittest.TestCase):
             (self.portal, request, view),
             IViewletManager,
             manager,
-            default=None
+            default=None,
         )
 
         self.assertIsNotNone(manager)
@@ -382,23 +371,20 @@ class TestUpgrade(unittest.TestCase):
         new_viewlets_top = [u'brasil.gov.portal.acessibilidade']
         top_available = self._get_available_viewlets_ids_from_manager(
             new_viewlets_top,
-            self._get_viewlets_from_manager('plone.portaltop')
-        )
+            self._get_viewlets_from_manager('plone.portaltop'))
         self.assertEqual(len(top_available), len(new_viewlets_top))
 
         new_viewlets_footer = [u'plone.footer', u'brasil.gov.portal.topo']
         footer_available = self._get_available_viewlets_ids_from_manager(
             new_viewlets_footer,
-            self._get_viewlets_from_manager('plone.portalfooter')
-        )
+            self._get_viewlets_from_manager('plone.portalfooter'))
         self.assertEqual(len(footer_available), len(new_viewlets_footer))
         configs = getattr(self.pp, 'brasil_gov', None)
         url_orgao = configs.getProperty('url_orgao')
         self.assertEqual(
             url_orgao,
             u'http://estruturaorganizacional.dados.gov.br/doc/' +
-            'unidade-organizacional/26'
-        )
+            u'unidade-organizacional/26')
 
         # A action de Configuracoes do Site deve ser desabilitada pelo
         # upgrade step.
@@ -414,13 +400,13 @@ class TestUpgrade(unittest.TestCase):
             pasta = api.content.create(
                 type='Folder',
                 container=self.portal,
-                id=pasta_id
+                id=pasta_id,
             )
             pasta.setOrdering('unordered')
             conteudo = api.content.create(
                 type='Folder',
                 container=pasta,
-                id='sub_{0}'.format(pasta_id)
+                id='sub_{0}'.format(pasta_id),
             )
             conteudo.setOrdering('unordered')
 
@@ -437,10 +423,7 @@ class TestUpgrade(unittest.TestCase):
             pasta = self.portal[pasta_id]
             self.assertTrue(isinstance(pasta.getOrdering(), DefaultOrdering))
 
-        self.assertEqual(
-            len(self.st.listUpgrades('brasil.gov.tiles:default')),
-            0
-        )
+        self.assertEqual(len(self.st.listUpgrades('brasil.gov.tiles:default')), 0)
 
         # Executa o upgrade step com o brasil.gov.agenda desinstalado.
         # Em versões antigas do brasil.gov.portal o brasil.gov.agenda não era
@@ -483,7 +466,7 @@ class TestUpgrade(unittest.TestCase):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(ICoverSettings)
         settings.layouts = {
-            u'test_layout': old_data
+            u'test_layout': old_data,
         }
 
         with api.env.adopt_roles(['Manager']):
@@ -543,12 +526,10 @@ class TestUpgrade(unittest.TestCase):
         }
         api.portal.set_registry_record(
             name='collective.cover.controlpanel.ICoverSettings.layouts',
-            value=layouts
-        )
+            value=layouts)
 
         layout_registry = api.portal.get_registry_record(
-            name='collective.cover.controlpanel.ICoverSettings.layouts'
-        )
+            name='collective.cover.controlpanel.ICoverSettings.layouts')
         self.assertDictEqual(layout_registry, layouts)
 
         self.execute_upgrade(u'10700', u'10800')
@@ -575,9 +556,9 @@ class TestUpgrade(unittest.TestCase):
                         {
                             'type': 'group',
                             'column-size': 16,
-                            'roles': ['Manager']
-                        }
-                    ]
+                            'roles': ['Manager'],
+                        },
+                    ],
                 },
             ],
             'Destaques': [
@@ -590,18 +571,17 @@ class TestUpgrade(unittest.TestCase):
                             {
                                 'tile-type': 'em_destaque',
                                 'type': 'tile',
-                                'id': 'em_destaque_tile_destaque'
-                            }
+                                'id': 'em_destaque_tile_destaque',
+                            },
                         ],
-                        'roles': ['Manager']
-                    }]
-                }
-            ]
+                        'roles': ['Manager'],
+                    }],
+                },
+            ],
         }
 
         layout_registry = api.portal.get_registry_record(
-            name='collective.cover.controlpanel.ICoverSettings.layouts'
-        )
+            name='collective.cover.controlpanel.ICoverSettings.layouts')
         for name, layout in layouts.items():
             self.assertListEqual(json.loads(layout_registry[name]), layout)
 
@@ -656,8 +636,7 @@ class TestUpgrade(unittest.TestCase):
         # Simula situação antiga
         old_selectable_views = ('folder_listing', 'news_listing')
         self.portal.manage_changeProperties(
-            selectable_views=old_selectable_views
-        )
+            selectable_views=old_selectable_views)
         selectable_views_property = self.portal.getProperty('selectable_views')
         self.assertTupleEqual(selectable_views_property, old_selectable_views)
 

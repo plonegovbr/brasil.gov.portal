@@ -35,12 +35,12 @@ class DestaquesViewletTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.destaques = api.content.create(
                 type='collective.cover.content',
                 container=self.portal,
                 id='destaques',
-                title=u'Destaques'
+                title=u'Destaques',
             )
 
     def viewlet(self, context=None):
@@ -54,25 +54,25 @@ class DestaquesViewletTestCase(unittest.TestCase):
         self.assertTrue(viewlet.available())
 
     def test_not_available_on_folder(self):
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             api.content.create(
                 type='Folder',
                 container=self.portal,
                 id='pasta',
-                title=u'Uma pasta'
+                title=u'Uma pasta',
             )
         viewlet = self.viewlet(self.portal['pasta'])
         self.assertFalse(viewlet.available())
 
     def test_not_available(self):
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             # Apagamos a capa de destaques
             api.content.delete(obj=self.portal['destaques'])
         viewlet = self.viewlet()
         self.assertFalse(viewlet.available())
 
     def test_available_for_different_content_type(self):
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             # Apagamos a capa de destaques
             api.content.delete(obj=self.portal['destaques'])
             # Colocamos uma pasta no mesmo lugar
@@ -80,7 +80,7 @@ class DestaquesViewletTestCase(unittest.TestCase):
                 type='Folder',
                 container=self.portal,
                 id='destaques',
-                title=u'Uma pasta com destaques'
+                title=u'Uma pasta com destaques',
             )
         viewlet = self.viewlet()
         # O Viewlet deve detectar o problema e nao exibir nada
@@ -169,7 +169,7 @@ class RedesViewletTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.sheet = self.portal.portal_properties.brasil_gov
             self.sheet.manage_changeProperties(social_networks=[
                 'twitter|twitter',
@@ -204,7 +204,7 @@ class ServicosViewletTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.servicos = api.content.create(
                 type='Folder',
                 container=self.portal,
@@ -262,7 +262,7 @@ class NITFBylineViewletTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             properties = dict(
                 fullname='Machado de Assis',
                 location='Cosme Velho',
@@ -276,7 +276,7 @@ class NITFBylineViewletTestCase(unittest.TestCase):
             self.conteudo = api.content.create(
                 type='collective.nitf.content',
                 container=self.portal,
-                id='minha-noticia'
+                id='minha-noticia',
             )
             self.conteudo.byline = u'Machado de Assis'
 
@@ -361,11 +361,11 @@ class DocumentBylineViewletTestCase(unittest.TestCase):
         """Cria uma página para testes."""
         self.portal = self.layer['portal']
         self.request = self.layer['request']
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             self.conteudo = api.content.create(
                 type='Document',
                 container=self.portal,
-                id='minha-pagina'
+                id='minha-pagina',
             )
 
     def viewlet(self):
@@ -428,7 +428,7 @@ class DocumentBylineViewletTestCase(unittest.TestCase):
         que o hitórico seja exibido, o teste tem que ser feito com usuário
         Manager e o atributo __parent__ da viewlet tem implementar a interface
         IViewView. Ver método 'viewlet'"""
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             esconde_data()
             viewlet = self.viewlet()
             render = viewlet.render()

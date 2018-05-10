@@ -57,7 +57,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
             u'FormFolder',
             u'Image',
             u'Document',
-            u'Link'
+            u'Link',
         ]
         self.assertListEqual(settings.searchable_content_types, allowed_types)
 

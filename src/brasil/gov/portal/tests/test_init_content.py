@@ -174,8 +174,7 @@ class InitContentTestCase(unittest.TestCase):
         # esta sendo realizada
         self.assertEqual(
             data[0]['column_sections'][0]['section_links'][1]['link_url'],
-            'http://nohost/plone/assuntos/lorem-ipsum'
-        )
+            'http://nohost/plone/assuntos/lorem-ipsum')
 
     def test_doormat_workflow(self):
         """Testa se o Doormat está considerando o estado do workflow"""
@@ -208,7 +207,7 @@ class InitContentTestCase(unittest.TestCase):
         ultimas_noticias_doormat = api.content.create(
             type='DoormatCollection',
             container=self.portal['rodape']['quarta_coluna']['navegacao'],
-            id='ultimas-noticias'
+            id='ultimas-noticias',
         )
         ultimas_noticias_doormat.setCollection(self.portal['ultimas-noticias'])
         view = self.get_doormat_view()

@@ -37,12 +37,12 @@ class EscondeAutorDataFunctionalTestCase(unittest.TestCase):
 
     def cria_conteudo(self, container, tipo, id_obj, title):
         """Cria e publica um conteúdo, retornando o objeto criado."""
-        with api.env.adopt_roles(['Manager', ]):
+        with api.env.adopt_roles(['Manager']):
             obj = api.content.create(
                 type=tipo,
                 container=container,
                 id=id_obj,
-                title=title
+                title=title,
             )
             self.wt.doActionFor(obj, 'publish')
             effective = DateTime()

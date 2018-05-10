@@ -14,10 +14,8 @@ def upgrade_profile(setup, profile_id):
 
             step = upgrade['step']
             step.doStep(setup)
-            logger.info('Ran upgrade step %s for profile %s' % (
-                step.title,
-                profile_id
-            ))
+            msg = 'Ran upgrade step {0} for profile {1}'
+            logger.info(msg.format(step.title, profile_id))
 
     if step and step.dest is not None and step.checker is None:
         setup.setLastVersionForProfile(profile_id, step.dest)
