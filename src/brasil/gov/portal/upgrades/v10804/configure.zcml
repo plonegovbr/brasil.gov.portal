@@ -6,7 +6,7 @@
 
   <genericsetup:upgradeSteps
       source="10803"
-      destination="10803r01"
+      destination="10804"
       profile="brasil.gov.portal:default">
 
     <genericsetup:upgradeStep

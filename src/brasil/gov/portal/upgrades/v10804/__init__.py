@@ -19,7 +19,7 @@ def reindex_get_remote_url_link(setup_tool):
         # catalog.catalog_object(obj, idxs=['getRemoteUrl'])
         # lança KeyError: 'getRemoteUrl'. Use catalog.indexes() para ver os
         # índices disponíveis.
-        obj.reindexObject()
+        catalog.catalog_object(obj)
         if n % 1000 == 0:
             transaction.commit()
             logger.info('{0} items processed.'.format(n))

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>10803r01</version>
+  <version>10804</version>
   <dependencies>
     <dependency>profile-collective.js.jqueryui:default</dependency>
     <dependency>profile-plone.app.contenttypes:default</dependency>
