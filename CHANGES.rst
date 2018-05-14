@@ -4,6 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- ${portal_url} e ${navigation_root_url} no metadata getRemoteUrl passam a ser transformados após atualização do IDG 1.5.1. Dessa forma, links criados em versões anteriores que davam erro de "Não encontrado" (com urls na barra do navegador como $%7Bportal_url%7D/acesso-a-sistemas) voltam a funcionar.  (fecha `#463 <https://github.com/plonegovbr/brasil.gov.portal/issues/463>`_).
+  [idgserpro]
+
 - Atualizado brasil.gov.barra à versão 1.2.3.
   [hvelarde]
 
@@ -751,3 +754,4 @@ Changelog
 .. _`#349`: https://github.com/plonegovbr/brasil.gov.portal/issues/349
 .. _`#359`: https://github.com/plonegovbr/brasil.gov.portal/issues/359
 .. _`#360`: https://github.com/plonegovbr/brasil.gov.portal/issues/360
+.. _`#463`: https://github.com/plonegovbr/brasil.gov.portal/issues/463

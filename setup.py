@@ -62,8 +62,8 @@ setup(
         'collective.monkeypatcher',
         # Imports como
         # "from collective.nitf.browser import NITFBylineViewlet as CollectiveNITFBylineViewlet"
-        # Só a partir dessa versão.
-        'collective.nitf >= 2.1b2',
+        # Só a partir de 2.1b2, e get_valid_objects usado em upgradeStep, 2.1b4.
+        'collective.nitf >= 2.1b4',
         'collective.polls',
         'collective.upload',
         'collective.z3cform.widgets',  # TODO: remove on release 2.0
