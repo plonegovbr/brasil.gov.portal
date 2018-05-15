@@ -4,6 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Altera ordem de registro de javascript do collective.upload e collective.portlet.calendar para corrigir alinhamento do título (refs. `brasil.gov.agenda#82 <https://github.com/plonegovbr/brasil.gov.agenda/issues/82>`_).
+  [idgserpro]
+
 - ${portal_url} e ${navigation_root_url} no metadata getRemoteUrl passam a ser transformados após atualização do IDG 1.5.1. Dessa forma, links criados em versões anteriores que davam erro de "Não encontrado" (com urls na barra do navegador como $%7Bportal_url%7D/acesso-a-sistemas) voltam a funcionar.  (fecha `#463 <https://github.com/plonegovbr/brasil.gov.portal/issues/463>`_).
   [idgserpro]
 

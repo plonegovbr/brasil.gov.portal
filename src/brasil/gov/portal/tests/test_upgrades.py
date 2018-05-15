@@ -154,3 +154,39 @@ class To10803TestCase(UpgradeBaseTestCase):
             portal_tinymce.anchor_selector.split(','),
             is_10803_anchor_selector,
         )
+
+
+class To10804TestCase(UpgradeBaseTestCase):
+
+    from_ = '10803'
+    to_ = '10804'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 3)
+
+    def test_css_upload_before_css_portlet_calendar(self):
+        title = u'Altera ordem de arquivos css'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        portal_css = api.portal.get_tool('portal_css')
+        upload_css_id = '++resource++collective.upload/upload.css'
+        portlet_calendar_css_id = '++resource++calendar_styles/calendar.css'
+
+        # Simula situação incorreta: css do upload depois do calendar.
+        portal_css.moveResourceToTop(portlet_calendar_css_id)
+        portal_css.moveResourceToBottom(upload_css_id)
+        upload_pos = portal_css.getResourcePosition(upload_css_id)
+        calendar_pos = portal_css.getResourcePosition(portlet_calendar_css_id)
+        self.assertTrue(upload_pos > calendar_pos)
+
+        # execute upgrade step and verify changes were applied
+        self._do_upgrade(step)
+        upload_pos = portal_css.getResourcePosition(upload_css_id)
+        calendar_pos = portal_css.getResourcePosition(portlet_calendar_css_id)
+        self.assertTrue(upload_pos < calendar_pos)

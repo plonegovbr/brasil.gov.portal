@@ -646,6 +646,14 @@ class TestUpgrade(unittest.TestCase):
         selectable_views_property = self.portal.getProperty('selectable_views')
         self.assertTupleEqual(selectable_views_property, SELECTABLE_VIEWS)
 
+    def test_css_upload_before_css_portlet_calendar_first_install(self):
+        portal_css = api.portal.get_tool('portal_css')
+        upload_css_id = '++resource++collective.upload/upload.css'
+        portlet_calendar_css_id = '++resource++calendar_styles/calendar.css'
+        upload_pos = portal_css.getResourcePosition(upload_css_id)
+        calendar_pos = portal_css.getResourcePosition(portlet_calendar_css_id)
+        self.assertTrue(upload_pos < calendar_pos)
+
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """
         Testa se todos os upgradeSteps de brasil.gov.portal que possuem profile
