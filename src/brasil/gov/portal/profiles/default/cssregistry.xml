@@ -10,7 +10,4 @@
     enabled="1" expression="" id="++resource++collective.upload/upload.css" media="screen"
     insert-before="++resource++calendar_styles/calendar.css"
     rel="stylesheet" authenticated="True" rendering="link" />
- <stylesheet title="" cacheable="True" compression="safe" cookable="True"
-    enabled="on" expression="" insert-after="++resource++collective.upload/upload.css"
-    id="++resource++calendar_styles/calendar.css" media="screen" rel="stylesheet" rendering="import"/>
 </object>

@@ -652,7 +652,7 @@ class TestUpgrade(unittest.TestCase):
         portlet_calendar_css_id = '++resource++calendar_styles/calendar.css'
         upload_pos = portal_css.getResourcePosition(upload_css_id)
         calendar_pos = portal_css.getResourcePosition(portlet_calendar_css_id)
-        self.assertTrue(upload_pos < calendar_pos)
+        self.assertLess(upload_pos, calendar_pos)
 
     def test_upgrade_step_variavel_hidden_profiles_deps_brasil_gov_portal(self):  # NOQA
         """

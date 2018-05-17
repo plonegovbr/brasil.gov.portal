@@ -183,10 +183,10 @@ class To10804TestCase(UpgradeBaseTestCase):
         portal_css.moveResourceToBottom(upload_css_id)
         upload_pos = portal_css.getResourcePosition(upload_css_id)
         calendar_pos = portal_css.getResourcePosition(portlet_calendar_css_id)
-        self.assertTrue(upload_pos > calendar_pos)
+        self.assertGreater(upload_pos, calendar_pos)
 
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
         upload_pos = portal_css.getResourcePosition(upload_css_id)
         calendar_pos = portal_css.getResourcePosition(portlet_calendar_css_id)
-        self.assertTrue(upload_pos < calendar_pos)
+        self.assertLess(upload_pos, calendar_pos)
