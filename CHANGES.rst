@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove dependência no plone4.csrffixes.
+  [hvelarde]
+
 - Adiciona um viewlet para relatórios de erros;
   é preciso criar um formulário de contato com id ``relatar-erros`` na raiz do site para utilizar este recurso.
   [hvelarde, claytonc]
