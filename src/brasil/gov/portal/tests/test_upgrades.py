@@ -153,7 +153,7 @@ class To10806TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 3)
+        self.assertEqual(steps, 4)
 
     # XXX: there is no clear way to remove a permission
     #      and then test if it has been added
@@ -209,3 +209,19 @@ class To10806TestCase(UpgradeBaseTestCase):
         self.assertNotIn(u'galeria_de_foto_thumb 87:49', settings.allowed_sizes)
         self.assertNotIn(u'galeria_de_foto_view 748:513', settings.allowed_sizes)
         self.assertIn(u'galeria_de_foto_view 1150:650', settings.allowed_sizes)
+
+    def test_install_keyword_manager(self):
+        title = u'Install Products.PloneKeywordManager'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        addon = 'PloneKeywordManager'
+        qi = api.portal.get_tool('portal_quickinstaller')
+        with api.env.adopt_roles(['Manager']):
+            qi.uninstallProducts([addon])
+        self.assertFalse(qi.isProductInstalled(addon))
+
+        # execute upgrade step and verify changes were applied
+        self._do_upgrade(step)
+        self.assertTrue(qi.isProductInstalled(addon))

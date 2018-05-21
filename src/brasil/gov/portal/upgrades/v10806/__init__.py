@@ -12,3 +12,12 @@ def update_galeria_image_sizes(setup_tool):
     allowed_sizes |= frozenset([u'galeria_de_foto_view 1150:650'])
     settings.allowed_sizes = tuple(allowed_sizes)
     logger.info('Galeria de fotos image sizes updated.')
+
+
+def install_keyword_manager(setup_tool):
+    """Install Products.PloneKeywordManager."""
+    addon = 'PloneKeywordManager'
+    qi = api.portal.get_tool('portal_quickinstaller')
+    if not qi.isProductInstalled(addon):
+        qi.installProduct(addon)
+        logger.info(addon + ' was installed')

@@ -4,6 +4,9 @@ Changelog
 2.0a4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona suporte para gestão de tags.
+  [hvelarde]
+
 - Remove dependência no plone4.csrffixes.
   [hvelarde]
 

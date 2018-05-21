@@ -20,6 +20,7 @@
   <include package="Products.CMFPlone" />
   <include package="Products.Doormat" />
   <include package="Products.PloneFormGen" />
+  <include package="Products.PloneKeywordManager" />
   <include package="Products.RedirectionTool" />
   <include package="sc.contentrules.groupbydate" />
   <include package="sc.contentrules.layout" />
