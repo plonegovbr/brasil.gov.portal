@@ -13,6 +13,7 @@
     <dependency>profile-plone.restapi:default</dependency>
     <dependency>profile-Products.Doormat:default</dependency>
     <dependency>profile-Products.PloneFormGen:default</dependency>
+    <dependency>profile-Products.PloneKeywordManager:default</dependency>
     <dependency>profile-Products.RedirectionTool:default</dependency>
     <dependency>profile-sc.embedder:default</dependency>
     <dependency>profile-sc.social.like:default</dependency>

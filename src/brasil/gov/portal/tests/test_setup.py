@@ -26,6 +26,7 @@ DEPENDENCIES = [
     'plone.restapi',
     'Products.Doormat',
     'Products.PloneFormGen',
+    'Products.PloneKeywordManager',
     'Products.RedirectionTool',
     'sc.embedder',
     'sc.social.like',

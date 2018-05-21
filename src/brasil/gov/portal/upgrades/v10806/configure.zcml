@@ -32,6 +32,12 @@
         handler=".update_galeria_image_sizes"
         />
 
+    <genericsetup:upgradeStep
+        title="Install Products.PloneKeywordManager"
+        description=""
+        handler=".install_keyword_manager"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>
