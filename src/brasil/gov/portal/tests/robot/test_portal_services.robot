@@ -51,7 +51,7 @@ Editar o link
     Campo de texto  form.widgets.title  Participe
     Campo de texto  form.widgets.description  Link para Participe
     Campo de texto  form.widgets.url_expr  /participe
-    Clicar botao  Save
+    Clicar botao  Salvar
 
     Ir para  ${PLONE_URL}/@@portal-services-settings
     Pagina deve conter  Participe
