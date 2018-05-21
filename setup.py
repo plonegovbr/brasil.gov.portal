@@ -87,6 +87,7 @@ setup(
         'plone.indexer',
         'plone.memoize',
         'plone.namedfile',
+        'plone.protect >= 3.0.26',
         'plone.registry',
         'plone.restapi',
         'plone.supermodel',
@@ -114,7 +115,6 @@ setup(
         'zope.interface',
         'zope.lifecycleevent',
         'zope.schema',
-        'plone4.csrffixes',
     ],
     extras_require={
         'migration': [
