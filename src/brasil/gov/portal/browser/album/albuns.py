@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from six.moves import range  # noqa: I001
 from plone.contentrules import PloneMessageFactory as _
 from Products.CMFPlone.utils import getToolByName
 from Products.Five.browser import BrowserView
@@ -103,7 +104,7 @@ class Pagination(object):
 
     def _get_all_pages(self):
         pagination = []
-        for i in xrange(1, self.total_pages + 1):
+        for i in range(1, self.total_pages + 1):
             item = {
                 'link': (i != self.current_page),
                 'href': '?pagina={0}'.format(i),
