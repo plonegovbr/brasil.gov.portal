@@ -11,6 +11,9 @@ Changelog
 2.0a4 (2018-06-06)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona dependência no `six <https://pypi.org/project/six/>`_ para futura compatibilidade com Python 3.
+  [hvelarde]
+
 - Adiciona suporte para gestão de tags.
   [hvelarde]
 

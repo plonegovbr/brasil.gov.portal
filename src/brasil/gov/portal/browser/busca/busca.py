@@ -3,7 +3,7 @@ from Acquisition import aq_base
 from Acquisition import aq_inner
 from brasil.gov.vcge.dx.interfaces import IVCGEDx
 from plone.app.search.browser import Search as PloneSearch
-from urllib import urlencode
+from six.moves.urllib.parse import urlencode
 from zope.component import queryUtility
 from zope.schema.interfaces import IVocabularyFactory
 
