@@ -40,7 +40,7 @@ class Pagination(object):
     def _calc_total_items(self, total_items):
         self.total_items = total_items
         fullpage = 1 if self.total_items % self.items_by_page != 0 else 0
-        self.total_pages = (self.total_items / self.items_by_page) + fullpage
+        self.total_pages = (self.total_items // self.items_by_page) + fullpage
 
     def _set_album_attributes(self):
         catalog = getToolByName(self.context, 'portal_catalog')
