@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from six import iteritems  # noqa: I001
 from plone.app.layout.viewlets.common import TitleViewlet as PloneTitleViewlet
 from plone.memoize.view import memoize
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -30,7 +31,7 @@ class TitleViewlet(PloneTitleViewlet):
         view_name = view_name.split('?')[0]
 
         title = ''
-        for k, v in alternative_titles.iteritems():
+        for k, v in iteritems(alternative_titles):
             if view_name == k:
                 title = v
         if not(title):
