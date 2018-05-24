@@ -2,6 +2,7 @@
 from brasil.gov.portal.logger import logger
 from collective.nitf.upgrades.v2000 import get_valid_objects
 from plone import api
+from plone.app.upgrade.utils import loadMigrationProfile
 
 import transaction
 
@@ -26,3 +27,10 @@ def reindex_get_remote_url_link(setup_tool):
 
     transaction.commit()
     logger.info('Done.')
+
+
+def apply_profile(setup_tool):
+    """Atualiza profile para versao 10804"""
+    profile = 'profile-brasil.gov.portal.upgrades.v10804:default'
+    loadMigrationProfile(setup_tool, profile)
+    logger.info('Atualizado para versao 10804')

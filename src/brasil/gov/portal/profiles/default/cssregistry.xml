@@ -6,4 +6,8 @@
  <stylesheet title="" cacheable="True" compression="safe" cookable="True"
     enabled="1" expression="" id="++resource++brasil.gov.portal/css/main-print.css" media="print"
     rel="stylesheet" rendering="link" insert-after="++resource++brasil.gov.portal/css/main.css"/>
+ <stylesheet title="" cacheable="True" compression="none" cookable="True"
+    enabled="1" expression="" id="++resource++collective.upload/upload.css" media="screen"
+    insert-before="++resource++calendar_styles/calendar.css"
+    rel="stylesheet" authenticated="True" rendering="link" />
 </object>
