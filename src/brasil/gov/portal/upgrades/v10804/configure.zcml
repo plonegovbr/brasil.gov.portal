@@ -30,9 +30,15 @@
         />
 
     <genericsetup:upgradeStep
-        title="Cook Resources"
+        title="Cook Css Resources"
         description="Atualiza estilos da configuração do brasil.gov.portal."
         handler="brasil.gov.portal.upgrades.csscookresources"
+        />
+
+    <genericsetup:upgradeStep
+        title="Cook Js Resources"
+        description="Atualiza javascripts da configuração do brasil.gov.portal."
+        handler="brasil.gov.portal.upgrades.jscookresources"
         />
 
   </genericsetup:upgradeSteps>

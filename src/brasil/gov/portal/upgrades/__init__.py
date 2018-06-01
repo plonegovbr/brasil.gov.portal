@@ -22,5 +22,10 @@ def upgrade_profile(setup, profile_id):
 
 
 def csscookresources(portal_setup=None):
-
     api.portal.get_tool('portal_css').cookResources()
+    logger.info('Css resources were cooked')
+
+
+def jscookresources(context):
+    api.portal.get_tool('portal_javascripts').cookResources()
+    logger.info('Javascript resources were cooked')

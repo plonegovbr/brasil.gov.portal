@@ -173,7 +173,7 @@ var PBrasil = {
     carregaDestaques: function(){
 
         if ($('#featured-content').length > 0) {
-            $('#featured-content').load(portal_url + '/destaques #em-destaque');
+            $('#featured-content').load(portal_url + '/destaques #content .row');
         }
 
     },
