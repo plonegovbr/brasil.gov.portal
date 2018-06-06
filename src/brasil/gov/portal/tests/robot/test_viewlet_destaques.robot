@@ -38,7 +38,13 @@ Criar banner destaque
     Add Tile  ${tile_location}
     Save Cover Layout
 
-    Compose Cover
+    # FIXME: Por algum motivo, na build https://travis-ci.org/plonegovbr/brasil.gov.portal/builds/387898576#L1972
+    # ocorre o erro por usar a keyword "Compose Cover". Essa keyword já é usada
+    # em test_capa.robot e não dá problema. Em browsers mais novos (como 52.6.0esr)
+    # esse erro não ocorre. Dessa forma, irei direto para a url "compose" com
+    # outra keyword. Quando atualizarmos o browser nos testes, podemos voltar a
+    # usar a keyword "Compose Cover" para manter a consistência de nomes.
+    Ir para  ${PLONE_URL}/destaques/compose
     Page Should Contain   Please edit the tile to enter some text.
 
     Click Link  ${edit_link_selector}
