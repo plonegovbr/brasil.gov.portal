@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0a4 (unreleased)
+2.0a4 (2018-06-06)
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona suporte para gestão de tags.
