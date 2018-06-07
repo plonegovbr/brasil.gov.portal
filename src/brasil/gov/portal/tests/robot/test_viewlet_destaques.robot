@@ -15,6 +15,13 @@ ${edit_link_selector}  css=a.edit-tile-link
 ${pasta_exemplos}  xpath=//a[contains(@href, "pastas-com-exemplos-de-pecas")]
 ${exemplo_imagem}  xpath=//input[contains(@href, "/pastas-com-exemplos-de-pecas/foto-200-x-130.jpg")]
 
+*** Keywords ***
+
+Todos os tiles viewlet destaque renderizadas
+    Ir para  ${PLONE_URL}
+    Wait Until Page Contains Element  css=div#featured-content div.row div div.tile div#em-destaque
+    Wait Until Page Contains Element  css=div#featured-content div.row div div.tile-default div.cover-richtext-tile
+
 
 *** Test Cases ***
 
@@ -58,12 +65,20 @@ Criar banner destaque
     # Clico aqui mudando a listagem para "lista" para facilitar a expressão abaixo.
     Click Link  css=a#listview
     # Seleciona o objeto resolveuid/896b6f9794fa4bfcac5cadbca080e33f
+    Wait Until Page Contains Element  ${exemplo_imagem}
     Click Element  ${exemplo_imagem}
     Clicar botao  OK
     Unselect Frame
     Clicar botao  Save
+    Todos os tiles viewlet destaque renderizadas
 
-    Ir para  ${PLONE_URL}
+    # Testa mudança de visão
+    Ir para  ${PLONE_URL}/destaques
+    Click Element  css=dl#plone-contentmenu-display
+    Click Link  css=a#plone-contentmenu-display-view
+    Todos os tiles viewlet destaque renderizadas
 
-    Page Should Contain Element  css=div#featured-content div.row div div.tile div#em-destaque
-    Page Should Contain Element  css=div#featured-content div.row div div.tile-default div.cover-richtext-tile
+    Ir para  ${PLONE_URL}/destaques
+    Click Element  css=dl#plone-contentmenu-display
+    Click Link  css=a#plone-contentmenu-display-standard
+    Todos os tiles viewlet destaque renderizadas
