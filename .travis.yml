@@ -3,13 +3,13 @@ python: 2.7
 sudo: false
 cache:
   directories:
+  - $HOME/.pylint.d
   - eggs
   - parts/node
 addons:
   # XXX: use an older Firefox ESR as we are stuck with selenium = 2.53.5
   #      https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
   firefox: 45.9.0esr
-env:
 matrix:
   fast_finish: true
 before_install:
@@ -27,8 +27,14 @@ script:
 - bin/code-analysis
 - bin/test
 after_success:
-- bin/createcoverage --output-dir=htmlcov -t "--layer=!Acceptance"
+- pip install coverage
+- coverage run bin/test --layer=\!Acceptance
+# Coveralls
 - pip install coveralls
 - coveralls
+# Codacy
+- coverage xml
+- pip install codacy-coverage
+- python-codacy-coverage -r coverage.xml
 notifications:
   irc: irc.freenode.org#plonegovbr
