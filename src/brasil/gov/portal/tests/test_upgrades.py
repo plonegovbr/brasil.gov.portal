@@ -167,7 +167,7 @@ class To10804TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 3)
+        self.assertEqual(steps, 4)
 
     def test_css_upload_before_css_portlet_calendar(self):
         title = u'Altera ordem de arquivos css'

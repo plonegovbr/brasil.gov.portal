@@ -4,6 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Imagem de destaque opcional acima da barra de destaques volta a ser renderizada. (fecha `#479 <https://github.com/plonegovbr/brasil.gov.portal/issues/479>`_)
+  [idgserpro]
+
 - Altera ordem de registro de javascript do collective.upload e collective.portlet.calendar para corrigir alinhamento do título (refs. `brasil.gov.agenda#82 <https://github.com/plonegovbr/brasil.gov.agenda/issues/82>`_).
   [idgserpro]
 
@@ -758,3 +761,4 @@ Changelog
 .. _`#359`: https://github.com/plonegovbr/brasil.gov.portal/issues/359
 .. _`#360`: https://github.com/plonegovbr/brasil.gov.portal/issues/360
 .. _`#463`: https://github.com/plonegovbr/brasil.gov.portal/issues/463
+.. _`#479`: https://github.com/plonegovbr/brasil.gov.portal/issues/479
