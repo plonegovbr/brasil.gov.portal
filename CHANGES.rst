@@ -4,6 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.tiles à versão 1.6.1.
+  [hvelarde]
+
 - Imagem de destaque opcional acima da barra de destaques volta a ser renderizada. (fecha `#479 <https://github.com/plonegovbr/brasil.gov.portal/issues/479>`_)
   [idgserpro]
 
