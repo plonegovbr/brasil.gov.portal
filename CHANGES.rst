@@ -4,6 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado Plone à versão 4.3.17.
+  [hvelarde]
+
 - Atualizado brasil.gov.tiles à versão 1.6.1.
   [hvelarde]
 
