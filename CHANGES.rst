@@ -4,7 +4,8 @@ Changelog
 2.0a5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado Plone à versão 4.3.17.
+  [hvelarde]
 
 
 2.0a4 (2018-06-06)
