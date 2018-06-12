@@ -4,8 +4,7 @@ Changelog
 2.0a5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Corrige os testes do configlet que gerencia os links no portal tabs.
-  [claytonc]
+- Nothing changed yet.
 
 
 2.0a4 (2018-06-06)
