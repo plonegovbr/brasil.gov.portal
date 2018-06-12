@@ -888,7 +888,7 @@ fieldset#folder-listing legend {
 
 
 /* ==========================================================================
-   Portles
+   Portlets
    ========================================================================== */
 
 dl.portlet { margin-bottom: 0; }
@@ -1327,6 +1327,14 @@ dl.portlet ol li { list-style: decimal outside; }
     width: 0;
 }
 
+/* Portlet de Calendário Estendido
+   ========================================================================== */
+
+/* FIXME: Regra necessária para evitar conflitos bootstrap, no nosso caso específico, pelo adicionado em collective.upload.
+   Quando isso for corrigido upstream em collective.portlet.calendar pode ser removido daqui. */
+.portletCalendarEx tr.month th {
+    text-align: center;
+}
 
 /* ==========================================================================
    Collective Cover

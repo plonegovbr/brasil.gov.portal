@@ -4,6 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Regra css para forçar centralização do nome do mês no portlet de calendário estendido. (refs. `brasil.gov.agenda#82 <https://github.com/plonegovbr/brasil.gov.agenda/issues/82>`_).
+  [idgserpro]
+
 - Atualizado Plone à versão 4.3.17.
   [hvelarde]
 
