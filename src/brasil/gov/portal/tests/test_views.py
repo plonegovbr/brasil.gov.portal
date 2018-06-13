@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from six.moves import range  # noqa: I001
 from brasil.gov.portal.browser.album.albuns import Pagination
 from brasil.gov.portal.config import LOCAL_TIME_FORMAT
 from brasil.gov.portal.config import TIME_FORMAT
@@ -108,7 +109,7 @@ class GaleriaDeAlbunsTestCase(BaseViewTestCase):
             api.content.create(gal_fotos, 'Image', 'imagem')
             self.assertEqual(self.view.album_total_images(gal_fotos), 1)
 
-            for i in xrange(3):
+            for i in range(3):
                 api.content.create(gal_fotos, 'Image', 'imagem{0}'.format(i))
             self.assertEqual(self.view.album_total_images(gal_fotos), 4)
 

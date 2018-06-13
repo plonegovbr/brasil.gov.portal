@@ -73,7 +73,7 @@ class SocialNetworksPanelAdapter(SchemaAdapterBase):
         # sera a property sheet brasil_gov
         self.context = getattr(self.pp, 'brasil_gov', None)
 
-    @apply
+    @apply  # pylint: disable=apply-builtin
     def accounts_info():
         def get(self):
             accounts = []

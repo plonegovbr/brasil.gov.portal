@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from six.moves import range  # noqa: I001
 from plone.contentrules import PloneMessageFactory as _
 from Products.CMFPlone.utils import getToolByName
 from Products.Five.browser import BrowserView
@@ -40,7 +41,7 @@ class Pagination(object):
     def _calc_total_items(self, total_items):
         self.total_items = total_items
         fullpage = 1 if self.total_items % self.items_by_page != 0 else 0
-        self.total_pages = (self.total_items / self.items_by_page) + fullpage
+        self.total_pages = (self.total_items // self.items_by_page) + fullpage
 
     def _set_album_attributes(self):
         catalog = getToolByName(self.context, 'portal_catalog')
@@ -103,7 +104,7 @@ class Pagination(object):
 
     def _get_all_pages(self):
         pagination = []
-        for i in xrange(1, self.total_pages + 1):
+        for i in range(1, self.total_pages + 1):
             item = {
                 'link': (i != self.current_page),
                 'href': '?pagina={0}'.format(i),
