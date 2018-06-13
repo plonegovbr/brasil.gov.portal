@@ -127,7 +127,7 @@ setup(
         'test': [
             'brasil.gov.agenda',
             'collective.cover',
-            'plone.app.robotframework',
+            'plone.app.robotframework[debug]',
             'plone.app.testing [robot]',
             'plone.testing',
             'plonetheme.sunburst',
