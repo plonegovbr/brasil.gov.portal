@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.5.2 (unreleased)
+1.5.2 (2018-06-14)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualizado brasil.gov.agenda à versão 1.1.3.
