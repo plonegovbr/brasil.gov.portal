@@ -34,8 +34,8 @@ class UpgradeBaseTestCase(unittest.TestCase):
 
 class To10804TestCase(UpgradeBaseTestCase):
 
-    from_ = '10803'
-    to_ = '10804'
+    from_ = '*'
+    to_ = '10900'
 
     def test_profile_version(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
@@ -43,7 +43,7 @@ class To10804TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 3)
+        self.assertEqual(steps, 7)
 
     def test_remove_styles(self):
         # address also an issue with Setup permission
@@ -52,7 +52,7 @@ class To10804TestCase(UpgradeBaseTestCase):
         self.assertIsNotNone(step)
 
         # simulate state on previous version
-        from brasil.gov.portal.upgrades.v10804 import STYLES
+        from brasil.gov.portal.upgrades.v10900 import STYLES
         css_tool = api.portal.get_tool('portal_css')
         for css in STYLES:
             css_tool.registerResource(id=css)
@@ -113,20 +113,6 @@ class To10804TestCase(UpgradeBaseTestCase):
         self.assertEqual(self.n1.getLayout(), 'view')
         self.assertEqual(self.n2.getLayout(), 'view')
 
-
-class To10805TestCase(UpgradeBaseTestCase):
-
-    from_ = '10804'
-    to_ = '10805'
-
-    def test_profile_version(self):
-        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
-        self.assertEqual(version, self.from_)
-
-    def test_registered_steps(self):
-        steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
-
     def test_search_for_embedder(self):
         title = u'Remove sc.embedder from types_not_searched'
         step = self._get_upgrade_step_by_title(title)
@@ -140,20 +126,6 @@ class To10805TestCase(UpgradeBaseTestCase):
         # run the upgrade step to validate the update
         self._do_upgrade(step)
         self.assertNotIn('sc.embedder', settings.types_not_searched)
-
-
-class To10806TestCase(UpgradeBaseTestCase):
-
-    from_ = '10805'
-    to_ = '10806'
-
-    def test_profile_version(self):
-        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
-        self.assertEqual(version, self.from_)
-
-    def test_registered_steps(self):
-        steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 4)
 
     # XXX: there is no clear way to remove a permission
     #      and then test if it has been added

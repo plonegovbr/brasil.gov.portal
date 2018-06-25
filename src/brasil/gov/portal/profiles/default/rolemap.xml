@@ -14,10 +14,10 @@
       <role name="Site Administrator" />
     </permission>
     <permission name="brasil.gov.portal: Add Infographic" acquire="True">
-      <role name="Manager" />
-      <role name="Site Administrator" />
-      <role name="Owner"/>
       <role name="Contributor"/>
+      <role name="Manager" />
+      <role name="Owner"/>
+      <role name="Site Administrator" />
     </permission>
   </permissions>
 </rolemap>

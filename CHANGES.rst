@@ -4,6 +4,12 @@ Changelog
 2.0a5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+.. Warning::
+    Atualizações da branch 1.x do pacote só serão suportadas da versão mais recente dessa branch.
+
+- Atualiza versão do profile usado para 10900 (closes `#472 <https://github.com/plonegovbr/brasil.gov.portal/issues/472>`_).
+  [hvelarde]
+
 - Atualizado Plone à versão 4.3.17.
   [hvelarde]
 

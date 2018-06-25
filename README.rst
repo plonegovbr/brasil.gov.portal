@@ -70,6 +70,15 @@ buildout:
 
 5. Adicione um novo site Plone.
 
+Atualização de 1.x a 2.x
+------------------------
+
+.. Warning::
+    Só atualize para a versão 2.x do pacote depois de atualizar à versão mais recente da branch 1.x.
+
+As atualizações da versão 1.x à 2.x só são suportadas das versões mais recentes de cada branch.
+Antes de atualizar confira que você está efetivamente utilizando a última versão da branch 1.x e que não existem upgrade steps pendentes de serem aplicados.
+
 Rodando o buildout de uma tag antiga do pacote
 ----------------------------------------------
 

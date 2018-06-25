@@ -105,14 +105,12 @@ DEPS = [
 
 HIDDEN_PROFILES = [
     'archetypes.querywidget:default',
-    'brasil.gov.agenda.upgrades.v2000:default',
-    'brasil.gov.agenda.upgrades.v3000:default',
-    'brasil.gov.agenda.upgrades.v4000:default',
+    'brasil.gov.agenda.upgrades.v4100:default',
     'brasil.gov.agenda:default',
     'brasil.gov.barra.upgrades.v1002:default',
     'brasil.gov.barra.upgrades.v1010:default',
     'brasil.gov.barra:default',
-    'brasil.gov.portal.upgrades.v10806:default',
+    'brasil.gov.portal.upgrades.v10900:default',
     'brasil.gov.portal:default',
     'brasil.gov.portal:initcontent',
     'brasil.gov.portal:uninstall',

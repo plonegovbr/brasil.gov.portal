@@ -17,7 +17,7 @@ def remove_styles(setup_tool):
     for css in STYLES:
         css_tool.unregisterResource(id=css)
         assert css not in css_tool.getResourceIds()
-    logger.info('Styles removed')
+        logger.info('Styles removed')
 
 
 def show_global_sections(setup_tool):
@@ -60,3 +60,33 @@ def remove_nitf_customizations(setup_tool):
 
     transaction.commit()
     logger.info('Done')
+
+
+def search_for_embedder(setup_tool):
+    """Remove sc.embedder from types_not_searched."""
+    settings = api.portal.get_tool('portal_properties').site_properties
+    if 'sc.embedder' in settings.types_not_searched:
+        types_not_searched = list(settings.types_not_searched)
+        types_not_searched.remove('sc.embedder')
+        settings.types_not_searched = tuple(types_not_searched)
+        logger.info('Search for sc.embedder objects is enabled')
+
+
+def update_galeria_image_sizes(setup_tool):
+    """Update galeria de fotos image sizes."""
+    settings = api.portal.get_tool('portal_properties').imaging_properties
+    allowed_sizes = set(settings.allowed_sizes)
+    allowed_sizes -= frozenset([
+        u'galeria_de_foto_thumb 87:49', u'galeria_de_foto_view 748:513'])
+    allowed_sizes |= frozenset([u'galeria_de_foto_view 1150:650'])
+    settings.allowed_sizes = tuple(allowed_sizes)
+    logger.info('Galeria de fotos image sizes updated.')
+
+
+def install_keyword_manager(setup_tool):
+    """Install Products.PloneKeywordManager."""
+    addon = 'PloneKeywordManager'
+    qi = api.portal.get_tool('portal_quickinstaller')
+    if not qi.isProductInstalled(addon):
+        qi.installProduct(addon)
+        logger.info(addon + ' was installed')

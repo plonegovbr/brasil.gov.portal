@@ -1,0 +1,61 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="brasil.gov.portal (v10900)"
+      directory="profile"
+      description='Configuration for version 10900'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:upgradeSteps
+      source="*"
+      destination="10900"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeStep
+        title="Move styles to brasil.gov.temas package"
+        description="Move styles to brasil.gov.temas package."
+        handler=".remove_styles"
+        />
+
+    <genericsetup:upgradeStep
+        title="Show back global_sections viewlet"
+        description="Show back global_sections viewlet."
+        handler=".show_global_sections"
+        />
+
+    <genericsetup:upgradeStep
+        title="Remove collective.nitf customizations"
+        description="Remove customized view from types tool and set default view on objects using custom view."
+        handler=".remove_nitf_customizations"
+        />
+
+    <genericsetup:upgradeStep
+        title="Remove sc.embedder from types_not_searched"
+        handler=".search_for_embedder"
+        />
+
+    <genericsetup:upgradeDepends
+        title="Import various"
+        description="Adds new configlet and content type."
+        import_profile="brasil.gov.portal.upgrades.v10900:default"
+        />
+
+    <genericsetup:upgradeStep
+        title="Update galeria image sizes."
+        description="Update galeria de fotos image sizes."
+        handler=".update_galeria_image_sizes"
+        />
+
+    <genericsetup:upgradeStep
+        title="Install Products.PloneKeywordManager"
+        description=""
+        handler=".install_keyword_manager"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>
