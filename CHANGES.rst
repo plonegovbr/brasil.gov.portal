@@ -7,6 +7,10 @@ Changelog
 .. Warning::
     Atualizações da branch 1.x do pacote só serão suportadas da versão mais recente dessa branch.
 
+- Remove collective.portlet.calendar da lista de pacotes ocultos;
+  esse pacote não é mais dependência do brasil.gov.agenda.
+  [hvelarde]
+
 - Atualizado plone.restapi à versão 3.1.0.
   [hvelarde]
 
