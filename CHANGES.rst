@@ -7,6 +7,9 @@ Changelog
 .. Warning::
     Atualizações da branch 1.x do pacote só serão suportadas da versão mais recente dessa branch.
 
+- Atualizado plone.restapi à versão 3.1.0.
+  [hvelarde]
+
 - Atualizado Products.PloneFormGen à versão 1.7.24.
   [hvelarde]
 
