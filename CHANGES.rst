@@ -10,6 +10,9 @@ Changelog
     é necessário adicioná-lo como dependência no buildout para permitir sua remoção.
     Consulte a documentação do release para obter mais informação.
 
+- Atualizado collective.cover à versão 1.7b2.
+  [hvelarde]
+
 - Atualizado brasil.gov.temas à versão 2.0a6.
   [hvelarde]
 
