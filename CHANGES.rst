@@ -6,6 +6,12 @@ Changelog
 
 .. Warning::
     Atualizações da branch 1.x do pacote só serão suportadas da versão mais recente dessa branch.
+    O collective.portlet.calendar não é mais uma dependência do brasil.gov.agenda;
+    é necessário adicioná-lo como dependência no buildout para permitir sua remoção.
+    Consulte a documentação do release para obter mais informação.
+
+- Atualizado brasil.gov.agenda à versão 2.0a4.
+  [hvelarde]
 
 - Remove collective.portlet.calendar da lista de pacotes ocultos;
   esse pacote não é mais dependência do brasil.gov.agenda.
