@@ -4,7 +4,14 @@ Changelog
 1.5.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado collective.cover à versão 1.7b3.
+  [hvelarde]
+
+- Atualizado plone.restapi à versão 3.1.0.
+  [hvelarde]
+
+- Atualizado Products.PloneFormGen à versão 1.7.24.
+  [hvelarde]
 
 
 1.5.2 (2018-06-14)
