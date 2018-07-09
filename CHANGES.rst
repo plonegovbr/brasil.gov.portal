@@ -4,7 +4,8 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado collective.cover à versão 1.7b3.
+  [hvelarde]
 
 
 2.0a5 (2018-07-06)
