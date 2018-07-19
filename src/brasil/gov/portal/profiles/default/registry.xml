@@ -84,6 +84,11 @@
     </value>
   </record>
 
+  <!-- grid padrão do collective.cover -->
+  <record name="collective.cover.controlpanel.ICoverSettings.grid_system">
+    <value>bootstrap3</value>
+  </record>
+
   <!-- collective.nitf settings -->
   <record name="collective.nitf.controlpanel.INITFSettings.available_sections">
     <value>
