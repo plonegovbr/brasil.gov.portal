@@ -2,11 +2,10 @@
            tal:condition="available"
            i18n:domain="brasil.gov.portal">
     <p class="hiddenStructure">Redes Sociais</p>
-    <ul id="portal-redes">
+    <ul class="portal-redes">
         <tal:rede tal:repeat="tab view/redes">
             <li tal:define="tid tab/site"
-                tal:attributes="id string:portalredes-${tid};
-                                class string:portalredes-item;">
+                tal:attributes="class string:portalredes-${tid} portalredes-item;">
                 <a tal:attributes="href tab/url;"
                    tal:content="tab/title|nothing" />
             </li>
