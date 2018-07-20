@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove IDs das redes sociais para evitar duplicidade.
+  [agnogueira]
+
 - Atualizado collective.cover à versão 1.7b3.
   [hvelarde]
 
