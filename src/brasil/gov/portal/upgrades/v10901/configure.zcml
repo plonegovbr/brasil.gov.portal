@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeSteps
+      source="10900"
+      destination="10901"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeStep
+        title="Remove portlet assigments at portal root"
+        handler=".remove_root_portlets"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>

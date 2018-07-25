@@ -4,7 +4,7 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Corrige versão do profile.
+- Remove todos os portlets atribuídos à raíz do site.
   [hvelarde]
 
 - Corrige ``AttributeError`` e outros problemas no upgrade step v10900 (fecha `#448 <https://github.com/plonegovbr/brasil.gov.portal/issues/448>`_).
