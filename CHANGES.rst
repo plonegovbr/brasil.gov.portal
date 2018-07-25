@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.agenda à versão 2.0a5.
+  [hvelarde]
+
 - Remove IDs das redes sociais para evitar duplicidade.
   [agnogueira]
 
