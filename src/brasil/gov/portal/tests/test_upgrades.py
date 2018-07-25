@@ -32,7 +32,7 @@ class UpgradeBaseTestCase(unittest.TestCase):
         self.setup.manage_doUpgrades(request=request)
 
 
-class To10804TestCase(UpgradeBaseTestCase):
+class to10900TestCase(UpgradeBaseTestCase):
 
     from_ = '*'
     to_ = '10900'

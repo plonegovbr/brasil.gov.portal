@@ -3,12 +3,9 @@ from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone.browserlayer.utils import registered_layers
-from Products.GenericSetup.upgrade import listUpgradeSteps
 
 import unittest
 
-
-PROFILE_ID = 'brasil.gov.portal:default'
 
 DEPENDENCIES = [
     'brasil.gov.agenda',
@@ -57,8 +54,7 @@ class InstallTestCase(unittest.TestCase):
                           ', '.join(result)))
 
     def test_installed(self):
-        self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
-                        '%s nao esta instalado' % PROJECTNAME)
+        self.assertTrue(self.qi.isProductInstalled(PROJECTNAME))
 
     def test_installed_dependencies(self):
         expected = set(DEPENDENCIES)
@@ -78,21 +74,17 @@ class InstallTestCase(unittest.TestCase):
         roles = [r['name'] for r in roles if r['selected']]
         self.assertListEqual(roles, expected)
 
-    @unittest.expectedFailure
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
-        """
-        Testa se o número do último upgradeStep disponível é o mesmo do
-        metadata.xml do profile.
+        """Testa se o número do último upgradeStep disponível é o mesmo
+        do metadata.xml do profile.
 
-        É também útil para garantir que para toda alteração feita no version
-        do metadata.xml tenha um upgradeStep associado.
-
-        Esse teste parte da premissa que o número dos upgradeSteps é sempre
-        sequencial.
+        É também útil para garantir que para toda alteração feita no
+        version do metadata.xml tenha um upgradeStep associado.
         """
+        from Products.GenericSetup.upgrade import listUpgradeSteps
+        profile_id = PROJECTNAME + ':default'
         upgrade_info = self.qi.upgradeInfo(PROJECTNAME)
-        upgradeSteps = listUpgradeSteps(self.st, self.profile, '')
+        upgradeSteps = listUpgradeSteps(self.st, profile_id, '')
         upgrades = [upgrade[0]['dest'][0] for upgrade in upgradeSteps]
         last_upgrade = sorted(upgrades, key=int)[-1]
-        self.assertEqual(upgrade_info['installedVersion'],
-                         last_upgrade)
+        self.assertEqual(upgrade_info['installedVersion'], last_upgrade)
