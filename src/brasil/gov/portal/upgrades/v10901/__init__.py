@@ -16,7 +16,7 @@ def remove_portlet_assignments(obj):
         manager = getUtility(IPortletManager, name=name)
         mapping = getMultiAdapter((obj, manager), IPortletAssignmentMapping)
         for i in mapping.keys():
-            logger.info('Removing portlet assignment in "{0}"'.format(obj))
+            logger.info('Removing portlet "{0}" from {1}'.format(i, obj))
             del mapping[i]
 
 
