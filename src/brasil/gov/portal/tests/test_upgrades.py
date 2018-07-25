@@ -197,3 +197,25 @@ class to10900TestCase(UpgradeBaseTestCase):
         # execute upgrade step and verify changes were applied
         self._do_upgrade(step)
         self.assertTrue(qi.isProductInstalled(addon))
+
+
+class to10901TestCase(UpgradeBaseTestCase):
+
+    from_ = '10900'
+    to_ = '10901'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_remove_root_portlets(self):
+        title = u'Remove portlet assigments at portal root'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # execute upgrade step
+        self._do_upgrade(step)

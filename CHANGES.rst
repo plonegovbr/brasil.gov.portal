@@ -8,6 +8,10 @@ Changelog
   [hvelarde]
 
 - Corrige ``AttributeError`` e outros problemas no upgrade step v10900 (fecha `#448 <https://github.com/plonegovbr/brasil.gov.portal/issues/448>`_).
+- Remove todos os portlets atribuídos à raíz do site.
+  [hvelarde]
+
+- Corrige ``AttributeError`` no upgrade step v10900 (fecha `#448 <https://github.com/plonegovbr/brasil.gov.portal/issues/448>`_).
   [hvelarde]
 
 - Atualizado Products.PloneKeywordManager à versão 2.2.1.
