@@ -38,7 +38,9 @@ def remove_nitf_customizations(setup_tool):
     types_tool = api.portal.get_tool('portal_types')
     nitf = types_tool['collective.nitf.content']
     if custom_view in nitf.view_methods:
-        nitf.view_methods.remove(custom_view)
+        view_methods = list(nitf.view_methods)
+        view_methods.remove(custom_view)
+        nitf.view_methods = tuple(view_methods)
     nitf.default_view_fallback = True
     logger.info('collective.nitf types tool customizations removed')
 

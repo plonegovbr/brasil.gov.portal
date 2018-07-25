@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige ``AttributeError`` no upgrade step v10900 (fecha `#448 <https://github.com/plonegovbr/brasil.gov.portal/issues/448>`_).
+  [hvelarde]
+
 - Atualizado Products.PloneKeywordManager à versão 2.2.1.
   [hvelarde]
 
