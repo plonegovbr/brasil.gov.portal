@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige dependências do pacote.
+  [hvelarde]
+
 - Remove customização desnecessária do portlet de navegação.
   [hvelarde]
 
