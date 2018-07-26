@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige a largura das columnas das capas de acordo ao novo layout.
+  [hvelarde]
+
 - Remove todos os portlets atribuídos à raíz do site.
   [hvelarde]
 

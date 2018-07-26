@@ -12,6 +12,11 @@
         handler=".remove_root_portlets"
         />
 
+    <genericsetup:upgradeStep
+        title="Fix column widths on cover objects"
+        handler=".fix_cover_columns"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>
