@@ -17,8 +17,17 @@
   <!-- Upgrades -->
   <include package=".upgrades" />
 
-  <!-- Oculta profile -->
-  <utility factory=".config.HiddenProducts" name="brasil.gov.portal" />
-  <utility factory=".config.HiddenProfiles" name="brasil.gov.portal" />
+  <utility
+      factory=".setuphandlers.NonInstallable"
+      name="brasil.gov.portal"
+      provides="Products.CMFPlone.interfaces.INonInstallable"
+      />
+
+  <!-- BBB: Plone 4.3 -->
+  <utility
+      factory=".setuphandlers.NonInstallable"
+      name="brasil.gov.portal"
+      provides="Products.CMFQuickInstallerTool.interfaces.INonInstallable"
+      />
 
 </configure>

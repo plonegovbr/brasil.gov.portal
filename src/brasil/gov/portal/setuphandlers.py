@@ -1,11 +1,140 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal.config import TINYMCE_JSON_FORMATS
 from plone import api
+from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.utils import safe_unicode
+from Products.CMFQuickInstallerTool import interfaces as BBB
 from Products.TinyMCE.interfaces.utility import ITinyMCE
 from zope.component import getUtility
+from zope.interface import implementer
 
 import json
+
+
+@implementer(BBB.INonInstallable)  # BBB: Plone 4.3
+@implementer(INonInstallable)
+class NonInstallable(object):  # pragma: no cover
+
+    @staticmethod
+    def getNonInstallableProducts():
+        """Hide in the add-ons configlet."""
+        return [
+            u'archetypes.querywidget',
+            u'brasil.gov.portal.upgrades.v10900',
+            u'brasil.gov.portlets',
+            u'brasil.gov.portlets.upgrades.v1000',
+            u'brasil.gov.tiles.upgrades.v2000',
+            u'brasil.gov.vcge.at',
+            u'brasil.gov.vcge.dx',
+            u'brasil.gov.vcge.upgrades.v2000',
+            u'collective.googleanalytics',
+            u'collective.js.cycle2',
+            u'collective.js.galleria',
+            u'collective.js.jqueryui',
+            u'collective.upload',
+            u'collective.z3cform.datagridfield',
+            u'collective.z3cform.datetimewidget',
+            u'ftw.upgrade',
+            u'plone.app.blocks',
+            u'plone.app.collection',
+            u'plone.app.contenttypes',
+            u'plone.app.dexterity',
+            u'plone.app.drafts',
+            u'plone.app.event',
+            u'plone.app.event.at',
+            u'plone.app.intid',
+            u'plone.app.iterate',
+            u'plone.app.jquery',
+            u'plone.app.jquerytools',
+            u'plone.app.querystring',
+            u'plone.app.relationfield',
+            u'plone.app.theming',
+            u'plone.app.tiles',
+            u'plone.app.versioningbehavior',
+            u'plone.formwidget.autocomplete',
+            u'plone.formwidget.contenttree',
+            u'plone.formwidget.datetime',
+            u'plone.formwidget.querystring',
+            u'plone.formwidget.recurrence',
+            u'plone.resource',
+            u'plone.session',
+            u'plonetheme.classic',
+            u'Products.Doormat',
+            u'Products.PloneFormGen',
+            u'raptus.autocompletewidget',
+        ]
+
+    @staticmethod
+    def getNonInstallableProfiles():
+        """Hide at site creation."""
+        return [
+            u'archetypes.querywidget:default',
+            u'brasil.gov.agenda.upgrades.v4100:default',
+            u'brasil.gov.agenda:default',
+            u'brasil.gov.barra.upgrades.v1002:default',
+            u'brasil.gov.barra.upgrades.v1010:default',
+            u'brasil.gov.barra:default',
+            u'brasil.gov.portal.upgrades.v10900:default',
+            u'brasil.gov.portal:default',
+            u'brasil.gov.portal:initcontent',
+            u'brasil.gov.portal:uninstall',
+            u'brasil.gov.portlets:default',
+            u'brasil.gov.portlets:testfixture',
+            u'brasil.gov.tiles.upgrades.v2000:default',
+            u'brasil.gov.tiles:default',
+            u'brasil.gov.tiles:uninstall',
+            u'brasil.gov.vcge.at:default',
+            u'brasil.gov.vcge.dx:default',
+            u'brasil.gov.vcge.upgrades.v2000:default',
+            u'brasil.gov.vcge:default',
+            u'brasil.gov.vcge:uninstall',
+            u'collective.cover:default',
+            u'collective.js.cycle2:default',
+            u'collective.js.galleria:default',
+            u'collective.js.jqueryui:default',
+            u'collective.nitf:default',
+            u'collective.polls:default',
+            u'collective.testcaselayer:testing',
+            u'collective.upload:default',
+            u'collective.z3cform.datagridfield:default',
+            u'ftw.upgrade:default',
+            u'plone.app.blocks:default',
+            u'plone.app.caching:default',
+            u'plone.app.contenttypes:default',
+            u'plone.app.contenttypes:plone-content',
+            u'plone.app.dexterity:default',
+            u'plone.app.drafts:default',
+            u'plone.app.event.at:default',
+            u'plone.app.event:default',
+            u'plone.app.iterate:plone.app.iterate',
+            u'plone.app.jquerytools:default',
+            u'plone.app.openid:default',
+            u'plone.app.querystring:default',
+            u'plone.app.referenceablebehavior:default',
+            u'plone.app.relationfield:default',
+            u'plone.app.theming:default',
+            u'plone.app.tiles:default',
+            u'plone.app.versioningbehavior:default',
+            u'plone.formwidget.autocomplete:default',
+            u'plone.formwidget.autocomplete:uninstall',
+            u'plone.formwidget.contenttree:default',
+            u'plone.formwidget.contenttree:uninstall',
+            u'plone.formwidget.querystring:default',
+            u'plone.formwidget.recurrence:default',
+            u'plone.restapi:performance',
+            u'plone.session:default',
+            u'Products.CMFPlacefulWorkflow:base',
+            u'Products.Doormat:default',
+            u'Products.Doormat:uninstall',
+            u'Products.PloneFormGen:default',
+            u'Products.PloneKeywordManager:uninstall',
+            u'Products.RedirectionTool:default',
+            u'raptus.autocompletewidget:default',
+            u'raptus.autocompletewidget:uninstall',
+            u'sc.embedder:default',
+            u'sc.microsite:default',
+            u'sc.social.like:default',
+        ]
 
 
 def set_tinymce_formats():

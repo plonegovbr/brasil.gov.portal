@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.config import DEPS
 from brasil.gov.portal.config import PROJECTNAME
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone.browserlayer.utils import registered_layers
@@ -7,28 +6,36 @@ from plone.browserlayer.utils import registered_layers
 import unittest
 
 
-DEPENDENCIES = [
+INSTALLED = {
     'brasil.gov.agenda',
     'brasil.gov.barra',
-    'brasil.gov.portlets',
+    # 'brasil.gov.portlets',
     'brasil.gov.tiles',
     'brasil.gov.vcge',
     'collective.cover',
-    'collective.js.jqueryui',
     'collective.nitf',
     'collective.polls',
-    'collective.upload',
-    'plone.app.contenttypes',
-    'plone.app.theming',
+    # 'collective.upload',
+    # 'Doormat',
+    # 'plone.app.contenttypes',
+    # 'plone.app.theming',
     'plone.restapi',
-    'Products.Doormat',
-    'Products.PloneFormGen',
-    'Products.PloneKeywordManager',
-    'Products.RedirectionTool',
+    # 'PloneFormGen',
+    'PloneKeywordManager',
+    'RedirectionTool',
     'sc.embedder',
     'sc.social.like',
     'webcouturier.dropdownmenu',
-]
+}
+
+INSTALLABLE = {
+    'collective.fingerpointing',
+    'collective.lazysizes',
+    'collective.liveblog',
+    'Marshall',
+    'plone.app.referenceablebehavior',
+    'sc.photogallery',
+}
 
 
 class InstallTestCase(unittest.TestCase):
@@ -45,27 +52,28 @@ class InstallTestCase(unittest.TestCase):
         self.assertTrue('IBrasilGov' in layers,
                         'add-on layer was not installed')
 
-    def test_hidden_dependencies(self):
-        packages = [p['id'] for p in self.qi.listInstallableProducts()]
-        deps = set(DEPS)
-        result = [p for p in deps if p in packages]
-        self.assertFalse(result,
-                         ('Estas dependencias nao estao ocultas: %s' %
-                          ', '.join(result)))
-
     def test_installed(self):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME))
 
     def test_installed_dependencies(self):
-        expected = set(DEPENDENCIES)
-        result = []
-        for item in expected:
-            profile_id = self.qi.getInstallProfile(item)['id']
-            if self.st.getLastVersionForProfile(profile_id) == 'unknown':
-                result.append(item)
-        self.assertFalse(result,
-                         ('Estas dependencias nao estao instaladas: %s' %
-                          ', '.join(result)))
+        # XXX: this needs to be refactored as portal_quickinstaller
+        #      is no longer the canonical way of getting reliable
+        #      information on dependencies
+        expected = INSTALLED
+        actual = {
+            p['id'] for p in self.qi.listInstalledProducts()
+            if p['id'] != PROJECTNAME}
+        # XXX: for some unknown reason portal_quickinstaller lists
+        #      collective.portlet.calendar as installed
+        actual = actual - {'collective.portlet.calendar'}
+        self.assertEqual(
+            expected, actual, 'Not installed: ' + ', '.join(actual - expected))
+
+    def test_installable_dependencies(self):
+        expected = INSTALLABLE
+        actual = {p['id'] for p in self.qi.listInstallableProducts()}
+        self.assertEqual(
+            expected, actual, 'Missing: ' + ', '.join(actual - expected))
 
     def test_add_infographic_permission(self):
         permission = 'brasil.gov.portal: Add Infographic'

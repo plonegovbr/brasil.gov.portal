@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.portal.config import SHOW_DEPS
 from brasil.gov.portal.testing import INITCONTENT_TESTING
 from plone import api
 from plone.app.contenttypes.interfaces import IFolder
@@ -250,13 +249,6 @@ class InitContentTestCase(unittest.TestCase):
         p = 'brasil.gov.portal'
         self.assertIn(p, qi)
         self.assertIn(p, installed)
-
-    def test_installed_packages(self):
-        qi = api.portal.get_tool('portal_quickinstaller')
-        installed = [p.get('id') for p in qi.listInstalledProducts()]
-        for p in SHOW_DEPS:
-            self.assertIn(p, qi)
-            self.assertIn(p, installed)
 
     @unittest.expectedFailure
     def test_eventos_available(self):
