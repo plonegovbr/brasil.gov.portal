@@ -167,17 +167,6 @@ var PBrasil = {
         }
     },
 
-    /*
-     * Carrega capa /destaques no viewlet de destaques
-     */
-    carregaDestaques: function(){
-
-        if ($('#featured-content').length > 0) {
-            $('#featured-content').load(portal_url + '/destaques #em-destaque');
-        }
-
-    },
-
     albuns: {
         fixAlbumHeight: function() {
             if ($('.template-galeria_de_albuns').length > 0) {

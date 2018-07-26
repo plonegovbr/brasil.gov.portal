@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove viewlet de destaques e dependência direta no five.grok.
+  [hvelarde]
+
 - Corrige dependências do pacote.
   [hvelarde]
 
