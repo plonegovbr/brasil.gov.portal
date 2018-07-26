@@ -1,7 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="brasil.gov.portal">
@@ -36,9 +35,5 @@
     name="brasil.gov.portal"
     directory="static"
     />
-
-  <!-- Inicializamos a magia do Grok -->
-  <include package="five.grok" />
-  <grok:grok package="." />
 
 </configure>

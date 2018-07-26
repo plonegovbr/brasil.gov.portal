@@ -65,7 +65,6 @@ setup(
         'collective.nitf >= 2.1b2',
         'collective.polls',
         'collective.upload',
-        'five.grok',
         'five.pt',
         'lxml',
         'plone.api > 1.1.0',
