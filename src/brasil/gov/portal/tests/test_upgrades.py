@@ -210,10 +210,18 @@ class to10901TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
+        self.assertEqual(steps, 2)
 
     def test_remove_root_portlets(self):
         title = u'Remove portlet assigments at portal root'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # execute upgrade step
+        self._do_upgrade(step)
+
+    def test_fix_column_widths(self):
+        title = u'Fix column widths on cover objects'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
