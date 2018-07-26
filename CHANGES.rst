@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove customização desnecessária do portlet de navegação.
+  [hvelarde]
+
 - Corrige a largura das columnas das capas de acordo ao novo layout.
   [hvelarde]
 

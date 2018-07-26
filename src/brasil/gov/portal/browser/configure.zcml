@@ -24,9 +24,6 @@
   <!-- Contraste -->
   <include package='.contraste' />
 
-  <!-- Portlets -->
-  <include package='.portlets' />
-
   <!-- Sitemap -->
   <include package='.sitemap' />
 
