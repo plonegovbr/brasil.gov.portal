@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Altera configurações do cover (grid, estilos e modelos).
+  [agnogueira]
+
 - Remove viewlet de destaques e dependência direta no five.grok.
   [hvelarde]
 

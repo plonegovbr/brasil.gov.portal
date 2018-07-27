@@ -18,8 +18,7 @@
       </value_type>
     </field>
     <value purge="true">
-      <element key="Layout vazio">[{"type": "row", "children": [{"type": "group", "column-size": 16, "roles": ["Manager"]}]}]</element>
-      <element key="Destaques">[{"type": "row", "children": [{"column-size": 16, "type": "group", "children": [{"tile-type": "em_destaque", "type": "tile", "id": "em_destaque_tile_destaque"}], "roles": ["Manager"]}]}]</element>
+      <element key="Layout vazio">[{"type": "row", "children": [{"type": "group", "column-size": 12, "roles": ["Manager"]}]}]</element>
     </value>
   </record>
 
@@ -63,33 +62,31 @@
   <!-- estilos do collective.cover -->
   <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
     <value>
-      <element>Amarelo|amarelo</element>
-      <element>Azul Claro - borda|azul-claro-borda</element>
-      <element>Azul Claro Saude|azul-claro</element>
-      <element>Azul Escuro Turismo|azul-escuro</element>
-      <element>Azul Governo|azul</element>
-      <element>Azul Petroleo Defesa Seguranca|azul-petroleo</element>
-      <element>Azul Piscina|azul-piscina</element>
-      <element>Azul Turquesa - borda|azul-turquesa-borda</element>
-      <element>Azul Turquesa|azul-turquesa</element>
-      <element>Bege - borda|bege-borda</element>
-      <element>Bege|bege</element>
-      <element>Dourado Cultura|dourado</element>
-      <element>Fio separador|fio-separador</element>
-      <element>Laranja - borda|laranja-borda</element>
-      <element>Laranja Cidadania Justica|laranja</element>
-      <element>Link Externo|link-externo</element>
-      <element>Lista Horizontal|lista-horizontal</element>
-      <element>Lista Vertical|lista-vertical</element>
-      <element>Marrom Claro Economia Emprego|marrom-claro</element>
-      <element>Marrom Infraestrutura|marrom</element>
-      <element>Padrao|padrao</element>
-      <element>Roxo - borda|roxo-borda</element>
-      <element>Roxo Ciencia Tecnologia|roxo</element>
-      <element>Verde Claro Meio Ambiente|verde-claro</element>
-      <element>Verde Escuro Educacao|verde-escuro</element>
-      <element>Verde Esporte|verde</element>
+      <element>Box Branco|box-branco</element>
+      <element>Box Colorido|box-colorido</element>
+      <element>Box Escuro|box-escuro</element>
+      <element>Colunas Destacadas|colunas-destacadas</element>
+      <element>Colunas Discretas|colunas-discretas</element>
+      <element>Colunas Quadradas|colunas-quadradas</element>
+      <element>Discreto|tile-discreto</element>
+      <element>FAQ|tile-faq</element>
+      <element>Foto Sobreposta Grande|foto-sobreposta-grande</element>
+      <element>Foto Sobreposta|foto-sobreposta</element>
+      <element>Foto destacada grande|foto-destacada-grande</element>
+      <element>Linha destacada|linha-destacada</element>
+      <element>Linha destaque topo|linha-destaquetopo</element>
+      <element>Linha discreta|linha-discreta</element>
+      <element>Linha recuada|linha-recuada</element>
+      <element>Lista Blocos|lista-blocos</element>
+      <element>Lista em Alta|tile-em-alta</element>
+      <element>Tile Transparente|tile-transparente</element>
+      <element>Titulo Fio Separador|fio-separador</element>
     </value>
+  </record>
+
+  <!-- grid padrão do collective.cover -->
+  <record name="collective.cover.controlpanel.ICoverSettings.grid_system">
+    <value>bootstrap3</value>
   </record>
 
   <!-- collective.nitf settings -->
