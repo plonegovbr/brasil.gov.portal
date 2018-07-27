@@ -33,17 +33,14 @@ O estado atual dos testes, a cobertura de código e o número de downloads deste
 .. image:: http://img.shields.io/pypi/v/brasil.gov.portal.svg
     :target: https://pypi.python.org/pypi/brasil.gov.portal
 
-.. image:: https://img.shields.io/pypi/dm/brasil.gov.portal.svg
-    :target: https://pypi.python.org/pypi/brasil.gov.portal
-
-.. image:: https://img.shields.io/codacy/grade/aa5a9980a6104e4390be5e6bc4f7460a.svg
-    :target: https://www.codacy.com/app/hvelarde/brasil.gov.portal
-
 .. image:: https://img.shields.io/travis/plonegovbr/brasil.gov.portal/master.svg
     :target: http://travis-ci.org/plonegovbr/brasil.gov.portal
 
 .. image:: https://img.shields.io/coveralls/plonegovbr/brasil.gov.portal/master.svg
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.portal
+
+.. image:: https://img.shields.io/codacy/grade/aa5a9980a6104e4390be5e6bc4f7460a.svg
+    :target: https://www.codacy.com/project/plonegovbr/brasil.gov.portal/dashboard
 
 Instalação
 ----------
