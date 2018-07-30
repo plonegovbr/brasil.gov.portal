@@ -29,7 +29,7 @@ REDES = [
      'url': 'https://www.slideshare.net/%s'},
     {'id': 'soundcloud',
      'title': 'SoundCloud',
-     'url': 'https://www.soundcloud.com/%s'},
+     'url': 'https://soundcloud.com/%s'},
     {'id': 'rss',
      'title': 'RSS',
      'url': '%s'},
