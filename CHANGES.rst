@@ -6,6 +6,9 @@ Changelog
 
 - Adiciona https nas URLs das redes sociais.
   [agnogueira]
+  
+- Corrige workflow para tipo de conteúdo Infográfico.
+  [rodfersou]
 
 - Altera configurações do cover (grid, estilos e modelos).
   [agnogueira]
