@@ -179,8 +179,16 @@ def set_social_media_settings():
     api.portal.set_registry_record(name, value)
 
 
+def update_infographic_workflow():
+    """Remove workflow from Infographic content type."""
+    wftool = api.portal.get_tool('portal_workflow')
+    wftool.setChainForPortalTypes(('Infographic',), '')
+    assert wftool.getChainForPortalType('Infographic') == ()
+
+
 def run_after(context):
     portal = api.portal.get()
     set_tinymce_formats()
     remove_doormat_content(portal)
     set_social_media_settings()
+    update_infographic_workflow()
