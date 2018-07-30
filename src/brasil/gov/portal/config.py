@@ -26,7 +26,7 @@ REDES = [
      'url': 'https://plus.google.com/%s'},
     {'id': 'slideshare',
      'title': 'Slideshare',
-     'url': 'https://www.slideshare.com/%s'},
+     'url': 'https://www.slideshare.net/%s'},
     {'id': 'soundcloud',
      'title': 'SoundCloud',
      'url': 'https://www.soundcloud.com/%s'},
