@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona https nas URLs das redes sociais.
+  [agnogueira]
+
 - Altera configurações do cover (grid, estilos e modelos).
   [agnogueira]
 
