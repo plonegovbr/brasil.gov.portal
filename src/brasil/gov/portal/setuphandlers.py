@@ -183,7 +183,8 @@ def update_infographic_workflow():
     """Remove workflow from Infographic content type."""
     wftool = api.portal.get_tool('portal_workflow')
     wftool.setChainForPortalTypes(('Infographic',), '')
-    assert wftool.getChainForPortalType('Infographic') == ()
+    if wftool.getChainForPortalType('Infographic') != ():
+        raise AssertionError('Infographic workflow not modified')
 
 
 def run_after(context):

@@ -4,7 +4,7 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Revisa workflow para Infográfico.
+- Corrige workflow para tipo de conteúdo Infográfico.
   [rodfersou]
 
 - Altera configurações do cover (grid, estilos e modelos).
