@@ -4,7 +4,6 @@ var PBrasil = {
         this.addClassHtml();
         this.onclickBuscar();
         this.bugfixBase();
-        this.carregaDestaques();
         this.bugfixQuerywidget();
     },
 
