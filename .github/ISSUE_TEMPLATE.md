@@ -1,4 +1,4 @@
-<!-- Por favor seja cortês e ajude aos revisores removendo quaisquer pergunta não respondida -->
+<!-- Por favor seja cortês e ajude os revisores removendo quaisquer perguntas não respondidas -->
 
 **Qual versão do produto você está usando e em qual sistema operacional?**
 

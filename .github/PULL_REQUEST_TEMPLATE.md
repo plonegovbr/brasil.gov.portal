@@ -2,7 +2,7 @@
 
 [ ] Referencie a issue relativa a esse pull request
 
-[ ] Confira se foram inclussos testes unitários e/ou testes Robot Framework, caso precisar
+[ ] Confira se foram inclusos testes unitários e/ou testes Robot Framework, caso precisar
 
 [ ] Confira se foram adicionados upgrade steps, caso precisar
 
