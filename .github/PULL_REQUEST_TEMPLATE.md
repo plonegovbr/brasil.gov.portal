@@ -1,22 +1,15 @@
-Boas práticas para o PR: Checklist
-==================================
+<!-- Checklist de boas práticas para pull requests:
 
-### Foi aberta uma issue relativa a esse PR;
+[ ] Referencie a issue relativa a esse pull request
 
+[ ] Confira se foram inclusos testes unitários e/ou testes Robot Framework, caso precisar
 
-### Foram adicionados testes unitários;
+[ ] Confira se foram adicionados upgrade steps, caso precisar
 
+[ ] Confira se foi adicionada uma linha no CHANGES.rst do pacote descrevendo as modificações (a linha deve ser a primeira do release ainda não lançado e deve conter o seu nome de usuário do GitHub e a referência ao issue que você está tratando)
 
-### Foram adicionados testes robots;
+[ ] Confira que o pull request não contém assuntos diferentes: os pull requests devem ter um objetivo claro para facilitar o review. Por exemplo: não junte, num mesmo pull request, alterações de code-analysis e de implementação; Faça um pull request de code-analysis e depois o da implementação em si;
 
+[ ] Evite muitos commits pequenos de um mesmo assunto no pull request, efetue squash sempre que possível
 
-### Foram adicionados upgradeSteps;
-
-
-### Foi adicionada a modificação no CHANGES.rst do pacote, sempre no topo do arquivo (ou seja, na primeira linha do release ainda não lançado), contendo o seu nome de usuário do github e a referência ao issue que você está tratando (não esqueça de colocar no fim do arquivo a url para a issue, use o padrão do próprio arquivo);
-
-
-### PR não contém assuntos diferentes. PR's devem ter um objetivo claro para facilitar o review. Ex: não junte, num mesmo PR, alterações de code-analysis e de implementação. Faça um PR de code-analysis e depois o da implementação em si;
-
-
-### Evite muitos commits pequenos de um mesmo assunto no PR, sempre que possível efetue rebase;
+[ ] Mantenha o pull request atualizado fazendo rebase sempre que precisar -->
