@@ -21,8 +21,6 @@ class NonInstallable(object):  # pragma: no cover
         return [
             u'archetypes.querywidget',
             u'brasil.gov.portal.upgrades.v10900',
-            u'brasil.gov.portlets',
-            u'brasil.gov.portlets.upgrades.v1000',
             u'brasil.gov.tiles.upgrades.v2000',
             u'brasil.gov.vcge.at',
             u'brasil.gov.vcge.dx',
@@ -78,8 +76,6 @@ class NonInstallable(object):  # pragma: no cover
             u'brasil.gov.portal:default',
             u'brasil.gov.portal:initcontent',
             u'brasil.gov.portal:uninstall',
-            u'brasil.gov.portlets:default',
-            u'brasil.gov.portlets:testfixture',
             u'brasil.gov.tiles.upgrades.v2000:default',
             u'brasil.gov.tiles:default',
             u'brasil.gov.tiles:uninstall',
