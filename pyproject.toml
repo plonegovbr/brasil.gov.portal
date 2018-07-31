@@ -1,0 +1,2 @@
+[tool.dependencychecker]
+ignore-packages = ['App', 'Products.Five']
