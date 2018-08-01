@@ -9,7 +9,6 @@ import unittest
 INSTALLED = {
     'brasil.gov.agenda',
     'brasil.gov.barra',
-    # 'brasil.gov.portlets',
     'brasil.gov.tiles',
     'brasil.gov.vcge',
     'collective.cover',
@@ -29,6 +28,7 @@ INSTALLED = {
 }
 
 INSTALLABLE = {
+    'brasil.gov.portlets',
     'collective.fingerpointing',
     'collective.lazysizes',
     'collective.liveblog',
@@ -56,9 +56,6 @@ class InstallTestCase(unittest.TestCase):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME))
 
     def test_installed_dependencies(self):
-        # XXX: this needs to be refactored as portal_quickinstaller
-        #      is no longer the canonical way of getting reliable
-        #      information on dependencies
         expected = INSTALLED
         actual = {
             p['id'] for p in self.qi.listInstalledProducts()
@@ -66,14 +63,12 @@ class InstallTestCase(unittest.TestCase):
         # XXX: for some unknown reason portal_quickinstaller lists
         #      collective.portlet.calendar as installed
         actual = actual - {'collective.portlet.calendar'}
-        self.assertEqual(
-            expected, actual, 'Not installed: ' + ', '.join(actual - expected))
+        self.assertEqual(expected, actual)
 
     def test_installable_dependencies(self):
         expected = INSTALLABLE
         actual = {p['id'] for p in self.qi.listInstallableProducts()}
-        self.assertEqual(
-            expected, actual, 'Missing: ' + ', '.join(actual - expected))
+        self.assertEqual(expected, actual)
 
     def test_add_infographic_permission(self):
         permission = 'brasil.gov.portal: Add Infographic'

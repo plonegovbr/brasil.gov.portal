@@ -82,6 +82,7 @@ setup(
         'plone.indexer',
         'plone.memoize',
         'plone.namedfile',
+        'plone.portlets',
         'plone.protect >= 3.0.26',
         'plone.restapi',
         'plone.supermodel',

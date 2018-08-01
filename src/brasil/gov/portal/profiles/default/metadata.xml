@@ -7,7 +7,6 @@
     <dependency>profile-plone.app.theming:default</dependency>
     <dependency>profile-brasil.gov.agenda:default</dependency>
     <dependency>profile-brasil.gov.barra:default</dependency>
-    <dependency>profile-brasil.gov.portlets:default</dependency>
     <dependency>profile-brasil.gov.vcge.at:default</dependency>
     <dependency>profile-brasil.gov.vcge.dx:default</dependency>
     <dependency>profile-plone.restapi:default</dependency>
