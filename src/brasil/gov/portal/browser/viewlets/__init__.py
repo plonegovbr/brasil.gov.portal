@@ -16,7 +16,7 @@ class ErrorReportingViewlet(ViewletBase):
             portal_type='FormFolder',
             review_state='published',
         )
-        assert len(results) in (0, 1)
+        assert len(results) in (0, 1)  # nosec
         self.available = len(results) == 1
 
     def render(self):
