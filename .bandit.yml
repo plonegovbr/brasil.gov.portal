@@ -1,2 +1,2 @@
 skips:
-- assert_used
+- B101  # assert_used
