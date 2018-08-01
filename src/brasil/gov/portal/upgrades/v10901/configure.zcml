@@ -2,6 +2,14 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
+  <genericsetup:registerProfile
+      name="default"
+      title="brasil.gov.portal (v10901)"
+      directory="profile"
+      description='Configuration for version 10901'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <genericsetup:upgradeSteps
       source="10900"
       destination="10901"
@@ -15,6 +23,11 @@
     <genericsetup:upgradeStep
         title="Fix column widths on cover objects"
         handler=".fix_cover_columns"
+        />
+
+    <genericsetup:upgradeDepends
+        title="Update collective.cover default settings"
+        import_profile="brasil.gov.portal.upgrades.v10901:default"
         />
 
     <genericsetup:upgradeStep
