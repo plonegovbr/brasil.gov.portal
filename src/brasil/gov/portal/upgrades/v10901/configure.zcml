@@ -17,6 +17,11 @@
         handler=".fix_cover_columns"
         />
 
+    <genericsetup:upgradeStep
+        title="Remove workflow from Infographic content type"
+        handler=".update_infographic_workflow"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>

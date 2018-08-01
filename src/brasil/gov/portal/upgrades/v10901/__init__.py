@@ -75,3 +75,12 @@ def fix_cover_columns(setup_tool):
         obj.cover_layout = json.dumps(layout)
 
     logger.info('Done')
+
+
+def update_infographic_workflow(setup_tool):
+    """Remove workflow from Infographic content type."""
+    wftool = api.portal.get_tool('portal_workflow')
+    if wftool.getChainForPortalType('Infographic') != ():
+        logger.info('Removing workflow from Infographic content type')
+        wftool.setChainForPortalTypes(('Infographic',), '')
+        logger.info('Done')

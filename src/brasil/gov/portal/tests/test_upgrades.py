@@ -210,7 +210,7 @@ class to10901TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 2)
+        self.assertEqual(steps, 3)
 
     def test_remove_root_portlets(self):
         title = u'Remove portlet assigments at portal root'
@@ -227,3 +227,18 @@ class to10901TestCase(UpgradeBaseTestCase):
 
         # execute upgrade step
         self._do_upgrade(step)
+
+    def update_infographic_workflow(self):
+        title = u'Remove workflow from Infographic content type'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        wf = ('simple_publication workflow',)
+        wftool = api.portal.get_tool('portal_workflow')
+        wftool.setChainForPortalTypes(('Infographic',), wf)
+        self.assertEqual(wftool.getChainForPortalType('Infographic'), wf)
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertEqual(wftool.getChainForPortalType('Infographic'), ())
