@@ -16,7 +16,7 @@ def remove_styles(setup_tool):
     css_tool = api.portal.get_tool('portal_css')
     for css in STYLES:
         css_tool.unregisterResource(id=css)
-        assert css not in css_tool.getResourceIds()
+        assert css not in css_tool.getResourceIds()  # nosec
         logger.info('Styles removed')
 
 
