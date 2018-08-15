@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-"""View de configuração do Portal Padrão."""
+"""Configuration configlet for IDG.
+
+It currently includes privacy and header options.
+
+In the future this configlet should list all IDG options if possible to
+avoid having too many configlets.
+"""
 from brasil.gov.portal import _
 from brasil.gov.portal.utils import validate_list_of_links
 from plone.app.registry.browser import controlpanel
