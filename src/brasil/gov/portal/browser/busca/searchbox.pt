@@ -1,0 +1,78 @@
+<div id="portal-searchbox"
+     i18n:domain="brasil.gov.portal"
+     tal:define="navigation_root_url view/navigation_root_url;
+                 search_input_id view/search_input_id;
+                 title_search_box string:'Search Site';
+                 expandable_header view/expandable_header"
+     tal:attributes="class view/klass;
+                     style view/style">
+
+    <form id="searchGadget_form"
+          action="@@busca"
+          tal:attributes="action string:${navigation_root_url}/@@busca;
+                          id string:${search_input_id}_form;">
+        <div class="close" tal:condition="expandable_header">+</div>
+        <fieldset class="LSBox">
+            <legend class="hiddenStructure"
+                    i18n:translate="">Search Site</legend>
+            <label class="hiddenStructure"
+                   tal:attributes="for search_input_id"
+                   i18n:translate="">Search Site</label>
+
+            <input name="SearchableText"
+                   type="text"
+                   size="18"
+                   value=""
+                   title="Search Site"
+                   placeholder="Search Site"
+                   i18n:attributes="title title_search_box;
+                                    placeholder title_search_box"
+                   tal:attributes="value request/form/SearchableText|nothing;
+                                   id search_input_id"
+                   class="searchField" />
+
+            <input class="searchButton"
+                   type="submit"
+                   value="Search"
+                   i18n:attributes="value label_search;" />
+
+        </fieldset>
+
+        <div class="search-suggestions" tal:condition="expandable_header">
+            <div class="news"
+                 tal:define="featured_news view/featured_news"
+                 tal:condition="featured_news">
+                <div class="news-title"><strong>Notícias</strong> em destaque</div>
+                <ul class="featured-news">
+                    <li tal:repeat="article featured_news">
+                        <a tal:attributes="href article/url" tal:content="article/title" />
+                    </li>
+                </ul>
+                <a class="more-news" tal:attributes="href view/more_news">Mais notícias</a>
+            </div>
+            <div class="services"
+                 tal:define="featured_services view/featured_services"
+                 tal:condition="featured_services">
+                <div class="services-title"><strong>Serviços</strong> em destaque</div>
+                <ul class="featured-services">
+                    <li tal:repeat="service featured_services">
+                        <a tal:attributes="href service/url" tal:content="service/title" />
+                    </li>
+                </ul>
+                <a class="more-services" tal:attributes="href view/more_services">Mais serviços</a>
+            </div>
+        </div>
+    </form>
+
+    <tal:block condition="expandable_header">
+        <ul class="top-subjects"
+            tal:define="top_subjects view/top_subjects"
+            tal:condition="top_subjects">
+            <div class="subjects-title"><h3>Assuntos em alta</h3></div>
+            <li tal:repeat="subject top_subjects">
+                <a tal:attributes="href subject/url" tal:content="subject/title" />
+            </li>
+        </ul>
+    </tal:block>
+
+</div>
