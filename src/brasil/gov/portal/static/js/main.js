@@ -5,6 +5,7 @@ var PBrasil = {
         this.onclickBuscar();
         this.bugfixBase();
         this.bugfixQuerywidget();
+        this.searchSuggestions();
     },
 
     main: function() {
@@ -235,7 +236,25 @@ var PBrasil = {
                 resize();
             }
         }
+    },
+
+    searchSuggestions: function() {
+        $('#portal-searchbox .searchField').on('focus', function(e) {
+            e.preventDefault();
+            if ($('#search-overlay').length === 0) {
+                $('#portal-searchbox > form').append('<div id="search-overlay"></div>');
+            }
+            $('#search-overlay').show();
+            $('#portal-searchbox .search-suggestions').css('display', 'block');
+        });
+
+        $(document).on('click', '#search-overlay', function(e) {
+            e.preventDefault();
+            $('#search-overlay').hide();
+            $('#portal-searchbox .search-suggestions').hide();
+        });
     }
+
 };
 
 jQuery(document).ready(function ($) {
