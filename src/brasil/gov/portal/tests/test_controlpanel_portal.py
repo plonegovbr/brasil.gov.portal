@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Testa o controlpanel de configuração do Portal Padrão."""
-from AccessControl import Unauthorized
 from brasil.gov.portal.controlpanel.portal import ISettingsPortal
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
@@ -28,6 +27,7 @@ class ControlPanelTestCase(unittest.TestCase):
         self.assertTrue(view())
 
     def test_controlpanel_view_is_protected(self):
+        from AccessControl import Unauthorized
         from plone.app.testing import logout
         logout()
         with self.assertRaises(Unauthorized):
@@ -67,3 +67,31 @@ class RegistryTestCase(unittest.TestCase):
         """Verifica se o registro esconde_data existe."""
         self.assertTrue(hasattr(self.settings, 'esconde_data'))
         self.assertFalse(self.settings.esconde_data)
+
+    def test_expandable_header_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'expandable_header'))
+        self.assertFalse(self.settings.expandable_header)
+
+    def test_background_image_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'background_image'))
+        self.assertIsNone(self.settings.background_image)
+
+    def test_featured_news_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'featured_news'))
+        self.assertEqual(self.settings.featured_news, ())
+
+    def test_more_news_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'more_news'))
+        self.assertIsNone(self.settings.more_news)
+
+    def test_featured_services_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'featured_services'))
+        self.assertEqual(self.settings.featured_services, ())
+
+    def test_more_services_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'more_services'))
+        self.assertIsNone(self.settings.more_services)
+
+    def test_top_subjects_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'top_subjects'))
+        self.assertEqual(self.settings.top_subjects, ())

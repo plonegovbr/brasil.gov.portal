@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <registry>
+  <records interface="brasil.gov.portal.controlpanel.portal.ISettingsPortal" />
+
   <record name="collective.cover.controlpanel.ICoverSettings.layouts">
     <value>
       <element key="Layout vazio">[{"type": "row", "children": [{"type": "group", "column-size": 12, "roles": ["Manager"]}]}]</element>
