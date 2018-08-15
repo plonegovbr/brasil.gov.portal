@@ -12,7 +12,7 @@ STYLES = [
 
 
 def remove_styles(setup_tool):
-    """Remvove CSS from registered resources."""
+    """Remove CSS from registered resources."""
     css_tool = api.portal.get_tool('portal_css')
     for css in STYLES:
         css_tool.unregisterResource(id=css)
