@@ -19,7 +19,7 @@
       category="Products"
       condition_expr=""
       url_expr="string:${portal_url}/@@portal-settings"
-      icon_expr="string:${portal_url}/++resource++brasil.gov.portal/img/ico-brasil.png"
+      icon_expr="string:${portal_url}/++resource++brasil.gov.barra/ico-brasil.png"
       visible="True"
       i18n:attributes="title">
     <permission>brasil.gov.portal: Settings</permission>

@@ -19,6 +19,7 @@
   <include package='.content' />
 
   <!-- Criacao de site -->
+  <!-- XXX: the name of this module is causing import problems -->
   <include package='.plone' />
 
   <!-- Contraste -->
@@ -29,5 +30,13 @@
 
   <!-- Viewlets -->
   <include package='.viewlets' />
+
+  <browser:page
+      name="searchbox-background-image"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      class=".helper.BackgroundImageView"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      permission="zope.Public"
+      />
 
 </configure>
