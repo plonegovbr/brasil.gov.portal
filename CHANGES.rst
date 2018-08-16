@@ -4,9 +4,12 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona opção para permitir escolher entre headers diferentes.
+  [hvelarde]
+
 - Adiciona https nas URLs das redes sociais.
   [agnogueira]
-  
+
 - Corrige workflow para tipo de conteúdo Infográfico.
   [rodfersou]
 
