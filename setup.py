@@ -78,7 +78,6 @@ setup(
         'plone.app.theming',
         'plone.contentrules',
         'plone.dexterity',
-        'plone.directives.form',
         'plone.indexer',
         'plone.memoize',
         'plone.namedfile',
