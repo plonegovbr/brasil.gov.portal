@@ -1,6 +1,4 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    i18n_domain="brasil.gov.portal">
+<configure xmlns="http://namespaces.zope.org/zope">
 
   <include package="brasil.gov.agenda" />
   <include package="brasil.gov.barra" />
