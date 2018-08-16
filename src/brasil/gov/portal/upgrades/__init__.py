@@ -23,6 +23,15 @@ def upgrade_profile(setup, profile_id):
         setup.setLastVersionForProfile(profile_id, step.dest)
 
 
-def csscookresources(portal_setup=None):
+def cook_css_resources(context):  # pragma: no cover
+    """Cook CSS resources."""
+    css_tool = api.portal.get_tool('portal_css')
+    css_tool.cookResources()
+    logger.info('CSS resources were cooked')
 
-    api.portal.get_tool('portal_css').cookResources()
+
+def cook_javascript_resources(context):  # pragma: no cover
+    """Cook JavaScripts resources."""
+    js_tool = api.portal.get_tool('portal_javascripts')
+    js_tool.cookResources()
+    logger.info('JavaScripts resources were cooked')

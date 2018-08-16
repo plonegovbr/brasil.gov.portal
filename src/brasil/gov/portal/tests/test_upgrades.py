@@ -210,7 +210,7 @@ class to10901TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 4)
+        self.assertEqual(steps, 5)
 
     def test_remove_root_portlets(self):
         title = u'Remove portlet assigments at portal root'
