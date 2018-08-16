@@ -153,14 +153,6 @@ def set_tinymce_formats():
         getUtility(ITinyMCE).formats = json_formats
 
 
-def remove_doormat_content(portal):
-    """Remove conteúdo default do Products.Doormat."""
-    # presente em Products.Doormat > 0.8
-    doormat = 'doormat'
-    if doormat in portal.objectIds():
-        api.content.delete(portal[doormat])
-
-
 def set_social_media_settings():
     """Update configuration of sc.social.like package."""
     name = 'sc.social.like.interfaces.ISocialLikeSettings.enabled_portal_types'
@@ -201,9 +193,7 @@ def update_infographic_workflow():
 
 
 def run_after(context):
-    portal = api.portal.get()
     set_tinymce_formats()
-    remove_doormat_content(portal)
     set_social_media_settings()
     add_content_central_menu()
     add_results_filter_menu()

@@ -21,12 +21,6 @@
     <property name="types_not_searched" type="lines" purge="False">
       <element value="collective.cover.content"/>
       <element value="Collection"/>
-      <element value="Doormat"/>
-      <element value="DoormatCollection"/>
-      <element value="DoormatColumn"/>
-      <element value="DoormatMixin"/>
-      <element value="DoormatReference"/>
-      <element value="DoormatSection"/>
       <element value="FormFolder"/>
       <element value="Folder"/>
       <element value="MPEG Audio File"/>
