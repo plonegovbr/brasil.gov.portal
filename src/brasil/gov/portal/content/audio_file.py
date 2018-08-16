@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal import _
 from plone.dexterity.content import Item
-from plone.directives import form
 from plone.indexer.decorator import indexer
 from plone.namedfile.field import NamedBlobFile
 from plone.rfc822.interfaces import IPrimaryFieldInfo
@@ -37,7 +36,7 @@ def validate_ogg(value):
     return validate_mimetype(value, OGGTYPES)
 
 
-class IMPEGAudioFile(form.Schema):
+class IMPEGAudioFile(model.Schema):
     """ Representa um Arquivo de Audio MPEG"""
 
     model.primary('file')
@@ -47,7 +46,7 @@ class IMPEGAudioFile(form.Schema):
                          constraint=validate_mpeg)
 
 
-class IOGGAudioFile(form.Schema):
+class IOGGAudioFile(model.Schema):
     """ Representa um Arquivo de Audio OGG"""
 
     model.primary('file')

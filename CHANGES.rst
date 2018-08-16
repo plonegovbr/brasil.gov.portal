@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove dependência no ``plone.directives.form`` e últimos traços do Grok.
+  [hvelarde]
+
 - Adiciona opção para permitir escolher entre headers diferentes.
   [hvelarde, rodfersou]
 
