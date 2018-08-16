@@ -359,3 +359,41 @@ class DocumentBylineViewletTestCase(unittest.TestCase):
             esconde_autor()
             render = viewlet.render()
             self.assertEqual(render.count(u'—'), 0)
+
+
+class SearchBoxViewletTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+
+    @staticmethod
+    def set_expandable_header(value):
+        from brasil.gov.portal.controlpanel.portal import ISettingsPortal
+        name = ISettingsPortal.__identifier__ + '.expandable_header'
+        api.portal.set_registry_record(name, value=value)
+
+    @staticmethod
+    def set_image(value):
+        from brasil.gov.portal.controlpanel.portal import ISettingsPortal
+        name = ISettingsPortal.__identifier__ + '.background_image'
+        api.portal.set_registry_record(name, value=value)
+
+    def test_no_expandable_header(self):
+        rendered = self.portal()
+        self.assertNotIn('expandable-header', rendered)
+        self.assertNotIn('@@searchbox-background-image', rendered)
+        self.assertNotIn('search-suggestions', rendered)
+
+    def test_expandable_header(self):
+        self.set_expandable_header(True)
+        rendered = self.portal()
+        self.assertIn('expandable-header', rendered)
+        self.assertNotIn('@@searchbox-background-image', rendered)
+        self.assertIn('search-suggestions', rendered)
+
+        from brasil.gov.portal.tests.test_helper_view import IMAGEB64
+        self.set_image(IMAGEB64)
+        rendered = self.portal()
+        self.assertIn('@@searchbox-background-image', rendered)
