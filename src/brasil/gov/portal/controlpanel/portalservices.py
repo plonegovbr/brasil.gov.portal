@@ -9,7 +9,6 @@ from Products.CMFCore.ActionInformation import ActionCategory
 from Products.CMFCore.interfaces import IAction
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.statusmessages.interfaces import IStatusMessage
 from z3c.form import button
 from z3c.form import field
 from z3c.form import form
@@ -87,30 +86,35 @@ class PortalServicesSettings(BrowserView):
     def __call__(self):
 
         form = self.request.form
-        status = IStatusMessage(self.request)
 
         if form.get('pid', False):
 
             if form.get('form.button.delete', None) is not None:
                 pid = form.get('pid', None)
                 if self.delete_item(pid):
-                    status.addStatusMessage(_(u'Item deleted.'), type='info')
+                    api.portal.show_message(
+                        message=_(u'Item deleted.'), request=self.request)
                 else:
-                    status.addStatusMessage(_(u'Item not deleted.'), type='info')
+                    api.portal.show_message(
+                        message=_(u'Item not deleted.'), request=self.request)
 
             elif form.get('form.button.moveup', None) is not None:
                 pid = form.get('pid', None)
                 if self.move_item(pid, 'move_up'):
-                    status.addStatusMessage(_(u'Item moved.'), type='info')
+                    api.portal.show_message(
+                        message=_(u'Item moved.'), request=self.request)
                 else:
-                    status.addStatusMessage(_(u'Item not moved.'), type='info')
+                    api.portal.show_message(
+                        message=_(u'Item not moved.'), request=self.request)
 
             elif form.get('form.button.movedown', None) is not None:
                 pid = form.get('pid', None)
                 if self.move_item(pid, 'move_down'):
-                    status.addStatusMessage(_(u'Item moved.'), type='info')
+                    api.portal.show_message(
+                        message=_(u'Item moved.'), request=self.request)
                 else:
-                    status.addStatusMessage(_(u'Item not moved.'), type='info')
+                    api.portal.show_message(
+                        message=_(u'Item not moved.'), request=self.request)
 
         return self.template()
 
@@ -223,7 +227,7 @@ class PortalServicesEditForm(form.EditForm):
             return
 
         self.applyChanges(data)
-        IStatusMessage(self.request).addStatusMessage(_(u'Edit successfully'), 'info')
+        api.portal.show_message(message=_(u'Edit successfully'), request=self.request)
         nextURL = self.nextURL()
         if nextURL:
             self.request.response.redirect(self.nextURL())
@@ -231,7 +235,7 @@ class PortalServicesEditForm(form.EditForm):
 
     @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
     def handleCancel(self, action):
-        IStatusMessage(self.request).addStatusMessage(_(u'Edit cancelled'), 'info')
+        api.portal.show_message(message=_(u'Edit cancelled'), request=self.request)
         self.request.response.redirect(self.nextURL())
 
     def applyChanges(self, data):
