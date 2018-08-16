@@ -26,7 +26,8 @@
         />
 
     <genericsetup:upgradeDepends
-        title="Update collective.cover default settings"
+        title="Import various"
+        description="Update collective.cover configuration and add new fields to control panel configlet."
         import_profile="brasil.gov.portal.upgrades.v10901:default"
         />
 

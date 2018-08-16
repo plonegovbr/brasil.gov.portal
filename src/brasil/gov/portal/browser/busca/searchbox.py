@@ -7,7 +7,7 @@ expandable version that uses information stored in the registry, and
 accessible at the @@portal-settings configlet.
 """
 from brasil.gov.portal.controlpanel.portal import ISettingsPortal
-from plone.app.layout.viewlets.common import SearchBoxViewlet as SearchBoxViewletBase
+from plone.app.layout.viewlets.common import SearchBoxViewlet as SearchBoxViewletBase  # noqa: E501
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 
@@ -19,11 +19,7 @@ class SearchBoxViewlet(SearchBoxViewletBase):
         super(SearchBoxViewlet, self).update()
         registry = getUtility(IRegistry)
         self.settings = registry.forInterface(ISettingsPortal)
-
-        try:
-            self.expandable_header = self.settings.expandable_header
-        except AttributeError:
-            self.expandable_header = False
+        self.expandable_header = getattr(self.settings, 'expandable_header', False)  # noqa: E501
 
     @staticmethod
     def split(iterable):

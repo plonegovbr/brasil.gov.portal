@@ -5,7 +5,7 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona opção para permitir escolher entre headers diferentes.
-  [hvelarde]
+  [hvelarde, rodfersou]
 
 - Adiciona https nas URLs das redes sociais.
   [agnogueira]
