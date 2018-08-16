@@ -42,6 +42,9 @@ Changelog
 - Atualizado brasil.gov.barra à versão 1.2.3.
   [hvelarde]
 
+- Atualizado sc.social.like à versão 2.13b3.
+  [idgserpro]
+
 - Adiciona patch para o widget de campos ordenados não engolir opções com mesmo nome (refs. `z3c.form#76 <https://github.com/zopefoundation/z3c.form/pull/76>`_).
   [rodfersou]
 
