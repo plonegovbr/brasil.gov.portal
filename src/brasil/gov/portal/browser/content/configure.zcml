@@ -67,4 +67,21 @@
       title="View Infographic"
       />
 
+  <browser:menuItem
+      for="plone.app.contenttypes.interfaces.IFolder"
+      menu="plone_displayviews"
+      title="Centrais de conteúdo"
+      action="centrais-de-conteudo"
+      description="Mostra um formulário de busca de conteúdo."
+      />
+
+  <browser:page
+      name="centrais-de-conteudo"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      class=".contentcentral.ContentCentralView"
+      permission="zope2.View"
+      template="templates/contentcentral.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>

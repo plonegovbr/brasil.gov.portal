@@ -84,3 +84,10 @@ def update_infographic_workflow(setup_tool):
         logger.info('Removing workflow from Infographic content type')
         wftool.setChainForPortalTypes(('Infographic',), '')
         logger.info('Done')
+
+
+def add_content_central_menu(setup_tool):
+    """Add Content Central menu option to Folder content type."""
+    from brasil.gov.portal.setuphandlers import add_content_central_menu
+    add_content_central_menu()
+    logger.info('Added Content Central menu option to Folder content type')

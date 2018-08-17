@@ -37,6 +37,11 @@
         />
 
     <genericsetup:upgradeStep
+        title="Add Content Central menu option to Folder content type"
+        handler=".add_content_central_menu"
+        />
+
+    <genericsetup:upgradeStep
         title="Cook JavaScripts resources"
         description="There were changes in the JS files, so we need to cook the resources."
         handler="..cook_javascript_resources"
