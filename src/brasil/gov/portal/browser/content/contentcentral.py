@@ -8,12 +8,12 @@ from Products.CMFPlone.PloneBatch import Batch
 from Products.Five.browser import BrowserView
 
 
-MEDIA = (
+MEDIA = [
     'sc.embedder',
     'Image',
     'Audio',
     'Infographic',
-)
+]
 
 EVER = DateTime(0).Date()
 
@@ -21,12 +21,21 @@ EVER = DateTime(0).Date()
 class ContentCentralView(BrowserView):
     """View for media types with filter."""
 
-    def toogle_greenbar(self):
-        """Disable the green bar for anonynmous users."""
-        if api.user.is_anonymous():
-            self.request.set('disable_border', 1)
+    def __call__(self):
+        self.setup()
+        return self.index()
 
-    def filter_types(self, types):
+    def setup(self):
+        """Hide portlet columns and disable the green bar for
+        anonynmous users.
+        """
+        self.request.set('disable_plone.leftcolumn', True)
+        self.request.set('disable_plone.rightcolumn', True)
+        if api.user.is_anonymous():
+            self.request.set('disable_border', True)
+
+    @staticmethod
+    def filter_types(types):
         """Return a list of portal types listed above."""
         if not types:
             return MEDIA
@@ -57,13 +66,16 @@ class ContentCentralView(BrowserView):
         if self.valid_period(created):
             query['created'] = created
 
+        # TODO: include results in current context only
         results = api.content.find(**query)
         results = IContentListing(results)
         if batch:
             results = Batch(results, b_size, b_start)
         return results
 
-    def valid_period(self, period):
+    @staticmethod
+    def valid_period(period):
+        """Check if the selected period is valid."""
         period = period.get('query', [])
         try:
             return period[0].Date() > EVER
@@ -71,7 +83,7 @@ class ContentCentralView(BrowserView):
             return False
 
     def media(self):
-        """Get the list types of types that can be searched."""
+        """Return a list of existing types that can be searched."""
         catalog = api.portal.get_tool('portal_catalog')
         types_tool = api.portal.get_tool('portal_types')
         used_types = catalog._catalog.getIndex('portal_type').uniqueValues()
