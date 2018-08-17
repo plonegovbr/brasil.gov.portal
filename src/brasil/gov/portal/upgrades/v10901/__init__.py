@@ -82,7 +82,7 @@ def update_infographic_workflow(setup_tool):
     wftool = api.portal.get_tool('portal_workflow')
     if wftool.getChainForPortalType('Infographic') != ():
         logger.info('Removing workflow from Infographic content type')
-        wftool.setChainForPortalTypes(('Infographic',), '')
+        wftool.setChainForPortalTypes(['Infographic'], '')
         logger.info('Done')
 
 
