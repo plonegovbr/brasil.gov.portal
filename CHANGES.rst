@@ -4,7 +4,10 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Adiciona visão de central de conteúdo.
+- Adiciona visäo de Filtro de resultados.
+  [rodfersou, hvelarde]
+
+- Adiciona visão de Central de conteúdo.
   [rodfersou, hvelarde]
 
 - Atualiza as dependências do pacote.
