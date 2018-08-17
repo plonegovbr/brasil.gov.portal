@@ -210,7 +210,7 @@ class to10901TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 7)
+        self.assertEqual(steps, 8)
 
     def test_remove_root_portlets(self):
         title = u'Remove portlet assigments at portal root'
@@ -284,3 +284,20 @@ class to10901TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertIn(view, collection_fti.view_methods)
+
+    @unittest.expectedFailure
+    def test_uninstall_doormat(self):
+        title = u'Uninstall Products.Doormat'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        addon = 'Doormat'
+        qi = api.portal.get_tool('portal_quickinstaller')
+        # FIXME: fails with Unauthorized: Cannot create Doormat
+        qi.installProduct(addon)
+        self.assertTrue(qi.isProductInstalled(addon))
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertFalse(qi.isProductInstalled(addon))

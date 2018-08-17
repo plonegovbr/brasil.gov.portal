@@ -52,7 +52,10 @@
         handler="..cook_javascript_resources"
         />
 
-    <!-- TODO: add upgrade step to remove Products.Doormat and associated content -->
+    <genericsetup:upgradeStep
+        title="Uninstall Products.Doormat"
+        handler=".uninstall_doormat"
+        />
 
   </genericsetup:upgradeSteps>
 
