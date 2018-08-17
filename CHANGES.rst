@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona visão de central de conteúdo.
+  [rodfersou]
+
 - Atualiza as dependências do pacote.
   Remove dependência no ``plone.directives.form`` e últimos traços do Grok.
   [hvelarde]
