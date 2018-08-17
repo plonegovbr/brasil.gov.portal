@@ -177,6 +177,14 @@ def set_social_media_settings():
     api.portal.set_registry_record(name, value)
 
 
+def add_content_central_menu():
+    """Add Content Central menu option to Folder content type."""
+    view = 'centrais-de-conteudo'
+    folder_fti = api.portal.get_tool('portal_types')['Folder']
+    folder_fti.view_methods += (view,)
+    assert view in folder_fti.view_methods  # nosec
+
+
 def update_infographic_workflow():
     """Remove workflow from Infographic content type."""
     wftool = api.portal.get_tool('portal_workflow')
@@ -189,4 +197,5 @@ def run_after(context):
     set_tinymce_formats()
     remove_doormat_content(portal)
     set_social_media_settings()
+    add_content_central_menu()
     update_infographic_workflow()

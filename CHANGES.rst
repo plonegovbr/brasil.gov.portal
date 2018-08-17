@@ -5,7 +5,7 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona visão de central de conteúdo.
-  [rodfersou]
+  [rodfersou, hvelarde]
 
 - Atualiza as dependências do pacote.
   Remove dependência no ``plone.directives.form`` e últimos traços do Grok.
