@@ -188,7 +188,7 @@ def add_results_filter_menu():
 def update_infographic_workflow():
     """Remove workflow from Infographic content type."""
     wftool = api.portal.get_tool('portal_workflow')
-    wftool.setChainForPortalTypes(('Infographic',), '')
+    wftool.setChainForPortalTypes(['Infographic'], '')
     assert wftool.getChainForPortalType('Infographic') == ()  # nosec
 
 

@@ -131,6 +131,10 @@ class to10900TestCase(UpgradeBaseTestCase):
     #      and then test if it has been added
 
     def test_infographic_content_type(self):
+        title = u'Import various'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
         # simulate state on previous version
         types = api.portal.get_tool('portal_types')
         del types['Infographic']
@@ -236,16 +240,20 @@ class to10901TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
 
-    def update_infographic_workflow(self):
+    @unittest.expectedFailure
+    # FIXME: for some unknown reason the Infographic content type is
+    #        not available in the context of this test
+    def test_update_infographic_workflow(self):
         title = u'Remove workflow from Infographic content type'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
         # simulate state on previous version
-        wf = ('simple_publication workflow',)
         wftool = api.portal.get_tool('portal_workflow')
-        wftool.setChainForPortalTypes(('Infographic',), wf)
-        self.assertEqual(wftool.getChainForPortalType('Infographic'), wf)
+        wftool.setChainForPortalTypes(['Infographic'], '(Default)')
+        self.assertEqual(
+            wftool.getChainForPortalType('Infographic'),
+            wftool.getDefaultChain())
 
         # execute upgrade step
         self._do_upgrade(step)
