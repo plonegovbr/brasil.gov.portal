@@ -88,16 +88,16 @@
       for="plone.app.contenttypes.interfaces.ICollection"
       menu="plone_displayviews"
       title="Filtro de resultados"
-      action="filter-results"
+      action="filtro-de-resultados"
       description="Aplica uma query customizada aos resultados da coleção."
       />
 
   <browser:page
-      name="filter-results"
+      name="filtro-de-resultados"
       for="plone.app.contenttypes.interfaces.ICollection"
-      class=".filterresults.FilterResultsView"
+      class=".resultsfilter.ResultsFilterView"
       permission="zope2.View"
-      template="templates/filterresults.pt"
+      template="templates/resultsfilter.pt"
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 

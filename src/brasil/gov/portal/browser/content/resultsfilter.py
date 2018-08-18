@@ -8,13 +8,21 @@ from Products.Five.browser import BrowserView
 EVER = DateTime(0).Date()
 
 
-class FilterResultsView(BrowserView):
+class ResultsFilterView(BrowserView):
     """View for media types with filter."""
 
-    def toogle_greenbar(self):
-        """Disable the green bar for anonynmous users."""
+    def __call__(self):
+        self.setup()
+        return self.index()
+
+    def setup(self):
+        """Hide portlet columns and disable the green bar for
+        anonynmous users.
+        """
+        self.request.set('disable_plone.leftcolumn', True)
+        self.request.set('disable_plone.rightcolumn', True)
         if api.user.is_anonymous():
-            self.request.set('disable_border', 1)
+            self.request.set('disable_border', True)
 
     def results(self, b_size=5, b_start=0):
         """Apply a custom query over the collection results."""
@@ -43,7 +51,8 @@ class FilterResultsView(BrowserView):
         )
         return results
 
-    def valid_period(self, period):
+    @staticmethod
+    def valid_period(period):
         period = period.get('query', [])
         try:
             return period[0].Date() > EVER

@@ -59,4 +59,4 @@ class ContentCentralViewTestCase(unittest.TestCase):
             self.view.media(),
             OrderedDict([('Image', u'Image'), ('Audio', u'Audio')]))
 
-        # TODO: add more tests
+    # TODO: add more tests
