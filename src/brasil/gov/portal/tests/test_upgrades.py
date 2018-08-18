@@ -210,7 +210,7 @@ class to10901TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 6)
+        self.assertEqual(steps, 7)
 
     def test_remove_root_portlets(self):
         title = u'Remove portlet assigments at portal root'
@@ -267,3 +267,20 @@ class to10901TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertIn(view, folder_fti.view_methods)
+
+    def test_add_results_filter_menu(self):
+        title = u'Add Results Filter menu option to Collection content type'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        view = 'filtro-de-resultados'
+        collection_fti = api.portal.get_tool('portal_types')['Collection']
+        view_methods = list(collection_fti.view_methods)
+        view_methods.remove(view)
+        collection_fti.view_methods = tuple(view_methods)
+        self.assertNotIn(view, collection_fti.view_methods)
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertIn(view, collection_fti.view_methods)

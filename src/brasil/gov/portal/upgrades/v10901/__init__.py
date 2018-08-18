@@ -91,3 +91,10 @@ def add_content_central_menu(setup_tool):
     from brasil.gov.portal.setuphandlers import add_content_central_menu
     add_content_central_menu()
     logger.info('Added Content Central menu option to Folder content type')
+
+
+def add_results_filter_menu(setup_tool):
+    """Add Results Filter menu option to Collection content type."""
+    from brasil.gov.portal.setuphandlers import add_results_filter_menu
+    add_results_filter_menu()
+    logger.info('Added Results Filter menu option to Collection content type')

@@ -42,6 +42,11 @@
         />
 
     <genericsetup:upgradeStep
+        title="Add Results Filter menu option to Collection content type"
+        handler=".add_results_filter_menu"
+        />
+
+    <genericsetup:upgradeStep
         title="Cook JavaScripts resources"
         description="There were changes in the JS files, so we need to cook the resources."
         handler="..cook_javascript_resources"

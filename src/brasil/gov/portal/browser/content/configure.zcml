@@ -84,4 +84,21 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <browser:menuItem
+      for="plone.app.contenttypes.interfaces.ICollection"
+      menu="plone_displayviews"
+      title="Filtro de resultados"
+      action="filtro-de-resultados"
+      description="Aplica uma query customizada aos resultados da coleção."
+      />
+
+  <browser:page
+      name="filtro-de-resultados"
+      for="plone.app.contenttypes.interfaces.ICollection"
+      class=".resultsfilter.ResultsFilterView"
+      permission="zope2.View"
+      template="templates/resultsfilter.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>

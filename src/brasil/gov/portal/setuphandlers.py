@@ -185,6 +185,14 @@ def add_content_central_menu():
     assert view in folder_fti.view_methods  # nosec
 
 
+def add_results_filter_menu():
+    """Add Results Filter menu option to Collection content type."""
+    view = 'filtro-de-resultados'
+    collection_fti = api.portal.get_tool('portal_types')['Collection']
+    collection_fti.view_methods += (view,)
+    assert view in collection_fti.view_methods  # nosec
+
+
 def update_infographic_workflow():
     """Remove workflow from Infographic content type."""
     wftool = api.portal.get_tool('portal_workflow')
@@ -198,4 +206,5 @@ def run_after(context):
     remove_doormat_content(portal)
     set_social_media_settings()
     add_content_central_menu()
+    add_results_filter_menu()
     update_infographic_workflow()
