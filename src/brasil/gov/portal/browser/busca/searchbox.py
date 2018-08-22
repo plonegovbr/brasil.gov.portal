@@ -18,7 +18,7 @@ class SearchBoxViewlet(SearchBoxViewletBase):
     def update(self):
         super(SearchBoxViewlet, self).update()
         registry = getUtility(IRegistry)
-        self.settings = registry.forInterface(ISettingsPortal)
+        self.settings = registry.forInterface(ISettingsPortal, check=False)
         self.expandable_header = getattr(self.settings, 'expandable_header', False)  # noqa: E501
 
     @staticmethod
