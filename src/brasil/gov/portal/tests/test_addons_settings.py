@@ -36,7 +36,6 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'collective.cover.richtext',
             'em_destaque',
             'mediacarousel',
-            'nitf',
             'social',
             'standaloneheader',
             'video',
