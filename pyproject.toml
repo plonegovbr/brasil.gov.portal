@@ -1,2 +1,2 @@
 [tool.dependencychecker]
-ignore-packages = ['App', 'Products.Five']
+Zope2 = ['App', 'OFS', 'Products.Five']

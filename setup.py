@@ -112,6 +112,7 @@ setup(
         'zope.interface',
         'zope.lifecycleevent',
         'zope.schema',
+        'Zope2',
     ],
     extras_require={
         'migration': [
