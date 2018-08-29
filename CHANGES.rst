@@ -4,7 +4,7 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Evita instalar ``Products.Doormat`` em novos portais pois ele não é mais usado no projeto;
+- Desinstala ``Products.Doormat`` pois ele não é mais usado no projeto;
   remove também todas as customizações do complemento.
   [hvelarde]
 
