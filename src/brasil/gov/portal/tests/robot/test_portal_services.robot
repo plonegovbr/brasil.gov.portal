@@ -23,13 +23,13 @@ Adicionar link no portal services
 
     Sleep  2s
     Clicar botao  Adicionar Link
-    Campo de texto  form.widgets.title  Fale Conosco
-    Campo de texto  form.widgets.description  Link para o Fale Conosco
-    Campo de texto  form.widgets.url_expr  /fale-conosco
+    Campo de texto  form.widgets.title  Conheça
+    Campo de texto  form.widgets.description  Link para o Conheça
+    Campo de texto  form.widgets.url_expr  /conheca
     Clicar botao  Adicionar
 
     Ir para  ${PLONE_URL}/@@portal-services-settings
-    Pagina deve conter  Fale Conosco
+    Pagina deve conter  Conheça
 
 Editar o link
     Como o usuario administrador  Machado de Assis
@@ -42,19 +42,19 @@ Editar o link
 
     Sleep  2s
     Clicar botao  Adicionar Link
-    Campo de texto  form.widgets.title  Fale Conosco
-    Campo de texto  form.widgets.description  Link para o Fale Conosco
-    Campo de texto  form.widgets.url_expr  /fale-conosco
+    Campo de texto  form.widgets.title  Área de impressa
+    Campo de texto  form.widgets.description  Link para a Área de impressa
+    Campo de texto  form.widgets.url_expr  /area-de-impressa
     Clicar botao  Adicionar
 
     Clicar Link  css=.controlpanel-listing td>a
-    Campo de texto  form.widgets.title  Participe
-    Campo de texto  form.widgets.description  Link para Participe
-    Campo de texto  form.widgets.url_expr  /participe
+    Campo de texto  form.widgets.title  Convênios
+    Campo de texto  form.widgets.description  Link para Convênios
+    Campo de texto  form.widgets.url_expr  /convenios
     Click Element  css=#form-buttons-save
 
     Ir para  ${PLONE_URL}/@@portal-services-settings
-    Pagina deve conter  Participe
+    Pagina deve conter  Convênios
 
 Remover o link
     Como o usuario administrador  Machado de Assis
