@@ -14,13 +14,6 @@ class InitContentTestCase(unittest.TestCase):
 
     layer = INITCONTENT_TESTING
 
-    def get_doormat_view(self):
-        """Retorna a view do Doormat."""
-        from brasil.gov.portal.browser.content.doormat import DoormatView
-        portal = self.portal
-        request = self.layer['request']
-        return DoormatView(portal['rodape'], request)
-
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
@@ -179,69 +172,6 @@ class InitContentTestCase(unittest.TestCase):
                          u'Acesso à Informação')
         self.assertEqual(mapping['acesso-a-informacao'].currentFolderOnly,
                          False)
-
-    @unittest.expectedFailure
-    def test_doormat_view(self):
-        view = self.get_doormat_view()
-        data = view.getDoormatData()
-        # Teste se a troca de {portal_url} e {navigation_root_url}
-        # esta sendo realizada
-        self.assertEqual(
-            data[0]['column_sections'][0]['section_links'][1]['link_url'],
-            'http://nohost/plone/assuntos/lorem-ipsum')
-
-    @unittest.expectedFailure
-    def test_doormat_workflow(self):
-        """Testa se o Doormat está considerando o estado do workflow"""
-        catalog = api.portal.get_tool('portal_catalog')
-        sessoes = catalog(review_state='published',
-                          portal_type='DoormatSection',
-                          path='/plone/rodape')
-        obj_sessao = sessoes[0].getObject()
-        self.wt.doActionFor(obj_sessao, 'retract')
-        view = self.get_doormat_view()
-        setRoles(self.portal, TEST_USER_ID, ['Anonymous'])
-        data = view.getDoormatData()
-        titulos_sessoes = [section['section_title'] for column in data
-                           for section in column['column_sections']]
-        # Doormat não pode listar sessão não publicada. É necessário:
-        # Products.Doormat > 0.7
-        self.assertNotIn(obj_sessao.Title(), titulos_sessoes)
-
-    @unittest.expectedFailure
-    def test_conteudo_link_colecao_doormat(self):
-        """Testa se funciona adicionar um link para uma coleção no rodapé."""
-        # FIXME:
-        # BBB:
-        # Quando o Products.Doormat for atualizado para 1.2, esse teste pode ser
-        # removido uma vez que ele será feito pelo próprio Doormat, em
-        # https://github.com/collective/Products.Doormat/blob/94c0e161b179c4820548a24a0804c5e65c747be5/Products/Doormat/tests/test_views.py#L49
-        # e só faz sentido porque hoje ele é customizado em brasil.gov.portal,
-        # mas a customização pode ser removida quando for atualizar essa versão.
-        # Ver
-        # https://github.com/plonegovbr/brasil.gov.portal/issues/95#issuecomment-229473089
-        ultimas_noticias_doormat = api.content.create(
-            type='DoormatCollection',
-            container=self.portal['rodape']['quarta_coluna']['navegacao'],
-            id='ultimas-noticias',
-        )
-        ultimas_noticias_doormat.setCollection(self.portal['ultimas-noticias'])
-        view = self.get_doormat_view()
-        data = view.getDoormatData()
-
-        total_collection_items = 11
-
-        total_collection_found = len([
-            link
-            for link in data[3]['column_sections'][1]['section_links']
-            if link['link_class'] == 'collection-item'
-        ])
-
-        self.assertEqual(total_collection_items, total_collection_found)
-
-    def test_conteudo_doormat_removido(self):
-        """Testa se o conteúdo default do Products.Doormat foi removido"""
-        self.assertNotIn('doormat', self.portal.objectIds())
 
     def test_portal_available(self):
         qi = api.portal.get_tool('portal_quickinstaller')

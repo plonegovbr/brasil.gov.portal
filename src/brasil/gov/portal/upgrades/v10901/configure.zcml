@@ -52,6 +52,11 @@
         handler="..cook_javascript_resources"
         />
 
+    <genericsetup:upgradeStep
+        title="Uninstall Products.Doormat"
+        handler=".uninstall_doormat"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>

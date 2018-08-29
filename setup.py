@@ -88,7 +88,7 @@ setup(
         'Products.CMFCore',
         'Products.CMFDefault',
         'Products.CMFPlone',
-        'Products.Doormat>0.7',
+        'Products.Doormat',  # TODO: remove in IDG 3.0
         'Products.GenericSetup',
         'Products.PloneFormGen',
         'Products.PloneKeywordManager',

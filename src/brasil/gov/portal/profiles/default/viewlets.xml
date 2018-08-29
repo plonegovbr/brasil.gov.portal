@@ -8,6 +8,6 @@
     <viewlet name="brasil.gov.portal.redessociais" after="brasil.gov.portal.servicos"/>
   </order>
   <order manager="plone.plonefooter" skinname="*">
-    <viewlet name="brasil.gov.portal.topo" before="doormat.footer"/>
+    <viewlet name="brasil.gov.portal.topo" before="*"/>
   </order>
 </object>

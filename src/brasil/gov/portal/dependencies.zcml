@@ -16,7 +16,7 @@
   <include package="plone.app.contenttypes" />
   <include package="plone.restapi" />
   <include package="Products.CMFPlone" />
-  <include package="Products.Doormat" />
+  <include package="Products.Doormat" />  <!-- TODO: remove -->
   <include package="Products.PloneFormGen" />
   <include package="Products.PloneKeywordManager" />
   <include package="Products.RedirectionTool" />

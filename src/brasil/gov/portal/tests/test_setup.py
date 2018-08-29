@@ -15,7 +15,6 @@ INSTALLED = {
     'collective.nitf',
     'collective.polls',
     # 'collective.upload',
-    # 'Doormat',
     # 'plone.app.contenttypes',
     # 'plone.app.theming',
     'plone.restapi',
