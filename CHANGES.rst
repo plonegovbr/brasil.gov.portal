@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige ``UnicodeDecodeError`` no header do portal (fecha `#515 <https://github.com/plonegovbr/brasil.gov.portal/issues/515>`_).
+  [claytonc]
+
 - Desinstala ``Products.Doormat`` pois ele não é mais usado no projeto;
   remove também todas as customizações do complemento.
   [hvelarde]

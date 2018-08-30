@@ -153,13 +153,13 @@ class PortalServicesAddForm(form.AddForm):
 
     def create(self, data):
 
-        id = idnormalizer.normalize(data['title'].encode('utf8'))
+        id = idnormalizer.normalize(data['title'])
         id += '-' + str(int(time.time()))
 
         data.pop('pid')
-        data['title'] = data['title'].encode('utf8')
+        data['title'] = data['title']
         if data['description']:
-            data['description'] = data['description'].encode('utf8')
+            data['description'] = data['description']
         else:
             data['description'] = ''
         data['i18n_domain'] = 'plone'
