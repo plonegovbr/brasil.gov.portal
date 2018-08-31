@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.agenda à versão 2.0a6.
+  [hvelarde]
+
 - Atualizado brasil.gov.portlets à versão 2.0a1.
   [hvelarde]
 
@@ -58,9 +61,6 @@ Changelog
   [hvelarde]
 
 - Atualizado Products.PloneKeywordManager à versão 2.2.1.
-  [hvelarde]
-
-- Atualizado brasil.gov.agenda à versão 2.0a5.
   [hvelarde]
 
 - Remove IDs das redes sociais para evitar duplicidade.
