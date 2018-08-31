@@ -13,6 +13,8 @@ Changelog
 
 2.0b1 (2018-09-03)
 ^^^^^^^^^^^^^^^^^^
+- Adiciona tamanhos de miniaturas de imagens de acordo com a largura de colunas do portal.
+  [agnogueira]
 
 - Atualizado brasil.gov.tiles à versão 2.0a1.
   [hvelarde]
