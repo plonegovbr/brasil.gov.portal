@@ -34,13 +34,9 @@
       <element>collective.cover.collection</element>
       <element>collective.cover.list</element>
       <element>collective.cover.richtext</element>
-      <element>em_destaque</element>
-      <element>mediacarousel</element>
-      <element>social</element>
       <element>standaloneheader</element>
       <element>video</element>
       <element>videogallery</element>
-      <element>banner_rotativo</element>
     </value>
   </record>
 

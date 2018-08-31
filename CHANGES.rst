@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove da configuração referências a tiles descontinuados.
+  [hvelarde]
+
 - Atualizado brasil.gov.agenda à versão 2.0a6.
   [hvelarde]
 
