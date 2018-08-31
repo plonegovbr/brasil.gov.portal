@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.portlets à versão 2.0a1.
+  [hvelarde]
+
 - Atualizado brasil.gov.temas à versão 2.0b1.
   [hvelarde]
 
