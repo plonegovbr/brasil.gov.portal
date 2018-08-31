@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.temas à versão 2.0b1.
+  [hvelarde]
+
 - Corrige ``UnicodeDecodeError`` no header do portal (fecha `#515 <https://github.com/plonegovbr/brasil.gov.portal/issues/515>`_).
   [claytonc]
 
