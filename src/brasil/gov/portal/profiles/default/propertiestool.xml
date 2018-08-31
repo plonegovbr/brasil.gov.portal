@@ -41,9 +41,15 @@
   </object>
   <object name="imaging_properties" meta_type="Plone Property Sheet">
     <property name="allowed_sizes" type="lines" purge="False">
-      <element value="capa 230:230"/>
       <element value="galeria_de_album_thumb 238:133"/>
       <element value="galeria_de_foto_view 1150:650"/>
+      <element value="Imagem-Full: 1150:1150"/>
+      <element value="Imagem-8C 760:760"/>
+      <element value="Imagem-7C 663:663"/>
+      <element value="Imagem-6C 565:565"/>
+      <element value="Imagem-5C 468:468"/>
+      <element value="Imagem-4C 370:370"/>
+      <element value="Imagem-3C 273:273"/>
     </property>
   </object>
 </object>
