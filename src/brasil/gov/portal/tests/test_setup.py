@@ -16,6 +16,7 @@ INSTALLED = {
     'collective.polls',
     # 'collective.upload',
     # 'plone.app.contenttypes',
+    'plone.app.imagecropping',  # from brasil.gov.tiles
     # 'plone.app.theming',
     'plone.restapi',
     # 'PloneFormGen',
