@@ -67,6 +67,7 @@
       <element>FAQ|tile-faq</element>
       <element>Foto Sobreposta Grande|foto-sobreposta-grande</element>
       <element>Foto Sobreposta|foto-sobreposta</element>
+      <element>Foto Sobreposta Pequena|foto-sobreposta-pequena</element>
       <element>Foto destacada grande|foto-destacada-grande</element>
       <element>Linha destacada|linha-destacada</element>
       <element>Linha destaque topo|linha-destaquetopo</element>
@@ -74,6 +75,7 @@
       <element>Linha recuada|linha-recuada</element>
       <element>Lista Blocos|lista-blocos</element>
       <element>Lista em Alta|tile-em-alta</element>
+      <element>Noticia Destaque|tile-noticia-destaque</element>
       <element>Tile Transparente|tile-transparente</element>
       <element>Titulo Fio Separador|fio-separador</element>
     </value>
