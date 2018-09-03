@@ -4,8 +4,8 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
-
+- Adiciona novoss estilos para o cover.
+  [agnogueira]
 
 2.0b1 (2018-09-03)
 ^^^^^^^^^^^^^^^^^^
