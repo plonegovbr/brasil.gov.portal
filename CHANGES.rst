@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0a6 (unreleased)
+2.0b1 (2018-09-03)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualizado brasil.gov.tiles à versão 2.0a1.
