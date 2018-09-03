@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal import _
-from plone.formwidget.namedfile.converter import b64decode_file
-from plone.namedfile.file import NamedImage
 from six.moves.urllib.parse import urlparse
 from zope.interface import Invalid
 
@@ -26,19 +24,4 @@ def validate_list_of_links(value):
         parsed = urlparse(v.strip())
         if not all([parsed.scheme, parsed.netloc]):
             raise Invalid(MESSAGE)
-    return True
-
-
-def validate_background_image(value):
-    """Check if background image has the right dimensions."""
-    if not value:
-        return True
-
-    filename, data = b64decode_file(value)
-    image = NamedImage(data=data, filename=filename)
-
-    width, height = image.getImageSize()
-    if width != 1440 or height != 605:
-        raise Invalid(_(u'Image should be 1440px width and 605px height.'))
-
     return True

@@ -4,8 +4,12 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove validador do tamanho da imagem de fundo do cabeçalho (fecha `#520 <https://github.com/plonegovbr/brasil.gov.portal/issues/520>`_).
+  [hvelarde]
+
 - Adiciona novos estilos para o cover.
   [agnogueira]
+
 
 2.0b1 (2018-09-03)
 ^^^^^^^^^^^^^^^^^^

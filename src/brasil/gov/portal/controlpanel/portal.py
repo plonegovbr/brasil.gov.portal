@@ -7,7 +7,6 @@ In the future this configlet should list all IDG options if possible to
 avoid having too many configlets.
 """
 from brasil.gov.portal import _
-from brasil.gov.portal.utils import validate_background_image
 from brasil.gov.portal.utils import validate_list_of_links
 from plone.app.registry.browser import controlpanel
 from plone.autoform import directives as form
@@ -65,7 +64,6 @@ class ISettingsPortal(model.Schema):
                     u'Should be 1440px width and 605px height.',
         ),
         required=False,
-        constraint=validate_background_image,
     )
 
     form.widget('featured_news', cols=25, rows=10)
