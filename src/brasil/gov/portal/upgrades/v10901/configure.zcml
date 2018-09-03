@@ -57,11 +57,6 @@
         handler=".uninstall_doormat"
         />
 
-    <genericsetup:upgradeStep
-        title="Add image sizes"
-        handler=".add_image_sizes"
-        />
-
   </genericsetup:upgradeSteps>
 
 </configure>

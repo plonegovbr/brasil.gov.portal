@@ -20,6 +20,11 @@
         import_profile="brasil.gov.portal.upgrades.v10902:default"
         />
 
+    <genericsetup:upgradeStep
+        title="Add image sizes"
+        handler=".add_image_sizes"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>

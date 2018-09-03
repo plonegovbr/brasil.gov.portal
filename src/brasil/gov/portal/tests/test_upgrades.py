@@ -214,7 +214,7 @@ class to10901TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 9)
+        self.assertEqual(steps, 8)
 
     def test_remove_root_portlets(self):
         title = u'Remove portlet assigments at portal root'
@@ -310,6 +310,20 @@ class to10901TestCase(UpgradeBaseTestCase):
         self._do_upgrade(step)
         self.assertFalse(qi.isProductInstalled(addon))
 
+
+class to10902TestCase(UpgradeBaseTestCase):
+
+    from_ = '10901'
+    to_ = '10902'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 2)
+
     def test_add_image_sizes(self):
         title = u'Add image sizes'
         step = self._get_upgrade_step_by_title(title)
@@ -318,7 +332,6 @@ class to10901TestCase(UpgradeBaseTestCase):
         # simulate state on previous version
         settings = api.portal.get_tool('portal_properties').imaging_properties
         allowed_sizes = set(settings.allowed_sizes)
-        allowed_sizes |= frozenset([u'capa 230:230'])
         allowed_sizes -= frozenset([
             u'Imagem-Full: 1150:1150',
             u'Imagem-8C 760:760',
@@ -329,7 +342,6 @@ class to10901TestCase(UpgradeBaseTestCase):
             u'Imagem-3C 273:273',
         ])
         settings.allowed_sizes = tuple(allowed_sizes)
-        self.assertIn(u'capa 230:230', settings.allowed_sizes)
         self.assertNotIn(u'Imagem-Full: 1150:1150', settings.allowed_sizes)
         self.assertNotIn(u'Imagem-8C 760:760', settings.allowed_sizes)
         self.assertNotIn(u'Imagem-7C 663:663', settings.allowed_sizes)
@@ -340,7 +352,6 @@ class to10901TestCase(UpgradeBaseTestCase):
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
-        self.assertNotIn(u'capa 230:230', settings.allowed_sizes)
         self.assertIn(u'Imagem-Full: 1150:1150', settings.allowed_sizes)
         self.assertIn(u'Imagem-8C 760:760', settings.allowed_sizes)
         self.assertIn(u'Imagem-7C 663:663', settings.allowed_sizes)
