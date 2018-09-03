@@ -4,6 +4,9 @@ Changelog
 2.0a6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.tiles à versão 2.0a1.
+  [hvelarde]
+
 - Remove da configuração referências a tiles descontinuados.
   [hvelarde]
 
