@@ -70,6 +70,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'Discreto|tile-discreto',
             'FAQ|tile-faq',
             'Foto Sobreposta Grande|foto-sobreposta-grande',
+            'Foto Sobreposta Pequena|foto-sobreposta-pequena',
             'Foto Sobreposta|foto-sobreposta',
             'Foto destacada grande|foto-destacada-grande',
             'Linha destacada|linha-destacada',
@@ -78,12 +79,13 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'Linha recuada|linha-recuada',
             'Lista Blocos|lista-blocos',
             'Lista em Alta|tile-em-alta',
+            'Noticia Destaque|tile-noticia-destaque',
             'Tile Transparente|tile-transparente',
             'Titulo Fio Separador|fio-separador',
         ]
         styles = list(settings.styles)
         styles.sort()
-        self.assertListEqual(styles, expected)
+        self.assertItemsEqual(styles, expected)
 
     def test_collective_nitf_available_genres(self):
         """ Genres used portal wide.
