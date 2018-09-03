@@ -330,32 +330,15 @@ class to10902TestCase(UpgradeBaseTestCase):
         self.assertIsNotNone(step)
 
         # simulate state on previous version
+        from brasil.gov.portal.upgrades.v10902 import SCALES_TO_ADD
         settings = api.portal.get_tool('portal_properties').imaging_properties
         allowed_sizes = set(settings.allowed_sizes)
-        allowed_sizes -= frozenset([
-            u'Imagem-Full: 1150:1150',
-            u'Imagem-8C 760:760',
-            u'Imagem-7C 663:663',
-            u'Imagem-6C 565:565',
-            u'Imagem-5C 468:468',
-            u'Imagem-4C 370:370',
-            u'Imagem-3C 273:273',
-        ])
+        allowed_sizes -= frozenset(SCALES_TO_ADD)
         settings.allowed_sizes = tuple(allowed_sizes)
-        self.assertNotIn(u'Imagem-Full: 1150:1150', settings.allowed_sizes)
-        self.assertNotIn(u'Imagem-8C 760:760', settings.allowed_sizes)
-        self.assertNotIn(u'Imagem-7C 663:663', settings.allowed_sizes)
-        self.assertNotIn(u'Imagem-6C 565:565', settings.allowed_sizes)
-        self.assertNotIn(u'Imagem-5C 468:468', settings.allowed_sizes)
-        self.assertNotIn(u'Imagem-4C 370:370', settings.allowed_sizes)
-        self.assertNotIn(u'Imagem-3C 273:273', settings.allowed_sizes)
+        for scale in SCALES_TO_ADD:
+            self.assertNotIn(scale, settings.allowed_sizes)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
-        self.assertIn(u'Imagem-Full: 1150:1150', settings.allowed_sizes)
-        self.assertIn(u'Imagem-8C 760:760', settings.allowed_sizes)
-        self.assertIn(u'Imagem-7C 663:663', settings.allowed_sizes)
-        self.assertIn(u'Imagem-6C 565:565', settings.allowed_sizes)
-        self.assertIn(u'Imagem-5C 468:468', settings.allowed_sizes)
-        self.assertIn(u'Imagem-4C 370:370', settings.allowed_sizes)
-        self.assertIn(u'Imagem-3C 273:273', settings.allowed_sizes)
+        for scale in SCALES_TO_ADD:
+            self.assertIn(scale, settings.allowed_sizes)
