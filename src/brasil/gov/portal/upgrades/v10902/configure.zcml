@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="brasil.gov.portal (v10902)"
+      directory="profile"
+      description='Configuration for version 10902'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:upgradeSteps
+      source="10901"
+      destination="10902"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeDepends
+        title="Add new styles to use in Cover package"
+        description="Add new styles to use in Cover package"
+        import_profile="brasil.gov.portal.upgrades.v10902:default"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>

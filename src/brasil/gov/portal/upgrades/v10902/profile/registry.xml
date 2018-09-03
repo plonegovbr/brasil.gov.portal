@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<registry>
+  <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
+    <value purge="true">
+      <element>Box Branco|box-branco</element>
+      <element>Box Colorido|box-colorido</element>
+      <element>Box Escuro|box-escuro</element>
+      <element>Colunas Destacadas|colunas-destacadas</element>
+      <element>Colunas Discretas|colunas-discretas</element>
+      <element>Colunas Quadradas|colunas-quadradas</element>
+      <element>Discreto|tile-discreto</element>
+      <element>FAQ|tile-faq</element>
+      <element>Foto Sobreposta Grande|foto-sobreposta-grande</element>
+      <element>Foto Sobreposta|foto-sobreposta</element>
+      <element>Foto Sobreposta Pequena|foto-sobreposta-pequena</element>
+      <element>Foto destacada grande|foto-destacada-grande</element>
+      <element>Linha destacada|linha-destacada</element>
+      <element>Linha destaque topo|linha-destaquetopo</element>
+      <element>Linha discreta|linha-discreta</element>
+      <element>Linha recuada|linha-recuada</element>
+      <element>Lista Blocos|lista-blocos</element>
+      <element>Lista em Alta|tile-em-alta</element>
+      <element>Noticia Destaque|tile-noticia-destaque</element>
+      <element>Tile Transparente|tile-transparente</element>
+      <element>Titulo Fio Separador|fio-separador</element>
+    </value>
+  </record>
+</registry>
