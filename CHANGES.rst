@@ -4,6 +4,9 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.tiles à versão 2.0b1.
+  [hvelarde]
+
 - Atualiza i18n e traduções ao Português Brasileiro.
   [agnogueira, hvelarde]
 
