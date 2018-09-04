@@ -309,3 +309,44 @@ class to10901TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertFalse(qi.isProductInstalled(addon))
+
+
+class to10902TestCase(UpgradeBaseTestCase):
+
+    from_ = '10901'
+    to_ = '10902'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_update_image_scales(self):
+        title = u'Import various'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        NEW_SCALES = set([
+            u'Imagem-3C 273:273',
+            u'Imagem-4C 370:370',
+            u'Imagem-5C 468:468',
+            u'Imagem-6C 565:565',
+            u'Imagem-7C 663:663',
+            u'Imagem-8C 760:760',
+            u'Imagem-Full: 1150:1150',
+        ])
+        settings = api.portal.get_tool('portal_properties').imaging_properties
+        allowed_sizes = set(settings.allowed_sizes) - NEW_SCALES
+        settings.allowed_sizes = tuple(allowed_sizes)
+
+        # the intersection is an empty set (no elements in common)
+        self.assertFalse(set(settings.allowed_sizes) & NEW_SCALES)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        for scale in NEW_SCALES:
+            self.assertIn(scale, settings.allowed_sizes)

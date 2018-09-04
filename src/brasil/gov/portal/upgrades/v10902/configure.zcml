@@ -16,7 +16,7 @@
       profile="brasil.gov.portal:default">
 
     <genericsetup:upgradeDepends
-        title="Add new styles to use in Cover package"
+        title="Import various"
         import_profile="brasil.gov.portal.upgrades.v10902:default"
         />
 

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+  <object name="imaging_properties" meta_type="Plone Property Sheet">
+    <property name="allowed_sizes" type="lines" purge="False">
+      <element value="Imagem-Full: 1150:1150"/>
+      <element value="Imagem-8C 760:760"/>
+      <element value="Imagem-7C 663:663"/>
+      <element value="Imagem-6C 565:565"/>
+      <element value="Imagem-5C 468:468"/>
+      <element value="Imagem-4C 370:370"/>
+      <element value="Imagem-3C 273:273"/>
+    </property>
+  </object>
+</object>
