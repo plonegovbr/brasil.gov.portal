@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-03-15 14:00+0000\n"
+"POT-Creation-Date: 2018-09-04 12:43+0000\n"
 "PO-Revision-Date: 2014-11-06 15:41-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"

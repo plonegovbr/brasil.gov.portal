@@ -4,6 +4,9 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualiza i18n e traduções ao Português Brasileiro.
+  [agnogueira, hvelarde]
+
 - Remove validador do tamanho da imagem de fundo do cabeçalho (fecha `#520 <https://github.com/plonegovbr/brasil.gov.portal/issues/520>`_).
   [hvelarde]
 
