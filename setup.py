@@ -3,7 +3,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-version = '2.0b2'
+version = '2.0b3.dev0'
 long_description = (
     open('README.rst').read() + '\n' +
     open('CONTRIBUTORS.rst').read() + '\n' +
