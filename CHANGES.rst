@@ -4,6 +4,9 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.temas à versão 2.0b2.
+  [hvelarde]
+
 - Atualizado brasil.gov.tiles à versão 2.0b1.
   [hvelarde]
 
