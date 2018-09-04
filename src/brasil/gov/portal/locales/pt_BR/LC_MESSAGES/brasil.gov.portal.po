@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-03-15 14:00+0000\n"
+"POT-Creation-Date: 2018-09-04 12:43+0000\n"
 "PO-Revision-Date: 2018-03-15 11:00-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: \n"
@@ -22,7 +22,7 @@ msgid ".gov.br: Portal Padrão"
 msgstr ".gov.br: Portal Padrão"
 
 #: brasil/gov/portal/profiles/default/controlpanel.xml
-#: brasil/gov/portal/upgrades/v10806/profile/controlpanel.xml
+#: brasil/gov/portal/upgrades/v10900/profile/controlpanel.xml
 msgid ".gov.br: Portal Services"
 msgstr ".gov.br: Serviços do Portal"
 
@@ -35,6 +35,7 @@ msgid ".gov.br: Social Networks"
 msgstr ".gov.br: Redes Sociais"
 
 #: brasil/gov/portal/profiles/default/controlpanel.xml
+#: brasil/gov/portal/upgrades/v10901/profile/controlpanel.xml
 msgid ".gov.br: e-Government Digital Identity"
 msgstr ".gov.br: Portal Padrão"
 
@@ -42,7 +43,7 @@ msgstr ".gov.br: Portal Padrão"
 msgid "A short site description"
 msgstr "Uma breve descrição deste site"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:142
+#: brasil/gov/portal/controlpanel/portalservices.py:146
 msgid "Add a link."
 msgstr "Adicionar um link."
 
@@ -61,6 +62,14 @@ msgstr "Um arquivo áudio com MPEG"
 #: brasil/gov/portal/profiles/default/types/OGG_Audio_File.xml
 msgid "An Audio File using OGG"
 msgstr "Um arquivo áudio com OGG"
+
+#: brasil/gov/portal/browser/content/configure.zcml:74
+msgid "Aplica uma query customizada aos resultados da coleção."
+msgstr ""
+
+#: brasil/gov/portal/controlpanel/portal.py:105
+msgid "Assuntos em alta"
+msgstr ""
 
 #: brasil/gov/portal/profiles/default/types/Audio.xml
 msgid "Audio"
@@ -82,6 +91,23 @@ msgstr "Voltar para o topo"
 msgid "Base configuration"
 msgstr "Configuração básica"
 
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:81
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:54
+msgid "By period"
+msgstr ""
+
+#: brasil/gov/portal/browser/content/configure.zcml:57
+msgid "Centrais de conteúdo"
+msgstr ""
+
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:10
+msgid "Content Centrals"
+msgstr ""
+
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:54
+msgid "Content types"
+msgstr ""
+
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:13
 msgid "Create a Plone site"
 msgstr "Criar um site Plone"
@@ -101,11 +127,11 @@ msgstr "Órgão"
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:110
 #: brasil/gov/portal/content/schema/infographic.xml
-#: brasil/gov/portal/controlpanel/portalservices.py:41
+#: brasil/gov/portal/controlpanel/portalservices.py:40
 msgid "Description"
 msgstr "Descrição"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:55
+#: brasil/gov/portal/controlpanel/portalservices.py:54
 msgid "Desmarque para ocultar o link."
 msgstr "Desmarque para ocultar o link."
 
@@ -127,19 +153,15 @@ msgstr "Baixar arquivo em formato"
 msgid "Edit"
 msgstr "Editar"
 
-#: brasil/gov/portal/browser/viewlets/templates/destaques_viewlet.pt:4
-msgid "Edit Features"
-msgstr "Editar destaques"
-
-#: brasil/gov/portal/controlpanel/portalservices.py:234
+#: brasil/gov/portal/controlpanel/portalservices.py:238
 msgid "Edit cancelled"
 msgstr "Edição cancelada"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:188
+#: brasil/gov/portal/controlpanel/portalservices.py:192
 msgid "Edit link"
 msgstr "Editar link"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:226
+#: brasil/gov/portal/controlpanel/portalservices.py:230
 msgid "Edit successfully"
 msgstr "Editado com sucesso"
 
@@ -179,13 +201,17 @@ msgstr "Exibe o seu conteúdo como um arquivo de acordo com o padrão do sitemap
 msgid "External Content"
 msgstr "Conteúdo Externo"
 
-#: brasil/gov/portal/content/audio_file.py:44
+#: brasil/gov/portal/content/audio_file.py:43
 msgid "File"
 msgstr "Arquivo"
 
-#: brasil/gov/portal/content/audio_file.py:28
+#: brasil/gov/portal/content/audio_file.py:27
 msgid "File format not supported"
 msgstr "Formato de arquivo não suportado"
+
+#: brasil/gov/portal/browser/content/configure.zcml:74
+msgid "Filtro de resultados"
+msgstr ""
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:67
 #: brasil/gov/portal/controlpanel/site.py:25
@@ -228,19 +254,19 @@ msgstr "Ir para a busca <span>3</span>"
 msgid "Help and Support"
 msgstr "Suporte e ajuda"
 
-#: brasil/gov/portal/controlpanel/portal.py:20
+#: brasil/gov/portal/controlpanel/portal.py:30
 msgid "Hide information about when an item has been published."
 msgstr "Esconde informações sobre quando um item foi publicado."
 
-#: brasil/gov/portal/controlpanel/portal.py:14
+#: brasil/gov/portal/controlpanel/portal.py:24
 msgid "Hide information about who created an item."
 msgstr "Esconde informações sobre quem criou um item."
 
-#: brasil/gov/portal/controlpanel/portal.py:13
+#: brasil/gov/portal/controlpanel/portal.py:23
 msgid "Hides author"
 msgstr "Esconde autor"
 
-#: brasil/gov/portal/controlpanel/portal.py:19
+#: brasil/gov/portal/controlpanel/portal.py:29
 msgid "Hides publication date"
 msgstr "Esconde data de publicação"
 
@@ -249,32 +275,32 @@ msgid "Identity Bar behavior Configuration"
 msgstr "Configurações do comportamento da barra de identidade"
 
 #: brasil/gov/portal/profiles/default/types/Infographic.xml
-#: brasil/gov/portal/upgrades/v10806/profile/types/Infographic.xml
+#: brasil/gov/portal/upgrades/v10900/profile/types/Infographic.xml
 msgid "Infographic"
 msgstr "Infográfico"
 
 #: brasil/gov/portal/profiles/default/types/Infographic.xml
-#: brasil/gov/portal/upgrades/v10806/profile/types/Infographic.xml
+#: brasil/gov/portal/upgrades/v10900/profile/types/Infographic.xml
 msgid "Infographics can be referenced in pages or displayed in an album."
 msgstr "Os infográficos podem ser referenciados em páginas ou mostrados num álbum."
 
-#: brasil/gov/portal/controlpanel/portalservices.py:42
+#: brasil/gov/portal/controlpanel/portalservices.py:41
 msgid "Informe a descrição caso seja necessário."
 msgstr "Informe a descrição caso seja necessário."
 
-#: brasil/gov/portal/controlpanel/portalservices.py:48
+#: brasil/gov/portal/controlpanel/portalservices.py:47
 msgid "Informe o caminho relativo ao portal e começando com uma barra \"/\" e para URL externa informe http:// ou https://."
 msgstr "Informe o caminho relativo ao portal e começando com uma barra \"/\" e para URL externa informe http:// ou https://."
 
-#: brasil/gov/portal/controlpanel/portalservices.py:172
+#: brasil/gov/portal/controlpanel/portalservices.py:176
 msgid "Item added successfully."
 msgstr "Item adicionado com sucesso."
 
-#: brasil/gov/portal/controlpanel/portalservices.py:97
+#: brasil/gov/portal/controlpanel/portalservices.py:96
 msgid "Item deleted."
 msgstr "Item excluído."
 
-#: brasil/gov/portal/controlpanel/portalservices.py:104
+#: brasil/gov/portal/controlpanel/portalservices.py:105
 msgid "Item moved."
 msgstr "Item movido."
 
@@ -282,7 +308,7 @@ msgstr "Item movido."
 msgid "Item not deleted."
 msgstr "Item não excluído."
 
-#: brasil/gov/portal/controlpanel/portalservices.py:106
+#: brasil/gov/portal/controlpanel/portalservices.py:108
 msgid "Item not moved."
 msgstr "Item não movido."
 
@@ -298,6 +324,18 @@ msgstr "Portais já criados"
 msgid "MPEG Audio File"
 msgstr "Arquivo de Áudio MPEG"
 
+#: brasil/gov/portal/controlpanel/portal.py:82
+msgid "Mais notícias"
+msgstr ""
+
+#: brasil/gov/portal/controlpanel/portal.py:99
+msgid "Mais serviços"
+msgstr ""
+
+#: brasil/gov/portal/browser/content/configure.zcml:57
+msgid "Mostra um formulário de busca de conteúdo."
+msgstr ""
+
 #: brasil/gov/portal/profiles/default/types/sc.embedder.xml
 msgid "Multimedia"
 msgstr "Multimídia"
@@ -311,6 +349,10 @@ msgstr "Nome do Ministério ou da Secretaria ao qual este site está subordinado
 msgid "News"
 msgstr "Notícia"
 
+#: brasil/gov/portal/controlpanel/portal.py:71
+msgid "Notícias em destaque"
+msgstr ""
+
 #: brasil/gov/portal/profiles/default/types/OGG_Audio_File.xml
 msgid "OGG Audio File"
 msgstr "Arquivo de Áudio OGG"
@@ -323,7 +365,7 @@ msgstr "URL original"
 msgid "Path identifier"
 msgstr "Identificador de caminho"
 
-#: brasil/gov/portal/content/audio_file.py:45
+#: brasil/gov/portal/content/audio_file.py:44
 msgid "Please upload a audio file."
 msgstr "Por favor faça upload de arquivo de áudio."
 
@@ -331,12 +373,12 @@ msgstr "Por favor faça upload de arquivo de áudio."
 msgid "Portal Padrão de sites para o Governo Federal"
 msgstr "Portal Padrão de sites para o Governo Federal"
 
-#: brasil/gov/portal/browser/busca/templates/search.pt:30
+#: brasil/gov/portal/browser/busca/search.pt:30
 msgid "Search"
 msgstr "Busca"
 
-#: brasil/gov/portal/browser/busca/templates/search.pt:49
-#: brasil/gov/portal/browser/viewlets/templates/searchbox.pt:12
+#: brasil/gov/portal/browser/busca/search.pt:49
+#: brasil/gov/portal/browser/busca/searchbox.pt:16
 msgid "Search Site"
 msgstr "Buscar no portal"
 
@@ -349,7 +391,11 @@ msgstr "Segunda linha do título do site"
 msgid "Select any add-ons you want to activate immediately. You can also activate add-ons after the site has been created using the Add-ons control panel."
 msgstr "Selecione os Complementos que você deseja instalar imediatamente. Você também pode instalar complementos depois que o site foi criado usando o painel de controle."
 
-#: brasil/gov/portal/controlpanel/portal.py:30
+#: brasil/gov/portal/controlpanel/portal.py:88
+msgid "Serviços em destaque"
+msgstr ""
+
+#: brasil/gov/portal/controlpanel/portal.py:120
 msgid "Settings for e-Government Digital Identity."
 msgstr "Configurações para o Portal Padrão."
 
@@ -415,7 +461,7 @@ msgstr "Esta solução roda sobre o CMS Plone, conheça mais visitando o site da
 msgid "Title"
 msgstr "Título"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:36
+#: brasil/gov/portal/controlpanel/portalservices.py:35
 msgid "Titulo do link"
 msgstr "Titulo do link"
 
@@ -423,7 +469,7 @@ msgstr "Titulo do link"
 msgid "Transcription"
 msgstr "Transcrição"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:47
+#: brasil/gov/portal/controlpanel/portalservices.py:46
 msgid "URL"
 msgstr "URL"
 
@@ -437,6 +483,10 @@ msgstr "URL que identifica o Ministério ou da Secretaria ao qual este site est�
 msgid "Url ID of Department"
 msgstr "URL que identifica o Órgão"
 
+#: brasil/gov/portal/controlpanel/portal.py:50
+msgid "Use expandable header?"
+msgstr ""
+
 #: brasil/gov/portal/profiles/default/types/Audio.xml
 #: brasil/gov/portal/profiles/default/types/ExternalContent.xml
 #: brasil/gov/portal/profiles/default/types/Infographic.xml
@@ -447,7 +497,7 @@ msgstr "Visão"
 msgid "View Image"
 msgstr "Visão de imagem"
 
-#: brasil/gov/portal/browser/content/configure.zcml:68
+#: brasil/gov/portal/browser/content/configure.zcml:49
 msgid "View Infographic"
 msgstr "Visão de infográfico"
 
@@ -459,9 +509,13 @@ msgstr "Configuração funcional e visual"
 msgid "Visão de notícia"
 msgstr "Visão de notícia"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:54
+#: brasil/gov/portal/controlpanel/portalservices.py:53
 msgid "Visível"
 msgstr "Visível"
+
+#: brasil/gov/portal/utils.py:7
+msgid "You must use \"Title|http://example.org\" format to fill each line."
+msgstr ""
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:127
 msgid "You normally don't need to change anything here unless you have specific reasons and know what you are doing."
@@ -480,9 +534,17 @@ msgstr "Interface de Administração do Zope"
 msgid "add_new_site"
 msgstr "Criar um novo Portal Padrão"
 
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:129
+msgid "alphabetically"
+msgstr ""
+
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:29
 msgid "content"
 msgstr "conteúdo"
+
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:121
+msgid "date (newest first)"
+msgstr ""
 
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:13
 msgid "e-Government Digital Identity -- Plone"
@@ -492,7 +554,7 @@ msgstr "Portal Padrão -- Plone"
 msgid "e-Government Digital Identity Plone Portal"
 msgstr "Portal Padrão"
 
-#: brasil/gov/portal/controlpanel/portal.py:29
+#: brasil/gov/portal/controlpanel/portal.py:119
 msgid "e-Government Digital Identity Settings"
 msgstr "Configurações do Portal Padrão."
 
@@ -500,14 +562,45 @@ msgstr "Configurações do Portal Padrão."
 msgid "footer"
 msgstr "rodapé"
 
+#. Default: "This image will be used as background of the header. Should be 1440px width and 605px height."
+#: brasil/gov/portal/controlpanel/portal.py:61
+msgid "help_background_image"
+msgstr ""
+
+#. Default: "If enabled, an expandable header will be used instead of the default. A list of search sugestions and hot topics will also be shown, if available."
+#: brasil/gov/portal/controlpanel/portal.py:51
+msgid "help_expandable_header"
+msgstr ""
+
+#. Default: "You must use \"Title|http://example.org\" format to fill each line."
+#: brasil/gov/portal/controlpanel/portal.py:72
+msgid "help_featured_news"
+msgstr ""
+
+#. Default: "You must use \"Title|http://example.org\" format to fill each line."
+#: brasil/gov/portal/controlpanel/portal.py:89
+msgid "help_featured_services"
+msgstr ""
+
 #. Default: "Escolha a rede a ser cadastrada"
 #: brasil/gov/portal/controlpanel/socialnetworks.py:27
 msgid "help_social_network"
 msgstr "Escolha a rede a ser cadastrada"
 
-#: brasil/gov/portal/controlpanel/portalservices.py:31
+#. Default: "You must use \"Title|http://example.org\" format to fill each line."
+#: brasil/gov/portal/controlpanel/portal.py:106
+msgid "help_top_subjects"
+msgstr ""
+
+#: brasil/gov/portal/controlpanel/portalservices.py:30
 msgid "id"
 msgstr "ID"
+
+#. Default: "Aplicar filtro"
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:127
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:132
+msgid "label_apply_filter"
+msgstr ""
 
 #. Default: "by ${creator}"
 #: brasil/gov/portal/browser/plone/overrides/Products.CMFPlone.skins.plone_templates.recently_published.pt:59
@@ -515,7 +608,7 @@ msgid "label_by_creator"
 msgstr "por ${creator}"
 
 #. Default: "Cancel"
-#: brasil/gov/portal/controlpanel/portalservices.py:232
+#: brasil/gov/portal/controlpanel/portalservices.py:236
 msgid "label_cancel"
 msgstr "Cancelar"
 
@@ -524,7 +617,7 @@ msgstr "Cancelar"
 msgid "label_image"
 msgstr "Imagem"
 
-#: brasil/gov/portal/browser/album/albuns.py:183
+#: brasil/gov/portal/browser/album/albuns.py:184
 msgid "label_next"
 msgstr "Próximo"
 
@@ -533,17 +626,17 @@ msgstr "Próximo"
 msgid "label_plone_org_title"
 msgstr "Página Inicial da Comunidade Plone"
 
-#: brasil/gov/portal/browser/album/albuns.py:170
+#: brasil/gov/portal/browser/album/albuns.py:171
 msgid "label_previous"
 msgstr "Anterior"
 
 #. Default: "Save"
-#: brasil/gov/portal/controlpanel/portalservices.py:217
+#: brasil/gov/portal/controlpanel/portalservices.py:221
 msgid "label_save"
 msgstr "Salvar"
 
 #. Default: "Search"
-#: brasil/gov/portal/browser/viewlets/templates/searchbox.pt:30
+#: brasil/gov/portal/browser/busca/searchbox.pt:34
 msgid "label_search"
 msgstr "Buscar no portal"
 
@@ -566,7 +659,16 @@ msgstr "Desenvolvido com o CMS de código aberto <a href=\"http://plone.org\">Pl
 msgid "portal_padrao"
 msgstr "Portal Padrão"
 
-#: brasil/gov/portal/browser/busca/templates/search.pt:361
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:113
+msgid "relevance"
+msgstr ""
+
+#. Default: "Sort by"
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:103
+msgid "sort_by"
+msgstr ""
+
+#: brasil/gov/portal/browser/busca/search.pt:361
 msgid "subject(s):"
 msgstr "assunto(s):"
 
@@ -576,11 +678,40 @@ msgstr "assunto(s):"
 msgid "text_date"
 msgstr "última atualização: ${date}"
 
+#. Default: "any period"
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:96
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:69
+msgid "time_ever"
+msgstr ""
+
+#. Default: "last 30 days"
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:112
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:85
+msgid "time_last_month"
+msgstr ""
+
+#. Default: "last 7 days"
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:104
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:77
+msgid "time_last_week"
+msgstr ""
+
+#. Default: "last 12 months"
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:120
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:93
+msgid "time_last_year"
+msgstr ""
+
 #: brasil/gov/portal/controlpanel/socialnetworks.py:21
 msgid "title"
 msgstr "título"
 
+#. Default: "Background image"
+#: brasil/gov/portal/controlpanel/portal.py:60
+msgid "title_background_image"
+msgstr ""
+
 #. Default: "Search Site"
-#: brasil/gov/portal/browser/viewlets/templates/searchbox.pt:18
+#: brasil/gov/portal/browser/busca/searchbox.pt:22
 msgid "title_search_box"
 msgstr "Buscar no portal"
