@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-09-04 12:43+0000\n"
-"PO-Revision-Date: 2018-09-04 13:32-0300\n"
+"PO-Revision-Date: 2018-09-04 13:47-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "Adicionar um link."
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:157
 msgid "Add-ons"
-msgstr "Funcionalidades adicionais"
+msgstr "Complementos"
 
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:89
 msgid "Administrative actions"
@@ -77,11 +77,11 @@ msgstr "Áudio"
 
 #: brasil/gov/portal/browser/content/templates/audioview.pt:30
 msgid "Audio Download"
-msgstr "Download do Áudio"
+msgstr "Download do áudio"
 
 #: brasil/gov/portal/browser/content/templates/audioview.pt:24
 msgid "Audio Transcript"
-msgstr "Transcrição do Áudio"
+msgstr "Transcrição do áudio"
 
 #: brasil/gov/portal/browser/viewlets/templates/topo.pt:2
 msgid "Back to Top"
@@ -141,7 +141,7 @@ msgstr "Exibe data de publicação na informação de sobre"
 
 #: brasil/gov/portal/controlpanel/site.py:63
 msgid "Displays content publication date on site pages."
-msgstr "Exibe data de publicação nas páginas do site"
+msgstr "Exibe data de publicação nas páginas do site."
 
 #: brasil/gov/portal/browser/content/templates/audioview.pt:35
 msgid "Download file in file type"
@@ -191,15 +191,15 @@ msgstr "Exibir sitemap.xml.gz"
 
 #: brasil/gov/portal/controlpanel/site.py:57
 msgid "Exposes the Dublin Core properties as metatags."
-msgstr "Exibir propriedades Dublin Core como metadados"
+msgstr "Exibir propriedades Dublin Core como metadados."
 
 #: brasil/gov/portal/controlpanel/site.py:69
 msgid "Exposes your content as a file according to the sitemaps.org standard. You can submit this to compliant search engines like Google, Yahoo and Microsoft. It allows these search engines to more intelligently crawl your site."
-msgstr "Exibe o seu conteúdo como um arquivo de acordo com o padrão do sitemaps.org. Você pode enviar este arquivo para os motores de busca compatíveis como Google, Yahoo e Microsoft. Ele permite que estes motores de busca indexem o seu site de forma mais inteligente."
+msgstr "Expõe seu conteúdo como um arquivo de acordo com o padrão do sitemaps.org. Você pode envia-lo para os motores de busca compatíveis, como o Google, Yahoo e Microsoft. Isso permite que os motores de busca acessem seu site de forma mais inteligente."
 
 #: brasil/gov/portal/profiles/default/types/ExternalContent.xml
 msgid "External Content"
-msgstr "Conteúdo Externo"
+msgstr "Conteúdo externo"
 
 #: brasil/gov/portal/content/audio_file.py:43
 msgid "File"
@@ -220,7 +220,7 @@ msgstr "Primeira linha do título do site"
 
 #: brasil/gov/portal/controlpanel/site.py:80
 msgid "For enabling web statistics support from external providers (for e.g. Google Analytics). Paste the code snippets provided. It will be included in the rendered HTML as entered near the end of the page."
-msgstr "Para habilitar estatísticas web de fornecedores externos (por exemplo Google Analytics). Cole os trechos de código fornecidos. O código será incluído no HTML renderizado próximo ao final da página."
+msgstr "Ativa o suporte às estatísticas web a partir de provedores externos (como por exemplo, o Google Analytics). Cole o fragmento de código fornecido. Ele será incluído no código HTML renderizado, próximo ao final da página."
 
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:104
 msgid "For information and Support about e-Government Digital Identity Plone Portal visit"
@@ -236,11 +236,11 @@ msgstr "Galeria de fotos"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:3
 msgid "Go to content <span>1</span>"
-msgstr "Ir para o conte&uacute;do <span>1</span>"
+msgstr "Ir para o conteúdo <span>1</span>"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:21
 msgid "Go to footer <span>4</span>"
-msgstr "Ir para o rodap&eacute; <span>4</span>"
+msgstr "Ir para o rodapé <span>4</span>"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:9
 msgid "Go to navigation <span>2</span>"
@@ -314,7 +314,7 @@ msgstr "Item não movido."
 
 #: brasil/gov/portal/controlpanel/site.py:79
 msgid "JavaScript for web statistics support"
-msgstr "JavaScript para suporte a estatísticas web"
+msgstr "Código JavaScript para o suporte a estatísticas web"
 
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:34
 msgid "List of portals created"
@@ -322,7 +322,7 @@ msgstr "Portais já criados"
 
 #: brasil/gov/portal/profiles/default/types/MPEG_Audio_File.xml
 msgid "MPEG Audio File"
-msgstr "Arquivo de Áudio MPEG"
+msgstr "Arquivo de áudio MPEG"
 
 #: brasil/gov/portal/controlpanel/portal.py:82
 msgid "Mais notícias"
@@ -334,7 +334,7 @@ msgstr "Mais serviços"
 
 #: brasil/gov/portal/browser/content/configure.zcml:57
 msgid "Mostra um formulário de busca de conteúdo."
-msgstr "Mostra um formulário de busca de conteúdo"
+msgstr "Mostra um formulário de busca de conteúdo."
 
 #: brasil/gov/portal/profiles/default/types/sc.embedder.xml
 msgid "Multimedia"
@@ -347,7 +347,7 @@ msgstr "Nome do Ministério ou da Secretaria ao qual este site está subordinado
 
 #: brasil/gov/portal/profiles/default/types/collective.nitf.content.xml
 msgid "News"
-msgstr "Notícia"
+msgstr "Notícias"
 
 #: brasil/gov/portal/controlpanel/portal.py:71
 msgid "Notícias em destaque"
@@ -355,7 +355,7 @@ msgstr "Notícias em destaque"
 
 #: brasil/gov/portal/profiles/default/types/OGG_Audio_File.xml
 msgid "OGG Audio File"
-msgstr "Arquivo de Áudio OGG"
+msgstr "Arquivo de áudio OGG"
 
 #: brasil/gov/portal/content/schema/ExternalContent.xml
 msgid "Original URL"
@@ -389,7 +389,7 @@ msgstr "Segunda linha do título do site"
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:161
 msgid "Select any add-ons you want to activate immediately. You can also activate add-ons after the site has been created using the Add-ons control panel."
-msgstr "Selecione os Complementos que você deseja instalar imediatamente. Você também pode instalar complementos depois que o site foi criado usando o painel de controle."
+msgstr "Selecione os complementos que você deseja instalar imediatamente. Você também pode instalar complementos depois que o site foi criado usando o painel de controle."
 
 #: brasil/gov/portal/controlpanel/portal.py:88
 msgid "Serviços em destaque"
@@ -409,21 +409,21 @@ msgstr "Descrição do site"
 
 #: brasil/gov/portal/controlpanel/site.py:210
 msgid "Site settings"
-msgstr "Configurações do Site"
+msgstr "Configurações do site"
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:65
 #: brasil/gov/portal/controlpanel/site.py:24
 msgid "Site title (First Line)"
-msgstr "Título do site (Primeira Linha)"
+msgstr "Título do site (primeira linha)"
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:75
 #: brasil/gov/portal/controlpanel/site.py:30
 msgid "Site title (Second Line)"
-msgstr "Título do site (Segunda Linha)"
+msgstr "Título do site (segunda linha)"
 
 #: brasil/gov/portal/controlpanel/site.py:211
 msgid "Site-wide settings."
-msgstr "Configurações globais do site"
+msgstr "Configurações globais do site."
 
 #: brasil/gov/portal/controlpanel/socialnetworks.py:47
 msgid "Social Network"
@@ -443,7 +443,7 @@ msgstr "Visão de tabela"
 
 #: brasil/gov/portal/content/schema/ExternalContent.xml
 msgid "Text"
-msgstr "Corpo"
+msgstr "Texto"
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:55
 msgid "The id of the site. This ends up as part of the URL.<br /> No special characters are allowed."
@@ -485,7 +485,7 @@ msgstr "URL que identifica o Órgão"
 
 #: brasil/gov/portal/controlpanel/portal.py:50
 msgid "Use expandable header?"
-msgstr "Utilizar topo expansível"
+msgstr "Utilizar topo expansível?"
 
 #: brasil/gov/portal/profiles/default/types/Audio.xml
 #: brasil/gov/portal/profiles/default/types/ExternalContent.xml
@@ -503,7 +503,7 @@ msgstr "Visão de infográfico"
 
 #: brasil/gov/portal/controlpanel/socialnetworks.py:111
 msgid "Visual and functional Configuration"
-msgstr "Configuração funcional e visual"
+msgstr "Configuração visual e funcional"
 
 #: brasil/gov/portal/browser/content/configure.zcml:28
 msgid "Visão de notícia"
@@ -515,7 +515,7 @@ msgstr "Visível"
 
 #: brasil/gov/portal/utils.py:7
 msgid "You must use \"Title|http://example.org\" format to fill each line."
-msgstr "Você de utilizar o formato \"Title|http://example.org\" para preencher cada linha"
+msgstr "Você de utilizar o formato \"Title|http://example.org\" para preencher cada linha."
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:127
 msgid "You normally don't need to change anything here unless you have specific reasons and know what you are doing."
@@ -536,7 +536,7 @@ msgstr "Criar um novo Portal Padrão"
 
 #: brasil/gov/portal/browser/content/templates/resultsfilter.pt:129
 msgid "alphabetically"
-msgstr "Alfabeticamente"
+msgstr "alfabeticamente"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:29
 msgid "content"
@@ -556,7 +556,7 @@ msgstr "Portal Padrão"
 
 #: brasil/gov/portal/controlpanel/portal.py:119
 msgid "e-Government Digital Identity Settings"
-msgstr "Configurações do Portal Padrão."
+msgstr "Configurações do Portal Padrão"
 
 #: brasil/gov/portal/browser/viewlets/templates/acessibilidade.pt:35
 msgid "footer"
@@ -570,21 +570,17 @@ msgstr "Esta imagem será utilizada como imagem de fundo do header da página in
 #. Default: "If enabled, an expandable header will be used instead of the default. A list of search sugestions and hot topics will also be shown, if available."
 #: brasil/gov/portal/controlpanel/portal.py:51
 msgid "help_expandable_header"
-msgstr "Se habilitado, um topo expansível será utilizado no lugar do padrão. Uma lista de sugestões de busca e assuntos em alta tambem serão exibidos, se disponíveis."
+msgstr "Se habilitado, um topo expansível será utilizado no lugar do padrão. Uma lista de sugestões de busca e assuntos em alta também serão exibidos, se disponíveis."
 
 #. Default: "You must use \"Title|http://example.org\" format to fill each line."
 #: brasil/gov/portal/controlpanel/portal.py:72
 msgid "help_featured_news"
-msgstr ""
-"Você deve utilizar o formato \\\"Titulo|http://example.org\n"
-"\\\" para preencher cada linha.\""
+msgstr "Você deve utilizar o formato \\\"Titulo|http://example.org\\\" para preencher cada linha."
 
 #. Default: "You must use \"Title|http://example.org\" format to fill each line."
 #: brasil/gov/portal/controlpanel/portal.py:89
 msgid "help_featured_services"
-msgstr ""
-"Você deve utilizar o formato \\\"Titulo|http://example.org\n"
-"\\\" para preencher cada linha.\""
+msgstr "Você deve utilizar o formato \\\"Titulo|http://example.org\\\" para preencher cada linha."
 
 #. Default: "Escolha a rede a ser cadastrada"
 #: brasil/gov/portal/controlpanel/socialnetworks.py:27
@@ -594,9 +590,7 @@ msgstr "Escolha a rede a ser cadastrada"
 #. Default: "You must use \"Title|http://example.org\" format to fill each line."
 #: brasil/gov/portal/controlpanel/portal.py:106
 msgid "help_top_subjects"
-msgstr ""
-"Você deve utilizar o formato \\\"Titulo|http://example.org\n"
-"\\\" para preencher cada linha.\""
+msgstr "Você deve utilizar o formato \\\"Titulo|http://example.org\\\" para preencher cada linha."
 
 #: brasil/gov/portal/controlpanel/portalservices.py:30
 msgid "id"
@@ -630,7 +624,7 @@ msgstr "Próximo"
 #. Default: "Plone Community Home"
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:117
 msgid "label_plone_org_title"
-msgstr "Página Inicial da Comunidade Plone"
+msgstr "Página inicial da Comunidade Plone"
 
 #: brasil/gov/portal/browser/album/albuns.py:171
 msgid "label_previous"
@@ -658,7 +652,7 @@ msgstr "menu"
 #. Default: "Powered by Open Source CMS <a href=\"http://plone.org\">Plone</a>"
 #: brasil/gov/portal/browser/viewlets/templates/footer.pt:2
 msgid "plone_footer"
-msgstr "Desenvolvido com o CMS de código aberto <a href=\"http://plone.org\">Plone</a>"
+msgstr "Desenvolvido com o CMS de código aberto <a href=\\\"http://plone.org\\\">Plone</a>"
 
 #. Default: "e-Government Digital Identity Plone Portal"
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:107
