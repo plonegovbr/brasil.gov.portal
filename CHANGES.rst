@@ -4,6 +4,9 @@ Changelog
 1.5.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.lazysizes à versão 4.1.1.1.
+  [hvelarde]
+
 - Atualizado collective.cover à versão 1.7b3.
   [hvelarde]
 
