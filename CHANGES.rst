@@ -4,6 +4,9 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado Plone à versão 4.3.18.
+  [hvelarde]
+
 - Atualizado collective.lazysizes à versão 4.1.1.1.
   [hvelarde]
 
