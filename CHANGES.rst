@@ -4,6 +4,9 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Evita instalar plone.restapi em novos portais (refs. `plone.rest#73 <https://github.com/plone/plone.rest/issues/73>`_).
+  [hvelarde]
+
 - Atualizado Plone à versão 4.3.18.
   [hvelarde]
 

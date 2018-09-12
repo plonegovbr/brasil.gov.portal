@@ -18,7 +18,6 @@ INSTALLED = {
     # 'plone.app.contenttypes',
     'plone.app.imagecropping',  # from brasil.gov.tiles
     # 'plone.app.theming',
-    'plone.restapi',
     # 'PloneFormGen',
     'PloneKeywordManager',
     'RedirectionTool',
@@ -34,6 +33,7 @@ INSTALLABLE = {
     'collective.liveblog',
     'Marshall',
     'plone.app.referenceablebehavior',
+    'plone.restapi',
     'sc.photogallery',
 }
 
