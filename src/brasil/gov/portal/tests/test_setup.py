@@ -46,7 +46,6 @@ DEPENDENCIES = [
     'collective.upload',
     'plone.app.contenttypes',
     'plone.app.theming',
-    'plone.restapi',
     'Products.Doormat',
     'Products.PloneFormGen',
     'Products.RedirectionTool',
