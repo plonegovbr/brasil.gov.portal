@@ -4,6 +4,9 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Instala webcouturier.dropdownmenu ao atualizar o site.
+  [hvelarde]
+
 - Evita instalar plone.restapi em novos portais (refs. `plone.rest#73 <https://github.com/plone/plone.rest/issues/73>`_).
   [hvelarde]
 
