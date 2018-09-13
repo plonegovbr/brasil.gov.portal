@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeSteps
+      source="10902"
+      destination="10903"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeStep
+        title="Install webcouturier.dropdownmenu"
+        handler=".install_dropdownmenu"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>

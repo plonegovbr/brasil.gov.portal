@@ -350,3 +350,32 @@ class to10902TestCase(UpgradeBaseTestCase):
         self._do_upgrade(step)
         for scale in NEW_SCALES:
             self.assertIn(scale, settings.allowed_sizes)
+
+
+class to10903TestCase(UpgradeBaseTestCase):
+
+    from_ = '10902'
+    to_ = '10903'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_uninstall_doormat(self):
+        title = u'Install webcouturier.dropdownmenu'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        addon = 'webcouturier.dropdownmenu'
+        qi = api.portal.get_tool('portal_quickinstaller')
+        qi.uninstallProducts([addon])
+        self.assertFalse(qi.isProductInstalled(addon))
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertTrue(qi.isProductInstalled(addon))
