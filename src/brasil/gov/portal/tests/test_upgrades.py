@@ -391,7 +391,7 @@ class to10903TestCase(UpgradeBaseTestCase):
 
         # execute upgrade step
         self._do_upgrade(step)
-        self.assertEqual(dropdown.dropdown_depth, 2)
+        self.assertEqual(dropdown.dropdown_depth, 1)
 
     def test_navigation_properties(self):
         title = u'Import various'

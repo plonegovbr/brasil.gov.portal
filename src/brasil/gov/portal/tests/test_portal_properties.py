@@ -86,4 +86,4 @@ class PortalPropertiesTestCase(unittest.TestCase):
 
     def test_dropdown_depth(self):
         dropdown = self.portal['portal_properties'].dropdown_properties
-        self.assertEqual(dropdown.dropdown_depth, 2)
+        self.assertEqual(dropdown.dropdown_depth, 1)
