@@ -11,6 +11,12 @@
       <element value="Collection"/>
       <element value="Compromisso"/>
       <element value="Discussion Item"/>
+      <element value="Doormat"/>
+      <element value="DoormatCollection"/>
+      <element value="DoormatColumn"/>
+      <element value="DoormatMixin"/>
+      <element value="DoormatReference"/>
+      <element value="DoormatSection"/>
       <element value="Event"/>
       <element value="ExternalContent"/>
       <element value="FieldsetEnd"/>
@@ -49,51 +55,6 @@
       <element value="collective.nitf.content"/>
       <element value="collective.polls.poll"/>
       <element value="sc.embedder"/>
-    </property>
-  </object>
-  <object name="site_properties" meta_type="Plone Property Sheet" purge="False">
-    <property name="allowAnonymousViewAbout" type="boolean">True</property>
-    <property name="displayPublicationDateInByline"
-              type="boolean">True</property>
-    <property name="localTimeFormat" type="string">%d/%m/%Y</property>
-    <property name="localLongTimeFormat" type="string">%d/%m/%Y %Hh%M</property>
-    <property name="enable_link_integrity_checks" type="boolean">True</property>
-    <property name="enable_livesearch" type="boolean">False</property>
-    <property name="default_language" type="boolean">pt-br</property>
-    <property name="default_charset" type="boolean">utf-8</property>
-    <property name="types_not_searched" type="lines" purge="False">
-      <element value="collective.cover.content"/>
-      <element value="Collection"/>
-      <element value="FormFolder"/>
-      <element value="Folder"/>
-      <element value="MPEG Audio File"/>
-      <element value="News Item"/>
-      <element value="OGG Audio File"/>
-      <element value="Topic"/>
-    </property>
-    <property name="icon_visibility" type="string">authenticated</property>
-  </object>
-  <object name="brasil_gov" meta_type="Plone Property Sheet">
-    <property name="social_networks" type="lines">
-      <element value="twitter|twitter"/>
-      <element value="youtube|youtube"/>
-      <element value="facebook|facebook"/>
-      <element value="flickr|flickr"/>
-    </property>
-    <property name="url_orgao" type="string"/>
-  </object>
-  <object name="imaging_properties" meta_type="Plone Property Sheet">
-    <property name="allowed_sizes" type="lines" purge="False">
-      <element value="capa 230:230"/>
-      <element value="galeria_de_album_thumb 238:133"/>
-      <element value="galeria_de_foto_view 1150:650"/>
-      <element value="Imagem-Full: 1150:1150"/>
-      <element value="Imagem-8C 760:760"/>
-      <element value="Imagem-7C 663:663"/>
-      <element value="Imagem-6C 565:565"/>
-      <element value="Imagem-5C 468:468"/>
-      <element value="Imagem-4C 370:370"/>
-      <element value="Imagem-3C 273:273"/>
     </property>
   </object>
 </object>

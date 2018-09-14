@@ -4,6 +4,9 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige opções iniciais do menu de navegação.
+  [hvelarde]
+
 - Instala webcouturier.dropdownmenu ao atualizar o site.
   [hvelarde]
 
