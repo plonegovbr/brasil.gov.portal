@@ -13,15 +13,6 @@ def install_redirection_tool(setup_tool):
         logger.info('Products.RedirectionTool was installed')
 
 
-def install_restapi(setup_tool):
-    """Install plone.restapi."""
-    addon = 'plone.restapi'
-    qi = api.portal.get_tool('portal_quickinstaller')
-    if not qi.isProductInstalled(addon):
-        qi.installProduct(addon)
-        logger.info(addon + ' was installed')
-
-
 def uninstall_widgets(setup_tool):
     """Uninstall collective.z3cform.widgets."""
     from collective.z3cform.widgets.interfaces import ILayer

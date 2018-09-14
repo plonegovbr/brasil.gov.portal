@@ -4,6 +4,10 @@ Changelog
 1.5.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove instalação do plone.restapi no upgrade step v10803;
+  isso evita ``AttributeError`` na atualização à versão 1.5rc2 (fecha `#525 <https://github.com/plonegovbr/brasil.gov.portal/issues/525>`_).
+  [hvelarde]
+
 - Atualizado Plone à versão 4.3.18.
   [hvelarde]
 
