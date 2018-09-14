@@ -16,7 +16,6 @@ class PortalPropertiesTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.properties = self.portal['portal_properties'].site_properties
-        self.navtree = self.portal['portal_properties'].navtree_properties
         self.languages = self.portal['portal_languages']
         self.types = self.portal['portal_types']
 
@@ -62,16 +61,29 @@ class PortalPropertiesTestCase(unittest.TestCase):
         self.assertListEqual(types_searched, types_expected)
 
     def test_metaTypesNotToList(self):
-        metaTypesNotToList = list(self.navtree.metaTypesNotToList)
-        metaTypesNotToList.sort()
-        types_expected = [
-            'Discussion Item',
-            'MPEG Audio File',
-            'News Item',
-            'OGG Audio File',
-        ]
-        self.assertListEqual(metaTypesNotToList, types_expected)
+        from zope.component import getUtility
+        from zope.schema.interfaces import IVocabularyFactory
+
+        # get all content types
+        types = getUtility(IVocabularyFactory, 'plone.app.vocabularies.PortalTypes')(None)
+        types = set(t.value for t in types)
+
+        # metaTypesNotToList are excluded from navigation
+        navtree = self.portal['portal_properties'].navtree_properties
+        exclude = set(navtree.metaTypesNotToList)
+
+        # only these types should be included in navigation
+        expected = {
+            'Document',
+            'Folder',
+            'FormFolder',
+        }
+        self.assertSetEqual(types - exclude, expected)
 
     def test_selectable_views(self):
         selectable_views_property = self.portal.getProperty('selectable_views')
         self.assertTupleEqual(selectable_views_property, SELECTABLE_VIEWS)
+
+    def test_dropdown_depth(self):
+        dropdown = self.portal['portal_properties'].dropdown_properties
+        self.assertEqual(dropdown.dropdown_depth, 2)

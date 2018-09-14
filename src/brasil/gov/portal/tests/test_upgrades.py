@@ -363,7 +363,7 @@ class to10903TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
+        self.assertEqual(steps, 2)
 
     def test_uninstall_doormat(self):
         title = u'Install webcouturier.dropdownmenu'
@@ -379,3 +379,47 @@ class to10903TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertTrue(qi.isProductInstalled(addon))
+
+    def test_dropdownmenu_properties(self):
+        title = u'Import various'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        dropdown = api.portal.get_tool('portal_properties').dropdown_properties
+        dropdown.dropdown_depth = 3
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertEqual(dropdown.dropdown_depth, 2)
+
+    def test_navigation_properties(self):
+        title = u'Import various'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        navtree = api.portal.get_tool('portal_properties').navtree_properties
+        # don't exclude any type from navigation
+        navtree.metaTypesNotToList = ()
+
+        # execute upgrade step
+        self._do_upgrade(step)
+
+        from zope.component import getUtility
+        from zope.schema.interfaces import IVocabularyFactory
+
+        # get all content types
+        types = getUtility(IVocabularyFactory, 'plone.app.vocabularies.PortalTypes')(None)
+        types = set(t.value for t in types)
+
+        # metaTypesNotToList are excluded from navigation
+        exclude = set(navtree.metaTypesNotToList)
+
+        # only these types should be included in navigation
+        expected = {
+            'Document',
+            'Folder',
+            'FormFolder',
+        }
+        self.assertSetEqual(types - exclude, expected)
