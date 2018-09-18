@@ -4,6 +4,12 @@ Changelog
 1.5.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.cover à versão 1.7b4.
+  [hvelarde]
+
+- Atualizado plone.restapi à versão 3.4.5.
+  [hvelarde]
+
 - Remove instalação do plone.restapi no upgrade step v10803;
   isso evita ``AttributeError`` na atualização à versão 1.5rc2 (fecha `#525 <https://github.com/plonegovbr/brasil.gov.portal/issues/525>`_).
   [hvelarde]
@@ -15,9 +21,6 @@ Changelog
   [hvelarde]
 
 - Atualizado collective.cover à versão 1.7b3.
-  [hvelarde]
-
-- Atualizado plone.restapi à versão 3.1.0.
   [hvelarde]
 
 - Atualizado Products.PloneFormGen à versão 1.7.24.
