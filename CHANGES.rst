@@ -4,6 +4,12 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.cover à versão 1.7b4.
+  [hvelarde]
+
+- Atualizado plone.restapi à versão 3.4.5.
+  [hvelarde]
+
 - Corrige opções iniciais do menu de navegação.
   [hvelarde]
 
