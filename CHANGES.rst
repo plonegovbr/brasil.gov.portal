@@ -13,11 +13,11 @@ Changelog
 - Atualizado collective.cover à versão 1.7b5.
   [hvelarde]
 
-- Atualizado plone.restapi à versão 3.4.5.
+- Atualizado plone.restapi à versão 3.4.5;
+  isso evita ``AttributeError`` ao tentar instalar o complemento (refs. `#525 <https://github.com/plonegovbr/brasil.gov.portal/issues/525>`_).
   [hvelarde]
 
-- Remove instalação do plone.restapi no upgrade step v10803;
-  isso evita ``AttributeError`` na atualização à versão 1.5rc2 (fecha `#525 <https://github.com/plonegovbr/brasil.gov.portal/issues/525>`_).
+- Remove instalação do plone.restapi no upgrade step v10803 (refs. `plone.rest#73 <https://github.com/plone/plone.rest/issues/73>`_).
   [hvelarde]
 
 - Atualizado Plone à versão 4.3.18.
