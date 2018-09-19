@@ -4,7 +4,7 @@ Changelog
 1.5.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Atualizado collective.cover à versão 1.7b4.
+- Atualizado collective.cover à versão 1.7b5.
   [hvelarde]
 
 - Atualizado plone.restapi à versão 3.4.5.
