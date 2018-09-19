@@ -4,7 +4,10 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Atualizado collective.cover à versão 1.7b4.
+- Atualizado brasil.gov.tiles à versão 2.0b2.
+  [hvelarde]
+
+- Atualizado collective.cover à versão 1.7b5.
   [hvelarde]
 
 - Atualizado plone.restapi à versão 3.4.5.
