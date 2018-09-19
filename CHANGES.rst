@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.5.3 (unreleased)
+1.5.3 (2018-09-19)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualizado collective.cover à versão 1.7b5.
