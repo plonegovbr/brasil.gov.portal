@@ -4,7 +4,8 @@ Changelog
 1.5.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado brasil.gov.barra à versão 1.2.4.
+  [hvelarde]
 
 
 1.5.3 (2018-09-19)
