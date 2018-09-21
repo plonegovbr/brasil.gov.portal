@@ -4,7 +4,8 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado brasil.gov.barra à versão 2.0b1.
+  [hvelarde]
 
 
 2.0b3 (2018-09-19)
