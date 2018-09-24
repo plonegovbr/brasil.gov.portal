@@ -4,6 +4,9 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige estilos para tiles do collective.cover.
+  [hvelarde]
+
 - Atualizado brasil.gov.barra à versão 2.0b1.
   [hvelarde]
 
