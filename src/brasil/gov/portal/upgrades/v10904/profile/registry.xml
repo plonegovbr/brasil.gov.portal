@@ -1,19 +1,24 @@
 <?xml version="1.0"?>
 <registry>
   <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
-    <value purge="true">
+    <value purge="false">
       <element>Box Branco|box-branco</element>
       <element>Box Colorido|box-colorido</element>
       <element>Box Escuro|box-escuro</element>
       <element>Colunas Destacadas|colunas-destacadas</element>
       <element>Colunas Discretas|colunas-discretas</element>
       <element>Colunas Quadradas|colunas-quadradas</element>
+      <element>Com Etiqueta|tile-etiqueta</element>
+      <element>Com Multimidia|com-multimidia</element>
+      <element>Degrade para destaque topo|topo-com-degrade</element>
       <element>Discreto|tile-discreto</element>
       <element>FAQ|tile-faq</element>
       <element>Foto destacada grande|foto-destacada-grande</element>
       <element>Foto Sobreposta Grande|foto-sobreposta-grande</element>
       <element>Foto Sobreposta Pequena|foto-sobreposta-pequena</element>
       <element>Foto Sobreposta|foto-sobreposta</element>
+      <element>Fundo topo claro|fundo-topo-claro</element>
+      <element>Fundo topo escuro|fundo-topo-escuro</element>
       <element>Linha destacada|linha-destacada</element>
       <element>Linha destaque topo|linha-destaquetopo</element>
       <element>Linha discreta|linha-discreta</element>

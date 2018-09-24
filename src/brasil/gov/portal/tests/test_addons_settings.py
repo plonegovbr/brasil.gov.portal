@@ -57,22 +57,26 @@ class AddonsSettingsTestCase(unittest.TestCase):
         self.assertListEqual(settings.searchable_content_types, allowed_types)
 
     def test_collective_cover_styles_settings(self):
-        """ Estilos disponiveis para o collective.cover
-        """
+        """Tile styles available on collective.cover configuration."""
         settings = self.registry.forInterface(ICoverSettings)
-        expected = [
+        expected = {
             'Box Branco|box-branco',
             'Box Colorido|box-colorido',
             'Box Escuro|box-escuro',
             'Colunas Destacadas|colunas-destacadas',
             'Colunas Discretas|colunas-discretas',
             'Colunas Quadradas|colunas-quadradas',
+            'Com Etiqueta|tile-etiqueta',
+            'Com Multimidia|com-multimidia',
+            'Degrade para destaque topo|topo-com-degrade',
             'Discreto|tile-discreto',
             'FAQ|tile-faq',
+            'Foto destacada grande|foto-destacada-grande',
             'Foto Sobreposta Grande|foto-sobreposta-grande',
             'Foto Sobreposta Pequena|foto-sobreposta-pequena',
             'Foto Sobreposta|foto-sobreposta',
-            'Foto destacada grande|foto-destacada-grande',
+            'Fundo topo claro|fundo-topo-claro',
+            'Fundo topo escuro|fundo-topo-escuro',
             'Linha destacada|linha-destacada',
             'Linha destaque topo|linha-destaquetopo',
             'Linha discreta|linha-discreta',
@@ -82,9 +86,8 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'Noticia Destaque|tile-noticia-destaque',
             'Tile Transparente|tile-transparente',
             'Titulo Fio Separador|fio-separador',
-        ]
+        }
         styles = list(settings.styles)
-        styles.sort()
         self.assertItemsEqual(styles, expected)
 
     def test_collective_nitf_available_genres(self):
