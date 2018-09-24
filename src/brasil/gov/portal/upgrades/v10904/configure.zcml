@@ -20,6 +20,11 @@
         import_profile="brasil.gov.portal.upgrades.v10904:default"
         />
 
+    <genericsetup:upgradeStep
+        title="Uninstall Products.Doormat"
+        handler=".uninstall_doormat"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>

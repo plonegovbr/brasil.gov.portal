@@ -33,6 +33,7 @@ class Fixture(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Instala produtos
+        z2.installProduct(app, 'Products.Doormat')  # BBB: remove in 3.0
         z2.installProduct(app, 'Products.PloneFormGen')
         # Load ZCML
         import brasil.gov.portal

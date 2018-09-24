@@ -98,15 +98,3 @@ def add_results_filter_menu(setup_tool):
     from brasil.gov.portal.setuphandlers import add_results_filter_menu
     add_results_filter_menu()
     logger.info('Added Results Filter menu option to Collection content type')
-
-
-def uninstall_doormat(setup_tool):
-    """Uninstall Products.Doormat.
-    The add-on removes itself all related content at uninstall so we
-    don't need to do so here.
-    """
-    addon = 'Doormat'
-    qi = api.portal.get_tool('portal_quickinstaller')
-    if qi.isProductInstalled(addon):
-        qi.uninstallProducts([addon])
-        logger.info(addon + ' was uninstalled')

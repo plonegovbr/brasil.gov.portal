@@ -61,7 +61,7 @@ class NonInstallable(object):  # pragma: no cover
             u'plone.resource',
             u'plone.session',
             u'plonetheme.classic',
-            u'Products.Doormat',
+            u'Products.Doormat',  # BBB: remove in 3.0
             u'Products.PloneFormGen',
             u'raptus.autocompletewidget',
         ]
@@ -128,7 +128,7 @@ class NonInstallable(object):  # pragma: no cover
             u'plone.restapi:performance',
             u'plone.session:default',
             u'Products.CMFPlacefulWorkflow:base',
-            u'Products.Doormat:default',
+            u'Products.Doormat:default',  # BBB: remove in 3.0
             u'Products.Doormat:uninstall',
             u'Products.PloneFormGen:default',
             u'Products.PloneKeywordManager:uninstall',
