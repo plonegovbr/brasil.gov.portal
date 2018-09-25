@@ -214,7 +214,7 @@ class to10901TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 8)
+        self.assertEqual(steps, 7)
 
     def test_remove_root_portlets(self):
         title = u'Remove portlet assigments at portal root'
@@ -293,23 +293,6 @@ class to10901TestCase(UpgradeBaseTestCase):
         self._do_upgrade(step)
         self.assertIn(view, collection_fti.view_methods)
 
-    @unittest.expectedFailure
-    def test_uninstall_doormat(self):
-        title = u'Uninstall Products.Doormat'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        # simulate state on previous version
-        addon = 'Doormat'
-        qi = api.portal.get_tool('portal_quickinstaller')
-        # FIXME: fails with Unauthorized: Cannot create Doormat
-        qi.installProduct(addon)
-        self.assertTrue(qi.isProductInstalled(addon))
-
-        # execute upgrade step
-        self._do_upgrade(step)
-        self.assertFalse(qi.isProductInstalled(addon))
-
 
 class to10902TestCase(UpgradeBaseTestCase):
 
@@ -365,7 +348,7 @@ class to10903TestCase(UpgradeBaseTestCase):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
         self.assertEqual(steps, 2)
 
-    def test_uninstall_doormat(self):
+    def test_install_dropdownmenu(self):
         title = u'Install webcouturier.dropdownmenu'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
@@ -436,7 +419,7 @@ class to10904TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
+        self.assertEqual(steps, 2)
 
     def test_import_various(self):
         title = u'Import various'
@@ -454,3 +437,19 @@ class to10904TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertIn(value, api.portal.get_registry_record(name))
+
+    def test_uninstall_doormat(self):
+        title = u'Uninstall Products.Doormat'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        addon = 'Doormat'
+        qi = api.portal.get_tool('portal_quickinstaller')
+        with api.env.adopt_roles(['Manager']):
+            qi.installProduct(addon)
+        self.assertTrue(qi.isProductInstalled(addon))
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertFalse(qi.isProductInstalled(addon))
