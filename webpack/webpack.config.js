@@ -14,6 +14,7 @@ childProcess.execSync(`rm -f ${path}/brasilgovportal-*`);
 
 module.exports = {
   entry: [
+    `./app/img/preview.png`,
     './app/brasilgovportal.scss',
     './app/brasilgovportal.js',
   ],
