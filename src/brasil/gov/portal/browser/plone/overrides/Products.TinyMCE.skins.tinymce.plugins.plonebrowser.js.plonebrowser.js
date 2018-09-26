@@ -166,7 +166,10 @@ BrowserDialog.prototype.init = function () {
             switch (jq(this).attr('href')) {
                 case "#internal":
                     self.displayPanel('browse');
-                    self.getCurrentFolderListing();
+                    // Just load this tab one time
+                    if (jq('#internallinkcontainer', document).html() === '') {
+                        self.getCurrentFolderListing();
+                    }
                     break;
                 case "#external":
                     self.displayPanel('external');
@@ -176,6 +179,9 @@ BrowserDialog.prototype.init = function () {
                     break;
                 case "#anchor":
                     self.displayPanel('anchor');
+                    break;
+                case "#tippreview":
+                    self.displayPanel('tippreview');
                     break;
             }
         });
@@ -194,6 +200,12 @@ BrowserDialog.prototype.init = function () {
         if (selected_node.length > 0 && selected_node[0].nodeName.toUpperCase() === "A") {
             // element is anchor, we have a link
             href = jq.trim(selected_node.attr('href'));
+
+            if (selected_node.attr('data-tippreview-enabled') || false) {
+                jq('#tippreview-enabled', document).attr('checked', 'checked');
+            }
+            jq('#tippreview-image', document).val(selected_node.attr('data-tippreview-image') || '');
+            jq('#tippreview-title', document).val(selected_node.attr('data-tippreview-title') || '');
 
             // setup form data
             if ((typeof(selected_node.attr('title')) !== "undefined")) {
@@ -457,6 +469,9 @@ BrowserDialog.prototype.setLinkAttributes = function (node, link) {
         .attr('title', jq('#title', document).val())
         .attr('target', jq('#targetlist', document).val())
         .attr('style', jq('#cssstyle', document).val())
+        .attr('data-tippreview-enabled', jq('#tippreview-enabled', document).is(":checked"))
+        .attr('data-tippreview-image', jq('#tippreview-image', document).val())
+        .attr('data-tippreview-title', jq('#tippreview-title', document).val())
         .removeClass('internal-link external-link anchor-link mail-link')
         .addClass(panelname.substr(1, panelname.length) + '-link');
 };
@@ -1135,6 +1150,13 @@ BrowserDialog.prototype.displayPanel = function(panel, upload_allowed) {
         jq('#insert-selection', document).removeAttr('disabled');
     } else {
         jq('#anchor_panel', document).addClass('hide');
+    }
+    // handle tip preview panel
+    if (panel === "tippreview") {
+        jq('#tippreview_panel', document).removeClass('hide');
+        jq('#insert-selection', document).attr('disabled','disabled');
+    } else {
+        jq('#tippreview_panel', document).addClass('hide');
     }
     // handle external panel
     if (panel === "external") {
