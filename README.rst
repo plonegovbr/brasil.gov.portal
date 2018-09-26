@@ -131,3 +131,40 @@ O seu configure.zcml deve ficar assim:
 
 O ZCML do brasil.gov.portal carrega o ZCML do Products.CMFPlone, que por sua vez carrega o ZCML do plone.app.locales.
 Assim o locales do seu produto precisa ser carregado antes do ZCML do  brasil.gov.portal para que as traduções do seu produto possam sobrescrever às do Plone.
+
+Desenvolvimento
+---------------
+
+Utilizamos `webpack <https://webpack.js.org/>`_ para gerenciar o conteúdo estático do tema,
+tomando vantagem das diversas ferramentas e plugins disponíveis para suprir nossas necessidades.
+
+Utilizamos a receita de buildout `sc.recipe.staticresources <https://github.com/simplesconsultoria/sc.recipe.staticresources>`_ para integrar o `webpack`_ no Plone.
+
+Ao desenvolver os temas iniciamos o watcher do `webpack`_ e trabalhamos somente na pasta "webpack" alterando os arquivos;
+o `webpack`_ se encarrega de processar e gerar os arquivos em seu endereço final.
+
+Este pacote adiciona os seguintes comandos na pasta bin do buildout para processar automaticamente os recursos estáticos:
+
+.. code-block:: console
+
+    $ bin/env-brasilgovportal
+
+Este comando adiciona no terminal o node do buildout no PATH do sistema, dessa forma voce pode trabalhar com webpack conforme a documentação oficial.
+
+.. code-block:: console
+
+    $ bin/watch-brasilgovportal
+
+Este comando instrui ao Webpack para esperar por qualquer mudança nos arquivos SASS e gera a versão minificada do CSS para a aplicação.
+
+.. code-block:: console
+
+    $ bin/debug-brasilgovportal
+
+Este comando faz o mesmo que o comando watch, mas não minifica o CSS final.  Utilizado para debugar a geração do CSS.
+
+.. code-block:: console
+
+    $ bin/build-brasilgovportal
+
+Este comando cria o CSS minificado, mas não espera por mudanças.
