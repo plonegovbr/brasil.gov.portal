@@ -149,22 +149,39 @@ Este pacote adiciona os seguintes comandos na pasta bin do buildout para process
 
     $ bin/env-brasilgovportal
 
-Este comando adiciona no terminal o node do buildout no PATH do sistema, dessa forma voce pode trabalhar com webpack conforme a documentação oficial.
+Este comando adiciona no terminal o node do buildout no PATH do sistema,
+dessa forma voce pode trabalhar com webpack conforme a documentação oficial.
 
 .. code-block:: console
 
     $ bin/watch-brasilgovportal
 
-Este comando instrui ao Webpack para esperar por qualquer mudança nos arquivos SASS e gera a versão minificada do CSS para a aplicação.
+Este comando instrui ao `webpack`_ para esperar por qualquer mudança nos arquivos SASS e gera a versão minificada do CSS para a aplicação.
 
 .. code-block:: console
 
     $ bin/debug-brasilgovportal
 
-Este comando faz o mesmo que o comando watch, mas não minifica o CSS final.  Utilizado para debugar a geração do CSS.
+Este comando faz o mesmo que o comando watch, mas não minifica o CSS final.
+Utilizado para debugar a geração do CSS.
 
 .. code-block:: console
 
     $ bin/build-brasilgovportal
 
-Este comando cria o CSS minificado, mas não espera por mudanças.
+Este comando cria os recursos minificados, mas não espera por mudanças.
+
+Fazendo releases com o zest.releaser
+------------------------------------
+
+Os recursos estáticos do pacote são gerados usando o `webpack`_ e não são inclusos no VCS.
+Se você está fazendo release usando o zest.releaser, você precisa fazer `upload manual dos arquivos no PyPI <https://github.com/zestsoftware/zest.releaser/issues/261>`_ ou você vai criar uma distribuição quebrada:
+
+* execute ``longtest``, como de costume
+* execute ``fullrelease``, como de costume, respondendo "não" a pergunta "Check out the tag?" para evitar o upload ao PyPI
+* faça checkout na tag do release que você está liberando
+* execute ``bin/build-brasilgovportal`` para criar os recursos estáticos
+* crie os arquivos da distribuição usando ``python setup.py sdist bdist_wheel``, como de costume
+* faça o upload manual dos arquivos usando ``twine upload dist/*``
+
+Em caso de erro você terá que criar um novo release pois o PyPI Warehouse `não permite reutilizar um nome de arquivo <https://upload.pypi.org/help/#file-name-reuse>`_.
