@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
 
-const path = `${__dirname}/../src/brasil/gov/portal/browser/static`;
+const path = `${__dirname}/../src/brasil/gov/portal/browser/viewlets/static`;
 
 // https://github.com/alleyinteractive/webpack-git-hash/issues/10
 const gitCmd = 'git rev-list -1 HEAD -- `pwd`'

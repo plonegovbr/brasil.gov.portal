@@ -23,3 +23,7 @@ class ErrorReportingViewlet(ViewletBase):
         if self.available:
             return self.index()
         return u''
+
+
+class ResourcesViewlet(ViewletBase):
+    """This viewlet inserts static resources on page header."""

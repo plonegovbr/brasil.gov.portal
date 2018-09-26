@@ -39,18 +39,4 @@
       permission="zope.Public"
       />
 
-  <!-- Registra pasta de elementos estaticos -->
-  <browser:resourceDirectory
-      name="brasil.gov.portal"
-      directory="static"
-      />
-
-  <browser:viewlet
-      name="brasil.gov.portal.resources"
-      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-      class=".ResourcesViewlet"
-      template="static/resources.pt"
-      permission="zope2.Public"
-      />
-
 </configure>
