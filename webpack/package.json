@@ -1,0 +1,30 @@
+{
+  "name": "brasilgovportal",
+  "version": "0.0.1",
+  "main": "app/brasilgovportal.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack -p",
+    "debug": "./node_modules/.bin/webpack --watch",
+    "watch": "./node_modules/.bin/webpack -p --watch",
+    "test": "NODE_ENV=testing ./node_modules/.bin/karma start --single-run"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 3 versions"
+            ]
+          }
+        }
+      ]
+    ]
+  },
+  "repository": {},
+  "license": "GPL-2.0",
+  "dependencies": {
+    "sc.recipe.staticresources": "simplesconsultoria/sc.recipe.staticresources"
+  }
+}

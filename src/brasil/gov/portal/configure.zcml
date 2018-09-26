@@ -30,10 +30,4 @@
   <include package=".controlpanel" />
   <include package=".migration" zcml:condition="installed transmogrify.dexterity" />
 
-  <!-- Registra pasta de elementos estaticos -->
-  <browser:resourceDirectory
-    name="brasil.gov.portal"
-    directory="static"
-    />
-
 </configure>
