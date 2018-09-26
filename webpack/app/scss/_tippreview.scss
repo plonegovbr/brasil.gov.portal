@@ -1,0 +1,39 @@
+@import '~tippy.js/dist/themes/light';
+
+
+/* tip preview */
+.tippreview {
+  position: relative;
+
+  display: flex;
+
+  .tippreview-image {
+    width: 6rem;
+    height: 6rem;
+  }
+  .tippreview-image > img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+  }
+  .tippreview-title {
+    font-weight: bold;
+
+    width: 12rem;
+    margin: 1rem;
+
+    text-align: left;
+  }
+  &::after {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    content: '🡵';
+  }
+}

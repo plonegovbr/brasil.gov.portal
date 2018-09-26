@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" i18n:domain="tinymce"
+    tal:define="portal_url context/portal_url; portal_tinymce context/portal_tinymce;">
+<head>
+  <title i18n:domain="plone.tinymce" i18n:translate="">Insert/Edit</title>
+  <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+  <script type="text/javascript" src="../../utils/mctabs.js"></script>
+  <script type="text/javascript" src="../../utils/form_utils.js"></script>
+  <script type="text/javascript" src="js/plonebrowser.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/plonebrowser.css" />
+  <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/portal_css/columns.css" />
+</head>
+<body id="plonebrowser">
+  <div class="dialog-wrapper icons-on" id="content">
+
+        <div id="linktype_panel">
+            <div id="linktype" i18n:domain="plone.tinymce">
+                <div id="internal_link" class="current">
+                    <a href="#internal">
+                      <img src="img/internal_link.png" />
+                      <span i18n:translate="">Internal</span></a>
+                </div>
+                <div id="external_link">
+                    <a href="#external">
+                      <img src="img/external_link.png" />
+                      <span i18n:translate="">External</span></a>
+                </div>
+                <div id="email_link">
+                    <a href="#email">
+                      <img src="img/email_link.png" />
+                      <span i18n:translate="">Email</span></a>
+                </div>
+                <div id="anchor_link">
+                    <a href="#anchor">
+                      <img src="img/anchor_link.png" />
+                      <span i18n:translate="">Anchor</span></a>
+                </div>
+                <div id="tippreview_link">
+                    <a href="#tippreview">
+                      <img src="++resource++brasil.gov.portal/img/preview.png" />
+                      <span i18n:domain="governo.brasil.portal"
+                            i18n:translate="">Tip Preview</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="browseimage_panel" class="row">
+            <div id="general_panel" class="cell width-full position-0">
+                <div class="field">
+
+                    <div class="widget">
+                        <input type="text" name="searchtext" id="searchtext" title="Search site" placeholder="Search site" value="" i18n:attributes="placeholder; title" i18n:domain="plone.tinymce"/>
+                        <a href="" id="clear-btn" title="Clear" i18n:attributes="title" i18n:domain="plone.tinymce"><img src="img/cancel.png" /></a>
+                        <a href="" id="search-btn" title="Search" i18n:attributes="title" i18n:domain="plone.tinymce"><img src="img/magnifier.png" /></a>
+                    </div>
+                </div>
+                <div class="legend">
+                    <a id="listview" href="" title="List view" i18n:attributes="title" i18n:domain="plone.tinymce"><img src="img/display_list.png" /></a>
+                    <a id="thumbview" href="" title="Thumbnail view" class="current" i18n:attributes="title" i18n:domain="plone"><img src="img/display_thumbs.png" /></a>
+                </div>
+                <div class="action-icons">
+                    <a id="shortcutsicon" href="" title="Shortcuts" i18n:translate=""><img src="img/star.png" /></a>
+                </div>
+                <div id="shortcutsview">
+                    <div id="item-template" class="shortcut"></div>
+                </div>
+                <div class="formHelp">
+                    <strong i18n:domain="plone" i18n:translate="you_are_here">You are here:</strong>
+                    <span id="internalpath"></span>
+                </div>
+
+                <div id="internallinkcontainer" class="widget radioscrolllist input-border"></div>
+
+            </div>
+
+            <div id="details_panel" class="cell width-1:4 position-3:4 hide">
+                <h2 i18n:translate="" i18n:domain="plone.tinymce">Details</h2>
+                <div id="details-fields" class="widget radioscrolllist input-border">
+                    <div class="field">
+                        <div class="widget">
+                            <div id="previewimagecontainer">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label id="titlelabel" i18n:domain="plone.tinymce" i18n:translate="">Title</label>
+                        <div class="widget">
+                            <p id="titledetails"></p>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label id="descriptionlabel" for="description" i18n:domain="plone.tinymce" i18n:translate="">Description</label>
+                        <div class="widget">
+                            <input id="description_href" name="description_href" type="hidden" value="" />
+                            <input id="description" name="description" type="text" value="" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="widget">
+                            <input type="checkbox" name="caption" id="caption"/> <label for="caption" i18n:domain="plone.tinymce" i18n:translate="">Caption</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label id="alignlabel" for="align" i18n:translate="plonebrowser_dlg_align"></label>
+                        <div class="widget">
+                            <select id="classes" name="classes">
+                                <option value="image-inline" i18n:domain="plone.tinymce" i18n:translate="">Inline</option>
+                                <option value="image-left" i18n:translate="advimage_dlg_align_left">Left</option>
+                                <option value="image-right" i18n:translate="advimage_dlg_align_right">Right</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label id="dimensionslabel" for="dimensions" i18n:translate="plonebrowser_dlg_dimensions"></label>
+                        <div class="widget">
+                            <select id="dimensions" name="dimensions">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label id="pageanchorlabel" for="pageanchor"  i18n:translate="plonebrowser_dlg_anchor_names"></label>
+                        <div class="widget" id="pageanchorcontainer" >
+                            <select id="pageanchor" name="pageanchor">
+                                <option value="" i18n:translate="">top of page (default)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="addimage_panel" class="cell width-1:4 position-3:4 hide">
+                 <h2></h2>
+                 <form name="upload_form" id="upload_form" method="post" target="upload_iframe" enctype="multipart/form-data">
+                     <div class="field">
+                            <label for="uploadfile" i18n:domain="plone.tinymce" i18n:translate="">Upload File</label>
+                            <div class="widget">
+                                <input type="file" name="uploadfile" id="uploadfile" size="14" />
+                            </div>
+                     </div>
+
+                     <div class="field">
+                             <label for="uploadtitle" i18n:domain="plone.tinymce" i18n:translate="">Title</label>
+                             <div class="widget">
+                                <input type="text" name="uploadtitle" id="uploadtitle" value="" />
+                             </div>
+                     </div>
+
+                     <div class="field">
+                             <label for="uploaddescription" i18n:domain="plone.tinymce" i18n:translate="">Description</label>
+                             <div class="widget">
+                                <textarea wrap="soft" cols="10" rows="6" id="uploaddescription" name="uploaddescription"></textarea>
+                             </div>
+                     </div>
+
+                     <div class="field hide">
+                             <label for="uploadurl" i18n:domain="plone.tinymce" i18n:translate="">or External URL</label>
+                             <div class="widget">
+                                 <input type="text" name="uploadurl" id="uploadurl" />
+                             </div>
+                     </div>
+
+                     <input type="button" id="uploadbutton" class="context plonebutton" name="uploadbutton" value="Upload"
+                            i18n:attributes="value" i18n:domain="plone.tinymce" />
+                 </form>
+                 <iframe width="0" scrolling="off" height="0" frameborder="0" id="upload_iframe" name="upload_iframe" src="javascript:"></iframe>
+            </div>
+
+        </div>
+
+        <div id="externalimage_panel" class="cell width-full position-0 hide">
+             <form name="externalimage_form" id="externalimage_form">
+                 <div class="field">
+                        <label for="imageurl" i18n:domain="plone.tinymce" i18n:translate="">Insert image from URL</label>
+                        <div class="widget">
+                            <input type="text" name="imageurl" id="imageurl" value="" />
+                        </div>
+                 </div>
+
+                 <div class="field">
+                         <label for="imagetitle" i18n:domain="plone.tinymce" i18n:translate="">Title</label>
+                         <div class="widget">
+                            <input type="text" name="imagetitle" id="imagetitle" value="" />
+                         </div>
+                 </div>
+
+                 <button type="previewimage"
+                         id="previewimagebutton"
+                         class="context plonebutton"
+                         name="previewimagebutton"
+                         value="Preview"
+                         i18n:translate=""
+                         i18n:domain="plone.tinymce">Preview</button>
+             </form>
+
+             <div id="imgpreview">
+             </div>
+        </div>
+
+        <!-- link panels -->
+        <div id="external_panel" class="hide">
+            <div class="row">
+                <div id="external-column" class="cell width-8 position-0">
+                    <h2 i18n:domain="plone.tinymce" i18n:translate="">External link</h2>
+
+                    <div class="field">
+                        <label for="externalurl" i18n:translate="plonebrowser_dlg_url"></label>
+                        <div class="widget">
+                            <select id="externalurlprefix" name="externalurlprefix">
+                                <option value="http://">http://</option>
+                                <option value="https://">https://</option>
+                                <option value="ftp://">ftp://</option>
+                            </select>
+                            <input type="text" name="externalurl" id="externalurl" value="" size="29"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="preview-column" class="cell width-8 position-8">
+                    <div class="field">
+                        <label for="preview" i18n:translate="preview_preview_desc"></label>
+                        <div id="preview-wrapper">
+                            <a href="#" id="previewexternalurl" name="previewexternalurl" i18n:translate="" i18n:domain="plone.tinymce">Preview URL</a>
+                            <div class="widget">
+                                <iframe id="previewexternal" width="100%" height="340" frameborder="0" wrap="soft" dir="ltr" src="" class="input-border" name="previewexternal"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="email_panel" class="hide">
+            <h2 i18n:domain="plone.tinymce" i18n:translate="">Email</h2>
+
+            <div class="field">
+                <label for="mailaddress" i18n:domain="plone.tinymce" i18n:translate="">E-mail</label>
+                <div class="widget">
+                    <input type="text" name="mailaddress" id="mailaddress" value="" size="40" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="mailsubject" i18n:domain="plone.tinymce" i18n:translate="">Subject</label>
+                <div class="widget">
+                    <input type="text" name="mailsubject" id="mailsubject" value="" size="40" />
+                </div>
+            </div>
+
+        </div>
+
+        <div id="anchor_panel" class="hide">
+            <h2 i18n:domain="plone.tinymce" i18n:translate="">Link to anchor</h2>
+
+            <div class="field">
+                <label i18n:translate="plonebrowser_dlg_anchor_names"></label>
+                <div id="anchorlinkcontainer" class="widget radioscrolllist input-border">
+                </div>
+            </div>
+
+        </div>
+
+        <div id="tippreview_panel" class="hide"
+             i18n:domain="governo.brasil.portal">
+            <h2 i18n:translate="">Tip Preview</h2>
+
+            <div class="field">
+                <div class="widget">
+                    <input type="checkbox"
+                           name="tippreview-enabled"
+                           id="tippreview-enabled" />
+                    <label for="tippreview-enabled"
+                           i18n:translate="">
+                        Enabled
+                    </label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="tippreview-image"
+                       i18n:translate="">
+                    Image
+                </label>
+                <div class="widget">
+                    <input type="text"
+                           name="tippreview-image"
+                           id="tippreview-image" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="tippreview-title"
+                       i18n:translate="">
+                    Title
+                </label>
+                <div class="widget">
+                    <input type="text"
+                           name="tippreview-title"
+                           id="tippreview-title" />
+                </div>
+            </div>
+        </div>
+
+        <div class="visualClear"><!-- --></div>
+
+        <div id="footer" class="row">
+            <div id="upload-button" class="cell width-3:4 position-0 hide">
+                <a id="upload" href=""><img src="img/application_get.png" /> <span i18n:translate="" i18n:domain="plone.tinymce">Upload</span></a>
+            </div>
+            <div id="action-button" class="cell width-1:4 position-3:4">
+                <input type="submit" id="insert-selection" class="context plonebutton" name="insert-image"
+                       i18n:attributes="value" i18n:domain="plone.tinymce" value="OK" disabled="disabled" />
+            </div>
+        </div>
+
+        <div class="visualClear"><!-- --></div>
+
+        <div id="common-link-fields" class="hide">
+
+            <div id="link-title" class="field">
+                <label for="title" i18n:domain="plone.tinymce" i18n:translate="">Link Title</label>
+                <div class="widget">
+                    <input type="text" name="title" id="title" value="" size="40" />
+                </div>
+            </div>
+
+            <div id="link-target" class="field">
+                <label id="targetlistlabel" for="targetlist" i18n:translate="plonebrowser_dlg_target"></label>
+                <div class="widget">
+                    <select id="targetlist" name="targetlist">
+                        <option value="_self" i18n:translate="advlink_dlg_target_same"></option>
+                        <option value="_blank" i18n:translate="advlink_dlg_target_blank"></option>
+                        <option value="_parent" i18n:translate="advlink_dlg_target_parent"></option>
+                        <option value="_top" i18n:translate="advlink_dlg_target_top"></option>
+                        <!--option value="popup" i18n:translate="plonebrowser_dlg_popup"></option-->
+                    </select>
+                </div>
+            </div>
+
+            <div id="link-style" class="field">
+                <label for="cssstyle" i18n:domain="plone.tinymce" i18n:translate="">CSS Style</label>
+                <div class="widget">
+                    <input type="text" name="cssstyle" id="cssstyle" value="" size="40" />
+                </div>
+            </div>
+
+        </div>
+
+  </div>
+</body>
+</html>

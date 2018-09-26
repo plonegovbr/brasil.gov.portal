@@ -25,6 +25,7 @@
   "repository": {},
   "license": "GPL-2.0",
   "dependencies": {
-    "sc.recipe.staticresources": "simplesconsultoria/sc.recipe.staticresources"
+    "sc.recipe.staticresources": "simplesconsultoria/sc.recipe.staticresources#1.0b1",
+    "tippy.js": "^2.5.0"
   }
 }

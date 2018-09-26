@@ -4,6 +4,9 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona funcionalidade de preview de imagens em links.
+  [rodfersou]
+
 - Adiciona suporte para processamento de recursos estáticos usando o `webpack`_.
   [rodfersou]
 
