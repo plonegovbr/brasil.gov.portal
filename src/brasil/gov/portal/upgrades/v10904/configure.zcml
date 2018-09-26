@@ -21,6 +21,12 @@
         />
 
     <genericsetup:upgradeStep
+        title="Deprecate resource registry"
+        description="Remove scripts and register with a viewlet."
+        handler=".remove_scripts"
+        />
+
+    <genericsetup:upgradeStep
         title="Uninstall Products.Doormat"
         handler=".uninstall_doormat"
         />
