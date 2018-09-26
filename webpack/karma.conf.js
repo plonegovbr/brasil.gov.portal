@@ -10,9 +10,9 @@ module.exports = function(config) {
       './tests/*.spec.js': ['webpack']
     },
     // webpack configuration
-    webpack: require("./webpack.config.js"),
+    webpack: require('./webpack.config.js'),
     webpackMiddleware: {
-      stats: "errors-only"
+      stats: 'errors-only'
     },
     reporters: ['progress'],
     port: 9876,
