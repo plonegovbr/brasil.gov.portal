@@ -21,6 +21,12 @@
         />
 
     <genericsetup:upgradeStep
+        title="Deprecate resource registries"
+        description="Remove static resources from registries; use a viewlet instead."
+        handler=".deprecate_resource_registries"
+        />
+
+    <genericsetup:upgradeStep
         title="Uninstall Products.Doormat"
         handler=".uninstall_doormat"
         />

@@ -22,3 +22,4 @@ parts/
 src/collective.cover/
 var/
 dist/
+src/brasil/gov/portal/browser/viewlets/static/

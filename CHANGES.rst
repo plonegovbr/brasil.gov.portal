@@ -4,6 +4,9 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona suporte para processamento de recursos estáticos usando o `webpack`_.
+  [rodfersou]
+
 - Corrige upgrade step para desinstalar o ``Products.Doormat`` (fecha `#523 <https://github.com/plonegovbr/brasil.gov.portal/issues/523>`_).
   [hvelarde]
 

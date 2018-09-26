@@ -419,7 +419,7 @@ class to10904TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 2)
+        self.assertEqual(steps, 3)
 
     def test_import_various(self):
         title = u'Import various'
@@ -437,6 +437,23 @@ class to10904TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertIn(value, api.portal.get_registry_record(name))
+
+    def test_deprecate_resource_registries(self):
+        title = u'Deprecate resource registries'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        from brasil.gov.portal.upgrades.v10904 import SCRIPTS
+        js_tool = api.portal.get_tool('portal_javascripts')
+        for js in SCRIPTS:
+            js_tool.registerResource(id=js)
+            self.assertIn(js, js_tool.getResourceIds())
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        for js in SCRIPTS:
+            self.assertNotIn(js, js_tool.getResourceIds())
 
     def test_uninstall_doormat(self):
         title = u'Uninstall Products.Doormat'

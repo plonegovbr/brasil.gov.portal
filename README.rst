@@ -131,3 +131,57 @@ O seu configure.zcml deve ficar assim:
 
 O ZCML do brasil.gov.portal carrega o ZCML do Products.CMFPlone, que por sua vez carrega o ZCML do plone.app.locales.
 Assim o locales do seu produto precisa ser carregado antes do ZCML do  brasil.gov.portal para que as traduções do seu produto possam sobrescrever às do Plone.
+
+Desenvolvimento
+---------------
+
+Utilizamos `webpack <https://webpack.js.org/>`_ para gerenciar o conteúdo estático do tema,
+tomando vantagem das diversas ferramentas e plugins disponíveis para suprir nossas necessidades.
+
+Utilizamos a receita de buildout `sc.recipe.staticresources <https://github.com/simplesconsultoria/sc.recipe.staticresources>`_ para integrar o `webpack`_ no Plone.
+
+Ao desenvolver os temas iniciamos o watcher do `webpack`_ e trabalhamos somente na pasta "webpack" alterando os arquivos;
+o `webpack`_ se encarrega de processar e gerar os arquivos em seu endereço final.
+
+Este pacote adiciona os seguintes comandos na pasta bin do buildout para processar automaticamente os recursos estáticos:
+
+.. code-block:: console
+
+    $ bin/env-brasilgovportal
+
+Este comando adiciona no terminal o node do buildout no PATH do sistema,
+dessa forma voce pode trabalhar com webpack conforme a documentação oficial.
+
+.. code-block:: console
+
+    $ bin/watch-brasilgovportal
+
+Este comando instrui ao `webpack`_ para esperar por qualquer mudança nos arquivos SASS e gera a versão minificada do CSS para a aplicação.
+
+.. code-block:: console
+
+    $ bin/debug-brasilgovportal
+
+Este comando faz o mesmo que o comando watch, mas não minifica o CSS final.
+Utilizado para debugar a geração do CSS.
+
+.. code-block:: console
+
+    $ bin/build-brasilgovportal
+
+Este comando cria os recursos minificados, mas não espera por mudanças.
+
+Fazendo releases com o zest.releaser
+------------------------------------
+
+Os recursos estáticos do pacote são gerados usando o `webpack`_ e não são inclusos no VCS.
+Se você está fazendo release usando o zest.releaser, você precisa fazer `upload manual dos arquivos no PyPI <https://github.com/zestsoftware/zest.releaser/issues/261>`_ ou você vai criar uma distribuição quebrada:
+
+* execute ``longtest``, como de costume
+* execute ``fullrelease``, como de costume, respondendo "não" a pergunta "Check out the tag?" para evitar o upload ao PyPI
+* faça checkout na tag do release que você está liberando
+* execute ``bin/build-brasilgovportal`` para criar os recursos estáticos
+* crie os arquivos da distribuição usando ``python setup.py sdist bdist_wheel``, como de costume
+* faça o upload manual dos arquivos usando ``twine upload dist/*``
+
+Em caso de erro você terá que criar um novo release pois o PyPI Warehouse `não permite reutilizar um nome de arquivo <https://upload.pypi.org/help/#file-name-reuse>`_.
