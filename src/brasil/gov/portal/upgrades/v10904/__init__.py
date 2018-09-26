@@ -10,8 +10,8 @@ SCRIPTS = [
 ]
 
 
-def remove_scripts(setup_tool):
-    """Remove JS from registered resources."""
+def deprecate_resource_registries(setup_tool):
+    """Deprecate resource registries."""
     js_tool = api.portal.get_tool('portal_javascripts')
     for js in SCRIPTS:
         js_tool.unregisterResource(id=js)

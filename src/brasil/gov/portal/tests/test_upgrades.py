@@ -438,9 +438,8 @@ class to10904TestCase(UpgradeBaseTestCase):
         self._do_upgrade(step)
         self.assertIn(value, api.portal.get_registry_record(name))
 
-    def test_remove_styles(self):
-        # address also an issue with Setup permission
-        title = u'Deprecate resource registry'
+    def test_deprecate_resource_registries(self):
+        title = u'Deprecate resource registries'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 

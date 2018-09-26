@@ -21,9 +21,9 @@
         />
 
     <genericsetup:upgradeStep
-        title="Deprecate resource registry"
-        description="Remove scripts and register with a viewlet."
-        handler=".remove_scripts"
+        title="Deprecate resource registries"
+        description="Remove static resources from registries; use a viewlet instead."
+        handler=".deprecate_resource_registries"
         />
 
     <genericsetup:upgradeStep
