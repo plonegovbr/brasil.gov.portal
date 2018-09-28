@@ -4,6 +4,9 @@ Changelog
 1.5.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.cover à versão 1.8b1.
+  [hvelarde]
+
 - Atualizado brasil.gov.barra à versão 1.2.4.
   [hvelarde]
 
