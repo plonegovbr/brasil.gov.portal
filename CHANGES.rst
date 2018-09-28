@@ -4,6 +4,9 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.agenda à versão 2.0a7.
+  [hvelarde]
+
 - Atualizado brasil.gov.temas à versão 2.0b3.
   [hvelarde]
 
