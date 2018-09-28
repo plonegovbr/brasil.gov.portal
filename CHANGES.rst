@@ -4,6 +4,9 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.cover à versão 1.8b1.
+  [hvelarde]
+
 - Adiciona funcionalidade de preview de imagens em links.
   [rodfersou]
 
