@@ -4,6 +4,9 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.tiles à versão 2.0b3.
+  [hvelarde]
+
 - Atualizado collective.cover à versão 1.8b1.
   [hvelarde]
 
