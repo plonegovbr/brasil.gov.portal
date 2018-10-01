@@ -85,6 +85,7 @@ setup(
         'plone.registry',
         'plone.restapi',
         'plone.supermodel',
+        'plone4.csrffixes',
         'Products.CMFCore',
         'Products.CMFDefault',
         'Products.CMFPlone',

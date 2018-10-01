@@ -15,6 +15,7 @@
   <include package="collective.upload" />
   <include package="plone.app.contenttypes" />
   <include package="plone.restapi" />
+  <include package="plone4.csrffixes" />
   <include package="Products.CMFPlone" />
   <include package="Products.Doormat" />  <!-- BBB: remove in 3.0 -->
   <include package="Products.PloneFormGen" />
