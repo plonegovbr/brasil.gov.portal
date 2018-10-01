@@ -1,8 +1,11 @@
 Changelog
 ---------
 
-2.1b2 (unreleased)
-^^^^^^^^^^^^^^^^^^
+2.1.1b1 (unreleased)
+^^^^^^^^^^^^^^^^^^^^
+
+- Adiciona novamente dependência no plone4.csrffixes.
+  [hvelarde]
 
 - Atualizado collective.lazysizes à versão 4.1.2.
   [hvelarde]
