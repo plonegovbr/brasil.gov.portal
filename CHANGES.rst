@@ -4,7 +4,8 @@ Changelog
 2.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado collective.lazysizes à versão 4.1.2.
+  [hvelarde]
 
 
 2.1b1 (2018-09-28)
