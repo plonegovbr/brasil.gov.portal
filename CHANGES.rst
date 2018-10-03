@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Atualiza configuração do webpack.
+  [rodfersou]
+
 - Corrige entradas do portal actions.
   [rodfersou]
 
