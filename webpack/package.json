@@ -1,6 +1,6 @@
 {
   "name": "brasilgovportal",
-  "version": "0.0.1",
+  "version": "2.1.1",
   "main": "app/brasilgovportal.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack -p",
@@ -25,7 +25,7 @@
   "repository": {},
   "license": "GPL-2.0",
   "dependencies": {
-    "sc.recipe.staticresources": "simplesconsultoria/sc.recipe.staticresources#1.0b1",
+    "sc-recipe-staticresources": "simplesconsultoria/sc.recipe.staticresources#1.1b5",
     "tippy.js": "^2.5.0"
   }
 }
