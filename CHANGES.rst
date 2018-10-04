@@ -4,6 +4,9 @@ Changelog
 2.1.1b1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.barra à versão 3.0.5.
+  [hvelarde]
+
 - Corrige estilos para tiles do collective.cover.
   [hvelarde]
 
