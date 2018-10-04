@@ -4,6 +4,9 @@ Changelog
 2.1.1b1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Corrige estilos para tiles do collective.cover.
+  [hvelarde]
+
 - Atualizado collective.cover à versão 1.8b2.
   [hvelarde]
 

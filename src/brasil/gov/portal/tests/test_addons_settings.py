@@ -84,6 +84,7 @@ class AddonsSettingsTestCase(unittest.TestCase):
             'Lista Blocos|lista-blocos',
             'Lista em Alta|tile-em-alta',
             'Noticia Destaque|tile-noticia-destaque',
+            'Noticia Vinculada|tile-vinculada',
             'Tile Transparente|tile-transparente',
             'Titulo Fio Separador|fio-separador',
         }

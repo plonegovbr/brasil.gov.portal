@@ -81,6 +81,7 @@
       <element>Lista Blocos|lista-blocos</element>
       <element>Lista em Alta|tile-em-alta</element>
       <element>Noticia Destaque|tile-noticia-destaque</element>
+      <element>Noticia Vinculada|tile-vinculada</element>
       <element>Tile Transparente|tile-transparente</element>
       <element>Titulo Fio Separador|fio-separador</element>
     </value>
