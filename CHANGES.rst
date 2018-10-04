@@ -4,6 +4,9 @@ Changelog
 2.1.1b1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.cover à versão 1.8b2.
+  [hvelarde]
+
 - Adiciona novamente dependência no plone4.csrffixes.
   [hvelarde]
 
