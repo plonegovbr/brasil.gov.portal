@@ -4,10 +4,10 @@ Changelog
 1.5.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Atualizado collective.lazysizes à versão 4.1.2.
+- Atualizado collective.cover à versão 1.8b2.
   [hvelarde]
 
-- Atualizado collective.cover à versão 1.8b1.
+- Atualizado collective.lazysizes à versão 4.1.2.
   [hvelarde]
 
 - Atualizado brasil.gov.barra à versão 1.2.4.
