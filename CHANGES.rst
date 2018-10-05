@@ -4,6 +4,9 @@ Changelog
 2.1.1b1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.temas à versão 2.0b4.
+  [hvelarde]
+
 - Atualizado brasil.gov.barra à versão 3.0.5.
   [hvelarde]
 
