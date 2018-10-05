@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.1.1b1 (unreleased)
+2.1.1b1 (2018-10-05)
 ^^^^^^^^^^^^^^^^^^^^
 
 - Atualizado brasil.gov.temas à versão 2.0b4.
