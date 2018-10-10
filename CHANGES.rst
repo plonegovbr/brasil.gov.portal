@@ -4,7 +4,8 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Adiciona viewlet para mostrar texto da licença de uso.
+  [rodfersou]
 
 
 2.1.1b1 (2018-10-05)

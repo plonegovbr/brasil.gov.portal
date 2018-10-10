@@ -135,4 +135,13 @@
       permission="zope2.Public"
       />
 
+  <browser:viewlet
+      name="brasil.gov.portal.copyright"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      class=".CopyrightViewlet"
+      permission="zope2.View"
+      template="templates/copyright.pt"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      />
+
 </configure>
