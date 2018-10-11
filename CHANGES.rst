@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.lazysizes à versão 4.1.4.
+  [hvelarde]
+
 - Adiciona viewlet para mostrar texto da licença de uso.
   [rodfersou]
 
