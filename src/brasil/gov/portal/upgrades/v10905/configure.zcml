@@ -17,7 +17,7 @@
 
     <genericsetup:upgradeDepends
         title="Import various"
-        description="Fix portal actions entries."
+        description="Fix portal actions entries; Update viewlet brasil.gov.portal.topo position to be the first listed viewlet."
         import_profile="brasil.gov.portal.upgrades.v10905:default"
         />
 

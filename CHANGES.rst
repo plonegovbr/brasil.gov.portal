@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Corrige viewlet que mostra link para voltar para o topo.
+  [rodfersou]
+
 - Move scripts do contraste para o pacote brasil.gov.temas.
   [rodfersou]
 

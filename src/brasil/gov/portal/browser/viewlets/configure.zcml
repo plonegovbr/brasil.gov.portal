@@ -79,7 +79,7 @@
 
   <browser:viewlet
       name="brasil.gov.portal.topo"
-      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
       class="plone.app.layout.viewlets.common.ViewletBase"
       permission="zope2.View"
       template="templates/topo.pt"
