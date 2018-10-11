@@ -85,7 +85,7 @@ msgstr "Transcrição do áudio"
 
 #: brasil/gov/portal/browser/viewlets/templates/topo.pt:2
 msgid "Back to Top"
-msgstr "Voltar para o topo"
+msgstr "Voltar ao topo"
 
 #: brasil/gov/portal/browser/plone/templates/plone-addsite.pt:123
 msgid "Base configuration"
