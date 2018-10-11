@@ -1,0 +1,5 @@
+<tal:copyright i18n:domain="brasil.gov.portal">
+  <div class="texto-copyright">
+    <span omit-tag="" i18n:translate="description_copyright">All content on this site is published under license</span> <a rel="license" href="https://creativecommons.org/licenses/by-nd/3.0/deed.pt_BR" i18n:translate="label_license">Creative Commons Attribution-NoDerivs 3.0 Unported</a>.
+  </div>
+</tal:copyright>

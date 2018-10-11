@@ -27,3 +27,7 @@ class ErrorReportingViewlet(ViewletBase):
 
 class ResourcesViewlet(ViewletBase):
     """This viewlet inserts static resources on page header."""
+
+
+class CopyrightViewlet(ViewletBase):
+    """This viewlet shows the copyright license at the end of the page."""
