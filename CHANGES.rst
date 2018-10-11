@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Atualizado collective.fingerpointing à versão 1.8.
+  [hvelarde]
+
 - Atualizado collective.lazysizes à versão 4.1.4.
   [hvelarde]
 
