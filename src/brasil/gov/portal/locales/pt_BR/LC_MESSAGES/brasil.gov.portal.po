@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-09-04 12:43+0000\n"
-"PO-Revision-Date: 2018-09-04 13:47-0300\n"
+"POT-Creation-Date: 2018-10-11 18:18+0000\n"
+"PO-Revision-Date: 2018-10-11 15:19-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -91,8 +91,8 @@ msgstr "Voltar para o topo"
 msgid "Base configuration"
 msgstr "Configuração básica"
 
-#: brasil/gov/portal/browser/content/templates/contentcentral.pt:81
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:54
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:82
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:55
 msgid "By period"
 msgstr "Por período"
 
@@ -104,7 +104,7 @@ msgstr "Centrais de conteúdo"
 msgid "Content Centrals"
 msgstr "Centrais de conteúdo"
 
-#: brasil/gov/portal/browser/content/templates/contentcentral.pt:54
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:55
 msgid "Content types"
 msgstr "Tipos de conteúdo"
 
@@ -534,7 +534,7 @@ msgstr "Interface de Administração do Zope"
 msgid "add_new_site"
 msgstr "Criar um novo Portal Padrão"
 
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:129
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:130
 msgid "alphabetically"
 msgstr "alfabeticamente"
 
@@ -542,9 +542,14 @@ msgstr "alfabeticamente"
 msgid "content"
 msgstr "conteúdo"
 
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:121
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:122
 msgid "date (newest first)"
 msgstr "data (mais recente primeiro)"
+
+#. Default: "All content on this site is published under license"
+#: brasil/gov/portal/browser/viewlets/templates/copyright.pt:3
+msgid "description_copyright"
+msgstr "Todo o conteúdo deste site está publicado sob a licença"
 
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:13
 msgid "e-Government Digital Identity -- Plone"
@@ -597,8 +602,8 @@ msgid "id"
 msgstr "ID"
 
 #. Default: "Aplicar filtro"
-#: brasil/gov/portal/browser/content/templates/contentcentral.pt:127
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:132
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:128
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:133
 msgid "label_apply_filter"
 msgstr "Aplicar filtro"
 
@@ -616,6 +621,11 @@ msgstr "Cancelar"
 #: brasil/gov/portal/content/schema/infographic.xml
 msgid "label_image"
 msgstr "Imagem"
+
+#. Default: "Creative Commons Attribution-NoDerivs 3.0 Unported"
+#: brasil/gov/portal/browser/viewlets/templates/copyright.pt:3
+msgid "label_license"
+msgstr "Creative Commons Atribuição-SemDerivações 3.0 Não Adaptada"
 
 #: brasil/gov/portal/browser/album/albuns.py:184
 msgid "label_next"
@@ -659,12 +669,12 @@ msgstr "Desenvolvido com o CMS de código aberto <a href=\\\"http://plone.org\\\
 msgid "portal_padrao"
 msgstr "Portal Padrão"
 
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:113
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:114
 msgid "relevance"
 msgstr "relevância"
 
 #. Default: "Sort by"
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:103
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:104
 msgid "sort_by"
 msgstr "Ordenar por"
 
@@ -679,26 +689,26 @@ msgid "text_date"
 msgstr "última atualização: ${date}"
 
 #. Default: "any period"
-#: brasil/gov/portal/browser/content/templates/contentcentral.pt:96
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:69
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:97
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:70
 msgid "time_ever"
 msgstr "qualquer período"
 
 #. Default: "last 30 days"
-#: brasil/gov/portal/browser/content/templates/contentcentral.pt:112
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:85
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:113
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:86
 msgid "time_last_month"
 msgstr "últimos 30 dias"
 
 #. Default: "last 7 days"
-#: brasil/gov/portal/browser/content/templates/contentcentral.pt:104
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:77
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:105
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:78
 msgid "time_last_week"
 msgstr "últimos 7 dias"
 
 #. Default: "last 12 months"
-#: brasil/gov/portal/browser/content/templates/contentcentral.pt:120
-#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:93
+#: brasil/gov/portal/browser/content/templates/contentcentral.pt:121
+#: brasil/gov/portal/browser/content/templates/resultsfilter.pt:94
 msgid "time_last_year"
 msgstr "últimos 12 meses"
 
