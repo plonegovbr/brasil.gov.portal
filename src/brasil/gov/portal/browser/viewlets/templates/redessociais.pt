@@ -1,14 +1,16 @@
 <tal:redes tal:define="available view/available"
            tal:condition="available"
            i18n:domain="brasil.gov.portal">
-    <p class="hiddenStructure">Redes Sociais</p>
-    <ul class="portal-redes">
-        <tal:rede tal:repeat="tab view/redes">
-            <li tal:define="tid tab/site"
-                tal:attributes="class string:portalredes-${tid} portalredes-item;">
-                <a tal:attributes="href tab/url;"
-                   tal:content="tab/title|nothing" />
-            </li>
-        </tal:rede>
-    </ul>
+    <div class="coluna-redes">
+        <h3 i18n:translate="">Redes sociais</h3>
+        <ul class="portal-redes">
+            <tal:rede tal:repeat="tab view/redes">
+                <li tal:define="tid tab/site"
+                    tal:attributes="class string:portalredes-${tid} portalredes-item;">
+                    <a tal:attributes="href tab/url;"
+                       tal:content="tab/title|nothing" />
+                </li>
+            </tal:rede>
+        </ul>
+    </div>
 </tal:redes>
