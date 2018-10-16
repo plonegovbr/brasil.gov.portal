@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-10-11 18:18+0000\n"
+"POT-Creation-Date: 2018-10-16 17:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -427,6 +427,10 @@ msgstr ""
 
 #: brasil/gov/portal/controlpanel/socialnetworks.py:47
 msgid "Social Network"
+msgstr ""
+
+#: brasil/gov/portal/browser/viewlets/templates/redessociais.pt:5
+msgid "Social Networks"
 msgstr ""
 
 #: brasil/gov/portal/browser/plone/configure.zcml:86
