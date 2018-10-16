@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
+ <object name="site_actions" meta_type="CMF Action Category" purge="false">
+  <object name="accessibility" meta_type="CMF Action" purge="false">
+   <property name="visible">False</property>
+  </object>
+  <object name="mapadosite" meta_type="CMF Action" purge="false">
+   <property name="visible">False</property>
+  </object>
+  <object name="vlibras" meta_type="CMF Action">
+   <property name="title" i18n:translate="">VLibras</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:http://www.vlibras.gov.br/</property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions">
+    <element value="View"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+ </object>
+</object>

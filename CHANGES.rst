@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Corrige entradas do portal actions.
+  [rodfersou]
+
 - Corrige tradução de viewlet de redes.
   [rodfersou]
 

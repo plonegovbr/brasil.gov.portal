@@ -470,3 +470,35 @@ class to10904TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertFalse(qi.isProductInstalled(addon))
+
+
+class to10905TestCase(UpgradeBaseTestCase):
+
+    from_ = '10904'
+    to_ = '10905'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_import_various(self):
+        title = u'Import various'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        site_actions = api.portal.get_tool('portal_actions').site_actions
+        site_actions['accessibility'].visible = True
+        site_actions['mapadosite'].visible = True
+        del site_actions['vlibras']
+        self.assertNotIn('vlibras', site_actions)
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertFalse(site_actions['accessibility'].visible)
+        self.assertFalse(site_actions['mapadosite'].visible)
+        self.assertIn('vlibras', site_actions)
