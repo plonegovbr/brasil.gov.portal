@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <object name="portal_actions" meta_type="Plone Actions Tool"
-   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
  <object name="site_actions" meta_type="CMF Action Category" purge="true">
-  <object name="accessibility" meta_type="CMF Action" i18n:domain="plone">
+  <object name="accessibility" meta_type="CMF Action">
    <property name="title" i18n:translate="">Accessibility</property>
    <property name="description" i18n:translate=""></property>
    <property
@@ -14,7 +15,7 @@
    </property>
    <property name="visible">False</property>
   </object>
-  <object name="contraste" meta_type="CMF Action" i18n:domain="plone">
+  <object name="contraste" meta_type="CMF Action">
    <property name="title" i18n:translate="">High Contrast</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:#</property>
@@ -25,7 +26,7 @@
    </property>
    <property name="visible">True</property>
   </object>
-  <object name="mapadosite" meta_type="CMF Action" i18n:domain="plone">
+  <object name="mapadosite" meta_type="CMF Action">
    <property name="title" i18n:translate="">Site Map</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${globals_view/navigationRootUrl}/mapadosite</property>
@@ -36,7 +37,7 @@
    </property>
    <property name="visible">False</property>
   </object>
-  <object name="plone_setup" meta_type="CMF Action" i18n:domain="plone">
+  <object name="plone_setup" meta_type="CMF Action">
    <property name="title" i18n:translate="">Site Setup</property>
    <property name="description" i18n:translate=""></property>
    <property
@@ -48,8 +49,8 @@
    </property>
    <property name="visible">False</property>
   </object>
-  <object name="vlibras" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">Vlibras</property>
+  <object name="vlibras" meta_type="CMF Action">
+   <property name="title" i18n:translate="">VLibras</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:http://www.vlibras.gov.br/</property>
    <property name="icon_expr"></property>
@@ -61,7 +62,7 @@
   </object>
  </object>
  <object name="user" meta_type="CMF Action Category">
-  <object name="login" meta_type="CMF Action" i18n:domain="plone">
+  <object name="login" meta_type="CMF Action">
    <property name="visible">False</property>
   </object>
  </object>
