@@ -470,3 +470,17 @@ class to10904TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertFalse(qi.isProductInstalled(addon))
+
+
+class to10905TestCase(UpgradeBaseTestCase):
+
+    from_ = '10904'
+    to_ = '10905'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)

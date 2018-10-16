@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="brasil.gov.portal (v10905)"
+      directory="profile"
+      description='Configuration for version 10905'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:upgradeSteps
+      source="10904"
+      destination="10905"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeDepends
+        title="Import various"
+        description="Fix portal actions entries."
+        import_profile="brasil.gov.portal.upgrades.v10905:default"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>

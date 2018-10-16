@@ -12,7 +12,7 @@
    <property name="permissions">
     <element value="View"/>
    </property>
-   <property name="visible">True</property>
+   <property name="visible">False</property>
   </object>
   <object name="contraste" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">High Contrast</property>
@@ -34,7 +34,7 @@
    <property name="permissions">
     <element value="View"/>
    </property>
-   <property name="visible">True</property>
+   <property name="visible">False</property>
   </object>
   <object name="plone_setup" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">Site Setup</property>
@@ -47,6 +47,17 @@
     <element value="Plone Site Setup: Overview"/>
    </property>
    <property name="visible">False</property>
+  </object>
+  <object name="vlibras" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title" i18n:translate="">Vlibras</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:http://www.vlibras.gov.br/</property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions">
+    <element value="View"/>
+   </property>
+   <property name="visible">True</property>
   </object>
  </object>
  <object name="user" meta_type="CMF Action Category">
