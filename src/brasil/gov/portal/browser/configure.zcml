@@ -22,9 +22,6 @@
   <!-- XXX: the name of this module is causing import problems -->
   <include package='.plone' />
 
-  <!-- Contraste -->
-  <include package='.contraste' />
-
   <!-- Sitemap -->
   <include package='.sitemap' />
 

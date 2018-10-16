@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Move scripts do contraste para o pacote brasil.gov.temas.
+  [rodfersou]
+
 - Atualiza configuração do webpack.
   [rodfersou]
 
