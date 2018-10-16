@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Corrige tradução de viewlet de redes.
+  [rodfersou]
+
 - Atualizado collective.fingerpointing à versão 1.8.
   [hvelarde]
 

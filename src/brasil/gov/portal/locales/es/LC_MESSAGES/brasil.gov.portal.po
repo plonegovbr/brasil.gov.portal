@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-10-11 18:18+0000\n"
-"PO-Revision-Date: 2018-10-11 15:20-0300\n"
+"POT-Creation-Date: 2018-10-16 17:07+0000\n"
+"PO-Revision-Date: 2018-10-16 14:08-0300\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -430,6 +430,10 @@ msgstr "Ajustes a nivel de sitio."
 #: brasil/gov/portal/controlpanel/socialnetworks.py:47
 msgid "Social Network"
 msgstr "Red Social"
+
+#: brasil/gov/portal/browser/viewlets/templates/redessociais.pt:5
+msgid "Social Networks"
+msgstr "Redes sociales"
 
 #: brasil/gov/portal/browser/plone/configure.zcml:86
 msgid "Standard view"
