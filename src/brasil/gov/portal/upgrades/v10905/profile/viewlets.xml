@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object>
+  <order manager="plone.belowcontent" skinname="*">
+    <viewlet name="brasil.gov.portal.topo" before="*" />
+  </order>
+</object>
