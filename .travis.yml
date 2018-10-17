@@ -28,6 +28,8 @@ script:
 - bin/test
 - bin/pylint --py3k --disable=no-absolute-import src/brasil/gov/portal
 after_success:
+# XXX: https://github.com/urllib3/urllib3/issues/1456
+- pip install urllib3==1.23
 - pip install coverage
 - coverage run bin/test --layer=\!Acceptance
 # Coveralls
