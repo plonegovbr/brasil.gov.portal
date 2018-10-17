@@ -4,6 +4,9 @@ Changelog
 2.1.1b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.temas à versão 2.0b5.
+  [hvelarde]
+
 - Corrige viewlet que mostra link para voltar para o topo.
   [rodfersou]
 
