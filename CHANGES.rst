@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.5.4 (unreleased)
+1.5.4 (2018-10-18)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualizado collective.fingerpointing à versão 1.8.
