@@ -4,10 +4,16 @@ Changelog
 1.5.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Atualizado collective.cover à versão 1.8b2.
+- Atualizado collective.fingerpointing à versão 1.8.
   [hvelarde]
 
-- Atualizado collective.lazysizes à versão 4.1.2.
+- Atualizado collective.lazysizes à versão 4.1.4.
+  [hvelarde]
+
+- Atualizado brasil.gov.tiles à versão 1.6.2.
+  [hvelarde]
+
+- Atualizado collective.cover à versão 1.8b2.
   [hvelarde]
 
 - Atualizado brasil.gov.barra à versão 1.2.4.
