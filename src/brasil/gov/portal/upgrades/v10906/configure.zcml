@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeSteps
+      source="10905"
+      destination="10906"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeStep
+        title="Fix wrong value on News Article factory"
+        handler=".fix_nitf_default_view"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>

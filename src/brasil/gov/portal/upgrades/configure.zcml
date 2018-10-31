@@ -5,4 +5,5 @@
   <include package=".v10903" />
   <include package=".v10904" />
   <include package=".v10905" />
+  <include package=".v10906" />
 </configure>
