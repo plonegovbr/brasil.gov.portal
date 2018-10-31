@@ -17,18 +17,6 @@
       class=".external.ExternalContentView"
       />
 
-  <browser:menuItems
-      for="collective.nitf.content.INITF"
-      menu="plone_displayviews">
-
-    <browser:menuItem
-        title="Visão de notícia"
-        action="nitf_custom_view"
-        description="Essa view inclui galeria de imagens e se torna a view padrao de noticias"
-        />
-
-  </browser:menuItems>
-
   <browser:page
       name="batchnavigation"
       for="*"
