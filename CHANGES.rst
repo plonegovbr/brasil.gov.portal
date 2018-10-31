@@ -4,7 +4,8 @@ Changelog
 2.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige o valor da propriedade ``default_view`` no factory do tipo de conteúdo Artigo para portais migrados (fecha `#552 <https://github.com/plonegovbr/brasil.gov.portal/issues/552>`_).
+  [hvelarde]
 
 
 2.1rc1 (2018-10-17)

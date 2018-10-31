@@ -502,3 +502,33 @@ class to10905TestCase(UpgradeBaseTestCase):
         self.assertFalse(site_actions['accessibility'].visible)
         self.assertFalse(site_actions['mapadosite'].visible)
         self.assertIn('vlibras', site_actions)
+
+
+class to10906TestCase(UpgradeBaseTestCase):
+
+    from_ = '10905'
+    to_ = '10906'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_fix_nitf_default_view(self):
+        title = u'Fix wrong value on News Article factory'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        custom_view = 'nitf_custom_view'
+        types_tool = api.portal.get_tool('portal_types')
+        nitf = types_tool['collective.nitf.content']
+        nitf.default_view = custom_view
+        self.assertEqual(nitf.default_view, custom_view)
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertEqual(nitf.default_view, 'view')
