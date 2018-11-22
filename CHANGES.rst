@@ -4,6 +4,9 @@ Changelog
 2.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.barra à versão 3.0.6.
+  [hvelarde]
+
 - Corrige o valor da propriedade ``default_view`` no factory do tipo de conteúdo Artigo para portais migrados (fecha `#552 <https://github.com/plonegovbr/brasil.gov.portal/issues/552>`_).
   [hvelarde]
 
