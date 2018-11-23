@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-11-23 17:27+0000\n"
+"POT-Creation-Date: 2018-11-23 18:58+0000\n"
 "PO-Revision-Date: 2018-11-23 15:28-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: \n"
@@ -332,6 +332,14 @@ msgstr "Mais notícias"
 msgid "Mais serviços"
 msgstr "Mais serviços"
 
+#: brasil/gov/portal/browser/busca/searchbox.pt:51
+msgid "More news"
+msgstr "Mais notícias"
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:62
+msgid "More services"
+msgstr "Mais serviços"
+
 #: brasil/gov/portal/browser/content/configure.zcml:45
 msgid "Mostra um formulário de busca de conteúdo."
 msgstr "Mostra um formulário de busca de conteúdo."
@@ -468,6 +476,18 @@ msgstr "Título"
 #: brasil/gov/portal/controlpanel/portalservices.py:35
 msgid "Titulo do link"
 msgstr "Titulo do link"
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:45
+msgid "Top news"
+msgstr "Notícias em destaque"
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:56
+msgid "Top services"
+msgstr "Serviços em destaque"
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:71
+msgid "Top subjects"
+msgstr "Assuntos em alta"
 
 #: brasil/gov/portal/content/schema/audio.xml
 msgid "Transcription"

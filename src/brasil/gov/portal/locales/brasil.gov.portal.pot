@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-11-23 17:27+0000\n"
+"POT-Creation-Date: 2018-11-23 18:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -332,6 +332,14 @@ msgstr ""
 msgid "Mais serviços"
 msgstr ""
 
+#: brasil/gov/portal/browser/busca/searchbox.pt:51
+msgid "More news"
+msgstr ""
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:62
+msgid "More services"
+msgstr ""
+
 #: brasil/gov/portal/browser/content/configure.zcml:45
 msgid "Mostra um formulário de busca de conteúdo."
 msgstr ""
@@ -467,6 +475,18 @@ msgstr ""
 
 #: brasil/gov/portal/controlpanel/portalservices.py:35
 msgid "Titulo do link"
+msgstr ""
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:45
+msgid "Top news"
+msgstr ""
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:56
+msgid "Top services"
+msgstr ""
+
+#: brasil/gov/portal/browser/busca/searchbox.pt:71
+msgid "Top subjects"
 msgstr ""
 
 #: brasil/gov/portal/content/schema/audio.xml
