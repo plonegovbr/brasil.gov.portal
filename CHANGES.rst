@@ -4,6 +4,9 @@ Changelog
 2.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Possibilita tradução de itens na busca da página principal.
+  [rodfersou]
+
 - Atualizado brasil.gov.temas à versão 2.0rc1.
   [hvelarde]
 
