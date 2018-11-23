@@ -11,7 +11,7 @@
         tal:condition="image/Rights"
         tal:omit-tag=""
         i18n:translate="">
-      - Foto:
+      - Credit:
     </span>
     <span
         tal:condition="image/Rights"
