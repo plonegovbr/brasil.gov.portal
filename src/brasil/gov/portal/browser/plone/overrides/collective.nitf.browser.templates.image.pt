@@ -1,0 +1,22 @@
+<div id="media" tal:define="image context/image" tal:condition="image"
+     i18n:domain="brasil.gov.portal">
+  <img tal:replace="structure context/@@images/image/large" />
+  <p class="discreet">
+    <span
+        tal:condition="context/media_caption"
+        tal:replace="context/media_caption">
+      Image Caption
+    </span>
+    <span
+        tal:condition="image/Rights"
+        tal:omit-tag=""
+        i18n:translate="">
+      - Credit:
+    </span>
+    <span
+        tal:condition="image/Rights"
+        tal:replace="image/Rights">
+      Rights
+    </span>
+  </p>
+</div>

@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-10-16 17:07+0000\n"
-"PO-Revision-Date: 2018-10-16 14:08-0300\n"
+"POT-Creation-Date: 2018-11-23 17:27+0000\n"
+"PO-Revision-Date: 2018-11-23 15:28-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,10 @@ msgstr ""
 "Language: es\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 1.8.7.1\n"
+
+#: brasil/gov/portal/browser/plone/overrides/collective.nitf.browser.templates.image.pt:10
+msgid "- Credit:"
+msgstr "- Foto:"
 
 #: brasil/gov/portal/profiles.zcml:15
 msgid ".gov.br: Portal Padrão"
@@ -65,7 +69,7 @@ msgstr "Un archivo de audio usando MPEG"
 msgid "An Audio File using OGG"
 msgstr "Un archivo de audio usando OGG"
 
-#: brasil/gov/portal/browser/content/configure.zcml:74
+#: brasil/gov/portal/browser/content/configure.zcml:62
 msgid "Aplica uma query customizada aos resultados da coleção."
 msgstr ""
 
@@ -98,7 +102,7 @@ msgstr "Configuración de la base"
 msgid "By period"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:57
+#: brasil/gov/portal/browser/content/configure.zcml:45
 msgid "Centrais de conteúdo"
 msgstr ""
 
@@ -175,10 +179,6 @@ msgstr "Esa vista contiene una galería de álbumes"
 msgid "Essa view contem a visao da galeria de fotos"
 msgstr "Esa vista contiene una galería de fotos"
 
-#: brasil/gov/portal/browser/content/configure.zcml:28
-msgid "Essa view inclui galeria de imagens e se torna a view padrao de noticias"
-msgstr "Esa vista incluye una galería de imágenes y se torna una vista estándar de noticias"
-
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:107
 msgid "Example site of the e-Government Digital Identity Plone Portal"
 msgstr "Ejemplo de sitio de portal de Identidad Digital para Gobierno Electrónico"
@@ -211,7 +211,7 @@ msgstr "Archivo"
 msgid "File format not supported"
 msgstr "Formato de archivo no admitido"
 
-#: brasil/gov/portal/browser/content/configure.zcml:74
+#: brasil/gov/portal/browser/content/configure.zcml:62
 msgid "Filtro de resultados"
 msgstr ""
 
@@ -334,7 +334,7 @@ msgstr ""
 msgid "Mais serviços"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:57
+#: brasil/gov/portal/browser/content/configure.zcml:45
 msgid "Mostra um formulário de busca de conteúdo."
 msgstr ""
 
@@ -503,17 +503,13 @@ msgstr "Vista"
 msgid "View Image"
 msgstr "Vista de imagen"
 
-#: brasil/gov/portal/browser/content/configure.zcml:49
+#: brasil/gov/portal/browser/content/configure.zcml:37
 msgid "View Infographic"
 msgstr "Vista de infográfico"
 
 #: brasil/gov/portal/controlpanel/socialnetworks.py:111
 msgid "Visual and functional Configuration"
 msgstr "Configuración visual y funcional"
-
-#: brasil/gov/portal/browser/content/configure.zcml:28
-msgid "Visão de notícia"
-msgstr "Vista de noticia"
 
 #: brasil/gov/portal/controlpanel/portalservices.py:53
 msgid "Visível"
