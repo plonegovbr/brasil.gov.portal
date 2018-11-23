@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.1rc2 (unreleased)
+2.1rc2 (2018-11-23)
 ^^^^^^^^^^^^^^^^^^^
 
 - Evita ``KeyError`` ao rodar o upgrade step que conserta a largura das colunas das capas (v10901).
