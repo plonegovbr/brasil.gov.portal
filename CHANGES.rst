@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+2.1 (unreleased)
+^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 2.1rc2 (2018-11-23)
 ^^^^^^^^^^^^^^^^^^^
 
