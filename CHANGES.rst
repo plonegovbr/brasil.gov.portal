@@ -4,6 +4,9 @@ Changelog
 2.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Add rights in NITF image.
+  [rodfersou]
+
 - Atualizado brasil.gov.barra à versão 3.0.6.
   [hvelarde]
 
