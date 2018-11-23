@@ -71,7 +71,13 @@ def fix_cover_columns(setup_tool):
             layout = json.loads(obj.cover_layout)
         except TypeError:
             continue  # empty layout?
-        layout = fix_column_width(layout)
+
+        try:
+            layout = fix_column_width(layout)
+        except KeyError:
+            msg = "Can't fix layout for object {0}"
+            logger.error(msg.format(obj.absolute_url_path()))
+
         obj.cover_layout = json.dumps(layout)
 
     logger.info('Done')

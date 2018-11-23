@@ -4,6 +4,10 @@ Changelog
 2.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Evita ``KeyError`` ao rodar o upgrade step que conserta a largura das colunas das capas (v10901).
+  Caso de erro, uma mensagem no log de eventos indicará o path do objeto com problemas (fecha `#555 <https://github.com/plonegovbr/brasil.gov.portal/issues/555>`_).
+  [hvelarde]
+
 - Possibilita tradução de itens na busca da página principal.
   [rodfersou]
 
