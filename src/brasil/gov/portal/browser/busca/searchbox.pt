@@ -42,24 +42,24 @@
             <div class="news"
                  tal:define="featured_news view/featured_news"
                  tal:condition="featured_news">
-                <div class="news-title"><strong>Notícias</strong> em destaque</div>
+                <div class="news-title" i18n:translate="">Top news</div>
                 <ul class="featured-news">
                     <li tal:repeat="article featured_news">
                         <a tal:attributes="href article/url" tal:content="article/title" />
                     </li>
                 </ul>
-                <a class="more-news" tal:attributes="href view/more_news">Mais notícias</a>
+                <a class="more-news" tal:attributes="href view/more_news" i18n:translate="">More news</a>
             </div>
             <div class="services"
                  tal:define="featured_services view/featured_services"
                  tal:condition="featured_services">
-                <div class="services-title"><strong>Serviços</strong> em destaque</div>
+                <div class="services-title" i18n:translate="">Top services</div>
                 <ul class="featured-services">
                     <li tal:repeat="service featured_services">
                         <a tal:attributes="href service/url" tal:content="service/title" />
                     </li>
                 </ul>
-                <a class="more-services" tal:attributes="href view/more_services">Mais serviços</a>
+                <a class="more-services" tal:attributes="href view/more_services" i18n:translate="">More services</a>
             </div>
         </div>
     </form>
@@ -68,7 +68,7 @@
         <ul class="top-subjects"
             tal:define="top_subjects view/top_subjects"
             tal:condition="top_subjects">
-            <div class="subjects-title"><h3>Assuntos em alta</h3></div>
+            <div class="subjects-title"><h3 i18n:translate="">Top subjects</h3></div>
             <li tal:repeat="subject top_subjects">
                 <a tal:attributes="href subject/url" tal:content="subject/title" />
             </li>
