@@ -16,7 +16,7 @@ setup(
     description="Implementação Modelo da Identidade Digital de Governo",
     long_description=long_description,
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 4.3",
