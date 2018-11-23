@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-10-16 17:07+0000\n"
+"POT-Creation-Date: 2018-11-23 17:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: brasil.gov.portal\n"
+
+#: brasil/gov/portal/browser/plone/overrides/collective.nitf.browser.templates.image.pt:10
+msgid "- Credit:"
+msgstr ""
 
 #: brasil/gov/portal/profiles.zcml:15
 msgid ".gov.br: Portal Padrão"
@@ -63,7 +67,7 @@ msgstr ""
 msgid "An Audio File using OGG"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:74
+#: brasil/gov/portal/browser/content/configure.zcml:62
 msgid "Aplica uma query customizada aos resultados da coleção."
 msgstr ""
 
@@ -96,7 +100,7 @@ msgstr ""
 msgid "By period"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:57
+#: brasil/gov/portal/browser/content/configure.zcml:45
 msgid "Centrais de conteúdo"
 msgstr ""
 
@@ -173,10 +177,6 @@ msgstr ""
 msgid "Essa view contem a visao da galeria de fotos"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:28
-msgid "Essa view inclui galeria de imagens e se torna a view padrao de noticias"
-msgstr ""
-
 #: brasil/gov/portal/browser/plone/templates/plone-overview.pt:107
 msgid "Example site of the e-Government Digital Identity Plone Portal"
 msgstr ""
@@ -209,7 +209,7 @@ msgstr ""
 msgid "File format not supported"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:74
+#: brasil/gov/portal/browser/content/configure.zcml:62
 msgid "Filtro de resultados"
 msgstr ""
 
@@ -332,7 +332,7 @@ msgstr ""
 msgid "Mais serviços"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:57
+#: brasil/gov/portal/browser/content/configure.zcml:45
 msgid "Mostra um formulário de busca de conteúdo."
 msgstr ""
 
@@ -501,16 +501,12 @@ msgstr ""
 msgid "View Image"
 msgstr ""
 
-#: brasil/gov/portal/browser/content/configure.zcml:49
+#: brasil/gov/portal/browser/content/configure.zcml:37
 msgid "View Infographic"
 msgstr ""
 
 #: brasil/gov/portal/controlpanel/socialnetworks.py:111
 msgid "Visual and functional Configuration"
-msgstr ""
-
-#: brasil/gov/portal/browser/content/configure.zcml:28
-msgid "Visão de notícia"
 msgstr ""
 
 #: brasil/gov/portal/controlpanel/portalservices.py:53

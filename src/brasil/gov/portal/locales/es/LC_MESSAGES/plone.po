@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-10-16 17:07+0000\n"
+"POT-Creation-Date: 2018-11-23 17:27+0000\n"
 "PO-Revision-Date: 2014-11-06 15:41-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -41,6 +41,10 @@ msgstr "Configuración del sitio"
 #: brasil/gov/portal/profiles/default/registry.xml
 msgid "VCGE"
 msgstr "VCGE"
+
+#: brasil/gov/portal/profiles/default/actions.xml
+msgid "VLibras"
+msgstr ""
 
 #: brasil/gov/portal/profiles/default/registry.xml
 msgid "Vocabulario Controlado do Governo Eletronico"

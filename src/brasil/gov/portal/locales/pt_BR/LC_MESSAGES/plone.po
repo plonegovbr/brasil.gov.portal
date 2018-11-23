@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-10-16 17:07+0000\n"
+"POT-Creation-Date: 2018-11-23 17:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,6 +40,10 @@ msgstr "Configuração do Site"
 #: brasil/gov/portal/profiles/default/registry.xml
 msgid "VCGE"
 msgstr "VCGE"
+
+#: brasil/gov/portal/profiles/default/actions.xml
+msgid "VLibras"
+msgstr ""
 
 #: brasil/gov/portal/profiles/default/registry.xml
 msgid "Vocabulario Controlado do Governo Eletronico"
