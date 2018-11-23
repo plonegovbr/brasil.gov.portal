@@ -4,6 +4,9 @@ Changelog
 2.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Atualizado brasil.gov.agenda à versão 2.0b1.
+  [hvelarde]
+
 - Adiciona informação de direitos autorais à imagem principal das notícias.
   [rodfersou]
 
