@@ -7,6 +7,12 @@
      tal:attributes="class view/klass;
                      style view/style">
 
+    <div class="searchbox-background-media">
+      <video width="100%" autoplay>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </div>
+
     <form id="searchGadget_form"
           action="@@busca"
           tal:attributes="action string:${navigation_root_url}/@@busca;
