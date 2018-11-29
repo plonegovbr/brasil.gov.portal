@@ -7,9 +7,11 @@
      tal:attributes="class view/klass;
                      style view/style">
 
-    <div class="searchbox-background-media">
-      <video width="100%" autoplay>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    <div class="searchbox-background-media" tal:condition="view/is_video">
+      <video autoplay loop muted>
+        <source src="https://www.example.com/video.mp4" type="video/mp4"
+            tal:attributes="src view/media_url;
+                            type view/mimetype">
       </video>
     </div>
 

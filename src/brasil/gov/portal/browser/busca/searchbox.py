@@ -8,8 +8,11 @@ accessible at the @@portal-settings configlet.
 """
 from brasil.gov.portal.controlpanel.portal import ISettingsPortal
 from plone.app.layout.viewlets.common import SearchBoxViewlet as SearchBoxViewletBase  # noqa: E501
+from plone.formwidget.namedfile.converter import b64decode_file
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+
+import mimetypes
 
 
 class SearchBoxViewlet(SearchBoxViewletBase):
@@ -20,6 +23,7 @@ class SearchBoxViewlet(SearchBoxViewletBase):
         registry = getUtility(IRegistry)
         self.settings = registry.forInterface(ISettingsPortal, check=False)
         self.expandable_header = getattr(self.settings, 'expandable_header', False)  # noqa: E501
+        self.media_url = self.site_url + '/@@searchbox-background-media'
 
     @staticmethod
     def split(iterable):
@@ -55,6 +59,18 @@ class SearchBoxViewlet(SearchBoxViewletBase):
         if self.expandable_header:
             return 'expandable-header'
 
+    @property
+    def is_video(self):
+        """Guess if the mimetype of the file stored in the
+        background_image field, is from a video.
+        """
+        if self.settings.background_image is None:
+            return False
+
+        filename, _ = b64decode_file(self.settings.background_image)
+        self.mimetype, _ = mimetypes.guess_type(filename)
+        return 'video' in self.mimetype
+
     def style(self):
         """Return a CSS style to add a background image to an element.
         If the expandable header is not used, or there is no background
@@ -67,5 +83,7 @@ class SearchBoxViewlet(SearchBoxViewletBase):
         if self.settings.background_image is None:
             return None
 
-        url = self.site_url + '/@@searchbox-background-image'
-        return 'background-image: url({0})'.format(url)
+        if self.is_video:
+            return None
+
+        return 'background-image: url({0})'.format(self.media_url)
