@@ -7,10 +7,11 @@ In the future this configlet should list all IDG options if possible to
 avoid having too many configlets.
 """
 from brasil.gov.portal import _
+from brasil.gov.portal.utils import validate_background
 from brasil.gov.portal.utils import validate_list_of_links
 from plone.app.registry.browser import controlpanel
 from plone.autoform import directives as form
-from plone.formwidget.namedfile.widget import NamedImageFieldWidget
+from plone.formwidget.namedfile.widget import NamedFileFieldWidget
 from plone.supermodel import model
 from zope import schema
 
@@ -55,15 +56,16 @@ class ISettingsPortal(model.Schema):
         default=False,
     )
 
-    form.widget('background_image', NamedImageFieldWidget)
+    form.widget('background_image', NamedFileFieldWidget)
     background_image = schema.ASCII(
-        title=_(u'title_background_image', default=u'Background image'),
+        title=_(u'title_background_image', default=u'Background'),
         description=_(
             u'help_background_image',
-            default=u'This image will be used as background of the header. '
+            default=u'An image or video to be used as background of the header. '
                     u'Should be 1440px width and 605px height.',
         ),
         required=False,
+        constraint=validate_background,
     )
 
     form.widget('featured_news', cols=25, rows=10)

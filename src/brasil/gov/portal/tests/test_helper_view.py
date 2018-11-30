@@ -35,7 +35,7 @@ class HelperViewTestCase(unittest.TestCase):
 
     def render(self):
         view = api.content.get_view(
-            'searchbox-background-image', self.portal, self.request)
+            'searchbox-background-media', self.portal, self.request)
         view()
 
     def test_headers_no_image(self):

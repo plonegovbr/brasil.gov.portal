@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-11-23 18:58+0000\n"
+"POT-Creation-Date: 2018-11-30 17:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -587,7 +587,7 @@ msgstr ""
 msgid "footer"
 msgstr ""
 
-#. Default: "This image will be used as background of the header. Should be 1440px width and 605px height."
+#. Default: "An image or video to be used as background of the header. Should be 1440px width and 605px height."
 #: brasil/gov/portal/controlpanel/portal.py:61
 msgid "help_background_image"
 msgstr ""
@@ -735,7 +735,7 @@ msgstr ""
 msgid "title"
 msgstr ""
 
-#. Default: "Background image"
+#. Default: "Background"
 #: brasil/gov/portal/controlpanel/portal.py:60
 msgid "title_background_image"
 msgstr ""

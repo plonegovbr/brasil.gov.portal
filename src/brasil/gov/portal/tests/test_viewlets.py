@@ -383,17 +383,17 @@ class SearchBoxViewletTestCase(unittest.TestCase):
     def test_no_expandable_header(self):
         rendered = self.portal()
         self.assertNotIn('expandable-header', rendered)
-        self.assertNotIn('@@searchbox-background-image', rendered)
+        self.assertNotIn('@@searchbox-background-media', rendered)
         self.assertNotIn('search-suggestions', rendered)
 
     def test_expandable_header(self):
         self.set_expandable_header(True)
         rendered = self.portal()
         self.assertIn('expandable-header', rendered)
-        self.assertNotIn('@@searchbox-background-image', rendered)
+        self.assertNotIn('@@searchbox-background-media', rendered)
         self.assertIn('search-suggestions', rendered)
 
         from brasil.gov.portal.tests.test_helper_view import IMAGEB64
         self.set_image(IMAGEB64)
         rendered = self.portal()
-        self.assertIn('@@searchbox-background-image', rendered)
+        self.assertIn('@@searchbox-background-media', rendered)

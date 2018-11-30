@@ -29,9 +29,9 @@
   <include package='.viewlets' />
 
   <browser:page
-      name="searchbox-background-image"
+      name="searchbox-background-media"
       for="plone.app.layout.navigation.interfaces.INavigationRoot"
-      class=".helper.BackgroundImageView"
+      class=".helper.BackgroundMediaView"
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       permission="zope.Public"
       />
