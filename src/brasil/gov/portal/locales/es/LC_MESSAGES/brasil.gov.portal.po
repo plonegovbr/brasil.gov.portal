@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-11-23 18:58+0000\n"
-"PO-Revision-Date: 2018-11-23 15:28-0200\n"
+"POT-Creation-Date: 2018-11-30 17:41+0000\n"
+"PO-Revision-Date: 2018-11-30 15:44-0200\n"
 "Last-Translator: Danilo Sartorelli Barbato <dadlobr@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -589,10 +589,10 @@ msgstr "Configuración de Identidad Digital de Gobierno Electrónico"
 msgid "footer"
 msgstr "pie de página"
 
-#. Default: "This image will be used as background of the header. Should be 1440px width and 605px height."
+#. Default: "An image or video to be used as background of the header. Should be 1440px width and 605px height."
 #: brasil/gov/portal/controlpanel/portal.py:61
 msgid "help_background_image"
-msgstr ""
+msgstr "Una imagen o vídeo que será usado como fondo del cuadro de búsquedas."
 
 #. Default: "If enabled, an expandable header will be used instead of the default. A list of search sugestions and hot topics will also be shown, if available."
 #: brasil/gov/portal/controlpanel/portal.py:51
@@ -738,10 +738,10 @@ msgstr ""
 msgid "title"
 msgstr "título"
 
-#. Default: "Background image"
+#. Default: "Background"
 #: brasil/gov/portal/controlpanel/portal.py:60
 msgid "title_background_image"
-msgstr ""
+msgstr "Fondo"
 
 #. Default: "Search Site"
 #: brasil/gov/portal/browser/busca/searchbox.pt:22

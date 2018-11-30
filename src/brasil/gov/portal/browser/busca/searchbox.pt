@@ -11,7 +11,7 @@
       <video autoplay loop muted>
         <source src="https://www.example.com/video.mp4" type="video/mp4"
             tal:attributes="src view/media_url;
-                            type view/mimetype">
+                            type view/mimetype"></source>
       </video>
     </div>
 

@@ -57,10 +57,10 @@ class ISettingsPortal(model.Schema):
 
     form.widget('background_image', NamedFileFieldWidget)
     background_image = schema.ASCII(
-        title=_(u'title_background_image', default=u'Background image or file'),
+        title=_(u'title_background_image', default=u'Background'),
         description=_(
             u'help_background_image',
-            default=u'This image or file will be used as background of the header. '
+            default=u'An image or video to be used as background of the header. '
                     u'Should be 1440px width and 605px height.',
         ),
         required=False,
