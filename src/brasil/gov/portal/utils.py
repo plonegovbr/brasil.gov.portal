@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.portal import _
+from plone.formwidget.namedfile.converter import b64decode_file
 from six.moves.urllib.parse import urlparse
 from zope.interface import Invalid
+
+import mimetypes
 
 
 MESSAGE = _(u'You must use "Title|http://example.org" format to fill each line.')
@@ -25,3 +28,17 @@ def validate_list_of_links(value):
         if not all([parsed.scheme, parsed.netloc]):
             raise Invalid(MESSAGE)
     return True
+
+
+def validate_background(value):
+    """Check if file is an image or a video."""
+    if not value:
+        return True
+
+    filename, _ = b64decode_file(value)
+    mimetype, _ = mimetypes.guess_type(filename)
+
+    if mimetype is None:
+        return False
+
+    return 'image' in mimetype or 'video' in mimetype
