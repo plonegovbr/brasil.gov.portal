@@ -4,6 +4,9 @@ Changelog
 2.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Nova configuração do webpack não gera arquivo _sprite.scss (fecha `#555 <https://github.com/plonegovbr/brasil.gov.portal/issues/563>`_).
+  [rodfersou]
+
 - Aceita tanto imagens quanto videos como fundo do header expansivel.
   [hvelarde]
 
