@@ -7,7 +7,7 @@ Changelog
 - Atualizado brasil.gov.temas à versão 2.0.
   [hvelarde]
 
-- Nova configuração do webpack não gera arquivo _sprite.scss (fecha `#555 <https://github.com/plonegovbr/brasil.gov.portal/issues/563>`_).
+- Nova configuração do webpack não gera arquivo ``_sprite.scss`` (fecha `#563 <https://github.com/plonegovbr/brasil.gov.portal/issues/563>`_).
   [rodfersou]
 
 - Aceita tanto imagens quanto videos como fundo do header expansivel.
