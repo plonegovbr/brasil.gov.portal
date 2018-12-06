@@ -1,0 +1,38 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="brasil.gov.portal">
+  <schema>
+    <field name="title" type="zope.schema.TextLine">
+      <required>True</required>
+      <title i18n:translate="">Name</title>
+      <description i18n:translate="">The name of the ministry</description>
+    </field>
+    <field name="description" type="zope.schema.Text">
+      <required>True</required>
+      <title i18n:translate="">Description</title>
+      <description i18n:translate="">A brief text describing the mission of the ministry.</description>
+    </field>
+    <field name="minister" type="zope.schema.TextLine">
+      <required>True</required>
+      <title i18n:translate="label_minister">Minister</title>
+      <description i18n:translate="help_minister">The name of the minister.</description>
+    </field>
+    <field name="image" type="plone.namedfile.field.NamedBlobImage"
+           marshal:primary="true">
+      <required>True</required>
+      <title i18n:translate="label_image">Photo (close-up)</title>
+      <description i18n:translate="">A photo of the minister in close-up.</description>
+    </field>
+    <field name="lead_image" type="plone.namedfile.field.NamedBlobImage">
+      <required>True</required>
+      <title i18n:translate="label_image">Photo (lead image)</title>
+      <description i18n:translate="">A photo of the minister to be used as lead image.</description>
+    </field>
+    <field name="text" type="plone.app.textfield.RichText">
+        <required>False</required>
+        <title i18n:translate="">Body text</title>
+        <description />
+    </field>
+  </schema>
+</model>

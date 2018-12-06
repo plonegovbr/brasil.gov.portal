@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+  <object name="navtree_properties" meta_type="Plone Property Sheet">
+    <property name="metaTypesNotToList" type="lines">
+      <element value="Agenda"/>
+      <element value="AgendaDiaria"/>
+      <element value="Audio"/>
+      <element value="Collection"/>
+      <element value="Compromisso"/>
+      <element value="Discussion Item"/>
+      <element value="Event"/>
+      <element value="ExternalContent"/>
+      <element value="FieldsetEnd"/>
+      <element value="FieldsetFolder"/>
+      <element value="FieldsetStart"/>
+      <element value="File"/>
+      <element value="FormBooleanField"/>
+      <element value="FormCaptchaField"/>
+      <element value="FormCustomScriptAdapter"/>
+      <element value="FormDateField"/>
+      <element value="FormFileField"/>
+      <element value="FormFixedPointField"/>
+      <element value="FormIntegerField"/>
+      <element value="FormLabelField"/>
+      <element value="FormLikertField"/>
+      <element value="FormLinesField"/>
+      <element value="FormMailerAdapter"/>
+      <element value="FormMultiSelectionField"/>
+      <element value="FormPasswordField"/>
+      <element value="FormRichLabelField"/>
+      <element value="FormRichTextField"/>
+      <element value="FormSaveDataAdapter"/>
+      <element value="FormSelectionField"/>
+      <element value="FormStringField"/>
+      <element value="FormTextField"/>
+      <element value="FormThanksPage"/>
+      <element value="Image"/>
+      <element value="Infographic"/>
+      <element value="Ministry"/>
+      <element value="Link"/>
+      <element value="MPEG Audio File"/>
+      <element value="News Item"/>
+      <element value="OGG Audio File"/>
+      <element value="Plone Site"/>
+      <element value="TempFolder"/>
+      <element value="collective.cover.content"/>
+      <element value="collective.nitf.content"/>
+      <element value="collective.polls.poll"/>
+      <element value="sc.embedder"/>
+    </property>
+  </object>
+</object>

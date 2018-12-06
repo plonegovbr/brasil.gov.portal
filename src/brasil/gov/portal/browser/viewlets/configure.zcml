@@ -144,4 +144,15 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <browser:viewlet
+      name="brasil.gov.portal.ministers"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      class=".ministers.MinistersViewlet"
+      for="brasil.gov.portal.content.ministry.IMinistry"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      permission="zope2.View"
+      template="templates/ministers.pt"
+      />
+
+
 </configure>

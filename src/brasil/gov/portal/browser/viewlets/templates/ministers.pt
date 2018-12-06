@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="brasil.gov.portal">
+  <body>
+    <div class="ministers-viewlet">
+      <div class="ministers-carousel" id="">
+        <div class="tile-header">
+          <h2 i18n:translate="">Other ministers</h2>
+          <p></p>
+        </div>
+        <div class="switch-carousel"></div>
+        <div class="swiper-container carousel-thumbs">
+          <div class="swiper-wrapper"
+              tal:define="batches python: view.chunks(4)">
+            <div class="swiper-slide" tal:repeat="batch batches">
+              <div class="carousel-item" tal:repeat="item batch">
+                <a href="" tal:attributes="href item/url">
+                  <img tal:define="scales item/scales;
+                                   scale python: scales.scale('image', width=273, height=273)"
+                      tal:replace="structure scale/tag" />
+                  <h3 tal:content="item/minister">Minister</h3>
+                  <p tal:content="item/ministry">Ministry</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next swiper-button-black"></div>
+          <div class="swiper-button-prev swiper-button-black"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

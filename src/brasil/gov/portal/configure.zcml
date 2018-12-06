@@ -20,6 +20,11 @@
       title="brasil.gov.portal: Add Infographic"
       />
 
+  <permission
+      id="brasil.gov.portal.addMinistry"
+      title="brasil.gov.portal: Add Ministry"
+      />
+
   <include file='patches.zcml' />
 
   <!-- Profiles de Generic Setup -->

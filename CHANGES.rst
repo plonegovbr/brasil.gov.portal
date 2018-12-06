@@ -4,7 +4,8 @@ Changelog
 2.2 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Adicionado tipo de conteúdo ``Ministry``.
+  [claytonc]
 
 
 2.1 (2018-12-04)

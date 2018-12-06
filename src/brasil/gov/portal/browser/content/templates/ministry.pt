@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    metal:use-macro="context/main_template/macros/master"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="brasil.gov.portal">
+  <body>
+    <metal:main fill-slot="main">
+      <article>
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <div  class="linha-destaquetopo">
+
+          <div id="parent-fieldname-lead_image">
+            <img
+                tal:define="scales context/@@images;
+                            scale python: scales.scale('lead_image', scale=None)"
+                tal:replace="structure scale/tag|nothing" />
+          </div>
+          <h1 class="documentFirstHeading"
+              tal:content="context/title">Ministry</h1>
+
+          <div class="documentDescription"
+              tal:content="context/description">Description</div>
+
+        </div>
+
+        <div i18n:translate="label_minister" class="label-minister">Minister</div>
+        <h2 id="parent-fieldname-minister"
+            tal:content="context/minister">Name</h2>
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <div id="content-core"
+            tal:define="is_editable context/@@plone_context_state/is_editable;
+                        text context/text/output|nothing">
+
+          <p class="discreet"
+              tal:condition="python:not text and is_editable"
+              i18n:domain="plone"
+              i18n:translate="no_body_text">
+            This item does not have any body text, click the edit tab to change it.
+          </p>
+
+          <div id="parent-fieldname-text" tal:condition="text">
+            <div tal:content="structure text">The body</div>
+          </div>
+        </div>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+      </article>
+     </metal:main>
+  </body>
+</html>

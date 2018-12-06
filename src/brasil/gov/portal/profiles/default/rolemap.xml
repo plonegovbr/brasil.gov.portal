@@ -19,5 +19,11 @@
       <role name="Owner"/>
       <role name="Site Administrator" />
     </permission>
+    <permission name="brasil.gov.portal: Add Ministry" acquire="True">
+      <role name="Contributor"/>
+      <role name="Manager" />
+      <role name="Owner"/>
+      <role name="Site Administrator" />
+    </permission>
   </permissions>
 </rolemap>

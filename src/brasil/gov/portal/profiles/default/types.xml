@@ -5,4 +5,5 @@
  <object meta_type="Dexterity FTI" name="MPEG Audio File" />
  <object meta_type="Dexterity FTI" name="OGG Audio File" />
  <object meta_type="Dexterity FTI" name="ExternalContent" />
+ <object meta_type="Dexterity FTI" name="Ministry" />
 </object>

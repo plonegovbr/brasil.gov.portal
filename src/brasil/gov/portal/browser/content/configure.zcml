@@ -36,6 +36,15 @@
       title="View Infographic"
       />
 
+  <browser:page
+      name="view"
+      for="brasil.gov.portal.content.ministry.IMinistry"
+      class=".ministry.MinistryView"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+      permission="zope2.View"
+      template="templates/ministry.pt"
+      />
+
   <browser:menuItem
       for="plone.app.contenttypes.interfaces.IFolder"
       menu="plone_displayviews"

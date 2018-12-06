@@ -392,6 +392,9 @@ class to10903TestCase(UpgradeBaseTestCase):
         from zope.component import getUtility
         from zope.schema.interfaces import IVocabularyFactory
 
+        # run the upgrade to validate the update
+        self.setup.upgradeProfile(u'brasil.gov.portal:default')
+
         # get all content types
         types = getUtility(IVocabularyFactory, 'plone.app.vocabularies.PortalTypes')(None)
         types = set(t.value for t in types)
@@ -532,3 +535,34 @@ class to10906TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertEqual(nitf.default_view, 'view')
+
+
+class to10907TestCase(UpgradeBaseTestCase):
+
+    from_ = '10906'
+    to_ = '10907'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_ministry_content_type(self):
+        title = u'Import various'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        types = api.portal.get_tool('portal_types')
+        del types['Ministry']
+        self.assertNotIn('Ministry', types)
+
+        # run the upgrade to validate the update
+        self.setup.upgradeProfile(u'brasil.gov.portal:default')
+        self.assertIn('Ministry', types)
+        with api.env.adopt_roles(['Manager']):
+            api.content.create(self.portal, 'Ministry', 'foo')
+            api.content.delete(self.portal['foo'])

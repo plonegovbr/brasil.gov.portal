@@ -81,6 +81,13 @@ class InstallTestCase(unittest.TestCase):
         wftool = self.portal['portal_workflow']
         self.assertEqual(wftool.getChainForPortalType('Infographic'), ())
 
+    def test_add_ministry_permission(self):
+        permission = 'brasil.gov.portal: Add Ministry'
+        expected = ['Contributor', 'Manager', 'Owner', 'Site Administrator']
+        roles = self.portal.rolesOfPermission(permission)
+        roles = [r['name'] for r in roles if r['selected']]
+        self.assertListEqual(roles, expected)
+
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
         """Testa se o número do último upgradeStep disponível é o mesmo
         do metadata.xml do profile.

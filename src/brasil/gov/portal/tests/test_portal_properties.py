@@ -54,6 +54,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
             'Image',
             'Infographic',
             'Link',
+            'Ministry',
             'collective.nitf.content',
             'collective.polls.poll',
             'sc.embedder',
@@ -77,6 +78,7 @@ class PortalPropertiesTestCase(unittest.TestCase):
             'Document',
             'Folder',
             'FormFolder',
+            'Ministry',
         }
         self.assertSetEqual(types - exclude, expected)
 
