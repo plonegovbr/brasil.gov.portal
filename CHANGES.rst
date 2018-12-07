@@ -5,7 +5,8 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona dependência no plone.app.stagingbehavior;
-  isso permite habilitar as operações de checkout e checkin para trabalhar em cópias do conteúdo original.
+  isso permite habilitar as operações de checkout e checkin para trabalhar em cópias do conteúdo original,
+  e evita o erro ``PicklingError: Can't pickle <class 'plone.app.stagingbehavior.interfaces.IStagingSupport'>: import of module plone.app.stagingbehavior.interfaces failed`` ao iniciar as instâncias.
   [hvelarde]
 
 - Adiciona dependência no plone.app.drafts;
