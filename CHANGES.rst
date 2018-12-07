@@ -4,6 +4,10 @@ Changelog
 2.1.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona dependência no plone.app.stagingbehavior;
+  isso permite habilitar as operações de checkout e checkin para trabalhar em cópias do conteúdo original.
+  [hvelarde]
+
 - Adiciona dependência no plone.app.drafts;
   isso evita o erro ``AttributeError: type object 'IDraftStorage' has no attribute 'iro'`` ao iniciar as instâncias.
   [hvelarde]

@@ -70,6 +70,7 @@ setup(
         'plone.app.layout',
         'plone.app.registry',
         'plone.app.search',
+        'plone.app.stagingbehavior',
         'plone.app.theming',
         'plone.app.viewletmanager',
         'plone.autoform',
