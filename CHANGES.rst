@@ -1,10 +1,11 @@
 Changelog
 ---------
 
-2.2 (unreleased)
-^^^^^^^^^^^^^^^^
+2.1.1 (unreleased)
+^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualizado brasil.gov.temas à versão 2.0.1.
+  [hvelarde]
 
 
 2.1 (2018-12-04)
