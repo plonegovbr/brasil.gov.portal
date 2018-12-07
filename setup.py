@@ -66,6 +66,7 @@ setup(
         'plone.app.contenttypes',
         'plone.app.controlpanel',
         'plone.app.dexterity',
+        'plone.app.drafts',  # TODO: remove in IDG 3.0
         'plone.app.layout',
         'plone.app.registry',
         'plone.app.search',

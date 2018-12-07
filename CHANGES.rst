@@ -4,6 +4,10 @@ Changelog
 2.1.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona dependência no plone.app.drafts;
+  isso evita o erro ``AttributeError: type object 'IDraftStorage' has no attribute 'iro'`` ao iniciar as instâncias.
+  [hvelarde]
+
 - Atualizado brasil.gov.temas à versão 2.0.1.
   [hvelarde]
 
