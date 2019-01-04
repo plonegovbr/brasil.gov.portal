@@ -10,15 +10,8 @@
                              class string:portalservicos-item;">
             <a href=""
                tal:content="tab/Title"
-               tal:condition="tab/Description"
-               tal:attributes="href tab/getURL;
-                               title tab/Description|nothing;">
-            Tab Name
-            </a>
-            <a href=""
-               tal:content="tab/Title"
-               tal:condition="not:tab/Description"
-               tal:attributes="href tab/getRemoteUrl">
+               tal:attributes="href tab/getRemoteUrl;
+                               title python:tab['Description'] and tab['Description'] or None;">
             Tab Name
             </a>
         </li>

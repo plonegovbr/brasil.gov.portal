@@ -245,8 +245,8 @@ class ServicosViewletTestCase(unittest.TestCase):
         viewlet = self.viewlet()
         servicos = viewlet.servicos()
         self.assertEqual(len(servicos), 2)
-        self.assertEqual(servicos[0].Title, u'Servico 1')
-        self.assertEqual(servicos[1].Title, u'Servico 2')
+        self.assertEqual(servicos[0]['Title'], u'Servico 1')
+        self.assertEqual(servicos[1]['Title'], u'Servico 2')
 
     def test_render(self):
         viewlet = self.viewlet()
