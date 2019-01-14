@@ -50,7 +50,7 @@ class RemoteUrlUtils(BrowserView):
                     if url_items[0] == '.':
                         url = url.replace(
                             './',
-                            '/'.join(path_items[:-1]),
+                            '/'.join(path_items[:-1]) + '/',
                         )
                     # ../  ../../../
                     elif url_items[0] == '..':
