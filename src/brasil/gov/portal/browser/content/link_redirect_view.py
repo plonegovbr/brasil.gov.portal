@@ -34,7 +34,10 @@ class LinkRedirectView(OriginalView):
                 path,
                 url,
             )
-            if not url.startswith(('http://', 'https://')):
-                url = self.request['SERVER_URL'] + url
+        if not url.startswith(('http://', 'https://')):
+            portal_state = self.context.restrictedTraverse(
+                '@@plone_portal_state',
+            )
+            url = '{0}{1}'.format(portal_state.portal_url(), url)
 
         return url
