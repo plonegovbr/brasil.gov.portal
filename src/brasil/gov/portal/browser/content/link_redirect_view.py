@@ -7,6 +7,16 @@ from zope.component import getMultiAdapter
 
 
 class LinkRedirectView(OriginalView):
+    """
+    Substituicao do path pela url do site ao utilizar variaveis ${portal_url}
+    ou ${navigation_root_url} no campo remoteUrl do Link.
+    Acertada tambem a url de links relativos (../, ./), pois gerava a url
+    utilizando como base a url do proprio objeto Link.
+    Isso fazia com que a url, mesmo redirecionando corretamente, ficasse
+    diferente da real, e não seria atingida pelo purge.
+    Demanda PR para correção da issue 463:
+    https://github.com/plonegovbr/brasil.gov.portal/issues/463
+    """
 
     def absolute_target_url(self):
         """Compute the absolute target URL."""

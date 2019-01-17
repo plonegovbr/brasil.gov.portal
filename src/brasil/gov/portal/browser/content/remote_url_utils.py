@@ -14,6 +14,13 @@ class IRemoteUrlUtils(Interface):
 
 
 class RemoteUrlUtils(BrowserView):
+    """
+    Substituicao do path pela url do site.
+    Utilizado para o tratamento do valor obtido do metadado getRemoteUrl
+    via portal_catalog e pela visao padrao do tipo Link (link_redirect_view).
+    Demanda PR para correção da issue 463:
+    https://github.com/plonegovbr/brasil.gov.portal/issues/463
+    """
     implements(IRemoteUrlUtils)
 
     def __init__(self, context, request):

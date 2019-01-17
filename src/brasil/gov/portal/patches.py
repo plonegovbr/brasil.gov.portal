@@ -191,7 +191,11 @@ def deselect(self):
 
 
 def decoratorFactory(self, node):
-    """Substituicao do path pela url do site em getRemoteUrl."""
+    """Substituicao do path pela url do site ao utilizar o metadado getRemoteUrl
+       obtido via portal_catalog.
+       Demanda PR para correção da issue 463:
+       https://github.com/plonegovbr/brasil.gov.portal/issues/463
+    """
     context = aq_inner(self.context)
     request = context.REQUEST
 
