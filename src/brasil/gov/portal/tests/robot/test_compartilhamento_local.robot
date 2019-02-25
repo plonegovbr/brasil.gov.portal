@@ -55,5 +55,5 @@ conceder a permissão pode adicionar
 
 permissao deve ser local e nao um valor herdado
     Capture Page Screenshot    compartilhamento-usuarios.png
-    Page Should Contain Element    xpath=//${tuser-pode-adicionar-td}/input[@checked='']
+    Page Should Contain Element    xpath=//${tuser-pode-adicionar-td}/input[@checked='checked']
     Page Should Not Contain Element    xpath=//${tuser-pode-adicionar-td}/img
