@@ -225,6 +225,27 @@ class ServicosViewletTestCase(unittest.TestCase):
                 title=u'Servico 2',
                 remoteUrl=u'http://www.plone.org',
             )
+            api.content.create(
+                type='Link',
+                container=self.servicos,
+                id='servico-3',
+                title=u'Servico 3',
+                remoteUrl=u'${portal_url}/assuntos/editoria-a',
+            )
+            api.content.create(
+                type='Link',
+                container=self.servicos,
+                id='servico-4',
+                title=u'Servico 4',
+                remoteUrl=u'${navigation_root_url}/assuntos/editoria-b',
+            )
+            api.content.create(
+                type='Link',
+                container=self.servicos,
+                id='servico-5',
+                title=u'Servico 5',
+                remoteUrl=u'../assuntos/editoria-c',
+            )
 
     def viewlet(self):
         viewlet = ServicosViewlet(self.portal, self.request, None, None)
@@ -244,15 +265,22 @@ class ServicosViewletTestCase(unittest.TestCase):
     def test_servicos(self):
         viewlet = self.viewlet()
         servicos = viewlet.servicos()
-        self.assertEqual(len(servicos), 2)
-        self.assertEqual(servicos[0].Title, u'Servico 1')
-        self.assertEqual(servicos[1].Title, u'Servico 2')
+        self.assertEqual(len(servicos), 5)
+        self.assertEqual(servicos[0]['Title'], u'Servico 1')
+        self.assertEqual(servicos[1]['Title'], u'Servico 2')
+        self.assertEqual(servicos[2]['Title'], u'Servico 3')
+        self.assertEqual(servicos[3]['Title'], u'Servico 4')
+        self.assertEqual(servicos[4]['Title'], u'Servico 5')
 
     def test_render(self):
+        portal_url = self.portal['portal_url']()
         viewlet = self.viewlet()
         render = viewlet.render()
         self.assertIn(u'http://www.google.com', render)
         self.assertIn(u'http://www.plone.org', render)
+        self.assertIn(u'{0}/assuntos/editoria-a'.format(portal_url), render)
+        self.assertIn(u'{0}/assuntos/editoria-b'.format(portal_url), render)
+        self.assertIn(u'{0}/assuntos/editoria-c'.format(portal_url), render)
 
 
 class NITFBylineViewletTestCase(unittest.TestCase):

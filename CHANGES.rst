@@ -4,7 +4,27 @@ Changelog
 1.5.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Adiciona Browser Page remote_url_utils.
+  Tratamento do valor de getRemoteUrl ou remoteUrl para evitar que o path do
+  site fique exposto nos links.
+  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  [idgserpro]
+
+- Adiciona patch para Products.CMFPlone.browser.navtree.SitemapNavtreeStrategy.decoratorFactory
+  para substituição do path do site pela url em getRemoteUrl.
+  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  [idgserpro]
+
+- Altera viewlet servicos para que trate o valor de getRemoteUrl através da
+  remote_url_utils.
+  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  [idgserpro]
+
+- Customiza Browser Page link_redirect_view para que trate o valor de remote_url
+  através da remote_url_utils; e para que a formação url de links relativos (../, ./)
+  deixasse de utilizar como base a url do próprio objeto Link.
+  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  [idgserpro]
 
 
 1.5.4 (2018-10-18)

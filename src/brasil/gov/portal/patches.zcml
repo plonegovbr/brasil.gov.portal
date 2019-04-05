@@ -12,4 +12,11 @@
       replacement=".patches.deselect"
       />
 
+  <monkey:patch
+      description="Substituicao do path pela url do site em getRemoteUrl."
+      class="Products.CMFPlone.browser.navtree.SitemapNavtreeStrategy"
+      original="decoratorFactory"
+      replacement=".patches.decoratorFactory"
+      />
+
 </configure>

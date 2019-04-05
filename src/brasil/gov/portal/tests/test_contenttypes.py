@@ -110,3 +110,63 @@ class ContentTypesTestCase(unittest.TestCase):
             )
         plone.remoteUrl = 'http://plone.org/foundation'
         self.assertEqual(plone.getRemoteUrl(), plone.remoteUrl)
+
+    def test_remote_url_utils(self):
+        portal_url = self.portal['portal_url']()
+        remote_url_utils = self.portal.restrictedTraverse('@@remote_url_utils')
+        # no url
+        path = ''
+        url = ''
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(final_url, url)
+        # no path
+        path = ''
+        url = 'http://plone.org/foundation'
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(final_url, url)
+        # http or https
+        path = '/plone/assuntos/editoria-a/link-externo'
+        url = 'http://plone.org/foundation'
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(final_url, url)
+        # use schema
+        path = '/plone/assuntos/editoria-a/link-mailto'
+        url = 'mailto:username@domainname'
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(final_url, url)
+        # ./
+        path = '/plone/assuntos/editoria-a/link-relative'
+        url = './segundo-nivel'
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(
+            final_url,
+            '{0}/assuntos/editoria-a/segundo-nivel'.format(portal_url),
+        )
+        # ../
+        path = '/plone/assuntos/editoria-a/link-relative'
+        url = '../editoria-b'
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(
+            final_url,
+            '{0}/assuntos/editoria-b'.format(portal_url),
+        )
+        # ../../
+        path = '/plone/assuntos/editoria-a/link-relative'
+        url = '../../acesso-a-informacao/informacoes-classificadas'
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(
+            final_url,
+            '{0}/acesso-a-informacao/informacoes-classificadas'.format(
+                portal_url,
+            ),
+        )
+        # /path/site
+        path = '/plone/assuntos/editoria-a/link-internal'
+        url = '/plone/acesso-a-informacao/informacoes-classificadas'
+        final_url = remote_url_utils.remote_url_transform(path, url)
+        self.assertEqual(
+            final_url,
+            '{0}/acesso-a-informacao/informacoes-classificadas'.format(
+                portal_url,
+            ),
+        )
