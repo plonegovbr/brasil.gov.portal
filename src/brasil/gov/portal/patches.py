@@ -258,6 +258,7 @@ def decoratorFactory(self, node):
     newNode['normalized_id'] = idnormalizer.normalize(newNode['id'])
 
     return newNode
+
     logger.info('Patched Products.CMFPlone.browser.navtree.SitemapNavtreeStrategy:decoratorFactory:191')
 
 

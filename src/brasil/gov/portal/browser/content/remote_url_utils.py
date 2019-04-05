@@ -9,6 +9,9 @@ from zope.interface import Interface
 
 class IRemoteUrlUtils(Interface):
 
+    def _url_uses_scheme(self):
+        """"""
+
     def remote_url_transform(self):
         """Transforma o path em url do site."""
 
