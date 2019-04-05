@@ -16,6 +16,7 @@ eggs/
 htmlcov/
 include/
 lib/
+pip-selfcheck.json
 local.cfg
 Makefile
 parts/

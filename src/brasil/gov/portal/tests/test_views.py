@@ -449,3 +449,70 @@ class SummaryViewTestCase(BaseViewTestCase):
             contents_no_spaces)
         # Não deve conter a data de 1969 padrão.
         self.assertNotIn('<iclass="icon-day"></i>31/12/1969', contents_no_spaces)
+
+
+class LinkRedirectViewTestCase(BaseViewTestCase):
+
+    def setUp(self):
+        super(LinkRedirectViewTestCase, self).setUp()
+        with api.env.adopt_roles(['Manager']):
+            self.subfolder = api.content.create(self.portal, 'Folder', 'subfolder')
+            self.link_1 = api.content.create(
+                type='Link',
+                container=self.subfolder,
+                id='link-1',
+                title=u'Link 1',
+                remoteUrl=u'${portal_url}/assuntos/editoria-a',
+            )
+            self.link_2 = api.content.create(
+                type='Link',
+                container=self.subfolder,
+                id='link-2',
+                title=u'Link 2',
+                remoteUrl=u'${navigation_root_url}/assuntos/editoria-b',
+            )
+            self.link_3 = api.content.create(
+                type='Link',
+                container=self.subfolder,
+                id='link-3',
+                title=u'Link 3',
+                remoteUrl=u'../../assuntos/editoria-c',
+            )
+            self.link_4 = api.content.create(
+                type='Link',
+                container=self.folder,
+                id='link-4',
+                title=u'Link 4',
+                remoteUrl=u'./subfolder',
+            )
+
+    def test_link_redirect_view(self):
+        portal_url = self.portal['portal_url']()
+        link_1_url = self.link_1.restrictedTraverse(
+            '@@link_redirect_view',
+        ).absolute_target_url()
+        self.assertEqual(
+            '{0}/assuntos/editoria-a'.format(portal_url),
+            link_1_url,
+        )
+        link_2_url = self.link_2.restrictedTraverse(
+            '@@link_redirect_view',
+        ).absolute_target_url()
+        self.assertEqual(
+            '{0}/assuntos/editoria-b'.format(portal_url),
+            link_2_url,
+        )
+        link_3_url = self.link_3.restrictedTraverse(
+            '@@link_redirect_view',
+        ).absolute_target_url()
+        self.assertEqual(
+            '{0}/assuntos/editoria-c'.format(portal_url),
+            link_3_url,
+        )
+        link_4_url = self.link_4.restrictedTraverse(
+            '@@link_redirect_view',
+        ).absolute_target_url()
+        self.assertEqual(
+            '{0}/folder/subfolder'.format(portal_url),
+            link_4_url,
+        )
