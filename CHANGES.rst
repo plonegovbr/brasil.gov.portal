@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.5.5 (unreleased)
+1.5.5 (2019-04-08)
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona Browser Page remote_url_utils.
