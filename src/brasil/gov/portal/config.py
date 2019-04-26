@@ -39,6 +39,9 @@ REDES = [
     {'id': 'tumblr',
      'title': 'Thumblr',
      'url': 'https://%s.tumblr.com'},
+    {'id': 'linkedin',
+     'title': 'LinkedIn',
+     'url': 'https://www.linkedin.com/%s'},
 ]
 
 # http://www.tinymce.com/wiki.php/Configuration:formats
