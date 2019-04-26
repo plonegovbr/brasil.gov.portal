@@ -4,7 +4,8 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Adicionado suporte a rede LinkedIn.
+  [talau]
 
 
 2.1.1 (2018-12-08)
