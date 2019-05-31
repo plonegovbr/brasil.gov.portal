@@ -71,6 +71,9 @@
       <element value="OGG Audio File"/>
       <element value="Topic"/>
     </property>
+    <property name="typesUseViewActionInListings" type="lines" purge="false">
+      <element value="Infographic"/>
+    </property>
     <property name="icon_visibility" type="string">authenticated</property>
   </object>
   <object name="brasil_gov" meta_type="Plone Property Sheet">

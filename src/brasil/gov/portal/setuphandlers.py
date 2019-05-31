@@ -14,7 +14,6 @@ import json
 @implementer(BBB.INonInstallable)  # BBB: Plone 4.3
 @implementer(INonInstallable)
 class NonInstallable(object):  # pragma: no cover
-
     @staticmethod
     def getNonInstallableProducts():
         """Hide in the add-ons configlet."""
@@ -26,6 +25,8 @@ class NonInstallable(object):  # pragma: no cover
             u'brasil.gov.portal.upgrades.v10903',
             u'brasil.gov.portal.upgrades.v10904',
             u'brasil.gov.portal.upgrades.v10905',
+            u'brasil.gov.portal.upgrades.v10906',
+            u'brasil.gov.portal.upgrades.v10907',
             u'brasil.gov.tiles.upgrades.v2000',
             u'brasil.gov.vcge.at',
             u'brasil.gov.vcge.dx',
@@ -83,6 +84,8 @@ class NonInstallable(object):  # pragma: no cover
             u'brasil.gov.portal.upgrades.v10903:default',
             u'brasil.gov.portal.upgrades.v10904:default',
             u'brasil.gov.portal.upgrades.v10905:default',
+            u'brasil.gov.portal.upgrades.v10906:default',
+            u'brasil.gov.portal.upgrades.v10907:default',
             u'brasil.gov.portal:default',
             u'brasil.gov.portal:initcontent',
             u'brasil.gov.portal:uninstall',

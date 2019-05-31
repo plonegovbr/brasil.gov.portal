@@ -4,7 +4,8 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Permite edição do tipo Infográfico através da aba "Conteúdo". (atende parcialmente `#578 <https://github.com/plonegovbr/brasil.gov.portal/issues/578>`_).
+  [idgserpro]
 
 
 2.1.1 (2018-12-08)
