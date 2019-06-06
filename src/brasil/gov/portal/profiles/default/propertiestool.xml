@@ -73,6 +73,8 @@
     </property>
     <property name="typesUseViewActionInListings" type="lines" purge="false">
       <element value="Infographic"/>
+      <element value="MPEG Audio File"/>
+      <element value="OGG Audio File"/>
     </property>
     <property name="icon_visibility" type="string">authenticated</property>
   </object>

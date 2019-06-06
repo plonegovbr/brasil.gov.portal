@@ -5,12 +5,14 @@ from brasil.gov.portal.content.audio import IAudio
 from brasil.gov.portal.content.audio_file import IMPEGAudioFile
 from brasil.gov.portal.content.audio_file import IOGGAudioFile
 from brasil.gov.portal.testing import INTEGRATION_TESTING
+from brasil.gov.portal.tests.utils import login_browser
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.schema import SCHEMA_CACHE
 from plone.namedfile.file import NamedBlobFile
+from plone.testing.z2 import Browser
 from zope.component import createObject
 from zope.component import queryUtility
 from zope.interface import Invalid
@@ -126,14 +128,17 @@ class MPEGAudioFileTestCase(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
+        self.browser = Browser(self.layer['app'])
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         # Invalidate schema cache
         SCHEMA_CACHE.invalidate('Audio')
         SCHEMA_CACHE.invalidate('MPEG Audio File')
+
+    def _create_content(self, id_folder='test-folder'):
         self.folder = api.content.create(
             type='Folder',
             container=self.portal,
-            id='test-folder',
+            id=id_folder,
         )
         self.audio = api.content.create(
             type='Audio',
@@ -157,6 +162,7 @@ class MPEGAudioFileTestCase(unittest.TestCase):
         self.ogg = NamedBlobFile(ogg_audio, 'audio/ogg', u'file.ogg')
 
     def test_adding(self):
+        self._create_content()
         self.assertTrue(IMPEGAudioFile.providedBy(self.mp3_audio))
 
     def test_fti(self):
@@ -164,12 +170,22 @@ class MPEGAudioFileTestCase(unittest.TestCase):
         self.assertNotEqual(None, fti)
 
     def test_validate_mpeg(self):
+        self._create_content()
         from brasil.gov.portal.content.audio_file import validate_mpeg
         self.assertTrue(validate_mpeg(self.mp3))
         self.assertRaises(Invalid, validate_mpeg, self.ogg)
 
     def test_file_content_type(self):
+        self._create_content()
         self.assertEqual(self.mp3_audio.content_type, 'audio/mp3')
+
+    def test_edit_link_folder_contents(self):
+        """https://github.com/plonegovbr/brasil.gov.portal/issues/587"""
+        self._create_content(id_folder='test-folder-MPEG')
+        login_browser(self.browser, self.portal)
+        url = self.mp3_audio.absolute_url()
+        self.browser.open('{0}/folder_contents'.format(url))
+        self.assertIn('file.mp3/view', self.browser.contents)
 
 
 class OGGAudioFileTestCase(unittest.TestCase):
@@ -178,14 +194,17 @@ class OGGAudioFileTestCase(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
+        self.browser = Browser(self.layer['app'])
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         # Invalidate schema cache
         SCHEMA_CACHE.invalidate('Audio')
         SCHEMA_CACHE.invalidate('OGG Audio File')
+
+    def _create_content(self, id_folder='test-folder'):
         self.folder = api.content.create(
             type='Folder',
             container=self.portal,
-            id='test-folder',
+            id=id_folder,
         )
         self.audio = api.content.create(
             type='Audio',
@@ -209,6 +228,7 @@ class OGGAudioFileTestCase(unittest.TestCase):
         self.ogg = NamedBlobFile(ogg_audio, 'audio/ogg', u'file.ogg')
 
     def test_adding(self):
+        self._create_content()
         self.assertTrue(IOGGAudioFile.providedBy(self.ogg_audio))
 
     def test_fti(self):
@@ -216,12 +236,22 @@ class OGGAudioFileTestCase(unittest.TestCase):
         self.assertNotEqual(None, fti)
 
     def test_validate_ogg(self):
+        self._create_content()
         from brasil.gov.portal.content.audio_file import validate_ogg
         self.assertTrue(validate_ogg(self.ogg))
         self.assertRaises(Invalid, validate_ogg, self.mp3)
 
     def test_file_content_type(self):
+        self._create_content()
         self.assertEqual(self.ogg_audio.content_type, 'audio/ogg')
+
+    def test_edit_link_folder_contents(self):
+        """https://github.com/plonegovbr/brasil.gov.portal/issues/587"""
+        self._create_content(id_folder='test-folder-OGG')
+        login_browser(self.browser, self.portal)
+        url = self.ogg_audio.absolute_url()
+        self.browser.open('{0}/folder_contents'.format(url))
+        self.assertIn('file.ogg/view', self.browser.contents)
 
 
 class AudioViewTestCase(unittest.TestCase):

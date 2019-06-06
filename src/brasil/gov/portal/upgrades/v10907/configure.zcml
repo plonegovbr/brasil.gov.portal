@@ -16,7 +16,7 @@
       profile="brasil.gov.portal:default">
 
     <genericsetup:upgradeDepends
-        title="Torna possivel editar um infografico em folder_contents."
+        title="Torna possivel editar um infografico, MPEG Audio File e OGG Audio File em folder_contents."
         import_profile="brasil.gov.portal.upgrades.v10907:default"
         />
 
