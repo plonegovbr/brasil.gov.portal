@@ -4,8 +4,12 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona tooltip aos links de redes sociais `#576 <https://github.com/plonegovbr/brasil.gov.portal/issues/576>`_).
+  [agnogueira]
+
 - Permite edição do tipo "MPEG Audio File" e "OGG Audio File" através da aba "Conteúdo". (atende parcialmente `#587 <https://github.com/plonegovbr/brasil.gov.portal/issues/587>`_).
   [idgserpro]
+
 - Permite edição do tipo Infográfico através da aba "Conteúdo". (atende parcialmente `#578 <https://github.com/plonegovbr/brasil.gov.portal/issues/578>`_).
   [idgserpro]
 
