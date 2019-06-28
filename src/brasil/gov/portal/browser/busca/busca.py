@@ -49,5 +49,5 @@ class RedirectSearch(BrowserView):
             view += '_atualizada'
         response.redirect(
             '@@{0}?{1}'.format(view, self.request['QUERY_STRING']),
-            status=301
+            status=301,
         )
