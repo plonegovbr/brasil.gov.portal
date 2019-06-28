@@ -1,3 +1,6 @@
 <div i18n:domain="brasil.gov.portal" class="voltar-topo">
-    <a i18n:translate="" href="#wrapper">Back to Top</a>
+    <a i18n:translate=""
+       tal:attributes="href python:context.absolute_url() + '#wrapper'">
+        Back to Top
+    </a>
 </div>
