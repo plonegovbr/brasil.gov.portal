@@ -547,7 +547,7 @@ class to10908TestCase(UpgradeBaseTestCase):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
         self.assertEqual(steps, 1)
 
-    def test_fix_nitf_default_view(self):
+    def test_enable_livesearch(self):
         title = u'Enable livesearch by default'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
