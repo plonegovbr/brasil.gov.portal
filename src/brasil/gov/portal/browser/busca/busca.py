@@ -44,5 +44,8 @@ class Search(PloneSearch):
 class RedirectSearch(BrowserView):
     def __call__(self):
         response = self.request.response
+        view = 'busca'
+        if self.request['PATH_INFO'].endswith('updated_search'):
+            view += '_atualizada'
         response.redirect(
-            '@@busca?{}'.format(self.request['QUERY_STRING']), status=301)
+            '@@{}?{}'.format(view, self.request['QUERY_STRING']), status=301)
