@@ -58,7 +58,7 @@
     <property name="localTimeFormat" type="string">%d/%m/%Y</property>
     <property name="localLongTimeFormat" type="string">%d/%m/%Y %Hh%M</property>
     <property name="enable_link_integrity_checks" type="boolean">True</property>
-    <property name="enable_livesearch" type="boolean">False</property>
+    <property name="enable_livesearch" type="boolean">True</property>
     <property name="default_language" type="boolean">pt-br</property>
     <property name="default_charset" type="boolean">utf-8</property>
     <property name="types_not_searched" type="lines" purge="False">
