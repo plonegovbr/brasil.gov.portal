@@ -47,6 +47,8 @@
 
         </fieldset>
 
+        <div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
+
         <div class="search-suggestions" tal:condition="expandable_header">
             <div class="news"
                  tal:define="featured_news view/featured_news"
