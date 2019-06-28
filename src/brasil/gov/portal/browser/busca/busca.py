@@ -48,4 +48,4 @@ class RedirectSearch(BrowserView):
         if self.request['PATH_INFO'].endswith('updated_search'):
             view += '_atualizada'
         response.redirect(
-            '@@{}?{}'.format(view, self.request['QUERY_STRING']), status=301)
+            '@@{1}?{2}'.format(view, self.request['QUERY_STRING']), status=301)
