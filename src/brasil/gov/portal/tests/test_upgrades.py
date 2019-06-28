@@ -532,3 +532,31 @@ class to10906TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertEqual(nitf.default_view, 'view')
+
+
+class to10908TestCase(UpgradeBaseTestCase):
+
+    from_ = '10907'
+    to_ = '10908'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_fix_nitf_default_view(self):
+        title = u'Enable livesearch by default'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        settings = api.portal.get_tool('portal_properties').site_properties
+        settings.enable_livesearch = False
+        self.assertEqual(settings.enable_livesearch, False)
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertEqual(settings.enable_livesearch, True)
