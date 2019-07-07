@@ -58,6 +58,7 @@ setup(
         'collective.liveblog',
         'collective.nitf',
         'collective.polls',
+        'collective.recaptcha',
         'collective.upload',
         'five.pt',
         'lxml',

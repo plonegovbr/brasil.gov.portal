@@ -12,6 +12,7 @@
   <include package="collective.liveblog" />
   <include package="collective.nitf" />
   <include package="collective.polls" />
+  <include package="collective.recaptcha" />
   <include package="collective.upload" />
   <include package="plone.app.contenttypes" />
   <include package="plone.restapi" />

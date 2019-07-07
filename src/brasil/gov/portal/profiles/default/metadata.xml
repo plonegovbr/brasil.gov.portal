@@ -15,6 +15,7 @@
     <dependency>profile-sc.embedder:default</dependency>
     <dependency>profile-sc.social.like:default</dependency>
     <dependency>profile-brasil.gov.tiles:default</dependency>
+    <dependency>profile-collective.recaptcha:default</dependency>
     <dependency>profile-collective.upload:default</dependency>
     <dependency>profile-webcouturier.dropdownmenu:default</dependency>
   </dependencies>

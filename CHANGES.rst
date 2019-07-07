@@ -4,6 +4,9 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona collective.recaptcha. (fecha `#292 <https://github.com/plonegovbr/brasil.gov.portal/issues/292>`_).
+  [rodfersou]
+
 - Permite edição do tipo "MPEG Audio File" e "OGG Audio File" através da aba "Conteúdo". (atende parcialmente `#587 <https://github.com/plonegovbr/brasil.gov.portal/issues/587>`_).
   [idgserpro]
 - Permite edição do tipo Infográfico através da aba "Conteúdo". (atende parcialmente `#578 <https://github.com/plonegovbr/brasil.gov.portal/issues/578>`_).
