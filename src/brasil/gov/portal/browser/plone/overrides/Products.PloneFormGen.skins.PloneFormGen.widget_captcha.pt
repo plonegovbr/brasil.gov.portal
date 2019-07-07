@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+  <head><title></title></head>
+  <body>
+
+    <metal:view_macro define-macro="view">
+        <span tal:replace="structure accessor">string</span>
+    </metal:view_macro>
+
+    <metal:define define-macro="edit">
+      <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+        <metal:widget_body fill-slot="widget_body">
+
+        <script type="text/javascript">
+        function playAudio(url) {
+        document.getElementById("captcha-audio-embed").innerHTML=
+        "<embed src='"+url+"' hidden=true autostart=true loop=false>";
+        }
+        </script>
+        <div class="captchaImage">
+            <div tal:replace="structure context/@@captcha/image_tag" />&nbsp;
+            <tal:block tal:define="audio_url context/@@captcha/audio_url"
+                tal:condition="audio_url">
+                <img src="audio_icon.gif" alt="Listen to audio for this captcha" style="cursor:pointer;"
+                     tal:attributes="onclick string:playAudio('${context/@@captcha/audio_url}');
+                                     src string:${context/portal_url}/captcha_audio_icon.gif;" />
+                <span id="captcha-audio-embed"></span>
+            </tal:block>
+        </div>
+
+        <tal:block tal:define="is_external context/@@captcha/external|python:False">
+            <input tal:define="is_external context/@@captcha/external|python:False"
+                   tal:condition="not:is_external"
+                   type="text"
+                   name=""
+                   class="blurrable firstToFocus"
+                   id=""
+                   value=""
+                   size="30"
+                   tal:attributes="name fieldName;
+                                   id fieldName;
+                                   value value;
+                                   size widget/size;
+                                   maxlength widget/maxlength;"
+                   />
+            <input tal:condition="is_external"
+                   type="hidden"
+                   name=""
+                   value="x"
+                   tal:attributes="name fieldName"
+                   />
+        </tal:block>
+        </metal:widget_body>
+      </metal:use>
+    </metal:define>
+
+    <div metal:define-macro="search">
+      <div metal:use-macro="here/widgets/string/macros/edit">
+      </div>
+    </div>
+
+  </body>
+
+</html>
