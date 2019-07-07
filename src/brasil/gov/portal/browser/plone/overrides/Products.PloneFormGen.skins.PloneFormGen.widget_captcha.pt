@@ -21,6 +21,7 @@
         }
         </script>
         <div class="captchaImage">
+            <!-- XXXX: Remove this override when this PR https://github.com/smcmahon/Products.PloneFormGen/pull/219/files is released -->
             <div tal:replace="structure context/@@captcha/image_tag" tal:on-error="string:${error/value}" />&nbsp;
             <tal:block tal:define="audio_url context/@@captcha/audio_url"
                 tal:condition="audio_url">
