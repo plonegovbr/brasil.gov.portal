@@ -7,9 +7,9 @@ def install_recaptcha(setup_tool):
     """Install recaptcha."""
     addon = 'collective.recaptcha'
     qi = api.portal.get_tool('portal_quickinstaller')
-    if qi.isProductInstalled(addon):
+    if not qi.isProductInstalled(addon):
         qi.installProducts([addon])
-        logger.info(addon + ' was uninstalled')
+        logger.info(addon + ' was installed')
 
     portal_types = api.portal.get_tool('portal_types')
     ti = portal_types.getTypeInfo('FormFolder')
