@@ -38,6 +38,7 @@
                    type="text"
                    name=""
                    class="blurrable firstToFocus"
+                   label="This is a captcha field"
                    id=""
                    value=""
                    size="30"
@@ -50,6 +51,7 @@
             <input tal:condition="is_external"
                    type="hidden"
                    name=""
+                   label="This is a hidden field used by captcha"
                    value="x"
                    tal:attributes="name fieldName"
                    />
