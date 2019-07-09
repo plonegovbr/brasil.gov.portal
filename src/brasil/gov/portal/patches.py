@@ -48,8 +48,8 @@ def deselect(self):
 def image_tag(self):
     if not self.settings.public_key:
         raise ValueError(
-            'Chave pública do recaptcha não está configurada. '
-            'Va para /@@recaptcha-settings para configurar.'
+            'Chave pública do recaptcha não está configurada. '  # noqa
+            'Va para /@@recaptcha-settings para configurar.'  # noqa
         )
     return self._old_image_tag()
 
