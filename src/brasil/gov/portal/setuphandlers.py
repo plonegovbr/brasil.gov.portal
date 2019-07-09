@@ -35,7 +35,7 @@ class NonInstallable(object):  # pragma: no cover
             u'collective.js.cycle2',
             u'collective.js.galleria',
             u'collective.js.jqueryui',
-            u'collective.recaptcha',
+            # u'collective.recaptcha',
             u'collective.upload',
             u'collective.z3cform.datagridfield',
             u'collective.z3cform.datetimewidget',
