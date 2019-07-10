@@ -4,6 +4,9 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona collective.recaptcha. (fecha `#292 <https://github.com/plonegovbr/brasil.gov.portal/issues/292>`_).
+  [rodfersou]
+
 - Corrige mecanismo de busca ativa. (fecha `#237 <https://github.com/plonegovbr/brasil.gov.portal/issues/237>`_).
   [rodfersou, agnogueira]
 

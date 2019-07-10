@@ -43,6 +43,17 @@ def deselect(self):
     return notselecteditems
 
 
+# XXXX: this patch should be removed when this is fixed:
+#       https://github.com/collective/collective.recaptcha/pull/18/files
+def image_tag(self):
+    if not self.settings.public_key:
+        raise ValueError(
+            'Chave pública do recaptcha não está configurada. '  # noqa
+            'Va para /@@recaptcha-settings para configurar.'  # noqa
+        )
+    return self._old_image_tag()
+
+
 def run():
     outputfilters()
     link()

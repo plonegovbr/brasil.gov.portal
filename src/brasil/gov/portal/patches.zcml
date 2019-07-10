@@ -10,4 +10,12 @@
       replacement=".patches.deselect"
       />
 
+  <monkey:patch
+      description="Translate collective.recaptcha error messages."
+      class="collective.recaptcha.view.RecaptchaView"
+      original="image_tag"
+      replacement=".patches.image_tag"
+      preserveOriginal="True"
+      />
+
 </configure>

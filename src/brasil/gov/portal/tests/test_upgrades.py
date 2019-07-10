@@ -545,7 +545,7 @@ class to10908TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
+        self.assertEqual(steps, 2)
 
     def test_enable_livesearch(self):
         title = u'Enable livesearch by default'
@@ -560,3 +560,39 @@ class to10908TestCase(UpgradeBaseTestCase):
         # execute upgrade step
         self._do_upgrade(step)
         self.assertEqual(settings.enable_livesearch, True)
+
+    def test_install_recaptcha(self):
+        title = u'Install recaptcha'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        portal_types = api.portal.get_tool('portal_types')
+        ti = portal_types.getTypeInfo('FormFolder')
+        if 'FormCaptchaField' in ti.allowed_content_types:
+            ti.allowed_content_types = tuple(
+                x for x in ti.allowed_content_types if x != 'FormCaptchaField')
+        self.assertNotIn('FormCaptchaField', ti.allowed_content_types)
+
+        ti = portal_types.getTypeInfo('FieldsetFolder')
+        if 'FormCaptchaField' in ti.allowed_content_types:
+            ti.allowed_content_types = tuple(
+                x for x in ti.allowed_content_types if x != 'FormCaptchaField')
+        self.assertNotIn('FormCaptchaField', ti.allowed_content_types)
+
+        addon = 'collective.recaptcha'
+        qi = api.portal.get_tool('portal_quickinstaller')
+        if qi.isProductInstalled(addon):
+            qi.uninstallProducts([addon])
+        self.assertFalse(qi.isProductInstalled(addon))
+
+        # execute upgrade step
+        self._do_upgrade(step)
+
+        self.assertTrue(qi.isProductInstalled(addon))
+
+        ti = portal_types.getTypeInfo('FormFolder')
+        self.assertIn('FormCaptchaField', ti.allowed_content_types)
+
+        ti = portal_types.getTypeInfo('FieldsetFolder')
+        self.assertIn('FormCaptchaField', ti.allowed_content_types)
