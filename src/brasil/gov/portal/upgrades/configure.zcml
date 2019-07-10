@@ -7,4 +7,5 @@
   <include package=".v10905" />
   <include package=".v10906" />
   <include package=".v10907" />
+  <include package=".v10908" />
 </configure>

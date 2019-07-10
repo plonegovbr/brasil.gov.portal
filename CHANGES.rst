@@ -4,6 +4,9 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Corrige mecanismo de busca ativa. (fecha `#237 <https://github.com/plonegovbr/brasil.gov.portal/issues/237>`_).
+  [rodfersou, agnogueira]
+
 - Adiciona tooltip aos links de redes sociais `#576 <https://github.com/plonegovbr/brasil.gov.portal/issues/576>`_).
   [agnogueira]
 

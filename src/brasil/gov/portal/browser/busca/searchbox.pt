@@ -17,6 +17,7 @@
 
     <form id="searchGadget_form"
           action="@@busca"
+          data-action="@@busca"
           tal:attributes="action string:${navigation_root_url}/@@busca;
                           id string:${search_input_id}_form;">
         <div class="close" tal:condition="expandable_header">+</div>
@@ -45,6 +46,8 @@
                    i18n:attributes="value label_search;" />
 
         </fieldset>
+
+        <div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
 
         <div class="search-suggestions" tal:condition="expandable_header">
             <div class="news"

@@ -10,6 +10,22 @@
      />
 
   <browser:page
+     name="search"
+     class=".busca.RedirectSearch"
+     permission="zope2.View"
+     for="*"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     />
+
+  <browser:page
+     name="updated_search"
+     class=".busca.RedirectSearch"
+     permission="zope2.View"
+     for="Products.CMFCore.interfaces.IFolderish"
+     layer="brasil.gov.portal.interfaces.IBrasilGov"
+     />
+
+  <browser:page
      name="busca"
      class=".busca.Search"
      permission="zope2.View"
