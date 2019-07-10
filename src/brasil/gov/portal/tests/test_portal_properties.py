@@ -29,8 +29,8 @@ class PortalPropertiesTestCase(unittest.TestCase):
     def test_enable_link_integrity_checks_enabled(self):
         self.assertTrue(self.properties.enable_link_integrity_checks)
 
-    def test_livesearch_disabled(self):
-        self.assertFalse(self.properties.enable_livesearch)
+    def test_livesearch_enabled(self):
+        self.assertTrue(self.properties.enable_livesearch)
 
     def test_default_language(self):
         self.assertTrue(self.languages.use_combined_language_codes)

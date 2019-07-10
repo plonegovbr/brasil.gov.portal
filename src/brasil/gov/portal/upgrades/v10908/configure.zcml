@@ -16,6 +16,11 @@
       profile="brasil.gov.portal:default">
 
     <genericsetup:upgradeStep
+        title="Enable livesearch by default"
+        handler=".enable_livesearch"
+        />
+
+    <genericsetup:upgradeStep
         title="Install recaptcha"
         handler=".install_recaptcha"
         />

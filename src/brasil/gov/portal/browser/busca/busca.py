@@ -5,6 +5,7 @@ from brasil.gov.vcge.dx.interfaces import IVCGEDx
 from plone.app.search.browser import Search as PloneSearch
 from six.moves.urllib.parse import urlencode
 from zope.component import queryUtility
+from zope.publisher.browser import BrowserView
 from zope.schema.interfaces import IVocabularyFactory
 
 
@@ -38,3 +39,15 @@ class Search(PloneSearch):
         """Formata rel a ser utilizado no href de cada termo
         """
         return u'dc:subject foaf:primaryTopic'
+
+
+class RedirectSearch(BrowserView):
+    def __call__(self):
+        response = self.request.response
+        view = 'busca'
+        if self.request['PATH_INFO'].endswith('updated_search'):
+            view += '_atualizada'
+        response.redirect(
+            '@@{0}?{1}'.format(view, self.request['QUERY_STRING']),
+            status=301,
+        )

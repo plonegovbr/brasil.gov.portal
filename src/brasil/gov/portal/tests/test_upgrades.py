@@ -547,6 +547,20 @@ class to10908TestCase(UpgradeBaseTestCase):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
         self.assertEqual(steps, 1)
 
+    def test_enable_livesearch(self):
+        title = u'Enable livesearch by default'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        settings = api.portal.get_tool('portal_properties').site_properties
+        settings.enable_livesearch = False
+        self.assertEqual(settings.enable_livesearch, False)
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertEqual(settings.enable_livesearch, True)
+
     def test_install_recaptcha(self):
         title = u'Install recaptcha'
         step = self._get_upgrade_step_by_title(title)
@@ -582,3 +596,4 @@ class to10908TestCase(UpgradeBaseTestCase):
 
         ti = portal_types.getTypeInfo('FieldsetFolder')
         self.assertIn('FormCaptchaField', ti.allowed_content_types)
+

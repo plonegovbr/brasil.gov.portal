@@ -88,6 +88,7 @@ class NonInstallable(object):  # pragma: no cover
             u'brasil.gov.portal.upgrades.v10905:default',
             u'brasil.gov.portal.upgrades.v10906:default',
             u'brasil.gov.portal.upgrades.v10907:default',
+            u'brasil.gov.portal.upgrades.v10908:default',
             u'brasil.gov.portal:default',
             u'brasil.gov.portal:initcontent',
             u'brasil.gov.portal:uninstall',
