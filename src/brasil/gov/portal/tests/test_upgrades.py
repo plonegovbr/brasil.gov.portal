@@ -545,7 +545,7 @@ class to10908TestCase(UpgradeBaseTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
+        self.assertEqual(steps, 2)
 
     def test_enable_livesearch(self):
         title = u'Enable livesearch by default'
