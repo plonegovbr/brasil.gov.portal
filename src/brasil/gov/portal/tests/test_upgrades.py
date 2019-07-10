@@ -596,4 +596,3 @@ class to10908TestCase(UpgradeBaseTestCase):
 
         ti = portal_types.getTypeInfo('FieldsetFolder')
         self.assertIn('FormCaptchaField', ti.allowed_content_types)
-
