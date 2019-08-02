@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <include package="z3c.unconfigure" file="meta.zcml" />
+
+  <!-- override link_redirect_view -->
+  <!-- Com Interface herdando do layer original ou mesmo no overrides
+       continuava o erro: ConfigurationConflictError
+       Foi necessario utilizar unconfigure -->
+  <include package="plone.app.contenttypes.browser" file="configure.zcml" />
+  <unconfigure>
+      <browser:page
+        name="link_redirect_view"
+        for="plone.app.contenttypes.interfaces.ILink"
+        class=".link_redirect_view.LinkRedirectView"
+        layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="View Link"
+        />
+  </unconfigure>
+
+  <!-- customize link_redirect_view -->
+  <configure package="plone.app.contenttypes.browser">
+      <browser:page
+        name="link_redirect_view"
+        for="plone.app.contenttypes.interfaces.ILink"
+        class="brasil.gov.portal.browser.content.link_redirect_view.LinkRedirectView"
+        layer="brasil.gov.portal.interfaces.IBrasilGov"
+        permission="zope2.View"
+        menu="plone_displayviews"
+        title="View Link"
+        />
+   </configure>
+
+</configure>

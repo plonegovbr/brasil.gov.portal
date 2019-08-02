@@ -70,4 +70,15 @@
       layer="brasil.gov.portal.interfaces.IBrasilGov"
       />
 
+  <includeOverrides file="overrides.zcml" />
+
+  <!-- RemoteUrlUtils -->
+  <browser:page
+      name="remote_url_utils"
+      for="*"
+      permission="zope.Public"
+      class=".remote_url_utils.RemoteUrlUtils"
+      layer="brasil.gov.portal.interfaces.IBrasilGov"
+  />
+
 </configure>
