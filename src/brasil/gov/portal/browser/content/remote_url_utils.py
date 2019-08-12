@@ -1,10 +1,21 @@
 # -*- coding: utf-8 -*-
 
+from plone import api
 from plone.app.contenttypes.browser.link_redirect_view import NON_RESOLVABLE_URL_SCHEMES
 from Products.Five import BrowserView
 from zope.component import getMultiAdapter
 from zope.interface import implements
 from zope.interface import Interface
+
+import pkg_resources
+
+
+try:
+    pkg_resources.get_distribution('plone.app.multilingual')
+except pkg_resources.DistributionNotFound:
+    HAS_MULTILINGUAL = False
+else:
+    HAS_MULTILINGUAL = True
 
 
 class IRemoteUrlUtils(Interface):
@@ -35,6 +46,19 @@ class RemoteUrlUtils(BrowserView):
         )
         self.portal_path = self.portal_state.navigation_root_path()
         self.portal_url = self.portal_state.portal_url()
+
+    def _handle_multilingual(self):
+        if HAS_MULTILINGUAL:
+            language = self.portal_path.split('/')[-1]
+            portal = api.portal.get()
+            supported_languages = [
+                i[0]
+                for i in portal.portal_languages.listSupportedLanguages()
+            ]
+            if language in supported_languages:
+                portal_path = '/'.join(self.portal_path.split('/')[:-1])
+                return portal_path
+        return self.portal_path
 
     def _url_uses_scheme(self, url=None):
             for scheme in NON_RESOLVABLE_URL_SCHEMES:
@@ -70,6 +94,8 @@ class RemoteUrlUtils(BrowserView):
                             '../' * count,
                             '/'.join(path_items[:-position]) + '/',
                         )
+
+            portal_path = self._handle_multilingual()
             # /path/site
-            url = url.replace(self.portal_path, self.portal_url)
+            url = url.replace(portal_path, self.portal_url)
         return url

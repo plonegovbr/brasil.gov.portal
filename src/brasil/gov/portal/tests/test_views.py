@@ -5,6 +5,7 @@ from brasil.gov.portal.config import TIME_FORMAT
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from DateTime import DateTime
 from plone import api
+from plone.app.multilingual.browser.setup import SetupMultilingualSite
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
@@ -485,6 +486,22 @@ class LinkRedirectViewTestCase(BaseViewTestCase):
                 title=u'Link 4',
                 remoteUrl=u'./subfolder',
             )
+            portal_setup = api.portal.get_tool('portal_setup')
+            portal_setup.runAllImportStepsFromProfile(
+                'plone.app.multilingual:default',
+            )
+            portal_languages = api.portal.get_tool('portal_languages')
+            portal_languages.addSupportedLanguage('en')
+            portal_languages.use_request_negotiation = True
+            setup_tool = SetupMultilingualSite()
+            setup_tool.setupSite(self.portal)
+            self.link_5 = api.content.create(
+                type='Link',
+                container=self.portal['en'],
+                id='link-5',
+                title=u'Link 5',
+                remoteUrl=u'${portal_url}/en/subjects/editorial',
+            )
 
     def test_link_redirect_view(self):
         portal_url = self.portal['portal_url']()
@@ -515,4 +532,10 @@ class LinkRedirectViewTestCase(BaseViewTestCase):
         self.assertEqual(
             '{0}/folder/subfolder'.format(portal_url),
             link_4_url,
+        )
+        link_5_url = self.link_5.restrictedTraverse(
+            '@@link_redirect_view',
+        ).absolute_target_url()
+        self.assertEqual(
+            '{0}/en/subjects/editorial'.format(portal_url), link_5_url,
         )

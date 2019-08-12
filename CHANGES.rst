@@ -4,6 +4,9 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona suporte a plone.app.multilingual em remote_url_utils.
+  [idgserpro]
+
 - Adiciona Browser Page remote_url_utils.
   Tratamento do valor de getRemoteUrl ou remoteUrl para evitar que o path do
   site fique exposto nos links.
