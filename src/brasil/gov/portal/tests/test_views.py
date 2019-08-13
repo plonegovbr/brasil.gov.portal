@@ -5,7 +5,9 @@ from brasil.gov.portal.config import TIME_FORMAT
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from DateTime import DateTime
 from plone import api
+from plone.app.layout.viewlets.common import GlobalSectionsViewlet
 from plone.app.multilingual.browser.setup import SetupMultilingualSite
+from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
@@ -502,6 +504,13 @@ class LinkRedirectViewTestCase(BaseViewTestCase):
                 title=u'Link 5',
                 remoteUrl=u'${portal_url}/en/subjects/editorial',
             )
+            self.link_6 = api.content.create(
+                type='Link',
+                container=self.portal,
+                id='link-6',
+                title=u'Link 6',
+                remoteUrl=u'${portal_url}/en/subjects/languages',
+            )
 
     def test_link_redirect_view(self):
         portal_url = self.portal['portal_url']()
@@ -539,3 +548,17 @@ class LinkRedirectViewTestCase(BaseViewTestCase):
         self.assertEqual(
             '{0}/en/subjects/editorial'.format(portal_url), link_5_url,
         )
+
+        portal_properties = api.portal.get_tool('portal_properties')
+        navtree_properties = portal_properties.navtree_properties
+        metaTypesNotToList = list(navtree_properties.getProperty('metaTypesNotToList'))
+        metaTypesNotToList.remove('Link')
+        navtree_properties.manage_changeProperties(metaTypesNotToList=metaTypesNotToList)
+
+        logout()
+        viewlet = GlobalSectionsViewlet(self.portal, self.request, None, None)
+        viewlet.update()
+        html = viewlet.render()
+
+        self.assertIn('href="http://nohost/plone/en/subjects/languages"', html)
+        self.assertNotIn('href="/plone/en/subjects/languages"', html)

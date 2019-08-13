@@ -4,6 +4,12 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona patch para Products.CMFPlone.browser.navigation.CatalogNavigationTabs.topLevelTabs
+  para substituição do path do site pela url em getRemoteUrl caso use a viewlet
+  global sections.
+  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  [idgserpro]
+
 - Adiciona suporte a plone.app.multilingual em remote_url_utils.
   [idgserpro]
 
