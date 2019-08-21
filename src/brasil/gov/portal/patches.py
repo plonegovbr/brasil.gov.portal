@@ -131,7 +131,8 @@ def decoratorFactory(self, node):
 
     return newNode
 
-    logger.info('Patched Products.CMFPlone.browser.navtree.SitemapNavtreeStrategy:decoratorFactory:191')
+
+logger.info('Patched Products.CMFPlone.browser.navtree.SitemapNavtreeStrategy:decoratorFactory:191')
 
 
 def topLevelTabs(self, actions=None, category='portal_tabs'):
