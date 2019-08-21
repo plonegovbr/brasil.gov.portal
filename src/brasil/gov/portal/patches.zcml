@@ -18,4 +18,18 @@
       preserveOriginal="True"
       />
 
+  <monkey:patch
+      description="Substituicao do path pela url do site em getRemoteUrl."
+      class="Products.CMFPlone.browser.navtree.SitemapNavtreeStrategy"
+      original="decoratorFactory"
+      replacement=".patches.decoratorFactory"
+      />
+
+  <monkey:patch
+      description="Substituicao do path pela url do site em getRemoteUrl se estiver usando global sections."
+      class="Products.CMFPlone.browser.navigation.CatalogNavigationTabs"
+      original="topLevelTabs"
+      replacement=".patches.topLevelTabs"
+      />
+
 </configure>

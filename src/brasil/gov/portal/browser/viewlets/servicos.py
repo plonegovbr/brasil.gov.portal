@@ -2,6 +2,7 @@
 """ Modulo que implementa o viewlet de servicos do Portal"""
 from plone.app.layout.viewlets import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.component import getMultiAdapter
 
 
 class ServicosViewlet(ViewletBase):
@@ -14,8 +15,18 @@ class ServicosViewlet(ViewletBase):
         """ Prepara/Atualiza os valores utilizados pelo Viewlet
         """
         super(ServicosViewlet, self).update()
-        ps = self.context.restrictedTraverse('@@plone_portal_state')
-        tools = self.context.restrictedTraverse('@@plone_tools')
+        ps = getMultiAdapter(
+            (self.context, self.request),
+            name='plone_portal_state',
+        )
+        tools = getMultiAdapter(
+            (self.context, self.request),
+            name='plone_tools',
+        )
+        self.remote_url_utils = getMultiAdapter(
+            (self.context, self.request),
+            name='remote_url_utils',
+        )
         portal = ps.portal()
         self._folder = 'servicos' in portal.objectIds() and portal['servicos']
         self._ct = tools.catalog()
@@ -24,10 +35,21 @@ class ServicosViewlet(ViewletBase):
         return self._folder and True or False
 
     def servicos(self):
-        ct = self._ct
         folder_path = '/'.join(self._folder.getPhysicalPath())
-        portal_types = ['Link']
-        results = ct.searchResults(portal_type=portal_types,
-                                   path=folder_path,
-                                   sort_on='getObjPositionInParent')
-        return results
+        query = {
+            'portal_type': ['Link'],
+            'path': folder_path,
+            'sort_on': 'getObjPositionInParent',
+        }
+        return [
+            {
+                'getId': l.getId,
+                'Title': l.Title,
+                'Description': l.Description,
+                'getRemoteUrl': self.remote_url_utils.remote_url_transform(
+                    l.getPath(),
+                    l.getRemoteUrl,
+                ),
+            }
+            for l in self._ct(query)
+        ]

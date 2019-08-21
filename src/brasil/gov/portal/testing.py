@@ -38,6 +38,8 @@ class Fixture(PloneSandboxLayer):
         # Load ZCML
         import brasil.gov.portal
         self.loadZCML(package=brasil.gov.portal)
+        import plone.app.multilingual
+        self.loadZCML(package=plone.app.multilingual)
         # Install products that use an old-style initialize() function
         # https://github.com/plone/plone.app.event/issues/81#issuecomment-23930996
         z2.installProduct(app, 'Products.DateRecurringIndex')

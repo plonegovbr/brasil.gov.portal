@@ -32,6 +32,7 @@ INSTALLABLE = {
     'collective.lazysizes',
     'collective.liveblog',
     'Marshall',
+    'plone.app.multilingual',
     'plone.app.referenceablebehavior',
     'plone.restapi',
     'sc.photogallery',
