@@ -7,7 +7,7 @@ Changelog
 - Adiciona patch para Products.CMFPlone.browser.navigation.CatalogNavigationTabs.topLevelTabs
   para substituição do path do site pela url em getRemoteUrl caso use a viewlet
   global sections.
-  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  `#463 <https://github.com/plonegovbr/brasil.gov.portal/issues/463>`__
   [idgserpro]
 
 - Adiciona suporte a plone.app.multilingual em remote_url_utils.
@@ -16,23 +16,23 @@ Changelog
 - Adiciona Browser Page remote_url_utils.
   Tratamento do valor de getRemoteUrl ou remoteUrl para evitar que o path do
   site fique exposto nos links.
-  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  `#463 <https://github.com/plonegovbr/brasil.gov.portal/issues/463>`__
   [idgserpro]
 
 - Adiciona patch para Products.CMFPlone.browser.navtree.SitemapNavtreeStrategy.decoratorFactory
   para substituição do path do site pela url em getRemoteUrl.
-  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  `#463 <https://github.com/plonegovbr/brasil.gov.portal/issues/463>`__
   [idgserpro]
 
 - Altera viewlet servicos para que trate o valor de getRemoteUrl através da
   remote_url_utils.
-  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  `#463 <https://github.com/plonegovbr/brasil.gov.portal/issues/463>`__
   [idgserpro]
 
 - Customiza Browser Page link_redirect_view para que trate o valor de remote_url
   através da remote_url_utils; e para que a formação url de links relativos (../, ./)
   deixasse de utilizar como base a url do próprio objeto Link.
-  <https://github.com/plonegovbr/brasil.gov.portal/issues/463>
+  `#463 <https://github.com/plonegovbr/brasil.gov.portal/issues/463>`__
   [idgserpro]
 
 - Adiciona collective.recaptcha. (fecha `#292 <https://github.com/plonegovbr/brasil.gov.portal/issues/292>`_).
@@ -180,7 +180,7 @@ Changelog
 - Adiciona funcionalidade de preview de imagens em links.
   [rodfersou]
 
-- Adiciona suporte para processamento de recursos estáticos usando o `webpack`_.
+- Adiciona suporte para processamento de recursos estáticos usando o `webpack <https://webpack.js.org/>`_.
   [rodfersou]
 
 - Corrige upgrade step para desinstalar o ``Products.Doormat`` (fecha `#523 <https://github.com/plonegovbr/brasil.gov.portal/issues/523>`_).
