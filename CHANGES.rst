@@ -4,6 +4,10 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona plone.app.stagingbehavior.interfaces.IStagingSupport (recurso de "checkin" e "checkout") para o tipo Capa por padrão.
+  `#579 <https://github.com/plonegovbr/brasil.gov.portal/issues/579>`_
+  [idgserpro]
+
 - Adiciona patch para Products.CMFPlone.browser.navigation.CatalogNavigationTabs.topLevelTabs
   para substituição do path do site pela url em getRemoteUrl caso use a viewlet
   global sections.

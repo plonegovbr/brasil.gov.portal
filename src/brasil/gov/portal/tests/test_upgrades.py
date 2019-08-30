@@ -2,6 +2,7 @@
 from brasil.gov.portal.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.viewletmanager.interfaces import IViewletSettingsStorage
+from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import queryUtility
 
 import unittest
@@ -596,3 +597,39 @@ class to10908TestCase(UpgradeBaseTestCase):
 
         ti = portal_types.getTypeInfo('FieldsetFolder')
         self.assertIn('FormCaptchaField', ti.allowed_content_types)
+
+
+class to10909TestCase(UpgradeBaseTestCase):
+
+    from_ = '10908'
+    to_ = '10909'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
+
+    def test_enable_cover_istagingsupport(self):
+        title = u'Habilita plone.app.stagingbehavior.interfaces.IStagingSupport para o tipo Capa.'  # NOQA
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        behavior_to_remove = frozenset(
+            ['plone.app.stagingbehavior.interfaces.IStagingSupport'],
+        )
+        fti = queryUtility(IDexterityFTI, name='collective.cover.content')
+        fti.behaviors = tuple(set(fti.behaviors) - behavior_to_remove)
+        self.assertNotIn(
+            'plone.app.stagingbehavior.interfaces.IStagingSupport',
+            fti.behaviors,
+        )
+
+        # execute upgrade step
+        self._do_upgrade(step)
+        self.assertIn(
+            'plone.app.stagingbehavior.interfaces.IStagingSupport',
+            fti.behaviors,
+        )

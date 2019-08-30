@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="brasil.gov.portal (v10909)"
+      directory="profile"
+      description='Configuration for version 10909'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:upgradeSteps
+      source="10908"
+      destination="10909"
+      profile="brasil.gov.portal:default">
+
+    <genericsetup:upgradeDepends
+        title="Habilita plone.app.stagingbehavior.interfaces.IStagingSupport para o tipo Capa."
+        import_profile="brasil.gov.portal.upgrades.v10909:default"
+        />
+
+  </genericsetup:upgradeSteps>
+</configure>
