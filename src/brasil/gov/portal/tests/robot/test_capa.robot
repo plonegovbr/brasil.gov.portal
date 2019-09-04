@@ -38,6 +38,9 @@ Criar nova capa
     Go to Homepage
     Create Cover  NewCoverLayoutVazio  NewCoverLayoutVazioDescription  Layout vazio
 
+    # Confirma que o behavior plone.app.stagingbehavior.interfaces.IStagingSupport está disponível
+    Page Should Contain   Check out
+
     # Adiciona um tile de banner
     Open Layout Tab
     Add Tile  ${banner_tile_location}
