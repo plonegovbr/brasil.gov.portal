@@ -4,6 +4,9 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona plone.app.relationfield de dependência. Esse pacote já era referenciado em alguns xmls dos tipos de contéudo mas não estava explícito no setup.py.
+  [idgserpro]
+
 - Adiciona plone.app.stagingbehavior.interfaces.IStagingSupport (recurso de "checkin" e "checkout") para o tipo Capa por padrão.
   `#579 <https://github.com/plonegovbr/brasil.gov.portal/issues/579>`_
   [idgserpro]
