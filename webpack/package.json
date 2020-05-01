@@ -6,7 +6,9 @@
     "build": "./node_modules/.bin/webpack -p",
     "debug": "./node_modules/.bin/webpack --watch",
     "watch": "./node_modules/.bin/webpack -p --watch",
-    "test": "NODE_ENV=testing ./node_modules/.bin/karma start --single-run"
+    "test": "NODE_ENV=testing ./node_modules/.bin/karma start --single-run",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "babel": {
     "presets": [
@@ -26,6 +28,8 @@
   "license": "GPL-2.0",
   "dependencies": {
     "sc-recipe-staticresources": "collective/sc.recipe.staticresources#1.1b7",
-    "tippy.js": "^2.5.0"
-  }
+    "tippy.js": "^2.5.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
