@@ -4,6 +4,10 @@ Changelog
 2.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Reverte bugfix de campo de ordenação de coleção uma vez que novas versões do Plone possuem o formato esperado por plone.formwidget.querystring.
+  `#163 <https://github.com/plonegovbr/brasil.gov.portal/issues/163>`_
+  [idgserpro]
+
 - Adiciona plone.app.relationfield de dependência. Esse pacote já era referenciado em alguns xmls dos tipos de contéudo mas não estava explícito no setup.py.
   [idgserpro]
 
