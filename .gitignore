@@ -15,6 +15,7 @@ downloads/
 eggs/
 htmlcov/
 include/
+share/
 lib/
 local.cfg
 Makefile
@@ -23,3 +24,4 @@ src/collective.cover/
 var/
 dist/
 src/brasil/gov/portal/browser/viewlets/static/
+pyvenv.cfg
