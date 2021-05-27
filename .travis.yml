@@ -9,19 +9,18 @@ cache:
   - eggs
   - parts/node
 addons:
-  # XXX: use an older Firefox ESR as we are stuck with selenium = 2.53.5
-  #      https://github.com/SeleniumHQ/selenium/issues/2739#issuecomment-249482533
-  firefox: 45.9.0esr
+  apt:
+    packages:
+      - firefox-geckodriver
 matrix:
   fast_finish: true
-before_install:
-# FIXME: I have no idea how and why six==1.11.0 is being installed
-- pip uninstall -y six
-- pip install -U setuptools==26.1.1
 install:
-- python bootstrap.py
+- virtualenv .
+- ./bin/pip install -r requirements.txt
 - bin/buildout annotate
 - bin/buildout
+before_script:
+  - firefox -v
 script:
 - bin/code-analysis
 - bin/test
